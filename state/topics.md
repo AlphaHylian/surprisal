@@ -71,4 +71,4 @@ you make it. Lines marked `[long]` are better as Sunday long-form.
 
 ## Used
 - 2026-09-30  birthday-paradox (sounds-fake)  eQS8gtimpvA  first public video, 9pm Tallinn
-- 2026-10-01  quarters-make-a-third (visual-proof)  YrD3-RjdX58  TEST upload, private
+- 2026-10-01  quarters-make-a-third (visual-proof)  YrD3-RjdX58  9pm Tallinn 1 Oct (scheduled after test upload; subscribers not notified)
