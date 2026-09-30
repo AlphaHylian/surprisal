@@ -37,9 +37,25 @@ fights intuition and shows *why* it holds, with a picture doing most of the work
 - Structure that works: claim → why it feels wrong → the key idea → the picture that
   proves it → the number → one line that sends it home (a question to viewers, a
   bigger case, or a loop back to the start). Vary this; don't make every video identical.
-- End on the last idea. No "follow for more", no "like and subscribe".
-- A closing question that invites a comment is fine ("Does your class have a match?")
-  but not every day.
+- **Calls to action: one natural ask, woven into the content, after the payoff.** Asking viewers
+  to comment or subscribe is allowed; what YouTube's spam policies forbid is rewarding engagement
+  (giveaways, "sub for sub", "comment to win") and misleading asks. So:
+  - **Comment (most videos):** end on a genuine question the video has set up, ideally one with a
+    checkable answer: "Does your class have a match? Say how many people and whether you found
+    one." / "What do you get with 16 pieces? Answer below." Never a generic "let me know in the
+    comments".
+  - **Subscribe (about every other Short, varied wording, one sentence, at most ~2 s):** tie it to
+    what the channel actually delivers, e.g. "There's one of these every day. Subscribe and
+    tomorrow's finds you." You may tease the next video only if you write that topic to
+    `state/next_up.md` so the next run really makes it: "Tomorrow: why 0.999... is exactly 1."
+  - Put it after the payoff, in the last few seconds, and keep the final line short so the Short
+    still loops cleanly. It can sit in the same beat as the closing question.
+  - On screen, at most a small label (`label("subscribe for tomorrow's", color=MINT)`) under the
+    last visual. No flashing buttons, no fake UI, no arrows pointing at YouTube's buttons.
+  - Never: in the first 10 seconds, "like and subscribe" chants, fake urgency, promising a part 2
+    that doesn't exist, rewards of any kind, or asking for likes/subs in exchange for anything.
+- Long-form: one subscribe line after the first big payoff (roughly a third of the way in), a
+  comment question at the end, and the same rules.
 
 ## Long-form (Sunday)
 
@@ -108,7 +124,7 @@ audio in sync but leave dead air; the report lists them.
   saying how the numbers were checked, then the standard footer:
 
 ```
-New math that sounds wrong but is true, every morning.
+New math that sounds wrong but is true, every day. Subscribe so tomorrow's finds you.
 Found an error? Comment and it gets pinned.
 #math #mathematics #shorts
 ```

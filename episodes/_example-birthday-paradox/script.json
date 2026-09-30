@@ -57,8 +57,8 @@
     },
     {
       "id": "close",
-      "say": "A class of 30 has a 71 percent chance. Does yours have a match?",
-      "caption": "A class of 30 has a 71% chance. Does yours have a match?"
+      "say": "A class of 30 has a 71 percent chance. Does yours have a match? Tell me below.",
+      "caption": "A class of 30 has a 71% chance. Does yours have a match? Tell me below."
     }
   ],
   "angle": "count pairs, not people; watch the no-match bar cross one half at the 23rd person"

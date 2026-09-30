@@ -1,6 +1,6 @@
 # Daily run
 
-This is the procedure the scheduled task follows every morning. It publishes one video
+This is the procedure the scheduled task follows every day. It publishes one video
 to the Surprisal channel (@surprisalmath) and learns from how earlier videos did.
 Read `docs/STYLE.md` before writing anything.
 
@@ -78,6 +78,9 @@ Keep `PUBLISH_AT_UTC`, `PUBLISH_DATE`, `PUBLISH_WEEKDAY` for the rest of the run
 - **PUBLISH_WEEKDAY Sunday: long-form** (8 to 12 min, 16:9). Take the best Short from the past 7 days
   (highest engaged views × average view %, at similar age) and go deeper, as described
   in STYLE.md. If there are no public Shorts yet, make a Short instead.
+- If `state/next_up.md` names a topic, the previous video promised it: make that one today
+  (unless it's Sunday long-form, then make it tomorrow), then empty the file. If you tease the
+  next topic in today's video, write it to `state/next_up.md`.
 - Read the topic's Wikipedia page (and MathWorld or another solid source if needed)
   with WebSearch/WebFetch. For `[check]` topics, look up the current state today.
 - Decide the angle (STYLE.md, point 4).
