@@ -1,7 +1,9 @@
-"""Voiceover (Kokoro), caption alignment (faster-whisper) and background music."""
+"""Voiceover (OmniVoice cloning the channel voice, Kokoro as fallback), caption alignment
+(faster-whisper) and background music."""
 import json
 import os
 import re
+import time
 from difflib import SequenceMatcher
 
 import numpy as np
@@ -9,30 +11,98 @@ import soundfile as sf
 
 CACHE = os.environ.get("SURPRISAL_CACHE", os.path.expanduser("~/.surprisal_cache"))
 KIT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-DEFAULT_VOICE = "af_heart"   # best-rated Kokoro voice; alternatives: af_bella, bf_emma, am_michael
-DEFAULT_SPEED = 1.05
 VOICE_SR = 24000
+
+# The channel voice: "Sam", an OmniVoice-generated voice. Every clip clones this reference so the
+# narrator sounds the same in every beat and every video.
+REF_AUDIO = os.path.join(KIT_ROOT, "assets", "voice", "sam_ref.wav")
+REF_TEXT = os.path.join(KIT_ROOT, "assets", "voice", "sam_ref.txt")
+OMNI_STEPS = {"short": 32, "long": 16}   # quality steps; ~12x / ~6.5x real time on 2 CPU cores
+
+# Fallback only: used automatically if OmniVoice fails, and reported in report.json.
+KOKORO_VOICE = "af_heart"
+KOKORO_SPEED = 1.05
+
+
+# ---------------------------------------------------------------- text -> spoken words
+def spoken(text):
+    """Turn digits into words the way a narrator would say them ('23rd' -> 'twenty-third',
+    '97%' -> 'ninety-seven percent', '200,000' -> 'two hundred thousand', '99.9' -> 'ninety-nine
+    point nine'). OmniVoice reads raw digits unreliably (e.g. 2345 as a year)."""
+    from num2words import num2words
+
+    def us(words):  # American style: "three hundred sixty-five", no "and"
+        return words.replace(" and ", " ")
+
+    def ordinal(m):
+        return us(num2words(int(m.group(1).replace(",", "")), to="ordinal"))
+
+    def number(m):
+        s = m.group(0).replace(",", "")
+        if "." in s:
+            whole, frac = s.split(".", 1)
+            return us(num2words(int(whole))) + " point " + " ".join(num2words(int(d)) for d in frac)
+        return us(num2words(int(s)))
+
+    t = text.replace("%", " percent")
+    t = re.sub(r"\b(\d[\d,]*)(st|nd|rd|th)\b", ordinal, t)
+    t = re.sub(r"\d{1,3}(?:,\d{3})+(?:\.\d+)?|\d+(?:\.\d+)?", number, t)
+    return re.sub(r"\s+", " ", t).strip()
 
 
 # ---------------------------------------------------------------- voice
+def _synth_omnivoice(script, out):
+    import torch
+    torch.set_num_threads(os.cpu_count() or 2)
+    from omnivoice import OmniVoice
+    model = OmniVoice.from_pretrained("k2-fsa/OmniVoice", device_map="cpu", dtype=torch.float32)
+    prompt = model.create_voice_clone_prompt(ref_audio=REF_AUDIO, ref_text=open(REF_TEXT).read().strip())
+    steps = script.get("voice_steps", OMNI_STEPS.get(script.get("format", "short"), 32))
+    speed = script.get("speed")
+    durations = {}
+    for b in script["beats"]:
+        text = spoken(b["say"])
+        audio = model.generate(text=text, language="English", voice_clone_prompt=prompt, num_step=steps,
+                               speed=b.get("speed", speed))[0]
+        if model.sampling_rate != VOICE_SR:
+            raise RuntimeError(f"unexpected sample rate {model.sampling_rate}")
+        sf.write(f"{out}/{b['id']}.wav", audio.astype(np.float32), VOICE_SR)
+        durations[b["id"]] = round(len(audio) / VOICE_SR, 3)
+        print(f"  voice {b['id']}: {durations[b['id']]}s", flush=True)
+    return durations
+
+
+def _synth_kokoro(script, out):
+    from kokoro_onnx import Kokoro
+    k = Kokoro(f"{CACHE}/kokoro.onnx", f"{CACHE}/voices.bin")
+    durations = {}
+    for b in script["beats"]:
+        samples, sr = k.create(b["say"], voice=KOKORO_VOICE, speed=b.get("speed", KOKORO_SPEED), lang="en-us")
+        sf.write(f"{out}/{b['id']}.wav", samples, sr)
+        durations[b["id"]] = round(len(samples) / sr, 3)
+    return durations
+
+
 def synth_voice(ep):
     script = json.load(open(f"{ep}/script.json"))
     ids = [b["id"] for b in script["beats"]]
     if len(ids) != len(set(ids)):
         raise ValueError("beat ids in script.json must be unique")
-    from kokoro_onnx import Kokoro
-    k = Kokoro(f"{CACHE}/kokoro.onnx", f"{CACHE}/voices.bin")
-    voice = script.get("voice", DEFAULT_VOICE)
-    speed = script.get("speed", DEFAULT_SPEED)
     out = f"{ep}/build/voice"
     os.makedirs(out, exist_ok=True)
-    durations = {}
-    for b in script["beats"]:
-        samples, sr = k.create(b["say"], voice=voice, speed=b.get("speed", speed), lang="en-us")
-        assert sr == VOICE_SR
-        sf.write(f"{out}/{b['id']}.wav", samples, sr)
-        durations[b["id"]] = round(len(samples) / sr, 3)
+    t0 = time.time()
+    engine = script.get("engine", "omnivoice")
+    if engine == "omnivoice":
+        try:
+            durations = _synth_omnivoice(script, out)
+        except Exception as e:  # never lose the day's video over the voice model
+            print(f"[voice] OmniVoice failed ({type(e).__name__}: {e}); falling back to Kokoro", flush=True)
+            engine = "kokoro (fallback)"
+            durations = _synth_kokoro(script, out)
+    else:
+        durations = _synth_kokoro(script, out)
     json.dump(durations, open(f"{out}/durations.json", "w"), indent=1)
+    json.dump({"engine": engine, "seconds": round(time.time() - t0)}, open(f"{out}/engine.json", "w"))
     return durations
 
 

@@ -43,10 +43,13 @@ fights intuition and shows *why* it holds, with a picture doing most of the work
 
 - Written to be heard. Short sentences. One idea per sentence.
 - Plain words: "chance" not "probability" unless the word itself matters.
-- Numbers: digits are fine for whole numbers ("23 people", "365 days").
-  Spell out anything the voice might misread: decimals ("ninety-nine point nine"),
-  fractions ("one in 365" or "364 out of 365"), powers ("two to the 64"), symbols.
-  Then give the on-screen version in `caption` ("99.9%", "2⁶⁴").
+- Numbers: write digits in `say` for plain numbers, ordinals, decimals and percentages
+  ("23 people", "the 23rd person", "99.9%", "200,000"). The kit converts them to words before
+  the voice reads them. Write in words anything else: fractions ("one in 365", "364 out of 365"),
+  powers ("two to the 64"), years ("twenty twenty-six"), symbols. Put the on-screen version
+  in `caption` when it differs ("2⁶⁴").
+- The voice is "Sam" (OmniVoice cloning `assets/voice/sam_ref.wav`). Don't set `voice` or
+  `engine` in script.json unless the runbook says to.
 - Never read an equation symbol by symbol. Say what it means.
 - No filler: "basically", "actually", "essentially", "let's dive in", "mind-blowing",
   "the answer might surprise you". No rhetorical "But here's the thing".

@@ -8,15 +8,20 @@ Fixed facts:
 - Channel ID: `UCKUJ4zrgiKy2EWnfUU9KdYg` (@surprisalmath)
 - Zapier app: YouTube. Use the connection whose `connection_id` is
   `02494e8c-aa2c-8b03-a94d-4c107b5c8e9c` (created 2026-09-30). Ignore the older stale one.
-- Timezone: Europe/Tallinn. "Today" and the day of the week are in that timezone.
+- Videos go live at **2:00 pm New York time** (EST/EDT; `kit/publish_time.py` handles daylight
+  saving). The run usually happens the evening before in New York. The **publish date** (the
+  New York date of the slot) is what names the episode and decides the day of the week.
 - Python for all tools: `~/.surprisal_venv/bin/python` (created by `setup.sh`).
 
 ## 0. Mode
 
 The task prompt says `MODE: TEST` or `MODE: LIVE`.
-- TEST: upload with `privacy_status: private`, `notify_subscribers: false`.
+- TEST: upload with `privacy_status: private`, `notify_subscribers: false`, no `publish_at`.
   Still log everything, but put `privacy=private` and `experiment=test` in videos.csv.
-- LIVE: `privacy_status: public`, `notify_subscribers: true`.
+- LIVE: upload **scheduled**: `privacy_status: private` plus `publish_at: <PUBLISH_AT_UTC>`,
+  `notify_subscribers: true`. YouTube makes it public at 2pm New York time.
+  (If the slot is less than 15 minutes away or already passed by upload time, upload with
+  `privacy_status: public` and no `publish_at` instead, and say so in the summary.)
 
 ## 1. Setup (start this first, it runs while you do the review)
 
@@ -36,7 +41,8 @@ a. **Per-video totals.** `https://youtubeanalytics.googleapis.com/v2/reports` wi
    `ids=channel==MINE`, `startDate=2026-09-30`, `endDate=<today>`, `dimensions=video`,
    `metrics=views,engagedViews,averageViewDuration,averageViewPercentage,likes,comments,shares,subscribersGained`,
    `sort=-views`, `maxResults=50`.
-   Append one row per video to `state/stats.csv` (days_live = today minus upload date).
+   Append one row per video to `state/stats.csv` (days_live = days since its `publish_at_utc`;
+   skip videos that haven't gone live yet).
 b. **Retention for the 3 most recent videos that are 2+ days old.** Same endpoint,
    `dimensions=elapsedVideoTimeRatio`, `filters=video==<id>`,
    `metrics=audienceWatchRatio,relativeRetentionPerformance`. Note where the curve drops
@@ -58,17 +64,23 @@ d. **Update `state/learnings.md`.** Follow its "How to judge" rules. If the curr
 
 ## 3. Plan today's video
 
-- **Monday to Saturday: a Short.** Choose from `state/topics.md`, following
+First find the publish slot:
+```bash
+~/.surprisal_venv/bin/python -m kit.publish_time
+```
+Keep `PUBLISH_AT_UTC`, `PUBLISH_DATE`, `PUBLISH_WEEKDAY` for the rest of the run.
+
+- **PUBLISH_WEEKDAY Monday to Saturday: a Short.** Choose from `state/topics.md`, following
   the rules in learnings.md and the current experiment. Never the same series as
   yesterday, never a topic already in videos.csv.
-- **Sunday: long-form** (8 to 12 min, 16:9). Take the best Short from the past 7 days
+- **PUBLISH_WEEKDAY Sunday: long-form** (8 to 12 min, 16:9). Take the best Short from the past 7 days
   (highest engaged views × average view %, at similar age) and go deeper, as described
   in STYLE.md. If there are no public Shorts yet, make a Short instead.
 - Read the topic's Wikipedia page (and MathWorld or another solid source if needed)
   with WebSearch/WebFetch. For `[check]` topics, look up the current state today.
 - Decide the angle (STYLE.md, point 4).
 
-Episode folder: `episodes/<YYYY-MM-DD>-<slug>/` with `script.json`, `scene.py`, `verify.py`.
+Episode folder: `episodes/<PUBLISH_DATE>-<slug>/` with `script.json`, `scene.py`, `verify.py`.
 Use `episodes/_example-birthday-paradox/` as the working example of all three.
 
 ## 4. Verify the math first
@@ -81,7 +93,7 @@ the script, fix the script. If the claim itself fails, pick another topic.
 ## 5. Write script.json and scene.py
 
 Follow STYLE.md. `script.json` fields: `slug, format ("short"|"long"), series,
-hook_style, angle, title, description, tags, voice, speed, facts_checked, beats[]`.
+hook_style, angle, title, description, tags, facts_checked, beats[]` (optional: `speed`).
 Each beat: `id`, `say`, optional `caption`, optional `chapter` (long-form).
 `scene.py`: `from kit.brand import *`, `class Episode(SurprisalScene)`, one
 `with self.beat(id):` block per beat in order. Long-form also needs `class Thumbnail(Scene)`.
@@ -95,7 +107,10 @@ Then **open `episodes/<folder>/build/contact_sheet.png` with the Read tool and l
 Check for: text overlapping other text or running off the frame, visuals below the
 caption line or behind the right-hand buttons, a frame with nothing on it, the key
 number not visible when the voice says it, anything that looks broken.
-Also read `report.json`: `problems`, `heard` (does it match the script?), overruns.
+Also read `report.json`: `problems`, `heard` (does it match the script?), overruns, and
+`voice_engine`. It should be `omnivoice`; if it says `kokoro (fallback)`, the channel voice
+failed: read `/tmp` logs / the make output for the error, try the voice step once more
+(`--from voice`), and if it fails again, publish with the fallback and say so in the summary.
 Fix scene.py and re-run the draft (`--from render` skips the voice step). At most 4 rounds.
 
 Then the full render:
@@ -113,16 +128,26 @@ bash kit/stage_video.sh episodes/<folder>
 It prints `VIDEO_URL=...` (and `THUMB_URL=...` for long-form) and `SERVED=yes`.
 Then `execute_zapier_write_action`, app YouTube, action `upload_video`,
 tool_name `youtube_upload_video`, the connection_id above, params:
-`title, description, tags, video=<VIDEO_URL>, privacy_status (per mode),
+`title, description, tags, video=<VIDEO_URL>, privacy_status and publish_at (per mode),
 category_id="27", made_for_kids="false", notify_subscribers (per mode),
 default_language="en", default_audio_language="en"`, and for long-form
 `thumbnail=<THUMB_URL>`. Long-form description includes the lines from `build/chapters.txt`.
 Save the returned `id`. If the upload fails, wait 60 s and try once more; if it fails
 again, stop and report the error (the video stays on the renders branch).
 
+LIVE mode: check the upload response shows `"publishAt": "<PUBLISH_AT_UTC>"`. If it doesn't,
+set it with `execute_zapier_write_action`, action `_zap_raw_request`, `method: PUT`,
+url `https://www.googleapis.com/youtube/v3/videos`, querystring `{"part": "status"}`,
+header `Content-Type: application/json`, body
+`{"id": "<id>", "status": {"privacyStatus": "private", "publishAt": "<PUBLISH_AT_UTC>",
+"selfDeclaredMadeForKids": false, "embeddable": true, "publicStatsViewable": true}}`.
+Always send all five status fields: this call replaces the whole status block, and anything
+left out gets reset. Check the response shows the publishAt.
+
 ## 8. Log and save
 
-- Append a row to `state/videos.csv`.
+- Append a row to `state/videos.csv` (`date` = PUBLISH_DATE, `publish_at_utc` = PUBLISH_AT_UTC,
+  or empty in TEST mode).
 - Move the topic line to "Used" in `state/topics.md` with date and video ID.
 - Add a dated line to the learnings log: what was published, what changed, why.
 - Commit the episode folder (build/ is ignored) and `state/`:
@@ -134,7 +159,8 @@ git pull -q --rebase origin main && git push -q origin main
 ## 9. Morning summary
 
 Send one message (SendUserMessage if available, and repeat it as the final reply):
-- the video: title, link (`https://youtube.com/shorts/<id>` or `https://youtu.be/<id>`), mode;
+- the video: title, link (`https://youtube.com/shorts/<id>` or `https://youtu.be/<id>`), mode,
+  and when it goes live (PUBLISH_LOCAL; 2pm New York is 9pm in Tallinn);
 - 2 to 4 lines on how earlier videos are doing and what the numbers suggest;
 - what today's video changed and why (the experiment);
 - confirmed viewer-reported errors that need a pinned correction, with suggested wording;

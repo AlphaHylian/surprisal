@@ -1,1 +1,1 @@
-date,youtube_id,slug,format,series,hook_style,angle,duration_s,title,privacy,experiment
+date,publish_at_utc,youtube_id,slug,format,series,hook_style,angle,duration_s,title,privacy,experiment

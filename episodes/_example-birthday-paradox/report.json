@@ -1,0 +1,14 @@
+{
+ "ok": true,
+ "problems": [],
+ "duration_s": 60.4,
+ "size_mb": 6.5,
+ "resolution": "1080x1920",
+ "caption_match_ratio": 0.9883040935672515,
+ "heard": "Put 23 people in a room. The odds that two of them share a birthday are better than a coin flip. That sounds wrong. There are 365 days in a year and only 23 people. The mistake is picturing your own birthday. This isn't you against everyone. It's everyone against everyone. 23 people make 253 different pairs. Each pair has only a 1 in 365 chance of matching, but 253 small chances add up fast. It's easier to find the chance that nobody matches. The second person has to miss the first. The third has to miss both. Keep multiplying. By the 23rd person, the chance of no match falls below one half, so a shared birthday is more likely than not. At 50 people, it's 97%. At 70, it's 99 .9. A class of 30 has a 71 % chance. Does yours have a match?",
+ "music": "generated",
+ "voice_engine": "omnivoice",
+ "contact_sheet_every_s": 2.5,
+ "build_seconds": 1390,
+ "draft": false
+}

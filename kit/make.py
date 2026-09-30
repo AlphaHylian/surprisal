@@ -140,7 +140,9 @@ def main():
     report = {"ok": not any(p for p in problems if "overrun" not in p and "ran past" not in p),
               "problems": problems, "duration_s": round(dur, 1), "size_mb": round(size_mb, 1),
               "resolution": f"{v['width']}x{v['height']}", "caption_match_ratio": match_ratio,
-              "heard": heard, "music": music_src, "contact_sheet_every_s": round(every, 1),
+              "heard": heard, "music": music_src,
+              "voice_engine": json.load(open(f"{ep}/build/voice/engine.json"))["engine"]
+              if os.path.exists(f"{ep}/build/voice/engine.json") else "unknown", "contact_sheet_every_s": round(every, 1),
               "build_seconds": round(time.time() - t0), "draft": a.draft}
     # chapters for long-form descriptions: beats with a "chapter" key start a chapter
     chapters = [(tl["beat_starts"][b["id"]], b["chapter"]) for b in script["beats"]

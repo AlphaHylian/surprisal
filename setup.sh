@@ -23,6 +23,13 @@ if [ ! -x "$VENV/bin/manim" ]; then
   "$VENV/bin/pip" install -q manim kokoro-onnx soundfile faster-whisper num2words fonttools numpy
 fi
 
+# 2b. OmniVoice (the channel voice). CPU build of PyTorch first so pip doesn't pull CUDA wheels.
+if ! "$VENV/bin/python" -c "import omnivoice" 2>/dev/null; then
+  log "installing OmniVoice (CPU)"
+  "$VENV/bin/pip" install -q torch torchaudio --index-url https://download.pytorch.org/whl/cpu
+  "$VENV/bin/pip" install -q omnivoice
+fi
+
 # 3. Brand fonts (Google Fonts, OFL). Static instances are cut from the variable fonts so
 #    libass (captions) and Pango (Manim) both get real weights instead of faux bold.
 if [ ! -f "$HOME/.fonts/SpaceGrotesk-Bold.ttf" ]; then
@@ -56,4 +63,8 @@ fi
 [ -f "$CACHE/kokoro.onnx" ] || { log "downloading voice model"; curl -sfL -o "$CACHE/kokoro.onnx" https://huggingface.co/onnx-community/Kokoro-82M-v1.0-ONNX/resolve/main/onnx/model_quantized.onnx; }
 [ -f "$CACHE/voices.bin" ] || curl -sfL -o "$CACHE/voices.bin" https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.0/voices-v1.0.bin
 
-"$VENV/bin/python" -c "import manim, kokoro_onnx, faster_whisper" && log "ready. Run tools with $VENV/bin/python"
+# 5. Fetch the OmniVoice weights now (about 3 GB, cached by Hugging Face) so the voice step doesn't wait on them.
+"$VENV/bin/python" -c "from huggingface_hub import snapshot_download; snapshot_download('k2-fsa/OmniVoice')" >/dev/null 2>&1 \
+  || log "WARNING: could not pre-download OmniVoice weights; the voice step will try again (Kokoro is the fallback)"
+
+"$VENV/bin/python" -c "import manim, kokoro_onnx, faster_whisper, omnivoice" && log "ready. Run tools with $VENV/bin/python"
