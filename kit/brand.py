@@ -98,6 +98,26 @@ def card(mob, pad=0.35, color=PANEL, stroke=DIM):
     return VGroup(box, mob)
 
 
+def hook_card(big, above=None, below=None, big_color=AMBER):
+    """The opening card for a Short: on screen from frame 1, readable in half a second.
+
+    big:   the surprising claim itself, as a string (shown huge) or a Mobject such as MathTex.
+    above/below: at most ~4 words each, e.g. hook_card("> 50%", "ONLY 23 PEOPLE", "share a birthday").
+    Fills most of the visual zone. Use it with SurprisalScene.open_with(card).
+    """
+    parts = []
+    if above:
+        parts.append(Text(above, font=FONT_BOLD, color=INK, font_size=72))
+    b = big if not isinstance(big, str) else Text(big, font=FONT_BOLD, color=big_color, font_size=230)
+    parts.append(b)
+    if below:
+        parts.append(Text(below, font=FONT_BOLD, color=INK, font_size=72))
+    g = VGroup(*parts).arrange(DOWN, buff=0.45)
+    s = min(VIS_W / g.width, (VIS_H * 0.85) / g.height)
+    g.scale(s)  # scale up or down so the card fills the zone
+    return g.move_to(VIS_CENTER)
+
+
 class SurprisalScene(Scene):
     PAD = 0.25  # seconds of breathing room after each voice clip
 
@@ -134,6 +154,16 @@ class SurprisalScene(Scene):
             return 0
         bid, start, need = self._beat
         return max(0.0, need - (self.now - start))
+
+    def open_with(self, card, hold=None):
+        """Put the hook card on screen at frame 1 and keep it alive with motion.
+        Call it first thing inside `with self.beat("hook"):`. `hold` = seconds before you move on
+        (default: until ~1.4 s of the hook's voice clip is left, at most 2.2 s)."""
+        self.add(card)
+        self.play(card.animate.scale(1.06), run_time=0.35, rate_func=rate_functions.ease_out_back)
+        rest = hold if hold is not None else min(2.2, max(0.4, self.left() - 1.4))
+        self.play(card.animate.scale(1 / 1.06 * 1.03), run_time=rest, rate_func=rate_functions.linear)
+        return card
 
     def rt(self, desired, share=1.0):
         """Run time for an animation: `desired`, but no more than `share` of what's left of the beat."""

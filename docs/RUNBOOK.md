@@ -42,7 +42,9 @@ a. **Per-video totals.** `https://youtubeanalytics.googleapis.com/v2/reports` wi
    `metrics=views,engagedViews,averageViewDuration,averageViewPercentage,likes,comments,shares,subscribersGained`,
    `sort=-views`, `maxResults=50`.
    Append one row per video to `state/stats.csv` (days_live = days since its `publish_at_utc`;
-   skip videos that haven't gone live yet).
+   skip videos that haven't gone live yet). Also fill `hook_hold` = engagedViews / views: an
+   engaged view only counts once someone watches past the first seconds, so this is the API's
+   stand-in for Studio's "viewed vs swiped away" and the main measure of the opening.
 b. **Retention for the 3 most recent videos that are 2+ days old.** Same endpoint,
    `dimensions=elapsedVideoTimeRatio`, `filters=video==<id>`,
    `metrics=audienceWatchRatio,relativeRetentionPerformance`. Note where the curve drops

@@ -14,7 +14,7 @@
     "paradox",
     "math shorts"
   ],
-  "hook_style": "claim",
+  "hook_style": "card+claim",
   "facts_checked": [
     "P(shared, n=23) = 1 - prod_{i=0}^{22} (365-i)/365 = 0.5073 (computed); Monte Carlo 200k rooms = 0.5071",
     "pairs = C(23,2) = 253",
@@ -24,7 +24,7 @@
   "beats": [
     {
       "id": "hook",
-      "say": "Put 23 people in a room. The odds that two of them share a birthday are better than a coin flip."
+      "say": "Only 23 people, and it's better than a coin flip that two of them share a birthday."
     },
     {
       "id": "doubt",

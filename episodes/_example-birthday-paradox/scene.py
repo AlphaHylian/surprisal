@@ -20,13 +20,13 @@ class Episode(SurprisalScene):
 
         # ---------------- hook
         with self.beat("hook"):
+            # frame 1: the whole claim, huge, already moving
+            card = self.open_with(hook_card("> 50%", "ONLY 23 PEOPLE", "share a birthday"))
             head = headline("23 people in a room")
-            self.add(head)  # frame 1 already shows the headline
-            self.play(LaggedStart(*[GrowFromCenter(d) for d in dots], lag_ratio=0.04), run_time=self.rt(1.6))
             q = Text("same birthday?", font=FONT_BOLD, color=MUTED, font_size=44).move_to(CIRCLE_C + UP * 0.6)
             big = Text("> 50%", font=FONT_BOLD, color=AMBER, font_size=110).move_to(CIRCLE_C + DOWN * 0.5)
-            self.play(FadeIn(q), run_time=self.rt(0.6))
-            self.play(Write(big), run_time=self.rt(1.0))
+            self.play(FadeOut(card[0], card[2]), ReplacementTransform(card[1], big), FadeIn(head), FadeIn(q),
+                      LaggedStart(*[GrowFromCenter(d) for d in dots], lag_ratio=0.03), run_time=self.rt(1.1))
 
         # ---------------- doubt: a year of days, only 23 lit
         with self.beat("doubt"):

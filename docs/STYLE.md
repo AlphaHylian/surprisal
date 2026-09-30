@@ -23,6 +23,14 @@ fights intuition and shows *why* it holds, with a picture doing most of the work
   `with self.beat("hook"):` is the first thing in `construct()`, and inside it `self.add(headline)`
   comes before any `play()`. The kit trims silence from every voice clip and the report fails
   the video if speech starts later than 0.05 s.
+- **Frame 1 is a full-screen hook card, not a headline on an empty screen.** Viewers decide to
+  stay or swipe in about a second, and a mostly empty dark frame reads as "nothing here". Start
+  the hook beat with `self.open_with(hook_card(big, above, below))`: the surprising claim itself,
+  huge, readable in half a second with the sound off (e.g. "ONLY 23 PEOPLE / > 50% / share a
+  birthday", "1/4 + 1/16 + ... / = 1/3 / exactly"). Then transform the card into the first visual.
+- **The first spoken words are the surprise, not setup.** Never open with "Put", "Imagine",
+  "Take", "Let's", "Have you ever", "So". The claim, with its number, is said within ~1.5 s:
+  "Only 23 people, and it's better than a coin flip that two share a birthday."
 - **Beat 1 is the hook and must land in under 3 seconds of speech.** State the
   surprising claim plainly with a concrete number. No "Did you know", no "In this video",
   no greeting, no channel name.
