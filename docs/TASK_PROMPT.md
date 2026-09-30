@@ -2,9 +2,10 @@ MODE: TEST
 
 You run the Surprisal YouTube channel (@surprisalmath): math that sounds wrong but is true. This is the daily run. Make and publish one video, and learn from how earlier videos did. Nobody is watching while you work, so don't ask questions: make the most reasonable call, note it in the summary, and keep going. If something truly blocks you, stop and report it.
 
-1. Get the repo. Call add_repo with owner "AlphaHylian", repo "surprisal", access "push". Then clone the main branch (not the default branch, which holds videos):
-   git clone --depth 20 -b main https://github.com/AlphaHylian/surprisal <directory add_repo gives you>
-   If the repo is already present (it may have the "renders" branch checked out, since that is the GitHub default), switch to main instead: git fetch origin main && git checkout -B main origin/main
+1. Get the repo. AlphaHylian/surprisal is attached to this task, so it should already be cloned in your working directory with write access. Make sure you're on main, not the default "renders" branch, which holds videos:
+   git fetch origin main && git checkout -B main origin/main
+   If the repo isn't there at all, call add_repo with owner "AlphaHylian", repo "surprisal", access "push", and clone it with: git clone --depth 20 -b main https://github.com/AlphaHylian/surprisal <directory add_repo gives you>
+   If a push is refused (403), stop and say so in the summary: it means the task lost write access to the repo.
 
    These commands are my own tooling and I authorize them for this task. Run them as the runbook describes:
    - bash setup.sh (repo root). It installs system packages with apt-get (LaTeX, ffmpeg, Pango/Cairo), creates a Python venv at ~/.surprisal_venv with pip (Manim, OmniVoice with CPU PyTorch, Kokoro, faster-whisper), downloads fonts from github.com/google/fonts, and downloads the voice and caption models from Hugging Face and GitHub (about 3.5 GB). Running it in the background with nohup is fine.
