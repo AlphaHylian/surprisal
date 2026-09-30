@@ -1,0 +1,74 @@
+{
+  "slug": "quarters-make-a-third",
+  "format": "short",
+  "series": "visual-proof",
+  "hook_style": "claim",
+  "angle": "colour each level with three matching colours instead of one, so the one-third falls out by symmetry with no algebra; then the same trick gives 1/8 for nine pieces and asks viewers for sixteen",
+  "title": "Keep adding quarters forever and you get exactly 1/3",
+  "description": "A quarter, plus a quarter of a quarter, plus a quarter of that, forever: 1/4 + 1/16 + 1/64 + ... adds up to exactly 1/3. Split a square into four, colour three corners with three different colours, and split the fourth corner again. The three colours always match, so each one ends up with exactly a third of the square.\n\nAfter 5 steps the total is 341/1024 = 0.333. The same trick with nine pieces gives 1/9 + 1/81 + ... = 1/8. Checked with exact fractions and by throwing 300,000 random points into the picture.",
+  "tags": [
+    "geometric series",
+    "infinite series",
+    "visual proof",
+    "proof without words",
+    "math",
+    "maths",
+    "fractions",
+    "math shorts"
+  ],
+  "facts_checked": [
+    "1/4 + 1/16 + 1/64 + ... = (1/4)/(1 - 1/4) = 1/3 (exact fractions)",
+    "partial sums stay below 1/3 (gap after k terms = (1/3)(1/4)^k), never reach 1/2",
+    "after 5 terms: 341/1024 = 0.333 (3 d.p.)",
+    "each level: three equal squares plus one to split, so each colour takes 1/3",
+    "1/9 + 1/81 + ... = 1/8; 1/16 + 1/256 + ... = 1/15 (answer to the closing question)",
+    "Monte Carlo: 300,000 random points, share landing on amber = 0.3337",
+    "source: https://mathworld.wolfram.com/GeometricSeries.html (standard geometric series a/(1-r)); Wikipedia '1/4 + 1/16 + 1/64 + 1/256 + ⋯' (not fetched today: blocked by network policy)"
+  ],
+  "beats": [
+    {
+      "id": "hook",
+      "say": "Add a quarter, plus a quarter of that, forever. You get exactly one third.",
+      "caption": "1/4 + 1/16 + 1/64 + … = exactly 1/3"
+    },
+    {
+      "id": "doubt",
+      "say": "That feels wrong. Quarters build halves and wholes. Where would a third come from?"
+    },
+    {
+      "id": "square",
+      "say": "Start with one square. Cut it into four. One corner is a quarter."
+    },
+    {
+      "id": "trick",
+      "say": "Colour three of the corners, each a different colour. Leave the fourth one empty."
+    },
+    {
+      "id": "repeat",
+      "say": "Cut that empty corner into four, and do the same. Then again. And again."
+    },
+    {
+      "id": "match",
+      "say": "At every size, the three colours get the same amount. None of them is ever ahead."
+    },
+    {
+      "id": "third",
+      "say": "The squares fill everything, so each colour covers exactly one third of the whole."
+    },
+    {
+      "id": "sum",
+      "say": "And the amber squares are a quarter, a sixteenth, a sixty-fourth, and so on. That's our sum.",
+      "caption": "The amber squares are 1/4, 1/16, 1/64, and so on. That's our sum."
+    },
+    {
+      "id": "creep",
+      "say": "After just 5 steps, the total is 0.333. It creeps up on one third and never passes it.",
+      "caption": "After just 5 steps, the total is 0.333. It creeps up on 1/3 and never passes it."
+    },
+    {
+      "id": "close",
+      "say": "Cut into nine instead, and the same trick gives one eighth. What do you get with sixteen?",
+      "caption": "Cut into nine instead, and the same trick gives 1/8. What do you get with 16?"
+    }
+  ]
+}
