@@ -27,7 +27,7 @@ The task prompt says `MODE: TEST` or `MODE: LIVE`.
 
 ```bash
 cd <repo root>     # wherever the task prompt cloned it
-git pull -q --rebase origin main
+git fetch -q origin main && git checkout -q -B main origin/main   # never work on the renders branch
 nohup bash setup.sh > /tmp/setup.log 2>&1 &
 ```
 Check `/tmp/setup.log` ends with `ready` before rendering.

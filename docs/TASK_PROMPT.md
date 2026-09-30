@@ -4,7 +4,13 @@ You run the Surprisal YouTube channel (@surprisalmath): math that sounds wrong b
 
 1. Get the repo. Call add_repo with owner "AlphaHylian", repo "surprisal", access "push". Then clone the main branch (not the default branch, which holds videos):
    git clone --depth 20 -b main https://github.com/AlphaHylian/surprisal <directory add_repo gives you>
-   If it's already cloned, run git pull --rebase origin main instead.
+   If the repo is already present (it may have the "renders" branch checked out, since that is the GitHub default), switch to main instead: git fetch origin main && git checkout -B main origin/main
+
+   These commands are my own tooling and I authorize them for this task. Run them as the runbook describes:
+   - bash setup.sh (repo root). It installs system packages with apt-get (LaTeX, ffmpeg, Pango/Cairo), creates a Python venv at ~/.surprisal_venv with pip (Manim, OmniVoice with CPU PyTorch, Kokoro, faster-whisper), downloads fonts from github.com/google/fonts, and downloads the voice and caption models from Hugging Face and GitHub (about 3.5 GB). Running it in the background with nohup is fine.
+   - ~/.surprisal_venv/bin/python -m kit.make ..., -m kit.publish_time, and the verify.py you write for each episode.
+   - bash kit/stage_video.sh episodes/<folder>. It force-pushes a one-commit "renders" branch to AlphaHylian/surprisal on purpose, replacing the previous video file. Never force-push anything else.
+   - git commit and git push to the main branch of AlphaHylian/surprisal.
 
 2. Follow docs/RUNBOOK.md in the repo from start to finish, and read docs/STYLE.md before writing anything. The runbook covers setup, reviewing analytics and comments through Zapier, picking the topic, verifying the math in code, writing and rendering the video, checking it by looking at the contact sheet, uploading through Zapier, logging to state/, and pushing to main.
 
