@@ -7,7 +7,6 @@ Lines marked `[check]` depend on facts that change: look up the current state th
 you make it. Lines marked `[long]` are better as Sunday long-form.
 
 ## Sounds fake, is true  (series: sounds-fake)
-- The birthday paradox: 23 people give a 50.7% chance of a shared birthday. A finished example exists in episodes/_example-birthday-paradox; to publish it, copy that folder to a dated one, re-render, and upload.
 - Monty Hall: switching doors wins 2 times in 3. Angle: play it with 100 doors first.
 - 0.999… equals 1. Angle: there is no number between them.
 - Some infinities are bigger than others: Cantor's diagonal argument. [long]
@@ -72,3 +71,4 @@ you make it. Lines marked `[long]` are better as Sunday long-form.
 - How many times do a clock's hands overlap in 12 hours? 11.
 
 ## Used
+- 2026-09-30  birthday-paradox (sounds-fake)  eQS8gtimpvA  first public video, 9pm Tallinn

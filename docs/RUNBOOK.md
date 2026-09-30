@@ -8,9 +8,9 @@ Fixed facts:
 - Channel ID: `UCKUJ4zrgiKy2EWnfUU9KdYg` (@surprisalmath)
 - Zapier app: YouTube. Use the connection whose `connection_id` is
   `02494e8c-aa2c-8b03-a94d-4c107b5c8e9c` (created 2026-09-30). Ignore the older stale one.
-- Videos go live at **2:00 pm New York time** (EST/EDT; `kit/publish_time.py` handles daylight
-  saving). The run usually happens the evening before in New York. The **publish date** (the
-  New York date of the slot) is what names the episode and decides the day of the week.
+- Videos go live at **9:00 pm Tallinn time** (Europe/Tallinn, the owner's clock; `kit/publish_time.py`
+  handles summer/winter time). The **publish date** (the Tallinn date of that slot) names the
+  episode and decides the day of the week.
 - Python for all tools: `~/.surprisal_venv/bin/python` (created by `setup.sh`).
 
 ## 0. Mode
@@ -19,7 +19,7 @@ The task prompt says `MODE: TEST` or `MODE: LIVE`.
 - TEST: upload with `privacy_status: private`, `notify_subscribers: false`, no `publish_at`.
   Still log everything, but put `privacy=private` and `experiment=test` in videos.csv.
 - LIVE: upload **scheduled**: `privacy_status: private` plus `publish_at: <PUBLISH_AT_UTC>`,
-  `notify_subscribers: true`. YouTube makes it public at 2pm New York time.
+  `notify_subscribers: true`. YouTube makes it public at 9pm Tallinn time.
   (If the slot is less than 15 minutes away or already passed by upload time, upload with
   `privacy_status: public` and no `publish_at` instead, and say so in the summary.)
 
@@ -107,7 +107,8 @@ Then **open `episodes/<folder>/build/contact_sheet.png` with the Read tool and l
 Check for: text overlapping other text or running off the frame, visuals below the
 caption line or behind the right-hand buttons, a frame with nothing on it, the key
 number not visible when the voice says it, anything that looks broken.
-Also read `report.json`: `problems`, `heard` (does it match the script?), overruns, and
+Also read `report.json`: `problems`, `heard` (does it match the script?), overruns,
+`speech_starts_at_s` (must be under 0.05), `music` (a track title, not "generated pad"), and
 `voice_engine`. It should be `omnivoice`; if it says `kokoro (fallback)`, the channel voice
 failed: read `/tmp` logs / the make output for the error, try the voice step once more
 (`--from voice`), and if it fails again, publish with the fallback and say so in the summary.
@@ -132,6 +133,8 @@ tool_name `youtube_upload_video`, the connection_id above, params:
 category_id="27", made_for_kids="false", notify_subscribers (per mode),
 default_language="en", default_audio_language="en"`, and for long-form
 `thumbnail=<THUMB_URL>`. Long-form description includes the lines from `build/chapters.txt`.
+Every description ends with a blank line, `Music:`, and the credit from `build/music_credit.txt`,
+after the footer (the tracks are CC BY; leaving the credit out breaks the license).
 Save the returned `id`. If the upload fails, wait 60 s and try once more; if it fails
 again, stop and report the error (the video stays on the renders branch).
 
@@ -147,7 +150,7 @@ left out gets reset. Check the response shows the publishAt.
 ## 8. Log and save
 
 - Append a row to `state/videos.csv` (`date` = PUBLISH_DATE, `publish_at_utc` = PUBLISH_AT_UTC,
-  or empty in TEST mode).
+  or empty in TEST mode; `music` = the track file from report.json / tracks.json).
 - Move the topic line to "Used" in `state/topics.md` with date and video ID.
 - Add a dated line to the learnings log: what was published, what changed, why.
 - Commit the episode folder (build/ is ignored) and `state/`:
@@ -160,7 +163,7 @@ git pull -q --rebase origin main && git push -q origin main
 
 Send one message (SendUserMessage if available, and repeat it as the final reply):
 - the video: title, link (`https://youtube.com/shorts/<id>` or `https://youtu.be/<id>`), mode,
-  and when it goes live (PUBLISH_LOCAL; 2pm New York is 9pm in Tallinn);
+  and when it goes live (PUBLISH_LOCAL);
 - 2 to 4 lines on how earlier videos are doing and what the numbers suggest;
 - what today's video changed and why (the experiment);
 - confirmed viewer-reported errors that need a pinned correction, with suggested wording;

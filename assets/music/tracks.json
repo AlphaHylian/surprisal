@@ -1,0 +1,82 @@
+{
+ "note": "Kevin MacLeod, incompetech.com, CC BY 4.0. Every video using a track must include its credit in the description (kit.make writes it to build/music_credit.txt). Moods: upbeat/chill for Shorts, curious for puzzles, calm for long-form.",
+ "tracks": [
+  {
+   "file": "tech-talk.mp3",
+   "title": "Tech Talk",
+   "mood": "upbeat",
+   "start_s": 0.5,
+   "credit": "\"Tech Talk\" Kevin MacLeod (incompetech.com)\nLicensed under Creative Commons: By Attribution 4.0 License\nhttp://creativecommons.org/licenses/by/4.0/"
+  },
+  {
+   "file": "digital-lemonade.mp3",
+   "title": "Digital Lemonade",
+   "mood": "upbeat",
+   "start_s": 0.0,
+   "credit": "\"Digital Lemonade\" Kevin MacLeod (incompetech.com)\nLicensed under Creative Commons: By Attribution 4.0 License\nhttp://creativecommons.org/licenses/by/4.0/"
+  },
+  {
+   "file": "wallpaper.mp3",
+   "title": "Wallpaper",
+   "mood": "chill",
+   "start_s": 0.0,
+   "credit": "\"Wallpaper\" Kevin MacLeod (incompetech.com)\nLicensed under Creative Commons: By Attribution 4.0 License\nhttp://creativecommons.org/licenses/by/4.0/"
+  },
+  {
+   "file": "chill-wave.mp3",
+   "title": "Chill Wave",
+   "mood": "chill",
+   "start_s": 0.0,
+   "credit": "\"Chill Wave\" Kevin MacLeod (incompetech.com)\nLicensed under Creative Commons: By Attribution 4.0 License\nhttp://creativecommons.org/licenses/by/4.0/"
+  },
+  {
+   "file": "late-night-radio.mp3",
+   "title": "Late Night Radio",
+   "mood": "chill",
+   "start_s": 0.0,
+   "credit": "\"Late Night Radio\" Kevin MacLeod (incompetech.com)\nLicensed under Creative Commons: By Attribution 4.0 License\nhttp://creativecommons.org/licenses/by/4.0/"
+  },
+  {
+   "file": "airport-lounge.mp3",
+   "title": "Airport Lounge",
+   "mood": "chill",
+   "start_s": 0.0,
+   "credit": "\"Airport Lounge\" Kevin MacLeod (incompetech.com)\nLicensed under Creative Commons: By Attribution 4.0 License\nhttp://creativecommons.org/licenses/by/4.0/"
+  },
+  {
+   "file": "investigations.mp3",
+   "title": "Investigations",
+   "mood": "curious",
+   "start_s": 0.0,
+   "credit": "\"Investigations\" Kevin MacLeod (incompetech.com)\nLicensed under Creative Commons: By Attribution 4.0 License\nhttp://creativecommons.org/licenses/by/4.0/"
+  },
+  {
+   "file": "somewhere-sunny.mp3",
+   "title": "Somewhere Sunny",
+   "mood": "upbeat",
+   "start_s": 0.5,
+   "credit": "\"Somewhere Sunny\" Kevin MacLeod (incompetech.com)\nLicensed under Creative Commons: By Attribution 4.0 License\nhttp://creativecommons.org/licenses/by/4.0/"
+  },
+  {
+   "file": "deliberate-thought.mp3",
+   "title": "Deliberate Thought",
+   "mood": "calm",
+   "start_s": 0.5,
+   "credit": "\"Deliberate Thought\" Kevin MacLeod (incompetech.com)\nLicensed under Creative Commons: By Attribution 4.0 License\nhttp://creativecommons.org/licenses/by/4.0/"
+  },
+  {
+   "file": "lobby-time.mp3",
+   "title": "Lobby Time",
+   "mood": "calm",
+   "start_s": 1.5,
+   "credit": "\"Lobby Time\" Kevin MacLeod (incompetech.com)\nLicensed under Creative Commons: By Attribution 4.0 License\nhttp://creativecommons.org/licenses/by/4.0/"
+  },
+  {
+   "file": "easy-lemon.mp3",
+   "title": "Easy Lemon",
+   "mood": "calm",
+   "start_s": 0.0,
+   "credit": "\"Easy Lemon\" Kevin MacLeod (incompetech.com)\nLicensed under Creative Commons: By Attribution 4.0 License\nhttp://creativecommons.org/licenses/by/4.0/"
+  }
+ ]
+}

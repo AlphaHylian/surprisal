@@ -28,4 +28,5 @@ dated log. Rewrite rules when the data changes; don't let this file grow forever
 5. Voice speed 1.0 vs 1.1.
 
 ## Log
-- 2026-09-30: channel created. Pipeline test: the birthday-paradox example was uploaded as a private video (QpmmGQsbLv8). It is not part of the schedule and is not logged in videos.csv.
+- 2026-09-30: channel created. The private pipeline-test upload (QpmmGQsbLv8) was deleted.
+- 2026-09-30: first public video: birthday paradox (eQS8gtimpvA), Sam voice, music "Digital Lemonade" 8 dB under the voice, speech from 0.0 s, live at 21:00 Tallinn. Baseline, no experiment.

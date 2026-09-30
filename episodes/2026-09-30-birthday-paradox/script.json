@@ -1,0 +1,65 @@
+{
+  "slug": "birthday-paradox",
+  "format": "short",
+  "series": "sounds-fake",
+  "title": "Why 23 people is enough to share a birthday",
+  "description": "In a room of just 23 people, the chance that two share a birthday is 50.7%. The trick is counting pairs, not people: 23 people make 253 pairs, and 253 small chances add up fast.\n\nThe exact chance nobody matches is 365/365 x 364/365 x ... x 343/365 = 49.3%. Checked by formula and by simulating 200,000 random rooms.",
+  "tags": [
+    "birthday paradox",
+    "probability",
+    "math",
+    "maths",
+    "statistics",
+    "counterintuitive",
+    "paradox",
+    "math shorts"
+  ],
+  "hook_style": "claim",
+  "facts_checked": [
+    "P(shared, n=23) = 1 - prod_{i=0}^{22} (365-i)/365 = 0.5073 (computed); Monte Carlo 200k rooms = 0.5071",
+    "pairs = C(23,2) = 253",
+    "P(n=30)=0.7063 (said as 71%), P(n=50)=0.9704, P(n=70)=0.9992",
+    "source: https://en.wikipedia.org/wiki/Birthday_problem"
+  ],
+  "beats": [
+    {
+      "id": "hook",
+      "say": "Put 23 people in a room. The odds that two of them share a birthday are better than a coin flip."
+    },
+    {
+      "id": "doubt",
+      "say": "That sounds wrong. There are 365 days in a year, and only 23 people."
+    },
+    {
+      "id": "flip",
+      "say": "The mistake is picturing your own birthday. This isn't you against everyone. It's everyone against everyone."
+    },
+    {
+      "id": "pairs",
+      "say": "23 people make 253 different pairs."
+    },
+    {
+      "id": "odds",
+      "say": "Each pair has only a 1 in 365 chance of matching. But 253 small chances add up fast."
+    },
+    {
+      "id": "product",
+      "say": "It's easier to find the chance that nobody matches. The second person has to miss the first. The third has to miss both. Keep multiplying."
+    },
+    {
+      "id": "drop",
+      "say": "By the 23rd person, the chance of no match falls below one half. So a shared birthday is more likely than not."
+    },
+    {
+      "id": "curve",
+      "say": "At 50 people it's 97 percent. At 70, it's ninety-nine point nine.",
+      "caption": "At 50 people it's 97%. At 70, it's 99.9%."
+    },
+    {
+      "id": "close",
+      "say": "A class of 30 has a 71 percent chance. Does yours have a match?",
+      "caption": "A class of 30 has a 71% chance. Does yours have a match?"
+    }
+  ],
+  "angle": "count pairs, not people; watch the no-match bar cross one half at the 23rd person"
+}

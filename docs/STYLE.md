@@ -19,6 +19,10 @@ fights intuition and shows *why* it holds, with a picture doing most of the work
 ## Shorts (Monday to Saturday)
 
 - 45 to 70 seconds. 1080x1920. 7 to 11 beats.
+- **The first word is spoken at 0.00 s and the first frame already shows the headline.**
+  `with self.beat("hook"):` is the first thing in `construct()`, and inside it `self.add(headline)`
+  comes before any `play()`. The kit trims silence from every voice clip and the report fails
+  the video if speech starts later than 0.05 s.
 - **Beat 1 is the hook and must land in under 3 seconds of speech.** State the
   surprising claim plainly with a concrete number. No "Did you know", no "In this video",
   no greeting, no channel name.
@@ -48,6 +52,10 @@ fights intuition and shows *why* it holds, with a picture doing most of the work
   the voice reads them. Write in words anything else: fractions ("one in 365", "364 out of 365"),
   powers ("two to the 64"), years ("twenty twenty-six"), symbols. Put the on-screen version
   in `caption` when it differs ("2⁶⁴").
+- Music: `kit.make` picks a track from `assets/music/tracks.json` by mood (upbeat/chill for
+  Shorts, curious for the puzzle series, calm for long-form) and avoids the last 3 used. To choose
+  one yourself set `"music": "<file>"` in script.json. Every track is CC BY: the credit in
+  `build/music_credit.txt` must go at the end of the description.
 - The voice is "Sam" (OmniVoice cloning `assets/voice/sam_ref.wav`). Don't set `voice` or
   `engine` in script.json unless the runbook says to.
 - Never read an equation symbol by symbol. Say what it means.

@@ -63,7 +63,7 @@ def _synth_omnivoice(script, out):
     for b in script["beats"]:
         text = spoken(b["say"])
         audio = model.generate(text=text, language="English", voice_clone_prompt=prompt, num_step=steps,
-                               speed=b.get("speed", speed))[0]
+                               speed=b.get("speed", speed), pad_duration=0.0, fade_duration=0.01)[0]
         if model.sampling_rate != VOICE_SR:
             raise RuntimeError(f"unexpected sample rate {model.sampling_rate}")
         sf.write(f"{out}/{b['id']}.wav", audio.astype(np.float32), VOICE_SR)
@@ -101,9 +101,78 @@ def synth_voice(ep):
             durations = _synth_kokoro(script, out)
     else:
         durations = _synth_kokoro(script, out)
-    json.dump(durations, open(f"{out}/durations.json", "w"), indent=1)
     json.dump({"engine": engine, "seconds": round(time.time() - t0)}, open(f"{out}/engine.json", "w"))
+    return trim_all(ep)
+
+
+def _speech_start(x, sr):
+    """Index of the first sample of speech: the first 10 ms frame above -20 dB (relative to the
+    clip's peak), extended back through touching frames above -29 dB so soft consonants
+    (s, f, h) stay, while breaths and noise before the word are dropped."""
+    hop = int(sr * 0.01)
+    n = len(x) // hop
+    if n == 0:
+        return 0
+    frames = np.abs(x[: n * hop]).reshape(n, hop).max(axis=1)
+    peak = frames.max()
+    strong = np.nonzero(frames > peak * 0.10)[0]
+    if len(strong) == 0:
+        return 0
+    i = strong[0]
+    while i > 0 and frames[i - 1] > peak * 0.035:
+        i -= 1
+    return i * hop
+
+
+def trim_silence(path, pre=0.006, post=0.08):
+    """Cut the lead-in (silence and breaths) so a clip starts on its first word, and trailing
+    silence after the last sound. Idempotent."""
+    x, sr = sf.read(path, dtype="float32")
+    if x.ndim > 1:
+        x = x.mean(axis=1)
+    if len(x) == 0:
+        return 0.0
+    a = max(0, _speech_start(x, sr) - int(pre * sr))
+    hop = int(sr * 0.005)
+    n = len(x) // hop
+    frames = np.abs(x[: n * hop]).reshape(n, hop).max(axis=1)
+    loud = np.nonzero(frames > max(frames.max() * 0.02, 1e-3))[0]
+    b = min(len(x), (loud[-1] + 1) * hop + int(post * sr)) if len(loud) else len(x)
+    y = x[a:b].copy()
+    fade = min(len(y), int(0.004 * sr))
+    y[:fade] *= np.linspace(0.3, 1, fade)  # soften the cut without eating the first consonant
+    sf.write(path, y, sr)
+    return len(y) / sr
+
+
+def trim_all(ep):
+    """Trim every beat clip and rewrite durations.json (safe to run again)."""
+    out = f"{ep}/build/voice"
+    script = json.load(open(f"{ep}/script.json"))
+    marker = f"{out}/trimmed.json"
+    done = json.load(open(marker)) if os.path.exists(marker) else {}
+    durations = {}
+    for b in script["beats"]:
+        path = f"{out}/{b['id']}.wav"
+        stamp = str(os.path.getmtime(path))
+        if done.get(b["id"]) == stamp:              # already trimmed, untouched since
+            durations[b["id"]] = round(sf.info(path).duration, 3)
+        else:
+            durations[b["id"]] = round(trim_silence(path), 3)
+            done[b["id"]] = str(os.path.getmtime(path))
+    json.dump(done, open(marker, "w"))
+    json.dump(durations, open(f"{out}/durations.json", "w"), indent=1)
     return durations
+
+
+def speech_onset(path):
+    """Seconds from the start of a track to the first spoken word (same rule as trimming)."""
+    x, sr = sf.read(path, dtype="float32")
+    if x.ndim > 1:
+        x = x.mean(axis=1)
+    if not np.abs(x).max() > 0:
+        return None
+    return round(_speech_start(x, sr) / sr, 3)
 
 
 def build_voice_track(ep, total_seconds):
@@ -237,7 +306,7 @@ def write_ass(ep, words, fmt):
             for m, x in enumerate(ch):
                 t = x["text"].replace("{", "(").replace("}", ")")
                 parts.append(f"{{\\c{AMB}}}{t}{{\\c{INK}}}" if m == k else t)
-            fade = "\\fad(80,0)" if k == 0 else ""
+            fade = "\\fad(80,0)" if k == 0 and start > 0.1 else ""  # first caption is on screen at frame 1
             lines.append(f"Dialogue: 0,{_ass_time(start)},{_ass_time(end)},Cap,,0,0,0,,"
                          f"{{\\pos({pos[0]},{pos[1]}){fade}}}" + " ".join(parts))
     head = f"""[Script Info]
@@ -260,14 +329,42 @@ Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
 
 
 # ---------------------------------------------------------------- music
-def pick_music(ep, seconds, seed):
-    """A track from assets/music if any exist (rotated by seed), else a generated ambient pad."""
+def music_library():
+    path = os.path.join(KIT_ROOT, "assets", "music", "tracks.json")
+    return json.load(open(path))["tracks"] if os.path.exists(path) else []
+
+
+def recent_music(n=3):
+    import csv
+    path = os.path.join(KIT_ROOT, "state", "videos.csv")
+    if not os.path.exists(path):
+        return []
+    rows = list(csv.DictReader(open(path)))
+    return [r.get("music", "") for r in rows[-n:]]
+
+
+def pick_music(ep, script, seconds, seed):
+    """Choose a track: script["music"] (file or title) if set, else one matching the mood for this
+    format/series that wasn't used in the last 3 videos. Returns (path, title, credit, start_s).
+    Falls back to a generated pad if the library is missing."""
+    lib = music_library()
     mdir = os.path.join(KIT_ROOT, "assets", "music")
-    tracks = sorted(f for f in os.listdir(mdir) if f.lower().endswith((".mp3", ".wav", ".m4a", ".ogg"))) \
-        if os.path.isdir(mdir) else []
-    if tracks:
-        return os.path.join(mdir, tracks[seed % len(tracks)]), "library"
-    return ambient_pad(f"{ep}/build/music.wav", seconds, seed), "generated"
+    if lib:
+        want = script.get("music")
+        track = next((t for t in lib if want and want in (t["file"], t["title"])), None)
+        if not track:
+            if script.get("format") == "long":
+                moods = ["calm", "chill"]
+            elif script.get("series") == "puzzle":
+                moods = ["curious", "chill", "upbeat"]
+            else:
+                moods = ["upbeat", "chill"]
+            moods = script.get("music_moods", moods)
+            cands = [t for t in lib if t["mood"] in moods] or lib
+            fresh = [t for t in cands if t["file"] not in recent_music()] or cands
+            track = fresh[seed % len(fresh)]
+        return os.path.join(mdir, track["file"]), track["title"], track["credit"], track.get("start_s", 0.0)
+    return ambient_pad(f"{ep}/build/music.wav", seconds, seed), "generated pad", "", 0.0
 
 
 def ambient_pad(path, seconds, seed=0, sr=48000):

@@ -61,29 +61,55 @@ def render(ep, draft):
             shutil.copy(th[0], f"{ep}/build/thumbnail.png")
 
 
+def lufs(path, pre_filter=""):
+    """Integrated loudness (LUFS) of a file, optionally after a filter such as a trim."""
+    af = (pre_filter + "," if pre_filter else "") + "ebur128"
+    r = subprocess.run(["ffmpeg", "-v", "info", "-i", path, "-af", af, "-f", "null", "-"],
+                       capture_output=True, text=True)
+    vals = [l.split()[1] for l in r.stderr.splitlines() if l.strip().startswith("I:")]
+    return float(vals[-1]) if vals else -70.0
+
+
+VOICE_LUFS = -16.0   # voice level before the final loudness pass
+FINAL_LUFS = -14.0   # YouTube's playback reference
+
+
 def assemble(ep, script, draft):
     raw = f"{ep}/build/raw.mp4"
     dur = float(probe(raw)["format"]["duration"])
+    fmt = script.get("format", "short")
     voice = audio.build_voice_track(ep, dur)
     words, match_ratio, heard = audio.align_captions(ep, voice)
-    ass = audio.write_ass(ep, words, script.get("format", "short"))
+    ass = audio.write_ass(ep, words, fmt)
     seed = sum(map(ord, os.path.basename(ep.rstrip("/"))))
-    music, music_src = audio.pick_music(ep, dur + 1, seed)
-    mvol = script.get("music_volume", 0.20)
-    lp = ",lowpass=f=1400" if music_src == "generated" else ""
+    music, music_title, credit, mstart = audio.pick_music(ep, script, dur + 1, seed)
+    open(f"{ep}/build/music_credit.txt", "w").write(credit + ("\n" if credit else ""))
+
+    # levels: voice to VOICE_LUFS, music `gap` dB under it; gentle ducking (~3 dB) while speaking
+    gap = script.get("music_gap_db", 8.0 if fmt == "short" else 11.0)
+    v_gain = VOICE_LUFS - lufs(voice)
+    m_gain = (VOICE_LUFS - gap) - lufs(music, f"atrim=start={mstart}:duration={min(dur, 90):.1f}")
     fonts = os.path.expanduser("~/.fonts")
-    fc = (f"[1:a]aresample=48000,apad=whole_dur={dur:.3f},asplit=2[v1][v2];"
-          f"[2:a]aresample=48000,aloop=loop=-1:size=2e9,atrim=0:{dur:.3f}{lp},volume={mvol},"
-          f"afade=t=in:d=1.2,afade=t=out:st={max(0, dur - 2):.3f}:d=2[m];"
-          f"[m][v1]sidechaincompress=threshold=0.04:ratio=5:attack=30:release=500[md];"
-          f"[v2][md]amix=inputs=2:duration=first:normalize=0,loudnorm=I=-14:TP=-1.5:LRA=11,aresample=48000[a];"
+    fc = (f"[1:a]aresample=48000,volume={v_gain:.2f}dB,apad=whole_dur={dur:.3f},asplit=2[v1][v2];"
+          f"[2:a]aresample=48000,atrim=0:{dur:.3f},asetpts=PTS-STARTPTS,volume={m_gain:.2f}dB,"
+          f"afade=t=in:d=0.03,afade=t=out:st={max(0, dur - 1.5):.3f}:d=1.5[m];"
+          f"[m][v1]sidechaincompress=threshold=0.05:ratio=2.5:attack=15:release=350[md];"
+          f"[v2][md]amix=inputs=2:duration=first:normalize=0,alimiter=limit=0.89:level=false[a];"
           f"[0:v]ass={ass}:fontsdir={fonts}[vv]")
-    out = f"{ep}/build/final.mp4"
-    sh(["ffmpeg", "-y", "-v", "error", "-i", raw, "-i", voice, "-i", music, "-filter_complex", fc,
+    mixed = f"{ep}/build/mixed.mp4"
+    sh(["ffmpeg", "-y", "-v", "error", "-i", raw, "-i", voice,
+        "-stream_loop", "-1", "-ss", f"{mstart:.2f}", "-i", music, "-filter_complex", fc,
         "-map", "[vv]", "-map", "[a]", "-c:v", "libx264", "-preset", "veryfast" if draft else "medium",
-        "-crf", "20", "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "192k", "-t", f"{dur:.3f}",
-        "-movflags", "+faststart", out])
-    return out, match_ratio, heard, music_src
+        "-crf", "20", "-pix_fmt", "yuv420p", "-c:a", "pcm_s16le", "-t", f"{dur:.3f}", "-f", "matroska",
+        mixed + ".mkv"])
+    # final loudness: one linear gain to FINAL_LUFS plus a peak limiter (no pumping)
+    f_gain = FINAL_LUFS - lufs(mixed + ".mkv")
+    out = f"{ep}/build/final.mp4"
+    sh(["ffmpeg", "-y", "-v", "error", "-i", mixed + ".mkv", "-c:v", "copy",
+        "-af", f"volume={f_gain:.2f}dB,alimiter=limit=0.89:level=false",
+        "-c:a", "aac", "-b:a", "192k", "-movflags", "+faststart", out])
+    os.remove(mixed + ".mkv")
+    return out, match_ratio, heard, {"title": music_title, "gap_db": gap}, voice
 
 
 def contact_sheet(ep, dur):
@@ -109,9 +135,11 @@ def main():
     if "voice" in todo:
         print("[make] voice"); audio.synth_voice(ep)
     if "render" in todo:
+        audio.trim_all(ep)  # idempotent; makes sure old clips have no lead-in silence
         print("[make] render (Manim)"); render(ep, a.draft)
     print("[make] assemble")
-    out, match_ratio, heard, music_src = assemble(ep, script, a.draft)
+    out, match_ratio, heard, music, voice_track = assemble(ep, script, a.draft)
+    onset = audio.speech_onset(voice_track)
 
     info = probe(out)
     dur = float(info["format"]["duration"])
@@ -129,6 +157,9 @@ def main():
     else:
         if dur < 480:
             problems.append(f"long-form is {dur/60:.1f} min; aim for 8+ minutes so mid-roll ads are allowed")
+    if onset is None or onset > 0.05:
+        problems.append(f"speech starts at {onset}s; the first word must start at 0 "
+                        "(check the first beat is the first thing in construct() and nothing plays before it)")
     if size_mb > 95:
         problems.append(f"file is {size_mb:.0f}MB; GitHub rejects files over 100MB (raise crf)")
     if match_ratio < 0.85:
@@ -140,7 +171,8 @@ def main():
     report = {"ok": not any(p for p in problems if "overrun" not in p and "ran past" not in p),
               "problems": problems, "duration_s": round(dur, 1), "size_mb": round(size_mb, 1),
               "resolution": f"{v['width']}x{v['height']}", "caption_match_ratio": match_ratio,
-              "heard": heard, "music": music_src,
+              "heard": heard, "music": music["title"], "music_gap_db": music["gap_db"],
+              "speech_starts_at_s": onset, "final_lufs": round(lufs(out), 1),
               "voice_engine": json.load(open(f"{ep}/build/voice/engine.json"))["engine"]
               if os.path.exists(f"{ep}/build/voice/engine.json") else "unknown", "contact_sheet_every_s": round(every, 1),
               "build_seconds": round(time.time() - t0), "draft": a.draft}

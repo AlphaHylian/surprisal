@@ -1,1 +1,2 @@
-date,publish_at_utc,youtube_id,slug,format,series,hook_style,angle,duration_s,title,privacy,experiment
+date,publish_at_utc,youtube_id,slug,format,series,hook_style,angle,duration_s,title,privacy,music,experiment
+2026-09-30,2026-09-30T18:00:00Z,eQS8gtimpvA,birthday-paradox,short,sounds-fake,claim,"count pairs, not people",55.7,Why 23 people is enough to share a birthday,scheduled,digital-lemonade.mp3,baseline
