@@ -34,7 +34,6 @@ you make it. Lines marked `[long]` are better as Sunday long-form.
 - 1 + 2 + … + n = n(n+1)/2: two staircases make a rectangle.
 - Pythagoras by rearranging four triangles in a square.
 - 1/2 + 1/4 + 1/8 + … = 1: halving a square forever.
-- 1/4 + 1/16 + 1/64 + … = 1/3: three corners of nested squares.
 - Sum of the first n cubes is the square of the sum (Nicomachus).
 - Area of a circle is πr²: slice into wedges and unroll into a near-rectangle.
 - (a + b)² = a² + 2ab + b² as a square cut into four pieces.
@@ -72,3 +71,4 @@ you make it. Lines marked `[long]` are better as Sunday long-form.
 
 ## Used
 - 2026-09-30  birthday-paradox (sounds-fake)  eQS8gtimpvA  first public video, 9pm Tallinn
+- 2026-10-01  quarters-make-a-third (visual-proof)  YrD3-RjdX58  TEST upload, private

@@ -1,0 +1,17 @@
+{
+ "ok": true,
+ "problems": [],
+ "duration_s": 50.4,
+ "size_mb": 3.7,
+ "resolution": "1080x1920",
+ "caption_match_ratio": 0.9685534591194969,
+ "heard": "Take a quarter plus a quarter of that forever. You get exactly one third. That feels wrong. Quarters add up to halves or to one. Where would a third come from? Start with one square, cut it into four. One corner is a quarter. Color three of the corners each a different color. Leave the fourth one empty. Cut that empty corner into four and do the same. Then again, and again. At every size, the three colors get the same amount. None of them is ever ahead. The squares fill everything, so each color covers exactly one third of the square. And the amber squares are a quarter, a 16th, a 64th, and so on. That's our sum. After just five steps, the total is 0 .333. It creeps up on one third and never passes it. Cut into nine instead, and the same trick gives one eighth. What do you get with 16?",
+ "music": "Somewhere Sunny",
+ "music_gap_db": 8.0,
+ "speech_starts_at_s": 0.0,
+ "final_lufs": -15.0,
+ "voice_engine": "omnivoice",
+ "contact_sheet_every_s": 2.1,
+ "build_seconds": 116,
+ "draft": false
+}

@@ -77,9 +77,9 @@ class Episode(SurprisalScene):
             self.play(FadeIn(a0), run_time=self.rt(0.6))
             self.play(Write(q_lbl), run_time=self.rt(0.6))
 
-        # ---------------- trick: three colours, fourth empty
+        # ---------------- trick: three colors, fourth empty
         with self.beat("trick"):
-            head4 = headline("Three colours")
+            head4 = headline("Three colors")
             m0, g0 = quad(0, "tl", MINT), quad(0, "br", MUTED)
             self.bring_to_front(c0)
             self.play(ReplacementTransform(head3, head4), FadeOut(q_lbl), run_time=self.rt(0.6))
@@ -108,7 +108,7 @@ class Episode(SurprisalScene):
 
         A, M, G = VGroup(*ambers), VGroup(*mints), VGroup(*greys)
 
-        # ---------------- match: the three colours tie at every size
+        # ---------------- match: the three colors tie at every size
         with self.beat("match"):
             head6 = headline("Always a tie")
             sw = VGroup(Square(0.7, fill_color=AMBER, fill_opacity=1, stroke_width=0),
@@ -122,12 +122,12 @@ class Episode(SurprisalScene):
                 trio = VGroup(ambers[k], mints[k], greys[k])
                 self.play(Indicate(trio, color=INK, scale_factor=1.06), run_time=self.rt(0.7))
 
-        # ---------------- third: each colour covers one third
+        # ---------------- third: each color covers one third
         with self.beat("third"):
-            head7 = headline("Each colour: one third")
+            head7 = headline("Each color: one third")
             third_lbl = VGroup(Square(0.7, fill_color=AMBER, fill_opacity=1, stroke_width=0),
-                               MathTex(r"=\frac{1}{3}", font_size=80, color=AMBER)).arrange(RIGHT, buff=0.3)
-            third_lbl.move_to(DOWN * 1.2)
+                               MathTex(r"=\frac{1}{3}", font_size=60, color=AMBER)).arrange(RIGHT, buff=0.3)
+            third_lbl.move_to(DOWN * 1.32)
             self.play(ReplacementTransform(head6, head7), ReplacementTransform(sw, third_lbl), run_time=self.rt(0.8))
             self.play(M.animate.set_fill(opacity=0.18), G.animate.set_fill(opacity=0.18), run_time=self.rt(1.0))
             self.play(Indicate(A, color=AMBER, scale_factor=1.03), run_time=self.rt(0.9))

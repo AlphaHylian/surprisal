@@ -1,2 +1,3 @@
 date,publish_at_utc,youtube_id,slug,format,series,hook_style,angle,duration_s,title,privacy,music,experiment
 2026-09-30,2026-09-30T18:00:00Z,eQS8gtimpvA,birthday-paradox,short,sounds-fake,claim,"count pairs, not people",55.7,Why 23 people is enough to share a birthday,scheduled,digital-lemonade.mp3,baseline
+2026-10-01,,YrD3-RjdX58,quarters-make-a-third,short,visual-proof,claim,three matching colors per level: 1/3 by symmetry; nine pieces gives 1/8,50.4,Keep adding quarters forever and you get exactly 1/3,private,somewhere-sunny.mp3,test
