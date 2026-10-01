@@ -1,0 +1,17 @@
+{
+ "ok": true,
+ "problems": [],
+ "duration_s": 53.1,
+ "size_mb": 5.3,
+ "resolution": "1080x1920",
+ "caption_match_ratio": 0.9940828402366864,
+ "heard": "Pick heads, heads, heads, and I'll pick three flips that beat it seven times in eight. That sounds impossible. Every run of three flips is equally likely. One in eight each. Here's the game. We flip a coin until one of our sequences shows up. Whoever's appears first wins. You picked heads, heads, heads. I picked tails, heads, heads. Look at the first time, heads, heads, heads, appears. What came right before it? It has to be tails. If it were heads, you'd have had three heads one flip earlier. And tails, heads, heads is my sequence. It was already there, one flip ahead of you. So you only win if the first three flips are all heads. That's one in eight, I win the other seven. It works against anything. Flip your middle coin, put it in front, drop your last. I win at least two times in three. There's a new one of these every day. Your turn, you pick heads, tails, heads. What should I pick?",
+ "music": "Wallpaper",
+ "music_gap_db": 8.0,
+ "speech_starts_at_s": 0.01,
+ "final_lufs": -15.2,
+ "voice_engine": "omnivoice",
+ "contact_sheet_every_s": 2.2,
+ "build_seconds": 527,
+ "draft": false
+}

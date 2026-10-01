@@ -1,0 +1,71 @@
+{
+  "slug": "penneys-game",
+  "format": "short",
+  "series": "sounds-fake",
+  "hook_style": "claim",
+  "angle": "skip the 8-row odds table: show one flip stream and ask what came right before the first heads-heads-heads; the answer is tails, so tails-heads-heads got there one flip earlier, and the 7 in 8 drops out of the picture. Then the one-line rule that beats any choice, and a checkable question (what beats HTH?)",
+  "title": "Pick any 3 coin flips. I can pick 3 that beat yours",
+  "description": "Pick heads, heads, heads. We flip a coin until one of our sequences shows up, and I pick tails, heads, heads: I win 7 times in 8. The first time heads-heads-heads appears, the flip just before it must be tails (or it would have appeared one flip earlier), so tails-heads-heads always got there first, unless the game opens with three heads. That is Penney's game (Walter Penney, 1969).\n\nThe rule works against every choice: flip your middle coin, put it in front, drop your last. It wins at least 2 times in 3 against all 8 sequences. Checked with exact fractions for all 8 sequences and by simulating 200,000 games (THH won 87.4%, against an exact 87.5%).",
+  "tags": [
+    "penney's game",
+    "coin flip",
+    "probability",
+    "non-transitive",
+    "probability paradox",
+    "math",
+    "maths",
+    "math shorts"
+  ],
+  "facts_checked": [
+    "each run of 3 flips has chance 1/8; there are 8 runs",
+    "THH appears before HHH with probability exactly 7/8 = 87.5% (Conway's leading numbers, exact fractions)",
+    "HHH wins only if the first three flips are HHH: 1/8",
+    "rule 'flip the middle, put it in front, drop the last' answers HHH with THH and HTH with HHT",
+    "the rule wins at least 2/3 against all 8 sequences (7/8, 3/4, 2/3, 2/3, 2/3, 2/3, 3/4, 7/8)",
+    "HHT beats HTH 2/3 (answer to the closing question)",
+    "simulation: 200,000 games THH vs HHH, THH won 87.4%; 100,000 games HHT vs HTH, HHT won 66.5%",
+    "source: https://en.wikipedia.org/wiki/Penney%27s_game (Walter Penney, Journal of Recreational Mathematics, 1969; table of best responses)"
+  ],
+  "beats": [
+    {
+      "id": "hook",
+      "say": "Pick heads, heads, heads, and I'll pick three flips that beat it 7 times in 8."
+    },
+    {
+      "id": "doubt",
+      "say": "That sounds impossible. Every run of three flips is equally likely. One in 8 each."
+    },
+    {
+      "id": "game",
+      "say": "Here's the game. We flip a coin until one of our sequences shows up. Whoever's appears first wins."
+    },
+    {
+      "id": "pick",
+      "say": "You picked heads, heads, heads. I pick tails, heads, heads."
+    },
+    {
+      "id": "before",
+      "say": "Look at the first time heads, heads, heads appears. What came right before it?"
+    },
+    {
+      "id": "tails",
+      "say": "It has to be tails. If it were heads, you'd have had three heads one flip earlier."
+    },
+    {
+      "id": "mine",
+      "say": "And tails, heads, heads is my sequence. It was already there, one flip ahead of you."
+    },
+    {
+      "id": "odds",
+      "say": "So you only win if the first three flips are all heads. That's one in 8. I win the other 7."
+    },
+    {
+      "id": "rule",
+      "say": "It works against anything. Flip your middle coin, put it in front, drop your last. I win at least 2 times in 3."
+    },
+    {
+      "id": "close",
+      "say": "There's a new one of these every day. Your turn: you pick heads, tails, heads. What should I pick?"
+    }
+  ]
+}

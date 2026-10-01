@@ -19,7 +19,6 @@ you make it. Lines marked `[long]` are better as Sunday long-form.
 - Benford's law: about 30% of numbers in real data start with 1 (log10 2).
 - The friendship paradox: on average, your friends have more friends than you do.
 - Simpson's paradox with real batting averages (Jeter vs Justice, 1995 and 1996).
-- Penney's game: whatever 3-flip sequence you pick, I can pick one that beats it (vs HHH, THH wins 7 in 8).
 - Non-transitive dice: A beats B, B beats C, C beats A (Efron's dice).
 - Book stacking: stack enough blocks and the top one hangs as far off the table as you like (harmonic series).
 - The harmonic series 1 + 1/2 + 1/3 + … grows forever even though the terms shrink to zero.
@@ -72,3 +71,4 @@ you make it. Lines marked `[long]` are better as Sunday long-form.
 ## Used
 - 2026-09-30  birthday-paradox (sounds-fake)  eQS8gtimpvA  first public video, 9pm Tallinn
 - 2026-10-01  quarters-make-a-third (visual-proof)  YrD3-RjdX58  9pm Tallinn 1 Oct (scheduled after test upload; subscribers not notified)
+- 2026-10-01  penneys-game (sounds-fake)  KVKRfzUtTE8  9pm Tallinn 1 Oct, LIVE scheduled, first hook-card opening
