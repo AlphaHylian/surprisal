@@ -1,0 +1,17 @@
+{
+ "ok": true,
+ "problems": [],
+ "duration_s": 47.5,
+ "size_mb": 4.4,
+ "resolution": "1080x1920",
+ "caption_match_ratio": 0.9931972789115646,
+ "heard": "The hands of a clock meet only 11 times in 12 hours, not 12. That sounds wrong. The minute hand passes the hour hand once every hour, so 12. Think of it as a race on a round track. In 12 hours, the minute hand runs 12 laps. The hour hand runs just one. Every time the fast runner laps the slow one, the hands meet. Watch them all. 12 laps minus the one lap the hour hand ran. That leaves 11 and 22 a day. So which hour loses its meeting? Between 11 and 1, they meet only once at exactly 12. And the meetings drift. After 3 o 'clock, it's not a quarter past. It's about 16 minutes and 22 seconds past. Your turn. In 12 hours, how many times do the hands make a right angle? Hint, it's not 24. Answer below.",
+ "music": "Investigations",
+ "music_gap_db": 8.0,
+ "speech_starts_at_s": 0.01,
+ "final_lufs": -14.9,
+ "voice_engine": "omnivoice",
+ "contact_sheet_every_s": 2.0,
+ "build_seconds": 650,
+ "draft": false
+}

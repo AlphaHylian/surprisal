@@ -66,9 +66,9 @@ you make it. Lines marked `[long]` are better as Sunday long-form.
 - 10 people all shake hands once: 45 handshakes.
 - Two ropes that each burn in an hour, unevenly. Measure 45 minutes.
 - Three light switches, one bulb upstairs, one trip. (Use heat.)
-- How many times do a clock's hands overlap in 12 hours? 11.
 
 ## Used
 - 2026-09-30  birthday-paradox (sounds-fake)  eQS8gtimpvA  first public video, 9pm Tallinn
 - 2026-10-01  quarters-make-a-third (visual-proof)  YrD3-RjdX58  9pm Tallinn 1 Oct (scheduled after test upload; subscribers not notified)
 - 2026-10-01  penneys-game (sounds-fake)  KVKRfzUtTE8  9pm Tallinn 1 Oct, LIVE scheduled, first hook-card opening
+- 2026-10-02  clock-hands-meet (puzzle)  r92Byr0zgdQ  9pm Tallinn 2 Oct, LIVE scheduled, opening-card #2

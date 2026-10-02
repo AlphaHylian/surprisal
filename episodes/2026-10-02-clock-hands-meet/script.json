@@ -1,0 +1,64 @@
+{
+  "slug": "clock-hands-meet",
+  "format": "short",
+  "series": "puzzle",
+  "hook_style": "claim",
+  "angle": "treat the hands as two runners on one track: the minute hand runs 12 laps while the hour hand runs 1, so it laps it 12 - 1 = 11 times. Run the full 12 hours on screen and drop a dot at every meeting: 11 evenly spaced dots appear, and the gap between 11 and 1 shows which hour 'loses' its meeting. Then the off-by-a-bit times (3:16:22, not 3:15) and a checkable question (right angles: 22)",
+  "title": "A clock's hands meet only 11 times in 12 hours",
+  "description": "The minute and hour hands of a clock line up only 11 times in 12 hours, not 12 (22 times a day). In 12 hours the minute hand runs 12 laps and the hour hand runs 1, and the faster hand catches the slower one once per lap it gains: 12 minus 1 is 11. Between 11 and 1 o'clock the hands meet only once, at exactly 12, and the meeting after 3 o'clock is at about 3:16:22, not 3:15. The meetings are evenly spaced, every 1 hour, 5 minutes and 27 seconds.\n\nChecked with exact fractions (meetings at 12k/11 hours), a 1-second tick-by-tick run of the full 12 hours, and 200,000 random moments.",
+  "tags": [
+    "clock puzzle",
+    "clock hands",
+    "clock angle problem",
+    "math puzzle",
+    "brain teaser",
+    "math",
+    "maths",
+    "math shorts"
+  ],
+  "facts_checked": [
+    "the hands meet at t = 12k/11 hours, k = 0..10: 11 times in 12 hours, 22 times a day",
+    "in 12 hours the minute hand turns 12 times, the hour hand once; 12 - 1 = 11 laps gained",
+    "1-second tick simulation over 12 hours counts 11 passes of the minute hand over the hour hand",
+    "the only meeting between 11:00 and 1:00 is 12:00 exactly",
+    "the meeting after 3 o'clock is at 3:16:21.8 (about 16 minutes and 22 seconds past three), not 3:15",
+    "meetings are 12/11 h = 1 h 5 min 27.3 s apart; 11 equal gaps fill 12 hours",
+    "simulation: 200,000 random moments, mean wait to the next meeting 0.5467 h vs exact 6/11 = 0.5455 h",
+    "closing answer: the hands are at right angles 22 times in 12 hours, not the naive 24 (and opposite 11 times)",
+    "source: https://en.wikipedia.org/wiki/Clock_angle_problem"
+  ],
+  "beats": [
+    {
+      "id": "hook",
+      "say": "The hands of a clock meet only 11 times in 12 hours. Not 12."
+    },
+    {
+      "id": "doubt",
+      "say": "That sounds wrong. The minute hand passes the hour hand once every hour. So, 12."
+    },
+    {
+      "id": "race",
+      "say": "Think of it as a race on a round track. In 12 hours, the minute hand runs 12 laps. The hour hand runs just one."
+    },
+    {
+      "id": "lap",
+      "say": "Every time the fast runner laps the slow one, the hands meet. Watch them all."
+    },
+    {
+      "id": "count",
+      "say": "12 laps, minus the 1 lap the hour hand ran. That leaves 11. And 22 a day."
+    },
+    {
+      "id": "missing",
+      "say": "So which hour loses its meeting? Between 11 and 1, they meet only once, at exactly 12."
+    },
+    {
+      "id": "late",
+      "say": "And the meetings drift. After 3 o'clock, it's not a quarter past. It's about 16 minutes and 22 seconds past."
+    },
+    {
+      "id": "close",
+      "say": "Your turn. In 12 hours, how many times do the hands make a right angle? Hint: it's not 24. Answer below."
+    }
+  ]
+}
