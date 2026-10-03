@@ -1,62 +1,82 @@
 # Surprisal style guide
 
-The channel: the math behind real problems. Every Short drops the viewer into a real situation
-with real stakes ("You're a programmer in 1988 and you just got sued"), and the math concept is
-how the problem gets solved. The math is the payoff, the story is why anyone stays.
+The channel: the math behind real problems. Every Short is a **how-to in second person**: the
+viewer has a problem right now, and the video tells them, step by step, exactly how to fix it.
+The steps ARE the math. At the end, one line reveals it's real ("This is how every zip file
+works.").
 
-This replaced the old "sounds wrong but is true" format on 2026-10-04: the topics were too
-niche for viewers to care whether they sounded wrong (owner's verdict, backed by 47% hook hold on
-the birthday paradox). See `episodes/_example-zip/` for the reference episode in this format.
+History, so you don't repeat it:
+- "Sounds wrong but is true" (Sep 30 - Oct 3): topics too niche to care about. Dropped.
+- "Story" format (Oct 4, one day): 17 seconds of backstory before any math, explanations too
+  vague, and a historical problem ("you got sued in 1988") nobody feels. Dropped.
 
-## The four rules (every Short)
+## The model script (the owner's example; study its moves, not its topic)
 
-1. **A real situation with stakes, where the math is the solution.** Pick a moment where
-   someone had a problem that the concept solves: real history with real names, dates and
-   numbers is best (Phil Katz sued in 1988, inventing ZIP; Abraham Wald and the bombers; the
-   German tank problem), an everyday situation is fine too (you run a pizza place, you're
-   designing a password, you're an airline overbooking seats). The concept must be the thing
-   that fixes the problem, not trivia next to it.
-2. **Put the viewer in the story in the first second.** First words: "You're a [role]..." or
-   "You just [event]...", e.g. "You're a programmer in 1988, and you just got sued over your own
-   app." / "You're a casino owner, and you have a problem." The role must be one a viewer can
-   picture being in. Frame 1 shows the situation, not text on an empty screen (see Hook frame).
-3. **Say the problem immediately.** Line 2 (by ~4 s) states what's at stake and promises the
-   fix: "People hate losing money to you. Here's how you keep them playing." / "You're banned
-   from shipping it. You need a new way to shrink files." No background before the problem.
-4. **Tie back to the story throughout.** Every 2 or 3 beats, connect the math to the situation
-   ("That's your way out of the lawsuit.", "Back to your casino:", "So for your 150 seats...").
-   Never go more than ~12 seconds of pure math without referring back to the person and the
-   stakes. The ending resolves the story (what actually happened, or what you now do) and lands
-   the concept in one sentence.
+> You're a casino owner and you have a problem. People don't like losing their money to you.
+> Here's how you fix it. Take down all the clocks, block out the windows, and rearrange your
+> place to have a maze-like layout. Now, their sense of time and direction starts to blur. But
+> this is worth nothing unless you do the critical step of replacing money with chips. It is so
+> much harder to keep track of how much you're down when it's just some abstract tokens. But
+> people still want to leave. Before they do, give them free drinks. Now they feel valued. Plus,
+> the stuff isn't really known for improving risk management. [...] Uh-oh, some high roller just
+> dropped six figures and looks devastated. Reward the biggest losers the most. [...] And there
+> you have it, a happy casino. Remember, you don't have to beat them. You just need to make sure
+> they enjoy losing.
 
-Also:
+What it does, and what every script must do:
+1. **Line 1 puts the viewer in a role with a problem, in under 2 seconds:** "You're a casino
+   owner and you have a problem." Present tense, a role anyone can picture being in today.
+   Not a historical figure: the problem is happening to *you*, now.
+2. **Line 2 says the problem in plain words and promises the fix:** "People don't like losing
+   their money to you. Here's how you fix it." **The first concrete step starts by 5 seconds,
+   at the latest.** No backstory, no dates, no names before the steps.
+3. **The body is a chain of imperative steps** ("Take down all the clocks", "Replace money with
+   chips"). Each step is one specific, real mechanism, followed by its effect in one short
+   sentence ("Now, their sense of time starts to blur."). 5 to 10 steps.
+4. **Be specific, never vague.** Real numbers and real details: "keep a window of the last
+   32,768 characters", "give 'e' a 3-bit code and 'z' a 10-bit one", "one green zero: you keep
+   2.7% of every bet". If a sentence could appear in a kids' summary, make it sharper. The
+   viewer should come away able to explain the actual mechanism.
+5. **Escalate with complications.** "But people still want to leave." / "Uh-oh, your friend
+   can't open it." Each complication is answered by the next step. This is what holds
+   retention: there's always a new problem coming.
+6. **Keep tying back to the goal** ("your file", "your casino", "your 150 seats") so the viewer
+   never loses track of why this step matters.
+7. **End with a punchline line, then the reveal, then (sometimes) the call to action.** "And
+   there you have it: a file a third of the size, and not one letter lost." / "This is how
+   every zip file works. Phil Katz released the format in 1989." One sentence of history at
+   most, only at the end, only to show it's real.
+8. **Tone:** confident, dry, a little wry, like the model script. Short sentences. Spoken, not
+   written.
+
+## Picking topics
+
+- The problem must be something the viewer can feel in one line: money, time, being lied to,
+  losing, waiting, being tricked, things breaking. "Your file is too big to send" works.
+  "You're being sued in 1988" does not.
+- The fix must be real math or a real system someone actually uses (compression, house edge,
+  error correction, overbooking, card counting, check digits, queue design, survivorship bias,
+  estimating from serial numbers, A/B testing, how slot machines set payouts, PageRank...).
 - **Correctness you can prove.** Every number said or shown is computed in `verify.py`;
-  probabilities are also simulated. Every historical fact (names, dates, amounts, outcomes) comes
-  from a source you fetched today (Wikipedia is fine), listed with its URL in `facts_checked`.
-  Don't embellish: no invented motives ("out of spite"), no made-up quotes, no "SEA won" when the
-  source says "settled". If the source is vague, say it vaguely.
-- **Topic choice: would someone who never thought about this still want to know how it ends?**
-  If the hook only works for math fans, reframe it or pick another topic.
-- Stay away from health/medical decisions, personal financial advice, elections and politics,
-  and tragedies used for shock. Gambling topics are fine as math and history (the house edge,
-  famous exploits), never as advice to gamble.
+  probabilities are also simulated. Every factual claim (names, dates, amounts, how a real
+  system works) comes from a source you fetched today, listed with its URL in `facts_checked`.
+  Don't invent motives or quotes.
+- Stay away from health/medical decisions, personal financial advice, elections and politics.
+  Topics like casinos are fine as "how the business works"; never encourage gambling.
 
 ## Shorts
 
-- 45 to 65 seconds. 1080x1920. 7 to 11 beats. Two a day (12:00 and 20:00 Tallinn).
-- **The first word is spoken at 0.00 s and frame 1 already shows the situation.**
-  `with self.beat("hook"):` is the first thing in `construct()`, and everything on screen at
-  frame 1 is `self.add`ed before any `play()`. The kit trims silence from every voice clip and
-  the report fails the video if speech starts later than 0.05 s. Start on a consonant
-  ("You're", "Your", "Twenty") rather than a vowel, which tends to drift.
-- **Hook frame:** a full scene, readable with the sound off in half a second: the viewer
-  (`you_tag("programmer, 1988")`), the setting (a year stamp, an icon: casino `dice-5`, plane,
-  courtroom `gavel`, warehouse `package`), and the stakes in 2 to 4 big words (`stamp("SUED")`,
-  "SEATS: 0", "-$2M"). Bring something in with motion inside the first 0.5 s (`slam(stamp)`,
-  `self.open_with(group)`). Then turn the hook scene into the first explanation visual.
-- Structure: you + situation (beat 1) -> problem and promise (beat 2) -> the idea, shown
-  -> the idea applied to your problem, with real numbers -> what happened / what you now do
-  -> one line that lands the concept -> call to action. Vary pacing, keep the story spine.
+- 45 to 90 seconds; longer is fine if every beat earns its place (retention is the test).
+  1080x1920. Two a day (12:00 and 20:00 Tallinn).
+- **The first word is spoken at 0.00 s and frame 1 already shows the situation.** The report
+  fails the video if speech starts later than 0.05 s. Start on a consonant ("You're", "Your").
+- **Hook frame:** the role and the problem, readable with the sound off in half a second: the
+  viewer (`you_tag("casino owner")`), the setting, and the problem in 2 to 4 big words. Motion
+  inside the first 0.5 s.
+- **One visual per step**, and every step's visual shows the mechanism itself (the actual
+  bytes being replaced, the actual chips, the actual seat map), not a generic icon.
+- Something new on screen at least every 1.5 seconds. Use camera moves (zoom in on the detail
+  being explained, pull back to show the whole), and sound effects on every reveal.
 - **Calls to action: one natural ask, woven into the content, after the payoff.** Asking viewers
   to comment or subscribe is allowed; what YouTube's spam policies forbid is rewarding engagement
   (giveaways, "sub for sub", "comment to win") and misleading asks. So:
@@ -145,12 +165,12 @@ audio in sync but leave dead air; the report lists them.
 
 ## Titles and descriptions
 
-- Title: under 60 characters, the story's stakes, not the math term. Examples:
-  "He got sued, so he invented the ZIP file", "How casinos keep you playing",
-  "The WW2 trick that counted German tanks". No clickbait the video doesn't pay off, no ALL
+- Title: under 60 characters, the problem or the payoff, not the math term. Examples:
+  "How to make any file 3x smaller", "How casinos make you enjoy losing",
+  "How to count the enemy's tanks from 5 serial numbers". No clickbait the video doesn't pay off, no ALL
   CAPS, at most one emoji (prefer none).
-- Description: 2 to 4 sentences telling the real story with the exact numbers and dates and the
-  math behind it, then a line saying how the numbers were checked and the source, then the
+- Description: 2 to 4 sentences explaining the actual mechanism with the exact numbers (and the
+  one-line origin if there is one), then a line saying how the numbers were checked and the source, then the
   standard footer:
 
 ```
