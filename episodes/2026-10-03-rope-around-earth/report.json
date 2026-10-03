@@ -1,0 +1,17 @@
+{
+ "ok": true,
+ "problems": [],
+ "duration_s": 51.6,
+ "size_mb": 4.9,
+ "resolution": "1080x1920",
+ "caption_match_ratio": 0.9815950920245399,
+ "heard": "Just one extra meter of rope around the whole earth lifts it 16 centimeters, all the way round. That sounds wrong. The rope is about 40 ,000 kilometers long. One more meter is nothing. Try a square first. Lift a rope off it by a small gap. The straight sides don't need any extra rope. Only the corners do. Each one is a quarter circle. Push the four together and they make one small circle with the gap as it's radius. A circle is nothing but corners. So again, the extra rope is one small circle, the size of the gap. One meter of extra rope makes a circle one meter around. It's radius is 16 centimeters. That's the gap. The size of the earth never showed up. Around a football or around the sun, it's the same 16 centimeters. So how much extra rope lifts it one meter all the way round? Answer below. There's a new one every day, so subscribe.",
+ "music": "Chill Wave",
+ "music_gap_db": 8.0,
+ "speech_starts_at_s": 0.02,
+ "final_lufs": -14.9,
+ "voice_engine": "omnivoice",
+ "contact_sheet_every_s": 2.1,
+ "build_seconds": 869,
+ "draft": false
+}

@@ -13,7 +13,6 @@ you make it. Lines marked `[long]` are better as Sunday long-form.
 - There are exactly as many even numbers as whole numbers.
 - Hilbert's hotel: a full hotel can always fit one more guest (and infinitely many more).
 - Gabriel's horn: finite volume, infinite surface area ("holds paint, can't be painted").
-- Rope around the Earth: add 1 metre of rope and it lifts about 16 cm all the way round (1/2π m), same for a football.
 - Fold paper 42 times and it reaches past the Moon (0.1 mm × 2^42 ≈ 440,000 km).
 - A shuffled deck is almost certainly in an order never seen before (52! ≈ 8×10^67).
 - Benford's law: about 30% of numbers in real data start with 1 (log10 2).
@@ -72,3 +71,4 @@ you make it. Lines marked `[long]` are better as Sunday long-form.
 - 2026-10-01  quarters-make-a-third (visual-proof)  YrD3-RjdX58  9pm Tallinn 1 Oct (scheduled after test upload; subscribers not notified)
 - 2026-10-01  penneys-game (sounds-fake)  KVKRfzUtTE8  9pm Tallinn 1 Oct, LIVE scheduled, first hook-card opening
 - 2026-10-02  clock-hands-meet (puzzle)  r92Byr0zgdQ  9pm Tallinn 2 Oct, LIVE scheduled, opening-card #2
+- 2026-10-03  rope-around-earth (sounds-fake)  gaTzSWBn-dA  9pm Tallinn 3 Oct, LIVE scheduled, opening-card #3

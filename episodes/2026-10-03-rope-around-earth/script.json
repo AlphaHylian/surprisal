@@ -1,0 +1,62 @@
+{
+  "slug": "rope-around-earth",
+  "format": "short",
+  "series": "sounds-fake",
+  "hook_style": "claim",
+  "angle": "instead of the usual algebra (2πr), prove it with a square: lift a rope off a square and the straight sides need no extra rope, only the four corners do, and the four quarter-circle corners join into one small circle whose radius is the gap. A circle is all corner, so the extra rope is always one small circle the size of the gap: the planet never enters. Then the same meter lifts the rope 16 cm around a football and around the Sun.",
+  "title": "1 extra meter of rope lifts it 16 cm around the whole Earth",
+  "description": "Wrap a rope tightly around the Earth's equator, about 40,000 km, then add just 1 meter and lift it evenly. It clears the ground by about 16 cm (1/2π m = 15.9 cm) all the way round. The reason shows up on a square: lifting a rope off it by a gap leaves the straight sides the same length, and the four corners join into one small circle with the gap as its radius. Any round shape works the same way, so the extra rope only pays for that small circle, and the size of the planet cancels out: a football or the Sun gives the same 16 cm.\n\nChecked in code: exact formula for the Earth, a football and the Sun, the square's offset perimeter measured two ways, and 100,000 random convex shapes from 10 cm to a million km.",
+  "tags": [
+    "rope around the earth",
+    "string girdling earth",
+    "circumference",
+    "geometry",
+    "math puzzle",
+    "math",
+    "maths",
+    "math shorts"
+  ],
+  "facts_checked": [
+    "adding 1 m to a circle's circumference raises its radius by 1/(2π) m = 15.9 cm, about 16 cm, independent of the starting size",
+    "Earth (equatorial circumference 40,075 km, 'about 40,000 km'): lift 15.9 cm; football (69 cm around): 15.9 cm; Sun (radius 696,000 km): 15.9 cm",
+    "square of side 4 lifted by 0.5: the straight sides stay 16; the four quarter-circle corners add exactly 2π × 0.5, one full circle of radius 0.5 (also measured with the support-function integral)",
+    "100,000 random convex polygons, sizes 0.1 m to 1e9 m: the extra rope for a gap h is 2πh every time (error < 1e-5 m)",
+    "a circle 1 m around has radius 15.9 cm",
+    "closing answer: lifting the rope 1 m all the way round needs 2π ≈ 6.28 m of extra rope",
+    "source: https://en.wikipedia.org/wiki/String_girdling_Earth"
+  ],
+  "beats": [
+    {
+      "id": "hook",
+      "say": "Just 1 extra meter of rope around the whole Earth lifts it 16 centimeters. All the way round."
+    },
+    {
+      "id": "doubt",
+      "say": "That sounds wrong. The rope is about 40,000 kilometers long. 1 more meter is nothing."
+    },
+    {
+      "id": "square",
+      "say": "Try a square first. Lift a rope off it by a small gap. The straight sides don't need any extra rope."
+    },
+    {
+      "id": "corners",
+      "say": "Only the corners do. Each one is a quarter circle. Push the four together, and they make one small circle, with the gap as its radius."
+    },
+    {
+      "id": "circle",
+      "say": "A circle is nothing but corners. So again, the extra rope is one small circle, the size of the gap."
+    },
+    {
+      "id": "number",
+      "say": "1 meter of extra rope makes a circle 1 meter around. Its radius is 16 centimeters. That's the gap."
+    },
+    {
+      "id": "size",
+      "say": "The size of the Earth never showed up. Around a football, or around the Sun, it's the same 16 centimeters."
+    },
+    {
+      "id": "close",
+      "say": "So how much extra rope lifts it 1 meter all the way round? Answer below. There's a new one every day, so subscribe."
+    }
+  ]
+}
