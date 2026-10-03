@@ -13,7 +13,9 @@ through verify.py.
 - ZIP: you're a programmer, your file is too big to send. Steps: find repeats, replace them
   with "go back 13, copy 5" notes, keep a 32 KB window, give common letters short codes
   (Huffman), ship the code table with the file. Reveal: this is how every zip file works (Phil
-  Katz, 1989). Reference episode: episodes/_example-zip. If it isn't in videos.csv, use it.
+  Katz, 1989). episodes/_example-zip is being rebuilt in this format; until its script.json has
+  "hook_style": "how-to", don't publish it or copy its script (its scene code is still a fine
+  example of the visual kit).
 - You're a casino owner and people hate losing money to you. Steps: the house edge (one green
   zero = you keep 2.7% of every roulette bet), law of large numbers, chips instead of cash, comps
   scaled to losses. Reveal: the math of every real casino. (the owner's example; keep it about
