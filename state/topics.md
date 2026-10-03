@@ -1,70 +1,86 @@
-# Topic backlog
+# Topic backlog (story format, from 2026-10-04)
 
-Pick from here, rotate series (never the same series two days running), and move the
-line to **Used** with the date and video ID once published. Add new ideas at the bottom
-of their series, including topic requests from comments (mark them `[requested]`).
-Lines marked `[check]` depend on facts that change: look up the current state the day
-you make it. Lines marked `[long]` are better as Sunday long-form.
+Each line: **who the viewer is** / the problem and stakes / the math that solves it. Read
+docs/STYLE.md "The four rules" first. The two videos of a day should be different kinds
+(history, everyday, tech, nature). When a topic is used, move its line to **Used** with the
+date, slot and video ID. Add new ideas at the bottom of their kind, including topic requests
+from comments (mark them `[requested]`).
 
-## Sounds fake, is true  (series: sounds-fake)
-- Monty Hall: switching doors wins 2 times in 3. Angle: play it with 100 doors first.
-- 0.999… equals 1. Angle: there is no number between them.
-- Some infinities are bigger than others: Cantor's diagonal argument. [long]
-- There are exactly as many even numbers as whole numbers.
-- Hilbert's hotel: a full hotel can always fit one more guest (and infinitely many more).
-- Gabriel's horn: finite volume, infinite surface area ("holds paint, can't be painted").
-- Fold paper 42 times and it reaches past the Moon (0.1 mm × 2^42 ≈ 440,000 km).
-- A shuffled deck is almost certainly in an order never seen before (52! ≈ 8×10^67).
-- Benford's law: about 30% of numbers in real data start with 1 (log10 2).
-- The friendship paradox: on average, your friends have more friends than you do.
-- Simpson's paradox with real batting averages (Jeter vs Justice, 1995 and 1996).
-- Non-transitive dice: A beats B, B beats C, C beats A (Efron's dice).
-- Book stacking: stack enough blocks and the top one hangs as far off the table as you like (harmonic series).
-- The harmonic series 1 + 1/2 + 1/3 + … grows forever even though the terms shrink to zero.
-- Rice on a chessboard: 2^64 − 1 ≈ 1.8×10^19 grains. [check: compare against current world rice production before claiming how many years' harvest that is]
-- Bertrand's box paradox: the answer is 2/3, not 1/2.
-- Coastline paradox: Britain's coastline gets longer the shorter your ruler.
-- Is 1 + 2 + 3 + … really −1/12? No, and here's what the −1/12 actually means. [long] [careful wording]
-- Banach–Tarski: cut a ball into 5 pieces and reassemble two balls of the same size. [long] [careful wording]
+`[check]` = the story rests on facts you must confirm today from a fetched source (Wikipedia is
+fine) before writing; if the source disagrees with the line below, the source wins. Lines without
+it still need every number computed in verify.py.
 
-## Proofs without words  (series: visual-proof)
-- The first n odd numbers add to n²: nested L-shapes.
-- 1 + 2 + … + n = n(n+1)/2: two staircases make a rectangle.
-- Pythagoras by rearranging four triangles in a square.
-- 1/2 + 1/4 + 1/8 + … = 1: halving a square forever.
-- Sum of the first n cubes is the square of the sum (Nicomachus).
-- Area of a circle is πr²: slice into wedges and unroll into a near-rectangle.
-- (a + b)² = a² + 2ab + b² as a square cut into four pieces.
-- The angles of any triangle add to 180°: one parallel line.
-- A chessboard with two opposite corners removed can't be tiled by dominoes: colour argument.
+## History (real people, real dates)
+- ZIP: you're a programmer in 1988, sued over your own file-shrinking app and banned from
+  shipping it. You need a new way to make files smaller: store repeats as "go back N, copy M".
+  A finished episode exists in episodes/_example-zip (built 2026-10-04); if it hasn't been
+  published (check videos.csv), copy it to a dated folder, rebuild and use it.
+- You're an engineer in WW2, bombers come back full of bullet holes. Where do you add armor?
+  Survivorship bias: armor where the returning planes have NO holes (Abraham Wald). [check]
+- You're an Allied spy chief, 1940s. How many tanks is Germany building? Use the serial numbers
+  on captured tanks (German tank problem; stats estimate vs real production). [check]
+- You're a codebreaker at Bletchley Park. Enigma never turns a letter into itself, and that one
+  flaw rules out most settings (cribs). [check]
+- You're a math professor at a Las Vegas blackjack table in 1962. The deck has a memory: once
+  cards are gone the odds shift, and you can tell when to bet big (Ed Thorp, card counting). [check]
+- You found a lottery that, on certain weeks, pays out more than it takes in (Massachusetts
+  Cash WinFall roll-downs, MIT students). Expected value. [check]
+- You're a YouTube engineer in 2014 and a video is about to break the view counter
+  (Gangnam Style, 2,147,483,647 = 2^31 - 1, signed 32-bit integers). [check]
+- You maintain the servers. On 19 January 2038 their clocks run out (Year 2038 problem,
+  seconds since 1970 in 32 bits). [check]
+- You're the engineer on Ariane 5's first launch, 1996. One number is too big for its box and
+  the rocket self-destructs 37 seconds in (64-bit float -> 16-bit integer overflow). [check]
+- You're a navigator in 1707 and you don't know where you are. 4 minutes of clock error = 1
+  degree of longitude (Earth turns 15 degrees an hour; Harrison's clocks). [check]
+- You're Eratosthenes, 240 BC, with a stick and a shadow. Measure the whole Earth: a 7.2 degree
+  shadow means the cities are 1/50 of the way around. [check]
+- You're a contestant on Let's Make a Deal. Switch doors? 2 out of 3. In 1990 Marilyn vos Savant
+  said switch and thousands of readers, many with PhDs, told her she was wrong. [check]
+- You're Spotify in 2014 and users say shuffle isn't random. It was. Real randomness clumps,
+  so they made it less random. [check]
+- You're the general manager of the 2002 Oakland A's with the smallest budget in baseball.
+  Find the stat everyone else undervalues (on-base percentage, Moneyball). [check]
+- You're a fraud investigator. Made-up numbers start with 1 too rarely: in real data about 30%
+  start with 1 (Benford's law, log10 2). [check]
+- You're launching GPS. Satellite clocks gain 38 microseconds a day; ignore it and positions drift
+  about 10 km a day (relativity, distance = speed of light x time). [check]
 
-## Why is it like that?  (series: why)
-- Why 0! = 1.
-- Why you can't divide by zero.
-- Why a negative times a negative is positive.
-- Why anything to the power 0 is 1.
-- What e actually is: growth compounded infinitely often.
-- Why √2 can't be a fraction: proof by contradiction.
-- Why π shows up in the bell curve. [long]
-- Why e^(iπ) = −1, built up from rotations. [long]
-- What the golden ratio really is (and the myths about it in nature that aren't true).
+## Everyday (no history needed, real numbers from verify.py)
+- You're a casino owner. People hate losing money to you, so how do you win anyway? The house
+  edge: one green zero makes roulette keep 2.7% of every bet, and over thousands of spins
+  that's near-certain (law of large numbers).
+- You run an airline with 150 seats. 1 in 10 passengers doesn't show. How many tickets can you
+  sell before you have to bump someone? (binomial, simulate)
+- You run a pizza place. One 18-inch pizza has more pizza than two 12-inch ones (area, pi r^2).
+- You manage a supermarket. One long snake line beats separate lines for each till (queues,
+  simulate waiting times).
+- You're organizing Secret Santa for 10 friends. Chance someone draws their own name: about 63%
+  (derangements, 1 - 1/e).
+- You're collecting all 50 stickers in an album. Expect to buy about 225 (coupon collector,
+  n x (1 + 1/2 + ... + 1/n)).
+- You're a cashier typing a card number by hand. One wrong digit and the card is rejected
+  instantly: the last digit is a check digit (Luhn algorithm). [check the history if you use it]
+- You're the security team. A hacker guesses 10 billion passwords a second. Is "Tr0ub4dor" or
+  four random words stronger? (count the possibilities, 26^n vs words^4)
+- You're a teacher with 23 students. Bet the class two share a birthday: you win 50.7% of the
+  time (birthday paradox, pairs not people; a reframe of the 2026-09-30 video).
+- You're a game designer. Players complain your 90% hit chance misses too often (they remember
+  streaks; chance of at least one miss in 10 tries is 65%).
 
-## Unsolved  (series: unsolved)
-- The Collatz conjecture: checked for every number up to a huge bound, still unproven. [check current verified bound]
-- The twin prime conjecture and the 2013 bounded-gaps breakthrough. [check current best gap]
-- Goldbach's conjecture: every even number above 2 is the sum of two primes. [check verification bound]
-- Are there any odd perfect numbers? [check current lower bound]
-- Is π normal? Every digit string appears, probably, but nobody can prove it.
-- The moving sofa problem. [check: a 2024 proof by Baek was under review; state its status accurately]
+## Tech
+- You run a factory and the QR codes on your parts get dirty. Design a code that still scans with
+  30% of it torn off (error correction; QR codes, Denso Wave 1994). [check]
+- You're building Google in 1998 with a garage of computers. Which page is most important?
+  Count the links, then weigh them (PageRank as a random surfer). [check]
+- You run a delivery company with thousands of trucks. Cutting left turns saves fuel and time
+  (route planning, UPS). [check the numbers carefully]
 
-## Pause and try  (series: puzzle)
-- Bat and ball cost $1.10 together; the bat costs $1 more. The ball costs 5 cents.
-- Lily pads double daily and cover the pond on day 48. Half covered on day 47.
-- Drive there at 30 km/h and back at 60 km/h: average is 40, not 45.
-- How many squares on a chessboard? 204.
-- 10 people all shake hands once: 45 handshakes.
-- Two ropes that each burn in an hour, unevenly. Measure 45 minutes.
-- Three light switches, one bulb upstairs, one trip. (Use heat.)
+## Nature
+- You're a cicada. Predators come every 2, 3, 4 or 5 years. Sleep 13 or 17 years, a prime, and
+  you rarely meet them (least common multiples). [check]
+- You're a bee building a honeycomb with the least wax. Hexagons tile the plane with the shortest
+  walls. [check]
 
 ## Used
 - 2026-09-30  birthday-paradox (sounds-fake)  eQS8gtimpvA  first public video, 9pm Tallinn

@@ -28,7 +28,9 @@ KOKORO_SPEED = 1.05
 def spoken(text):
     """Turn digits into words the way a narrator would say them ('23rd' -> 'twenty-third',
     '97%' -> 'ninety-seven percent', '200,000' -> 'two hundred thousand', '99.9' -> 'ninety-nine
-    point nine'). OmniVoice reads raw digits unreliably (e.g. 2345 as a year)."""
+    point nine', '1988' -> 'nineteen eighty-eight': plain 4-digit numbers from 1500 to 2099 are read as
+    years, so write other numbers in that range with a comma, '1,600'). OmniVoice reads raw digits
+    unreliably."""
     from num2words import num2words
 
     def us(words):  # American style: "three hundred sixty-five", no "and"
@@ -42,7 +44,10 @@ def spoken(text):
         if "." in s:
             whole, frac = s.split(".", 1)
             return us(num2words(int(whole))) + " point " + " ".join(num2words(int(d)) for d in frac)
-        return us(num2words(int(s)))
+        n = int(s)
+        if "," not in m.group(0) and len(s) == 4 and 1500 <= n <= 2099:   # a year: "1988" -> nineteen eighty-eight
+            return num2words(n, to="year")
+        return us(num2words(n))
 
     t = text.replace("%", " percent")
     t = re.sub(r"\b(\d[\d,]*)(st|nd|rd|th)\b", ordinal, t)

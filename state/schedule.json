@@ -1,0 +1,11 @@
+{
+  "timezone": "Europe/Tallinn",
+  "slots": ["12:00", "20:00"],
+  "min_lead_minutes": 90,
+  "longform": {
+    "weekday": "Sunday",
+    "slot": "20:00",
+    "starting": "2026-10-11",
+    "note": "From this date, the Sunday 20:00 video is long-form (8-12 min) and the 12:00 one stays a Short. Before it, every slot is a Short."
+  }
+}

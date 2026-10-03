@@ -19,18 +19,24 @@ dated log. Rewrite rules when the data changes; don't let this file grow forever
 - (none yet; the channel has no public videos)
 
 ## Current experiment
-- **Opening style** (started 2026-10-02). The owner saw the birthday paradox Short at 44% "viewed vs
-  swiped away" a few hours after release (old opening: small headline on an empty frame, setup
-  sentence "Put 23 people in a room..."). From 2 Oct every Short opens with a full-screen
-  `hook_card` on frame 1 and speaks the claim first (STYLE.md). Compare `hook_hold` of the first 5
-  new-style Shorts against the two old-style ones (birthday-paradox, quarters-make-a-third) at the
-  same age. Keep everything else as normal meanwhile.
+- **Story format** (started 2026-10-04, two Shorts a day at 12:00 and 20:00). The owner judged
+  the "sounds wrong but is true" Shorts as not working: viewers don't care that a niche fact
+  sounds wrong if they never wondered about it. Data agrees so far: birthday paradox hook_hold
+  0.47 at day 2, steepest drop in the "that sounds wrong" doubt beat. New format (STYLE.md, "The
+  four rules"): the viewer is put in a real situation with stakes in the first second ("You're a
+  programmer in 1988, and you just got sued"), the problem is said by ~4 s, the math is how the
+  problem gets solved, and the story is referenced every 2-3 beats. Compare hook_hold, average
+  view %, and subscribers per 1,000 views of the first 10 story Shorts against the 6 old-format
+  ones at the same age. Also note 12:00 vs 20:00 differences, but don't act on them before ~2
+  weeks of data.
+- The earlier "opening card" experiment (claim card vs plain headline) is closed: superseded
+  by the story format, which keeps a full-screen hook scene on frame 1.
 
 ## Experiment ideas, in rough priority
-1. Within the card opening: "claim" vs "question" ("How many people until two share a birthday?").
-2. Length: ~45 s vs ~65 s.
-3. Series: which of the five holds viewers best.
-4. Ending: comment question vs loop back to the opening line.
+1. History stories (real names and dates) vs everyday situations.
+2. Role in line 1: "You're a [job]" vs "You just [event]".
+3. Length: ~45 s vs ~60 s.
+4. Ending: comment question that puts the viewer back in the role vs a one-line "what happened next".
 5. Voice speed 1.0 vs 1.1.
 
 ## Log
@@ -50,3 +56,4 @@ dated log. Rewrite rules when the data changes; don't let this file grow forever
 - 2026-10-03 takeaway: keep the "doubt" beat short and moving; today's doubt beat is one short objection with a number appearing on screen, not a restatement.
 - 2026-10-03: published rope around the Earth (sounds-fake, gaTzSWBn-dA, 51.6 s, music Chill Wave, live 21:00 Tallinn 3 Oct). New-style opening #3 (hook card "+1 METER OF ROPE / 16 cm / off the ground, all round"). Angle: the square proof (sides need no extra rope, 4 quarter-circle corners make one circle of radius = gap; a circle is all corners), then football / Earth / Sun all +16 cm. Series rotated to sounds-fake (yesterday puzzle). Doubt beat kept to one short objection with "40,000 km + 1 m" on screen, per the birthday retention dip. Ending: checkable question (extra rope to lift it 1 m: 2π ≈ 6.28 m) plus a one-line subscribe ask (yesterday had none).
 - 2026-10-03 build note: the full render's voice started at 0.16 s, then 0.07 s on a retry, with "1 extra meter" (spoken "One", a soft vowel). Changing the first word to "Just" gave 0.02 s. Prefer a consonant first word; vowel openers drift.
+- 2026-10-04: owner switched the channel to the story format and to two Shorts a day (12:00 and 20:00 Tallinn; state/schedule.json). Long-form skipped this week, resumes Sunday 2026-10-11 at 20:00. Kit: kit/visuals.py (icons, you_tag, stamp, terminal, tiles...). Reference episode: episodes/_example-zip.

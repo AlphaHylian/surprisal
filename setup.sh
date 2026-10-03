@@ -59,6 +59,33 @@ PY
   fc-cache -f >/dev/null 2>&1 || true
 fi
 
+# 3b. Monospace font for terminals/code (JetBrains Mono, OFL) and the Lucide icon set (ISC).
+if [ ! -f "$HOME/.fonts/JetBrainsMono-Bold.ttf" ]; then
+  log "installing monospace font"
+  curl -sfL -o "$CACHE/JetBrainsMono-VF.ttf" "https://raw.githubusercontent.com/google/fonts/main/ofl/jetbrainsmono/JetBrainsMono%5Bwght%5D.ttf"
+  "$VENV/bin/python" - "$CACHE" "$HOME/.fonts" <<'PY'
+import sys
+from fontTools.ttLib import TTFont
+from fontTools.varLib.instancer import instantiateVariableFont
+cache, out = sys.argv[1], sys.argv[2]
+f = instantiateVariableFont(TTFont(f"{cache}/JetBrainsMono-VF.ttf"), {"wght": 700})
+n = f["name"]
+for rec in list(n.names):
+    if rec.nameID in (1, 2, 4, 6, 16, 17, 21, 22, 25):
+        n.removeNames(nameID=rec.nameID)
+for nid, v in ((1, "JetBrains Mono Bold"), (2, "Regular"), (4, "JetBrains Mono Bold"), (6, "JetBrainsMonoBold")):
+    n.setName(v, nid, 3, 1, 0x409)
+f.save(f"{out}/JetBrainsMono-Bold.ttf")
+PY
+  fc-cache -f >/dev/null 2>&1 || true
+fi
+if [ ! -d "$CACHE/icons" ]; then
+  log "installing icons"
+  (cd "$CACHE" && npm pack lucide-static@1.51.0 --silent >/dev/null 2>&1 \
+     && tar xzf lucide-static-1.51.0.tgz package/icons && mv package/icons icons && rm -rf package lucide-static-1.51.0.tgz) \
+    || log "WARNING: could not install icons; kit.visuals.icon() will draw a placeholder"
+fi
+
 # 4. Voice model (Kokoro, Apache-2.0). The caption aligner downloads its own small model on first use.
 [ -f "$CACHE/kokoro.onnx" ] || { log "downloading voice model"; curl -sfL -o "$CACHE/kokoro.onnx" https://huggingface.co/onnx-community/Kokoro-82M-v1.0-ONNX/resolve/main/onnx/model_quantized.onnx; }
 [ -f "$CACHE/voices.bin" ] || curl -sfL -o "$CACHE/voices.bin" https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.0/voices-v1.0.bin

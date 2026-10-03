@@ -1,16 +1,17 @@
 # Daily run
 
-This is the procedure the scheduled task follows every day. It publishes one video
-to the Surprisal channel (@surprisalmath) and learns from how earlier videos did.
+This is the procedure the scheduled task follows every day. It makes **two Shorts** for the
+Surprisal channel (@surprisalmath), one for each daily slot, and learns from how earlier videos
+did. (From 2026-10-11, the Sunday 20:00 slot is a long-form video instead.)
 Read `docs/STYLE.md` before writing anything.
 
 Fixed facts:
 - Channel ID: `UCKUJ4zrgiKy2EWnfUU9KdYg` (@surprisalmath)
 - Zapier app: YouTube. Use the connection whose `connection_id` is
   `02494e8c-aa2c-8b03-a94d-4c107b5c8e9c` (created 2026-09-30). Ignore the older stale one.
-- Videos go live at **9:00 pm Tallinn time** (Europe/Tallinn, the owner's clock; `kit/publish_time.py`
-  handles summer/winter time). The **publish date** (the Tallinn date of that slot) names the
-  episode and decides the day of the week.
+- Videos go live at **12:00 and 20:00 Tallinn time** (the owner's clock; slots and the long-form
+  rule live in `state/schedule.json`, and `kit/publish_time.py` turns them into dates and handles
+  summer/winter time). Each video's **slot date** (the Tallinn date of its slot) names its episode.
 - Python for all tools: `~/.surprisal_venv/bin/python` (created by `setup.sh`).
 
 ## 0. Mode
@@ -18,8 +19,8 @@ Fixed facts:
 The task prompt says `MODE: TEST` or `MODE: LIVE`.
 - TEST: upload with `privacy_status: private`, `notify_subscribers: false`, no `publish_at`.
   Still log everything, but put `privacy=private` and `experiment=test` in videos.csv.
-- LIVE: upload **scheduled**: `privacy_status: private` plus `publish_at: <PUBLISH_AT_UTC>`,
-  `notify_subscribers: true`. YouTube makes it public at 9pm Tallinn time.
+- LIVE: upload **scheduled**: `privacy_status: private` plus `publish_at: <that video's
+  SLOTn_PUBLISH_AT_UTC>`, `notify_subscribers: true`. YouTube makes it public at that time.
   (If the slot is less than 15 minutes away or already passed by upload time, upload with
   `privacy_status: public` and no `publish_at` instead, and say so in the summary.)
 
@@ -62,31 +63,35 @@ c. **Comments.** `https://www.googleapis.com/youtube/v3/commentThreads` with
 d. **Update `state/learnings.md`.** Follow its "How to judge" rules. If the current
    experiment has 5+ videos per arm (or has run 7 days), write the verdict in the log,
    update "Rules we trust" if the result is clear, and start the next experiment.
-   Write down what today's video will do differently and why.
+   Write down what today's videos will do differently and why.
 
-## 3. Plan today's video
+## 3. Plan today's two videos
 
-First find the publish slot:
+First find the two publish slots:
 ```bash
 ~/.surprisal_venv/bin/python -m kit.publish_time
 ```
-Keep `PUBLISH_AT_UTC`, `PUBLISH_DATE`, `PUBLISH_WEEKDAY` for the rest of the run.
+It prints `SLOT1_*` and `SLOT2_*` (publish time in UTC, date, local time, format). Video 1 goes
+to slot 1, video 2 to slot 2. Keep these for the rest of the run.
 
-- **PUBLISH_WEEKDAY Monday to Saturday: a Short.** Choose from `state/topics.md`, following
-  the rules in learnings.md and the current experiment. Never the same series as
-  yesterday, never a topic already in videos.csv.
-- **PUBLISH_WEEKDAY Sunday: long-form** (8 to 12 min, 16:9). Take the best Short from the past 7 days
+- **SLOTn_FORMAT short: a Short** in the story format (STYLE.md, "The four rules"). Choose from
+  `state/topics.md`, following learnings.md and the current experiment. The two videos should be
+  different kinds (e.g. one history, one everyday), and never a topic already in videos.csv.
+- **SLOTn_FORMAT long: long-form** (8 to 12 min, 16:9). Take the best Short from the past 7 days
   (highest engaged views × average view %, at similar age) and go deeper, as described
-  in STYLE.md. If there are no public Shorts yet, make a Short instead.
-- If `state/next_up.md` names a topic, the previous video promised it: make that one today
-  (unless it's Sunday long-form, then make it tomorrow), then empty the file. If you tease the
+  in STYLE.md. If there are no public story-format Shorts yet, make a Short instead.
+- Plan both, then build them one after the other (steps 4 to 6 for video 1, then for video 2).
+  If you run short of time or video 2 fails QA, publish video 1 and report video 2.
+- If `state/next_up.md` names a topic, the previous video promised it: make it as video 1
+  (or video 2 if slot 1 is long-form), then empty the file. If you tease the
   next topic in today's video, write it to `state/next_up.md`.
 - Read the topic's Wikipedia page (and MathWorld or another solid source if needed)
   with WebSearch/WebFetch. For `[check]` topics, look up the current state today.
-- Decide the angle (STYLE.md, point 4).
+- Decide who the viewer is, the problem line, and where the story ties back (STYLE.md).
 
-Episode folder: `episodes/<PUBLISH_DATE>-<slug>/` with `script.json`, `scene.py`, `verify.py`.
-Use `episodes/_example-birthday-paradox/` as the working example of all three.
+Episode folder: `episodes/<SLOTn_DATE>-<slug>/` with `script.json`, `scene.py`, `verify.py`.
+Use `episodes/_example-zip/` as the working example of all three in the story format (its
+scene shows the story kit: `you_tag`, `stamp`, `terminal`, `tiles`, `back_arrow`, icons).
 
 ## 4. Verify the math first
 
@@ -97,10 +102,11 @@ the script, fix the script. If the claim itself fails, pick another topic.
 
 ## 5. Write script.json and scene.py
 
-Follow STYLE.md. `script.json` fields: `slug, format ("short"|"long"), series,
+Follow STYLE.md. `script.json` fields: `slug, format ("short"|"long"), series (the kind:
+history, everyday, tech or nature),
 hook_style, angle, title, description, tags, facts_checked, beats[]` (optional: `speed`).
 Each beat: `id`, `say`, optional `caption`, optional `chapter` (long-form).
-`scene.py`: `from kit.brand import *`, `class Episode(SurprisalScene)`, one
+`scene.py`: `from kit.brand import *` and `from kit.visuals import *`, `class Episode(SurprisalScene)`, one
 `with self.beat(id):` block per beat in order. Long-form also needs `class Thumbnail(Scene)`.
 
 ## 6. Render, look, fix
@@ -128,6 +134,8 @@ If after all rounds it still isn't right, don't upload: go to step 9 and report 
 
 ## 7. Publish
 
+Publish each video right after it passes QA, **one at a time**: the renders branch only holds
+one video, so stage video 1, upload it, and only then stage video 2.
 ```bash
 bash kit/stage_video.sh episodes/<folder>
 ```
@@ -143,20 +151,20 @@ after the footer (the tracks are CC BY; leaving the credit out breaks the licens
 Save the returned `id`. If the upload fails, wait 60 s and try once more; if it fails
 again, stop and report the error (the video stays on the renders branch).
 
-LIVE mode: check the upload response shows `"publishAt": "<PUBLISH_AT_UTC>"`. If it doesn't,
+LIVE mode: check the upload response shows `"publishAt": "<SLOTn_PUBLISH_AT_UTC>"`. If it doesn't,
 set it with `execute_zapier_write_action`, action `_zap_raw_request`, `method: PUT`,
 url `https://www.googleapis.com/youtube/v3/videos`, querystring `{"part": "status"}`,
 header `Content-Type: application/json`, body
-`{"id": "<id>", "status": {"privacyStatus": "private", "publishAt": "<PUBLISH_AT_UTC>",
+`{"id": "<id>", "status": {"privacyStatus": "private", "publishAt": "<SLOTn_PUBLISH_AT_UTC>",
 "selfDeclaredMadeForKids": false, "embeddable": true, "publicStatsViewable": true}}`.
 Always send all five status fields: this call replaces the whole status block, and anything
 left out gets reset. Check the response shows the publishAt.
 
 ## 8. Log and save
 
-- Append a row to `state/videos.csv` (`date` = PUBLISH_DATE, `publish_at_utc` = PUBLISH_AT_UTC,
-  or empty in TEST mode; `music` = the track file from report.json / tracks.json).
-- Move the topic line to "Used" in `state/topics.md` with date and video ID.
+- Append one row per video to `state/videos.csv` (`date` = SLOTn_DATE, `publish_at_utc` =
+  SLOTn_PUBLISH_AT_UTC, or empty in TEST mode; `music` = the track file from report.json / tracks.json).
+- Move each topic line to "Used" in `state/topics.md` with date, slot and video ID.
 - Add a dated line to the learnings log: what was published, what changed, why.
 - Commit the episode folder (build/ is ignored) and `state/`:
 ```bash
@@ -167,10 +175,10 @@ git pull -q --rebase origin main && git push -q origin main
 ## 9. Morning summary
 
 Send one message (SendUserMessage if available, and repeat it as the final reply):
-- the video: title, link (`https://youtube.com/shorts/<id>` or `https://youtu.be/<id>`), mode,
-  and when it goes live (PUBLISH_LOCAL);
+- each video: title, link (`https://youtube.com/shorts/<id>` or `https://youtu.be/<id>`), mode,
+  and when it goes live (SLOTn_LOCAL);
 - 2 to 4 lines on how earlier videos are doing and what the numbers suggest;
-- what today's video changed and why (the experiment);
+- what today's videos changed and why (the experiment);
 - confirmed viewer-reported errors that need a pinned correction, with suggested wording;
 - anything that went wrong or needs the owner (failed upload, stale Zapier connection, etc.).
 Keep it short. Plain sentences.
