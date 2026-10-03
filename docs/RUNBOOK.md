@@ -124,6 +124,9 @@ Also read `report.json`: `problems`, `heard` (does it match the script?), overru
 failed: read `/tmp` logs / the make output for the error, try the voice step once more
 (`--from voice`), and if it fails again, publish with the fallback and say so in the summary.
 Fix scene.py and re-run the draft (`--from render` skips the voice step). At most 4 rounds.
+If one beat's voice is the problem (late `speech_starts_at_s`, a mispronounced word in `heard`),
+re-voice just that beat: `--redo-beats hook` (comma-separate several). It takes ~2-3 minutes
+per beat instead of ~20 for the whole video.
 
 Then the full render:
 ```bash

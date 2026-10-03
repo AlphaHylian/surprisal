@@ -125,6 +125,7 @@ def main():
     ap.add_argument("episode")
     ap.add_argument("--draft", action="store_true", help="low-res 15fps preview, much faster")
     ap.add_argument("--from", dest="start", default="voice", choices=["voice", "render", "assemble"])
+    ap.add_argument("--redo-beats", default="", help="comma-separated beat ids: re-voice only these, then render")
     a = ap.parse_args()
     ep = os.path.abspath(a.episode)
     script = json.load(open(f"{ep}/script.json"))
@@ -132,7 +133,11 @@ def main():
     t0 = time.time()
     steps = ["voice", "render", "assemble"]
     todo = steps[steps.index(a.start):]
-    if "voice" in todo:
+    if a.redo_beats:
+        print(f"[make] re-voicing {a.redo_beats}")
+        audio.synth_voice(ep, only=[x.strip() for x in a.redo_beats.split(",") if x.strip()])
+        todo = ["render", "assemble"]
+    elif "voice" in todo:
         print("[make] voice"); audio.synth_voice(ep)
     if "render" in todo:
         audio.trim_all(ep)  # idempotent; makes sure old clips have no lead-in silence

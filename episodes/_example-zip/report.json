@@ -1,0 +1,17 @@
+{
+ "ok": true,
+ "problems": [],
+ "duration_s": 58.3,
+ "size_mb": 5.3,
+ "resolution": "1080x1920",
+ "caption_match_ratio": 0.9948186528497409,
+ "heard": "You're a programmer in 1988, and you're being sued over your own app. It shrinks files much faster than theirs. But the deal you sign says, stop shipping it by January 31st, 1989. You need a brand new way to make files smaller. Here's the trick. Files repeat themselves. Look at this line. To be or not to be, the second to be is an exact copy. So don't store it twice. Store a tiny note instead. Go back 13, copy 5. That's your way out. Real files are full of repeats. Spaces, common words, whole lines of code. A page of English shrinks to about a third. Two weeks after the deadline on Valentine's Day, 1989, you release it. You call it zip. You give the format away for free, so anyone can use it. The old one fades out, and by 2 ,000 windows opens zips on its own. Every zip you've opened still runs on that idea. Never store anything twice. So how would you shrink the word banana? Tell me below.",
+ "music": "Tech Talk",
+ "music_gap_db": 8.0,
+ "speech_starts_at_s": 0.01,
+ "final_lufs": -14.8,
+ "voice_engine": "omnivoice",
+ "contact_sheet_every_s": 2.4,
+ "build_seconds": 175,
+ "draft": false
+}

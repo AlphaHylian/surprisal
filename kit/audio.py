@@ -88,15 +88,24 @@ def _synth_kokoro(script, out):
     return durations
 
 
-def synth_voice(ep):
+def synth_voice(ep, only=None):
+    """Voice every beat, or only the beat ids in `only` (keeps the other clips as they are)."""
     script = json.load(open(f"{ep}/script.json"))
     ids = [b["id"] for b in script["beats"]]
     if len(ids) != len(set(ids)):
         raise ValueError("beat ids in script.json must be unique")
     out = f"{ep}/build/voice"
     os.makedirs(out, exist_ok=True)
+    if only:
+        unknown = set(only) - set(ids)
+        if unknown:
+            raise ValueError(f"no such beat ids: {sorted(unknown)}")
+        script = dict(script, beats=[b for b in script["beats"] if b["id"] in only])
     t0 = time.time()
     engine = script.get("engine", "omnivoice")
+    if only and os.path.exists(f"{out}/engine.json"):  # keep one voice across the video
+        prev = json.load(open(f"{out}/engine.json"))["engine"]
+        engine = "kokoro" if prev.startswith("kokoro") else engine
     if engine == "omnivoice":
         try:
             durations = _synth_omnivoice(script, out)

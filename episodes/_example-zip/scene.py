@@ -20,19 +20,19 @@ class Episode(SurprisalScene):
 
         # ---------------- problem: your fast app, a deadline, banned
         with self.beat("problem"):
-            term = terminal(["C:\\> PKARC REPORT.TXT", "shrinking... done", "C:\\>"], width=8.2,
-                            title="1988", font_size=38).move_to(UP * 3.4)
+            term = terminal(["C:\\> PKARC NOTES.TXT", "shrinking... done", "C:\\>"], width=8.2,
+                            title="1988", font_size=44).move_to(UP * 3.0)
             self.play(FadeOut(gav), FadeOut(sued), FadeOut(you), FadeOut(yr, shift=UP * 0.3),
                       FadeIn(term.submobjects[0]), FadeIn(term.submobjects[1]), run_time=0.5)
             self.play(AddTextLetterByLetter(term.lines[0]), run_time=self.rt(0.9))
-            fast = chip("much faster than theirs", MINT, size=46).move_to(UP * 0.5)
+            fast = chip("much faster than theirs", MINT, size=50).move_to(DOWN * 0.2)
             self.play(AddTextLetterByLetter(term.lines[1]), FadeIn(fast, shift=UP * 0.2),
                       run_time=self.rt(0.8))
             self.add(term.lines[2])
             self.wait(self.rt(0.9, 0.2))
-            deadline = chip("STOP BY  31 JAN 1989", CORAL, BG, size=50).move_to(UP * 0.5)
-            banned = stamp("BANNED", size=110).move_to(UP * 3.4)
-            self.play(ReplacementTransform(fast, deadline), run_time=self.rt(0.5))
+            deadline = chip("STOP BY  31 JAN 1989", CORAL, BG, size=54).move_to(DOWN * 0.2)
+            banned = stamp("BANNED", size=130).move_to(UP * 3.0)
+            self.play(FadeOut(fast, shift=UP * 0.3), FadeIn(deadline, shift=UP * 0.3), run_time=self.rt(0.5))
             self.play(slam(banned), term.animate.set_opacity(0.35), run_time=0.35)
             self.wait(self.rt(1.5, 0.35))
             need = Text("a new way to shrink files", font=FONT_BOLD, color=AMBER, font_size=58)
@@ -42,7 +42,7 @@ class Episode(SurprisalScene):
         # ---------------- the trick: files repeat themselves
         with self.beat("trick"):
             head = headline("Files repeat themselves")
-            t = tiles(ROW1 + ROW2, size=0.9, per_row=9).move_to(UP * 2.4)
+            t = tiles(ROW1 + ROW2, size=0.92, per_row=9).move_to(UP * 2.2)
             self.play(FadeOut(VGroup(term, banned, deadline)), ReplacementTransform(need, head),
                       run_time=self.rt(0.5))
             self.play(LaggedStart(*[FadeIn(x, shift=DOWN * 0.2) for x in t], lag_ratio=0.06),
@@ -67,7 +67,7 @@ class Episode(SurprisalScene):
             note = chip("back 13, copy 5", AMBER, size=38)
             note.next_to(t[12], RIGHT, buff=0.15)
             self.wait(self.rt(0.8, 0.3))
-            self.play(ReplacementTransform(second, note), FadeOut(arrow), run_time=self.rt(0.9))
+            self.play(FadeTransform(second, note), FadeOut(arrow), run_time=self.rt(0.9))
             self.play(Circumscribe(note, color=AMBER), run_time=self.rt(0.8))
 
         # ---------------- scale: your way out, real files repeat everywhere
