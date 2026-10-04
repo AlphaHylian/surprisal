@@ -14,9 +14,6 @@ through verify.py.
   zero = you keep 2.7% of every roulette bet), law of large numbers, chips instead of cash, comps
   scaled to losses. Reveal: the math of every real casino. (the owner's example; keep it about
   how the business works, never encourage gambling)
-- You run an airline: 1 in 10 passengers never shows up, so your planes fly with empty paid
-  seats. Steps: sell more tickets than seats, calculate the risk of bumping someone (binomial),
-  pay volunteers to switch flights. Reveal: every airline overbooks. [check]
 - You're an Allied analyst and you need to know how many tanks the enemy is building. Steps:
   collect serial numbers from captured tanks, use the biggest one, correct for the gap
   (m + m/k - 1). Reveal: the German tank problem; estimates beat spies. [check]
@@ -56,3 +53,4 @@ through verify.py.
 - 2026-10-02  clock-hands-meet (puzzle)  r92Byr0zgdQ  9pm Tallinn 2 Oct, LIVE scheduled, opening-card #2
 - 2026-10-03  rope-around-earth (sounds-fake)  gaTzSWBn-dA  9pm Tallinn 3 Oct, LIVE scheduled, opening-card #3
 - 2026-10-04  zip-how-to (tech, how-to)  R-daCCuG7e0  12:00 Tallinn 4 Oct, the owner's approved test video; first how-to + first Remotion video
+- 2026-10-04  airline-overbooking (everyday, how-to)  Vew58AvSCqw  20:00 Tallinn 4 Oct, LIVE scheduled

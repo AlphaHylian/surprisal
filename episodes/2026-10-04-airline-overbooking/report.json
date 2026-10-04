@@ -1,0 +1,17 @@
+{
+ "ok": true,
+ "problems": [],
+ "duration_s": 82.8,
+ "size_mb": 17.1,
+ "resolution": "1080x1920",
+ "caption_match_ratio": 0.9959514170040485,
+ "heard": "You run an airline and your planes keep taking off with empty seats you already sold. Here's how you fix it. Count the no -shows. Say one in 10 ticket holders never turns up. On a 180 -seat plane that's 18 empty seats. Every flight. So sell more tickets than you have seats. Sell 200? On average, exactly 180 show up. But uh -oh. Almost half your flights now have more people than seats. The average isn't enough. You need the odds. Every passenger is a coin flip that comes up yes nine times in 10. Add up the coins and sell 193. Now only one flight in 22 is over full. And the empty seats drop from 18 to about 6. That's 12 more paying passengers on every plane. But today, 182 people show up for 180 seats. Don't pick who gets thrown off. Hold an auction. Offer a $100 voucher for a later flight. No takers? Make it 200. Keep raising until two people say yes. And there you have it. Fuller planes and the only people left behind are the ones who sold you their seat. This is how every airline sells tickets. Paying volunteers was economist Julian Simon's idea and airlines rejected it at first. So how many tickets would you sell for a 100 -seat plane? Tell me below.",
+ "music": "Digital Lemonade",
+ "music_gap_db": 8.0,
+ "speech_starts_at_s": 0.01,
+ "final_lufs": -14.8,
+ "voice_engine": "omnivoice",
+ "contact_sheet_every_s": 3.5,
+ "build_seconds": 266,
+ "draft": false
+}

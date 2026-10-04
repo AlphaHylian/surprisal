@@ -1,0 +1,83 @@
+{
+  "slug": "airline-overbooking",
+  "format": "short",
+  "series": "everyday",
+  "hook_style": "how-to",
+  "angle": "you run an airline; 1 in 10 no-shows = 18 empty paid seats on a 180-seat plane; selling 200 (the average fix) overbooks almost half the flights; treat each passenger as a 9-in-10 coin and sell 193 (over full 1 flight in 22, ~6 empty seats, ~12 more paying passengers); when it happens, auction vouchers until someone volunteers; reveal: every airline, Julian Simon's volunteer idea",
+  "title": "How airlines sell more tickets than seats",
+  "description": "Say 1 in 10 ticket holders never shows up: a 180-seat plane flies with 18 empty seats it already sold. Selling 200 tickets fixes the average but leaves 46.5% of flights with more people than seats. Treat each passenger as a coin that shows up 9 times in 10 and add up the odds: 193 tickets is the most you can sell while staying under 1 in 20, so only 1 flight in 22 is over full, and you fly about 12 more paying passengers each time. When it does happen, auction vouchers until someone volunteers, the fix economist Julian Simon proposed and airlines at first rejected.\n\nNumbers checked in code: exact binomial odds plus 200,000 simulated flights (1 in 10 no-shows is the example's assumption). Sources: https://en.wikipedia.org/wiki/Overselling and https://en.wikipedia.org/wiki/Julian_Lincoln_Simon",
+  "tags": [
+    "airline overbooking",
+    "overbooked flight",
+    "how airlines make money",
+    "binomial distribution",
+    "probability",
+    "julian simon",
+    "math",
+    "maths",
+    "statistics"
+  ],
+  "music_moods": [
+    "upbeat"
+  ],
+  "facts_checked": [
+    "180 seats, 1 in 10 no-shows (example assumption): 18 empty seats on average (verify.py)",
+    "Selling 200: 180 show up on average, but P(more than 180 show) = 46.5% -> 'almost half' (verify.py, exact + 200,000-flight simulation)",
+    "Selling 193: P(over full) = 4.48% -> 1 flight in 22; 193 is the max with risk under 1 in 20 (verify.py)",
+    "Selling 193: 6.4 empty seats on average, 11.6 (~12) more paying passengers than selling 180 (verify.py)",
+    "182 show for 180 seats -> 2 volunteers needed; when over full, 1 or 2 too many 73% of the time (verify.py)",
+    "CTA answer: 100 seats, same assumptions -> sell 106 (risk 4.0%) (verify.py)",
+    "Airlines overbook on purpose and must first ask for volunteers (US CFR 14 Part 250, EU 261/2004): https://en.wikipedia.org/wiki/Overselling",
+    "Julian Simon proposed paying volunteers; airlines initially rejected it, later implemented: https://en.wikipedia.org/wiki/Julian_Lincoln_Simon"
+  ],
+  "beats": [
+    {
+      "id": "hook",
+      "say": "You run an airline, and your planes keep taking off with empty seats you already sold. Here's how you fix it."
+    },
+    {
+      "id": "noshow",
+      "say": "Count the no-shows. Say 1 in 10 ticket holders never turns up. On a 180 seat plane, that's 18 empty seats, every flight."
+    },
+    {
+      "id": "sell",
+      "say": "So sell more tickets than you have seats."
+    },
+    {
+      "id": "naive",
+      "say": "Sell 200? On average, exactly 180 show up. But uh-oh. Almost half your flights now have more people than seats."
+    },
+    {
+      "id": "odds",
+      "say": "The average isn't enough. You need the odds. Every passenger is a coin flip that comes up yes 9 times in 10."
+    },
+    {
+      "id": "pick",
+      "say": "Add up the coins, and sell 193. Now only 1 flight in 22 is over full."
+    },
+    {
+      "id": "gain",
+      "say": "And the empty seats drop from 18 to about 6. That's 12 more paying passengers on every plane."
+    },
+    {
+      "id": "over",
+      "say": "But today, 182 people show up for 180 seats."
+    },
+    {
+      "id": "auction",
+      "say": "Don't pick who gets thrown off. Hold an auction. Offer a 100 dollar voucher for a later flight. No takers? Make it 200. Keep raising until 2 people say yes."
+    },
+    {
+      "id": "result",
+      "say": "And there you have it. Fuller planes, and the only people left behind are the ones who sold you their seat."
+    },
+    {
+      "id": "reveal",
+      "say": "This is how every airline sells tickets. Paying volunteers was economist Julian Simon's idea, and airlines rejected it at first."
+    },
+    {
+      "id": "cta",
+      "say": "So how many tickets would you sell for a 100 seat plane? Tell me below."
+    }
+  ]
+}
