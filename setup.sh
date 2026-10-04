@@ -9,10 +9,15 @@ log(){ echo "[setup] $*"; }
 
 # 1. System packages: Pango/Cairo for Manim text, LaTeX + dvisvgm for MathTex, ffmpeg for assembly.
 PKGS="libpango1.0-dev libcairo2-dev pkg-config ffmpeg dvisvgm texlive-latex-extra texlive-fonts-recommended texlive-extra-utils"
-if ! (pkg-config --exists pangocairo && command -v dvisvgm >/dev/null && command -v ffmpeg >/dev/null && kpsewhich standalone.cls >/dev/null 2>&1); then
+if ! (pkg-config --exists pangocairo && command -v dvisvgm >/dev/null && command -v ffmpeg >/dev/null && kpsewhich standalone.cls >/dev/null 2>&1 ); then
   log "installing system packages (a few minutes)"
   export DEBIAN_FRONTEND=noninteractive
   apt-get install -y -q $PKGS >/tmp/apt.log 2>&1 || { apt-get update -q >/dev/null 2>&1; apt-get install -y -q $PKGS >/tmp/apt.log 2>&1; }
+fi
+
+# 1b. Colour emoji for Remotion scenes (optional: scenes still render without it, emoji show as boxes).
+if ! fc-list 2>/dev/null | grep -q "Noto Color Emoji"; then
+  apt-get install -y -q fonts-noto-color-emoji >/tmp/apt-emoji.log 2>&1 || log "WARNING: no emoji font (fonts-noto-color-emoji)"
 fi
 
 # 2. Python environment. A venv avoids a build failure in the system Python's setuptools.
@@ -22,6 +27,7 @@ if [ ! -x "$VENV/bin/manim" ]; then
   "$VENV/bin/pip" install -q --upgrade pip
   "$VENV/bin/pip" install -q manim kokoro-onnx soundfile faster-whisper num2words fonttools numpy
 fi
+"$VENV/bin/python" -c "import msgpack, requests" 2>/dev/null || "$VENV/bin/pip" install -q msgpack requests
 
 # 2b. OmniVoice (the channel voice). CPU build of PyTorch first so pip doesn't pull CUDA wheels.
 if ! "$VENV/bin/python" -c "import omnivoice" 2>/dev/null; then
@@ -93,5 +99,15 @@ fi
 # 5. Fetch the OmniVoice weights now (about 3 GB, cached by Hugging Face) so the voice step doesn't wait on them.
 "$VENV/bin/python" -c "from huggingface_hub import snapshot_download; snapshot_download('k2-fsa/OmniVoice')" >/dev/null 2>&1 \
   || log "WARNING: could not pre-download OmniVoice weights; the voice step will try again (Kokoro is the fallback)"
+
+# 6. Remotion studio (the video renderer for scene.tsx episodes) and its sound effects.
+HERE="$(cd "$(dirname "$0")" && pwd)"
+if [ ! -d "$HERE/studio/node_modules/remotion" ]; then
+  log "installing Remotion (npm ci)"
+  (cd "$HERE/studio" && npm ci --silent --no-audit --no-fund >/tmp/npm.log 2>&1) || log "WARNING: npm ci failed, see /tmp/npm.log"
+fi
+[ -f "$HERE/studio/public/sfx/whoosh.wav" ] || (cd "$HERE" && "$VENV/bin/python" -m kit.sfx >/dev/null)
+ls /opt/pw-browsers/chromium_headless_shell-*/chrome-linux/headless_shell >/dev/null 2>&1 \
+  || log "WARNING: no Chromium headless shell in /opt/pw-browsers; Remotion will try to download one"
 
 "$VENV/bin/python" -c "import manim, kokoro_onnx, faster_whisper, omnivoice" && log "ready. Run tools with $VENV/bin/python"

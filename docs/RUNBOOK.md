@@ -89,9 +89,9 @@ to slot 1, video 2 to slot 2. Keep these for the rest of the run.
   with WebSearch/WebFetch. For `[check]` topics, look up the current state today.
 - Decide who the viewer is, the problem line, and where the story ties back (STYLE.md).
 
-Episode folder: `episodes/<SLOTn_DATE>-<slug>/` with `script.json`, `scene.py`, `verify.py`.
-Use `episodes/_example-zip/` as the working example of all three in the story format (its
-scene shows the story kit: `you_tag`, `stamp`, `terminal`, `tiles`, `back_arrow`, icons).
+Episode folder: `episodes/<SLOTn_DATE>-<slug>/` with `script.json`, `scene.tsx`, `verify.py`.
+Use `episodes/_example-zip/` as the working example of all three in the how-to format (its
+scene shows the Remotion kit: `You`, `Stamp`, `Tiles`, `Bits`, `Arrow`, `Camera`, `Sfx`).
 
 ## 4. Verify the math first
 
@@ -100,14 +100,16 @@ anything probabilistic (at least 100,000 trials). Run it. Put the results in
 `script.json` → `facts_checked`, with the source URL. If a number disagrees with
 the script, fix the script. If the claim itself fails, pick another topic.
 
-## 5. Write script.json and scene.py
+## 5. Write script.json and scene.tsx
 
 Follow STYLE.md. `script.json` fields: `slug, format ("short"|"long"), series (the kind:
 history, everyday, tech or nature),
 hook_style, angle, title, description, tags, facts_checked, beats[]` (optional: `speed`).
 Each beat: `id`, `say`, optional `caption`, optional `chapter` (long-form).
-`scene.py`: `from kit.brand import *` and `from kit.visuals import *`, `class Episode(SurprisalScene)`, one
-`with self.beat(id):` block per beat in order. Long-form also needs `class Thumbnail(Scene)`.
+`scene.tsx` (Shorts): Remotion, imports from `"../kit"`; see STYLE.md "Visuals" and the example.
+Every beat id must be covered by exactly one `<Span>`, in order. Long-form still uses `scene.py`
+(Manim: `from kit.brand import *`, `from kit.visuals import *`, `class Episode(SurprisalScene)`,
+one `with self.beat(id):` block per beat, plus `class Thumbnail(Scene)`).
 
 ## 6. Render, look, fix
 
@@ -120,13 +122,16 @@ caption line or behind the right-hand buttons, a frame with nothing on it, the k
 number not visible when the voice says it, anything that looks broken.
 Also read `report.json`: `problems`, `heard` (does it match the script?), overruns,
 `speech_starts_at_s` (must be under 0.05), `music` (a track title, not "generated pad"), and
-`voice_engine`. It should be `omnivoice`; if it says `kokoro (fallback)`, the channel voice
-failed: read `/tmp` logs / the make output for the error, try the voice step once more
+`voice_engine`. It should be `fish` (or `omnivoice` if Fish Audio isn't set up; both are Sam's
+voice); if it says `kokoro (fallback)`, the channel voice failed: read `/tmp` logs / the make output for the error, try the voice step once more
 (`--from voice`), and if it fails again, publish with the fallback and say so in the summary.
-Fix scene.py and re-run the draft (`--from render` skips the voice step). At most 4 rounds.
+Fix the scene and re-run the draft (`--from render` skips the voice step). At most 4 rounds.
 If one beat's voice is the problem (late `speech_starts_at_s`, a mispronounced word in `heard`),
-re-voice just that beat: `--redo-beats hook` (comma-separate several). It takes ~2-3 minutes
-per beat instead of ~20 for the whole video.
+re-voice just that beat: `--redo-beats hook` (comma-separate several). It takes seconds with
+Fish Audio, ~2-3 minutes per beat with OmniVoice.
+A Remotion render error prints the React error; the usual cause is a hook (`useAt`, `useT`)
+outside a `<Span>`. To check one moment quickly: `node studio/render.mjs episodes/<folder> --still 12.5`
+writes `build/still_12.5.png` (needs `build/plan.json`, which any make run writes first).
 
 Then the full render:
 ```bash

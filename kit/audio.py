@@ -1,4 +1,4 @@
-"""Voiceover (OmniVoice cloning the channel voice, Kokoro as fallback), caption alignment
+"""Voiceover (Fish Audio or OmniVoice cloning the channel voice, Kokoro as last resort), caption alignment
 (faster-whisper) and background music."""
 import json
 import os
@@ -77,6 +77,48 @@ def _synth_omnivoice(script, out):
     return durations
 
 
+FISH_URL = "https://api.fish.audio/v1/tts"
+FISH_MODEL = os.environ.get("FISH_MODEL", "s2.1-pro-free")  # free (fair use) until 2026-11-30, then "s2.1-pro" is paid
+
+
+def _synth_fish(script, out):
+    """Fish Audio cloud TTS, cloning Sam zero-shot from the same reference clip: a few seconds per
+    beat instead of minutes on CPU. The key comes from the FISH_API_KEY environment variable, or is
+    attached to api.fish.audio by the environment's proxy (an API credential on the cloud
+    environment); it never goes in the repo. Raises on any failure so the caller can fall back."""
+    import io
+
+    import msgpack
+    import requests
+    ref = {"audio": open(REF_AUDIO, "rb").read(), "text": open(REF_TEXT).read().strip()}
+    headers = {"Content-Type": "application/msgpack", "model": script.get("fish_model", FISH_MODEL)}
+    if os.environ.get("FISH_API_KEY"):
+        headers["Authorization"] = f"Bearer {os.environ['FISH_API_KEY']}"
+    speed = script.get("speed")
+    durations = {}
+    for b in script["beats"]:
+        body = {"text": spoken(b["say"]), "references": [ref], "format": "wav", "sample_rate": VOICE_SR,
+                "latency": "normal", "normalize": True, "temperature": 0.7, "top_p": 0.7}
+        if b.get("speed", speed):
+            body["prosody"] = {"speed": b.get("speed", speed)}
+        for attempt in range(3):
+            r = requests.post(FISH_URL, data=msgpack.packb(body), headers=headers, timeout=120)
+            if r.status_code == 200 or r.status_code in (401, 402, 403):
+                break
+            time.sleep(3 * (attempt + 1))
+        if r.status_code != 200:
+            raise RuntimeError(f"Fish Audio HTTP {r.status_code}: {r.text[:200]}")
+        audio, sr = sf.read(io.BytesIO(r.content), dtype="float32")
+        if audio.ndim > 1:
+            audio = audio.mean(axis=1)
+        if sr != VOICE_SR:
+            raise RuntimeError(f"unexpected sample rate {sr}")
+        sf.write(f"{out}/{b['id']}.wav", audio, VOICE_SR)
+        durations[b["id"]] = round(len(audio) / VOICE_SR, 3)
+        print(f"  voice {b['id']}: {durations[b['id']]}s (fish)", flush=True)
+    return durations
+
+
 def _synth_kokoro(script, out):
     from kokoro_onnx import Kokoro
     k = Kokoro(f"{CACHE}/kokoro.onnx", f"{CACHE}/voices.bin")
@@ -102,18 +144,24 @@ def synth_voice(ep, only=None):
             raise ValueError(f"no such beat ids: {sorted(unknown)}")
         script = dict(script, beats=[b for b in script["beats"] if b["id"] in only])
     t0 = time.time()
-    engine = script.get("engine", "omnivoice")
+    # Order of preference: Fish Audio (fast), OmniVoice (same voice, slow, local), Kokoro (last resort).
+    engine = script.get("engine", "fish")
     if only and os.path.exists(f"{out}/engine.json"):  # keep one voice across the video
         prev = json.load(open(f"{out}/engine.json"))["engine"]
-        engine = "kokoro" if prev.startswith("kokoro") else engine
+        engine = prev.split(" ")[0]
+    if engine == "fish":
+        try:
+            durations = _synth_fish(script, out)
+        except Exception as e:
+            print(f"[voice] Fish Audio failed ({type(e).__name__}: {e}); using OmniVoice", flush=True)
+            engine = "omnivoice"
     if engine == "omnivoice":
         try:
             durations = _synth_omnivoice(script, out)
         except Exception as e:  # never lose the day's video over the voice model
             print(f"[voice] OmniVoice failed ({type(e).__name__}: {e}); falling back to Kokoro", flush=True)
             engine = "kokoro (fallback)"
-            durations = _synth_kokoro(script, out)
-    else:
+    if engine.startswith("kokoro"):
         durations = _synth_kokoro(script, out)
     json.dump({"engine": engine, "seconds": round(time.time() - t0)}, open(f"{out}/engine.json", "w"))
     return trim_all(ep)
@@ -291,15 +339,10 @@ def _ass_time(t):
     return f"{h}:{m:02d}:{s:05.2f}"
 
 
-def write_ass(ep, words, fmt):
-    if fmt == "short":
-        W, H, size, pos, maxchars = 1080, 1920, 96, (540, 1250), 15
-    else:
-        W, H, size, pos, maxchars = 1920, 1080, 58, (960, 985), 34
-    INK, AMB, NAVY = "&H00E6EFF2", "&H0047B5FF", "&H0026170E"
-    # group words into short chunks
+def caption_chunks(words, maxchars=15):
+    """Group aligned words into short on-screen chunks (max 3 words, break at punctuation/pauses)."""
     chunks, cur = [], []
-    for i, w in enumerate(words):
+    for w in words:
         text_len = sum(len(x["text"]) + 1 for x in cur) + len(w["text"])
         gap = w["start"] - cur[-1]["end"] if cur else 0
         if cur and (len(cur) >= 3 or text_len > maxchars or gap > 0.45 or w["beat"] != cur[-1]["beat"]
@@ -308,6 +351,16 @@ def write_ass(ep, words, fmt):
         cur.append(w)
     if cur:
         chunks.append(cur)
+    return chunks
+
+
+def write_ass(ep, words, fmt):
+    if fmt == "short":
+        W, H, size, pos, maxchars = 1080, 1920, 96, (540, 1250), 15
+    else:
+        W, H, size, pos, maxchars = 1920, 1080, 58, (960, 985), 34
+    INK, AMB, NAVY = "&H00E6EFF2", "&H0047B5FF", "&H0026170E"
+    chunks = caption_chunks(words, maxchars)
     lines = []
     for ci, ch in enumerate(chunks):
         nxt = chunks[ci + 1][0]["start"] if ci + 1 < len(chunks) else ch[-1]["end"] + 0.6

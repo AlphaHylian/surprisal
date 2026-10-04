@@ -103,7 +103,7 @@ What it does, and what every script must do:
   second real case where the same idea saved (or cost) someone, a common misunderstanding.
 - 4 to 7 chapters. Mark the first beat of each with `"chapter": "Title"`. YouTube
   needs the first chapter at 0:00, at least 3 chapters, each at least 10 seconds.
-- Needs a `class Thumbnail(Scene)` in scene.py: a single still, 1280x720, one big
+- Needs a `class Thumbnail(Scene)` in scene.py (Manim): a single still, 1280x720, one big
   number or equation plus at most 4 words, high contrast, readable at phone size.
 
 ## Voice script (`say`)
@@ -121,47 +121,81 @@ What it does, and what every script must do:
   Shorts, curious for the puzzle series, calm for long-form) and avoids the last 3 used. To choose
   one yourself set `"music": "<file>"` in script.json. Every track is CC BY: the credit in
   `build/music_credit.txt` must go at the end of the description.
-- The voice is "Sam" (OmniVoice cloning `assets/voice/sam_ref.wav`). Don't set `voice` or
-  `engine` in script.json unless the runbook says to.
+- The voice is "Sam", cloned from `assets/voice/sam_ref.wav` by Fish Audio (seconds per beat,
+  needs the API credential) or OmniVoice (local, minutes per beat) if Fish isn't available.
+  Don't set `voice` or `engine` in script.json unless the runbook says to.
 - Never read an equation symbol by symbol. Say what it means.
 - No filler: "basically", "actually", "essentially", "let's dive in", "mind-blowing",
   "the answer might surprise you". No rhetorical "But here's the thing".
 - Don't tell viewers how to feel ("this is amazing"). Show it and move on.
 
-## Visual rules
+## Visuals (Remotion: `scene.tsx`)
 
-- **Use the story kit (`from kit.visuals import *`) so videos look like scenes, not slides:**
-  `icon(name)` (2,100+ Lucide line icons: https://lucide.dev/icons), `you_tag(role)`,
-  `stamp(text)` + `slam()`, `year_stamp("1988")`, `terminal(lines)` for anything computery,
-  `tiles(text)` for data letter by letter, `highlight`, `back_arrow`, `chip(text)`,
-  `size_bar(frac)`. Combine icons into small scenes (a person, a building, a crowd of 20 user
-  icons, a plane with seat dots). Animate them: move, scale, swap, count up. Aim for something
-  new on screen every 1 to 2 seconds in the first 10 seconds.
-- Palette from `kit/brand.py` only. AMBER marks the surprising thing (the answer,
-  the key dot). MINT is structure (axes, lines, guides). CORAL is for the wrong
-  intuition, sparingly. INK for everything else on the navy background.
-- Fonts: `FONT_DISPLAY` (Fraunces) for the headline row only. `FONT_BOLD` /
-  `FONT_MED` (Space Grotesk) for labels and numbers. `MathTex` for real math only;
-  don't mix LaTeX text with Grotesk labels in the same line.
-- Layout (Shorts): headline at `TITLE_Y`; visuals between y = -1.7 and y = 6.5;
-  nothing important below y = -1.8 (captions) or right of x = 3.2 in the lower half
-  (YouTube's buttons). Use `fit()` so nothing leaves the frame.
-- Something should move at least every 2 seconds. Hold a still frame only to let a
-  number land (under 1.5 s).
-- One headline at a time; replace it with `ReplacementTransform` when the idea changes.
-- Keep it clean: at most ~3 text elements on screen besides the headline.
-- Don't copy another channel's look. No pi-creature characters, no 3Blue1Brown
-  blue/brown palette, no recreated scenes from other videos.
+Shorts are rendered with Remotion: each episode has a `scene.tsx` (React) instead of `scene.py`.
+`kit.make` sees `scene.tsx` and uses the Remotion path (voice -> plan + captions -> render -> mix).
+Read `episodes/_example-zip/scene.tsx` before writing one; copy its structure.
 
-## Timing API (from kit.brand)
+**Structure.** One component per group of beats. Hooks (`useAt`, `useT`) must run inside a
+`<Span>`, so every group is a `Body` component wrapped in a Span in the scene list:
 
-```python
-with self.beat("id"):          # lasts at least as long as that beat's voice clip
-    self.play(..., run_time=self.rt(1.2))   # 1.2s, or less if the clip is nearly over
-    self.wait(self.rt(0.8, 0.3))            # wait, capped at 30% of what's left
+```tsx
+import { Appear, At, C, Camera, Chip, Headline, Sfx, Span, Tiles, useAt, useT } from "../kit";
+
+const RepeatsBody: React.FC = () => {
+  const at = useAt();                  // times in seconds from the start of this span
+  const t = useT();                    // current time in this span
+  const tNote = at.word("note", 1, 2); // when the narrator says "note" (fallback 2 s)
+  return (<>
+    <Headline out={at.beat("note") - 0.3}>Find what repeats</Headline>
+    <Camera keys={[[0, { zoom: 1 }], [tNote, { zoom: 1.15, x: 540, y: 640 }]]}>
+      <At x={540} y={600}><Tiles text="to be or not to be" show={0.05} /></At>
+      <At x={540} y={800}><Appear at={tNote} from="slam"><Chip>back 13, copy 5</Chip></Appear></At>
+    </Camera>
+    <Sfx name="stamp" at={tNote} />
+  </>);
+};
+const Scene: React.FC = () => (<>
+  <Span from="hook"><HookBody /></Span>
+  <Span from="repeat" to="note"><RepeatsBody /></Span>   {/* one span can cover several beats */}
+</>);
+export default Scene;
 ```
-Plan animations so each beat's visuals finish close to its voice clip. Overruns keep
-audio in sync but leave dead air; the report lists them.
+
+Spans are laid out from the voice clips, so the video always matches the narration. Tie every
+change to a spoken word with `at.word(word, nth, fallback)` (matched against the script text,
+digits as written: `at.word("14")`, `at.word("32,768")`), or to a beat with `at.beat(id)`.
+
+**Kit** (`studio/src/kit/index.tsx`, all sizes in pixels on the 1080x1920 canvas):
+- Layout and motion: `At x y` (centres its child there), `Appear at out from` (up, down, left,
+  right, pop, fade, slam, drop), `Camera keys` (keyframed zoom/x/y/rot: the zoom centres on
+  x,y), `Punch at` (a quick scale bump on a reveal), `Shake at` (something went wrong),
+  `tween(t, t0, t1, a, b)` for anything custom.
+- Pieces: `Headline` (one at a time, Fraunces, at y 250), `Text`, `Icon name` (any Lucide icon by
+  its React name, e.g. "FileText", "Plane": https://lucide.dev/icons), `Emoji char`, `You role`
+  (the viewer), `Card`, `Chip`, `Stamp`, `Counter from to t0 t1`, `Bar`, `Tiles text hi hide`
+  (data letter by letter), `Bits n t0 t1` (bits filling in), `Arrow x1 y1 x2 y2 t0 t1 bend`,
+  `Terminal lines`, `TypeOn`.
+- Sound: `<Sfx name at volume />` with whoosh, swoosh, riser (starts 1.6 s before the reveal it
+  builds to), click, pop, thud, stamp, ding, tick, type, error, coin, reveal, boom (once per
+  video, at the big reveal). Put a sound on every reveal, scene change and counter landing.
+- Captions and the animated backdrop are added automatically; don't draw your own.
+
+**Rules.**
+- Palette from `C` only: amber marks the surprising thing (the answer, the key number), mint is
+  structure and "good", coral is the problem or the wrong intuition (sparingly), ink for the rest.
+- Fonts from `F`: `F.display` (Fraunces) is for the headline only; `F.bold`/`F.med` (Space
+  Grotesk) for labels and numbers; `F.mono` for data, code, bytes.
+- Layout: visuals between y 170 and 1170. Captions sit at y 1250; nothing below y 1170. Keep the
+  right edge clear below y 900 (YouTube's buttons). Text at least 40 px.
+- Something changes on screen at least every 1.5 s: a camera move, a new element, a counter.
+  Zoom in on the detail being explained, pull back to show the whole.
+- Keep it clean: besides the headline, at most ~3 text elements at once. Don't stack elements
+  on top of each other (a stamp across a label makes both unreadable).
+- Don't copy another channel's look. No pi-creature characters, no 3Blue1Brown blue/brown
+  palette, no recreated scenes from other videos.
+
+Long-form still uses the Manim pipeline (`scene.py`, `from kit.brand import *`, `from
+kit.visuals import *`, `with self.beat(id):` blocks) until a Remotion long-form has been tested.
 
 ## Titles and descriptions
 

@@ -2,7 +2,8 @@
 
     ~/.surprisal_venv/bin/python -m kit.make episodes/_example-birthday-paradox [--draft] [--from render]
 
-Episode folder must contain script.json and scene.py (class Episode, optional class Thumbnail).
+Episode folder must contain script.json and either scene.tsx (Remotion, the current kit: see
+studio/src/kit/index.tsx) or scene.py (Manim, older episodes; class Episode, optional Thumbnail).
 Outputs in <episode>/build/:
     final.mp4          the upload
     thumbnail.png      long-form only (from class Thumbnail, else a frame)
@@ -61,6 +62,74 @@ def render(ep, draft):
             shutil.copy(th[0], f"{ep}/build/thumbnail.png")
 
 
+STUDIO = os.path.join(KIT_ROOT, "studio")
+BEAT_PAD = 0.2   # seconds of breathing room after each voice clip (script beats can set "pad")
+TAIL = 0.6       # seconds after the last beat
+
+
+def is_remotion(ep):
+    return os.path.exists(f"{ep}/scene.tsx")
+
+
+def plan_remotion(ep, script):
+    """Lay beats end to end from their voice clips, build the voice track, align captions,
+    and write build/plan.json for the Remotion render."""
+    durs = json.load(open(f"{ep}/build/voice/durations.json"))
+    beats, t = [], 0.0
+    for b in script["beats"]:
+        d = durs[b["id"]] + b.get("pad", BEAT_PAD)
+        beats.append({"id": b["id"], "start": round(t, 3), "dur": round(d, 3), "say": b["say"]})
+        t += d
+    total = round(t + TAIL, 3)
+    json.dump({"beat_starts": {b["id"]: b["start"] for b in beats}, "overruns": {}, "total": total},
+              open(f"{ep}/build/timeline.json", "w"), indent=1)
+    voice = audio.build_voice_track(ep, total)
+    words, match_ratio, heard = audio.align_captions(ep, voice)
+    fmt = script.get("format", "short")
+    chunks = []
+    for ch in audio.caption_chunks(words, 15 if fmt == "short" else 34):
+        chunks.append({"start": round(ch[0]["start"], 3), "end": round(ch[-1]["end"] + 0.12, 3),
+                       "words": [{"text": w["text"], "start": round(w["start"], 3), "end": round(w["end"], 3)} for w in ch]})
+    for i in range(len(chunks) - 1):  # no gap flicker between chunks, no overlap either
+        chunks[i]["end"] = min(max(chunks[i]["end"], chunks[i + 1]["start"] - 0.25), chunks[i + 1]["start"])
+    plan = {"fps": 30, "total": total, "beats": beats, "chunks": chunks, "format": fmt}
+    json.dump(plan, open(f"{ep}/build/plan.json", "w"), indent=1)
+    return voice, match_ratio, heard
+
+
+def check_spans(ep, script):
+    """Every beat must sit in exactly one <Span>, in script order (otherwise its visuals vanish)."""
+    import re
+    ids = [b["id"] for b in script["beats"]]
+    src = open(f"{ep}/scene.tsx").read()
+    covered = []
+    for a, b in re.findall(r'<Span\s+from="([^"]+)"(?:\s+to="([^"]+)")?', src):
+        if a not in ids or (b and b not in ids):
+            raise SystemExit(f"scene.tsx: <Span from=\"{a}\" to=\"{b}\"> names a beat that isn't in script.json")
+        covered += ids[ids.index(a): ids.index(b or a) + 1]
+    if covered != ids:
+        missing = [i for i in ids if i not in covered]
+        raise SystemExit(f"scene.tsx spans must cover each beat once, in order. Beats: {ids}; "
+                         f"spans cover: {covered}" + (f"; missing: {missing}" if missing else ""))
+
+
+NOISE = ("Detected differing memory", "Memory reported by", "You might have inadvertently", "Using the lower amount")
+
+
+def render_remotion(ep, draft):
+    if not os.path.isdir(os.path.join(STUDIO, "node_modules", "remotion")):
+        sh(["npm", "ci", "--silent", "--prefix", STUDIO])
+    if not os.path.exists(os.path.join(STUDIO, "public", "sfx", "whoosh.wav")):
+        sh([sys.executable, "-m", "kit.sfx"], env=dict(os.environ, PYTHONPATH=KIT_ROOT))
+    cmd = ["node", os.path.join(STUDIO, "render.mjs"), ep] + (["--draft"] if draft else [])
+    r = subprocess.run(cmd, cwd=STUDIO, capture_output=True, text=True)
+    if r.returncode != 0:
+        err = "\n".join(l for l in r.stderr.splitlines() if not l.startswith(NOISE))
+        print(r.stdout[-3000:], err[-6000:])
+        raise SystemExit("Remotion render failed (see the error above; usually a TypeScript/React error in scene.tsx)")
+    print(r.stdout.strip().splitlines()[-1] if r.stdout.strip() else "")
+
+
 def lufs(path, pre_filter=""):
     """Integrated loudness (LUFS) of a file, optionally after a filter such as a trim."""
     af = (pre_filter + "," if pre_filter else "") + "ebur128"
@@ -74,13 +143,20 @@ VOICE_LUFS = -16.0   # voice level before the final loudness pass
 FINAL_LUFS = -14.0   # YouTube's playback reference
 
 
-def assemble(ep, script, draft):
+def assemble(ep, script, draft, pre=None):
+    """Mix voice + music (+ the render's own sound effects for Remotion episodes) and burn captions
+    (Manim episodes only; Remotion draws its own). `pre` = (voice, match_ratio, heard) if already done."""
     raw = f"{ep}/build/raw.mp4"
     dur = float(probe(raw)["format"]["duration"])
     fmt = script.get("format", "short")
-    voice = audio.build_voice_track(ep, dur)
-    words, match_ratio, heard = audio.align_captions(ep, voice)
-    ass = audio.write_ass(ep, words, fmt)
+    remotion = pre is not None
+    if remotion:
+        voice, match_ratio, heard = pre
+        ass = None
+    else:
+        voice = audio.build_voice_track(ep, dur)
+        words, match_ratio, heard = audio.align_captions(ep, voice)
+        ass = audio.write_ass(ep, words, fmt)
     seed = sum(map(ord, os.path.basename(ep.rstrip("/"))))
     music, music_title, credit, mstart = audio.pick_music(ep, script, dur + 1, seed)
     open(f"{ep}/build/music_credit.txt", "w").write(credit + ("\n" if credit else ""))
@@ -90,12 +166,18 @@ def assemble(ep, script, draft):
     v_gain = VOICE_LUFS - lufs(voice)
     m_gain = (VOICE_LUFS - gap) - lufs(music, f"atrim=start={mstart}:duration={min(dur, 90):.1f}")
     fonts = os.path.expanduser("~/.fonts")
+    sfx_gain = script.get("sfx_gain_db", -2.0)
     fc = (f"[1:a]aresample=48000,volume={v_gain:.2f}dB,apad=whole_dur={dur:.3f},asplit=2[v1][v2];"
           f"[2:a]aresample=48000,atrim=0:{dur:.3f},asetpts=PTS-STARTPTS,volume={m_gain:.2f}dB,"
           f"afade=t=in:d=0.03,afade=t=out:st={max(0, dur - 1.5):.3f}:d=1.5[m];"
-          f"[m][v1]sidechaincompress=threshold=0.05:ratio=2.5:attack=15:release=350[md];"
-          f"[v2][md]amix=inputs=2:duration=first:normalize=0,alimiter=limit=0.89:level=false[a];"
-          f"[0:v]ass={ass}:fontsdir={fonts}[vv]")
+          f"[m][v1]sidechaincompress=threshold=0.05:ratio=2.5:attack=15:release=350[md];")
+    if remotion:  # the render's audio track holds the sound effects
+        fc += (f"[0:a]aresample=48000,volume={sfx_gain:.1f}dB,apad=whole_dur={dur:.3f}[fx];"
+               f"[v2][md][fx]amix=inputs=3:duration=first:normalize=0,alimiter=limit=0.89:level=false[a];"
+               f"[0:v]null[vv]")
+    else:
+        fc += (f"[v2][md]amix=inputs=2:duration=first:normalize=0,alimiter=limit=0.89:level=false[a];"
+               f"[0:v]ass={ass}:fontsdir={fonts}[vv]")
     mixed = f"{ep}/build/mixed.mp4"
     sh(["ffmpeg", "-y", "-v", "error", "-i", raw, "-i", voice,
         "-stream_loop", "-1", "-ss", f"{mstart:.2f}", "-i", music, "-filter_complex", fc,
@@ -139,11 +221,19 @@ def main():
         todo = ["render", "assemble"]
     elif "voice" in todo:
         print("[make] voice"); audio.synth_voice(ep)
-    if "render" in todo:
+    pre = None
+    if is_remotion(ep):
+        audio.trim_all(ep)
+        print("[make] plan + captions")
+        pre = plan_remotion(ep, script)
+        if "render" in todo:
+            check_spans(ep, script)
+            print("[make] render (Remotion)"); render_remotion(ep, a.draft)
+    elif "render" in todo:
         audio.trim_all(ep)  # idempotent; makes sure old clips have no lead-in silence
         print("[make] render (Manim)"); render(ep, a.draft)
     print("[make] assemble")
-    out, match_ratio, heard, music, voice_track = assemble(ep, script, a.draft)
+    out, match_ratio, heard, music, voice_track = assemble(ep, script, a.draft, pre)
     onset = audio.speech_onset(voice_track)
 
     info = probe(out)
@@ -155,10 +245,10 @@ def main():
     fmt = script.get("format", "short")
     problems = []
     if fmt == "short":
-        if not (v["width"] == 1080 and v["height"] == 1920) and not a.draft:
+        if not (v["width"] == 1080 and v["height"] == 1920) and not a.draft:  # drafts are half size
             problems.append(f"short must be 1080x1920, got {v['width']}x{v['height']}")
         if dur > 178:
-            problems.append(f"short is {dur:.0f}s; Shorts max is 180s, aim for 45-75s")
+            problems.append(f"short is {dur:.0f}s; Shorts max is 180s, aim for 45-90s")
     else:
         if dur < 480:
             problems.append(f"long-form is {dur/60:.1f} min; aim for 8+ minutes so mid-roll ads are allowed")
