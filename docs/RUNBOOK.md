@@ -1,8 +1,8 @@
 # Daily run
 
-This is the procedure the scheduled task follows every day. It makes **two Shorts** for the
-Surprisal channel (@surprisalmath), one for each daily slot, and learns from how earlier videos
-did. (From 2026-10-11, the Sunday 20:00 slot is a long-form video instead.)
+This is the procedure the scheduled task follows every day. It makes **one Short per free slot
+today** for the Surprisal channel (@surprisalmath), normally two (12:00 and 20:00), and learns from
+how earlier videos did. A slot the owner already filled is skipped. (From 2026-10-11, the Sunday 20:00 slot is a long-form video instead.)
 Read `docs/STYLE.md` before writing anything.
 
 Fixed facts:
@@ -65,16 +65,18 @@ d. **Update `state/learnings.md`.** Follow its "How to judge" rules. If the curr
    update "Rules we trust" if the result is clear, and start the next experiment.
    Write down what today's videos will do differently and why.
 
-## 3. Plan today's two videos
+## 3. Plan today's videos
 
-First find the two publish slots:
+First find today's free publish slots:
 ```bash
 ~/.surprisal_venv/bin/python -m kit.publish_time
 ```
-It prints `SLOT1_*` and `SLOT2_*` (publish time in UTC, date, local time, format). Video 1 goes
-to slot 1, video 2 to slot 2. Keep these for the rest of the run.
+It prints `SLOT_COUNT` and one `SLOTn_*` block per slot (publish time in UTC, date, local time,
+format). Make exactly SLOT_COUNT videos: video 1 goes to slot 1, video 2 to slot 2. If SLOT_COUNT
+is 1, everything below about "both videos" or "video 2" doesn't apply. Keep these for the rest of
+the run.
 
-- **SLOTn_FORMAT short: a Short** in the story format (STYLE.md, "The four rules"). Choose from
+- **SLOTn_FORMAT short: a Short** in the how-to format (STYLE.md, "The model script"). Choose from
   `state/topics.md`, following learnings.md and the current experiment. The two videos should be
   different kinds (e.g. one history, one everyday), and never a topic already in videos.csv.
 - **SLOTn_FORMAT long: long-form** (8 to 12 min, 16:9). Take the best Short from the past 7 days

@@ -98,7 +98,7 @@ What it does, and what every script must do:
 
 ## Long-form (Sundays at 20:00, starting 2026-10-11; see state/schedule.json)
 
-- 8 to 12 minutes, 1920x1080, 30fps. Expands the week's best Short, same four rules.
+- 8 to 12 minutes, 1920x1080, 30fps. Expands the week's best Short, same how-to approach.
 - Opens with the same story hook, then goes further: the full history, the math in full, a
   second real case where the same idea saved (or cost) someone, a common misunderstanding.
 - 4 to 7 chapters. Mark the first beat of each with `"chapter": "Title"`. YouTube

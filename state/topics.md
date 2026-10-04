@@ -10,13 +10,6 @@ from comments (mark them `[requested]`).
 through verify.py.
 
 ## Ready to go
-- ZIP: you're a programmer, your file is too big to send. Steps: find repeats, replace them
-  with "go back 13, copy 5" notes, keep a 32 KB window, give common letters short codes
-  (Huffman), ship the code table with the file. Reveal: this is how every zip file works (Phil
-  Katz, 1989). HOLD: episodes/_example-zip is the owner's test video for this
-  format and is waiting for their review. Don't publish it or make this topic until this line
-  says it's approved. Its scene.tsx is the reference for the Remotion kit; copy its structure,
-  not its script.
 - You're a casino owner and people hate losing money to you. Steps: the house edge (one green
   zero = you keep 2.7% of every roulette bet), law of large numbers, chips instead of cash, comps
   scaled to losses. Reveal: the math of every real casino. (the owner's example; keep it about
@@ -62,3 +55,4 @@ through verify.py.
 - 2026-10-01  penneys-game (sounds-fake)  KVKRfzUtTE8  9pm Tallinn 1 Oct, LIVE scheduled, first hook-card opening
 - 2026-10-02  clock-hands-meet (puzzle)  r92Byr0zgdQ  9pm Tallinn 2 Oct, LIVE scheduled, opening-card #2
 - 2026-10-03  rope-around-earth (sounds-fake)  gaTzSWBn-dA  9pm Tallinn 3 Oct, LIVE scheduled, opening-card #3
+- 2026-10-04  zip-how-to (tech, how-to)  R-daCCuG7e0  12:00 Tallinn 4 Oct, the owner's approved test video; first how-to + first Remotion video
