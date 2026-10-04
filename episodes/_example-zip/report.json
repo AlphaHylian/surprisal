@@ -1,17 +1,17 @@
 {
  "ok": true,
  "problems": [],
- "duration_s": 62.0,
+ "duration_s": 61.5,
  "size_mb": 12.5,
  "resolution": "1080x1920",
  "caption_match_ratio": 0.9948979591836735,
- "heard": "You're a programmer, and your file is way too big to send. Here's how you shrink it. Find what repeats. In to be or not to be. The second to be is already in the file. So delete it and leave a note. Go back 13, copy five. Those five letters took 40 bits. The note takes 14. Now do it everywhere. Keep the last 32 ,768 characters in view and swap every repeat for a note. But some letters don't repeat in chunks. They're just common. In English, E shows up 172 times as often as Z. So stop giving every letter eight bits. Give E three bits and Z nine. Common letters get cheap. Rare ones get expensive. Uh oh. Your friend opens it and it's gibberish. Put the code table at the top of the file. Now their computer rebuilds every letter. Exactly. Your file is now about a third of the size and not one letter is lost. Congratulations. You just built a zip file. This is exactly how they work. So how would you shrink the word banana? Tell me below.",
+ "heard": "You're a programmer, and your file is way too big to send. Here's how you shrink it. Find what repeats. In to be or not to be, the second to be is already in the file. So delete it and leave a note. Go back 13, copy five. Those five letters took 40 bits. The note takes 14. Now do it everywhere. Keep the last 32 ,768 characters in view and swap every repeat for a note. But some letters don't repeat in chunks. They're just common. In English, E shows up 172 times as often as Z. So stop giving every letter eight bits. Give E three bits and Z nine. Common letters get cheap, rare ones get expensive. Uh oh, your friend opens it and it's gibberish. Put the code table at the top of the file. Now their computer rebuilds every letter, exactly. Your file is now about a third of the size and not one letter is lost. Congratulations, you just built a zip file. This is exactly how they work. So how would you shrink the word banana? Tell me below.",
  "music": "Tech Talk",
  "music_gap_db": 8.0,
  "speech_starts_at_s": 0.0,
- "final_lufs": -14.9,
+ "final_lufs": -14.8,
  "voice_engine": "omnivoice",
  "contact_sheet_every_s": 2.6,
- "build_seconds": 386,
+ "build_seconds": 378,
  "draft": false
 }

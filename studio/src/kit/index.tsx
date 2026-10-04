@@ -119,9 +119,22 @@ export const At: React.FC<{ x?: number; y?: number; children: React.ReactNode; s
   );
 
 type Dir = "up" | "down" | "left" | "right" | "pop" | "fade" | "slam" | "drop";
-/** Enter at `at` seconds (and optionally leave at `out`), with a motion style. */
-export const Appear: React.FC<{ at?: number; out?: number; from?: Dir; dist?: number; children: React.ReactNode; style?: React.CSSProperties }> =
-  ({ at = 0, out, from = "up", dist = 60, children, style }) => {
+/** The sound each entrance makes unless told otherwise (sfx={null} for silence). */
+const ENTRY_SFX: Record<Dir, [SfxName, number] | null> = {
+  up: ["swoosh", 0.32], down: ["swoosh", 0.32], left: ["swoosh", 0.32], right: ["swoosh", 0.32],
+  pop: ["pop", 0.42], slam: ["stamp", 0.6], drop: ["thud", 0.6], fade: null,
+};
+/** Enter at `at` seconds (and optionally leave at `out`), with a motion style and its sound. */
+export const Appear: React.FC<{ at?: number; out?: number; from?: Dir; dist?: number; children: React.ReactNode; style?: React.CSSProperties;
+  sfx?: SfxName | null; volume?: number }> =
+  ({ at = 0, out, from = "up", dist = 60, children, style, sfx, volume }) => {
+    const auto = ENTRY_SFX[from];
+    const name = sfx === undefined ? auto?.[0] : sfx;
+    const sound = name ? <Sfx name={name} at={Math.max(0, at - (name === "swoosh" ? 0.06 : 0))} volume={volume ?? auto?.[1] ?? 0.4} /> : null;
+    return <>{sound}<AppearBody at={at} out={out} from={from} dist={dist} style={style}>{children}</AppearBody></>;
+  };
+const AppearBody: React.FC<{ at: number; out?: number; from: Dir; dist: number; children: React.ReactNode; style?: React.CSSProperties }> =
+  ({ at, out, from, dist, children, style }) => {
     const t = useT();
     const s = useSpring(at, from === "slam" ? { damping: 11, stiffness: 260 } : {});
     if (t < at - 0.001) return null;
@@ -185,6 +198,23 @@ export const Sfx: React.FC<{ name: SfxName; at?: number; volume?: number }> = ({
   );
 };
 
+/** Rapid ticks between t0 and t1 (counters rolling, bits filling). */
+export const Ticks: React.FC<{ t0: number; t1: number; every?: number; volume?: number }> = ({ t0, t1, every = 0.07, volume = 0.16 }) => {
+  const n = Math.max(1, Math.floor((t1 - t0) / every));
+  return <>{Array.from({ length: n }, (_, i) => <Sfx key={i} name="tick" at={t0 + i * every} volume={volume} />)}</>;
+};
+
+/** A riser that builds from `from` and peaks exactly at `to` (stretched to fit, 0.8 to 3.2 s). */
+export const Riser: React.FC<{ from?: number; to: number; volume?: number }> = ({ from = 0, to, volume = 0.5 }) => {
+  const { fps } = useVideoConfig();
+  const len = Math.min(3.2, Math.max(0.8, to - from));
+  return (
+    <Sequence from={Math.round(Math.max(0, to - len) * fps)} name="sfx riser">
+      <Audio src={staticFile("sfx/riser.wav")} volume={volume} playbackRate={1.6 / len} />
+    </Sequence>
+  );
+};
+
 // ------------------------------------------------------------------ backdrop
 export const Backdrop: React.FC<{ tint?: string }> = ({ tint = C.mint }) => {
   const f = useCurrentFrame();
@@ -214,7 +244,7 @@ export const Text: React.FC<{ children: React.ReactNode; size?: number; color?: 
 
 /** Headline in the top band. */
 export const Headline: React.FC<{ children: React.ReactNode; color?: string; at?: number; out?: number }> = ({ children, color = C.ink, at = 0, out }) => (
-  <At y={250}><Appear at={at} out={out} from="down" dist={30}><Text font={F.display} size={76} color={color} width={940}>{children}</Text></Appear></At>
+  <At y={250}><Appear at={at} out={out} from="down" dist={30} volume={0.22}><Text font={F.display} size={76} color={color} width={940}>{children}</Text></Appear></At>
 );
 
 export const Emoji: React.FC<{ char: string; size?: number; style?: React.CSSProperties }> = ({ char, size = 200, style }) => (
@@ -260,12 +290,12 @@ export const Stamp: React.FC<{ children: React.ReactNode; color?: string; size?:
 );
 
 /** Number counting from `from` to `to` between times t0 and t1. */
-export const Counter: React.FC<{ from: number; to: number; t0: number; t1: number; size?: number; color?: string; prefix?: string; suffix?: string; decimals?: number; comma?: boolean }> =
-  ({ from, to, t0, t1, size = 120, color = C.ink, prefix = "", suffix = "", decimals = 0, comma = true }) => {
+export const Counter: React.FC<{ from: number; to: number; t0: number; t1: number; size?: number; color?: string; prefix?: string; suffix?: string; decimals?: number; comma?: boolean; sfx?: boolean }> =
+  ({ from, to, t0, t1, size = 120, color = C.ink, prefix = "", suffix = "", decimals = 0, comma = true, sfx = true }) => {
     const t = useT();
     const v = tween(t, t0, t1, from, to, easeInOut);
     const s = comma ? v.toLocaleString("en-US", { minimumFractionDigits: decimals, maximumFractionDigits: decimals }) : v.toFixed(decimals);
-    return <Text size={size} color={color} font={F.bold} style={{ fontVariantNumeric: "tabular-nums" }}>{prefix}{s}{suffix}</Text>;
+    return <>{sfx ? <Ticks t0={t0} t1={t1} /> : null}<Text size={size} color={color} font={F.bold} style={{ fontVariantNumeric: "tabular-nums" }}>{prefix}{s}{suffix}</Text></>;
   };
 
 /** A horizontal bar whose fill animates from `from` to `to` (0..1) between t0 and t1. */
@@ -273,23 +303,25 @@ export const Bar: React.FC<{ from?: number; to: number; t0?: number; t1?: number
   ({ from = 0, to, t0 = 0, t1 = 0.8, w = 860, h = 64, color = C.mint }) => {
     const t = useT();
     const v = tween(t, t0, t1, from, to, easeInOut);
-    return (
+    return (<><Sfx name="swoosh" at={Math.max(0, t0 - 0.05)} volume={0.28} />
       <div style={{ width: w, height: h, borderRadius: h, background: C.dim, overflow: "hidden", border: `3px solid ${C.muted}55` }}>
         <div style={{ width: `${v * 100}%`, height: "100%", borderRadius: h, background: `linear-gradient(90deg, ${color}, ${color}cc)`, boxShadow: `0 0 30px ${color}88` }} />
-      </div>
+      </div></>
     );
   };
 
 /** Letters in boxes. `hi` maps index -> colour; `show` reveals tiles one by one from that time. */
-export const Tiles: React.FC<{ text: string; size?: number; hi?: Record<number, string>; show?: number; stagger?: number; perRow?: number; hide?: number[]; gap?: number }> =
-  ({ text, size = 92, hi = {}, show = 0, stagger = 0.04, perRow, hide = [], gap = 10 }) => {
+export const Tiles: React.FC<{ text: string; size?: number; hi?: Record<number, string>; show?: number; stagger?: number; perRow?: number; hide?: number[]; gap?: number; sfx?: boolean }> =
+  ({ text, size = 92, hi = {}, show = 0, stagger = 0.04, perRow, hide = [], gap = 10, sfx = true }) => {
     const t = useT();
     const rows: string[][] = [];
     const chars = text.split("");
     const n = perRow ?? chars.length;
     for (let i = 0; i < chars.length; i += n) rows.push(chars.slice(i, i + n));
+    const clicks = sfx ? chars.map((_, i) => i).filter((i) => i % Math.max(1, Math.round(0.07 / Math.max(stagger, 0.001))) === 0) : [];
     return (
       <div style={{ display: "flex", flexDirection: "column", gap }}>
+        {clicks.map((i) => <Sfx key={`s${i}`} name="click" at={show + i * stagger} volume={0.22} />)}
         {rows.map((r, ri) => (
           <div key={ri} style={{ display: "flex", gap }}>
             {r.map((ch, ci) => {
@@ -321,12 +353,12 @@ export const Arrow: React.FC<{ x1: number; y1: number; x2: number; y2: number; t
     const d = `M ${x1} ${y1} Q ${mx} ${my} ${x2} ${y2}`;
     const len = Math.hypot(x2 - x1, y2 - y1) + Math.abs(bend) * 1.2;
     const ang = Math.atan2(y2 - my, x2 - mx) * 180 / Math.PI;
-    return (
+    return (<><Sfx name="swoosh" at={t0} volume={0.3} />
       <svg width={W} height={H} style={{ position: "absolute", left: 0, top: 0, overflow: "visible" }}>
         <path d={d} fill="none" stroke={color} strokeWidth={width} strokeLinecap="round" strokeDasharray={len} strokeDashoffset={len * (1 - p)}
           style={{ filter: `drop-shadow(0 0 12px ${color}aa)` }} />
         {p > 0.97 ? <polygon points="0,-18 34,0 0,18" fill={color} transform={`translate(${x2},${y2}) rotate(${ang})`} /> : null}
-      </svg>
+      </svg></>
     );
   };
 
@@ -335,7 +367,8 @@ export const Terminal: React.FC<{ lines: string[]; w?: number; title?: string; t
   ({ lines, w = 920, title = "", typeAt = 0, cps = 28, size = 46, color = C.mint }) => {
     const t = useT();
     let budget = Math.max(0, (t - typeAt) * cps);
-    return (
+    const total = lines.reduce((a, l) => a + l.length, 0);
+    return (<><Sfx name="type" at={typeAt} volume={Math.min(0.35, 0.35 * total / cps)} />
       <div style={{ width: w, borderRadius: 26, overflow: "hidden", background: "#070C14", border: `3px solid ${C.dim}`, boxShadow: "0 30px 60px #000a" }}>
         <div style={{ height: 54, background: C.panel, display: "flex", alignItems: "center", gap: 12, padding: "0 22px", position: "relative" }}>
           {[C.coral, C.amber, C.mint].map((c) => <div key={c} style={{ width: 18, height: 18, borderRadius: 9, background: c }} />)}
@@ -348,7 +381,7 @@ export const Terminal: React.FC<{ lines: string[]; w?: number; title?: string; t
             return <div key={i} style={{ whiteSpace: "pre" }}>{shown}{shown.length < l.length && shown.length > 0 ? "▌" : ""}</div>;
           })}
         </div>
-      </div>
+      </div></>
     );
   };
 
@@ -383,13 +416,13 @@ export const Bits: React.FC<{ n: number; t0?: number; t1?: number; color?: strin
   ({ n, t0 = 0, t1 = 0.8, color = C.amber, size = 34, perRow = 20 }) => {
     const t = useT();
     const lit = Math.floor(tween(t, t0, t1, 0, n, (x) => x));
-    return (
+    return (<><Ticks t0={t0} t1={t1} every={Math.max(0.05, (t1 - t0) / n)} />
       <div style={{ display: "grid", gridTemplateColumns: `repeat(${Math.min(n, perRow)}, ${size}px)`, gap: size * 0.22 }}>
         {Array.from({ length: n }, (_, i) => (
           <div key={i} style={{ width: size, height: size, borderRadius: size * 0.2, background: i < lit ? color : C.dim,
             boxShadow: i < lit ? `0 0 14px ${color}88` : "none", transform: `scale(${i === lit - 1 ? 1.25 : 1})` }} />
         ))}
-      </div>
+      </div></>
     );
   };
 
@@ -398,5 +431,5 @@ export const TypeOn: React.FC<{ text: string; t0: number; t1: number; size?: num
   ({ text, t0, t1, size = 56, color = C.ink, font = F.mono }) => {
     const t = useT();
     const n = Math.floor(tween(t, t0, t1, 0, text.length, (x) => x));
-    return <Text size={size} color={color} font={font} style={{ whiteSpace: "pre" }}>{text.slice(0, n)}{n < text.length && n > 0 ? "▌" : ""}</Text>;
+    return <><Sfx name="type" at={t0} volume={0.3} /><Text size={size} color={color} font={font} style={{ whiteSpace: "pre" }}>{text.slice(0, n)}{n < text.length && n > 0 ? "▌" : ""}</Text></>;
   };

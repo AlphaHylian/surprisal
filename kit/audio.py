@@ -56,25 +56,49 @@ def spoken(text):
 
 
 # ---------------------------------------------------------------- voice
+# Each sentence is voiced on its own and trimmed, then the sentences are joined with a short fixed
+# gap. Voicing a whole beat at once lets the model breathe between sentences (half a second of
+# dead air that viewers notice); this keeps the delivery tight. A beat can set "gap" (seconds).
+SENTENCE_GAP = 0.06
+
+
+def sentences(text):
+    """Split a beat's text into sentences ("Uh-oh. Your friend..." -> two)."""
+    parts = re.split(r"(?<=[.!?])\s+(?=[A-Z0-9\"'])", text.strip())
+    return [p for p in parts if p.strip()]
+
+
+def _voice_beats(gen, script, out, tag):
+    """Voice every beat with gen(text, speed) -> float32 mono at VOICE_SR, sentence by sentence."""
+    speed = script.get("speed")
+    durations = {}
+    for b in script["beats"]:
+        gap = np.zeros(int(b.get("gap", SENTENCE_GAP) * VOICE_SR), np.float32)
+        pieces = []
+        for sent in sentences(b["say"]):
+            x = np.asarray(gen(spoken(sent), b.get("speed", speed)), np.float32)
+            pieces += [_trim(x, VOICE_SR), gap]
+        audio = np.concatenate(pieces[:-1])
+        sf.write(f"{out}/{b['id']}.wav", audio, VOICE_SR)
+        durations[b["id"]] = round(len(audio) / VOICE_SR, 3)
+        print(f"  voice {b['id']}: {durations[b['id']]}s ({tag})", flush=True)
+    return durations
+
+
 def _synth_omnivoice(script, out):
     import torch
     torch.set_num_threads(os.cpu_count() or 2)
     from omnivoice import OmniVoice
     model = OmniVoice.from_pretrained("k2-fsa/OmniVoice", device_map="cpu", dtype=torch.float32)
+    if model.sampling_rate != VOICE_SR:
+        raise RuntimeError(f"unexpected sample rate {model.sampling_rate}")
     prompt = model.create_voice_clone_prompt(ref_audio=REF_AUDIO, ref_text=open(REF_TEXT).read().strip())
     steps = script.get("voice_steps", OMNI_STEPS.get(script.get("format", "short"), 32))
-    speed = script.get("speed")
-    durations = {}
-    for b in script["beats"]:
-        text = spoken(b["say"])
-        audio = model.generate(text=text, language="English", voice_clone_prompt=prompt, num_step=steps,
-                               speed=b.get("speed", speed), pad_duration=0.0, fade_duration=0.01)[0]
-        if model.sampling_rate != VOICE_SR:
-            raise RuntimeError(f"unexpected sample rate {model.sampling_rate}")
-        sf.write(f"{out}/{b['id']}.wav", audio.astype(np.float32), VOICE_SR)
-        durations[b["id"]] = round(len(audio) / VOICE_SR, 3)
-        print(f"  voice {b['id']}: {durations[b['id']]}s", flush=True)
-    return durations
+
+    def gen(text, speed):
+        return model.generate(text=text, language="English", voice_clone_prompt=prompt, num_step=steps,
+                              speed=speed, pad_duration=0.0, fade_duration=0.01)[0]
+    return _voice_beats(gen, script, out, "omnivoice")
 
 
 FISH_URL = "https://api.fish.audio/v1/tts"
@@ -94,16 +118,15 @@ def _synth_fish(script, out):
     headers = {"Content-Type": "application/msgpack", "model": script.get("fish_model", FISH_MODEL)}
     if os.environ.get("FISH_API_KEY"):
         headers["Authorization"] = f"Bearer {os.environ['FISH_API_KEY']}"
-    speed = script.get("speed")
-    durations = {}
-    for b in script["beats"]:
-        body = {"text": spoken(b["say"]), "references": [ref], "format": "wav", "sample_rate": VOICE_SR,
+
+    def gen(text, speed):
+        body = {"text": text, "references": [ref], "format": "wav", "sample_rate": VOICE_SR,
                 "latency": "normal", "normalize": True, "temperature": 0.7, "top_p": 0.7}
-        if b.get("speed", speed):
-            body["prosody"] = {"speed": b.get("speed", speed)}
+        if speed:
+            body["prosody"] = {"speed": speed}
         for attempt in range(3):
             r = requests.post(FISH_URL, data=msgpack.packb(body), headers=headers, timeout=120)
-            if r.status_code == 200 or r.status_code in (401, 402, 403):
+            if r.status_code == 200 or r.status_code in (400, 401, 402, 403):
                 break
             time.sleep(3 * (attempt + 1))
         if r.status_code != 200:
@@ -113,21 +136,20 @@ def _synth_fish(script, out):
             audio = audio.mean(axis=1)
         if sr != VOICE_SR:
             raise RuntimeError(f"unexpected sample rate {sr}")
-        sf.write(f"{out}/{b['id']}.wav", audio, VOICE_SR)
-        durations[b["id"]] = round(len(audio) / VOICE_SR, 3)
-        print(f"  voice {b['id']}: {durations[b['id']]}s (fish)", flush=True)
-    return durations
+        return audio
+    return _voice_beats(gen, script, out, "fish")
 
 
 def _synth_kokoro(script, out):
     from kokoro_onnx import Kokoro
     k = Kokoro(f"{CACHE}/kokoro.onnx", f"{CACHE}/voices.bin")
-    durations = {}
-    for b in script["beats"]:
-        samples, sr = k.create(b["say"], voice=KOKORO_VOICE, speed=b.get("speed", KOKORO_SPEED), lang="en-us")
-        sf.write(f"{out}/{b['id']}.wav", samples, sr)
-        durations[b["id"]] = round(len(samples) / sr, 3)
-    return durations
+
+    def gen(text, speed):
+        samples, sr = k.create(text, voice=KOKORO_VOICE, speed=speed or KOKORO_SPEED, lang="en-us")
+        if sr != VOICE_SR:
+            raise RuntimeError(f"unexpected sample rate {sr}")
+        return samples
+    return _voice_beats(gen, script, out, "kokoro")
 
 
 def synth_voice(ep, only=None):
@@ -192,8 +214,14 @@ def trim_silence(path, pre=0.006, post=0.08):
     x, sr = sf.read(path, dtype="float32")
     if x.ndim > 1:
         x = x.mean(axis=1)
+    y = _trim(x, sr, pre, post)
+    sf.write(path, y, sr)
+    return len(y) / sr
+
+
+def _trim(x, sr, pre=0.006, post=0.08):
     if len(x) == 0:
-        return 0.0
+        return x
     a = max(0, _speech_start(x, sr) - int(pre * sr))
     hop = int(sr * 0.005)
     n = len(x) // hop
@@ -203,8 +231,7 @@ def trim_silence(path, pre=0.006, post=0.08):
     y = x[a:b].copy()
     fade = min(len(y), int(0.004 * sr))
     y[:fade] *= np.linspace(0.3, 1, fade)  # soften the cut without eating the first consonant
-    sf.write(path, y, sr)
-    return len(y) / sr
+    return y
 
 
 def trim_all(ep):

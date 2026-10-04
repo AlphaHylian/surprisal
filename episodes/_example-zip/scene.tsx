@@ -2,7 +2,7 @@
 import React from "react";
 import {
   Appear, Arrow, At, Bar, Bits, C, Camera, Card, Chip, Counter, Emoji, F, Headline, Icon, Punch, Sfx, Shake,
-  Span, Stamp, Terminal, Text, Tiles, TypeOn, You, tween, useAt, useT,
+  Riser, Span, Stamp, Terminal, Text, Tiles, TypeOn, You, tween, useAt, useT,
 } from "../kit";
 
 // Letter tiles for "to be or not to be" in two rows of 9, centred at (540, TY).
@@ -17,30 +17,35 @@ const FREQ: [string, number][] = [["e", 12.7], ["t", 9.1], ["a", 8.2], ["o", 7.5
 // ---------------------------------------------------------------- 1. the problem
 const HookBody: React.FC = () => {
   const at = useAt();
+  const tBig = at.word("big", 1, 2.2);
+  const tSend = at.word("send", 1, tBig + 0.4);
   return (
     <>
-      <Camera keys={[[0, { zoom: 1 }], [at.dur, { zoom: 1.1, y: 640 }]]}>
-        <At x={250} y={560}><You role="programmer" size={230} /></At>
-        <At x={720} y={560}>
-          <Card w={440} h={470} border={C.coral}>
-            <Icon name="FileText" size={170} color={C.ink} />
-            <Text size={46} font={F.mono}>notes.txt</Text>
-            <Text size={96} color={C.coral}>48 MB</Text>
-          </Card>
-        </At>
-        <At x={720} y={850}><Appear at={0.12} from="slam"><Stamp size={84}>TOO BIG</Stamp></Appear></At>
-        <At y={1020}>
-          <Appear at={at.word("send", 1, 1.2) - 0.1} from="up">
-            <div style={{ display: "flex", alignItems: "center", gap: 26 }}>
-              <Icon name="Send" size={90} color={C.muted} />
-              <Bar from={0} to={0.62} t0={at.word("send", 1, 1.2)} t1={at.word("send", 1, 1.2) + 0.7} w={520} h={46} color={C.coral} />
-              <Chip color={C.coral} size={40}>FAILED</Chip>
-            </div>
-          </Appear>
-        </At>
-      </Camera>
-      <Sfx name="stamp" at={0.12} />
-      <Sfx name="error" at={at.word("send", 1, 1.2) + 0.75} volume={0.45} />
+      <Riser from={0} to={tBig} volume={0.55} />
+      <Shake at={tBig}>
+        <Camera keys={[[0, { zoom: 1.08 }], [tBig, { zoom: 1 }], [at.dur, { zoom: 1.1, y: 640 }]]}>
+          <At x={250} y={560}><Appear at={0} from="pop"><You role="programmer" size={230} /></Appear></At>
+          <At x={720} y={560}>
+            <Appear at={0.12} from="right" dist={140}>
+              <Card w={440} h={470} border={C.coral}>
+                <Icon name="FileText" size={170} color={C.ink} />
+                <Text size={46} font={F.mono}>notes.txt</Text>
+                <Counter from={1} to={48} t0={0.3} t1={tBig} size={96} color={C.coral} suffix=" MB" />
+              </Card>
+            </Appear>
+          </At>
+          <At x={720} y={850}><Appear at={tBig} from="slam"><Stamp size={84}>TOO BIG</Stamp></Appear></At>
+          <At y={1020}>
+            <Appear at={tSend - 0.1} from="up">
+              <div style={{ display: "flex", alignItems: "center", gap: 26 }}>
+                <Icon name="Send" size={90} color={C.muted} />
+                <Bar from={0} to={0.62} t0={tSend} t1={tSend + 0.6} w={520} h={46} color={C.coral} />
+                <Appear at={tSend + 0.65} from="pop" sfx="error" volume={0.45}><Chip color={C.coral} size={40}>FAILED</Chip></Appear>
+              </div>
+            </Appear>
+          </At>
+        </Camera>
+      </Shake>
       <Sfx name="whoosh" at={at.dur - 0.35} />
     </>
   );
@@ -93,8 +98,6 @@ const RepeatsBody: React.FC = () => {
       <Sfx name="pop" at={tFirst + 0.2} volume={0.4} />
       <Sfx name="ding" at={tSecond} volume={0.45} />
       <Sfx name="swoosh" at={tDelete + 0.1} />
-      <Sfx name="stamp" at={tNote} volume={0.5} />
-      <Sfx name="type" at={tBits + 0.2} volume={0.35} />
       <Sfx name="ding" at={at.word("14", 1, tBits + 1.8) + 0.5} volume={0.4} />
     </>
   );
@@ -121,9 +124,11 @@ const WindowBody: React.FC = () => {
               const swapAt = tSwap + k * 0.12;
               const swapped = k >= 0 && t >= swapAt;
               return swapped ? (
-                <Appear key={i} at={swapAt} from="pop"><Chip size={34} color={C.amber}>↶</Chip></Appear>
+                <Appear key={i} at={swapAt} from="pop" volume={0.3}><Chip size={34} color={C.amber}>↶</Chip></Appear>
               ) : (
-                <span key={i} style={{ fontFamily: F.mono, fontSize: 56, color: k >= 0 && t >= tSwap - 0.6 ? C.amber : C.ink }}>{w}</span>
+                <Appear key={i} at={0.1 + i * 0.035} from="up" dist={24} sfx={null}>
+                  <span style={{ fontFamily: F.mono, fontSize: 56, color: k >= 0 && t >= tSwap - 0.6 ? C.amber : C.ink }}>{w}</span>
+                </Appear>
               );
             })}
           </div>
@@ -140,8 +145,8 @@ const WindowBody: React.FC = () => {
         </At>
       </Camera>
       <Sfx name="whoosh" at={0.05} volume={0.4} />
-      <Sfx name="riser" at={Math.max(0, tSwap - 1.6)} volume={0.35} />
-      {repeatIdx.map((_, k) => <Sfx key={k} name="pop" at={tSwap + k * 0.12} volume={0.3} />)}
+      <Riser from={tSwap - 1.6} to={tSwap} volume={0.35} />
+      <Sfx name="type" at={0.1} volume={0.3} />
     </>
   );
 };
@@ -212,11 +217,8 @@ const CodesBody: React.FC = () => {
       </At>
       <At x={540} y={1060}><Appear at={tCheap + 0.6} from="fade"><Text size={44} color={C.muted}>average: 4.2 bits instead of 8</Text></Appear></At>
       <Sfx name="swoosh" at={0.1} volume={0.4} />
-      <Sfx name="coin" at={at.word("172", 1, 3) + 0.4} volume={0.35} />
       <Sfx name="whoosh" at={tCodes - 0.1} volume={0.4} />
-      <Sfx name="click" at={tE} />
-      <Sfx name="click" at={tZ} />
-      <Sfx name="ding" at={tCheap} volume={0.35} />
+      <Sfx name="ding" at={tCheap} volume={0.3} />
     </>
   );
 };
@@ -233,10 +235,10 @@ const TableBody: React.FC = () => {
       <Headline at={tTable} color={C.mint}>Send the code table</Headline>
       <Shake at={0.35}>
         <At x={230} y={560}>
-          <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 8 }}>
+          <Appear at={0} from="pop"><div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 8 }}>
             <Icon name="User" size={150} color={C.coral} />
             <Text size={38} color={C.coral} font={F.med}>your friend</Text>
-          </div>
+          </div></Appear>
         </At>
         <At x={340} y={450}><Appear at={0.35} from="pop"><Emoji char="😵" size={100} /></Appear></At>
         <At x={600} y={820}>
@@ -258,8 +260,6 @@ const TableBody: React.FC = () => {
         <At x={900} y={1000}><Appear at={tRebuild + 0.9} from="pop"><Icon name="CircleCheck" size={110} color={C.mint} glow /></Appear></At>
       </Shake>
       <Sfx name="error" at={0.3} volume={0.5} />
-      <Sfx name="thud" at={tTable + 0.45} volume={0.6} />
-      <Sfx name="type" at={tRebuild} volume={0.35} />
       <Sfx name="ding" at={tRebuild + 0.9} volume={0.45} />
     </>
   );
@@ -273,16 +273,16 @@ const ResultBody: React.FC = () => {
     <>
       <Headline>Your file now</Headline>
       <At x={540} y={560}>
-        <Card w={600} h={420} border={C.mint}>
+        <Appear at={0} from="pop"><Card w={600} h={420} border={C.mint}>
           <Icon name="FileText" size={140} />
           <Counter from={48} to={16} t0={t0} t1={t0 + 1.0} size={120} color={C.mint} suffix=" MB" />
           <Bar from={1} to={0.34} t0={t0} t1={t0 + 1.0} w={460} h={36} />
-        </Card>
+        </Card></Appear>
       </At>
       <At x={540} y={940}><Appear at={at.word("lost", 1, 3)} from="slam"><Chip color={C.mint} size={54}>0 letters lost</Chip></Appear></At>
       <Sfx name="whoosh" at={0.05} volume={0.4} />
       <Sfx name="ding" at={t0 + 1.0} volume={0.4} />
-      <Sfx name="riser" at={Math.max(0, at.dur - 1.6)} volume={0.4} />
+      <Riser from={at.dur - 1.6} to={at.dur} volume={0.45} />
     </>
   );
 };
@@ -292,8 +292,8 @@ const RevealBody: React.FC = () => {
   return (
     <>
       <Punch at={0}>
-        <At x={540} y={560}><Appear at={0} from="pop"><Icon name="FileArchive" size={380} color={C.amber} glow stroke={1.6} /></Appear></At>
-        <At x={540} y={880}><Appear at={0.15} from="slam"><Text size={150} font={F.mono} color={C.amber} glow>.zip</Text></Appear></At>
+        <At x={540} y={560}><Appear at={0} from="pop" sfx={null}><Icon name="FileArchive" size={380} color={C.amber} glow stroke={1.6} /></Appear></At>
+        <At x={540} y={880}><Appear at={0.15} from="slam" sfx={null}><Text size={150} font={F.mono} color={C.amber} glow>.zip</Text></Appear></At>
         <At x={540} y={1060}><Appear at={at.word("exactly", 1, 2.4)} from="up"><Text size={48} color={C.ink}>how every zip file works</Text></Appear></At>
         <At x={220} y={300}><Appear at={0.2} from="pop"><Emoji char="🎉" size={120} /></Appear></At>
       </Punch>
@@ -311,7 +311,6 @@ const CtaBody: React.FC = () => (
         <div style={{ display: "flex", alignItems: "center", gap: 24 }}><You size={110} /><Chip size={48}>how would you shrink it?</Chip></div>
       </Appear>
     </At>
-    <Sfx name="pop" at={0.4} volume={0.4} />
   </>
 );
 
