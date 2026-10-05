@@ -166,7 +166,7 @@ def assemble(ep, script, draft, pre=None):
     v_gain = VOICE_LUFS - lufs(voice)
     m_gain = (VOICE_LUFS - gap) - lufs(music, f"atrim=start={mstart}:duration={min(dur, 90):.1f}")
     fonts = os.path.expanduser("~/.fonts")
-    sfx_gain = script.get("sfx_gain_db", -2.0)
+    sfx_gain = script.get("sfx_gain_db", -6.0)  # effects sit just under the voice (checked on the zip episode)
     fc = (f"[1:a]aresample=48000,volume={v_gain:.2f}dB,apad=whole_dur={dur:.3f},asplit=2[v1][v2];"
           f"[2:a]aresample=48000,atrim=0:{dur:.3f},asetpts=PTS-STARTPTS,volume={m_gain:.2f}dB,"
           f"afade=t=in:d=0.03,afade=t=out:st={max(0, dur - 1.5):.3f}:d=1.5[m];"

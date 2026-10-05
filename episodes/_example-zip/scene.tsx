@@ -146,7 +146,7 @@ const WindowBody: React.FC = () => {
       </Camera>
       <Sfx name="whoosh" at={0.05} volume={0.4} />
       <Riser from={tSwap - 1.6} to={tSwap} volume={0.35} />
-      <Sfx name="type" at={0.1} volume={0.3} />
+      <Sfx name="pack/typing" at={0.1} dur={WORDS.length * 0.035} volume={0.3} />
     </>
   );
 };

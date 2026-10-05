@@ -12,6 +12,8 @@ import {
 import * as Lucide from "lucide-react";
 import { C, CENTER, F, H, SAFE, W } from "./theme";
 
+import { PACK, type PackName } from "./sfx_catalog";
+export { PACK, type PackName };
 export { C, F, W, H, SAFE, CENTER };
 
 // ------------------------------------------------------------------ plan & timing
@@ -121,8 +123,8 @@ export const At: React.FC<{ x?: number; y?: number; children: React.ReactNode; s
 type Dir = "up" | "down" | "left" | "right" | "pop" | "fade" | "slam" | "drop";
 /** The sound each entrance makes unless told otherwise (sfx={null} for silence). */
 const ENTRY_SFX: Record<Dir, [SfxName, number] | null> = {
-  up: ["swoosh", 0.32], down: ["swoosh", 0.32], left: ["swoosh", 0.32], right: ["swoosh", 0.32],
-  pop: ["pop", 0.42], slam: ["stamp", 0.6], drop: ["thud", 0.6], fade: null,
+  up: ["pack/whoosh-tiny", 0.35], down: ["pack/whoosh-tiny", 0.35], left: ["pack/whoosh-fast", 0.35], right: ["pack/whoosh-fast", 0.35],
+  pop: ["pack/pop", 0.45], slam: ["pack/hit-low", 0.6], drop: ["pack/thud-heavy", 0.55], fade: null,
 };
 /** Enter at `at` seconds (and optionally leave at `out`), with a motion style and its sound. */
 export const Appear: React.FC<{ at?: number; out?: number; from?: Dir; dist?: number; children: React.ReactNode; style?: React.CSSProperties;
@@ -130,7 +132,8 @@ export const Appear: React.FC<{ at?: number; out?: number; from?: Dir; dist?: nu
   ({ at = 0, out, from = "up", dist = 60, children, style, sfx, volume }) => {
     const auto = ENTRY_SFX[from];
     const name = sfx === undefined ? auto?.[0] : sfx;
-    const sound = name ? <Sfx name={name} at={Math.max(0, at - (name === "swoosh" ? 0.06 : 0))} volume={volume ?? auto?.[1] ?? 0.4} /> : null;
+    // the whoosh peaks as the element arrives; hits and pops land on the frame it appears
+    const sound = name ? <Sfx name={name} hit={at + (from === "slam" || from === "pop" ? 0.02 : 0.1)} volume={volume ?? auto?.[1] ?? 0.4} /> : null;
     return <>{sound}<AppearBody at={at} out={out} from={from} dist={dist} style={style}>{children}</AppearBody></>;
   };
 const AppearBody: React.FC<{ at: number; out?: number; from: Dir; dist: number; children: React.ReactNode; style?: React.CSSProperties }> =
@@ -187,13 +190,21 @@ export const Shake: React.FC<{ at: number; amp?: number; children: React.ReactNo
 };
 
 // ------------------------------------------------------------------ sound
-export type SfxName = "whoosh" | "swoosh" | "riser" | "click" | "pop" | "thud" | "stamp" | "ding" | "tick" | "type" | "error" | "coin" | "reveal" | "boom";
-/** A sound effect at `at` seconds (inside a beat). Files live in studio/public/sfx/. */
-export const Sfx: React.FC<{ name: SfxName; at?: number; volume?: number }> = ({ name, at = 0, volume = 0.6 }) => {
+/** Generated sounds (kit/sfx.py) plus the owner's pack (docs/SFX.md, "pack/<name>"). */
+export type SfxName = "whoosh" | "swoosh" | "riser" | "click" | "pop" | "thud" | "stamp" | "ding" | "tick" | "type" | "error" | "coin" | "reveal" | "boom"
+  | `pack/${PackName}`;
+const sfxSrc = (name: SfxName) => name.startsWith("pack/") ? staticFile(`sfx/${name}.mp3`) : staticFile(`sfx/${name}.wav`);
+/** Where a sound's loudest moment is, in seconds from its start (0 for the generated ones). */
+export const sfxHit = (name: SfxName) => name.startsWith("pack/") ? PACK[name.slice(5) as PackName].hit : 0;
+/** A sound effect starting at `at` seconds, or placed so its loudest moment lands at `hit`. */
+export const Sfx: React.FC<{ name: SfxName; at?: number; hit?: number; volume?: number; dur?: number }> = ({ name, at = 0, hit, volume = 0.6, dur }) => {
   const { fps } = useVideoConfig();
+  const start = hit !== undefined ? hit - sfxHit(name) : at;
+  const skip = Math.max(0, -start);  // the hit is so early that the sound's start is before the span
   return (
-    <Sequence from={Math.round(at * fps)} name={`sfx ${name}`}>
-      <Audio src={staticFile(`sfx/${name}.wav`)} volume={volume} />
+    <Sequence from={Math.round(Math.max(0, start) * fps)} durationInFrames={dur ? Math.max(1, Math.round(dur * fps)) : undefined} name={`sfx ${name}`}>
+      <Audio src={sfxSrc(name)} startFrom={Math.round(skip * fps)}
+        volume={dur ? (f: number) => volume * Math.min(1, Math.max(0, (dur * fps - f) / 4)) : volume} />
     </Sequence>
   );
 };
@@ -204,13 +215,18 @@ export const Ticks: React.FC<{ t0: number; t1: number; every?: number; volume?: 
   return <>{Array.from({ length: n }, (_, i) => <Sfx key={i} name="tick" at={t0 + i * every} volume={volume} />)}</>;
 };
 
-/** A riser that builds from `from` and peaks exactly at `to` (stretched to fit, 0.8 to 3.2 s). */
-export const Riser: React.FC<{ from?: number; to: number; volume?: number }> = ({ from = 0, to, volume = 0.5 }) => {
+/** A riser that builds from `from` and peaks exactly at `to`. Picks the pack riser whose build
+ *  is closest in length and stretches it (0.7x to 1.4x speed) to fit. */
+export const Riser: React.FC<{ from?: number; to: number; volume?: number; name?: PackName }> = ({ from = 0, to, volume = 0.5, name }) => {
   const { fps } = useVideoConfig();
-  const len = Math.min(3.2, Math.max(0.8, to - from));
+  const want = Math.max(0.5, to - from);
+  const pick: PackName = name ?? (["riser-whoosh", "riser-ascend", "riser-short"] as PackName[])
+    .sort((a, b) => Math.abs(PACK[a].hit - want) - Math.abs(PACK[b].hit - want))[0];
+  const rate = Math.min(1.4, Math.max(0.7, PACK[pick].hit / want));
+  const start = to - PACK[pick].hit / rate;
   return (
-    <Sequence from={Math.round(Math.max(0, to - len) * fps)} name="sfx riser">
-      <Audio src={staticFile("sfx/riser.wav")} volume={volume} playbackRate={1.6 / len} />
+    <Sequence from={Math.round(Math.max(0, start) * fps)} name={`sfx riser ${pick}`}>
+      <Audio src={staticFile(`sfx/pack/${pick}.mp3`)} volume={volume} playbackRate={rate} startFrom={Math.round(Math.max(0, -start) * rate * fps)} />
     </Sequence>
   );
 };
@@ -303,7 +319,7 @@ export const Bar: React.FC<{ from?: number; to: number; t0?: number; t1?: number
   ({ from = 0, to, t0 = 0, t1 = 0.8, w = 860, h = 64, color = C.mint }) => {
     const t = useT();
     const v = tween(t, t0, t1, from, to, easeInOut);
-    return (<><Sfx name="swoosh" at={Math.max(0, t0 - 0.05)} volume={0.28} />
+    return (<><Sfx name="pack/whoosh-short" hit={t0 + 0.1} volume={0.3} />
       <div style={{ width: w, height: h, borderRadius: h, background: C.dim, overflow: "hidden", border: `3px solid ${C.muted}55` }}>
         <div style={{ width: `${v * 100}%`, height: "100%", borderRadius: h, background: `linear-gradient(90deg, ${color}, ${color}cc)`, boxShadow: `0 0 30px ${color}88` }} />
       </div></>
@@ -321,7 +337,7 @@ export const Tiles: React.FC<{ text: string; size?: number; hi?: Record<number, 
     const clicks = sfx ? chars.map((_, i) => i).filter((i) => i % Math.max(1, Math.round(0.07 / Math.max(stagger, 0.001))) === 0) : [];
     return (
       <div style={{ display: "flex", flexDirection: "column", gap }}>
-        {clicks.map((i) => <Sfx key={`s${i}`} name="click" at={show + i * stagger} volume={0.22} />)}
+        {clicks.map((i) => <Sfx key={`s${i}`} name="pack/click-soft" at={show + i * stagger} volume={0.3} />)}
         {rows.map((r, ri) => (
           <div key={ri} style={{ display: "flex", gap }}>
             {r.map((ch, ci) => {
@@ -353,7 +369,7 @@ export const Arrow: React.FC<{ x1: number; y1: number; x2: number; y2: number; t
     const d = `M ${x1} ${y1} Q ${mx} ${my} ${x2} ${y2}`;
     const len = Math.hypot(x2 - x1, y2 - y1) + Math.abs(bend) * 1.2;
     const ang = Math.atan2(y2 - my, x2 - mx) * 180 / Math.PI;
-    return (<><Sfx name="swoosh" at={t0} volume={0.3} />
+    return (<><Sfx name="pack/whoosh-arrow" hit={t0 + (t1 - t0) * 0.6} volume={0.35} />
       <svg width={W} height={H} style={{ position: "absolute", left: 0, top: 0, overflow: "visible" }}>
         <path d={d} fill="none" stroke={color} strokeWidth={width} strokeLinecap="round" strokeDasharray={len} strokeDashoffset={len * (1 - p)}
           style={{ filter: `drop-shadow(0 0 12px ${color}aa)` }} />
@@ -368,7 +384,7 @@ export const Terminal: React.FC<{ lines: string[]; w?: number; title?: string; t
     const t = useT();
     let budget = Math.max(0, (t - typeAt) * cps);
     const total = lines.reduce((a, l) => a + l.length, 0);
-    return (<><Sfx name="type" at={typeAt} volume={Math.min(0.35, 0.35 * total / cps)} />
+    return (<><Sfx name="pack/typing" at={typeAt} dur={total / cps} volume={0.35} />
       <div style={{ width: w, borderRadius: 26, overflow: "hidden", background: "#070C14", border: `3px solid ${C.dim}`, boxShadow: "0 30px 60px #000a" }}>
         <div style={{ height: 54, background: C.panel, display: "flex", alignItems: "center", gap: 12, padding: "0 22px", position: "relative" }}>
           {[C.coral, C.amber, C.mint].map((c) => <div key={c} style={{ width: 18, height: 18, borderRadius: 9, background: c }} />)}
@@ -431,5 +447,5 @@ export const TypeOn: React.FC<{ text: string; t0: number; t1: number; size?: num
   ({ text, t0, t1, size = 56, color = C.ink, font = F.mono }) => {
     const t = useT();
     const n = Math.floor(tween(t, t0, t1, 0, text.length, (x) => x));
-    return <><Sfx name="type" at={t0} volume={0.3} /><Text size={size} color={color} font={font} style={{ whiteSpace: "pre" }}>{text.slice(0, n)}{n < text.length && n > 0 ? "▌" : ""}</Text></>;
+    return <><Sfx name="pack/typing" at={t0} dur={t1 - t0} volume={0.3} /><Text size={size} color={color} font={font} style={{ whiteSpace: "pre" }}>{text.slice(0, n)}{n < text.length && n > 0 ? "▌" : ""}</Text></>;
   };

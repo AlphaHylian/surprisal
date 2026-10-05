@@ -175,9 +175,14 @@ digits as written: `at.word("14")`, `at.word("32,768")`), or to a beat with `at.
   (the viewer), `Card`, `Chip`, `Stamp`, `Counter from to t0 t1`, `Bar`, `Tiles text hi hide`
   (data letter by letter), `Bits n t0 t1` (bits filling in), `Arrow x1 y1 x2 y2 t0 t1 bend`,
   `Terminal lines`, `TypeOn`.
-- Sound: `<Sfx name at volume />` with whoosh, swoosh, riser (starts 1.6 s before the reveal it
-  builds to), click, pop, thud, stamp, ding, tick, type, error, coin, reveal, boom (once per
-  video, at the big reveal). Put a sound on every reveal, scene change and counter landing.
+- Sound: entrances already make a sound (`Appear` picks one for its motion; `Counter`, `Bits`,
+  `Tiles`, `Arrow`, `Bar`, `Terminal`, `TypeOn` have their own). Add the rest yourself from the
+  owner's pack: read `docs/SFX.md` (165 sounds, each with what it is, its length and its "hit")
+  and use `<Sfx name="pack/kaching" at={t} />`, or `hit={t}` to put the sound's loudest moment
+  on time t (risers, booms). `<Riser to={t} />` builds into a moment (open every video with one
+  into the hook's problem). Pick sounds that mean something for the topic (cash register for
+  money, shutter for a photo, glitch for a computer going wrong); one sound per event; the big
+  impacts (`boom-*`, `impact*`) at most twice a video. Use `dur` to cut long ones (typing, clocks).
 - Captions and the animated backdrop are added automatically; don't draw your own.
 
 **Rules.**
