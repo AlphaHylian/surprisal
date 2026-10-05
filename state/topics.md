@@ -14,14 +14,9 @@ through verify.py.
   zero = you keep 2.7% of every roulette bet), law of large numbers, chips instead of cash, comps
   scaled to losses. Reveal: the math of every real casino. (the owner's example; keep it about
   how the business works, never encourage gambling)
-- You're an Allied analyst and you need to know how many tanks the enemy is building. Steps:
-  collect serial numbers from captured tanks, use the biggest one, correct for the gap
-  (m + m/k - 1). Reveal: the German tank problem; estimates beat spies. [check]
 - You're an engineer: bombers come back full of bullet holes and command wants armor where the
   holes are. Steps: map the holes, ask where the missing planes were hit, armor the clean spots.
   Reveal: Abraham Wald, survivorship bias. [check]
-- You're a cashier and people mistype card numbers all day. Steps: make the last digit a check
-  digit, double every second digit, sum, mod 10 (Luhn). Reveal: every credit card number. [check]
 - You run a supermarket and customers rage about picking the slow line. Steps: one snake line
   for all tills, simulate wait times, show the variance drop. Reveal: why banks and airports
   use one line.
@@ -54,3 +49,4 @@ through verify.py.
 - 2026-10-03  rope-around-earth (sounds-fake)  gaTzSWBn-dA  9pm Tallinn 3 Oct, LIVE scheduled, opening-card #3
 - 2026-10-04  zip-how-to (tech, how-to)  R-daCCuG7e0  12:00 Tallinn 4 Oct, the owner's approved test video; first how-to + first Remotion video
 - 2026-10-04  airline-overbooking (everyday, how-to)  Vew58AvSCqw  20:00 Tallinn 4 Oct, LIVE scheduled
+- 2026-10-05  enemy-tanks (history, how-to)  zPGqWMiqTHc  12:00 Tallinn 5 Oct, LIVE scheduled
