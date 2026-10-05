@@ -6,8 +6,21 @@
   "angle": "you're the programmer; build zip yourself: repeats -> back-references (exact bits), 32K window, Huffman codes for common letters, ship the table; reveal at the end",
   "title": "How to make any file 3x smaller",
   "description": "Find what repeats and replace it with a note: in \"to be or not to be\", the second \"to be\" becomes \"go back 13, copy 5\", 14 bits instead of 40. Look back over the last 32,768 characters for repeats, then give common letters short codes: in English, e is about 172 times as common as z, so e gets 3 bits and z gets 9 (about 4.2 bits per letter on average instead of 8). Send the code table with the file and it decodes exactly. That's Deflate, the method inside every zip file, and a page of English shrinks to about a third.\n\nNumbers checked in code: bit counts from the Deflate spec (RFC 1951), Huffman codes built from Wikipedia's English letter frequencies, and compression ratios measured on five English documents (32 to 35%).",
-  "tags": ["zip file", "file compression", "how zip works", "huffman coding", "lz77", "deflate", "computer science", "math", "maths"],
-  "music_moods": ["upbeat"],
+  "tags": [
+    "zip file",
+    "file compression",
+    "how zip works",
+    "huffman coding",
+    "lz77",
+    "deflate",
+    "computer science",
+    "math",
+    "maths"
+  ],
+  "music_moods": [
+    "upbeat"
+  ],
+  "music": "tech-talk.mp3",
   "facts_checked": [
     "Back-reference for 'to be or not to be': distance 13, length 5 (verify.py)",
     "Deflate fixed codes: literals 0-143 are 8 bits; length 5 = code 259 (7 bits); distance 13 = code 7, 5 bits + 2 extra = 14 bits total (https://www.rfc-editor.org/rfc/rfc1951)",
@@ -18,17 +31,53 @@
     "Deflate is the standard method in .zip files (https://en.wikipedia.org/wiki/ZIP_(file_format))"
   ],
   "beats": [
-    {"id": "hook", "say": "You're a programmer, and your file is way too big to send. Here's how you shrink it."},
-    {"id": "repeat", "say": "Find what repeats. In to be or not to be, the second to be is already in the file."},
-    {"id": "note", "say": "So delete it, and leave a note: go back 13, copy 5."},
-    {"id": "bits", "say": "Those 5 letters took 40 bits. The note takes 14."},
-    {"id": "window", "say": "Now do it everywhere. Keep the last 32,768 characters in view, and swap every repeat for a note."},
-    {"id": "common", "say": "But some letters don't repeat in chunks. They're just common. In English, e shows up 172 times as often as z."},
-    {"id": "codes", "say": "So stop giving every letter 8 bits. Give e 3 bits, and z 9. Common letters get cheap, rare ones get expensive."},
-    {"id": "gibberish", "say": "Uh-oh. Your friend opens it, and it's gibberish."},
-    {"id": "table", "say": "Put the code table at the top of the file. Now their computer rebuilds every letter, exactly."},
-    {"id": "result", "say": "Your file is now about a third of the size, and not one letter is lost."},
-    {"id": "reveal", "say": "Congratulations. You just built a zip file. This is exactly how they work."},
-    {"id": "cta", "say": "So how would you shrink the word banana? Tell me below."}
+    {
+      "id": "hook",
+      "say": "You're a programmer, and your file is way too big to send. Here's how you shrink it."
+    },
+    {
+      "id": "repeat",
+      "say": "Find what repeats. In to be or not to be, the second to be is already in the file."
+    },
+    {
+      "id": "note",
+      "say": "So delete it, and leave a note: go back 13, copy 5."
+    },
+    {
+      "id": "bits",
+      "say": "Those 5 letters took 40 bits. The note takes 14."
+    },
+    {
+      "id": "window",
+      "say": "Now do it everywhere. Keep the last 32,768 characters in view, and swap every repeat for a note."
+    },
+    {
+      "id": "common",
+      "say": "But some letters don't repeat in chunks. They're just common. In English, e shows up 172 times as often as z."
+    },
+    {
+      "id": "codes",
+      "say": "So stop giving every letter 8 bits. Give e 3 bits, and z 9. Common letters get cheap, rare ones get expensive."
+    },
+    {
+      "id": "gibberish",
+      "say": "Uh-oh. Your friend opens it, and it's gibberish."
+    },
+    {
+      "id": "table",
+      "say": "Put the code table at the top of the file. Now their computer rebuilds every letter, exactly."
+    },
+    {
+      "id": "result",
+      "say": "Your file is now about a third of the size, and not one letter is lost."
+    },
+    {
+      "id": "reveal",
+      "say": "Congratulations. You just built a zip file. This is exactly how they work."
+    },
+    {
+      "id": "cta",
+      "say": "So how would you shrink the word banana? Tell me below."
+    }
   ]
 }
