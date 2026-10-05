@@ -92,13 +92,12 @@ const RuleBody: React.FC = () => {
       <Headline out={tDouble - 0.3}>Make the last digit a check</Headline>
       <Headline at={tDouble} out={tSum - 0.3} color={C.mint}>Double every second digit</Headline>
       <Headline at={tSum} color={C.amber}>Total must end in 0</Headline>
-      <Camera keys={[[0, { zoom: 1 }], [tCheck, { zoom: 1.2, x: 860, y: 720 }], [tDouble, { zoom: 1 }], [t16 - 0.2, { zoom: 1 }],
-        [t16, { zoom: 1.25, x: bx(6), y: by(6) + 40 }], [t7 + 0.8, { zoom: 1.25, x: bx(6), y: by(6) + 40 }], [tSum, { zoom: 1 }]]}>
+      <Camera keys={[[0, { zoom: 1 }], [t16 - 0.2, { zoom: 1 }], [t16 + 0.3, { zoom: 1.05 }], [tSum, { zoom: 1 }]]}>
         <Digits show={0} color={color} labels={labels} />
         <At x={bx(15)} y={by(15) - 110}><Appear at={tCheck} from="pop"><Chip size={36}>check</Chip></Appear></At>
-        <At x={bx(6)} y={by(6) - 105}>
+        <At x={540} y={980}>
           <Appear at={t16} out={tSum - 0.2} from="pop">
-            <Chip size={40} color={C.amber}>8 × 2 = 16 → 16 − 9 = 7</Chip>
+            <Chip size={54} color={C.amber}>8 × 2 = 16 → 16 − 9 = 7</Chip>
           </Appear>
         </At>
         <At x={540} y={1010}>
@@ -134,7 +133,7 @@ const TypoBody: React.FC = () => {
       <Shake at={tReject}>
         <Camera keys={[[0, { zoom: 1 }], [t7 - 0.1, { zoom: 1.25, x: bx(3), y: by(3) + 60 }], [t78 - 0.3, { zoom: 1 }]]}>
           <Digits digits={digits} color={(i) => (i === 3 && typed ? C.coral : C.ink)} />
-          <At x={bx(3)} y={by(3) - 110}><Appear at={t7} from="pop" sfx="error"><Chip size={36} color={C.coral}>was 9</Chip></Appear></At>
+          <At x={bx(3)} y={560}><Appear at={t7} from="pop" sfx="error"><Chip size={36} color={C.coral}>was 9</Chip></Appear></At>
           <At x={540} y={940}>
             <Appear at={t78 - 0.4} from="up">
               <div style={{ display: "flex", alignItems: "center", gap: 26 }}>
@@ -166,7 +165,7 @@ const SwapBody: React.FC = () => {
     <>
       <Headline out={tWhy - 0.3} color={C.coral}>Two neighbours swapped</Headline>
       <Headline at={tWhy} color={C.mint}>That's why you double</Headline>
-      <Camera keys={[[0, { zoom: 1.2, x: bx(2) + 55, y: by(2) + 80 }], [tWhy + 0.4, { zoom: 1.2, x: bx(2) + 55, y: by(2) + 80 }], [t77 - 0.4, { zoom: 1 }]]}>
+      <Camera keys={[[0, { zoom: 1.06 }], [t77 - 0.4, { zoom: 1 }]]}>
         {digits.map((d, i) => {
           if (i === 2 || i === 3) {
             const from = i === 2 ? bx(2) : bx(3), to = i === 2 ? bx(3) : bx(2);
@@ -179,7 +178,7 @@ const SwapBody: React.FC = () => {
           }
           return <At key={i} x={bx(i)} y={by(i)}><Box d={d} color={C.ink} /></At>;
         })}
-        <At x={(bx(2) + bx(3)) / 2} y={by(2) - 120}>
+        <At x={540} y={560}>
           <Appear at={tWhy + 1.2} from="pop"><Chip size={36} color={C.mint}>was 6 + 9 = 15 · now 9 + 3 = 12</Chip></Appear>
         </At>
         <At x={540} y={940}>
