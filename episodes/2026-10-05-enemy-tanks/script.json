@@ -1,0 +1,29 @@
+{
+  "slug": "enemy-tanks",
+  "format": "short",
+  "series": "history",
+  "hook_style": "how-to",
+  "angle": "you're the analyst; spies say 1,400 tanks a month; read the serial numbers of 4 captured tanks (19, 40, 42, 60); the biggest is a floor, not the answer (alone it lands a fifth too low); 56 unseen numbers / 4 gaps = 14, add one more gap: 74; real WWII: 246 vs spies' 1,400 vs records 245; reveal: the German tank problem",
+  "title": "How to count enemy tanks from 4 serial numbers",
+  "description": "Every captured tank carries a serial number. Capture 4 with numbers 19, 40, 42 and 60: there are 56 numbers below 60 you never saw, spread over 4 gaps, so about 14 per gap. Add one more gap above the biggest and you get 74 tanks. Use the biggest number alone and you'd be about a fifth too low on average. Allied statisticians did this in World War II with gearbox serial numbers: they estimated 246 tanks a month, intelligence said 1,400, and German records later showed 245. It's known as the German tank problem.\n\nNumbers checked in code (the formula m + m/k - 1, plus 200,000 simulated captures). Source: https://en.wikipedia.org/wiki/German_tank_problem",
+  "tags": ["german tank problem", "serial numbers", "world war 2", "statistics", "estimation", "probability", "history", "math", "maths"],
+  "music_moods": ["upbeat"],
+  "facts_checked": [
+    "4 captured serials 19, 40, 42, 60: 56 unseen numbers below 60, 14 per gap, estimate 60 + 14 = 74 = m + m/k - 1 (verify.py)",
+    "With 4 captures, the biggest serial alone averages 80% of the true total (a fifth too low); the formula is right on average (verify.py, 200,000 simulated captures)",
+    "WWII, June 1940 - Sept 1942: statistical estimate 246 a month, intelligence 1,400, German records 245; gearbox serial numbers were the main ones used: https://en.wikipedia.org/wiki/German_tank_problem",
+    "CTA answer: serials 3, 7, 12 -> 12 + 4 - 1 = 15 (verify.py)"
+  ],
+  "beats": [
+    {"id": "hook", "say": "You're a war analyst, and your spies swear the enemy builds 1,400 tanks a month. You need the real number. Here's how you get it."},
+    {"id": "serial", "say": "Ignore the spies. Go look at the tanks you've captured. Every gearbox has a serial number, stamped in order."},
+    {"id": "four", "say": "Say you've captured 4. Their numbers are 19, 40, 42, and 60."},
+    {"id": "floor", "say": "So the enemy has built at least 60. But uh-oh. The biggest one you caught is almost never the last one built. Stop there, and you'll be about a fifth too low."},
+    {"id": "gaps", "say": "So look at the gaps. Below 60, there are 56 numbers you never saw, spread over 4 gaps. That's 14 per gap."},
+    {"id": "add", "say": "Now assume one more gap of 14 sits above your biggest. 60 plus 14. Your answer is 74."},
+    {"id": "war", "say": "Do this with every tank you capture. Your math says 246 tanks a month. The spies still say 1,400."},
+    {"id": "result", "say": "And there you have it. After the war, the enemy's own records come out. They built 245."},
+    {"id": "reveal", "say": "This is the German tank problem. Allied statisticians did exactly this in World War Two, and beat their own spies."},
+    {"id": "cta", "say": "Your turn. You capture 3 tanks: numbers 3, 7, and 12. How many did they build? Tell me below."}
+  ]
+}
