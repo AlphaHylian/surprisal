@@ -208,7 +208,7 @@ const WarBody: React.FC = () => {
     <>
       <Headline out={tRes - 0.3}>Every tank you capture</Headline>
       <Headline at={tRes} color={C.mint}>After the war</Headline>
-      <Camera keys={[[0, { zoom: 1.05 }], [tSpies + 0.8, { zoom: 1 }], [t245 + 0.2, { zoom: 1.08, y: 760 }]]}>
+      <Camera keys={[[0, { zoom: 1.05 }], [tSpies + 0.8, { zoom: 1 }], [t245 + 0.2, { zoom: 1 }]]}>
         <At x={540} y={460}><Row label="your math" v={246} at={tMath} color={C.amber} /></At>
         <At x={540} y={660}><Row label="the spies" v={1400} at={tSpies} color={C.coral} /></At>
         <At x={540} y={860}><Row label="their own records" v={245} at={t245} color={C.mint} /></At>
