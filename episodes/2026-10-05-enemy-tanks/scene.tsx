@@ -119,7 +119,7 @@ const FloorBody: React.FC = () => {
         <Line show={0} />
         {SEEN.map((v, i) => <Dot key={v} v={v} at={0.1 + i * 0.12} color={v === 60 ? C.amber : C.mint} />)}
         <At x={lx(60)} y={LY - 110}><Appear at={tLeast} from="pop"><Chip size={46}>at least 60</Chip></Appear></At>
-        <At x={lx(72)} y={LY + 160}>
+        <At x={720} y={LY + 160}>
           <Appear at={tUh + 0.6} from="up"><Text size={48} color={C.coral}>the last one built?</Text></Appear>
         </At>
         <At x={lx(74)} y={LY}><Appear at={tUh + 0.6} from="pop"><Text size={90} color={C.coral} font={F.bold}>?</Text></Appear></At>

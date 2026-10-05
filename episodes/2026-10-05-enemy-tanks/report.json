@@ -1,0 +1,19 @@
+{
+ "ok": false,
+ "problems": [
+  "speech starts at 0.07s; the first word must start at 0 (check the first beat is the first thing in construct() and nothing plays before it)"
+ ],
+ "duration_s": 74.5,
+ "size_mb": 4.8,
+ "resolution": "540x960",
+ "caption_match_ratio": 0.9819004524886877,
+ "heard": "You're a war analyst, and your spies swear the enemy builds 1 ,400 tanks a month. You need the real number. Here's how you get it. Ignore the spies. Go look at the tanks you've captured. Every gearbox has a serial number stamped in order. Say you've captured four. Their numbers are 1940, 42, and 60. So the enemy has built at least 60. But uh -oh. The biggest one you caught is almost never the last one built. Stop there, and you'll be about a fifth too low. So look at the gaps. Below 60, there are 56 numbers you never saw, spread over four gaps. That's 14 per gap. Now assume one more gap of 14 sits above your biggest. 60 plus 14. Your answer is 74. Do this with every tank you capture. Your math says 246 tanks a month. The spies still say 1 ,400. And there you have it. After the war, the enemy's own records come out. They built 245. This is the German tank problem. Allied statisticians did exactly this in World War II and beat their own spies. Your turn. You capture three tanks, numbers 3, 7, and 12. How many did they build? Tell me below.",
+ "music": "Somewhere Sunny",
+ "music_gap_db": 8.0,
+ "speech_starts_at_s": 0.07,
+ "final_lufs": -14.7,
+ "voice_engine": "omnivoice",
+ "contact_sheet_every_s": 3.1,
+ "build_seconds": 2238,
+ "draft": true
+}
