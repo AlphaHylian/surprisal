@@ -50,3 +50,4 @@ through verify.py.
 - 2026-10-04  zip-how-to (tech, how-to)  R-daCCuG7e0  12:00 Tallinn 4 Oct, the owner's approved test video; first how-to + first Remotion video
 - 2026-10-04  airline-overbooking (everyday, how-to)  Vew58AvSCqw  20:00 Tallinn 4 Oct, LIVE scheduled
 - 2026-10-05  enemy-tanks (history, how-to)  zPGqWMiqTHc  12:00 Tallinn 5 Oct, LIVE scheduled
+- 2026-10-05  card-typos (everyday, how-to)  9p3WtZl3RHk  20:00 Tallinn 5 Oct, LIVE scheduled

@@ -2,8 +2,8 @@
  "ok": true,
  "problems": [],
  "duration_s": 71.6,
- "size_mb": 5.2,
- "resolution": "540x960",
+ "size_mb": 14.5,
+ "resolution": "1080x1920",
  "caption_match_ratio": 0.9909502262443439,
  "heard": "You run an online shop, and customers keep typing their card numbers wrong. Here's how you catch it in a millisecond. Don't ask the bank. Take the last digit and make it a check. Starting from the right, double every second digit. If you get more than 9, subtract 9. So 8 becomes 16 becomes 7. Now add everything up. Pick the last digit so the total ends in 0. This card makes 80. Uh oh. A customer types a 7 where the 9 was. The total is now 78. It doesn't end in 0, so you reject it on the spot. Change any one digit, and the total moves by 1 to 9. It can never land on a 0 again. But another customer swaps 2 neighbors. 3 -9 becomes 9 -3. That's why you double every other digit. The 3 and the 9 get different treatment, so the total moves to 77. Caught. Of all 45 swaps, only 0 -9 and 9 -0 slip through. And there you have it. Every single wrong digit caught before you ever talk to the bank. This check is in every credit card number. IBM's Hans Peter Loon patented it in 1960. So what's the check digit for 1 -2 -3 -4? Tell me below.",
  "music": "Chill Wave",
@@ -12,6 +12,6 @@
  "final_lufs": -14.8,
  "voice_engine": "omnivoice",
  "contact_sheet_every_s": 3.0,
- "build_seconds": 2778,
- "draft": true
+ "build_seconds": 386,
+ "draft": false
 }

@@ -5,9 +5,21 @@
   "hook_style": "how-to",
   "angle": "you run an online shop; customers mistype card numbers; make the last digit a check: double every second digit from the right, over 9 subtract 9, add up, last digit makes the total end in 0 (80); a typo 9->7 gives 78, rejected; doubling also catches neighbour swaps (39->93 gives 77), all but 09/90; reveal: Luhn, IBM, 1960, every card",
   "title": "How your card number catches its own typos",
-  "description": "Make the last digit of every card number a check digit. Starting from the right, double every second digit (if the result is over 9, subtract 9), add everything up, and pick the last digit so the total ends in 0. Change any single digit and the total moves by 1 to 9, so it can't end in 0 any more: every single-digit typo is caught. Doubling every other digit also catches swapped neighbours, all except 09 and 90. This is the Luhn algorithm, patented by IBM's Hans Peter Luhn in 1960 and used in every credit card number.\n\nNumbers checked in code (every typo on 100,000 random card numbers, and all 45 neighbour swaps). Sources: https://en.wikipedia.org/wiki/Luhn_algorithm and https://en.wikipedia.org/wiki/Check_digit",
-  "tags": ["credit card number", "check digit", "luhn algorithm", "hans peter luhn", "error detection", "how credit cards work", "computer science", "math", "maths"],
-  "music_moods": ["chill"],
+  "description": "Make the last digit of every card number a check digit. Starting from the right, double every second digit (if the result is over 9, subtract 9), add everything up, and pick the last digit so the total ends in 0. Change any single digit and the total moves by 1 to 9, so it can't end in 0 any more: every single-digit typo is caught. Doubling every other digit also catches swapped neighbours, all except 09 and 90. This is the Luhn algorithm, patented by IBM's Hans Peter Luhn in 1960 and used in every credit card number.\n\nNumbers checked in code (a random typo on each of 100,000 card numbers, and all 45 neighbour swaps). Sources: https://en.wikipedia.org/wiki/Luhn_algorithm and https://en.wikipedia.org/wiki/Check_digit",
+  "tags": [
+    "credit card number",
+    "check digit",
+    "luhn algorithm",
+    "hans peter luhn",
+    "error detection",
+    "how credit cards work",
+    "computer science",
+    "math",
+    "maths"
+  ],
+  "music_moods": [
+    "chill"
+  ],
   "facts_checked": [
     "Card 4539 1488 0343 6467: check digit 7, Luhn total 80 (verify.py; method checked against Wikipedia's example 1789372997 -> 4)",
     "8 doubled = 16, minus 9 = 7 (verify.py)",
@@ -18,16 +30,49 @@
     "CTA answer: check digit for 1234 is 4 (verify.py)"
   ],
   "beats": [
-    {"id": "hook", "say": "You run an online shop, and customers keep typing their card numbers wrong. Here's how you catch it in a millisecond."},
-    {"id": "spare", "say": "Don't ask the bank. Take the last digit and make it a check."},
-    {"id": "double", "say": "Starting from the right, double every second digit. If you get more than 9, subtract 9. So 8 becomes 16, becomes 7."},
-    {"id": "sum", "say": "Now add everything up. Pick the last digit so the total ends in zero. This card makes 80."},
-    {"id": "typo", "say": "Uh-oh. A customer types a 7 where the 9 was. The total is now 78."},
-    {"id": "reject", "say": "It doesn't end in zero, so you reject it on the spot. Change any one digit, and the total moves by 1 to 9. It can never land on a zero again."},
-    {"id": "swap", "say": "But another customer swaps two neighbours. 3 9 becomes 9 3."},
-    {"id": "why", "say": "That's why you double every other digit. The 3 and the 9 get different treatment, so the total moves to 77. Caught. Of all 45 swaps, only 0 9 and 9 0 slip through."},
-    {"id": "result", "say": "And there you have it. Every single wrong digit caught, before you ever talk to the bank."},
-    {"id": "reveal", "say": "This check is in every credit card number. IBM's Hans Peter Luhn patented it in 1960."},
-    {"id": "cta", "say": "So what's the check digit for 1 2 3 4? Tell me below."}
+    {
+      "id": "hook",
+      "say": "You run an online shop, and customers keep typing their card numbers wrong. Here's how you catch it in a millisecond."
+    },
+    {
+      "id": "spare",
+      "say": "Don't ask the bank. Take the last digit and make it a check."
+    },
+    {
+      "id": "double",
+      "say": "Starting from the right, double every second digit. If you get more than 9, subtract 9. So 8 becomes 16, becomes 7."
+    },
+    {
+      "id": "sum",
+      "say": "Now add everything up. Pick the last digit so the total ends in zero. This card makes 80."
+    },
+    {
+      "id": "typo",
+      "say": "Uh-oh. A customer types a 7 where the 9 was. The total is now 78."
+    },
+    {
+      "id": "reject",
+      "say": "It doesn't end in zero, so you reject it on the spot. Change any one digit, and the total moves by 1 to 9. It can never land on a zero again."
+    },
+    {
+      "id": "swap",
+      "say": "But another customer swaps two neighbours. 3 9 becomes 9 3."
+    },
+    {
+      "id": "why",
+      "say": "That's why you double every other digit. The 3 and the 9 get different treatment, so the total moves to 77. Caught. Of all 45 swaps, only 0 9 and 9 0 slip through."
+    },
+    {
+      "id": "result",
+      "say": "And there you have it. Every single wrong digit caught, before you ever talk to the bank."
+    },
+    {
+      "id": "reveal",
+      "say": "This check is in every credit card number. IBM's Hans Peter Luhn patented it in 1960."
+    },
+    {
+      "id": "cta",
+      "say": "So what's the check digit for 1 2 3 4? Tell me below."
+    }
   ]
 }
