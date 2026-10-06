@@ -29,7 +29,7 @@ const HookBody: React.FC = () => {
       <Riser from={0} to={tOwn} volume={0.5} />
       <Shake at={tOwn}>
         <Camera keys={[[0, { zoom: 1.08 }], [tOwn, { zoom: 1 }], [at.dur, { zoom: 1.06, y: 640 }]]}>
-          <At x={230} y={460}><Appear at={0} from="pop"><You role="Secret Santa boss" size={200} /></Appear></At>
+          <At x={230} y={460}><Appear at={0} from="pop"><You role="organizer" size={200} /></Appear></At>
           <At x={720} y={460}>
             <Appear at={0.1} from="right" dist={140}>
               <Card w={460} h={330} border={C.coral}>
@@ -85,7 +85,7 @@ const HatBody: React.FC = () => {
             background: col, opacity: dim ? 0.25 : tween(t, t0, t0 + 0.15, 0, 1), boxShadow: `0 0 12px ${col}55` }} />;
         })}
         <Ticks100 t0={gridOn} />
-        <At x={540} y={1010}>
+        <At x={540} y={1060}>
           <Appear at={t63 - 0.3} out={tWhy - 0.2} from="up">
             <div style={{ display: "flex", alignItems: "center", gap: 20 }}>
               <Counter from={0} to={63} t0={t63 - 0.3} t1={t63 + 0.2} size={110} color={C.coral} suffix="%" />
@@ -93,8 +93,8 @@ const HatBody: React.FC = () => {
             </div>
           </Appear>
         </At>
-        <At x={540} y={1000}><Appear at={tOne} out={t37 - 0.2} from="pop"><Chip size={50} color={C.amber}>each person: 1 in 10</Chip></Appear></At>
-        <At x={540} y={1060}>
+        <At x={540} y={1040}><Appear at={tOne} out={t37 - 0.2} from="pop"><Chip size={50} color={C.amber}>each person: 1 in 10</Chip></Appear></At>
+        <At x={540} y={1070}>
           <Appear at={t37} from="slam">
             <div style={{ display: "flex", alignItems: "center", gap: 20 }}>
               <Text size={110} color={C.mint}>37%</Text><Text size={44} font={F.med}>nobody<br />does</Text>
