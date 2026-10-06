@@ -1,0 +1,43 @@
+{
+  "slug": "secret-santa",
+  "format": "short",
+  "series": "everyday",
+  "hook_style": "how-to",
+  "angle": "you run the office Secret Santa; 10 names in a hat: 63% someone pulls their own (each 1 in 10, only 37% clean); 100 or 1,000 names still 63%; redrawing takes almost 3 rounds on average; even clean draws pair people up (about 2 in 5); fix: shuffle names into a circle, everyone buys for the next; never own name, never a pair, first try; reveal: derangements, Montmort 1708",
+  "title": "How to run Secret Santa so nobody draws themselves",
+  "description": "Put 10 names in a hat and there's a 63% chance at least one person pulls their own; only about 37% of draws come out clean (it's 1 in e, and it stays 63% for 100 or 1,000 people). Redrawing until it works takes almost 3 rounds on average, and about 2 in 5 clean draws still have two people who drew each other. The fix: shuffle the names into a circle and have everyone buy for the next person round. Nobody can get their own name, no two people swap, and it works on the first try. A draw where nobody gets their own is called a derangement; Pierre de Montmort first studied them in 1708.\n\nNumbers checked in code (exact counts and 200,000 simulated hats). Source: https://en.wikipedia.org/wiki/Derangement\n\nThe math behind real problems, twice a day. Subscribe and the next one finds you.\nFound an error? Comment and it gets pinned.\n#math #mathematics #shorts",
+  "tags": [
+    "secret santa",
+    "secret santa draw",
+    "derangement",
+    "hat check problem",
+    "probability",
+    "1/e",
+    "combinatorics",
+    "math",
+    "maths"
+  ],
+  "music_moods": ["chill"],
+  "facts_checked": [
+    "10 names: P(nobody draws own) = D10/10! = 0.3679 -> 37% clean, 63% someone draws their own (verify.py; 200,000 simulated hats: 63.4%)",
+    "100 and 1,000 names: still 63% (limit 1 - 1/e) (verify.py; https://en.wikipedia.org/wiki/Derangement)",
+    "Redraw until clean: expected 1/0.3679 = 2.72 rounds, 'almost 3' (verify.py)",
+    "Among clean 10-name draws, 39.3% contain two people who drew each other, about 2 in 5 (verify.py exact and simulated)",
+    "Circle method: never own name, never a mutual pair for 10 people (verify.py, 100,000 shuffles)",
+    "Derangements first considered by Pierre Raymond de Montmort, 1708: https://en.wikipedia.org/wiki/Derangement",
+    "CTA answer: 6 people -> (6-1)! = 120 different circles (verify.py, brute force)"
+  ],
+  "beats": [
+    {"id": "hook", "say": "You're running the office Secret Santa, and somebody always draws their own name. Here's how you fix it."},
+    {"id": "hat", "say": "Put 10 names in a hat. The chance that at least one person pulls their own name is 63%."},
+    {"id": "why", "say": "Each person has a one in 10 shot at their own. 10 small risks stack up. Only 37% of draws come out clean."},
+    {"id": "bigger", "say": "So invite more people? With 100 names, it's still 63%. With 1,000, still 63%."},
+    {"id": "redraw", "say": "Fine, you redraw until it works. On average, that's almost 3 rounds of everyone digging through a hat."},
+    {"id": "pair", "say": "Uh-oh. Even a clean draw goes wrong. Ben drew Cara, and Cara drew Ben. That happens in about 2 out of 5 clean draws."},
+    {"id": "circle", "say": "Throw out the hat. Shuffle the names into a circle. Everyone buys for the next person round."},
+    {"id": "works", "say": "Nobody is next to themselves, so nobody gets their own name. No two people swap. It works on the first try."},
+    {"id": "result", "say": "And there you have it: one shuffle, zero redraws, and the whole office in one big loop."},
+    {"id": "reveal", "say": "Mathematicians call a draw where nobody gets their own a derangement. Pierre de Montmort counted them in 1708."},
+    {"id": "cta", "say": "Your team has 6 people. How many different circles can you make? Two of these a day: subscribe, and the next one finds you."}
+  ]
+}

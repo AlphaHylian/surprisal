@@ -1,0 +1,41 @@
+{
+  "slug": "bomber-armor",
+  "format": "short",
+  "series": "history",
+  "hook_style": "how-to",
+  "angle": "you're the bomber engineer; map holes on returning planes (engines almost clean); command wants armor on the holes, you get one spot; ask where the missing planes are; fire lands evenly, 4 equal sections x 25 hits per 100 planes; landed planes show 25/25/25 but engines 10; 15 missing engine hits = 15 missing planes; armor where the holes aren't; reveal Abraham Wald, survivorship bias",
+  "title": "Where to armor a bomber: where the holes aren't",
+  "description": "Map every bullet hole on the bombers that come back and the engines look almost untouched. But gunners can't pick a part: split a plane into 4 equal sections and across 100 planes each should take about 25 hits. If the planes that land show 25, 25 and 25 on the wings, tail and body but only 10 on the engines, the 15 missing engine hits are the 15 planes that never came home. So the holes show where a plane can be hit and survive, and the armor goes where the holes aren't. This is survivorship bias; statistician Abraham Wald worked out how to correct for it for the US military in World War II, at Columbia University's Statistical Research Group.\n\nThe 100-plane numbers are an example scenario, computed and simulated in code (100,000 missions). Sources: https://en.wikipedia.org/wiki/Survivorship_bias and https://en.wikipedia.org/wiki/Abraham_Wald\n\nThe math behind real problems, twice a day. Subscribe and the next one finds you.\nFound an error? Comment and it gets pinned.\n#math #mathematics #shorts",
+  "tags": [
+    "survivorship bias",
+    "abraham wald",
+    "bomber armor",
+    "world war 2",
+    "bullet holes planes",
+    "statistics",
+    "history",
+    "math",
+    "maths"
+  ],
+  "music_moods": ["upbeat"],
+  "facts_checked": [
+    "Scenario: 100 planes, one hit each, 4 equal sections -> 25 hits per section (verify.py)",
+    "Engine hit brings the plane down 3 times in 5 -> 10 engine holes seen, 15 planes lost, 85 back; other sections 25 each (verify.py, exact and 100,000 simulated missions)",
+    "Missing engine hits (25 - 10 = 15) equal the planes lost (15) (verify.py)",
+    "Abraham Wald, Statistical Research Group at Columbia University, WWII: estimated damage on all planes from the damage on planes that returned (survivorship bias), as a guide to placing armor: https://en.wikipedia.org/wiki/Abraham_Wald and https://en.wikipedia.org/wiki/Survivorship_bias"
+  ],
+  "beats": [
+    {"id": "hook", "say": "You're a bomber engineer, and your planes keep getting shot down. Here's how you decide where the armor goes."},
+    {"id": "map", "say": "Mark every bullet hole on the planes that come back. The wings, the tail, the body: covered. The engines: almost clean."},
+    {"id": "command", "say": "Command says armor the holes. But armor is heavy. You get one spot."},
+    {"id": "missing", "say": "Before you pick, ask one question. Where are the planes that didn't come back?"},
+    {"id": "even", "say": "Gunners can't pick a part. Split the plane into 4 equal sections. Across 100 planes, each section should take about 25 hits."},
+    {"id": "count", "say": "Now count the planes that landed. Wings, 25. Tail, 25. Body, 25. Engines, just 10."},
+    {"id": "gap", "say": "15 engine hits are missing. And 15 planes never came home."},
+    {"id": "same", "say": "Those are the same planes. An engine hit is the one they don't survive."},
+    {"id": "fix", "say": "So the holes only show where a plane can get hit and still fly. Armor where the holes aren't: the engines."},
+    {"id": "result", "say": "Now your planes come home with holes in their engines. That's the good news."},
+    {"id": "reveal", "say": "This is survivorship bias. Abraham Wald worked it out for the US military in World War 2."},
+    {"id": "cta", "say": "So, every old building still standing is solid. Were old buildings built better? Tell me below."}
+  ]
+}
