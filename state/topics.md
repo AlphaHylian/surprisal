@@ -28,8 +28,6 @@ through verify.py.
   battery staple" works. [check numbers]
 - You're a pizza place owner and customers think two mediums beat one large. Steps: area, not
   diameter (pi r^2): one 18-inch has more pizza than two 12-inch. Reveal: price per square inch.
-- You're running Secret Santa and people keep drawing their own name. Steps: count the bad
-  draws, 63% chance of a redraw (1 - 1/e), the fix (derangements / cycle trick).
 - You're YouTube's engineer and a video is about to break the view counter. Steps: how numbers
   are stored in bits, 2,147,483,647, switch to 64-bit. Reveal: Gangnam Style, 2014. [check]
 - You're Spotify and users say shuffle is broken because songs repeat. Steps: true randomness
@@ -49,3 +47,4 @@ through verify.py.
 - 2026-10-05  enemy-tanks (history, how-to)  zPGqWMiqTHc  12:00 Tallinn 5 Oct, LIVE scheduled
 - 2026-10-05  card-typos (everyday, how-to)  9p3WtZl3RHk  20:00 Tallinn 5 Oct, LIVE scheduled
 - 2026-10-06  bomber-armor (history, how-to)  -0VQd4nuBH8  12:00 Tallinn 6 Oct, LIVE scheduled
+- 2026-10-06  secret-santa (everyday, how-to)  GDP9HkAVWFE  20:00 Tallinn 6 Oct, LIVE scheduled

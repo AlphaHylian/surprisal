@@ -56,7 +56,7 @@ const HatBody: React.FC = () => {
   const tHat = at.word("hat", 1, 1.4);
   const t63 = at.word("63%", 1, at.beat("why") - 1.0);
   const tWhy = at.beat("why");
-  const tOne = at.word("one", 1, tWhy + 0.6);
+  const tOne = at.word("one", 2, tWhy + 0.6);
   const t37 = at.word("37%", 1, tWhy + 5.0);
   const gridOn = t63 - 1.6;
   const DOT = 46, GAP = 14, GX = 540 - (10 * DOT + 9 * GAP) / 2 + DOT / 2, GY = 650;

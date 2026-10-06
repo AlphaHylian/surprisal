@@ -2,8 +2,8 @@
  "ok": true,
  "problems": [],
  "duration_s": 75.8,
- "size_mb": 5.0,
- "resolution": "540x960",
+ "size_mb": 14.9,
+ "resolution": "1080x1920",
  "caption_match_ratio": 0.9912663755458515,
  "heard": "You're running the office secret Santa and somebody always draws their own name. Here's how you fix it. Put 10 names in a hat. The chance that at least one person pulls their own name is 63%. Each person has a one in 10 shot at their own. 10 small risks stack up. Only 37 % of draws come out clean. So invite more people. With 100 names, it's still 63%. With 1 ,000 still 63%. Fine, you redraw until it works. On average, that's almost three rounds of everyone digging through a hat. Uh -oh, even a clean draw goes wrong. Ben drew Cara and Cara drew Ben. That happens in about two out of five clean draws. Throw out the hat. Shuffle the names into a circle. Everyone buys for the next person round. Nobody is next to themselves, so nobody gets their own name. No two people swap. It works on the first try. And there you have it. One shuffle, zero redraws, and the whole office in one big loop. Mathematicians call a draw where nobody gets their own a derangement. Pierre de Montmore counted them in 1708. Your team has six people. How many different circles can you make? Two of these a day. Subscribe, and the next one finds you.",
  "music": "Late Night Radio",
@@ -12,6 +12,6 @@
  "final_lufs": -14.8,
  "voice_engine": "omnivoice",
  "contact_sheet_every_s": 3.2,
- "build_seconds": 1208,
- "draft": true
+ "build_seconds": 254,
+ "draft": false
 }
