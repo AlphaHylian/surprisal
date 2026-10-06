@@ -93,7 +93,7 @@ const HookBody: React.FC = () => {
             const lost = lostIdx.includes(i);
             const k = lost ? tween(t, tDown + i * 0.05, tDown + 0.6 + i * 0.05, 0, 1) : 0;
             return (
-              <At key={i} x={130 + i * 117} y={790 + k * 160} rotate={-45 + k * 120}>
+              <At key={i} x={130 + i * 117} y={790 + k * 90} rotate={-45 + k * 120}>
                 <Appear at={0.2 + i * 0.06} from="pop" sfx={i === 0 ? "pop" : null}>
                   <div style={{ opacity: 1 - k * 0.5 }}><Icon name="Plane" size={90} color={lost && k > 0 ? C.coral : C.ink} /></div>
                 </Appear>
@@ -191,7 +191,7 @@ const CountBody: React.FC = () => {
       <Headline at={tCount} out={tGap - 0.3}>Count the planes that landed</Headline>
       <Headline at={tGap} out={tSame - 0.3} color={C.amber}>15 hits are missing</Headline>
       <Headline at={tSame} color={C.amber}>Same 15 planes</Headline>
-      <Camera keys={[[0, { zoom: 1 }], [tGap - 0.2, { zoom: 1 }], [tGap + 0.4, { zoom: 1.2, x: 760, y: 720 }], [tSame + 0.2, { zoom: 1.2, x: 760, y: 720 }], [tSame + 0.8, { zoom: 1 }]]}>
+      <Camera keys={[[0, { zoom: 1 }], [tGap - 0.2, { zoom: 1 }], [tGap + 0.4, { zoom: 1.15, x: 740, y: 720 }], [tSame + 0.2, { zoom: 1.15, x: 740, y: 720 }], [tSame + 0.8, { zoom: 1 }]]}>
         {/* the four sections */}
         {SECS.map((s, i) => (
           <React.Fragment key={s}>
@@ -200,7 +200,7 @@ const CountBody: React.FC = () => {
             </At>
             {/* expected 25: dashed outline */}
             <At x={COL_X(i)} y={BASE_Y - (25 * UNIT) / 2}>
-              <Appear at={t25 - 0.1 + i * 0.08} from="fade" sfx={null}>
+              <Appear at={t4 + i * 0.1} from="up" sfx={i === 0 ? "pack/whoosh-tiny" : null}>
                 <div style={{ width: 150, height: 25 * UNIT, borderRadius: 16, border: `4px dashed ${C.muted}`, boxSizing: "border-box" }} />
               </Appear>
             </At>
@@ -226,7 +226,7 @@ const CountBody: React.FC = () => {
             background: `${C.amber}${Math.round(tween(t, tGap, tGap + 0.4, 0, 0.55) * 255).toString(16).padStart(2, "0")}`, border: `4px solid ${C.amber}` }} />
         ) : null}
         <At x={COL_X(3)} y={BASE_Y - 25 * UNIT + (15 * UNIT) / 2}><Appear at={tGap + 0.2} from="pop"><Text size={64} color={C.bg}>15</Text></Appear></At>
-        <At x={700} y={450}>
+        <At x={720} y={440}>
           <Appear at={t15b} from="slam"><Chip size={44} color={C.coral} text={C.ink}>15 planes lost</Chip></Appear>
         </At>
       </Camera>
