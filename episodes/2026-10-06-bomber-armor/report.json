@@ -1,19 +1,17 @@
 {
- "ok": false,
- "problems": [
-  "speech starts at 0.25s; the first word must start at 0 (check the first beat is the first thing in construct() and nothing plays before it)"
- ],
- "duration_s": 71.2,
- "size_mb": 4.8,
- "resolution": "540x960",
- "caption_match_ratio": 0.9851485148514851,
- "heard": "You're a bomber engineer, and your planes keep getting shot down. Here's how you decide where the armor goes. Mark every bullet hole on the planes that come back. The wings, the tail, the body, covered. The engines almost clean. Command says armor the holes, but armor is heavy. You get one spot. Before you pick, ask one question. Where are the planes that didn't come back? Gunners can't pick apart. Split the plane into four equal sections. Across 100 planes, each section should take about 25 hits. Now count the planes that landed. Wings, 25. Tail, 25. Body, 25. Engines, just 10. 15 engine hits are missing, and 15 planes never came home. Those are the same planes. An engine hit is the one they don't survive. So the holes only show where a plane can get hit and still fly. Armor where the holes aren't the engines. Now your planes come home with holes in their engines. That's the good news. This is Survivorship Bias. Abraham Wald worked it out for the US military in World War II. So every old building still standing is solid. Were old buildings built better? Tell me below.",
+ "ok": true,
+ "problems": [],
+ "duration_s": 71.0,
+ "size_mb": 14.3,
+ "resolution": "1080x1920",
+ "caption_match_ratio": 0.9801980198019802,
+ "heard": "You're a bomber engineer, and your planes keep getting shot down. Here's how you decide where the armor goes. Mark every bullet hole on the planes that come back. The wings, the tail, the body, covered. The engines almost clean. Command says armor the holes, but armor is heavy. You get one spot. Before you pick, ask one question. Where are the planes that didn't come back? Gunners can't pick apart. Split the plane into four equal sections. Across 100 planes, each section should take about 25 hits. Now count the planes that landed. Wings, 25. Tail, 25. Body, 25. Engines, just 10. 15 engine hits are missing, and 15 planes never came home. Those are the same planes. An engine hit is the one they don't survive. So the holes only show where a plane can get hit and still fly. Armor where the holes aren't the engines. Now your planes come home with holes in their engines. That's the good news. This is survivorship bias. Abraham Wald worked it out for the US military in World War II. So every old building still standing is solid. Where old buildings built better, tell me below.",
  "music": "Tech Talk",
  "music_gap_db": 8.0,
- "speech_starts_at_s": 0.25,
+ "speech_starts_at_s": 0.01,
  "final_lufs": -14.7,
  "voice_engine": "omnivoice",
  "contact_sheet_every_s": 3.0,
- "build_seconds": 1258,
- "draft": true
+ "build_seconds": 238,
+ "draft": false
 }

@@ -14,9 +14,6 @@ through verify.py.
   zero = you keep 2.7% of every roulette bet), law of large numbers, chips instead of cash, comps
   scaled to losses. Reveal: the math of every real casino. (the owner's example; keep it about
   how the business works, never encourage gambling)
-- You're an engineer: bombers come back full of bullet holes and command wants armor where the
-  holes are. Steps: map the holes, ask where the missing planes were hit, armor the clean spots.
-  Reveal: Abraham Wald, survivorship bias. [check]
 - You run a supermarket and customers rage about picking the slow line. Steps: one snake line
   for all tills, simulate wait times, show the variance drop. Reveal: why banks and airports
   use one line.
@@ -51,3 +48,4 @@ through verify.py.
 - 2026-10-04  airline-overbooking (everyday, how-to)  Vew58AvSCqw  20:00 Tallinn 4 Oct, LIVE scheduled
 - 2026-10-05  enemy-tanks (history, how-to)  zPGqWMiqTHc  12:00 Tallinn 5 Oct, LIVE scheduled
 - 2026-10-05  card-typos (everyday, how-to)  9p3WtZl3RHk  20:00 Tallinn 5 Oct, LIVE scheduled
+- 2026-10-06  bomber-armor (history, how-to)  -0VQd4nuBH8  12:00 Tallinn 6 Oct, LIVE scheduled
