@@ -73,11 +73,11 @@ const DigitsBody: React.FC = () => {
   return (
     <>
       <Headline>Only the first digit</Headline>
-      <Camera keys={[[0, { zoom: 1 }], [t1280 - 0.2, { zoom: 1 }], [t1280 + 0.4, { zoom: 1.15, x: 540, y: 460 }]]}>
+      <Camera keys={[[0, { zoom: 1 }], [t1280 - 0.2, { zoom: 1 }], [t1280 + 0.4, { zoom: 1.08, x: 540, y: 420 }]]}>
         {AMOUNTS.map((a, i) => {
           const dim = t >= tFirst;
           return (
-            <At key={a} x={i % 2 === 0 ? 330 : 750} y={460 + Math.floor(i / 2) * 200}>
+            <At key={a} x={i % 2 === 0 ? 330 : 750} y={430 + Math.floor(i / 2) * 170}>
               <Appear at={0.15 + i * 0.12} from="left" dist={80} sfx={i % 2 === 0 ? "pack/cash-ting" : null} volume={0.2}>
                 <div style={{ fontFamily: F.mono, fontSize: 76, color: C.ink, whiteSpace: "nowrap" }}>
                   <span style={{ color: C.muted }}>$</span>
@@ -88,7 +88,7 @@ const DigitsBody: React.FC = () => {
             </At>
           );
         })}
-        <At x={540} y={1080}><Appear at={tOne - 0.1} from="slam"><Chip size={56}>$1,280 → 1</Chip></Appear></At>
+        <At x={540} y={960}><Appear at={t1280} from="slam"><Chip size={60}>$1,280 → 1</Chip></Appear></At>
       </Camera>
       <Sfx name="pack/ding" at={tFirst} volume={0.3} />
     </>
@@ -178,6 +178,7 @@ const LimitBody: React.FC = () => {
   return (
     <>
       <Headline>Approval limit</Headline>
+      <At x={540} y={560}><Appear at={0.1} out={t5000 - 0.3} from="pop" sfx="pack/paper-flip"><Icon name="FilePen" size={220} color={C.ink} /></Appear></At>
       <Punch at={t5000}>
         <At x={540} y={560}><Appear at={t5000 - 0.2} from="slam"><Text size={170} color={C.amber} glow>$5,000</Text></Appear></At>
       </Punch>
@@ -256,6 +257,7 @@ const TimeBody: React.FC = () => {
       <Headline color={C.coral} out={tPoint - 0.3}>Uh-oh</Headline>
       <Headline at={tPoint} color={C.mint}>The digits point the way</Headline>
       <Camera keys={[[0, { zoom: 1 }], [t50, { zoom: 1 }], [t50 + 0.5, { zoom: 1.06 }]]}>
+        <At x={540} y={640}><Appear at={0.1} out={t10k - 0.5} from="pop" sfx={null}><Icon name="AlarmClock" size={260} color={C.coral} /></Appear></At>
         {Array.from({ length: N }, (_, i) => {
           const x = 120 + (i % 12) * 76, y = 420 + Math.floor(i / 12) * 62;
           const t0 = t10k - 0.4 + i * 0.008;
@@ -266,15 +268,16 @@ const TimeBody: React.FC = () => {
             background: dim ? C.dim : hit && t >= tPoint ? C.coral : C.panel, border: `2px solid ${hit && t >= tPoint ? C.coral : C.muted}55`,
             opacity: dim ? 0.35 : 1 }} />;
         })}
-        <At x={540} y={1100}>
+        <At x={540} y={1080}>
           <Appear at={t10k} out={tPoint - 0.2} from="up">
             <div style={{ display: "flex", alignItems: "center", gap: 20 }}>
               <Counter from={0} to={10000} t0={t10k} t1={t10k + 0.6} size={90} color={C.ink} /><Text size={46} font={F.med}>expenses</Text>
             </div>
           </Appear>
         </At>
-        <At x={540} y={1100}><Appear at={t50 - 0.2} from="slam"><Chip size={52} color={C.coral} text={C.ink}>1 clerk · 50 claims</Chip></Appear></At>
+        <At x={540} y={1070}><Appear at={t50 - 0.2} from="slam"><Chip size={52} color={C.coral} text={C.ink}>1 clerk · 50 claims</Chip></Appear></At>
       </Camera>
+      <Sfx name="pack/clock" at={0.1} dur={1.4} volume={0.3} />
       <Sfx name="pack/loading" at={t10k - 0.4} dur={1.0} volume={0.18} />
     </>
   );
