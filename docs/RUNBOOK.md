@@ -33,6 +33,22 @@ nohup bash setup.sh > /tmp/setup.log 2>&1 &
 ```
 Check `/tmp/setup.log` ends with `ready` before rendering.
 
+## Zapier budget (owner's rule, 2026-10-07)
+
+The Zapier plan has **100 tasks a month**, and every Zapier call counts as one task. The two uploads
+a day already use about 60, so the review gets about 1 call a day. Before any Zapier call, read
+`state/zapier_usage.csv`; after each call, append a row (`date,call,ok`) for it, failed calls included.
+- Uploads come first. Never spend a call that could leave a scheduled upload without tasks.
+- Review: **one call per run, alternating.** Odd days of the month: the per-video totals (2a).
+  Even days: comments (2c). Retention (2b): one video, Sundays only, and only if this month's
+  count is under 80.
+- No extra calls to look things up (Data API view counters, video status, titles). Skip the
+  publishAt fix-up call unless the upload response clearly lacks the publish time.
+- If a call fails with "task limit", make no more Zapier calls in that run. Build the videos,
+  copy them to the scratchpad and send them to the owner with a filled-in upload sheet
+  (title, description with music credit, tags, publish time) so they can upload by hand.
+- If this month's count reaches 90, upload only and skip the review until the month resets.
+
 ## 2. Review earlier videos (skip if videos.csv has no public videos yet)
 
 All calls go through Zapier: `execute_zapier_read_action`, app YouTube, action
@@ -158,7 +174,7 @@ default_language="en", default_audio_language="en"`, and for long-form
 `thumbnail=<THUMB_URL>`. Long-form description includes the lines from `build/chapters.txt`.
 Every description ends with a blank line, `Music:`, and the credit from `build/music_credit.txt`,
 after the footer (the tracks are CC BY; leaving the credit out breaks the license).
-Save the returned `id`. If the upload fails, wait 60 s and try once more; if it fails
+Save the returned `id`. If the upload fails (other than a task-limit error), wait 60 s and try once more; if it fails
 again, stop and report the error (the video stays on the renders branch).
 
 LIVE mode: check the upload response shows `"publishAt": "<SLOTn_PUBLISH_AT_UTC>"`. If it doesn't,

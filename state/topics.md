@@ -26,13 +26,13 @@ through verify.py.
 - You're the security team and a hacker can try 10 billion passwords a second. Steps: count
   the possibilities, length beats symbols, four random words. Reveal: why "correct horse
   battery staple" works. [check numbers]
-- [built 2026-10-07, not uploaded: episodes/2026-10-07-pizza-sizes] You're a pizza place owner and customers think two mediums beat one large. Steps: area, not
+- [built 2026-10-07, owner uploading by hand for 20:00 7 Oct: episodes/2026-10-07-pizza-sizes; move to Used] You're a pizza place owner and customers think two mediums beat one large. Steps: area, not
   diameter (pi r^2): one 18-inch has more pizza than two 12-inch. Reveal: price per square inch.
 - You're YouTube's engineer and a video is about to break the view counter. Steps: how numbers
   are stored in bits, 2,147,483,647, switch to 64-bit. Reveal: Gangnam Style, 2014. [check]
 - You're Spotify and users say shuffle is broken because songs repeat. Steps: true randomness
   clumps, show clusters, spread artists out on purpose. Reveal: Spotify changed shuffle. [check]
-- [built 2026-10-07, not uploaded: episodes/2026-10-07-benford-expenses] You're a fraud investigator with a spreadsheet of expenses. Steps: count first digits,
+- [built 2026-10-07, owner uploading by hand for 12:00 7 Oct: episodes/2026-10-07-benford-expenses; move to Used] You're a fraud investigator with a spreadsheet of expenses. Steps: count first digits,
   real numbers start with 1 about 30% of the time (log10 2), fakes don't. Reveal: Benford's law
   in real audits. [check]
 
