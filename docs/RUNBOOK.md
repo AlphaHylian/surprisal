@@ -33,9 +33,34 @@ nohup bash setup.sh > /tmp/setup.log 2>&1 &
 ```
 Check `/tmp/setup.log` ends with `ready` before rendering.
 
+## YouTube access: direct API first, Zapier only where needed
+
+At the start of every run:
+```bash
+~/.surprisal_venv/bin/python -m kit.youtube check
+```
+- `OK <channel id> (...)`: the direct API works (setup: docs/YOUTUBE_SETUP.md). **Do every read in
+  step 2 with `kit.youtube get` instead of Zapier**, e.g.
+  `~/.surprisal_venv/bin/python -m kit.youtube get https://youtubeanalytics.googleapis.com/v2/reports ids=channel==MINE startDate=2026-09-30 endDate=<today> dimensions=video metrics=... sort=-views maxResults=50`.
+  Direct reads cost no Zapier tasks, so do the full review (2a, 2b, 2c) every day.
+- `ERROR: ... not set`: not set up yet; use Zapier for reads under the budget below.
+- Any other `ERROR` (e.g. `invalid_grant`: the refresh token expired or was revoked): use Zapier
+  under the budget below and put the error under "needs your attention" in the summary.
+
+Uploads: `state/youtube_api.json` says whether the Google project has passed YouTube's API audit
+(`"uploads_audited"`). Until it's `true`, **upload through Zapier** (step 7): Google locks videos
+uploaded by an unaudited project as private, and they can't be made public. Once it's `true`, upload with
+`~/.surprisal_venv/bin/python -m kit.youtube upload episodes/<folder> --publish-at <SLOTn_PUBLISH_AT_UTC> --notify true`
+(TEST mode: `--privacy private --notify false`, no `--publish-at`; long-form: add `--thumbnail build/thumbnail.png`
+and `--extra-description "$(cat build/chapters.txt)"`), and Zapier isn't used at all. It prints `VIDEO_ID=`,
+`PRIVACY=` and `PUBLISH_AT=`; check the publish time is right, and fix it with `kit.youtube status <id> --publish-at <time>` if not.
+The renders branch / `stage_video.sh` step is only needed for Zapier uploads.
+
 ## Zapier budget (owner's rule, 2026-10-07)
 
-The Zapier plan has **100 tasks a month**, and every Zapier call counts as one task. The two uploads
+The Zapier plan has **100 tasks a month**, and every Zapier call counts as one task. Once
+`kit.youtube check` says OK, Zapier is only used for the uploads (about 60 a month) and the rest of this
+section only matters as a fallback. The two uploads
 a day already use about 60, so the review gets about 1 call a day. Before any Zapier call, read
 `state/zapier_usage.csv`; after each call, append a row (`date,call,ok`) for it, failed calls included.
 - Uploads come first. Never spend a call that could leave a scheduled upload without tasks.
@@ -51,8 +76,9 @@ a day already use about 60, so the review gets about 1 call a day. Before any Za
 
 ## 2. Review earlier videos (skip if videos.csv has no public videos yet)
 
-All calls go through Zapier: `execute_zapier_read_action`, app YouTube, action
-`_zap_raw_request`, `method: GET`, the connection_id above.
+Use `kit.youtube get` when `kit.youtube check` said OK (no Zapier tasks). Otherwise use Zapier, within
+the budget above: `execute_zapier_read_action`, app YouTube, action `_zap_raw_request`, `method: GET`,
+the connection_id above. The URLs and parameters below are the same either way.
 
 a. **Per-video totals.** `https://youtubeanalytics.googleapis.com/v2/reports` with
    `ids=channel==MINE`, `startDate=2026-09-30`, `endDate=<today>`, `dimensions=video`,

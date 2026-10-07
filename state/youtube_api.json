@@ -1,0 +1,4 @@
+{
+  "uploads_audited": false,
+  "note": "Set to true only after Google approves the YouTube API audit for the surprisal Google Cloud project (docs/YOUTUBE_SETUP.md, step 7). Until then, uploads go through Zapier and kit.youtube is for reads."
+}
