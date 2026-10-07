@@ -18,6 +18,7 @@ const Pizza: React.FC<{ d: number; crust?: number; cut?: number; ring?: number }
   return (
     <svg width={2 * r} height={2 * r} style={{ overflow: "visible", filter: "drop-shadow(0 18px 30px #0009)" }}>
       <circle cx={r} cy={r} r={r} fill={crustCol} opacity={1 - cut * 0.85} />
+      {cut > 0 ? <circle cx={r} cy={r} r={r - PX / 2} fill="none" stroke={C.coral} strokeWidth={4} strokeDasharray="10 10" opacity={cut} /> : null}
       {ring > 0 ? <circle cx={r} cy={r} r={r - 4} fill="none" stroke={C.coral} strokeWidth={8} opacity={ring} style={{ filter: `drop-shadow(0 0 12px ${C.coral})` }} /> : null}
       <circle cx={r} cy={r} r={rin} fill={C.amber} />
       <circle cx={r} cy={r} r={rin * 0.96} fill={C.amber} opacity={0.85} />
@@ -213,8 +214,8 @@ const RevealBody: React.FC = () => {
     <>
       <Headline>Area grows with the square</Headline>
       <Punch at={tSq}>
-        <At x={260} y={640}><Appear at={t64 - 0.2} from="pop"><Icon name="Tv" size={180} color={C.ink} /></Appear></At>
-        <At x={260} y={800}><Appear at={t64} from="up"><Text size={48} font={F.med}>32-inch</Text></Appear></At>
+        <At x={260} y={640}><Appear at={Math.min(tSq, t64 - 0.4)} from="pop"><Icon name="Tv" size={180} color={C.ink} /></Appear></At>
+        <At x={260} y={800}><Appear at={Math.min(tSq, t64 - 0.4) + 0.2} from="up"><Text size={48} font={F.med}>32-inch</Text></Appear></At>
         <At x={700} y={600}><Appear at={t64} from="pop" sfx={null}><Icon name="Tv" size={360} color={C.amber} glow stroke={1.6} /></Appear></At>
         <At x={700} y={830}><Appear at={t64 + 0.2} from="up"><Text size={48} font={F.med}>64-inch</Text></Appear></At>
         <At x={540} y={1040}><Appear at={t4 - 0.1} from="slam" sfx={null}><Text size={130} color={C.amber} glow>× 4 the screen</Text></Appear></At>

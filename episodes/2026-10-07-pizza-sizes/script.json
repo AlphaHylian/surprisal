@@ -28,6 +28,6 @@
     {"id": "rim", "say": "Every extra pizza adds another ring of crust. One big pizza has only one."},
     {"id": "result", "say": "And there you have it: same money, more pizza, and way more cheese."},
     {"id": "reveal", "say": "Area grows with the square of the width. It's why a 64-inch TV has 4 times the screen of a 32-inch one."},
-    {"id": "cta", "say": "So, one 14-inch, or two 10-inch pizzas? Which is more food? Two of these a day: subscribe, and the next one finds you."}
+    {"id": "cta", "say": "So: a 14-inch, or two 10-inch pizzas? Which is more food? Two of these a day: subscribe, and the next one finds you."}
   ]
 }
