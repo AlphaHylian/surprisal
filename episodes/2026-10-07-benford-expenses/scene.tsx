@@ -73,7 +73,7 @@ const DigitsBody: React.FC = () => {
   return (
     <>
       <Headline>Only the first digit</Headline>
-      <Camera keys={[[0, { zoom: 1 }], [t1280 - 0.2, { zoom: 1 }], [t1280 + 0.4, { zoom: 1.08, x: 540, y: 420 }]]}>
+      <Camera keys={[[0, { zoom: 1 }], [t1280 - 0.2, { zoom: 1 }], [t1280 + 0.4, { zoom: 1.08, x: 540, y: 670 }]]}>
         {AMOUNTS.map((a, i) => {
           const dim = t >= tFirst;
           return (
@@ -257,10 +257,9 @@ const TimeBody: React.FC = () => {
       <Headline color={C.coral} out={tPoint - 0.3}>Uh-oh</Headline>
       <Headline at={tPoint} color={C.mint}>The digits point the way</Headline>
       <Camera keys={[[0, { zoom: 1 }], [t50, { zoom: 1 }], [t50 + 0.5, { zoom: 1.06 }]]}>
-        <At x={540} y={640}><Appear at={0.1} out={t10k - 0.5} from="pop" sfx={null}><Icon name="AlarmClock" size={260} color={C.coral} /></Appear></At>
         {Array.from({ length: N }, (_, i) => {
           const x = 120 + (i % 12) * 76, y = 420 + Math.floor(i / 12) * 62;
-          const t0 = t10k - 0.4 + i * 0.008;
+          const t0 = Math.min(0.1, t10k - 0.4) + i * 0.008;
           if (t < t0) return null;
           const hit = i === 40 || i === 41 || i === 52;
           const dim = t >= tPoint && !hit;
@@ -269,16 +268,16 @@ const TimeBody: React.FC = () => {
             opacity: dim ? 0.35 : 1 }} />;
         })}
         <At x={540} y={1080}>
-          <Appear at={t10k} out={tPoint - 0.2} from="up">
+          <Appear at={0.1} out={tPoint - 0.2} from="up">
             <div style={{ display: "flex", alignItems: "center", gap: 20 }}>
-              <Counter from={0} to={10000} t0={t10k} t1={t10k + 0.6} size={90} color={C.ink} /><Text size={46} font={F.med}>expenses</Text>
+              <Counter from={0} to={10000} t0={0.1} t1={t10k + 0.2} size={90} color={C.ink} /><Text size={46} font={F.med}>expenses</Text>
             </div>
           </Appear>
         </At>
         <At x={540} y={1070}><Appear at={t50 - 0.2} from="slam"><Chip size={52} color={C.coral} text={C.ink}>1 clerk · 50 claims</Chip></Appear></At>
       </Camera>
       <Sfx name="pack/clock" at={0.1} dur={1.4} volume={0.3} />
-      <Sfx name="pack/loading" at={t10k - 0.4} dur={1.0} volume={0.18} />
+      <Sfx name="pack/loading" at={0.1} dur={1.0} volume={0.18} />
     </>
   );
 };
