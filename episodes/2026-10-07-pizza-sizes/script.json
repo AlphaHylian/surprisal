@@ -1,0 +1,33 @@
+{
+  "slug": "pizza-sizes",
+  "format": "short",
+  "series": "everyday",
+  "hook_style": "how-to",
+  "angle": "you're ordering pizza; same price: one 18-inch or two 12-inch; widths say 24 > 18 but pizza is area: 254 vs 226 sq in; area goes with width x width (324 vs 288), so the big one is an eighth more; complication: friend skips crust -> 1 inch off: 201 vs 157, 28% more middle; every extra pizza adds a rim; reveal: area grows with the square (64-inch TV = 4x a 32-inch)",
+  "title": "How to get the most pizza for your money",
+  "description": "Same price: one 18-inch pizza or two 12-inch ones? Widths say two 12s (24 inches), but pizza is area: the 18-inch has 254 square inches, the two 12s only 226. Area grows with width times width (18 x 18 = 324, 12 x 12 x 2 = 288), so the single large is an eighth more food. Take an inch of crust off every edge and it gets better: 201 square inches of middle against 157, 28% more, because every extra pizza adds another rim. It's the same reason a 64-inch TV has 4 times the screen of a 32-inch one.\n\nNumbers checked in code (exact areas and a 200,000-point Monte Carlo). Source: https://en.wikipedia.org/wiki/Area_of_a_circle\n\nThe math behind real problems, twice a day. Subscribe and the next one finds you.\nFound an error? Comment and it gets pinned.\n#math #mathematics #shorts",
+  "tags": ["pizza math", "pizza size", "area of a circle", "pi r squared", "large vs medium pizza", "geometry", "everyday math", "math", "maths"],
+  "music_moods": ["upbeat"],
+  "facts_checked": [
+    "Area = pi x r^2: 18-inch 254 sq in, 12-inch 113, two 12s 226 (verify.py; https://en.wikipedia.org/wiki/Area_of_a_circle)",
+    "18x18 = 324, 2 x 12x12 = 288; ratio exactly 9/8 (an eighth more) (verify.py; Monte Carlo 200,000 points 1.123)",
+    "One inch of crust off: 16-inch middle 201 sq in vs two 10-inch middles 157 -> 28% more (verify.py)",
+    "Rim: one 18-inch 56.5 in vs two 12-inch 75.4 in (verify.py)",
+    "Same shape, double the diagonal -> 4x the area: 64-inch vs 32-inch TV (verify.py)",
+    "CTA: 14-inch (196) vs two 10-inch (200): two 10s by a hair (verify.py)"
+  ],
+  "beats": [
+    {"id": "hook", "say": "You're ordering pizza for your friends, and the menu is about to trick you. Here's how you win."},
+    {"id": "menu", "say": "Same price: one 18-inch pizza, or two 12-inch ones."},
+    {"id": "width", "say": "Two 12s make 24 inches of pizza. That looks like the deal. It isn't."},
+    {"id": "area", "say": "You eat area, not width. The 18-inch covers 254 square inches. Each 12-inch covers 113. Both together, 226."},
+    {"id": "square", "say": "Here's why. Area grows with width times width. 18 times 18 is 324. 12 times 12 is 144, and two of them make 288."},
+    {"id": "eighth", "say": "So the one big pizza is an eighth more food, for the same money."},
+    {"id": "crust", "say": "Uh-oh. Your friend doesn't eat crust. Cut one inch off every edge."},
+    {"id": "middle", "say": "The big one keeps 201 square inches of middle. The two small ones keep just 157. That's 28% more of the good part."},
+    {"id": "rim", "say": "Every extra pizza adds another ring of crust. One big pizza has only one."},
+    {"id": "result", "say": "And there you have it: same money, more pizza, and way more cheese."},
+    {"id": "reveal", "say": "Area grows with the square of the width. It's why a 64-inch TV has 4 times the screen of a 32-inch one."},
+    {"id": "cta", "say": "So, one 14-inch, or two 10-inch pizzas? Which is more food? Two of these a day: subscribe, and the next one finds you."}
+  ]
+}
