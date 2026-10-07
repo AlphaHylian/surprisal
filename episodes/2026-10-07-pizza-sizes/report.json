@@ -1,19 +1,17 @@
 {
- "ok": false,
- "problems": [
-  "speech starts at 0.2s; the first word must start at 0 (check the first beat is the first thing in construct() and nothing plays before it)"
- ],
- "duration_s": 78.4,
- "size_mb": 4.8,
- "resolution": "540x960",
+ "ok": true,
+ "problems": [],
+ "duration_s": 77.8,
+ "size_mb": 14.8,
+ "resolution": "1080x1920",
  "caption_match_ratio": 0.9959677419354839,
- "heard": "You're ordering pizza for your friends, and the menu is about to trick you. Here's how you win. Same price. One 18 -inch pizza, or two 12 -inch ones. Two 12s make 24 inches of pizza. That looks like the deal. It isn't. You eat area, not width. The 18 -inch covers 254 square inches. Each 12 -inch covers 113. Both together, 226. Here's why. Area grows with width times width. 18 times 18 is 324. 12 times 12 is 144, and two of them make 288. So the one big pizza is an eighth more food for the same money. Uh -oh. Your friend doesn't eat crust. Cut one inch off every edge. The big one keeps 201 square inches of middle. The two small ones keep just 157. That's 28 % more of the good part. Every extra pizza adds another ring of crust. One big pizza has only one. And there you have it. Same money, more pizza, and way more cheese. Area grows with a square of the width. It's why a 64 -inch TV has four times the screen of a 32 -inch one. So 114 -inch, or two 10 -inch pizzas, which is more food. Two of these a day, subscribe, and the next one finds you.",
+ "heard": "You're ordering pizza for your friends. And the menu is about to trick you. Here's how you win. Same price, one 18 -inch pizza or two 12 -inch ones. Two 12s make 24 inches of pizza. That looks like the deal, it isn't. You eat area, not width. The 18 -inch covers 254 square inches. Each 12 -inch covers 113, both together 226. Here's why. Area grows with width times width. 18 times 18 is 324. 12 times 12 is 144, and two of them make 288. So the one big pizza is an eighth more food for the same money. Uh -oh. Your friend doesn't eat crust. Cut one inch off every edge. The big one keeps 201 square inches of middle. The two small ones keep just 157. That's 28 % more of the good part. Every extra pizza adds another ring of crust. One big pizza has only one. And there you have it. Same money, more pizza, and way more cheese. Area grows with a square of the width. It's why a 64 -inch TV has four times the screen of a 32 -inch one. So a 14 -inch or two 10 -inch pizzas, which is more food. Two of these a day, subscribe, and the next one finds you.",
  "music": "Digital Lemonade",
  "music_gap_db": 8.0,
- "speech_starts_at_s": 0.2,
+ "speech_starts_at_s": 0.01,
  "final_lufs": -14.9,
  "voice_engine": "omnivoice",
- "contact_sheet_every_s": 3.3,
- "build_seconds": 2067,
- "draft": true
+ "contact_sheet_every_s": 3.2,
+ "build_seconds": 483,
+ "draft": false
 }
