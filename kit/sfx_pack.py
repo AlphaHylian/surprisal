@@ -56,8 +56,8 @@ MANIFEST = {
     "06 Portal Hop.wav": ("portal", "whoosh", "sci-fi portal hop, teleport"),
     # risers and build-ups
     "BUILD-UP.mp3": ("riser-short", "riser", "short build-up (about 2 s) into a reveal"),
-    "Ascending sound effect.mp3": ("riser-ascend", "riser", "ascending tone, things going up"),
-    "woosh-building-109596.mp3": ("riser-whoosh", "riser", "building whoosh into a hit"),
+    "Ascending sound effect.mp3": ("riser-ascend", "riser", "bumpy ascending tones, NOT a clean riser; use for things going up step by step"),
+    "woosh-building-109596.mp3": ("riser-whoosh", "riser", "clean riser: 2.2 s build from silence, rising pitch; the default <Riser>"),
     "Sudden suspense Sound effect.mp3": ("suspense-sting", "riser", "sudden suspense sting"),
     "01 Evolve_Brassy Swell.wav": ("swell-brass", "riser", "big brassy swell, trailer-style build"),
     "10 Evolve_Riser Robo Drums.wav": ("riser-drums", "riser", "robotic drum riser, long build (cut to 8 s)"),

@@ -29,9 +29,10 @@ type SpanInfo = { start: number; dur: number; ids: string[] };
 const SpanCtx = createContext<SpanInfo | null>(null);
 
 /** A span of one or more consecutive beats: one continuous scene from the first beat's start to the
- *  last beat's end. Inside, time (useT) is seconds from the span's start. Fades in/out briefly at its
- *  edges (except at the very start of the video, so frame 1 is fully drawn). */
-export const Span: React.FC<{ from: string; to?: string; children: React.ReactNode; fade?: number }> = ({ from, to, children, fade = 0.14 }) => {
+ *  last beat's end. Inside, time (useT) is seconds from the span's start. Scenes crossfade: each span
+ *  stays on screen `fade` seconds past its end while the next fades in, so a scene change never
+ *  shows an empty frame (empty frames invite a swipe). Frame 1 of the video is fully drawn. */
+export const Span: React.FC<{ from: string; to?: string; children: React.ReactNode; fade?: number }> = ({ from, to, children, fade = 0.25 }) => {
   const plan = usePlan();
   const { fps } = useVideoConfig();
   const idx = (id: string) => {
@@ -43,16 +44,19 @@ export const Span: React.FC<{ from: string; to?: string; children: React.ReactNo
   const start = plan.beats[i0].start;
   const end = plan.beats[i1].start + plan.beats[i1].dur + (i1 === plan.beats.length - 1 ? plan.total - plan.beats[i1].start - plan.beats[i1].dur : 0);
   const info = { start, dur: end - start, ids: plan.beats.slice(i0, i1 + 1).map((b) => b.id) };
+  const last = i1 === plan.beats.length - 1;
+  const tail = last ? 0 : fade;  // linger into the next span for the crossfade
   return (
-    <Sequence from={Math.round(start * fps)} durationInFrames={Math.max(1, Math.round((end - start) * fps))} name={info.ids.join("+")}>
-      <SpanCtx.Provider value={info}><SpanFade fade={fade} first={start === 0}>{children}</SpanFade></SpanCtx.Provider>
+    <Sequence from={Math.round(start * fps)} durationInFrames={Math.max(1, Math.round((end - start + tail) * fps))} name={info.ids.join("+")}>
+      <SpanCtx.Provider value={info}><SpanFade fade={fade} first={start === 0} last={last}>{children}</SpanFade></SpanCtx.Provider>
     </Sequence>
   );
 };
-const SpanFade: React.FC<{ fade: number; first: boolean; children: React.ReactNode }> = ({ fade, first, children }) => {
+const SpanFade: React.FC<{ fade: number; first: boolean; last: boolean; children: React.ReactNode }> = ({ fade, first, last, children }) => {
   const t = useT();
   const { dur } = useContext(SpanCtx)!;
-  const o = Math.min(first ? 1 : tween(t, 0, fade, 0, 1), tween(t, dur - fade, dur, 1, 0));
+  // fade in quickly over the outgoing scene; fade out only after this span's time is over
+  const o = Math.min(first ? 1 : tween(t, 0, fade * 0.6, 0, 1), last ? 1 : tween(t, dur, dur + fade, 1, 0));
   return <AbsoluteFill style={{ opacity: o }}>{children}</AbsoluteFill>;
 };
 /** A single beat (same as <Span from={id}>). */
@@ -131,7 +135,8 @@ export const Appear: React.FC<{ at?: number; out?: number; from?: Dir; dist?: nu
   sfx?: SfxName | null; volume?: number }> =
   ({ at = 0, out, from = "up", dist = 60, children, style, sfx, volume }) => {
     const auto = ENTRY_SFX[from];
-    const name = sfx === undefined ? auto?.[0] : sfx;
+    // things already on screen at the start are silent: the opening sound is the riser alone
+    const name = sfx === undefined ? (at <= 0.001 ? null : auto?.[0]) : sfx;
     // the whoosh peaks as the element arrives; hits and pops land on the frame it appears
     const sound = name ? <Sfx name={name} hit={at + (from === "slam" || from === "pop" ? 0.02 : 0.1)} volume={volume ?? auto?.[1] ?? 0.4} /> : null;
     return <>{sound}<AppearBody at={at} out={out} from={from} dist={dist} style={style}>{children}</AppearBody></>;
@@ -218,18 +223,15 @@ export const Ticks: React.FC<{ t0: number; t1: number; every?: number; volume?: 
   return <>{Array.from({ length: n }, (_, i) => <Sfx key={i} name="tick" at={t0 + i * every} volume={volume} />)}</>;
 };
 
-/** A riser that builds from `from` and peaks exactly at `to`. Picks the pack riser whose build
- *  is closest in length and stretches it (0.7x to 1.4x speed) to fit. */
-export const Riser: React.FC<{ from?: number; to: number; volume?: number; name?: PackName }> = ({ from = 0, to, volume = 0.5, name }) => {
+/** A riser whose peak lands exactly at `to`. Always played at its natural speed (stretching it
+ *  changes the pitch and sounds wrong); if `to` is earlier than the riser's build, it starts partway
+ *  in. Default: "riser-whoosh", a clean 2.2 s build from silence. */
+export const Riser: React.FC<{ from?: number; to: number; volume?: number; name?: PackName }> = ({ to, volume = 0.5, name = "riser-whoosh" }) => {
   const { fps } = useVideoConfig();
-  const want = Math.max(0.5, to - from);
-  const pick: PackName = name ?? (["riser-whoosh", "riser-ascend", "riser-short"] as PackName[])
-    .sort((a, b) => Math.abs(PACK[a].hit - want) - Math.abs(PACK[b].hit - want))[0];
-  const rate = Math.min(1.4, Math.max(0.7, PACK[pick].hit / want));
-  const start = to - PACK[pick].hit / rate;
+  const start = to - PACK[name].hit;
   return (
-    <Sequence from={Math.round(Math.max(0, start) * fps)} name={`sfx riser ${pick}`}>
-      <Audio src={staticFile(`sfx/pack/${pick}.mp3`)} volume={volume} playbackRate={rate} startFrom={Math.round(Math.max(0, -start) * rate * fps)} />
+    <Sequence from={Math.round(Math.max(0, start) * fps)} name={`sfx riser ${name}`}>
+      <Audio src={staticFile(`sfx/pack/${name}.mp3`)} volume={volume} startFrom={Math.round(Math.max(0, -start) * fps)} />
     </Sequence>
   );
 };

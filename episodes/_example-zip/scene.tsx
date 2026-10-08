@@ -1,4 +1,6 @@
-// "How to make any file 3x smaller": the reference episode for the how-to format.
+// "How zip makes files 3x smaller": the reference episode. Structure (docs/STYLE.md, "Script structure"):
+// question hook -> supporting hook that rules out the obvious answer -> steps -> re-hook -> steps
+// -> short payoff -> call to action tied to the ruled-out guess.
 import React from "react";
 import {
   Appear, Arrow, At, Bar, Bits, C, Camera, Card, Chip, Counter, Emoji, F, Headline, Icon, Punch, Sfx, Shake,
@@ -14,29 +16,54 @@ const FREQ: [string, number][] = [["e", 12.7], ["t", 9.1], ["a", 8.2], ["o", 7.5
   ["d", 4.3], ["l", 4.0], ["c", 2.8], ["u", 2.8], ["m", 2.4], ["w", 2.4], ["f", 2.2], ["g", 2.0], ["y", 2.0], ["p", 1.9], ["b", 1.5],
   ["v", 0.98], ["k", 0.77], ["j", 0.16], ["x", 0.15], ["q", 0.12], ["z", 0.074]];
 
-// ---------------------------------------------------------------- 1. the problem
+// ---------------------------------------------------------------- 1. hook + supporting hook
 const HookBody: React.FC = () => {
-  // Hook type "claim" (docs/STYLE.md, "The hook"): frame 1 already shows the result the video
-  // promises, in words (HookText) and as the file itself. The body then explains how.
+  // Frame 1 is the thumbnail: the question in big words and the file it's about, fully drawn.
   const at = useAt();
-  const tThree = at.word("three", 1, 0.9);
+  const tThird = at.word("smaller", 1, 1.6);
   return (
     <>
-      <HookText out={at.dur - 0.2}>{"**48 MB** \u2192 16 MB.\nNothing lost."}</HookText>
-      <Riser from={0} to={tThree + 0.7} volume={0.5} />
-      <Camera keys={[[0, { zoom: 1.06 }], [at.dur, { zoom: 1.14 }]]}>
-        <At x={540} y={760}>
+      <HookText>{"How does **zip** make\nfiles **3x smaller**?"}</HookText>
+      <Riser to={tThird} volume={0.5} />
+      <Camera keys={[[0, { zoom: 1.04 }], [at.dur, { zoom: 1.12 }]]}>
+        <At x={360} y={760}>
           <Appear at={0} from="pop">
-            <Card w={520} h={500} border={C.coral}>
-              <Icon name="FileText" size={190} color={C.ink} />
-              <Text size={48} font={F.mono}>notes.txt</Text>
-              <Counter from={48} to={16} t0={tThree} t1={tThree + 0.7} size={110} color={C.coral} suffix=" MB" />
+            <Card w={420} h={430} border={C.coral}>
+              <Icon name="FileText" size={150} color={C.ink} />
+              <Text size={42} font={F.mono}>notes.txt</Text>
+              <Counter from={48} to={16} t0={tThird} t1={tThird + 0.6} size={92} color={C.coral} suffix=" MB" />
             </Card>
           </Appear>
         </At>
-        <At x={540} y={1080}><Appear at={tThree + 0.7} from="slam"><Chip color={C.mint} size={46}>same file, 1/3 the size</Chip></Appear></At>
+        <At x={800} y={760}><Appear at={0} from="pop"><Icon name="FileArchive" size={230} color={C.amber} glow stroke={1.6} /></Appear></At>
+        <At x={540} y={1090}><Appear at={tThird + 0.6} from="slam"><Chip color={C.mint} size={44}>every letter still there</Chip></Appear></At>
       </Camera>
-      <Sfx name="whoosh" at={at.dur - 0.35} />
+    </>
+  );
+};
+
+const RuleOutBody: React.FC = () => {
+  // Say what the viewer is thinking and cross it out, then tease.
+  const at = useAt();
+  const tSqueeze = at.word("squeeze", 1, 0.5);
+  const tThrow = at.word("throw", 1, 1.6);
+  const tSneaky = at.word("sneakier", 1, 3.0);
+  const Out: React.FC<{ t: number; children: string }> = ({ t, children }) => (
+    <div style={{ position: "relative" }}>
+      <Chip color={C.panel} text={C.ink} size={74}>{children}</Chip>
+      <div style={{ position: "absolute", left: 0, right: 0, top: "50%" }}>
+        <Appear at={t + 0.45} from="slam"><div style={{ height: 12, background: C.coral, borderRadius: 6, transform: "rotate(-4deg)", boxShadow: `0 0 20px ${C.coral}` }} /></Appear>
+      </div>
+    </div>
+  );
+  return (
+    <>
+      <At y={430}><Appear at={0.05} from="left"><Out t={tSqueeze}>squeeze the letters</Out></Appear></At>
+      <At y={640}><Appear at={Math.min(tThrow, 0.5)} from="right"><Out t={tThrow}>throw data away</Out></Appear></At>
+      <Punch at={tSneaky}>
+        <At y={900}><Appear at={tSneaky} from="pop" sfx="pack/suspense-sting" volume={0.45}><Text size={200} color={C.amber} glow>?</Text></Appear></At>
+      </Punch>
+      <Sfx name="pack/whoosh-short" at={at.dur - 0.3} volume={0.3} />
     </>
   );
 };
@@ -47,7 +74,7 @@ const RepeatsBody: React.FC = () => {
   const t = useT();
   const tSecond = at.word("second", 1, 2.6);
   const tFirst = at.word("in", 1, 1.4);
-  const tDelete = at.word("delete", 1, at.beat("note") + 0.3);
+  const tDelete = at.word("deletes", 1, at.beat("note") + 0.3);
   const tNote = at.word("note", 1, tDelete + 0.8);
   const tBits = at.beat("bits");
   const deleted = t >= tDelete + 0.15;
@@ -93,50 +120,16 @@ const RepeatsBody: React.FC = () => {
   );
 };
 
-// ---------------------------------------------------------------- 3. do it everywhere (sliding window)
-const WORDS = "the cat sat on the mat and the cat saw the rat so the rat ran from the cat and the mat".split(" ");
-const WindowBody: React.FC = () => {
+// ---------------------------------------------------------------- 3. re-hook
+const ALPHA = "abcdefghijklmnopqrstuvwxyz";
+const RehookBody: React.FC = () => {
   const at = useAt();
-  const t = useT();
-  const tWin = at.word("keep", 1, 1.2);
-  const tSwap = at.word("swap", 1, 3.2);
-  const seen = new Set<string>();
-  const repeatIdx: number[] = [];
-  WORDS.forEach((w, i) => { if (seen.has(w)) repeatIdx.push(i); seen.add(w); });
+  const tAlpha = at.word("alphabet", 1, 2.2);
   return (
     <>
-      <Headline>Do it everywhere</Headline>
-      <Camera keys={[[0, { zoom: 1.15 }], [at.dur, { zoom: 1 }]]}>
-        <At x={540} y={640}>
-          <div style={{ width: 900, display: "flex", flexWrap: "wrap", gap: "18px 22px", justifyContent: "center", position: "relative" }}>
-            {WORDS.map((w, i) => {
-              const k = repeatIdx.indexOf(i);
-              const swapAt = tSwap + k * 0.12;
-              const swapped = k >= 0 && t >= swapAt;
-              return swapped ? (
-                <Appear key={i} at={swapAt} from="pop" volume={0.3}><Chip size={34} color={C.amber}>↶</Chip></Appear>
-              ) : (
-                <Appear key={i} at={0.1 + i * 0.035} from="up" dist={24} sfx={null}>
-                  <span style={{ fontFamily: F.mono, fontSize: 56, color: k >= 0 && t >= tSwap - 0.6 ? C.amber : C.ink }}>{w}</span>
-                </Appear>
-              );
-            })}
-          </div>
-        </At>
-        <At x={540} y={930}>
-          <Appear at={tWin} from="up">
-            <div style={{ display: "flex", alignItems: "center", gap: 20 }}>
-              <Icon name="ScanSearch" size={70} color={C.mint} />
-              <Text size={50} color={C.mint}>look back</Text>
-              <Counter from={0} to={32768} t0={tWin} t1={tWin + 0.9} size={64} color={C.mint} />
-              <Text size={50} color={C.mint}>characters</Text>
-            </div>
-          </Appear>
-        </At>
-      </Camera>
-      <Sfx name="whoosh" at={0.05} volume={0.4} />
-      <Riser from={tSwap - 1.6} to={tSwap} volume={0.35} />
-      <Sfx name="pack/typing" at={0.1} dur={WORDS.length * 0.035} volume={0.3} />
+      <Headline color={C.amber}>The big trick</Headline>
+      <At y={720}><Tiles text={ALPHA} size={88} gap={10} perRow={7} show={0.05} stagger={0.05} /></At>
+      <At y={1080}><Appear at={tAlpha + 0.3} from="up"><Text size={50} color={C.muted}>every letter costs 8 bits</Text></Appear></At>
     </>
   );
 };
@@ -213,24 +206,16 @@ const CodesBody: React.FC = () => {
   );
 };
 
-// ---------------------------------------------------------------- 5. the friend can't read it -> send the table
+// ---------------------------------------------------------------- 5. the code table rides along
 const TableBody: React.FC = () => {
   const at = useAt();
   const t = useT();
   const tTable = at.beat("table");
-  const tRebuild = at.word("rebuilds", 1, tTable + 2.2);
+  const tRebuild = at.word("rebuild", 1, tTable + 2.2);
   return (
     <>
-      <Headline out={tTable - 0.3} color={C.coral}>Uh-oh</Headline>
-      <Headline at={tTable} color={C.mint}>Send the code table</Headline>
-      <Shake at={0.35}>
-        <At x={230} y={560}>
-          <Appear at={0} from="pop"><div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 8 }}>
-            <Icon name="User" size={150} color={C.coral} />
-            <Text size={38} color={C.coral} font={F.med}>your friend</Text>
-          </div></Appear>
-        </At>
-        <At x={340} y={450}><Appear at={0.35} from="pop"><Emoji char="😵" size={100} /></Appear></At>
+      <Headline color={C.mint}>Code table on top</Headline>
+      <>
         <At x={600} y={820}>
           {t < tRebuild ? (
             <Terminal title="notes.txt" lines={["10011101011000101", "1110110100100010111", "0100011101101..."]} size={42} w={760} typeAt={0} cps={90} color={C.coral} />
@@ -238,7 +223,7 @@ const TableBody: React.FC = () => {
             <Card w={760} h={280} border={C.mint}><TypeOn text="to be or not to be" t0={tRebuild} t1={tRebuild + 0.9} size={58} color={C.mint} /></Card>
           )}
         </At>
-        <At x={690} y={480}>
+        <At x={540} y={460}>
           <Appear at={tTable + 0.2} from="drop">
             <Card w={520} pad={22} border={C.amber}>
               <Text size={34} color={C.amber}>CODE TABLE</Text>
@@ -248,71 +233,61 @@ const TableBody: React.FC = () => {
           </Appear>
         </At>
         <At x={900} y={1000}><Appear at={tRebuild + 0.9} from="pop"><Icon name="CircleCheck" size={110} color={C.mint} glow /></Appear></At>
-      </Shake>
-      <Sfx name="error" at={0.3} volume={0.5} />
+      </>
       <Sfx name="ding" at={tRebuild + 0.9} volume={0.45} />
     </>
   );
 };
 
-// ---------------------------------------------------------------- 6. result + reveal + question
+// ---------------------------------------------------------------- 6. payoff + call to action
 const ResultBody: React.FC = () => {
   const at = useAt();
-  const t0 = at.word("third", 1, 1.2) - 0.6;
+  const tThird = at.word("third", 1, 1.6);
   return (
     <>
-      <Headline>Your file now</Headline>
-      <At x={540} y={560}>
-        <Appear at={0} from="pop"><Card w={600} h={420} border={C.mint}>
-          <Icon name="FileText" size={140} />
-          <Counter from={48} to={16} t0={t0} t1={t0 + 1.0} size={120} color={C.mint} suffix=" MB" />
-          <Bar from={1} to={0.34} t0={t0} t1={t0 + 1.0} w={460} h={36} />
-        </Card></Appear>
-      </At>
-      <At x={540} y={940}><Appear at={at.word("lost", 1, 3)} from="slam"><Chip color={C.mint} size={54}>0 letters lost</Chip></Appear></At>
-      <Sfx name="whoosh" at={0.05} volume={0.4} />
-      <Sfx name="ding" at={t0 + 1.0} volume={0.4} />
-      <Riser from={at.dur - 1.6} to={at.dur} volume={0.45} />
-    </>
-  );
-};
-
-const RevealBody: React.FC = () => {
-  const at = useAt();
-  return (
-    <>
-      <Punch at={0}>
-        <At x={540} y={560}><Appear at={0} from="pop" sfx={null}><Icon name="FileArchive" size={380} color={C.amber} glow stroke={1.6} /></Appear></At>
-        <At x={540} y={880}><Appear at={0.15} from="slam" sfx={null}><Text size={150} font={F.mono} color={C.amber} glow>.zip</Text></Appear></At>
-        <At x={540} y={1060}><Appear at={at.word("exactly", 1, 2.4)} from="up"><Text size={48} color={C.ink}>how every zip file works</Text></Appear></At>
-        <At x={220} y={300}><Appear at={0.2} from="pop"><Emoji char="🎉" size={120} /></Appear></At>
+      <Punch at={tThird}>
+        <At x={540} y={430}><Appear at={0} from="pop"><Icon name="FileArchive" size={260} color={C.amber} glow stroke={1.6} /></Appear></At>
+        <At x={540} y={790}>
+          <Appear at={0.1} from="up"><Card w={600} h={300} border={C.mint}>
+            <Counter from={48} to={16} t0={tThird - 0.5} t1={tThird} size={120} color={C.mint} suffix=" MB" />
+            <Bar from={1} to={0.34} t0={tThird - 0.5} t1={tThird} w={460} h={36} />
+          </Card></Appear>
+        </At>
       </Punch>
-      <Sfx name="boom" at={0} volume={0.7} />
-      <Sfx name="reveal" at={0.05} volume={0.5} />
+      <At x={540} y={1060}><Appear at={at.word("lost", 1, 3)} from="slam"><Chip color={C.mint} size={54}>0 letters lost</Chip></Appear></At>
+      <Sfx name="pack/boom-short" hit={tThird} volume={0.55} />
     </>
   );
 };
 
-const CtaBody: React.FC = () => (
-  <>
-    <At x={540} y={520}><Tiles text="banana" size={130} show={0} stagger={0.06} /></At>
-    <At x={540} y={800}>
-      <Appear at={0.4} from="up">
-        <div style={{ display: "flex", alignItems: "center", gap: 24 }}><You size={110} /><Chip size={48}>how would you shrink it?</Chip></div>
-      </Appear>
-    </At>
-  </>
-);
+const CtaBody: React.FC = () => {
+  // Calls back to the guess the supporting hook ruled out (and loops to the opening question).
+  const at = useAt();
+  const tSqueezed = at.word("squeezed", 1, 1.4);
+  return (
+    <>
+      <At y={560}><Appear at={0} from="up"><Text size={76}>Subscribe if you thought</Text></Appear></At>
+      <At y={720}>
+        <Appear at={tSqueezed - 0.3} from="pop">
+          <div style={{ position: "relative" }}>
+            <Chip color={C.panel} text={C.ink} size={66}>it just squeezed the letters</Chip>
+            <div style={{ position: "absolute", left: 0, right: 0, top: "50%", height: 12, background: C.coral, borderRadius: 6, transform: "rotate(-4deg)" }} />
+          </div>
+        </Appear>
+      </At>
+    </>
+  );
+};
 
 const Scene: React.FC = () => (
   <>
     <Span from="hook"><HookBody /></Span>
+    <Span from="ruleout"><RuleOutBody /></Span>
     <Span from="repeat" to="bits"><RepeatsBody /></Span>
-    <Span from="window"><WindowBody /></Span>
+    <Span from="rehook"><RehookBody /></Span>
     <Span from="common" to="codes"><CodesBody /></Span>
-    <Span from="gibberish" to="table"><TableBody /></Span>
+    <Span from="table"><TableBody /></Span>
     <Span from="result"><ResultBody /></Span>
-    <Span from="reveal"><RevealBody /></Span>
     <Span from="cta"><CtaBody /></Span>
   </>
 );

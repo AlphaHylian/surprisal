@@ -45,10 +45,10 @@ Keep it tasteful: one sound per event, the big impacts at most twice a video.
 |---|---|---|---|
 | `pack/drum-roll` | 3.09 | 0.67 | drum roll, before announcing a number |
 | `pack/power-up` | 2.44 | 0.54 | electric power-up |
-| `pack/riser-ascend` | 3.02 | 2.68 | ascending tone, things going up |
+| `pack/riser-ascend` | 3.02 | 2.68 | bumpy ascending tones, NOT a clean riser; use for things going up step by step |
 | `pack/riser-drums` | 8.0 | 7.05 | robotic drum riser, long build (cut to 8 s) |
 | `pack/riser-short` | 1.65 | 1.38 | short build-up (about 2 s) into a reveal |
-| `pack/riser-whoosh` | 2.22 | 2.15 | building whoosh into a hit |
+| `pack/riser-whoosh` | 2.22 | 2.15 | clean riser: 2.2 s build from silence, rising pitch; the default <Riser> |
 | `pack/suspense-sting` | 1.08 | 0.09 | sudden suspense sting |
 | `pack/swell-brass` | 8.0 | 3.39 | big brassy swell, trailer-style build |
 

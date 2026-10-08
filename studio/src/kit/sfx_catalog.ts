@@ -178,13 +178,13 @@ export const PACK = {
   "kind": "riser",
   "dur": 3.02,
   "hit": 2.68,
-  "desc": "ascending tone, things going up"
+  "desc": "bumpy ascending tones, NOT a clean riser; use for things going up step by step"
  },
  "riser-whoosh": {
   "kind": "riser",
   "dur": 2.22,
   "hit": 2.15,
-  "desc": "building whoosh into a hit"
+  "desc": "clean riser: 2.2 s build from silence, rising pitch; the default <Riser>"
  },
  "suspense-sting": {
   "kind": "riser",

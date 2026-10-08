@@ -3,8 +3,8 @@
   "format": "short",
   "series": "tech",
   "hook_style": "how-to",
-  "angle": "you're the programmer; build zip yourself: repeats -> back-references (exact bits), 32K window, Huffman codes for common letters, ship the table; reveal at the end",
-  "title": "How to make any file 3x smaller",
+  "angle": "question hook on a thing everyone has used; supporting hook rules out the obvious answer (squeezing, throwing away); repeats -> back-references (14 vs 40 bits); re-hook; Huffman codes (e 3 bits / z 9); code table; payoff: a third, nothing lost; CTA tied to the ruled-out guess",
+  "title": "How zip makes files 3x smaller (without losing anything)",
   "description": "Find what repeats and replace it with a note: in \"to be or not to be\", the second \"to be\" becomes \"go back 13, copy 5\", 14 bits instead of 40. Look back over the last 32,768 characters for repeats, then give common letters short codes: in English, e is about 172 times as common as z, so e gets 3 bits and z gets 9 (about 4.2 bits per letter on average instead of 8). Send the code table with the file and it decodes exactly. That's Deflate, the method inside every zip file, and a page of English shrinks to about a third.\n\nNumbers checked in code: bit counts from the Deflate spec (RFC 1951), Huffman codes built from Wikipedia's English letter frequencies, and compression ratios measured on five English documents (32 to 35%).",
   "tags": [
     "zip file",
@@ -33,52 +33,49 @@
   "beats": [
     {
       "id": "hook",
-      "say": "Your file is three times bigger than it needs to be."
+      "say": "How does zip make a file three times smaller?"
+    },
+    {
+      "id": "ruleout",
+      "say": "It doesn't squeeze the letters, and it doesn't throw anything away. It does something sneakier."
     },
     {
       "id": "repeat",
-      "say": "Find what repeats. In to be or not to be, the second to be is already in the file."
+      "say": "First, it hunts for repeats. In to be or not to be, the second to be is already in the file."
     },
     {
       "id": "note",
-      "say": "So delete it, and leave a note: go back 13, copy 5."
+      "say": "So it deletes it, and leaves a note: go back 13, copy 5."
     },
     {
       "id": "bits",
       "say": "Those 5 letters took 40 bits. The note takes 14."
     },
     {
-      "id": "window",
-      "say": "Now do it everywhere. Keep the last 32,768 characters in view, and swap every repeat for a note."
+      "id": "rehook",
+      "say": "But that's the small trick. The big one is hiding in the alphabet."
     },
     {
       "id": "common",
-      "say": "But some letters don't repeat in chunks. They're just common. In English, e shows up 172 times as often as z."
+      "say": "In English, e shows up 172 times as often as z. So why should both cost 8 bits?"
     },
     {
       "id": "codes",
-      "say": "So stop giving every letter 8 bits. Give e 3 bits, and z 9. Common letters get cheap, rare ones get expensive."
-    },
-    {
-      "id": "gibberish",
-      "say": "Uh-oh. Your friend opens it, and it's gibberish."
+      "say": "Zip gives e just 3 bits, and z 9. Common letters get cheap, rare ones get expensive."
     },
     {
       "id": "table",
-      "say": "Put the code table at the top of the file. Now their computer rebuilds every letter, exactly."
+      "say": "Then it writes the code table at the top, so your computer can rebuild every letter exactly."
     },
     {
       "id": "result",
-      "say": "Your file is now about a third of the size, and not one letter is lost."
-    },
-    {
-      "id": "reveal",
-      "say": "Congratulations. You just built a zip file. This is exactly how they work."
+      "say": "That's how a page of English shrinks to a third, and not one letter is lost."
     },
     {
       "id": "cta",
-      "say": "So how would you shrink the word banana? Tell me below."
+      "say": "Subscribe if you thought it just squeezed the letters."
     }
   ],
-  "hook_type": "claim"
+  "hook_type": "question",
+  "social_caption": "Zip doesn't squeeze your text or throw anything away. It does something sneakier with repeats and with the alphabet itself."
 }

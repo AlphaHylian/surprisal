@@ -163,6 +163,8 @@ or role; never the same in both of a day's Shorts), angle, title, description, s
 tags, facts_checked, beats[]` (optional: `speed`).
 Each beat: `id`, `say`, optional `caption`, optional `chapter` (long-form). The first beat is the
 hook: one sentence, under 3.2 s of voice. `scene.tsx` must show it with `<HookText>` from frame 1.
+Follow STYLE.md "Script structure": hook, supporting hook that rules out the obvious answer,
+fast context, steps with a re-hook halfway, short payoff in the third quarter, tied call to action.
 **Write the hook last**, after the steps: write three candidate hooks of different types, pick
 the one that makes the strongest specific promise the video keeps, and say in the learnings line
 why it won.

@@ -24,12 +24,11 @@ History, so you don't repeat it:
 > they enjoy losing.
 
 What it does, and what every script must do:
-1. **Line 1 is the hook (see "The hook" below): the stakes, in second person, in under 2.5
-   seconds, with something concrete in it** (a number, a contradiction, a cost). The viewer is in
-   it from the first word ("you", "your"), present tense, a situation anyone can picture today.
-   Not a historical figure: the problem is happening to *you*, now.
-2. **Line 2 starts the fix.** No "Here's how you fix it" filler: the first concrete step starts
-   by 4 seconds at the latest. No backstory, no dates, no names before the steps.
+1. **Line 1 is the hook, line 2 the supporting hook** (see "Script structure" below): a direct
+   question or claim about something the viewer recognises, then the obvious answer ruled out.
+   The first concrete step starts by about 6 seconds. No backstory, no dates, no names first.
+2. **"You" and "your" wherever it's natural** ("your file", "your computer"): the problem is the
+   viewer's, now. Never a historical figure as the viewer's role.
 3. **The body is a chain of imperative steps** ("Take down all the clocks", "Replace money with
    chips"). Each step is one specific, real mechanism, followed by its effect in one short
    sentence ("Now, their sense of time starts to blur."). 5 to 10 steps.
@@ -42,12 +41,38 @@ What it does, and what every script must do:
    retention: there's always a new problem coming.
 6. **Keep tying back to the goal** ("your file", "your casino", "your 150 seats") so the viewer
    never loses track of why this step matters.
-7. **End with a punchline line, then the reveal, then (sometimes) the call to action.** "And
-   there you have it: a file a third of the size, and not one letter lost." / "This is how
-   every zip file works. Phil Katz released the format in 1989." One sentence of history at
-   most, only at the end, only to show it's real.
+7. **End on the payoff, then stop.** One or two sentences that answer the hook exactly ("That's
+   how a page of English shrinks to a third, and not one letter is lost."), the real origin only if
+   it adds proof (one clause), then the tied call to action. Nothing after it.
 8. **Tone:** confident, dry, a little wry, like the model script. Short sentences. Spoken, not
    written.
+
+## Script structure (from the owner's reference video on viral Shorts, 2026-10-09)
+
+Every Short follows this shape. The how-to steps from the model script still form the body.
+
+1. **Hook (one sentence, under 3.2 s):** the most direct possible question or claim about
+   something the viewer already knows and has wondered about. Recognisable beats abstract: zip
+   files, card numbers, casinos, airlines, Spotify shuffle, Secret Santa, a WWII bomber, a pizza
+   menu. Put the big number in it if there is one. "How does zip shrink a file to a third without
+   losing one letter?" / "Why do casinos give you free drinks?" / "Four serial numbers told the
+   Allies exactly how many tanks Germany built."
+2. **Supporting hook (one or two sentences):** say what the viewer is probably thinking and rule
+   it out. "It doesn't squeeze the letters, and it doesn't throw anything away." Now they know
+   the answer isn't the obvious one, and they want it. Tease, don't explain: "It does something
+   sneakier."
+3. **Context and stakes, fast (one or two sentences):** only what's needed to follow. Don't
+   over-explain simple things; the viewer is smart.
+4. **The steps (the how-to body), with re-hooks.** Halfway, remind them why they're here and
+   raise the bar: "But that's the small trick. The big one is hiding in the alphabet." Tease the
+   payoff without giving it away; the viewer should feel they're solving a puzzle.
+5. **Payoff in the third quarter, short.** Answer the hook's question exactly, in one or two
+   sentences, then end. Once they have the answer, every extra second loses them.
+6. **Call to action tied to what they just did,** one short line: "Subscribe if you thought it
+   just squeezed the letters." / "Subscribe if you guessed the engines." Not "like and subscribe".
+   Ideally the last line leads back into the first so the video loops.
+
+No fluff anywhere: if a sentence doesn't lead toward the payoff, cut it.
 
 ## The hook (the first 2 seconds decide everything)
 
@@ -63,9 +88,9 @@ so they get the most care. What the research and our data agree on:
 - **Readable with the sound off in under a second.** Most feed viewing starts muted.
   `<HookText>` says the hook in 3 to 7 words with the key word in amber: "**48 MB** to 16 MB,
   nothing lost", "Armor the holes. **Lose the war.**", "**63%** of Secret Santas fail".
-- **Say the stakes, not the job title.** "You're a fraud investigator, and..." spends the most
-  valuable second on the least interesting words. Lead with the tension: what's wrong, what it
-  costs, or the claim that sounds false. The role can be implied ("your bombers", "your shop").
+- **Say the intriguing thing, not the job title.** "You're a fraud investigator, and..." spends
+  the most valuable second on the least interesting words. Lead with the question or the claim
+  that sounds false, about something the viewer recognises.
 - **Open a loop the video closes.** The hook makes a specific promise or raises a specific
   question; the payoff answers it exactly. Vague teases ("you won't believe this") don't work.
 - **No preamble, ever:** no "here's how", "in this video", "did you know" without a twist,
