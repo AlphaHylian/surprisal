@@ -1,0 +1,84 @@
+{
+  "slug": "one-line",
+  "format": "short",
+  "series": "everyday",
+  "hook_style": "how-to",
+  "angle": "you run a supermarket; shoppers swear they pick the slow line; they're right: with 4 lines yours is fastest one time in four; one slow shopper freezes a lane while the next till runs empty; fix: one snake line to the next free till; simulate 4 tills, a shopper every 37.5 s, 2 min each, one in 10 slow: average wait almost 3 -> just over 2 min, worst 1 in 100: 26 -> 17 min; nearly 1 in 3 overtaken vs nobody; complication: the snake looks huge -> it steps forward every 30 s, screen calls the next till; reveal: queueing theory, Erlang 1909, banks and airports",
+  "title": "How to fix the slow checkout line",
+  "description": "With 4 separate checkout lines, yours is the fastest only one time in four, and one slow shopper freezes a whole lane. One snake line feeding whichever till frees up first fixes it. In a simulation with 4 tills, a shopper every 37.5 seconds, 2 minutes per checkout and one shopper in 10 slow, the average wait drops by a quarter (about 2.9 to 2.2 minutes), the unluckiest 1 in 100 waits 17 minutes instead of 26, and nobody gets overtaken (with separate lines, nearly 1 in 3 shoppers do). Queueing theory started with Agner Erlang in 1909, sizing Copenhagen's telephone network.\n\nNumbers checked in code (400,000-shopper simulations over 5 seeds). Sources: https://en.wikipedia.org/wiki/Agner_Krarup_Erlang https://www.qminder.com/blog/queue-management/single-line-vs-multiple-line-queues/\n\nThe math behind real problems, twice a day. Subscribe and the next one finds you.\nFound an error? Comment and it gets pinned.\n#math #mathematics #shorts",
+  "tags": [
+    "checkout line",
+    "queueing theory",
+    "single line queue",
+    "supermarket",
+    "waiting in line",
+    "erlang",
+    "probability",
+    "simulation",
+    "math",
+    "maths"
+  ],
+  "music_moods": [
+    "upbeat"
+  ],
+  "facts_checked": [
+    "4 equal lines: yours is fastest one time in four by symmetry; 100,000-race simulation 0.250 (verify.py)",
+    "Model: 4 tills, a shopper every 37.5 s, average checkout 2 min (9 in 10 take 1.5 min on average, 1 in 10 take 6.5), tills 80% busy (verify.py)",
+    "Separate lines (shoppers join the shortest and stay): average wait 2.85 min, worst 1 in 100 25.9 min, 30.6% overtaken by a later shopper; one line: 2.17 min, 16.7 min, nobody overtaken (5 x 400,000-shopper simulations, verify.py)",
+    "One line with 4 tills steps forward every 30 s on average (verify.py)",
+    "Single line feeding many servers keeps every till busy and cuts the variance of waits (https://www.qminder.com/blog/queue-management/single-line-vs-multiple-line-queues/)",
+    "Agner Erlang, Copenhagen Telephone Company, 1909 paper on telephone traffic; founder of queueing theory (https://en.wikipedia.org/wiki/Agner_Krarup_Erlang)",
+    "CTA: 5 lanes -> another line beats yours four times in five, 80% (verify.py)"
+  ],
+  "beats": [
+    {
+      "id": "hook",
+      "say": "You run a supermarket, and your customers are furious: they always pick the slow line. Here's how you fix it."
+    },
+    {
+      "id": "lines",
+      "say": "First, they're right. With 4 lines, yours is the fastest only one time in four. Three times in four, another line wins."
+    },
+    {
+      "id": "slow",
+      "say": "And one slow shopper with a price check freezes a whole line, while the next till runs empty."
+    },
+    {
+      "id": "fix",
+      "say": "So tear down the lanes. Build one snake line, and send whoever is at the front to the first free till."
+    },
+    {
+      "id": "sim",
+      "say": "Test it. 4 tills, a shopper every 37.5 seconds, 2 minutes each at the till, and one in 10 is slow."
+    },
+    {
+      "id": "waits",
+      "say": "The average wait drops by a quarter. And the unluckiest shopper in 100 waited 26 minutes. Now, 17."
+    },
+    {
+      "id": "fair",
+      "say": "With separate lines, nearly one in three shoppers get overtaken by someone who came in later. With one line, nobody."
+    },
+    {
+      "id": "uhoh",
+      "say": "Uh-oh. The snake looks huge, and people turn around at the door."
+    },
+    {
+      "id": "moves",
+      "say": "So show it moving. With 4 tills, it steps forward every 30 seconds. And a screen calls the next free till."
+    },
+    {
+      "id": "result",
+      "say": "And there you have it: shorter waits, no unlucky lanes, and nobody cutting ahead."
+    },
+    {
+      "id": "reveal",
+      "say": "This is queueing theory. Agner Erlang started it in 1909, sizing Copenhagen's phone network. It's why banks and airports use one line."
+    },
+    {
+      "id": "cta",
+      "say": "So, your store has 5 separate lanes. How often does another line beat yours? Two of these a day: subscribe, and the next one finds you."
+    }
+  ],
+  "music": "somewhere-sunny.mp3"
+}

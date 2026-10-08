@@ -1,0 +1,17 @@
+{
+ "ok": true,
+ "problems": [],
+ "duration_s": 83.4,
+ "size_mb": 15.6,
+ "resolution": "1080x1920",
+ "caption_match_ratio": 0.9652173913043478,
+ "heard": "You're making a new password, and a hacker's graphics card can guess 100 billion a second. Here's how you beat it. First, count what it has to try. Eight lower case letters, 26 choices for every spot. Multiply 26 by itself eight times, 209 billion passwords. At 100 billion a second, that's two seconds. So add capitals, digits, and symbols. Now every spot has 95 choices. That's 6 .6 quadrillion, and it falls in 18 hours. Better. Now make it longer instead. Every extra letter multiplies the work by 26, 12 letters, 11 days, 16 letters, 14 ,000 years. Uh -oh, nobody remembers 16 random letters. So use words. Take a list of 7 ,776 words and roll five dice to pick each one. Now every word multiplies the work by 7 ,776. Six random words, 70 ,000 years. And you can still remember them. But let the dice pick. Hackers try real phrases and common passwords first, long before random ones. And there you have it. A password you can remember that outlasts the hacker by 70 ,000 years. This is Dikeware. Arnold Reinhold made the list, and he now says to use at least six words. So five random words or 12 random letters, which takes longer to crack.",
+ "music": "Tech Talk",
+ "music_gap_db": 8.0,
+ "speech_starts_at_s": 0.02,
+ "final_lufs": -14.9,
+ "voice_engine": "omnivoice",
+ "contact_sheet_every_s": 3.5,
+ "build_seconds": 517,
+ "draft": false
+}

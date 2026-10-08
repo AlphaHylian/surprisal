@@ -1,0 +1,87 @@
+{
+  "slug": "password-length",
+  "format": "short",
+  "series": "tech",
+  "hook_style": "how-to",
+  "angle": "you're making a password; one graphics card guesses 100 billion a second; count the work: 8 lowercase = 26^8 = 209 billion = 2 s; symbols (95 per spot) = 6.6 quadrillion = 18 h; length instead: each letter x26, 12 letters 11 days, 16 letters 14,000 years; complication: you can't remember 16 random letters; dice-picked words from 7,776: each word x7,776, six words 70,000 years; let the dice pick (hackers try words and common passwords first); reveal: Diceware, Arnold Reinhold",
+  "title": "How to make a password a hacker can't crack",
+  "description": "A hacker's graphics card can guess about 100 billion passwords a second against a fast hash like MD5. Eight random lowercase letters (26 to the 8th, 209 billion options) fall in 2 seconds; adding capitals, digits and symbols (95 choices per spot) only buys 18 hours. Length wins: every extra letter multiplies the work by 26, so 16 random letters take 14,000 years to try in full. Six words picked with dice from the 7,776-word Diceware list take 70,000 years, and you can remember them.\n\nNumbers checked in code (exact counts and a 100,000-trial brute-force simulation). Sources: https://en.wikipedia.org/wiki/Diceware https://en.wikipedia.org/wiki/Password_cracking https://hashcat.net/forum/post-57490.html\n\nThe math behind real problems, twice a day. Subscribe and the next one finds you.\nFound an error? Comment and it gets pinned.\n#math #mathematics #shorts",
+  "tags": [
+    "password",
+    "password strength",
+    "diceware",
+    "password cracking",
+    "brute force",
+    "cybersecurity",
+    "combinatorics",
+    "math",
+    "maths",
+    "computer science"
+  ],
+  "music_moods": [
+    "upbeat",
+    "chill"
+  ],
+  "facts_checked": [
+    "One RTX 4090 runs ~150 billion MD5 guesses/s in hashcat; the video uses 100 billion/s (https://hashcat.net/forum/post-57490.html)",
+    "26^8 = 208.8 billion -> 2 s to try all at 100 billion/s (verify.py)",
+    "95 printable characters; 95^8 = 6.6 quadrillion -> 18 hours (verify.py)",
+    "26^12 -> 11 days; 26^16 -> ~14,000 years (verify.py)",
+    "Diceware: 7,776 = 6^5 words, five dice per word, created by Arnold Reinhold; six words recommended since 2014 (https://en.wikipedia.org/wiki/Diceware)",
+    "7,776^6 -> ~70,000 years; 7,776^5 -> ~9 years (verify.py)",
+    "Dictionary attacks and common-password checks are usually tried before brute force (https://en.wikipedia.org/wiki/Password_cracking)",
+    "CTA: 5 dice words (~9 years) beat 12 random letters (11 days), ~300x more options (verify.py)",
+    "Brute force on average searches half the space (100,000-trial simulation in verify.py)"
+  ],
+  "beats": [
+    {
+      "id": "hook",
+      "say": "You're making a new password, and a hacker's graphics card can guess 100 billion a second. Here's how you beat it."
+    },
+    {
+      "id": "count",
+      "say": "First, count what it has to try. 8 lowercase letters: 26 choices for every spot."
+    },
+    {
+      "id": "letters",
+      "say": "Multiply 26 by itself 8 times: 209 billion passwords. At 100 billion a second, that's 2 seconds."
+    },
+    {
+      "id": "symbols",
+      "say": "So add capitals, digits and symbols. Now every spot has 95 choices. That's 6.6 quadrillion, and it falls in 18 hours."
+    },
+    {
+      "id": "length",
+      "say": "Better. Now make it longer instead. Every extra letter multiplies the work by 26. 12 letters: 11 days. 16 letters: 14,000 years."
+    },
+    {
+      "id": "uhoh",
+      "say": "Uh-oh. Nobody remembers 16 random letters."
+    },
+    {
+      "id": "words",
+      "say": "So use words. Take a list of 7,776 words, and roll five dice to pick each one."
+    },
+    {
+      "id": "six",
+      "say": "Now every word multiplies the work by 7,776. Six random words: 70,000 years. And you can still remember them."
+    },
+    {
+      "id": "dice",
+      "say": "But let the dice pick. Hackers try real phrases and common passwords first, long before random ones."
+    },
+    {
+      "id": "result",
+      "say": "And there you have it: a password you can remember, that outlasts the hacker by 70,000 years."
+    },
+    {
+      "id": "reveal",
+      "say": "This is Diceware. Arnold Reinhold made the list, and he now says to use at least six words."
+    },
+    {
+      "id": "cta",
+      "say": "So, 5 random words, or 12 random letters. Which takes longer to crack?"
+    }
+  ],
+  "music": "tech-talk.mp3"
+}

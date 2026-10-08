@@ -1,0 +1,17 @@
+{
+ "ok": true,
+ "problems": [],
+ "duration_s": 82.8,
+ "size_mb": 14.5,
+ "resolution": "1080x1920",
+ "caption_match_ratio": 0.975609756097561,
+ "heard": "You run a supermarket and your customers are furious, they always pick the slow line. Here's how you fix it. First, they're right. With four lines, yours is the fastest only one time in four, three times in four and other line wins. And one slow shopper with a price check freezes a whole line, while the next hill runs empty. So tear down the lanes. Build one snake line and send whoever is at the front to the first free till. Test it. Four tills, a shopper every 37 .5 seconds, two minutes each at the till, and one in ten is slow. The average weight drops by a quarter, and the unluckiest shopper in 100 waited 26 minutes. Now, 17. With separate lines, nearly one in three shoppers get overtaken by someone who came in later. With one line, nobody. Uh -oh. The snake looks huge and people turn around at the door. So show it moving. With four tills, it steps forward every 30 seconds. And a screen calls the next free till. And there you have it. Shorter weights, no unlucky lanes, and nobody cutting ahead. This is queuing theory. Agner Erlang started it in 1909, sizing Copenhagen's phone network. It's why banks and airports use one line. So your store has five separate lanes. How often does another line beat yours? Two of these a day, subscribe, and the next one finds you.",
+ "music": "Somewhere Sunny",
+ "music_gap_db": 8.0,
+ "speech_starts_at_s": 0.0,
+ "final_lufs": -14.9,
+ "voice_engine": "omnivoice",
+ "contact_sheet_every_s": 3.4,
+ "build_seconds": 325,
+ "draft": false
+}
