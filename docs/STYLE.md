@@ -24,12 +24,12 @@ History, so you don't repeat it:
 > they enjoy losing.
 
 What it does, and what every script must do:
-1. **Line 1 puts the viewer in a role with a problem, in under 2 seconds:** "You're a casino
-   owner and you have a problem." Present tense, a role anyone can picture being in today.
+1. **Line 1 is the hook (see "The hook" below): the stakes, in second person, in under 2.5
+   seconds, with something concrete in it** (a number, a contradiction, a cost). The viewer is in
+   it from the first word ("you", "your"), present tense, a situation anyone can picture today.
    Not a historical figure: the problem is happening to *you*, now.
-2. **Line 2 says the problem in plain words and promises the fix:** "People don't like losing
-   their money to you. Here's how you fix it." **The first concrete step starts by 5 seconds,
-   at the latest.** No backstory, no dates, no names before the steps.
+2. **Line 2 starts the fix.** No "Here's how you fix it" filler: the first concrete step starts
+   by 4 seconds at the latest. No backstory, no dates, no names before the steps.
 3. **The body is a chain of imperative steps** ("Take down all the clocks", "Replace money with
    chips"). Each step is one specific, real mechanism, followed by its effect in one short
    sentence ("Now, their sense of time starts to blur."). 5 to 10 steps.
@@ -49,6 +49,44 @@ What it does, and what every script must do:
 8. **Tone:** confident, dry, a little wry, like the model script. Short sentences. Spoken, not
    written.
 
+## The hook (the first 2 seconds decide everything)
+
+Our numbers: every video so far kept only 30-51% of viewers past the opening (`hook_hold` in
+state/stats.csv; the zip how-to: 0.44). Studies of large Shorts samples put the good range at
+70-90%, and below 60% a Short rarely gets pushed. Openings are the channel's biggest problem,
+so they get the most care. What the research and our data agree on:
+
+- **The first frame is the thumbnail.** Shorts autoplay in the feed, so frame 1 is what people
+  judge. It must already show the striking thing, fully drawn (not fading in): the
+  contradiction, the before/after, the big number. Use `<HookText>` (big words at the top,
+  visible from frame 1) plus the hook visual. Not a person icon and a label.
+- **Readable with the sound off in under a second.** Most feed viewing starts muted.
+  `<HookText>` says the hook in 3 to 7 words with the key word in amber: "**48 MB** to 16 MB,
+  nothing lost", "Armor the holes. **Lose the war.**", "**63%** of Secret Santas fail".
+- **Say the stakes, not the job title.** "You're a fraud investigator, and..." spends the most
+  valuable second on the least interesting words. Lead with the tension: what's wrong, what it
+  costs, or the claim that sounds false. The role can be implied ("your bombers", "your shop").
+- **Open a loop the video closes.** The hook makes a specific promise or raises a specific
+  question; the payoff answers it exactly. Vague teases ("you won't believe this") don't work.
+- **No preamble, ever:** no "here's how", "in this video", "did you know" without a twist,
+  greetings, logos, or music before the voice.
+- **Under 2.5 seconds for the hook beat**, one sentence, 8 to 14 words. The report fails a Short
+  whose first beat runs longer than 3.2 s.
+- **Vary it.** Pick one hook type per video and record it in script.json `hook_type` (it goes
+  into videos.csv), never the same type in both of a day's Shorts:
+
+| `hook_type` | line 1 (say) | `<HookText>` |
+|---|---|---|
+| `stakes` | "Your planes keep coming back full of holes, and the obvious fix gets your pilots killed." | Armor the holes. **Lose the war.** |
+| `claim` | "One 18-inch pizza has more pizza than two 12-inch ones." | **1** pizza > **2** pizzas |
+| `mistake` | "If your password is 8 random characters, a gaming PC cracks it before lunch." | 8 characters = **18 hours** |
+| `versus` | "Four checkout lines, or one long snake line: one of them saves you a quarter of your wait." | 4 lines vs **1 line** |
+| `question` | "Four captured tanks. Their serial numbers tell you how many the enemy built. How?" | 4 serial numbers → **every tank** |
+| `role` | "You're a casino owner, and people hate losing money to you." (the owner's original; the control) | the problem in 2-4 words |
+
+  Until state/learnings.md says which types win, rotate through them, `role` at most once every
+  three videos, and compare `hook_hold` at day 2+ by type.
+
 ## Picking topics
 
 - The problem must be something the viewer can feel in one line: money, time, being lied to,
@@ -66,13 +104,15 @@ What it does, and what every script must do:
 
 ## Shorts
 
-- 45 to 90 seconds; longer is fine if every beat earns its place (retention is the test).
-  1080x1920. Two a day (12:00 and 20:00 Tallinn).
+- 40 to 60 seconds is the target; up to 75 only if every beat earns it (the report flags longer).
+  Fewer, sharper steps beat more steps: 4 to 7. 1080x1920. Two a day (12:00 and 20:00 Tallinn).
 - **The first word is spoken at 0.00 s and frame 1 already shows the situation.** The report
   fails the video if speech starts later than 0.05 s. Start on a consonant ("You're", "Your").
-- **Hook frame:** the role and the problem, readable with the sound off in half a second: the
-  viewer (`you_tag("casino owner")`), the setting, and the problem in 2 to 4 big words. Motion
-  inside the first 0.5 s.
+- **Hook frame:** see "The hook". `<HookText>` and the main hook visual are on screen in frame 1
+  (an `Appear` at 0 is already visible on frame 1 and just settles); motion inside the first
+  0.5 s; the riser builds into the first big moment.
+- **End so it loops.** The last line should lead back into the first: end on the question the
+  hook raised, or a line the opening answers. A clean loop makes viewers watch twice.
 - **One visual per step**, and every step's visual shows the mechanism itself (the actual
   bytes being replaced, the actual chips, the actual seat map), not a generic icon.
 - Something new on screen at least every 1.5 seconds. Use camera moves (zoom in on the detail

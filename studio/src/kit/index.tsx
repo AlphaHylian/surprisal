@@ -139,8 +139,11 @@ export const Appear: React.FC<{ at?: number; out?: number; from?: Dir; dist?: nu
 const AppearBody: React.FC<{ at: number; out?: number; from: Dir; dist: number; children: React.ReactNode; style?: React.CSSProperties }> =
   ({ at, out, from, dist, children, style }) => {
     const t = useT();
-    const s = useSpring(at, from === "slam" ? { damping: 11, stiffness: 260 } : {});
+    const s0 = useSpring(at, from === "slam" ? { damping: 11, stiffness: 260 } : {});
     if (t < at - 0.001) return null;
+    // Things that enter at 0 are the first frame (the feed shows it as the thumbnail): draw them
+    // fully from frame 1 and let them settle from 85% of the way in, instead of fading from nothing.
+    const s = at <= 0.001 ? 0.85 + 0.15 * s0 : s0;
     let o = from === "slam" ? Math.min(1, s * 3) : Math.min(1, s * 1.6);
     let tf = "";
     if (from === "up") tf = `translateY(${(1 - s) * dist}px)`;
@@ -262,6 +265,26 @@ export const Text: React.FC<{ children: React.ReactNode; size?: number; color?: 
 export const Headline: React.FC<{ children: React.ReactNode; color?: string; at?: number; out?: number }> = ({ children, color = C.ink, at = 0, out }) => (
   <At y={250}><Appear at={at} out={out} from="down" dist={30} volume={0.22}><Text font={F.display} size={76} color={color} width={940}>{children}</Text></Appear></At>
 );
+
+/** The hook in big words at the top, fully drawn on frame 1 (it is the thumbnail), readable
+ *  with the sound off. Wrap the key words in ** ** to make them amber: "Armor the holes. **Lose the war.**"
+ *  It holds until `out` (seconds, default: stays). Keep it to 3-7 words. */
+export const HookText: React.FC<{ children: string; out?: number; y?: number; size?: number }> = ({ children, out, y = 300, size = 92 }) => {
+  const t = useT();
+  if (out !== undefined && t > out + 0.3) return null;
+  const parts = children.split("**");
+  const pop = 1 + 0.06 * Math.exp(-t * 6) * Math.cos(t * 14);  // a small settle so frame 1 isn't static
+  const o = out !== undefined ? tween(t, out, out + 0.25, 1, 0) : 1;
+  return (
+    <At y={y}>
+      <div style={{ width: 980, textAlign: "center", whiteSpace: "pre-line", fontFamily: F.bold, fontSize: size, lineHeight: 1.05, color: C.ink, opacity: o,
+        transform: `scale(${pop})`, letterSpacing: -1, WebkitTextStroke: `12px ${C.bg}`, paintOrder: "stroke fill",
+        textShadow: "0 8px 30px #000c" }}>
+        {parts.map((p, i) => <span key={i} style={{ color: i % 2 ? C.amber : C.ink }}>{p}</span>)}
+      </div>
+    </At>
+  );
+};
 
 export const Emoji: React.FC<{ char: string; size?: number; style?: React.CSSProperties }> = ({ char, size = 200, style }) => (
   <div style={{ fontFamily: F.emoji, fontSize: size, lineHeight: 1, filter: "drop-shadow(0 18px 30px #0009)", ...style }}>{char}</div>

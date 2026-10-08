@@ -19,18 +19,20 @@ dated log. Rewrite rules when the data changes; don't let this file grow forever
 - No "doubt" beat after the hook ("That sounds wrong..."): in all 5 old-format Shorts checked (birthday, quarters, Penney's, clock, rope) the steepest retention fall is that beat, about 5-13 s in. Go straight from the problem to the first step. (2026-10-06)
 
 ## Current experiment
-- **How-to format** (from 2026-10-04, two Shorts a day at 12:00 and 20:00). Owner's verdict on
-  the one-day "story" format (zip test): 17 s before any math, too simplified, and a historical
-  problem nobody feels. New format (STYLE.md, "The model script"): "You're a [role] and you have
-  a problem" -> problem + "here's how you fix it" -> first concrete step by 5 s -> specific
-  imperative steps with complications -> punchline -> one-line reveal of the real origin.
-  Compare hook_hold, average view %, and subscribers per 1,000 views of the first 10 how-to
-  Shorts against the 6 old-format ones at the same age. Note 12:00 vs 20:00, but don't act on it
-  before ~2 weeks of data.
+- **Hook types** (from 2026-10-09). Every video so far kept only 30-51% of viewers past the
+  opening (hook_hold; zip how-to 0.44, rope 0.30), while large Shorts studies put good videos at
+  70-90% and say under 60% rarely gets pushed. The how-to body stays; the opening changes (STYLE.md,
+  "The hook"): the stakes or a concrete claim in line 1 instead of "You're a [job]...", `<HookText>`
+  on frame 1 (readable muted), first step by 4 s, 40-60 s total. Each Short records its
+  `hook_type` (stakes, claim, mistake, versus, question, role) in videos.csv `hook_style`.
+  Judge at day 2+: hook_hold by type, against the how-to Shorts of 4-8 Oct (role openers) as the
+  baseline. After ~10 videos, keep the best two types and drop the rest.
+- Previous experiment, how-to format (4-8 Oct): owner's verdict on the story format was "17 s
+  before any math, too simplified". How-to body kept; its role-first openings didn't fix
+  hook_hold (zip 0.44, airline 0.33 at day 3).
 
 ## Experiment ideas, in rough priority
 1. History stories (real names and dates) vs everyday situations.
-2. Role in line 1: "You're a [job]" vs "You just [event]".
 3. Length: ~45 s vs ~60 s.
 4. Ending: comment question that puts the viewer back in the role vs a one-line "what happened next".
 5. Voice speed 1.0 vs 1.1.
@@ -81,3 +83,4 @@ dated log. Rewrite rules when the data changes; don't let this file grow forever
 - 2026-10-08: built password length (tech, how-to, 83.4 s, music Tech Talk): one GPU ~100 billion guesses/s (hashcat RTX 4090 MD5 ~150 GH/s); 8 lowercase = 209 billion = 2 s; 95 chars per spot = 6.6 quadrillion = 18 h; length instead: 12 letters 11 days, 16 letters 14,000 years; can't remember 16 letters -> 6 Diceware words (7,776 each) = 70,000 years; let the dice pick (dictionary attacks come first); reveal Diceware / Arnold Reinhold; checkable CTA (5 words vs 12 letters: words, ~300x), no subscribe line. Hook keeps the password field on screen into the first step (its dots become the 8 tiles), following yesterday's zip-drop note.
 - 2026-10-08: built one checkout line (everyday, how-to, ~83 s, music Somewhere Sunny): with 4 lines yours is fastest 1 in 4; one slow shopper freezes a lane while the next till runs empty; one snake line to the first free till; simulated 4 tills / a shopper every 37.5 s / 2 min each / 1 in 10 slow: average wait -25%, unluckiest 1 in 100 waits 17 min instead of 26, nearly 1 in 3 overtaken vs nobody; complication: the snake looks huge -> it steps forward every 30 s, a screen calls the next till; reveal queueing theory / Erlang 1909; checkable CTA (5 lanes: another line wins 4 in 5) plus a subscribe line. The hook's 4 lanes stay on screen through the first two steps.
 - 2026-10-08 build note: Fish Audio still 401 (Invalid Token); OmniVoice took ~29 and ~37 min per draft voice. "You're"/"You run" openers came in at 0.02 s and 0.00 s first time. Whisper writes "Diceware" as "Dikeware" and "till" as "hill"; the voice is fine, it's the transcriber. The music picker doesn't know about the hand-uploaded 7 Oct tracks (not in videos.csv), so music was set in script.json to avoid repeating them.
+- 2026-10-09: owner asked for research on Shorts hooks. Findings: the first frame works as the thumbnail (Shorts autoplay in the feed), most feed viewing starts muted, specific promises beat vague teases, 70%+ viewed-vs-swiped is the healthy range (Paddy Galloway's 3.3B-view study: under 60% rarely performs), 20-60 s is where most strong Shorts sit. New hook rules in STYLE.md, `<HookText>` in the kit, report fails hooks over 3.2 s or without HookText. Zip reference episode re-hooked as an example (hook_type claim).

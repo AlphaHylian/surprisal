@@ -2,7 +2,7 @@
 import React from "react";
 import {
   Appear, Arrow, At, Bar, Bits, C, Camera, Card, Chip, Counter, Emoji, F, Headline, Icon, Punch, Sfx, Shake,
-  Riser, Span, Stamp, Terminal, Text, Tiles, TypeOn, You, tween, useAt, useT,
+  HookText, Riser, Span, Stamp, Terminal, Text, Tiles, TypeOn, You, tween, useAt, useT,
 } from "../kit";
 
 // Letter tiles for "to be or not to be" in two rows of 9, centred at (540, TY).
@@ -16,36 +16,26 @@ const FREQ: [string, number][] = [["e", 12.7], ["t", 9.1], ["a", 8.2], ["o", 7.5
 
 // ---------------------------------------------------------------- 1. the problem
 const HookBody: React.FC = () => {
+  // Hook type "claim" (docs/STYLE.md, "The hook"): frame 1 already shows the result the video
+  // promises, in words (HookText) and as the file itself. The body then explains how.
   const at = useAt();
-  const tBig = at.word("big", 1, 2.2);
-  const tSend = at.word("send", 1, tBig + 0.4);
+  const tThree = at.word("three", 1, 0.9);
   return (
     <>
-      <Riser from={0} to={tBig} volume={0.55} />
-      <Shake at={tBig}>
-        <Camera keys={[[0, { zoom: 1.08 }], [tBig, { zoom: 1 }], [at.dur, { zoom: 1.1, y: 640 }]]}>
-          <At x={250} y={560}><Appear at={0} from="pop"><You role="programmer" size={230} /></Appear></At>
-          <At x={720} y={560}>
-            <Appear at={0.12} from="right" dist={140}>
-              <Card w={440} h={470} border={C.coral}>
-                <Icon name="FileText" size={170} color={C.ink} />
-                <Text size={46} font={F.mono}>notes.txt</Text>
-                <Counter from={1} to={48} t0={0.3} t1={tBig} size={96} color={C.coral} suffix=" MB" />
-              </Card>
-            </Appear>
-          </At>
-          <At x={720} y={850}><Appear at={tBig} from="slam"><Stamp size={84}>TOO BIG</Stamp></Appear></At>
-          <At y={1020}>
-            <Appear at={tSend - 0.1} from="up">
-              <div style={{ display: "flex", alignItems: "center", gap: 26 }}>
-                <Icon name="Send" size={90} color={C.muted} />
-                <Bar from={0} to={0.62} t0={tSend} t1={tSend + 0.6} w={520} h={46} color={C.coral} />
-                <Appear at={tSend + 0.65} from="pop" sfx="error" volume={0.45}><Chip color={C.coral} size={40}>FAILED</Chip></Appear>
-              </div>
-            </Appear>
-          </At>
-        </Camera>
-      </Shake>
+      <HookText out={at.dur - 0.2}>{"**48 MB** \u2192 16 MB.\nNothing lost."}</HookText>
+      <Riser from={0} to={tThree + 0.7} volume={0.5} />
+      <Camera keys={[[0, { zoom: 1.06 }], [at.dur, { zoom: 1.14 }]]}>
+        <At x={540} y={760}>
+          <Appear at={0} from="pop">
+            <Card w={520} h={500} border={C.coral}>
+              <Icon name="FileText" size={190} color={C.ink} />
+              <Text size={48} font={F.mono}>notes.txt</Text>
+              <Counter from={48} to={16} t0={tThree} t1={tThree + 0.7} size={110} color={C.coral} suffix=" MB" />
+            </Card>
+          </Appear>
+        </At>
+        <At x={540} y={1080}><Appear at={tThree + 0.7} from="slam"><Chip color={C.mint} size={46}>same file, 1/3 the size</Chip></Appear></At>
+      </Camera>
       <Sfx name="whoosh" at={at.dur - 0.35} />
     </>
   );

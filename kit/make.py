@@ -63,6 +63,7 @@ def render(ep, draft):
 
 
 STUDIO = os.path.join(KIT_ROOT, "studio")
+HOOK_TYPES = {"stakes", "claim", "mistake", "versus", "question", "role"}
 BEAT_PAD = 0.2   # seconds of breathing room after each voice clip (script beats can set "pad")
 TAIL = 0.6       # seconds after the last beat
 
@@ -243,12 +244,24 @@ def main():
     every = contact_sheet(ep, dur)
     size_mb = os.path.getsize(out) / 1e6
     fmt = script.get("format", "short")
-    problems = []
+    problems, warnings = [], []
     if fmt == "short":
         if not (v["width"] == 1080 and v["height"] == 1920) and not a.draft:  # drafts are half size
             problems.append(f"short must be 1080x1920, got {v['width']}x{v['height']}")
         if dur > 178:
-            problems.append(f"short is {dur:.0f}s; Shorts max is 180s, aim for 45-90s")
+            problems.append(f"short is {dur:.0f}s; Shorts max is 180s, aim for 40-60s")
+        elif dur > 75:
+            warnings.append(f"short is {dur:.0f}s; the target is 40-60 s (75 at most). Cut a step if any beat isn't earning its place.")
+        if is_remotion(ep):  # the hook rules in docs/STYLE.md, "The hook"
+            first = script["beats"][0]["id"]
+            hook_s = json.load(open(f"{ep}/build/voice/durations.json")).get(first, 0)
+            if hook_s > 3.2:
+                problems.append(f"the hook beat '{first}' is {hook_s:.1f}s of voice; it must be under 3.2 s "
+                                "(one sentence, 8-14 words: the stakes, not the job title)")
+            if "<HookText" not in open(f"{ep}/scene.tsx").read():
+                problems.append("scene.tsx has no <HookText>: the hook in big words must be on screen from frame 1")
+            if script.get("hook_type") not in HOOK_TYPES:
+                problems.append(f"script.json hook_type must be one of {sorted(HOOK_TYPES)} (docs/STYLE.md, 'The hook')")
     else:
         if dur < 480:
             problems.append(f"long-form is {dur/60:.1f} min; aim for 8+ minutes so mid-roll ads are allowed")
@@ -264,7 +277,7 @@ def main():
         problems.append(f"animations ran past their voice clip (s): {tl['overruns']} "
                         "(audio is still in sync; just dead air on screen)")
     report = {"ok": not any(p for p in problems if "overrun" not in p and "ran past" not in p),
-              "problems": problems, "duration_s": round(dur, 1), "size_mb": round(size_mb, 1),
+              "problems": problems, "warnings": warnings, "duration_s": round(dur, 1), "size_mb": round(size_mb, 1),
               "resolution": f"{v['width']}x{v['height']}", "caption_match_ratio": match_ratio,
               "heard": heard, "music": music["title"], "music_gap_db": music["gap_db"],
               "speech_starts_at_s": onset, "final_lufs": round(lufs(out), 1),

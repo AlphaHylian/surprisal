@@ -33,7 +33,7 @@
   "beats": [
     {
       "id": "hook",
-      "say": "You're a programmer, and your file is way too big to send. Here's how you shrink it."
+      "say": "Your file is three times bigger than it needs to be."
     },
     {
       "id": "repeat",
@@ -79,5 +79,6 @@
       "id": "cta",
       "say": "So how would you shrink the word banana? Tell me below."
     }
-  ]
+  ],
+  "hook_type": "claim"
 }

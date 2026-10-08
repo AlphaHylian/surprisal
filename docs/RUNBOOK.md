@@ -54,7 +54,17 @@ uploaded by an unaudited project as private, and they can't be made public. Once
 (TEST mode: `--privacy private --notify false`, no `--publish-at`; long-form: add `--thumbnail build/thumbnail.png`
 and `--extra-description "$(cat build/chapters.txt)"`), and Zapier isn't used at all. It prints `VIDEO_ID=`,
 `PRIVACY=` and `PUBLISH_AT=`; check the publish time is right, and fix it with `kit.youtube status <id> --publish-at <time>` if not.
-The renders branch / `stage_video.sh` step is only needed for Zapier uploads.
+
+**Buffer (preferred for publishing, set up by the owner per docs/BUFFER_SETUP.md):** also run
+```bash
+~/.surprisal_venv/bin/python -m kit.buffer check
+```
+- `BUFFER_OK=1 channels=youtube,tiktok,instagram`: publish every video through Buffer (step 7a). It
+  posts the Short to YouTube, TikTok and Instagram at the slot time, costs no Zapier tasks, and
+  Buffer is an audited app, so the YouTube video goes public on time.
+- `missing=youtube`: TikTok/Instagram through Buffer, YouTube through Zapier (step 7b).
+- `BUFFER_ERROR=...` (no key, or a bad one): publish YouTube through Zapier (7b), skip TikTok and
+  Instagram, and put the error under "needs your attention" in the summary.
 
 ## Zapier budget (owner's rule, 2026-10-07)
 
@@ -148,8 +158,14 @@ the script, fix the script. If the claim itself fails, pick another topic.
 
 Follow STYLE.md. `script.json` fields: `slug, format ("short"|"long"), series (the kind:
 history, everyday, tech or nature),
-hook_style, angle, title, description, tags, facts_checked, beats[]` (optional: `speed`).
-Each beat: `id`, `say`, optional `caption`, optional `chapter` (long-form).
+hook_style ("how-to"), hook_type (STYLE.md "The hook": stakes, claim, mistake, versus, question
+or role; never the same in both of a day's Shorts), angle, title, description, social_caption,
+tags, facts_checked, beats[]` (optional: `speed`).
+Each beat: `id`, `say`, optional `caption`, optional `chapter` (long-form). The first beat is the
+hook: one sentence, under 3.2 s of voice. `scene.tsx` must show it with `<HookText>` from frame 1.
+**Write the hook last**, after the steps: write three candidate hooks of different types, pick
+the one that makes the strongest specific promise the video keeps, and say in the learnings line
+why it won.
 `scene.tsx` (Shorts): Remotion, imports from `"../kit"`; see STYLE.md "Visuals" and the example.
 Every beat id must be covered by exactly one `<Span>`, in order. Long-form still uses `scene.py`
 (Manim: `from kit.brand import *`, `from kit.visuals import *`, `class Episode(SurprisalScene)`,
@@ -186,13 +202,29 @@ If after all rounds it still isn't right, don't upload: go to step 9 and report 
 
 ## 7. Publish
 
-Publish each video right after it passes QA, **one at a time**: the renders branch only holds
-one video, so stage video 1, upload it, and only then stage video 2.
+Publish each video right after it passes QA. First put it online (the renders branch keeps the
+last 6 videos, so a video scheduled for tonight is still there when it publishes):
 ```bash
 bash kit/stage_video.sh episodes/<folder>
 ```
 It prints `VIDEO_URL=...` (and `THUMB_URL=...` for long-form) and `SERVED=yes`.
-Then `execute_zapier_write_action`, app YouTube, action `upload_video`,
+
+### 7a. Through Buffer (when `kit.buffer check` said OK in step 1; LIVE mode, Shorts)
+```bash
+~/.surprisal_venv/bin/python -m kit.buffer post episodes/<folder> --at <SLOTn_PUBLISH_AT_UTC> --video-url <VIDEO_URL>
+```
+It schedules the Short on every connected channel (title, description, footer and music credit
+from script.json; for TikTok and Instagram it uses `social_caption` from script.json if present:
+write one or two plain sentences there, the hook and what the viewer will learn, no hashtags)
+and prints `BUFFER_YOUTUBE=<post id>`, `BUFFER_TIKTOK=...`, `BUFFER_INSTAGRAM=...` (logged in
+state/buffer_posts.csv). If `BUFFER_YOUTUBE_ERROR` appears, upload YouTube through Zapier (7b)
+instead; a TikTok or Instagram error only goes in the summary. In videos.csv, `youtube_id` is
+`buffer:<post id>` until the video is live; every run starts by resolving those with
+`~/.surprisal_venv/bin/python -m kit.buffer status` (it prints `YOUTUBE_ID=` once sent) and writes
+the real id into videos.csv. Long-form and TEST mode don't use Buffer: use 7b.
+
+### 7b. Through Zapier (fallback, or long-form, or TEST mode)
+`execute_zapier_write_action`, app YouTube, action `upload_video`,
 tool_name `youtube_upload_video`, the connection_id above, params:
 `title, description, tags, video=<VIDEO_URL>, privacy_status and publish_at (per mode),
 category_id="27", made_for_kids="false", notify_subscribers (per mode),
@@ -215,7 +247,9 @@ left out gets reset. Check the response shows the publishAt.
 ## 8. Log and save
 
 - Append one row per video to `state/videos.csv` (`date` = SLOTn_DATE, `publish_at_utc` =
-  SLOTn_PUBLISH_AT_UTC, or empty in TEST mode; `music` = the track file from report.json / tracks.json).
+  SLOTn_PUBLISH_AT_UTC, or empty in TEST mode; `music` = the track file from report.json / tracks.json;
+  `hook_style` = the script's `hook_type` from 2026-10-09 on, so hook types can be compared;
+  `experiment` = `hook-types`).
 - Move each topic line to "Used" in `state/topics.md` with date, slot and video ID.
 - Add a dated line to the learnings log: what was published, what changed, why.
 - Commit the episode folder (build/ is ignored) and `state/`:
