@@ -10,20 +10,14 @@ from comments (mark them `[requested]`).
 through verify.py.
 
 ## Ready to go
-- You're a casino owner and people hate losing money to you. Steps: the house edge (one green
-  zero = you keep 2.7% of every roulette bet), law of large numbers, chips instead of cash, comps
-  scaled to losses. Reveal: the math of every real casino. (the owner's example; keep it about
-  how the business works, never encourage gambling)
 - You run a factory and dirty QR codes on your parts won't scan. Steps: add error-correction
   bytes (Reed-Solomon), spread them across the code, recover up to 30%. Reveal: QR codes, Denso
   Wave 1994. [check]
 - You're a game designer and players swear your 90% hit chance is rigged. Steps: show the real
   odds of misses in a row, then fake it (pseudo-random distribution) so it feels fair. Reveal:
   many games really do this. [check]
-- You're YouTube's engineer and a video is about to break the view counter. Steps: how numbers
-  are stored in bits, 2,147,483,647, switch to 64-bit. Reveal: Gangnam Style, 2014. [check]
 - You're Spotify and users say shuffle is broken because songs repeat. Steps: true randomness
-  clumps, show clusters, spread artists out on purpose. Reveal: Spotify changed shuffle. [check]
+  clumps, show clusters, spread artists out on purpose. Reveal: Spotify changed shuffle. [check] (2026-10-09: the Feb 2014 Spotify engineering post "How to shuffle songs?" now 404s; find another solid source first)
 
 ## Used
 - 2026-09-30  birthday-paradox (sounds-fake)  eQS8gtimpvA  first public video, 9pm Tallinn
@@ -41,3 +35,5 @@ through verify.py.
 - 2026-10-07  pizza-sizes (everyday, how-to)  ID unknown  20:00 Tallinn 7 Oct, uploaded by hand by the owner (Zapier task limit)
 - 2026-10-08  password-length (tech, how-to)  not uploaded by the bot (Zapier task limit): sent to the owner for 12:00 Tallinn 8 Oct
 - 2026-10-08  one-line (everyday, how-to)  not uploaded by the bot (Zapier task limit): sent to the owner for 20:00 Tallinn 8 Oct
+- 2026-10-09  roulette-edge (everyday, how-to, hook claim)  not uploaded by the bot (Zapier task limit): sent to the owner for 12:00 Tallinn 9 Oct
+- 2026-10-09  view-counter (tech, how-to, hook question)  not uploaded by the bot (Zapier task limit): sent to the owner for 20:00 Tallinn 9 Oct

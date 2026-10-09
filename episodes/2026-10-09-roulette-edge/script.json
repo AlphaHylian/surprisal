@@ -1,0 +1,87 @@
+{
+  "slug": "roulette-edge",
+  "format": "short",
+  "series": "everyday",
+  "hook_style": "how-to",
+  "hook_type": "claim",
+  "angle": "claim hook: roulette is almost a coin flip and the casino still wins every night; rule out rigging: one green pocket; $10 on red over 37 spins: +180 -190 = -10, 2.7%; re-hook: the long shot pays 35 to 1; $1 on all 37 numbers, 36 back, -1, 2.7% again; every bet pays like 36 pockets on a 37-pocket wheel; one player can get lucky, a million bets a night keep ~$270,000 (+-20,000); payoff: no luck needed, just more spins; CTA: what does a double-zero wheel keep (5.26%)",
+  "title": "How the casino wins at a game that's almost 50/50",
+  "description": "A European roulette wheel has 18 red pockets, 18 black and one green zero. Bet $10 on red for 37 spins: on average you win 18 times (+$180) and lose 19 (-$190), so you're $10 down, 2.7% of everything you bet. A single number pays 35 to 1, so $1 on all 37 numbers gets $36 back: $1 lost, 2.7% again. Every bet on the table pays as if the wheel had 36 pockets; it has 37. Over a million $10 bets a night, that's about $270,000 for the house, give or take $20,000, and a losing night practically never happens.\n\nNumbers checked in code (exact odds plus a 100,000-night simulation). Source: https://en.wikipedia.org/wiki/Roulette\n\nThe math behind real problems, twice a day. Subscribe and the next one finds you.\nFound an error? Comment and it gets pinned.\n#math #mathematics #shorts",
+  "social_caption": "Roulette is almost a coin flip, and the casino still wins every night. It all comes down to one green pocket.",
+  "tags": [
+    "roulette",
+    "house edge",
+    "casino math",
+    "how casinos make money",
+    "probability",
+    "expected value",
+    "law of large numbers",
+    "math",
+    "maths"
+  ],
+  "music_moods": [
+    "chill"
+  ],
+  "music": "late-night-radio.mp3",
+  "facts_checked": [
+    "European wheel: pockets 0 to 36, 18 red, 18 black, one green zero (https://en.wikipedia.org/wiki/Roulette)",
+    "Even-money bet on red wins 18 times in 37; 37 spins of $10: +180, -190, net -10 = 2.70% (verify.py)",
+    "Single number pays 35 to 1 (https://en.wikipedia.org/wiki/Roulette); $1 on all 37: $36 back, $1 lost = 2.70% (verify.py)",
+    "Single-zero house edge 2.70%, double-zero 5.26% (https://en.wikipedia.org/wiki/Roulette; verify.py)",
+    "A million $10 bets on red: expected house win $270,270, 2 standard deviations = $20,000; 0 losing nights in 100,000 simulated (verify.py)"
+  ],
+  "beats": [
+    {
+      "id": "hook",
+      "say": "Roulette's nearly a coin flip, yet the house wins."
+    },
+    {
+      "id": "ruleout",
+      "say": "No rigged wheel. No magnets. Just one green pocket."
+    },
+    {
+      "id": "context",
+      "say": "Bet 10 dollars on red. There are 18 red pockets, 18 black, and one green zero."
+    },
+    {
+      "id": "spin",
+      "say": "Spin 37 times. Red comes up 18. You win 180 dollars."
+    },
+    {
+      "id": "lose",
+      "say": "The other 19 spins, you lose 190."
+    },
+    {
+      "id": "down",
+      "say": "So you're 10 dollars down. 2.7% of everything you bet."
+    },
+    {
+      "id": "rehook",
+      "say": "Fine, skip red. A single number pays 35 to 1."
+    },
+    {
+      "id": "every",
+      "say": "Put 1 dollar on all 37 numbers. One of them wins, and you get 36 back."
+    },
+    {
+      "id": "same",
+      "say": "You lost 1 dollar. 2.7% again."
+    },
+    {
+      "id": "rule",
+      "say": "Every bet on the table pays like the wheel has 36 pockets. It has 37."
+    },
+    {
+      "id": "night",
+      "say": "You might get lucky. A million bets a night can't. The casino keeps about 270,000 dollars."
+    },
+    {
+      "id": "payoff",
+      "say": "It doesn't need luck. It just needs you to keep spinning."
+    },
+    {
+      "id": "cta",
+      "say": "American wheels add a double zero. How much does the casino keep there?"
+    }
+  ]
+}

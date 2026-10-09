@@ -1,0 +1,18 @@
+{
+ "ok": true,
+ "problems": [],
+ "warnings": [],
+ "duration_s": 61.2,
+ "size_mb": 13.7,
+ "resolution": "1080x1920",
+ "caption_match_ratio": 0.9415204678362573,
+ "heard": "Roulette's nearly a coin flip, yet the house wins. No rigged wheel. No magnets. Just one green pocket. Bet $10 on red. There are 18 red pockets, 18 black, and one green zero. Spend 37 times. Red comes up 18. You win $180. The other 19 spins, you lose $190. So you're $10 down. 2 .7 % of everything you bet. Fine, skip red. A single number pays 35 to 1. Put $1 on all 37 numbers. One of them wins, and you get 36 back. You lost $1. 2 .7 % again. Every bet on the table pays like the wheel has 36 pockets. It has 37. You might get lucky. A million bets a night can't. The casino keeps about $270 ,000. It doesn't need luck. It just needs you to keep spinning. American wheels add a double zero. How much does the casino keep there?",
+ "music": "Late Night Radio",
+ "music_gap_db": 8.0,
+ "speech_starts_at_s": 0.0,
+ "final_lufs": -14.8,
+ "voice_engine": "omnivoice",
+ "contact_sheet_every_s": 2.5,
+ "build_seconds": 441,
+ "draft": false
+}

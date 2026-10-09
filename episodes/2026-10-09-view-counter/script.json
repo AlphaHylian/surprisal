@@ -1,0 +1,83 @@
+{
+  "slug": "view-counter",
+  "format": "short",
+  "series": "tech",
+  "hook_style": "how-to",
+  "hook_type": "question",
+  "angle": "question hook: how many views can YouTube actually count; rule out 'computers can't count that high': the counter has a fixed number of switches; 32 bits; each switch doubles (10 -> 1,023, 20 -> a million); one switch is the minus sign, 31 left -> 2,147,483,647; re-hook: add one more view; every switch flips, count reads minus 2 billion (-2,147,483,648 on screen); Gangnam Style passed it in 2014; YouTube moved to 64 bits, 9.2 quintillion; payoff: a billion views for every person on Earth; CTA tied to the 'count forever' guess",
+  "title": "Why YouTube's view counter had a limit of 2,147,483,647",
+  "description": "YouTube used to store view counts as 32-bit signed integers: 32 switches, each on or off. Every switch doubles how far you can count (10 switches reach 1,023, 20 reach about a million), but one is kept for the minus sign, so 31 switches top out at 2,147,483,647. One more view flips every switch and the count would read -2,147,483,648. On December 1, 2014, YouTube announced that Gangnam Style had passed that number and that view counts now use 64 bits, which count to about 9.2 quintillion: over a billion views for every person on Earth.\n\nNumbers checked in code (32- and 64-bit integer limits, the overflow, and the bit flips). Sources: https://en.wikipedia.org/wiki/Gangnam_Style https://en.wikipedia.org/wiki/World_population\n\nThe math behind real problems, twice a day. Subscribe and the next one finds you.\nFound an error? Comment and it gets pinned.\n#math #mathematics #shorts",
+  "social_caption": "What happens when a video gets more views than YouTube can count? Gangnam Style found out in 2014.",
+  "tags": [
+    "gangnam style",
+    "youtube view counter",
+    "32-bit integer",
+    "integer overflow",
+    "2147483647",
+    "binary",
+    "computer science",
+    "math",
+    "maths"
+  ],
+  "music_moods": [
+    "chill"
+  ],
+  "music": "wallpaper.mp3",
+  "facts_checked": [
+    "n switches count to 2^n - 1: 10 -> 1,023, 20 -> 1,048,575 (verify.py)",
+    "32-bit signed integer: 31 value bits + sign, max 2,147,483,647; +1 wraps to -2,147,483,648, all 32 bits flip (verify.py, ctypes)",
+    "December 1, 2014: YouTube announced Gangnam Style passed the 32-bit signed maximum and switched to 64-bit view counts (https://en.wikipedia.org/wiki/Gangnam_Style)",
+    "64-bit signed max 9,223,372,036,854,775,807 = 9.2 quintillion (verify.py)",
+    "World population about 8.3 billion (2026) -> about 1.1 billion views each (https://en.wikipedia.org/wiki/World_population; verify.py)"
+  ],
+  "beats": [
+    {
+      "id": "hook",
+      "say": "How many views can YouTube actually count?"
+    },
+    {
+      "id": "ruleout",
+      "say": "It's not that computers can't count that high. The counter has a fixed number of switches."
+    },
+    {
+      "id": "context",
+      "say": "YouTube stored every view count in 32 bits. 32 switches, each on or off."
+    },
+    {
+      "id": "double",
+      "say": "Each switch you add doubles the count. 10 switches reach 1,023. 20 reach a million."
+    },
+    {
+      "id": "sign",
+      "say": "But the first switch is saved for the minus sign. That leaves 31."
+    },
+    {
+      "id": "max",
+      "say": "31 switches top out at 2,147,483,647."
+    },
+    {
+      "id": "rehook",
+      "say": "Now add one more view."
+    },
+    {
+      "id": "flip",
+      "say": "Every switch flips, even the sign. Now it reads minus 2 billion."
+    },
+    {
+      "id": "psy",
+      "say": "In 2014, Gangnam Style passed that line."
+    },
+    {
+      "id": "fix",
+      "say": "So YouTube moved the counter to 64 bits. That counts to 9.2 quintillion."
+    },
+    {
+      "id": "payoff",
+      "say": "Enough for everyone on Earth to watch it a billion times."
+    },
+    {
+      "id": "cta",
+      "say": "Subscribe if you thought the internet could count forever."
+    }
+  ]
+}

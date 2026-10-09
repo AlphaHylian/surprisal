@@ -1,0 +1,18 @@
+{
+ "ok": true,
+ "problems": [],
+ "warnings": [],
+ "duration_s": 53.8,
+ "size_mb": 10.1,
+ "resolution": "1080x1920",
+ "caption_match_ratio": 0.9625,
+ "heard": "How many views can YouTube actually count? It's not that computers can't count that high. The counter has a fixed number of switches. YouTube stored every view count in 32 bits, 32 switches, each on or off. Each switch you add doubles the count. Ten switches reach 1 ,023, 20 reach a million. But the first switch is saved for the minus sign. That leaves 31. 31 switches top out at 2 ,147 ,483 ,000, 647. Now add one more view. Every switch flips, even the sign. Now it reads minus 2 billion. In 2014, Gangnam Style passed that line. So YouTube moved the counter to 64 bits. That counts to 9 .2 quintillion. Enough for everyone on Earth to watch it a billion times. Subscribe if you thought the internet could count forever.",
+ "music": "Wallpaper",
+ "music_gap_db": 8.0,
+ "speech_starts_at_s": 0.01,
+ "final_lufs": -14.9,
+ "voice_engine": "omnivoice",
+ "contact_sheet_every_s": 2.2,
+ "build_seconds": 370,
+ "draft": false
+}
