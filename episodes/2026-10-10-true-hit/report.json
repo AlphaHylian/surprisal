@@ -1,0 +1,18 @@
+{
+ "ok": true,
+ "problems": [],
+ "warnings": [],
+ "duration_s": 51.3,
+ "size_mb": 8.8,
+ "resolution": "1080x1920",
+ "caption_match_ratio": 0.9939759036144579,
+ "heard": "Players say your 90 % shot is rigged. Your dice are fine. Two misses in a row is one in 100. And in 100 shots, six players in 10 see it happen. Nobody remembers the hits. So stop rolling one number. Roll two from zero to 99 and average them. The shot hits if the average is under 90. Now your 90 % shot hits 98 % of the time. Two misses in a row, one in 2 ,770. But that's only half the trick. Watch the enemy's long shots. Their 10 % shot now lands just 2 % of the time. A 50 % shot stays a coin flip. Two dice pile up in the middle so good odds get better and bad odds get worse. The number on screen lies in your favor. Fire Emblem has done this since 2002. So if the screen says 80%, how often does it really hit?",
+ "music": "Digital Lemonade",
+ "music_gap_db": 8.0,
+ "speech_starts_at_s": 0.02,
+ "final_lufs": -14.9,
+ "voice_engine": "omnivoice",
+ "contact_sheet_every_s": 2.1,
+ "build_seconds": 156,
+ "draft": false
+}

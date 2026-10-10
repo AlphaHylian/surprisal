@@ -1,0 +1,18 @@
+{
+ "ok": true,
+ "problems": [],
+ "warnings": [],
+ "duration_s": 66.6,
+ "size_mb": 11.4,
+ "resolution": "1080x1920",
+ "caption_match_ratio": 1.0,
+ "heard": "Scratch 30 % off, it still scans. Your camera isn't guessing. The code was built to rebuild what's missing. Your message is just numbers. Say it's two, three, and five. Make them a line. Start at three and climb five each step, three, eight, 13, 18. Print all four, two of them are spares. Now scratch out three and 13. Eight and 18 still sit on one straight line. Run it back and three and 13 come right back. But a smudge is sneakier than a hole. It changes a number and you don't know which. So print six points. The real line goes through four of them. No other line hits more than three. The smudged ones get outvoted. Each wrong number costs you two spares. A real QR code does this with bytes. The smallest has 26, nine for your message, 17 spares. That fixes any eight wrong bytes, about 30%. That's why a logo can sit in the middle of a QR code and your phone still reads it. The trick is called Reed Solomon from 1960. Subscribe if you thought your camera was just guessing.",
+ "music": "Chill Wave",
+ "music_gap_db": 8.0,
+ "speech_starts_at_s": 0.01,
+ "final_lufs": -15.0,
+ "voice_engine": "omnivoice",
+ "contact_sheet_every_s": 2.8,
+ "build_seconds": 319,
+ "draft": false
+}

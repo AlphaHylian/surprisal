@@ -10,14 +10,18 @@ from comments (mark them `[requested]`).
 through verify.py.
 
 ## Ready to go
-- You run a factory and dirty QR codes on your parts won't scan. Steps: add error-correction
-  bytes (Reed-Solomon), spread them across the code, recover up to 30%. Reveal: QR codes, Denso
-  Wave 1994. [check]
-- You're a game designer and players swear your 90% hit chance is rigged. Steps: show the real
-  odds of misses in a row, then fake it (pseudo-random distribution) so it feels fair. Reveal:
-  many games really do this. [check]
 - You're Spotify and users say shuffle is broken because songs repeat. Steps: true randomness
   clumps, show clusters, spread artists out on purpose. Reveal: Spotify changed shuffle. [check] (2026-10-09: the Feb 2014 Spotify engineering post "How to shuffle songs?" now 404s; find another solid source first)
+- Your servers keep overloading one at a time. Steps: send each job to a random server (the
+  busiest ends up with a pile), then pick 2 at random and use the emptier one: the worst pile
+  shrinks dramatically. Reveal: "power of two choices", used in real load balancers. [check] (tech)
+- You're taking a penalty and the keeper guesses your side. Steps: never be predictable, mix
+  sides in exact proportions so the keeper gains nothing by guessing. Reveal: pro penalty data
+  matches game theory (Palacios-Huerta). [check] (everyday/sport)
+- Your Wordle opener wastes guesses. Steps: score a guess by how evenly it splits the remaining
+  words, pick the one that splits best. Reveal: information theory, bits. [check] (everyday)
+- Your phone needs its position from satellites. Steps: each signal gives a distance (a sphere),
+  3 spheres meet in a point, the 4th fixes your phone's bad clock. Reveal: GPS. [check] (tech)
 
 ## Used
 - 2026-09-30  birthday-paradox (sounds-fake)  eQS8gtimpvA  first public video, 9pm Tallinn
@@ -37,3 +41,5 @@ through verify.py.
 - 2026-10-08  one-line (everyday, how-to)  not uploaded by the bot (Zapier task limit): sent to the owner for 20:00 Tallinn 8 Oct
 - 2026-10-09  roulette-edge (everyday, how-to, hook claim)  not uploaded by the bot (Zapier task limit): sent to the owner for 12:00 Tallinn 9 Oct
 - 2026-10-09  view-counter (tech, how-to, hook question)  not uploaded by the bot (Zapier task limit): sent to the owner for 20:00 Tallinn 9 Oct
+- 2026-10-10  qr-torn (tech, how-to, hook claim)  M3rmRETDAA8  12:00 Tallinn 10 Oct, LIVE scheduled
+- 2026-10-10  true-hit (everyday, how-to, hook stakes)  UOAZvsmDHTM  20:00 Tallinn 10 Oct, LIVE scheduled

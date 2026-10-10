@@ -1,0 +1,38 @@
+{
+  "slug": "qr-torn",
+  "format": "short",
+  "series": "tech",
+  "hook_style": "how-to",
+  "hook_type": "claim",
+  "angle": "claim hook: scratch off 30% of a QR code and it still scans; rule out the camera guessing; message = numbers 3 and 5 -> a line (3, 8, 13, 18), print all four, two are spares; scratch out 3 and 13, 8 and 18 rebuild the line; re-hook: a smudge changes a number and you don't know which; print 6 points, the true line hits 4, any other line at most 3, smudged ones outvoted; 2 spares per wrong number; real QR 1-H: 26 bytes, 9 message, 17 spares, fixes 8 (30%); payoff: logo in the middle; Reed-Solomon 1960; CTA tied to 'camera guessing'",
+  "title": "Why a QR code still scans with 30% scratched off",
+  "description": "A QR code stores your message as numbers and adds spare numbers worked out from them. With two numbers, 3 and 5, draw the line that starts at 3 and climbs 5 a step and print four points on it: 3, 8, 13, 18. Any two of the four rebuild the line. If a smudge changes numbers instead of erasing them, print 6 points: the real line goes through 4 of them and no other line through more than 3, so two bad ones get outvoted. Each wrong number costs two spares. The smallest QR code on its strongest setting (level H) has 26 bytes, 9 for the message and 17 spares, enough to fix any 8: about 30%. (The three corner squares have to stay readable; they tell the camera where the code is.) The method is Reed-Solomon error correction, 1960.\n\nNumbers checked in code (line rebuilding, majority decoding of 2 smudged points in 100,000 random trials, QR codeword counts). Sources: https://en.wikipedia.org/wiki/QR_code https://en.wikipedia.org/wiki/Reed%E2%80%93Solomon_error_correction https://www.thonky.com/qr-code-tutorial/error-correction-table\n\nThe math behind real problems, twice a day. Subscribe and the next one finds you.\nFound an error? Comment and it gets pinned.\n#math #mathematics #shorts",
+  "social_caption": "Scratch off 30% of a QR code and it still scans. The code carries spare numbers that rebuild what's missing, and here's exactly how.",
+  "tags": ["qr code", "error correction", "reed-solomon", "how qr codes work", "coding theory", "computer science", "math", "maths"],
+  "music_moods": ["chill"],
+  "music": "chill-wave.mp3",
+  "facts_checked": [
+    "Line from 3 and 5: 3, 8, 13, 18; any 2 of the 4 points rebuild it (verify.py)",
+    "6 points with 2 changed at random: majority line decodes correctly in 100,000 of 100,000 trials; true line hits 4, any other at most 3 (verify.py)",
+    "Reed-Solomon: t check symbols correct floor(t/2) errors at unknown positions, t erasures; Reed and Solomon, 1960; used in QR codes, CDs, Voyager (https://en.wikipedia.org/wiki/Reed%E2%80%93Solomon_error_correction)",
+    "QR error correction levels L 7%, M 15%, Q 25%, H 30%; invented 1994 by Masahiro Hara at Denso Wave; three finder patterns (https://en.wikipedia.org/wiki/QR_code)",
+    "Version 1-H: 9 data + 17 EC codewords = 26, fixes 8 (31%); 40-H: 30 EC per block -> 15 errors (https://www.thonky.com/qr-code-tutorial/error-correction-table; verify.py)"
+  ],
+  "beats": [
+    {"id": "hook", "say": "Scratch 30% off. It still scans."},
+    {"id": "ruleout", "say": "Your camera isn't guessing. The code was built to rebuild what's missing."},
+    {"id": "context", "say": "Your message is just numbers. Say it's two: 3 and 5."},
+    {"id": "line", "say": "Make them a line. Start at 3, and climb 5 each step: 3, 8, 13, 18."},
+    {"id": "spare", "say": "Print all four. Two of them are spares."},
+    {"id": "scratch", "say": "Now scratch out 3 and 13."},
+    {"id": "rebuild", "say": "8 and 18 still sit on one straight line. Run it back, and 3 and 13 come right back."},
+    {"id": "rehook", "say": "But a smudge is sneakier than a hole. It changes a number, and you don't know which."},
+    {"id": "six", "say": "So print 6 points. The real line goes through 4 of them. No other line hits more than 3."},
+    {"id": "outvote", "say": "The smudged ones get outvoted. Each wrong number costs you 2 spares."},
+    {"id": "real", "say": "A real QR code does this with bytes. The smallest has 26: 9 for your message, 17 spares."},
+    {"id": "fix8", "say": "That fixes any 8 wrong bytes. About 30%."},
+    {"id": "payoff", "say": "That's why a logo can sit in the middle of a QR code, and your phone still reads it."},
+    {"id": "reveal", "say": "The trick is called Reed-Solomon, from 1960."},
+    {"id": "cta", "say": "Subscribe if you thought your camera was just guessing."}
+  ]
+}
