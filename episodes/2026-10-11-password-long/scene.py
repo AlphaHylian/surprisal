@@ -833,6 +833,6 @@ class Episode(SurprisalScene):
 class Thumbnail(Scene):
     def construct(self):
         pw = pw_field("••••••••", 6.0, CORAL, 70).move_to(UP * 1.9)
-        n = Text("2 seconds", font=FONT_BOLD, color=AMBER, font_size=210).move_to(DOWN * 0.6)
+        n = Text("2 seconds", font=FONT_BOLD, color=AMBER, font_size=180).move_to(DOWN * 0.6)
         sub = Text("to crack it", font=FONT_BOLD, color=INK, font_size=80).move_to(DOWN * 2.6)
         self.add(pw, n, sub)

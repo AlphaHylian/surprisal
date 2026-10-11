@@ -62,5 +62,5 @@ def sample(d, want, seed0):
 s1, l1 = sample(1, 126, 100)
 s2, l2 = sample(2, 102, 200)
 import json
-json.dump({"random": l1.tolist(), "two": l2.tolist()}, open("bars.json", "w"))
+json.dump({"random": l1.tolist(), "two": l2.tolist()}, open(__import__("os").path.join(__import__("os").path.dirname(__import__("os").path.abspath(__file__)), "bars.json"), "w"))
 print("sample seeds", s1, s2, "random min/max", l1.min(), l1.max(), "two min/max", l2.min(), l2.max())

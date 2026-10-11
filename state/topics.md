@@ -41,3 +41,4 @@ through verify.py.
 - 2026-10-10  qr-torn (tech, how-to, hook claim)  M3rmRETDAA8  12:00 Tallinn 10 Oct, LIVE scheduled
 - 2026-10-10  true-hit (everyday, how-to, hook stakes)  UOAZvsmDHTM  20:00 Tallinn 10 Oct, LIVE scheduled
 - 2026-10-11  two-choices (tech, how-to, hook versus)  TvXEXHRzfRI  12:00 Tallinn 11 Oct, LIVE scheduled
+- 2026-10-11  password-long (tech, LONG-FORM 9:53, expands password-length)  FyapqYYFcaA  20:00 Tallinn 11 Oct, LIVE scheduled

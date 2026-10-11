@@ -24,7 +24,7 @@
  "beats": [
   {
    "id": "hook",
-   "say": "Your 8-letter password can be cracked in 2 seconds, and adding symbols barely helps.",
+   "say": "Cracking your 8-letter password takes 2 seconds, and adding symbols barely helps.",
    "chapter": "The 2-second password"
   },
   {
