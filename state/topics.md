@@ -12,9 +12,6 @@ through verify.py.
 ## Ready to go
 - You're Spotify and users say shuffle is broken because songs repeat. Steps: true randomness
   clumps, show clusters, spread artists out on purpose. Reveal: Spotify changed shuffle. [check] (2026-10-09: the Feb 2014 Spotify engineering post "How to shuffle songs?" now 404s; find another solid source first)
-- Your servers keep overloading one at a time. Steps: send each job to a random server (the
-  busiest ends up with a pile), then pick 2 at random and use the emptier one: the worst pile
-  shrinks dramatically. Reveal: "power of two choices", used in real load balancers. [check] (tech)
 - You're taking a penalty and the keeper guesses your side. Steps: never be predictable, mix
   sides in exact proportions so the keeper gains nothing by guessing. Reveal: pro penalty data
   matches game theory (Palacios-Huerta). [check] (everyday/sport)
@@ -43,3 +40,4 @@ through verify.py.
 - 2026-10-09  view-counter (tech, how-to, hook question)  not uploaded by the bot (Zapier task limit): sent to the owner for 20:00 Tallinn 9 Oct
 - 2026-10-10  qr-torn (tech, how-to, hook claim)  M3rmRETDAA8  12:00 Tallinn 10 Oct, LIVE scheduled
 - 2026-10-10  true-hit (everyday, how-to, hook stakes)  UOAZvsmDHTM  20:00 Tallinn 10 Oct, LIVE scheduled
+- 2026-10-11  two-choices (tech, how-to, hook versus)  TvXEXHRzfRI  12:00 Tallinn 11 Oct, LIVE scheduled

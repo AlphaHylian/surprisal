@@ -1,0 +1,318 @@
+{
+ "slug": "password-long",
+ "format": "long",
+ "series": "tech",
+ "hook_style": "how-to",
+ "hook_type": "mistake",
+ "angle": "long-form of the week's best Short (password-length): offline cracking of leaked hashes at 100 billion MD5 guesses/s; counting the space (26^8 = 209 billion, 2 s; 95^8 18 h; 16 letters 14,000 years; bits); humans aren't random (RockYou 2009, 123456 x 290,731, dictionary + rules = 660 million guesses, NIST no composition rules); site-side salt (LinkedIn 2012 unsalted) and slow hashes (bcrypt 650,000x slower; cost 10: 7,500/s; 8 letters 11 months); Diceware 7,776 words, 6 words 70,000 years, xkcd 44 bits; what to do; CTA: 1,000x faster -> how many words to add (one)",
+ "title": "How hackers crack passwords, and the 6 words that stop them",
+ "music_moods": [
+  "calm"
+ ],
+ "tags": [
+  "password",
+  "password cracking",
+  "diceware",
+  "hashing",
+  "bcrypt",
+  "cybersecurity",
+  "rockyou",
+  "math",
+  "maths",
+  "computer science"
+ ],
+ "beats": [
+  {
+   "id": "hook",
+   "say": "Your 8-letter password can be cracked in 2 seconds, and adding symbols barely helps.",
+   "chapter": "The 2-second password"
+  },
+  {
+   "id": "promise",
+   "say": "By the end of this, you'll know exactly how hackers guess, why the usual advice fails, and how to build a password that outlasts them by 70,000 years."
+  },
+  {
+   "id": "count_promise",
+   "say": "And you won't have to take my word for any of it. We'll count every guess together."
+  },
+  {
+   "id": "not_login",
+   "say": "First, the hacker isn't typing guesses into your login page. That page would lock them out after a few tries.",
+   "chapter": "What the hacker really has"
+  },
+  {
+   "id": "hash_store",
+   "say": "Here's what really happens. When you sign up, a good website doesn't store your password. It stores a fingerprint of it, called a hash."
+  },
+  {
+   "id": "hash_oneway",
+   "say": "A hash is a scramble that only goes one way. Feed in hunter2, and out comes a string of 32 letters and digits. Change one letter, and the whole string changes. But there's no way to run it backwards."
+  },
+  {
+   "id": "hash_login",
+   "say": "When you log in, the site hashes whatever you typed and compares the two fingerprints. If they match, you're in."
+  },
+  {
+   "id": "breach",
+   "say": "Then one day the site gets breached, and the whole table of hashes leaks. Now the hacker has your fingerprint at home, with no lockout and no time limit."
+  },
+  {
+   "id": "guess_loop",
+   "say": "They can't reverse it, so they guess. Hash a guess, compare. Hash the next guess, compare. Billions of times."
+  },
+  {
+   "id": "gpu",
+   "say": "How many billions? One RTX 4090, a gaming graphics card, computes about 156 billion MD5 hashes a second. MD5 is an old hash, and it's fast, which is exactly what you don't want here."
+  },
+  {
+   "id": "round",
+   "say": "We'll round down to 100 billion guesses a second. And that's one card. A serious attacker can rent dozens."
+  },
+  {
+   "id": "offline",
+   "say": "That's the real difference. Online, a hacker gets maybe 10 tries before the lock. Offline, they get 100 billion every second, for as long as they like."
+  },
+  {
+   "id": "count_intro",
+   "say": "So how long does your password last? Count the possibilities.",
+   "chapter": "Counting the guesses"
+  },
+  {
+   "id": "spots",
+   "say": "Take 8 lowercase letters. Every spot has 26 choices. Two spots give 26 times 26, which is 676 combinations. Three spots: 17,576."
+  },
+  {
+   "id": "eight",
+   "say": "Every extra spot multiplies by 26 again. After 8 spots, that's 209 billion passwords."
+  },
+  {
+   "id": "two_sec",
+   "say": "At 100 billion a second, the hacker tries every single one in about 2 seconds. On average they hit yours halfway, in 1."
+  },
+  {
+   "id": "symbols",
+   "say": "The usual advice is to add capitals, digits and symbols. Now each spot has 95 choices instead of 26."
+  },
+  {
+   "id": "quadrillion",
+   "say": "95 to the 8th is 6.6 quadrillion. That sounds huge. At 100 billion a second, it's 18 hours. Your fancy password is gone before tomorrow night."
+  },
+  {
+   "id": "divide",
+   "say": "Here's the division, so you can check it. 6.6 quadrillion guesses, divided by 100 billion a second, is 66,000 seconds. That's a bit over 18 hours."
+  },
+  {
+   "id": "longer",
+   "say": "Now try the other direction. Keep plain lowercase letters, but use more of them."
+  },
+  {
+   "id": "ladder",
+   "say": "12 letters: 11 days. 14 letters: about 20 years. 16 letters: 14,000 years."
+  },
+  {
+   "id": "why_length",
+   "say": "Why does length win? Symbols make each spot about 3 and a half times harder. One more spot makes the whole password 26 times harder, and that multiplies again with every spot you add."
+  },
+  {
+   "id": "bits",
+   "say": "Security people measure this in bits. Each bit doubles the number of guesses. 8 random lowercase letters is about 38 bits. 16 is about 75. Every bit you add doubles the hacker's time."
+  },
+  {
+   "id": "bits_example",
+   "say": "So 38 bits means about 2 to the 38 guesses. Add 1 bit and that doubles. Add 10 bits and it's about 1,000 times more."
+  },
+  {
+   "id": "subscribe",
+   "say": "If you like counting the things that matter, subscribe. There are two short ones every day, and a long one every Sunday."
+  },
+  {
+   "id": "not_random",
+   "say": "But all of that assumed one thing: that your password is random. It almost never is.",
+   "chapter": "Humans aren't random"
+  },
+  {
+   "id": "rockyou",
+   "say": "In December 2009, a company called RockYou was hacked. It had stored 32 million passwords in plain text. No hashes at all."
+  },
+  {
+   "id": "public",
+   "say": "The list went public. For the first time, anyone could see how real people choose their passwords."
+  },
+  {
+   "id": "top",
+   "say": "The most common one was 123456. 290,731 people used it. About 30% of all the passwords were 6 characters or fewer."
+  },
+  {
+   "id": "weapon",
+   "say": "And that list became a weapon. Hackers don't start with random strings. They start with every password anyone has ever leaked, and every word in the dictionary."
+  },
+  {
+   "id": "ranked",
+   "say": "They sort those guesses by how popular they are, so the passwords people really choose come first. If yours is on a leaked list, it falls in the first second, no matter how long it is."
+  },
+  {
+   "id": "rules",
+   "say": "Then they add rules. Capitalize the first letter. Put 2 digits on the end. Finish with an exclamation mark."
+  },
+  {
+   "id": "rules_math",
+   "say": "Watch what that does. Take a dictionary of 100,000 words. Capital first letter or not: times 2. Any two digits after it: times 100. Any of 33 symbols at the end: times 33."
+  },
+  {
+   "id": "rules_total",
+   "say": "That's 660 million guesses. At 100 billion a second, that's under a hundredth of a second. A password like Summer24, with an exclamation mark, follows every rule, and it falls before you can blink."
+  },
+  {
+   "id": "leet",
+   "say": "Swapping letters for symbols doesn't save it either. Password with an at sign and a zero is one of the first things a cracker tries, because everybody does it."
+  },
+  {
+   "id": "mistake",
+   "say": "This is the most common mistake. Complex looking is not the same as hard to guess. What matters is how many choices the hacker has to try, not how strange it looks."
+  },
+  {
+   "id": "nist",
+   "say": "Even the official rules have changed. NIST, the US standards agency, now says websites shall not force a mix of character types, and shall not make you change passwords on a schedule."
+  },
+  {
+   "id": "nist2",
+   "say": "Instead, it asks for long passwords, checked against lists of leaked ones. Its newest version wants at least 15 characters when a password is all that protects an account."
+  },
+  {
+   "id": "site_intro",
+   "say": "So far it's been you against the hacker. But the website has two tricks of its own, and when it skips them, everyone pays.",
+   "chapter": "How the site slows them down"
+  },
+  {
+   "id": "salt",
+   "say": "Trick one is salt. Before hashing your password, the site glues on a random string, different for every user, and stores it next to the hash."
+  },
+  {
+   "id": "nosalt",
+   "say": "Without salt, two people with the same password get the same hash. So the hacker hashes one guess and checks it against every user at once."
+  },
+  {
+   "id": "salt_example",
+   "say": "Say you and your neighbour both use summer24. With salt, yours is hashed with one random string glued on, and theirs with a different one. The two hashes look nothing alike."
+  },
+  {
+   "id": "linkedin",
+   "say": "That's what happened to LinkedIn in June 2012. Nearly 6.5 million password hashes leaked, and none of them were salted. Every guess was tested against all of them in one go."
+  },
+  {
+   "id": "withsalt",
+   "say": "With salt, every user needs their own separate attack. A leak of 6.5 million accounts becomes 6.5 million separate jobs."
+  },
+  {
+   "id": "salt_limit",
+   "say": "Salt doesn't make your own password any harder to guess. It stops the hacker from cracking millions of accounts for the price of one."
+  },
+  {
+   "id": "slow",
+   "say": "Trick two is a slow hash. MD5 was built to be fast. Bcrypt is built to be slow, on purpose, with a dial that sets how slow."
+  },
+  {
+   "id": "bcrypt_speed",
+   "say": "On the same RTX 4090, bcrypt at its lightest benchmark setting runs about 240,000 guesses a second. That's about 650,000 times slower than MD5."
+  },
+  {
+   "id": "dial",
+   "say": "And every click of the dial doubles the work. A common setting of 10 is 32 times slower again: about 7,500 guesses a second."
+  },
+  {
+   "id": "same_weak",
+   "say": "Now look at the same weak password. 8 lowercase letters: 2 seconds against MD5. Against bcrypt at 10: almost 11 months."
+  },
+  {
+   "id": "your_part",
+   "say": "But you can't choose how your bank stores your password. That's why the last part is up to you."
+  },
+  {
+   "id": "remember",
+   "say": "Here's the problem. A long random password is safe, but nobody remembers 16 random letters.",
+   "chapter": "Six words and five dice"
+  },
+  {
+   "id": "diceware",
+   "say": "So pick words instead. Arnold Reinhold's Diceware list has exactly 7,776 words. That's 6 to the 5th: one word for every way five dice can land."
+  },
+  {
+   "id": "roll",
+   "say": "Roll five dice and read them in order, like 1, 6, 6, 5, 3. Look up that number in the list, and write down its word. Then roll again for the next word."
+  },
+  {
+   "id": "per_word",
+   "say": "Each word multiplies the hacker's work by 7,776. That's almost 13 bits. Five words take about 9 years at 100 billion a second. Six words take 70,000 years."
+  },
+  {
+   "id": "behind_bcrypt",
+   "say": "And that's against the fast hash. Behind bcrypt at 10, six words would take about 900 billion years."
+  },
+  {
+   "id": "six_rec",
+   "say": "Six words is what Reinhold has recommended since 2014. That's 77.5 bits, more than 16 random letters, and far easier to remember."
+  },
+  {
+   "id": "dice_matter",
+   "say": "But let the dice choose. If you pick the words yourself, you'll pick a phrase that means something, and hackers try phrases, lyrics and quotes first."
+  },
+  {
+   "id": "xkcd",
+   "say": "You may know the comic with correct horse battery staple. Its four words come from a smaller list, so it has about 44 bits. Against the fast hash, that's about 3 minutes. Behind bcrypt, about 74 years."
+  },
+  {
+   "id": "four_vs_six",
+   "say": "Four words was a good idea with a slow hash. Six words is safe even against a fast one."
+  },
+  {
+   "id": "one_line",
+   "say": "Here's the whole video in one line. Guesses equal the choices per spot, raised to the number of spots. Time equals guesses divided by speed.",
+   "chapter": "The whole thing in one line"
+  },
+  {
+   "id": "three_numbers",
+   "say": "Every defense we've seen changes one of those numbers. Symbols raise the choices a little. Length raises the power. Bcrypt cuts the speed. Salt makes the hacker start over for every user."
+  },
+  {
+   "id": "and_humans",
+   "say": "And the one thing that breaks all of it is a human choosing a pattern. That shrinks the real choices down to whatever is on the hacker's list."
+  },
+  {
+   "id": "todo",
+   "say": "So here's what to do. Make one six-word Diceware passphrase, for the one password you have to remember: your password manager.",
+   "chapter": "What to actually do"
+  },
+  {
+   "id": "manager",
+   "say": "Let the manager make a long random password for every other site, and never reuse one. When a site leaks, attackers try the same email and password everywhere else."
+  },
+  {
+   "id": "twofactor",
+   "say": "And switch on two-factor login wherever you can, so a leaked password alone isn't enough."
+  },
+  {
+   "id": "wrap",
+   "say": "That's the whole trick. Hackers don't beat passwords by being clever. They beat them by counting faster than you can. So make them count for 70,000 years."
+  },
+  {
+   "id": "cta",
+   "say": "Here's one to think about. If hackers got 1,000 times faster tomorrow, how many words would you need to add to stay safe? Tell me in the comments."
+  }
+ ],
+ "description": "When a site is breached, hackers get the table of password hashes and guess offline: one RTX 4090 computes about 156 billion MD5 hashes a second. At a round 100 billion a second, 8 random lowercase letters (26 to the 8th, 209 billion options) fall in 2 seconds, and adding capitals, digits and symbols (95 to the 8th) only buys 18 hours, while 16 lowercase letters take 14,000 years. Real passwords aren't random: the 2009 RockYou leak exposed 32 million plain-text passwords, 290,731 of them 123456, and a 100,000-word dictionary with simple rules (capital, two digits, a symbol) is only 660 million guesses. Sites fight back with salt (LinkedIn's 6.5 million hashes in 2012 had none) and slow hashes: bcrypt is about 650,000 times slower than MD5, so the same 8 letters take almost 11 months at cost 10. For you: six words rolled with dice from the 7,776-word Diceware list (77.5 bits) take 70,000 years even against the fast hash.\n\nEvery number checked in code (exact counts, plus simulations). Sources: https://hashcat.net/forum/post-57490.html https://en.wikipedia.org/wiki/RockYou https://www.infosecurity-magazine.com/news/rockyou-users-display-poor-password-skills https://en.wikipedia.org/wiki/2012_LinkedIn_hack https://en.wikipedia.org/wiki/Diceware https://pages.nist.gov/800-63-4/sp800-63b.html\n\nThe math behind real problems, twice a day. Subscribe and the next one finds you.\nFound an error? Comment and it gets pinned.\n#math #mathematics",
+ "facts_checked": [
+  "RTX 4090, hashcat v6.2.6 benchmark: MD5 155.9 GH/s, bcrypt (mode 3200, 32 iterations = cost 5) 239.6 kH/s; ratio 650,668x (https://hashcat.net/forum/post-57490.html; verify.py)",
+  "26^2 = 676, 26^3 = 17,576, 26^8 = 208,827,064,576 -> 2.09 s at 100 billion/s, average 1.04 s (simulated mean position 0.4993 over 100,000 trials) (verify.py)",
+  "95^8 = 6.63 quadrillion -> 66,342 s = 18.4 h; 95/26 = 3.65 (verify.py)",
+  "26^12 -> 11 days, 26^14 -> 20.4 years, 26^16 -> 13,820 years; bits 37.6 / 75.2; 2^10 = 1,024 (verify.py)",
+  "RockYou, December 2009: over 32 million accounts, plain-text passwords (https://en.wikipedia.org/wiki/RockYou); 290,731 used 123456, 30% six characters or fewer (Imperva via https://www.infosecurity-magazine.com/news/rockyou-users-display-poor-password-skills)",
+  "100,000 x 2 x 100 x 33 = 660,000,000 guesses -> 0.0066 s (verify.py)",
+  "NIST SP 800-63B (800-63-4): SHALL NOT impose composition rules, SHALL NOT require periodic changes, blocklist of common/compromised passwords, at least 15 characters for single-factor passwords (https://pages.nist.gov/800-63-4/sp800-63b.html)",
+  "LinkedIn, June 5 2012: passwords of nearly 6.5 million accounts stolen, not salted (https://en.wikipedia.org/wiki/2012_LinkedIn_hack)",
+  "Salt: unsalted, one hash of a guess matches all 50 of 1,000 simulated users sharing it; salted, 0 (verify.py)",
+  "bcrypt cost 10 = 239.6k / 2^5 = 7,488/s; 26^8 -> 323 days (10.6 months); 2^44 -> 74.5 years; 7776^6 -> 9.4e11 years (verify.py)",
+  "Diceware: Arnold Reinhold, 7,776 words = 6^5, 12.9 bits/word; at least six words (77.5 bits) recommended since 2014; xkcd 936 uses a smaller list (https://en.wikipedia.org/wiki/Diceware); 7776^5 -> 9.0 years, 7776^6 -> 70,050 years at 100 billion/s; 2^44 -> 2.9 min (verify.py)",
+  "CTA answer: 1,000x faster -> 6 words last 70 years; a 7th word -> 545,000 years (verify.py)"
+ ],
+ "social_caption": "How hackers really crack passwords, counted guess by guess, and the six dice-picked words that outlast them by 70,000 years."
+}

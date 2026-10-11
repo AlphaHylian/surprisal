@@ -1,0 +1,18 @@
+{
+ "ok": true,
+ "problems": [],
+ "warnings": [],
+ "duration_s": 61.6,
+ "size_mb": 12.4,
+ "resolution": "1080x1920",
+ "caption_match_ratio": 0.995049504950495,
+ "heard": "Pick one random server or the emptier of two. Random sounds fair. Every server gets the same on average. But averages hide the worst one. You run 100 servers and 10 ,000 jobs come in. The jobs on the busiest server wait the longest. Send each job to a random server. The average is 100 each. But one server gets 126, while another sits at 75. Asking all 100 servers would fix it, but that's 100 questions for every job. There's a cheaper way. Pick two servers at random. Ask both how busy they are. Send the job to the emptier one. Now the busiest server gets 102. The pile -up drops from 26 extra jobs to two. A job only lands on a busy server if both picks are busy. If 10 % are busy, that's one job in 100. A third pick barely helps 101. The big jump is from one choice to two. That's the power of two choices. The web server engine X ships it as one line, random two. Subscribe if you thought you had to check all 100.",
+ "music": "Tech Talk",
+ "music_gap_db": 8.0,
+ "speech_starts_at_s": 0.01,
+ "final_lufs": -15.0,
+ "voice_engine": "omnivoice",
+ "contact_sheet_every_s": 2.6,
+ "build_seconds": 386,
+ "draft": false
+}

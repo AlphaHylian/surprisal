@@ -1,0 +1,82 @@
+{
+ "slug": "two-choices",
+ "format": "short",
+ "series": "tech",
+ "hook_style": "how-to",
+ "hook_type": "versus",
+ "angle": "versus hook: one random server or the emptier of two? rule out 'random is fair on average' (averages hide the worst one); 100 servers, 10,000 jobs: random -> busiest 126, quietest 75; re-hook: checking all 100 fixes it but costs 100 questions per job; pick two, ask both, send to the emptier -> busiest 102; why: a job only lands on a busy server if both picks are busy (10% busy -> 1 in 100); a third pick barely helps (101); payoff: power of two choices, nginx 'random two'; CTA: subscribe if you thought you had to check all 100",
+ "title": "How checking just 2 servers stops overload",
+ "description": "Send 10,000 jobs to 100 servers at random and the average is 100 each, but the busiest server ends up with about 126 (in one run, the quietest had 75). Pick two servers at random and send each job to the emptier one, and the busiest drops to about 102: a job only lands on a busy server if both picks are busy, and that gets rare fast. A third pick barely helps (101). This is the \"power of two choices\" (Azar, Broder, Karlin and Upfal), and nginx ships it as one line: random two least_conn.\n\nNumbers checked in code (2,000 simulated runs of 10,000 jobs with one random pick, 300 runs each with two and three picks). Sources: https://en.wikipedia.org/wiki/Balls_into_bins_problem https://nginx.org/en/docs/http/ngx_http_upstream_module.html\n\nThe math behind real problems, twice a day. Subscribe and the next one finds you.\nFound an error? Comment and it gets pinned.\n#math #mathematics #shorts",
+ "social_caption": "One random server or the emptier of two? Here's why one extra peek keeps your busiest server from melting down.",
+ "tags": [
+  "load balancing",
+  "power of two choices",
+  "nginx",
+  "servers",
+  "computer science",
+  "probability",
+  "math",
+  "maths"
+ ],
+ "music_moods": [
+  "upbeat"
+ ],
+ "facts_checked": [
+  "100 servers, 10,000 jobs, one random pick each: busiest server averages 126.2 (median 126, range 115-147 over 2,000 runs); a sample run has 75 to 126 (verify.py)",
+  "Two random picks, send to the emptier: busiest averages 101.9 (median 102, range 101-103 over 300 runs); three picks: 101.1 (verify.py)",
+  "Always sending to the emptiest of all 100: exactly 100 each (verify.py)",
+  "A job lands on a server with load >= k only if both picks have load >= k: 10% busy -> 1 in 100 (verify.py)",
+  "Two choices cut the max load from log n / log log n to log log n / log 2 + O(1); heavily loaded: m/n + log log n / log d (Azar, Broder, Karlin, Upfal 1999; Berenbrink et al. 2006) (https://en.wikipedia.org/wiki/Balls_into_bins_problem)",
+  "nginx upstream 'random two least_conn': picks two servers at random, sends to the one with fewer active connections (since 1.15.1) (https://nginx.org/en/docs/http/ngx_http_upstream_module.html)"
+ ],
+ "beats": [
+  {
+   "id": "hook",
+   "say": "Pick one random server, or the emptier of two?"
+  },
+  {
+   "id": "ruleout",
+   "say": "Random sounds fair. Every server gets the same on average. But averages hide the worst one."
+  },
+  {
+   "id": "context",
+   "say": "You run 100 servers, and 10,000 jobs come in. The jobs on the busiest server wait the longest."
+  },
+  {
+   "id": "random",
+   "say": "Send each job to a random server. The average is 100 each."
+  },
+  {
+   "id": "worst",
+   "say": "But one server gets 126, while another sits at 75."
+  },
+  {
+   "id": "rehook",
+   "say": "Asking all 100 servers would fix it, but that's 100 questions for every job. There's a cheaper way."
+  },
+  {
+   "id": "two",
+   "say": "Pick two servers at random. Ask both how busy they are. Send the job to the emptier one."
+  },
+  {
+   "id": "effect",
+   "say": "Now the busiest server gets 102. The pile-up drops from 26 extra jobs to 2."
+  },
+  {
+   "id": "why",
+   "say": "A job only lands on a busy server if both picks are busy. If 10% are busy, that's one job in 100."
+  },
+  {
+   "id": "three",
+   "say": "A third pick barely helps: 101. The big jump is from one choice to two."
+  },
+  {
+   "id": "payoff",
+   "say": "That's the power of two choices. The web server Engine X ships it as one line: random two."
+  },
+  {
+   "id": "cta",
+   "say": "Subscribe if you thought you had to check all 100."
+  }
+ ]
+}
