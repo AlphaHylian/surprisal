@@ -17,8 +17,6 @@ through verify.py.
   matches game theory (Palacios-Huerta). [check] (everyday/sport)
 - Your Wordle opener wastes guesses. Steps: score a guess by how evenly it splits the remaining
   words, pick the one that splits best. Reveal: information theory, bits. [check] (everyday)
-- Your phone needs its position from satellites. Steps: each signal gives a distance (a sphere),
-  3 spheres meet in a point, the 4th fixes your phone's bad clock. Reveal: GPS. [check] (tech)
 
 ## Used
 - 2026-09-30  birthday-paradox (sounds-fake)  eQS8gtimpvA  first public video, 9pm Tallinn
@@ -42,3 +40,5 @@ through verify.py.
 - 2026-10-10  true-hit (everyday, how-to, hook stakes)  UOAZvsmDHTM  20:00 Tallinn 10 Oct, LIVE scheduled
 - 2026-10-11  two-choices (tech, how-to, hook versus)  TvXEXHRzfRI  12:00 Tallinn 11 Oct, LIVE scheduled
 - 2026-10-11  password-long (tech, LONG-FORM 9:53, expands password-length)  FyapqYYFcaA  20:00 Tallinn 11 Oct, LIVE scheduled
+- 2026-10-14  gps-fix (tech, how-to, hook question)  PeBsQcn5-1E  12:00 Tallinn 14 Oct, LIVE scheduled
+- 2026-10-14  flat-hunt (everyday, how-to, hook mistake; secretary problem / 37% rule)  aUlvzZ4vwSE  20:00 Tallinn 14 Oct, LIVE scheduled

@@ -1,0 +1,85 @@
+{
+  "slug": "flat-hunt",
+  "format": "short",
+  "series": "everyday",
+  "hook_style": "how-to",
+  "hook_type": "mistake",
+  "angle": "mistake hook: taking the first nice flat makes you miss the best; rule out waiting for perfect (say no and it's gone); 20 viewings, yes or no on the spot; gut feel: best 1 in 20 = 5%; step 1: view the first 7 and say no to all, even the great one (you're learning what good looks like); step 2: from flat 8 on, sign the first that beats all 7; best flat 38% of the time, a top-3 flat 63%; re-hook: the catch, best in the first 7 -> stuck with the last (35%); 100 flats skip 37, 1,000 skip 368: still 37%; payoff: look at the first 37%, then take the first that beats them; secretary problem; CTA: subscribe if you'd have signed the first nice one",
+  "title": "How to pick the best flat when you can't go back",
+  "description": "With 20 viewings and a yes-or-no on the spot, a gut-feel pick gets you the very best flat 1 time in 20 (5%). Instead, view the first 7 and turn them all down, then sign the first flat that beats all 7: you end up with the very best 38% of the time, and a top-3 flat 63% of the time. The catch: if the best was among the first 7 (35% of the time) nothing beats it and you're left with the last one. The rule scales: skip the first 37% of any list and you still get the best about 37% (1/e) of the time. Mathematicians call it the secretary problem; Martin Gardner published it in Scientific American in 1960.\n\nNumbers checked in code (exact formula plus 1,000,000 simulated flat hunts). Source: https://en.wikipedia.org/wiki/Secretary_problem\n\nThe math behind real problems, twice a day. Subscribe and the next one finds you.\nFound an error? Comment and it gets pinned.\n#math #mathematics #shorts",
+  "social_caption": "Take the first nice flat and you'll probably miss the best one. Here's the 37% rule that gets you the best flat almost 8 times as often as gut feel.",
+  "tags": [
+    "37% rule",
+    "secretary problem",
+    "optimal stopping",
+    "apartment hunting",
+    "flat hunting",
+    "decision making",
+    "probability",
+    "math",
+    "maths"
+  ],
+  "music_moods": [
+    "chill",
+    "upbeat"
+  ],
+  "facts_checked": [
+    "Random pick of 20 gets the best: 1 in 20 = 5% (verify.py)",
+    "Best cutoff for 20 options: skip 7 (20/e = 7.4); chance of the very best 38.4% exact, 38% in 1,000,000 simulated hunts (verify.py)",
+    "Skip 7 of 20: a top-3 flat 63% (simulated); random pick top-3: 15% (verify.py)",
+    "Best is among the first 7: 7/20 = 35%, then nothing beats the bar and you take the last (verify.py)",
+    "100 options: skip 37, best 37.1%; 1,000: skip 368, best 36.8% -> 1/e = 36.8% (verify.py)",
+    "Optimal rule: reject the first ~n/e, then take the first better than all seen; success -> 1/e; first published by Martin Gardner, Scientific American, Feb 1960 (https://en.wikipedia.org/wiki/Secretary_problem)"
+  ],
+  "beats": [
+    {
+      "id": "hook",
+      "say": "Take the first nice flat, and you'll miss the best."
+    },
+    {
+      "id": "ruleout",
+      "say": "But waiting for perfect is worse. Say no, and someone else signs it. No going back."
+    },
+    {
+      "id": "context",
+      "say": "You've got 20 viewings this month. Each one is yes or no, on the spot."
+    },
+    {
+      "id": "random",
+      "say": "Pick on gut feel, and your odds of getting the very best are one in 20. 5%."
+    },
+    {
+      "id": "skip",
+      "say": "So, step one. View the first 7, and say no to all of them. Even the great one."
+    },
+    {
+      "id": "learn",
+      "say": "You're not picking yet. You're learning what good looks like."
+    },
+    {
+      "id": "pounce",
+      "say": "Step two. From flat 8 on, sign the first one that beats all 7."
+    },
+    {
+      "id": "result",
+      "say": "Now you get the very best flat 38% of the time, not 5. And a top 3 flat, nearly two times in three."
+    },
+    {
+      "id": "rehook",
+      "say": "The catch: if the best was in your first 7, nothing beats it, and you're stuck with the last one. That's 35% of the time."
+    },
+    {
+      "id": "scale",
+      "say": "But it scales. 100 flats? Skip 37. A thousand? Skip 368. Either way, you land the very best 37% of the time.",
+      "caption": "But it scales. 100 flats? Skip 37. 1,000? Skip 368. Either way, you land the very best 37% of the time."
+    },
+    {
+      "id": "payoff",
+      "say": "Look at the first 37%. Then take the first one that beats them all. Mathematicians call it the secretary problem."
+    },
+    {
+      "id": "cta",
+      "say": "Subscribe if you'd have signed the first nice one."
+    }
+  ]
+}

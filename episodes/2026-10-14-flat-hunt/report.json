@@ -1,0 +1,18 @@
+{
+ "ok": true,
+ "problems": [],
+ "warnings": [],
+ "duration_s": 68.5,
+ "size_mb": 12.7,
+ "resolution": "1080x1920",
+ "caption_match_ratio": 0.9953271028037384,
+ "heard": "Take the first nice flat and you'll miss the best. But waiting for perfect is worse. Say no and someone else signs it. No going back. You've got 20 viewings this month. Each one is yes or no on the spot. Pick on gut feel and your odds of getting the very best are one in 20. 5%, so step one. View the first seven and say no to all of them. Even the great one. You're not picking yet. You're learning what good looks like. Step two. From flat eight on sign the first one that beats all seven. Now you get the very best flat 38 % of the time, not five. And a top three flat nearly two times in three. The catch. If the best was in your first seven, nothing beats it and you're stuck with the last one. That's 35 % of the time. But it scales 100 flats. Skip 37, a thousand. Skip 368. Either way, you land the very best 37 % of the time. Look at the first 37 % then take the first one that beats them all. Mathematicians call it the secretary problem. Subscribe if you'd have signed the first nice one.",
+ "music": "Digital Lemonade",
+ "music_gap_db": 8.0,
+ "speech_starts_at_s": 0.05,
+ "final_lufs": -15.2,
+ "voice_engine": "omnivoice",
+ "contact_sheet_every_s": 2.9,
+ "build_seconds": 260,
+ "draft": false
+}

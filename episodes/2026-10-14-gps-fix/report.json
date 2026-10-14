@@ -1,0 +1,18 @@
+{
+ "ok": true,
+ "problems": [],
+ "warnings": [],
+ "duration_s": 71.3,
+ "size_mb": 14.6,
+ "resolution": "1080x1920",
+ "caption_match_ratio": 0.9146919431279621,
+ "heard": "How does your phone find you from space? It never sends anything up. The satellites don't even know you exist. They just shout the time. Each one, 20 ,000 kilometers up, keeps saying, here's where I am, and here's exactly when I sent this. Here one. It signaled took 67 ,000ths of a second. Times the speed of light, you're 20 ,000 kilometers away, somewhere on a giant sphere. Here a second, two spheres cross in a circle, a third cuts that circle at two points. One is out in space, the other is you, but your phone's clock is cheap. Off by one millionth of a second, and every distance is 300 meters wrong. So listen to a fourth. Now there are four unknowns, three for where you are, one for how wrong your clock is, four signals solve all four. Your cheap phone just borrowed four atomic clocks. That's how it finds you to about five meters. One more catch. Up there, time runs fast, 38 millionths of a second a day. Left alone, that's 11 kilometers off by tomorrow. So your phone never knows where it is. It knows when and works out where. On a ship, where your height is known, how many satellites do you need?",
+ "music": "Somewhere Sunny",
+ "music_gap_db": 8.0,
+ "speech_starts_at_s": 0.03,
+ "final_lufs": -14.8,
+ "voice_engine": "omnivoice",
+ "contact_sheet_every_s": 3.0,
+ "build_seconds": 434,
+ "draft": false
+}

@@ -1,0 +1,36 @@
+{
+  "slug": "gps-fix",
+  "format": "short",
+  "series": "tech",
+  "hook_style": "how-to",
+  "hook_type": "question",
+  "angle": "question hook on the phone in your hand; rule out 'the phone talks to the satellites' (receive-only, they just shout the time); each signal's travel time x light speed = a distance = a sphere; 2 spheres -> a circle, 3 -> two points, one in space; re-hook: your phone's clock is cheap, a millionth of a second = 300 m on every distance; a 4th satellite makes 4 equations for 4 unknowns (x, y, z, clock); within ~5 m; Einstein twist: satellite clocks gain 38 microseconds a day = 11 km a day uncorrected; payoff: it knows when and works out where; CTA: checkable question (a ship, height known: 3 satellites)",
+  "title": "How your phone finds you from 20,000 km up",
+  "description": "Your phone never transmits to GPS satellites: each one broadcasts where it is and exactly when it sent the signal. Travel time times the speed of light gives a distance (about 67 thousandths of a second from 20,200 km), so you're on a sphere around each satellite; three spheres meet in two points, and one is out in space. But a phone's clock off by a millionth of a second puts every distance 300 m out, so a fourth satellite gives four equations for four unknowns: your three coordinates and your clock's error. And the satellites' clocks gain about 38 microseconds a day from relativity, which would add up to about 11 km of error a day if it weren't corrected.\n\nNumbers checked in code (signal times, clock error in metres, and 2,000 simulated position fixes with 4 satellites and a clock 1 microsecond off). Sources: https://en.wikipedia.org/wiki/Global_Positioning_System https://en.wikipedia.org/wiki/Error_analysis_for_the_Global_Positioning_System\n\nThe math behind real problems, twice a day. Subscribe and the next one finds you.\nFound an error? Comment and it gets pinned.\n#math #mathematics #shorts",
+  "social_caption": "Your phone never talks to GPS satellites. Here's how four clocks in space and one cheap clock in your pocket find you to within 5 meters.",
+  "tags": ["gps", "how gps works", "satellites", "trilateration", "relativity", "smartphone", "physics", "math", "maths"],
+  "music_moods": ["upbeat"],
+  "facts_checked": [
+    "GPS satellites orbit about 20,200 km up (20,180-20,184 km); signal from overhead takes 67 ms at light speed (verify.py; https://en.wikipedia.org/wiki/Global_Positioning_System)",
+    "Receivers are passive: satellites broadcast their position and send time; at least 4 satellites are needed for x, y, z and the receiver clock offset (https://en.wikipedia.org/wiki/Global_Positioning_System)",
+    "1 microsecond of clock error x speed of light = 300 m (verify.py)",
+    "4 satellites with a phone clock 1 us off: position recovered to millimetres and the 1 us clock error solved (2,000 simulated fixes, verify.py); 3 satellites with the clock error ignored: hundreds of metres off",
+    "Smartphones accurate to 4.9 m or better (https://en.wikipedia.org/wiki/Global_Positioning_System)",
+    "Satellite clocks gain 38.6 us/day (+45.8 gravity, -7.2 speed); uncorrected ~11.4 km/day of position error (https://en.wikipedia.org/wiki/Error_analysis_for_the_Global_Positioning_System)",
+    "With height known (at sea), 3 unknowns remain (2 position + clock): 3 satellites (verify.py reasoning)"
+  ],
+  "beats": [
+    {"id": "hook", "say": "How does your phone find you from space?"},
+    {"id": "ruleout", "say": "It never sends anything up. The satellites don't even know you exist. They just shout the time."},
+    {"id": "context", "say": "Each one, 20,000 kilometers up, keeps saying: here's where I am, and here's exactly when I sent this.", "caption": "Each one, 20,000 km up, keeps saying: here's where I am, and here's exactly when I sent this."},
+    {"id": "one", "say": "Hear one. Its signal took 67 thousandths of a second. Times the speed of light, you're 20,000 kilometers away. Somewhere on a giant sphere.", "caption": "Hear one. Its signal took 0.067 seconds. Times the speed of light, you're 20,000 km away. Somewhere on a giant sphere."},
+    {"id": "two", "say": "Hear a second. Two spheres cross in a circle."},
+    {"id": "three", "say": "A third cuts that circle at two points. One is out in space. The other is you."},
+    {"id": "rehook", "say": "But your phone's clock is cheap. Off by one millionth of a second, and every distance is 300 meters wrong.", "caption": "But your phone's clock is cheap. Off by a millionth of a second, and every distance is 300 m wrong."},
+    {"id": "four", "say": "So listen to a fourth. Now there are four unknowns: three for where you are, one for how wrong your clock is. Four signals solve all four."},
+    {"id": "effect", "say": "Your cheap phone just borrowed four atomic clocks. That's how it finds you to about 5 meters.", "caption": "Your cheap phone just borrowed four atomic clocks. That's how it finds you to about 5 m."},
+    {"id": "einstein", "say": "One more catch. Up there, time runs fast: 38 millionths of a second a day. Left alone, that's 11 kilometers off by tomorrow.", "caption": "One more catch. Up there, time runs fast: 38 µs a day. Left alone, that's 11 km off by tomorrow."},
+    {"id": "payoff", "say": "So your phone never knows where it is. It knows when, and works out where."},
+    {"id": "cta", "say": "On a ship, where your height is known, how many satellites do you need?"}
+  ]
+}
