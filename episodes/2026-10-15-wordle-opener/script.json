@@ -1,0 +1,79 @@
+{
+  "slug": "wordle-opener",
+  "format": "short",
+  "series": "everyday",
+  "hook_style": "how-to",
+  "hook_type": "versus",
+  "angle": "versus hook (RAISE or AUDIO); rule out 'more vowels' (AUDIO has 4 and loses); 2,315 answers, the first guess's job is to shrink the list; test an opener against every answer and sort by colors; each color pattern is a pile; AUDIO's likeliest result (one yellow A) leaves 435; average left 184; re-hook: more piles, smaller ones; RAISE 132 piles vs 89, biggest 168; average 61, a third; payoff: a first guess isn't a search, it's a sort; CTA tied to the ruled-out habit (subscribe if you open with audio)",
+  "title": "Why RAISE beats AUDIO as a Wordle opener",
+  "description": "Your first Wordle guess can't find the answer; its job is to shrink the list of 2,315 possible answers. Play an opener against every answer and sort them by the colors you'd see: each color pattern is a pile of words still possible. AUDIO makes only 89 piles, its likeliest result (one yellow A) leaves 435 words, and on average it leaves 184. RAISE splits the list into 132 piles, the biggest only 168, and leaves 61 on average: a third as many, from one guess.\n\nNumbers checked in code against Wordle's original 2,315-word answer list (every opener played against every answer, plus 200,000 simulated games). Source: https://en.wikipedia.org/wiki/Wordle\n\nThe math behind real problems, twice a day. Subscribe and the next one finds you.\nFound an error? Comment and it gets pinned.\n#math #mathematics #shorts",
+  "social_caption": "AUDIO grabs four vowels and still loses to RAISE by 3x. The trick isn't finding letters, it's splitting the list of possible answers.",
+  "tags": [
+    "wordle",
+    "wordle tips",
+    "best wordle starting word",
+    "wordle strategy",
+    "raise",
+    "information theory",
+    "math",
+    "maths",
+    "puzzles"
+  ],
+  "music_moods": [
+    "upbeat"
+  ],
+  "facts_checked": [
+    "Original Wordle answer list: 2,315 words (verify.py; https://en.wikipedia.org/wiki/Wordle: 'the original list had 2,315 answers')",
+    "Tile rules: green right spot, yellow wrong spot, gray not in the word; extra copies gray (https://en.wikipedia.org/wiki/Wordle; implemented in verify.py)",
+    "AUDIO: 89 color patterns over the 2,315 answers; likeliest = one yellow A, 435 words; average words left 184 (verify.py)",
+    "RAISE: 132 patterns, biggest 168, average words left 61; 184/61 = 3.0 (verify.py; simulated 200,000 games: ~180 vs ~60)",
+    "RAISE is 2nd of 12,972 accepted guesses by average words left (ROATE 60.4) (verify.py)",
+    "ADIEU/AUDIO openers take more attempts on average than SLATE/CRANE/TRACE (https://en.wikipedia.org/wiki/Wordle)"
+  ],
+  "beats": [
+    {
+      "id": "hook",
+      "say": "Raise or audio? One's three times better at Wordle."
+    },
+    {
+      "id": "ruleout",
+      "say": "And it's not the one with more vowels. Audio has four, and it still loses."
+    },
+    {
+      "id": "list",
+      "say": "There are 2,315 possible answers. Your first guess won't find the word. Its job is to shrink that list."
+    },
+    {
+      "id": "test",
+      "say": "So test your opener. Play it against all 2,315 answers, and sort them by the colors you'd get."
+    },
+    {
+      "id": "pile",
+      "say": "Every color pattern is a pile of words that are still possible. Play audio, and the likeliest result is one yellow A. That leaves 435 words."
+    },
+    {
+      "id": "avg",
+      "say": "Averaged over every answer, audio leaves you 184."
+    },
+    {
+      "id": "rehook",
+      "say": "So vowels aren't the trick. The trick is more piles, and smaller ones."
+    },
+    {
+      "id": "raise",
+      "say": "Now try raise. It splits the list into 132 piles. Audio only made 89. And raise's biggest pile is just 168."
+    },
+    {
+      "id": "result",
+      "say": "On average, raise leaves you 61 words. A third of audio's, from the same single guess."
+    },
+    {
+      "id": "payoff",
+      "say": "A good first guess isn't a search. It's a sort."
+    },
+    {
+      "id": "cta",
+      "say": "Subscribe if you've been opening with audio."
+    }
+  ]
+}

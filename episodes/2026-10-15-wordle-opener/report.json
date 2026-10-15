@@ -1,0 +1,18 @@
+{
+ "ok": true,
+ "problems": [],
+ "warnings": [],
+ "duration_s": 62.4,
+ "size_mb": 16.5,
+ "resolution": "1080x1920",
+ "caption_match_ratio": 0.9736842105263158,
+ "heard": "Raise your audio, one's three times better at wordle. And it's not the one with more vowels. Audio has four and it still loses. There are 2 ,315 possible answers. Your first guess won't find the word. Its job is to shrink that list. So test your opener. Play it against all 2 ,315 answers and sort them by the colors you'd get. Every color pattern is a pile of words that are still possible. Play audio and the likeliest result is one yellow A. That leaves 435 words. Averaged over every answer, audio leaves you 184. So vowels aren't the trick. The trick is more piles and smaller ones. Now try raise. It splits the list into 132 piles. Audio only made 89. And raises biggest pile is just 168. On average, raise leaves you 61 words. A third of audio is from the same single guess. A good first guess isn't a search. It's a sort. Subscribe if you've been opening with audio.",
+ "music": "Tech Talk",
+ "music_gap_db": 8.0,
+ "speech_starts_at_s": 0.01,
+ "final_lufs": -14.9,
+ "voice_engine": "omnivoice",
+ "contact_sheet_every_s": 2.6,
+ "build_seconds": 330,
+ "draft": false
+}
