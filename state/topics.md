@@ -14,7 +14,7 @@ through verify.py.
   clumps, show clusters, spread artists out on purpose. Reveal: Spotify changed shuffle. [check] (2026-10-09: the Feb 2014 Spotify engineering post "How to shuffle songs?" now 404s; find another solid source first)
 - You're taking a penalty and the keeper guesses your side. Steps: never be predictable, mix
   sides in exact proportions so the keeper gains nothing by guessing. Reveal: pro penalty data
-  matches game theory (Palacios-Huerta). [check] (everyday/sport)
+  matches game theory (Palacios-Huerta). [check] (everyday/sport) (2026-10-15: the paper's cell-by-cell scoring table couldn't be fetched (PDF mirrors 403); find a readable source with the 2x2 numbers first)
 
 ## Used
 - 2026-09-30  birthday-paradox (sounds-fake)  eQS8gtimpvA  first public video, 9pm Tallinn
@@ -41,3 +41,4 @@ through verify.py.
 - 2026-10-14  gps-fix (tech, how-to, hook question)  PeBsQcn5-1E  12:00 Tallinn 14 Oct, LIVE scheduled
 - 2026-10-14  flat-hunt (everyday, how-to, hook mistake; secretary problem / 37% rule)  aUlvzZ4vwSE  20:00 Tallinn 14 Oct, LIVE scheduled
 - 2026-10-15  wordle-opener (everyday, how-to, hook versus; RAISE 61 vs AUDIO 184 words left)  xSIugs3JUrI  12:00 Tallinn 15 Oct, LIVE scheduled
+- 2026-10-15  fish-count (nature, how-to, hook stakes; mark and recapture, Lincoln-Petersen)  i2n0PSXZANc  20:00 Tallinn 15 Oct, LIVE scheduled

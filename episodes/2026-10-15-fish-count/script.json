@@ -1,0 +1,83 @@
+{
+  "slug": "fish-count",
+  "format": "short",
+  "series": "nature",
+  "hook_style": "how-to",
+  "hook_type": "stakes",
+  "angle": "stakes hook (miscount and the lake gets fished out); rule out draining/counting: two trips; trip one: catch 200, tag, release; wait for them to mix; trip two: catch 200, 20 tagged; 20 of 200 = 1 in 10, so 200 tagged = a tenth of the lake = 2,000; re-hook: one trip could be luck; simulated 200,000 times: 9 in 10 estimates 1,500-2,900; 500 per trip: 1,800-2,300; catch: tag-shy fish -> almost twice the real count; payoff: the share tagged in your net is the share of the lake you tagged; Petersen 1896 plaice; CTA: checkable frog question (250)",
+  "title": "How to count every fish in a lake with two catches",
+  "description": "You can't drain a lake to count its fish, so you fish twice. Catch 200, tag them and let them go; a few days later catch 200 again. If 20 of them are tagged, that's 1 in 10, so your 200 tagged fish are a tenth of the lake: about 2,000 fish. In 200,000 simulated lakes, 9 estimates in 10 land between 1,500 and 2,900; catching 500 each trip narrows it to 1,800-2,300. It only works if tagged fish are as easy to catch as the rest. This is mark and recapture (the Lincoln-Petersen estimate), first used by C. G. J. Petersen on plaice in 1896.\n\nNumbers checked in code (hypergeometric simulation, 200,000 trials). Source: https://en.wikipedia.org/wiki/Mark_and_recapture\n\nThe math behind real problems, twice a day. Subscribe and the next one finds you.\nFound an error? Comment and it gets pinned.\n#math #mathematics #shorts",
+  "social_caption": "You can't drain a lake to count its fish. Two fishing trips and a few tags tell you how many there are.",
+  "tags": [
+    "mark and recapture",
+    "capture recapture",
+    "how to count fish",
+    "lincoln petersen",
+    "fish population",
+    "statistics",
+    "ecology",
+    "math",
+    "maths"
+  ],
+  "music_moods": [
+    "chill"
+  ],
+  "facts_checked": [
+    "Lincoln-Petersen estimate N = marked x caught / recaught: 200 x 200 / 20 = 2,000 (https://en.wikipedia.org/wiki/Mark_and_recapture; verify.py)",
+    "Simulated lake of 2,000 with 200 tagged, 200 caught (200,000 trials): average 20 tagged; 9 in 10 estimates between 1,500 and 2,900 (verify.py)",
+    "500 per trip: 9 in 10 estimates between 1,800 and 2,300 (verify.py)",
+    "Assumption: tagged and untagged fish equally catchable; tagged fish half as catchable -> ~10.8 tagged, estimate ~3,700, almost twice (verify.py; Wikipedia assumptions list)",
+    "First ecological use: C. G. J. Petersen, 1896, plaice in the Limfjord, Denmark (https://en.wikipedia.org/wiki/Mark_and_recapture)",
+    "CTA: 50 x 40 / 8 = 250 frogs (verify.py)"
+  ],
+  "beats": [
+    {
+      "id": "hook",
+      "say": "Count your fish wrong, and your lake gets fished out."
+    },
+    {
+      "id": "ruleout",
+      "say": "You can't drain it to count. You need just two fishing trips."
+    },
+    {
+      "id": "mark",
+      "say": "Trip one: catch 200 fish, clip a tiny tag on each, and let them go."
+    },
+    {
+      "id": "mix",
+      "say": "Wait a few days, so they swim back in among the rest."
+    },
+    {
+      "id": "catch",
+      "say": "Trip two: catch 200 again, and count the tagged ones. Say 20."
+    },
+    {
+      "id": "math",
+      "say": "20 out of 200 is one in 10. So your 200 tagged fish are a tenth of the lake. That's 2,000 fish."
+    },
+    {
+      "id": "rehook",
+      "say": "But one trip could be luck. How far off can you be?"
+    },
+    {
+      "id": "range",
+      "say": "Simulate thousands of trips on a computer. Nine trips in 10, you'd say somewhere from 1,500 to 2,900."
+    },
+    {
+      "id": "bigger",
+      "say": "Catch 500 each trip, and it tightens to 1,800 to 2,300."
+    },
+    {
+      "id": "shy",
+      "say": "The catch: if tagged fish learn to dodge your net, you count too few, and you'd think the lake holds almost twice the fish."
+    },
+    {
+      "id": "payoff",
+      "say": "The share of tagged fish in your net is the share of the lake you tagged. A Danish biologist counted plaice this way in 1896."
+    },
+    {
+      "id": "cta",
+      "say": "So, tag 50 frogs, catch 40, and 8 are tagged. How many frogs?"
+    }
+  ]
+}

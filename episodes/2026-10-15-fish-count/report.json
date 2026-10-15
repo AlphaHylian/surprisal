@@ -1,0 +1,18 @@
+{
+ "ok": true,
+ "problems": [],
+ "warnings": [],
+ "duration_s": 66.3,
+ "size_mb": 12.1,
+ "resolution": "1080x1920",
+ "caption_match_ratio": 0.9714285714285714,
+ "heard": "Count your fish wrong, and your lake gets fished out. You can't drain it to count. You need just two fishing trips. Trip 1, catch 200 fish, clip a tiny tag on each, and let them go. Wait a few days, so they swim back in among the rest. Trip 2, catch 200 again, and count the tagged ones. Say 20. 20 out of 200 is 1 in 10, so your 200 tagged fish are a tenth of the lake. That's 2 ,000 fish. But one trip could be luck. How far off can you be? Simulate thousands of trips on a computer. Nine trips in 10, you'd say somewhere from 1 ,500 to 2 ,900. Catch 500 each trip, and it tightens to 1 ,800 to 2 ,300. The catch. If tagged fish learn to dodge your net, you count too few, and you'd think the lake holds almost twice the fish. The share of tagged fish in your net is the share of the lake you tagged. A Danish biologist counted place this way in 1896, so tag 50 frogs catch 40 and 8 are tagged. How many frogs?",
+ "music": "Wallpaper",
+ "music_gap_db": 8.0,
+ "speech_starts_at_s": 0.01,
+ "final_lufs": -15.0,
+ "voice_engine": "omnivoice",
+ "contact_sheet_every_s": 2.8,
+ "build_seconds": 220,
+ "draft": false
+}
