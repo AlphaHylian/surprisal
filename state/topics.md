@@ -16,6 +16,10 @@ through verify.py.
   sides in exact proportions so the keeper gains nothing by guessing. Reveal: pro penalty data
   matches game theory (Palacios-Huerta). [check] (everyday/sport) (2026-10-15: the paper's cell-by-cell scoring table couldn't be fetched (PDF mirrors 403); find a readable source with the 2x2 numbers first)
 
+- Your Monty Hall door: stick or switch; switching wins 2 in 3 (simulate; show the host's forced reveal). (everyday/puzzle)
+- You're picking a lift/elevator spot or bus stop wait: why the bus always seems late (inspection paradox: you land in the long gaps). (everyday)
+- Your phone's 4-digit PIN: how many tries, and why 1234 / 0000 cover a huge share (cite a PIN-frequency study first) [check]. (tech)
+
 ## Used
 - 2026-09-30  birthday-paradox (sounds-fake)  eQS8gtimpvA  first public video, 9pm Tallinn
 - 2026-10-01  quarters-make-a-third (visual-proof)  YrD3-RjdX58  9pm Tallinn 1 Oct (scheduled after test upload; subscribers not notified)
@@ -42,3 +46,5 @@ through verify.py.
 - 2026-10-14  flat-hunt (everyday, how-to, hook mistake; secretary problem / 37% rule)  aUlvzZ4vwSE  20:00 Tallinn 14 Oct, LIVE scheduled
 - 2026-10-15  wordle-opener (everyday, how-to, hook versus; RAISE 61 vs AUDIO 184 words left)  xSIugs3JUrI  12:00 Tallinn 15 Oct, LIVE scheduled
 - 2026-10-15  fish-count (nature, how-to, hook stakes; mark and recapture, Lincoln-Petersen)  i2n0PSXZANc  20:00 Tallinn 15 Oct, LIVE scheduled
+- 2026-10-16  sticker-album (everyday, how-to, hook mistake; coupon collector, 670-sticker album)  Ks_zISXypSU  12:00 Tallinn 16 Oct, LIVE scheduled
+- 2026-10-16  earth-stick (history, how-to, hook question; Eratosthenes)  cXkg5XjvpxM  20:00 Tallinn 16 Oct, LIVE scheduled

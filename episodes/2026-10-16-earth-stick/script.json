@@ -1,0 +1,75 @@
+{
+  "slug": "earth-stick",
+  "format": "short",
+  "series": "history",
+  "hook_style": "how-to",
+  "hook_type": "question",
+  "angle": "question hook: can you measure the whole Earth with a stick; rule out walking around it or going to space: you need noon; Syene: noon sun straight down a well, no shadow; same noon in Alexandria a stick's shadow is 7.2 degrees; parallel rays -> same angle at the Earth's centre; re-hook: 7.2 is one fiftieth of a circle, so Earth = 50 slices; pace it: 5,000 stadia x 50 = 250,000; short stadion -> 40,000 km vs real 40,008 (stadion length disputed); DIY: friend 1,000 km south -> 9 degrees; checkable CTA (500 km -> 4.5 degrees)",
+  "title": "How to measure the whole Earth with a stick",
+  "description": "At noon on the longest day the Sun shone straight down a well in Syene (Aswan), while a stick in Alexandria, further north, cast a shadow of 7.2 degrees. Sunlight arrives in parallel rays, so that angle is also the slice of the Earth between the two cities: one fiftieth of a circle. The cities were 5,000 stadia apart, so the Earth is 50 x 5,000 = 250,000 stadia around. How long a stadion was is still argued (about 160 to 210 m); the short one gives 40,000 km, against a real 40,008 km around the poles. Eratosthenes, about 240 BC.\n\nNumbers checked in code (verify.py). Source: Wikipedia, Eratosthenes (method as told by Cleomedes) and Earth's circumference.",
+  "social_caption": "One stick, one shadow and one long walk were enough to measure the whole Earth, 2,200 years ago. Here's how you'd do it yourself.",
+  "tags": [
+    "eratosthenes",
+    "measure the earth",
+    "earth circumference",
+    "ancient greece",
+    "geometry",
+    "history",
+    "math",
+    "maths",
+    "science"
+  ],
+  "music_moods": [
+    "curious"
+  ],
+  "facts_checked": [
+    "Method (Cleomedes' account): noon on the summer solstice, Sun straight down a well in Syene, a gnomon in Alexandria casts a shadow of 7.2 degrees = 1/50 of a circle; 5,000 stadia apart; 250,000 stadia (https://en.wikipedia.org/wiki/Eratosthenes)",
+    "Parallel sunlight: the shadow angle equals the angle at Earth's centre between the cities (alternate angles; Wikipedia, Eratosthenes)",
+    "Stadion length uncertain, about 160 to 210 m (Wikipedia, Eratosthenes); 250,000 x 160 m = 40,000 km (verify.py)",
+    "Real polar (meridional) circumference about 40,008 km; equatorial 40,075 km (https://en.wikipedia.org/wiki/Earth%27s_circumference)",
+    "DIY: 1,000 km north-south -> 1000/40008 x 360 = 9.0 degrees; CTA 500 km -> 4.5 degrees (verify.py)",
+    "Eratosthenes, around 240 BC (Wikipedia, Eratosthenes)"
+  ],
+  "beats": [
+    {
+      "id": "hook",
+      "say": "Can you measure the whole Earth with a stick?"
+    },
+    {
+      "id": "ruleout",
+      "say": "You don't walk around it, and you don't need space. You need noon."
+    },
+    {
+      "id": "well",
+      "say": "Find a town where the noon sun shines straight down a well. In Syene, on the longest day, there's no shadow at all."
+    },
+    {
+      "id": "stick",
+      "say": "Same day, same noon, stand a stick up in Alexandria, far to the north. It casts a shadow: 7.2 degrees."
+    },
+    {
+      "id": "parallel",
+      "say": "Sunlight arrives in parallel lines. So that angle is also the slice of Earth between the two towns."
+    },
+    {
+      "id": "rehook",
+      "say": "And 7.2 degrees is one fiftieth of a circle. The whole Earth is just 50 of those slices."
+    },
+    {
+      "id": "pace",
+      "say": "Pay a surveyor to pace the distance: 5,000 stadia. Times 50 is 250,000."
+    },
+    {
+      "id": "payoff",
+      "say": "Historians still argue how long a stadion was. The short one gives 40,000 kilometers. The real answer: 40,008."
+    },
+    {
+      "id": "diy",
+      "say": "Try it yourself. With a friend 1,000 kilometers south, your noon shadows differ by about 9 degrees."
+    },
+    {
+      "id": "cta",
+      "say": "So if your friend's 500 kilometers away, how far apart are your shadows?"
+    }
+  ]
+}

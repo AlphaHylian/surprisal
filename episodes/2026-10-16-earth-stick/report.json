@@ -1,0 +1,18 @@
+{
+ "ok": true,
+ "problems": [],
+ "warnings": [],
+ "duration_s": 58.0,
+ "size_mb": 10.3,
+ "resolution": "1080x1920",
+ "caption_match_ratio": 0.9322033898305084,
+ "heard": "Can you measure the whole earth with a stick? You don't walk around it, and you don't need space. You need noon. Find a town where the noon sun shines straight down a well. In Sayin, on the longest day, there's no shadow at all. Same day, same noon, stand to stick up in Alexandria, far to the north. It casts a shadow 7 .2 degrees. Sunlight arrives in parallel lines. So that angle is also the slice of earth between the two towns. And 7 .2 degrees is 1 .50th of a circle. The whole earth is just 50 of those slices. Pay a surveyor to pace the distance, 5 ,000 stadia. Times 50 is 250 ,000. Historians still argue how long a stadium was. The short one gives 40 ,000 kilometers. The real answer, 40 ,000 eight. Try it yourself. With a friend 1 ,000 kilometers south, your noon shadows differ by about 9 degrees. So if your friend's 500 kilometers away, how far apart are your shadows?",
+ "music": "Investigations",
+ "music_gap_db": 8.0,
+ "speech_starts_at_s": 0.0,
+ "final_lufs": -14.7,
+ "voice_engine": "omnivoice",
+ "contact_sheet_every_s": 2.4,
+ "build_seconds": 209,
+ "draft": false
+}

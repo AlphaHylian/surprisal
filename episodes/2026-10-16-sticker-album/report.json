@@ -1,0 +1,18 @@
+{
+ "ok": true,
+ "problems": [],
+ "warnings": [],
+ "duration_s": 59.1,
+ "size_mb": 13.6,
+ "resolution": "1080x1920",
+ "caption_match_ratio": 0.9526627218934911,
+ "heard": "Fill an album from PAX and you'll buy 7. It's not rare stickers. Everyone is printed equally often. The trap is the last page. Your World Cup album has 670 slots. PAX come in 5s. At first, almost every sticker is new. Half the album fills with about 460 stickers. But with 10 slots left, only 1 in 67 stickers is one you need. The very last slot takes 670 stickers on its own. So those last 10 slots cost twice as much as the first 500. That's where your money goes. Fix it. Swap. Your doubles are your friends' gaps. Five friends pooling every pack need about 2 ,000 stickers each, not 4 ,700. Then stop at the last 50 and order them straight from Panini. Now it's under 1 ,000 each. The album isn't expensive. The last page is. So how many stickers does a 10 -slot album take? Guess in the comments.",
+ "music": "Somewhere Sunny",
+ "music_gap_db": 8.0,
+ "speech_starts_at_s": 0.0,
+ "final_lufs": -15.1,
+ "voice_engine": "omnivoice",
+ "contact_sheet_every_s": 2.5,
+ "build_seconds": 331,
+ "draft": false
+}

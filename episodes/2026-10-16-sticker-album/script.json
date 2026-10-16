@@ -1,0 +1,78 @@
+{
+  "slug": "sticker-album",
+  "format": "short",
+  "series": "everyday",
+  "hook_style": "how-to",
+  "hook_type": "mistake",
+  "angle": "mistake hook: buying packs until the album is full costs ~7 albums of stickers; rule out rare stickers (all equally common), the trap is the last page; 670 slots, packs of 5; half the album in ~460 stickers; with 10 left only 1 in 67 is new; the last slot alone 670; re-hook: last 10 slots cost twice the first 500; fix 1: five friends pool and swap -> ~2,000 each; fix 2: order the last 50 -> ~930, under 1,000 each; payoff: the last page is the expensive part; checkable CTA (10-slot album: ~29)",
+  "title": "Why your sticker album costs 7 albums of stickers",
+  "description": "A 670-sticker World Cup album bought from packs alone takes about 4,700 stickers on average (670 x the harmonic number H670), roughly 950 packs. The first half fills with about 460 stickers, but once only 10 slots are left just 1 sticker in 67 is new, and the very last slot takes 670 stickers on its own: the last 10 slots cost twice as much as the first 500. Five friends pooling packs and swapping need about 2,000 stickers each; ordering the last 50 directly brings it to about 930, under 1,000. This is the coupon collector's problem.\n\nNumbers checked in code: exact expected values plus 100,000 simulated albums per case (each sticker equally likely). Album size: Panini FIFA World Cup Qatar 2022, 670 stickers, packs of 5 (The Peninsula / Bloomberg, Aug 2022).",
+  "social_caption": "Filling a sticker album from packs alone costs about seven albums of stickers. Here's where they all go, and the two fixes that cut it by five.",
+  "tags": [
+    "sticker album",
+    "panini stickers",
+    "world cup stickers",
+    "coupon collector problem",
+    "probability",
+    "math",
+    "maths",
+    "statistics"
+  ],
+  "music_moods": [
+    "upbeat"
+  ],
+  "facts_checked": [
+    "Panini FIFA World Cup Qatar 2022 album: 670 stickers, packets of five (https://thepeninsulaqatar.com/article/30/08/2022/it-now-costs-1200-on-average-to-complete-world-cup-sticker-album)",
+    "Expected draws to complete n equally likely coupons = n x H_n (https://en.wikipedia.org/wiki/Coupon_collector%27s_problem); for 670: 4,747 stickers = 7.1 albums = 949 packs (verify.py)",
+    "First half (335 slots): 464 stickers; with 10 left a new sticker is 10/670 = 1 in 67; last slot alone 670; last 10 slots 1,962 vs first 500 slots 917, about twice (verify.py)",
+    "Simulated 100,000 albums: solo 4,742 on average; 5 friends pooling and swapping 2,010 each; plus each ordering their last 50: 932 each, under 1,000 (verify.py)",
+    "CTA answer: a 10-slot album takes 10 x H_10 = 29.3 stickers on average (verify.py)",
+    "Panini runs a missing-sticker service for completing albums (https://www.cbsnews.com/video/paninis-missing-sticker-service-helps-world-cup-collectors-complete-their-albums-60-minutes)"
+  ],
+  "beats": [
+    {
+      "id": "hook",
+      "say": "Fill an album from packs, and you'll buy seven."
+    },
+    {
+      "id": "ruleout",
+      "say": "It's not rare stickers. Every one is printed equally often. The trap is the last page."
+    },
+    {
+      "id": "setup",
+      "say": "Your World Cup album has 670 slots. Packs come in fives."
+    },
+    {
+      "id": "start",
+      "say": "At first, almost every sticker is new. Half the album fills with about 460 stickers."
+    },
+    {
+      "id": "late",
+      "say": "But with 10 slots left, only 1 in 67 stickers is one you need."
+    },
+    {
+      "id": "last",
+      "say": "The very last slot takes 670 stickers on its own."
+    },
+    {
+      "id": "rehook",
+      "say": "So those last 10 slots cost twice as much as the first 500. That's where your money goes."
+    },
+    {
+      "id": "swap",
+      "say": "Fix it. Swap. Your doubles are your friends' gaps. Five friends pooling every pack need about 2,000 stickers each, not 4,700."
+    },
+    {
+      "id": "order",
+      "say": "Then stop at the last 50 and order them straight from Panini. Now it's under 1,000 each."
+    },
+    {
+      "id": "payoff",
+      "say": "The album isn't expensive. The last page is."
+    },
+    {
+      "id": "cta",
+      "say": "So, how many stickers does a 10-slot album take? Guess in the comments."
+    }
+  ]
+}
