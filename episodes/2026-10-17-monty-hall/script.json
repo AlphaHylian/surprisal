@@ -1,0 +1,33 @@
+{
+  "slug": "monty-hall",
+  "format": "short",
+  "series": "everyday",
+  "hook_style": "how-to",
+  "hook_type": "versus",
+  "angle": "versus hook: stick or switch, one wins twice as often; rule out 50/50 (the host isn't guessing); 3 doors, 1 car, you pick door 1: 1 in 3, the other two hold 2 in 3; host knows and always opens a goat; his door's share slides onto the one he left shut; re-hook: still a coin flip? 100 doors, host opens 98: stick 1 in 100, switch 99 in 100; play 100,000 games: 33% vs 67%; payoff: switching wins whenever your first pick was wrong, 2 times in 3; CTA: 10,000 readers told Marilyn vos Savant she was wrong; would you have switched?",
+  "title": "Stick or switch? Why switching doors wins 2 in 3",
+  "description": "Three doors, one car. You pick a door, so it has a 1 in 3 chance, and the other two together hold 2 in 3. The host knows where the car is and always opens a goat door, so his door's share doesn't vanish: it moves onto the one door he left shut. Switching wins whenever your first pick was wrong, which is 2 times in 3. With 100 doors and 98 opened, switching wins 99 in 100. When Marilyn vos Savant gave this answer in Parade in 1990, about 10,000 readers wrote in to say she was wrong.\n\nNumbers checked in code: exact fractions and 100,000 simulated games (stick 33%, switch 67%); history from Wikipedia's Monty Hall problem article.\n\nThe math behind real problems, twice a day. Subscribe and the next one finds you.\nFound an error? Comment and it gets pinned.\n#math #mathematics #shorts",
+  "social_caption": "Stick or switch? One wins twice as often, and it isn't 50/50. Here's exactly why the host's open door changes your odds.",
+  "tags": ["monty hall problem", "monty hall", "let's make a deal", "marilyn vos savant", "probability", "game show", "math", "maths", "statistics"],
+  "music_moods": ["curious"],
+  "facts_checked": [
+    "Standard Monty Hall rules (3 doors, 1 car, 2 goats; host knows, always opens a goat, always offers the switch): stick 1/3, switch 2/3 (https://en.wikipedia.org/wiki/Monty_Hall_problem; verify.py exact fractions)",
+    "100,000 simulated games: stick 33.3%, switch 66.7% (verify.py)",
+    "100 doors, host opens 98: stick 1/100, switch 99/100 (verify.py; simulated 99.0%)",
+    "Parade, 1990: Marilyn vos Savant's answer; about 10,000 readers, nearly 1,000 with PhDs, wrote in, most saying she was wrong (https://en.wikipedia.org/wiki/Monty_Hall_problem)"
+  ],
+  "beats": [
+    {"id": "hook", "say": "Stick or switch? One wins twice as often."},
+    {"id": "ruleout", "say": "Two doors left looks like a coin flip. It isn't, because the host isn't guessing."},
+    {"id": "setup", "say": "Three doors. One car, two goats. You pick door 1."},
+    {"id": "split", "say": "Your door has a 1 in 3 chance. The other two, together, hold 2 in 3."},
+    {"id": "host", "say": "Now the host opens a goat door. He knows where the car is, so he can always do it."},
+    {"id": "slide", "say": "So that 2 in 3 doesn't vanish. It slides onto the one door he left shut."},
+    {"id": "rehook", "say": "Still feels like fifty-fifty? Make it 100 doors."},
+    {"id": "hundred", "say": "You pick one. The host opens 98 goats and skips exactly one door."},
+    {"id": "which", "say": "Stick, and you win 1 time in 100. Switch, and you win 99."},
+    {"id": "sim", "say": "Back to three doors. Play it 100,000 times: sticking wins 33%. Switching wins 67%."},
+    {"id": "payoff", "say": "Switching wins every time your first pick was wrong. And it's wrong 2 times in 3."},
+    {"id": "cta", "say": "In 1990, about 10,000 readers wrote in to say this was wrong. Would you have switched?"}
+  ]
+}

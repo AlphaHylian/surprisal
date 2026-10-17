@@ -19,21 +19,20 @@ dated log. Rewrite rules when the data changes; don't let this file grow forever
 - No "doubt" beat after the hook ("That sounds wrong..."): in all 5 old-format Shorts checked (birthday, quarters, Penney's, clock, rope) the steepest retention fall is that beat, about 5-13 s in. Go straight from the problem to the first step. (2026-10-06)
 
 ## Current experiment
-- **Hook types** (from 2026-10-09). Every video so far kept only 30-51% of viewers past the
-  opening (hook_hold; zip how-to 0.44, rope 0.30), while large Shorts studies put good videos at
-  70-90% and say under 60% rarely gets pushed. The how-to body stays; the opening changes (STYLE.md,
-  "The hook"): the stakes or a concrete claim in line 1 instead of "You're a [job]...", `<HookText>`
-  on frame 1 (readable muted), first step by 4 s, 40-60 s total. Each Short records its
-  `hook_type` (stakes, claim, mistake, versus, question, role) in videos.csv `hook_style`.
-  Judge at day 2+: hook_hold by type, against the how-to Shorts of 4-8 Oct (role openers) as the
-  baseline. After ~10 videos, keep the best two types and drop the rest.
-- Previous experiment, how-to format (4-8 Oct): owner's verdict on the story format was "17 s
-  before any math, too simplified". How-to body kept; its role-first openings didn't fix
-  hook_hold (zip 0.44, airline 0.33 at day 3).
+- **Length: ~45 s vs ~60 s** (from 2026-10-17). Hook types are now limited to the two that held best
+  (versus and claim, see the verdict below), one of each per day, alternating which one gets the short
+  arm. Arm A: 40-48 s (4 steps), arm B: 55-65 s (5-6 steps). Judge at day 2+ on average view % first,
+  then hook_hold and engaged views. Record the arm in the learnings log line; videos.csv `experiment` = `length`.
+- Previous experiment, **hook types (9-16 Oct), verdict 2026-10-17** (12 Shorts, 7 with day-2+ numbers):
+  versus 0.54 (two-choices; Wordle no rows yet), claim 0.54 (QR) / 0.41 (roulette, 101 views), stakes 0.45
+  (true hit), question 0.40-0.42 (view counter, GPS), mistake 0.32 (flat hunt, day 2, 62 views). Role-opener
+  baseline 0.38-0.49. Nothing reached 0.6, and the samples are small, so this narrows rather than proves:
+  keep versus and claim, drop question, stakes and mistake (they sat at or below the baseline). Not a
+  "rule we trust" yet; revisit when the 15-16 Oct Shorts have day-3 numbers.
+- Before that, how-to format (4-8 Oct): role-first openings didn't fix hook_hold (zip 0.44, airline 0.33).
 
 ## Experiment ideas, in rough priority
 1. History stories (real names and dates) vs everyday situations.
-3. Length: ~45 s vs ~60 s.
 4. Ending: comment question that puts the viewer back in the role vs a one-line "what happened next".
 5. Voice speed 1.0 vs 1.1.
 

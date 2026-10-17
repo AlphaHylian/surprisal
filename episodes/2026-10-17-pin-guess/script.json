@@ -1,0 +1,78 @@
+{
+  "slug": "pin-guess",
+  "format": "short",
+  "series": "tech",
+  "hook_style": "how-to",
+  "hook_type": "claim",
+  "angle": "claim hook: nearly 11% of PINs are 1234; rule out '10,000 codes is safe' (3 tries then lock); random: 3 in 10,000; leaked 3.4 million codes: top 20 = 27%; step 1 no patterns (1234/1111/0000); re-hook: birthday; MMDD = 366 codes, 19xx = 100; wallet holds your ID; 3 in 100 = 100x worse; step 3 let random numbers pick; payoff: 10,000 only protects you if yours could be any of them; CTA subscribe if you thought 10,000 was safe",
+  "title": "Why 11% of PINs are 1234, and how to pick a safe one",
+  "description": "A four-digit PIN has 10,000 possible codes, so a thief with 3 tries before the card locks should get in only 3 times in 10,000. But people don't pick at random: in 3.4 million leaked four-digit codes, almost 11% were 1234, and the 20 most common codes covered 27%. Dates are almost as bad: a month and day leaves only 366 codes, and a year starting with 19 leaves 100, so 3 tries open 3 in 100, a hundred times worse than random. Let random numbers pick all four digits.\n\nNumbers checked in code (code counts and a simulation of 2 million guesses); PIN frequencies from Nick Berry's DataGenetics PIN analysis (2012), as reported by HuffPost UK.\n\nThe math behind real problems, twice a day. Subscribe and the next one finds you.\nFound an error? Comment and it gets pinned.\n#math #mathematics #shorts",
+  "social_caption": "Nearly 11% of PINs are 1234. Here's the math of why your birthday is almost as bad, and how to pick a code a thief can't guess.",
+  "tags": [
+    "pin code",
+    "most common pin",
+    "1234",
+    "pin security",
+    "datagenetics",
+    "probability",
+    "math",
+    "maths",
+    "cybersecurity"
+  ],
+  "music_moods": [
+    "upbeat"
+  ],
+  "facts_checked": [
+    "3.4 million four-digit codes from leaked password tables; almost 11% are 1234 (DataGenetics 10.713%); top 20 codes cover 26.83% (https://huffingtonpost.co.uk/entry/worst-pin-numbers_n_3696560, citing http://www.datagenetics.com/blog/september32012/, which returned 503 today)",
+    "1234, 1111, 0000 are the three most common in the published top 10 (HuffPost UK, same article)",
+    "10,000 possible codes; 3 random tries open 3 in 10,000 (verify.py, simulated 2,000,000 tries: 3.05)",
+    "Month-and-day codes: 366; codes starting with 19: 100; 3 tries open 3 in 100, 100x worse than random (verify.py, simulated: 2.99)",
+    "Bank cards lock after a few wrong PIN tries (3 is the usual limit); stated as the scenario, not a universal rule"
+  ],
+  "beats": [
+    {
+      "id": "hook",
+      "say": "Nearly 11% of PINs are one two three four."
+    },
+    {
+      "id": "ruleout",
+      "say": "Ten thousand codes sounds safe. A thief gets 3 tries, then the card locks."
+    },
+    {
+      "id": "odds",
+      "say": "If you'd picked at random, those 3 tries open 3 cards in 10,000."
+    },
+    {
+      "id": "leak",
+      "say": "But people don't. In 3.4 million leaked codes, the top 20 covered 27%."
+    },
+    {
+      "id": "patterns",
+      "say": "So step one: no patterns. Not one two three four, not four ones, not four zeros."
+    },
+    {
+      "id": "rehook",
+      "say": "Step two is the one people miss. Your birthday."
+    },
+    {
+      "id": "dates",
+      "say": "A month and day leaves just 366 codes. A year starting with 19 leaves 100."
+    },
+    {
+      "id": "wallet",
+      "say": "And your wallet holds your ID. Then 3 tries open 3 cards in 100: 100 times worse than random."
+    },
+    {
+      "id": "fix",
+      "say": "Step three: let random numbers pick all four digits, and keep them."
+    },
+    {
+      "id": "payoff",
+      "say": "Ten thousand codes only protect you if yours could be any of them."
+    },
+    {
+      "id": "cta",
+      "say": "Subscribe if you thought 10,000 was safe."
+    }
+  ]
+}
