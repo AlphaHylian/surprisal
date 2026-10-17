@@ -17,6 +17,8 @@ through verify.py.
   matches game theory (Palacios-Huerta). [check] (everyday/sport) (2026-10-15: the paper's cell-by-cell scoring table couldn't be fetched (PDF mirrors 403); find a readable source with the 2x2 numbers first)
 
 - You're picking a lift/elevator spot or bus stop wait: why the bus always seems late (inspection paradox: you land in the long gaps). (everyday)
+- Your sock drawer in the dark: how many socks to grab to be sure of a pair, and how many for a pair of each color (pigeonhole principle). (everyday)
+- Your download finished but is it broken? A checksum: one changed bit flips about half the hash, so a 1-in-a-billion-chance collision never fools you (SHA-256). [check] (tech)
 
 ## Used
 - 2026-09-30  birthday-paradox (sounds-fake)  eQS8gtimpvA  first public video, 9pm Tallinn
