@@ -63,10 +63,11 @@ const RuleOutBody: React.FC = () => {
   const tIsnt = at.word("isn't", 1, 2.2);
   const tHost = at.word("host", 1, 3.0);
   const strike = tween(t, tIsnt, tIsnt + 0.25, 0, 100);
+  void tCoin;
   return (
     <>
       <At x={540} y={480}>
-        <Appear at={tCoin - 0.2} from="pop">
+        <Appear at={0.05} from="pop">
           <div style={{ position: "relative" }}>
             <Text size={150} color={C.ink}>50 / 50</Text>
             <div style={{ position: "absolute", left: -10, top: "50%", width: `${strike}%`, height: 16, background: C.coral, borderRadius: 8,
@@ -155,20 +156,20 @@ const HundredBody: React.FC = () => {
       <Headline at={tHundred} out={tWhich - 0.3}>The host opens 98</Headline>
       <Headline at={tWhich} color={C.mint}>1 vs 99</Headline>
       <Camera keys={[[0, { zoom: 1 }], [tWhich, { zoom: 1 }]]}>
-        <At x={540} y={680}>
+        <At x={540} y={685}>
           <Appear at={t100 - 0.2} from="pop">
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(10, 64px)", gap: 14 }}>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(10, 42px)", gap: 10 }}>
               {[...Array(100)].map((_, i) => {
                 const isPick = i === PICK && t >= tPickOne;
                 const isKept = i === KEPT && t >= tOpens + 1.4;
                 const opened = i !== PICK && i !== KEPT && ((i * 37) % 100) < openCount;
-                return <Door key={i} w={64} pick={isPick} glow={isKept ? C.mint : undefined} dim={opened} openAt={opened ? 0 : undefined} />;
+                return <Door key={i} w={42} pick={isPick} glow={isKept ? C.mint : undefined} dim={opened} openAt={opened ? 0 : undefined} />;
               })}
             </div>
           </Appear>
         </At>
-        <At x={300} y={1100}><Appear at={tStick} from="slam"><Chip size={56}>stick 1/100</Chip></Appear></At>
-        <At x={760} y={1100}><Appear at={tSwitch} from="slam"><Chip size={56} color={C.mint}>switch 99/100</Chip></Appear></At>
+        <At x={300} y={1095}><Appear at={tStick} from="slam"><Chip size={56}>stick 1/100</Chip></Appear></At>
+        <At x={760} y={1095}><Appear at={tSwitch} from="slam"><Chip size={56} color={C.mint}>switch 99/100</Chip></Appear></At>
       </Camera>
       <Sfx name="pack/click-hard" at={tPickOne + 0.1} volume={0.35} />
       <Sfx name="pack/fast-forward" at={tOpens} volume={0.3} dur={1.4} />
