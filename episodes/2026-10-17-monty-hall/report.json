@@ -3,16 +3,16 @@
  "problems": [],
  "warnings": [],
  "duration_s": 59.7,
- "size_mb": 3.7,
- "resolution": "540x960",
+ "size_mb": 10.2,
+ "resolution": "1080x1920",
  "caption_match_ratio": 0.9723756906077348,
  "heard": "stick or switch. One wins twice as often. Two doors left looks like a coin flip. It isn't because the host isn't guessing. Three doors. One car, two goats. You pick door one. Your door has a one and three chance. The other two together hold two and three. Now the host opens a goat door. He knows where the car is so he can always do it so that two and three doesn't vanish. It slides onto the one door he left shut. Still feels like 50 -50? Make it 100 doors. You pick one. The host opens 98 goats and skips exactly one door. Stick and you win one time in 100. Switch and you win 99. Back to three doors. Play it 100 ,000 times. Sticking wins 33%. Switching wins 67%. Switching wins every time your first pick was wrong. And it's wrong two times in three. In 1990, about 10 ,000 readers wrote in to say this was wrong. Would you have switched?",
- "music": "Investigations",
+ "music": "Late Night Radio",
  "music_gap_db": 8.0,
  "speech_starts_at_s": 0.01,
- "final_lufs": -14.8,
+ "final_lufs": -14.9,
  "voice_engine": "omnivoice",
  "contact_sheet_every_s": 2.5,
- "build_seconds": 1443,
- "draft": true
+ "build_seconds": 210,
+ "draft": false
 }
