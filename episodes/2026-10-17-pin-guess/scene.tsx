@@ -29,7 +29,7 @@ const Pin: React.FC<{ digits: string; color?: string; size?: number; strike?: nu
 };
 
 // 100 x 100 grid of all 10,000 codes, drawn with a CSS grid pattern; `marks` lights cells.
-const GRID = 760, CELLS = 100, STEP = GRID / CELLS;
+const GRID = 640, CELLS = 100, STEP = GRID / CELLS;
 const AllCodes: React.FC<{ marks: number[]; markColor?: string; litRows?: number; litAt?: number }> = ({ marks, markColor = C.amber, litRows = 0, litAt = 0 }) => {
   const t = useT();
   const rows = litRows ? Math.round(tween(t, litAt, litAt + 0.6, 0, litRows)) : 0;
@@ -90,10 +90,10 @@ const OddsBody: React.FC = () => {
       <Headline out={tOdds - 0.3}>10,000 codes</Headline>
       <Headline at={tOdds} color={C.mint}>3 tries, at random</Headline>
       <Camera keys={[[0, { zoom: 1 }], [tOdds, { zoom: 1 }], [t10k + 0.4, { zoom: 1.04 }]]}>
-        <At x={540} y={700}>
+        <At x={540} y={650}>
           <Appear at={0.05} from="pop"><AllCodes marks={t >= t10k ? [1234, 5871, 8305] : []} /></Appear>
         </At>
-        <At x={540} y={1120}>
+        <At x={540} y={1045}>
           <Appear at={tThree} out={tOdds - 0.1} from="up">
             <div style={{ display: "flex", gap: 30, alignItems: "center" }}>
               {tries.map((ti, i) => <Appear key={i} at={ti} from="pop"><Icon name="KeyRound" size={70} color={C.ink} /></Appear>)}
@@ -101,7 +101,7 @@ const OddsBody: React.FC = () => {
             </div>
           </Appear>
         </At>
-        <At x={540} y={1120}>
+        <At x={540} y={1045}>
           <Appear at={t10k} from="slam"><Text size={72} color={C.amber} glow>3 in 10,000</Text></Appear>
         </At>
       </Camera>
@@ -189,7 +189,7 @@ const BirthdayBody: React.FC = () => {
         <At x={540} y={560}>
           <Appear at={tBirth - 0.3} out={tWallet - 0.1} from="pop"><Icon name="Cake" size={220} color={C.amber} glow /></Appear>
         </At>
-        <At x={540} y={830}>
+        <At x={540} y={800}>
           <Appear at={tDates + 0.2} out={tWallet - 0.1} from="up">
             <div style={{ display: "flex", gap: 34 }}>
               <Card w={400} h={230} pad={16} border={t >= t366 ? C.amber : C.dim}>
@@ -203,7 +203,7 @@ const BirthdayBody: React.FC = () => {
             </div>
           </Appear>
         </At>
-        <At x={540} y={1100}>
+        <At x={540} y={1010}>
           <Appear at={t366 - 0.1} out={tWallet - 0.1} from="slam">
             <Text size={84} color={count === 100 ? C.coral : C.amber} glow>{count.toLocaleString("en-US")} codes</Text>
           </Appear>
@@ -212,9 +212,9 @@ const BirthdayBody: React.FC = () => {
         <At x={330} y={560}><Appear at={tWallet + 0.1} from="left"><Icon name="Wallet" size={200} color={C.ink} /></Appear></At>
         <At x={760} y={560}><Appear at={tId} from="pop"><Icon name="IdCard" size={220} color={C.coral} glow /></Appear></At>
         <Shake at={t3in100}>
-          <At x={540} y={880}><Appear at={t3in100 - 0.2} from="slam"><Text size={130} color={C.coral} glow>3 in 100</Text></Appear></At>
+          <At x={540} y={800}><Appear at={t3in100 - 0.2} from="slam"><Text size={130} color={C.coral} glow>3 in 100</Text></Appear></At>
         </Shake>
-        <At x={540} y={1080}><Appear at={tWorse - 0.2} from="up"><Chip size={60} color={C.coral} text={C.bg}>100× worse than random</Chip></Appear></At>
+        <At x={540} y={980}><Appear at={tWorse - 0.2} from="up"><Chip size={60} color={C.coral} text={C.bg}>100× worse than random</Chip></Appear></At>
       </Camera>
       <Sfx name="pack/digits" at={t366} volume={0.3} />
       <Sfx name="pack/digits-2" at={t100} volume={0.3} />
@@ -241,8 +241,8 @@ const FixBody: React.FC = () => {
     <>
       <Headline color={C.mint}>Step 3: let chance pick</Headline>
       <At x={540} y={520}><Appear at={0.05} from="pop"><Icon name="Dices" size={190} color={C.mint} glow /></Appear></At>
-      <At x={540} y={830}><Appear at={0.2} from="up"><Pin digits={digits} size={150} color={t >= tRandom + 1.6 ? C.mint : C.ink} /></Appear></At>
-      <At x={540} y={1090}><Appear at={tKeep} from="up"><Chip size={56} color={C.mint}>any of 10,000</Chip></Appear></At>
+      <At x={540} y={790}><Appear at={0.2} from="up"><Pin digits={digits} size={150} color={t >= tRandom + 1.6 ? C.mint : C.ink} /></Appear></At>
+      <At x={540} y={1010}><Appear at={tKeep} from="up"><Chip size={56} color={C.mint}>any of 10,000</Chip></Appear></At>
       <Sfx name="pack/counting-digital" at={tRandom} volume={0.3} dur={1.6} />
       <Sfx name="pack/correct" at={tRandom + 1.6} volume={0.4} />
     </>
@@ -255,11 +255,11 @@ const PayoffBody: React.FC = () => {
   const tAny = at.word("any", 1, 2.4);
   return (
     <>
-      <At x={540} y={640}>
+      <At x={540} y={620}>
         <Appear at={0} from="fade"><AllCodes marks={[7295]} markColor={C.mint} /></Appear>
       </At>
       <Punch at={tAny}>
-        <At x={540} y={1110}><Appear at={tAny} from="slam"><Text size={68} color={C.amber} glow>yours could be any of them</Text></Appear></At>
+        <At x={540} y={1030}><Appear at={tAny} from="slam"><Text size={68} color={C.amber} glow>yours could be any of them</Text></Appear></At>
       </Punch>
       <Sfx name="pack/boom-short" hit={tAny} volume={0.45} />
     </>

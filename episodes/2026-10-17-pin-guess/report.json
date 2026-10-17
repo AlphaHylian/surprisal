@@ -1,0 +1,18 @@
+{
+ "ok": true,
+ "problems": [],
+ "warnings": [],
+ "duration_s": 51.6,
+ "size_mb": 3.3,
+ "resolution": "540x960",
+ "caption_match_ratio": 0.9415584415584416,
+ "heard": "Nearly 11 % of pins are one, two, three, four. 10 ,000 codes sound safe. A thief gets three tries, then the card locks. If you'd picked it random, those three tries open three cards in 10 ,000. But people don't. In 3 .4 million leaked codes, the top 20 covered 27%. So step one, no patterns. Not one, two, three, four, not for ones, not for zeros. Step two is the one people miss, your birthday. A month and day leaves just 366 codes. A year starting with 19 leaves 100. And your wallet holds your ID. Then three tries open three cards in 100. 100 times worse than random. Step three, let random numbers pick all four digits and keep them. 10 ,000 codes only protect you if yours could be any of them. Subscribe if you thought 10 ,000 was safe.",
+ "music": "Digital Lemonade",
+ "music_gap_db": 8.0,
+ "speech_starts_at_s": 0.0,
+ "final_lufs": -14.9,
+ "voice_engine": "omnivoice",
+ "contact_sheet_every_s": 2.2,
+ "build_seconds": 836,
+ "draft": true
+}
