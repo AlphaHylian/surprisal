@@ -1,0 +1,18 @@
+{
+ "ok": true,
+ "problems": [],
+ "warnings": [],
+ "duration_s": 59.5,
+ "size_mb": 10.7,
+ "resolution": "1080x1920",
+ "caption_match_ratio": 0.9893617021276596,
+ "heard": "A bus every 10 minutes and you still wait eight. Not bad luck. Not a slow driver. Same six buses an hour. The gaps did it. Bus is exactly 10 minutes apart. You turn up at a random moment so you wait anywhere from zero to 10. On average five. Now one bus runs a minute late. More people are waiting so it stops longer and falls further behind. The bus behind finds emptier stops and catches up. Soon they come in pairs, two minutes apart, then an 18 minute hole. Still six buses an hour. So why does your wait jump? Because you don't pick the gap. The clock does. The long holes cover nine tenths of the clock so that's where you land. In the hole you wait nine on average. Overall eight point two minutes. Same buses, 64 % more waiting. The fix, hold the early bus at a stop until the gaps even out. 10 and 10 again. Back to five. Your wait isn't set by how often buses come. It's set by how even the gaps are. Subscribe if you blame the driver.",
+ "music": "Tech Talk",
+ "music_gap_db": 8.0,
+ "speech_starts_at_s": 0.0,
+ "final_lufs": -14.9,
+ "voice_engine": "omnivoice",
+ "contact_sheet_every_s": 2.5,
+ "build_seconds": 281,
+ "draft": false
+}

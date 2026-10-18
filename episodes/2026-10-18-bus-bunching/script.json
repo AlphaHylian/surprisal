@@ -1,0 +1,78 @@
+{
+  "slug": "bus-bunching",
+  "format": "short",
+  "series": "everyday",
+  "hook_style": "how-to",
+  "hook_type": "claim",
+  "angle": "claim hook: a bus every 10 minutes and you still wait 8; rule out bad luck/slow driver: same six buses an hour, the gaps did it; even gaps: arrive at random, wait 0-10, average 5; one bus runs a minute late, more riders, longer stops, later still; the one behind catches up: pairs 2 minutes apart, then an 18-minute hole; re-hook: still six an hour, so why; you don't pick the gap, the clock does: the hole is 9 in 10 of the clock; in the hole you wait 9, overall 8.2 = 64% more; fix: hold the early bus until the gaps even out (headway control): back to 5; payoff: your wait is set by how even the gaps are, not how often buses come; CTA subscribe if you blamed the driver. Length arm B.",
+  "title": "Why a bus every 10 minutes makes you wait 8",
+  "description": "Buses every 10 minutes, perfectly spaced: you turn up at a random moment and wait 5 minutes on average. But a bus that runs a little late picks up extra riders, stops longer and falls further behind, while the one after it catches up. Bunch the same six buses an hour into pairs 2 minutes apart and the 18-minute holes cover 9 tenths of the clock, so that's where you usually arrive: the average wait becomes 8.2 minutes, 64% more, with no fewer buses. (If buses came at completely random times, you'd wait the full 10.) That's why transit systems hold early buses at stops to keep the gaps even.\n\nNumbers checked in code: exact averages plus 200,000 simulated arrivals (5.0 and 8.2 minutes, 90% in the long gaps). The pairs-of-buses timetable is an example; bunching and holding from Wikipedia's Bus bunching article.\n\nThe math behind real problems, twice a day. Subscribe and the next one finds you.\nFound an error? Comment and it gets pinned.\n#math #mathematics #shorts",
+  "social_caption": "A bus every 10 minutes, and you still wait 8. It's not bad luck: it's where the gaps are, and here's the math.",
+  "tags": [
+    "bus bunching",
+    "waiting for the bus",
+    "inspection paradox",
+    "waiting time paradox",
+    "public transport",
+    "probability",
+    "math",
+    "maths",
+    "statistics"
+  ],
+  "music_moods": [
+    "upbeat"
+  ],
+  "facts_checked": [
+    "Even 10-minute gaps, random arrival: average wait 5 min (verify.py exact, simulated 5.00)",
+    "Same 6 buses an hour in pairs (gaps 2 and 18): average wait E[G^2]/(2E[G]) = 8.2 min, 64% more; the 18-minute gaps are 9/10 of the clock; inside one you wait 9 on average (verify.py exact; 200,000 simulated arrivals: 8.20 min, 90.0%)",
+    "Random (Poisson) buses with a 10-minute mean gap: wait ~10 min (verify.py, description only)",
+    "Bunching mechanism: a late bus picks up more passengers, slows further; the bus behind carries fewer and catches up; countermeasure: hold the trailing/early bus at stops, headway-based control (https://en.wikipedia.org/wiki/Bus_bunching)",
+    "Inspection paradox: the interval containing a random time is size-biased, 'the likelihood an interval is chosen is proportional to its size' (https://en.wikipedia.org/wiki/Renewal_theory)"
+  ],
+  "beats": [
+    {
+      "id": "hook",
+      "say": "A bus every 10 minutes, and you still wait 8."
+    },
+    {
+      "id": "ruleout",
+      "say": "Not bad luck. Not a slow driver. Same six buses an hour. The gaps did it."
+    },
+    {
+      "id": "even",
+      "say": "Buses exactly 10 minutes apart. You turn up at a random moment, so you wait anywhere from 0 to 10. On average, 5."
+    },
+    {
+      "id": "late",
+      "say": "Now one bus runs a minute late. More people are waiting, so it stops longer, and falls further behind."
+    },
+    {
+      "id": "pairs",
+      "say": "The bus behind finds emptier stops and catches up. Soon they come in pairs: 2 minutes apart, then an 18-minute hole."
+    },
+    {
+      "id": "rehook",
+      "say": "Still six buses an hour. So why does your wait jump?"
+    },
+    {
+      "id": "land",
+      "say": "Because you don't pick the gap. The clock does. The long holes cover 9 tenths of the clock, so that's where you land."
+    },
+    {
+      "id": "math",
+      "say": "In the hole you wait 9 on average. Overall: 8.2 minutes. Same buses, 64% more waiting."
+    },
+    {
+      "id": "fix",
+      "say": "The fix: hold the early bus at a stop until the gaps even out. 10 and 10 again. Back to 5."
+    },
+    {
+      "id": "payoff",
+      "say": "Your wait isn't set by how often buses come. It's set by how even the gaps are."
+    },
+    {
+      "id": "cta",
+      "say": "Subscribe if you blamed the driver."
+    }
+  ]
+}

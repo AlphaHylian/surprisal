@@ -16,7 +16,6 @@ through verify.py.
   sides in exact proportions so the keeper gains nothing by guessing. Reveal: pro penalty data
   matches game theory (Palacios-Huerta). [check] (everyday/sport) (2026-10-15: the paper's cell-by-cell scoring table couldn't be fetched (PDF mirrors 403); find a readable source with the 2x2 numbers first)
 
-- You're picking a lift/elevator spot or bus stop wait: why the bus always seems late (inspection paradox: you land in the long gaps). (everyday)
 - Your sock drawer in the dark: how many socks to grab to be sure of a pair, and how many for a pair of each color (pigeonhole principle). (everyday)
 - Your download finished but is it broken? A checksum: one changed bit flips about half the hash, so a 1-in-a-billion-chance collision never fools you (SHA-256). [check] (tech)
 
@@ -50,3 +49,4 @@ through verify.py.
 - 2026-10-16  earth-stick (history, how-to, hook question; Eratosthenes)  cXkg5XjvpxM  20:00 Tallinn 16 Oct, LIVE scheduled
 - 2026-10-17  pin-guess (tech, how-to, hook claim; human-picked PINs, 1234 ~11%, dates 366/100)  cG7V4oZAT_w  12:00 Tallinn 17 Oct, LIVE scheduled
 - 2026-10-17  monty-hall (everyday, how-to, hook versus; switch wins 2 in 3, 100 doors)  bWxBLz3KmEY  20:00 Tallinn 17 Oct, LIVE scheduled
+- 2026-10-18  bus-bunching (everyday, how-to, hook claim; inspection paradox, bunched buses 5 -> 8.2 min, hold the early bus)  BmojS3ODdzA  12:00 Tallinn 18 Oct, LIVE scheduled
