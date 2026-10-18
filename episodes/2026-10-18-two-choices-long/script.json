@@ -1,0 +1,313 @@
+{
+ "slug": "two-choices-long",
+ "format": "long",
+ "series": "tech",
+ "hook_style": "how-to",
+ "hook_type": "versus",
+ "angle": "long-form of the week's best Short (two-choices, 11 Oct): 100 servers, 10,000 jobs; random: worst 126, quietest 76, binomial wobble of 10, worst of 100 wobbles, 1 in 7 servers 10+ over, a million jobs -> +250 (grows with the square root); 100 jobs on 100 servers: 37 empty, worst 4; round robin breaks on uneven jobs; asking all 100 = perfect but 100 questions a job; two random picks -> 102; why: both picks must be busy (10% -> 1 in 100), the squaring ladder 1/2, 1/4, 1/16, 1/256, 1/65,536; a million on a million: random 8-9, two 4; Azar, Broder, Karlin, Upfal; heavy traffic: random +250, two still +2; three picks 101; stale information: herding; simulation at 90% load: fresh info all 0.7 / two 1.2 / random 7 jobs ahead; info 10 jobs old: all 22, two 3.4; Mitzenmacher 'How useful is old information?'; nginx 'random two', Envoy least-request samples 2 by default ('resists herding'), two-choice hashing; wrap; CTA: a fifth busy -> 1 in 25.",
+ "title": "Why picking the better of 2 beats checking all 100",
+ "description": "You run 100 servers and 10,000 jobs come in. Send each job to a random server and the busiest one ends up with about 126 while the average is 100; push a million jobs through and it's about 250 over, because the wobble grows with the square root of the traffic. Asking every server and picking the emptiest is perfect on paper, but costs 100 questions per job, and with load numbers that are even slightly old it herds everyone onto the same server: in our simulation at 90% load, a new job found 22 jobs ahead of it, three times worse than random. The fix is the power of two choices: pick two servers at random and send the job to the emptier one. The busiest server drops to about 102, stays about 2 over even after a million jobs, and with old numbers it still beats everything else (about 3 jobs ahead). It works because a job only lands on a busy server if both picks are busy, so each level of pile-up is the square of the one before. Proven by Azar, Broder, Karlin and Upfal; it ships as nginx's 'random two' and as Envoy's default least-request balancing.\n\nEvery number checked in code (simulations of up to a million jobs and a queueing model at 90% load). Sources: https://en.wikipedia.org/wiki/Balls_into_bins_problem https://nginx.org/en/docs/http/ngx_http_upstream_module.html#random https://www.envoyproxy.io/docs/envoy/latest/intro/arch_overview/upstream/load_balancing/load_balancers https://www.eecs.harvard.edu/~michaelm/abstracts/tpds2000.html\n\nThe math behind real problems, twice a day. Subscribe and the next one finds you.\nFound an error? Comment and it gets pinned.\n#math #mathematics",
+ "social_caption": "Pick one random server, or the emptier of two? One extra look turns 26 extra jobs into 2, and beats asking everyone when the numbers are old.",
+ "tags": [
+  "power of two choices",
+  "load balancing",
+  "balls into bins",
+  "nginx",
+  "envoy",
+  "distributed systems",
+  "probability",
+  "math",
+  "maths",
+  "computer science"
+ ],
+ "music_moods": [
+  "calm"
+ ],
+ "facts_checked": [
+  "100 servers, 10,000 jobs, random: busiest 126.0 on average, quietest 75.9 (2,000 trials); per-server spread sqrt(10,000 x 0.01 x 0.99) = 9.95; 14.6% of servers 10+ over (verify.py)",
+  "Two choices: busiest 101.9 (200 trials); three choices 101.1 (verify.py)",
+  "100 servers, 1,000,000 jobs: random busiest +253; two choices +1.7 (verify.py); heavy-load result m/n + log log n / log d + O(1) (Berenbrink, Czumaj, Steger, Vocking, via https://en.wikipedia.org/wiki/Balls_into_bins_problem)",
+  "100 jobs on 100 servers, random: 36.6% empty on average (1 - 1/100)^100; busiest most often 4 (mean 4.24, 5,000 trials) (verify.py)",
+  "1,000,000 jobs on 1,000,000 servers: random busiest 8-9 (5 runs), two choices 4 (3 runs); max load log n / log log n vs log log n / log 2 + O(1), Azar, Broder, Karlin, Upfal, 'Balanced Allocations' (https://en.wikipedia.org/wiki/Balls_into_bins_problem)",
+  "Both picks busy: 10% -> 1%, simulated 1,000,000 pairs matches f^2; squaring ladder 1/2, 1/4, 1/16, 1/256, 1/65,536 (verify.py)",
+  "Queue model, 100 servers at 90% load: fresh info: all 0.67, two 1.20, random 6.99 jobs ahead of a new job; info 20 ticks (10 job-lengths) old: all 22.0, two 3.4, random 7.0 (verify.py)",
+  "Stale load information makes 'pick the least loaded' herd; a little randomness (two choices) recovers near-ideal performance: Mitzenmacher, 'How useful is old information?' (https://www.eecs.harvard.edu/~michaelm/abstracts/tpds2000.html)",
+  "nginx upstream 'random two [method]', default method least_conn, appeared in 1.15.1 (https://nginx.org/en/docs/http/ngx_http_upstream_module.html#random)",
+  "Envoy least request: samples N random hosts (2 by default), picks the one with the fewest active requests; P2C 'resists herding' (https://www.envoyproxy.io/docs/envoy/latest/intro/arch_overview/upstream/load_balancing/load_balancers)",
+  "Two-choice hashing: two hash functions, key goes into the shorter list, longest chain O(log log n) instead of O(log n / log log n) (https://en.wikipedia.org/wiki/Balls_into_bins_problem)",
+  "CTA: a fifth busy -> both picks busy 1 in 25 (verify.py)"
+ ],
+ "beats": [
+  {
+   "id": "hook",
+   "say": "Pick one random server, or the emptier of two? One of them leaves a server drowning.",
+   "chapter": "One server or two?"
+  },
+  {
+   "id": "promise",
+   "say": "By the end of this, you'll know why asking just two servers works almost as well as asking all of them, why it can even beat asking all of them, and where it's already running, as one line in a config file."
+  },
+  {
+   "id": "setup",
+   "say": "Here's the problem. You run 100 servers. Jobs pour in: web pages, video uploads, payments. Each one has to go somewhere, and the choice has to be made in an instant."
+  },
+  {
+   "id": "stakes",
+   "say": "The jobs on your busiest server wait the longest. So the number that matters isn't the average. It's the worst server."
+  },
+  {
+   "id": "stakes2",
+   "say": "And stay to the end, because the obvious best answer, asking every server, turns out to be a trap."
+  },
+  {
+   "id": "random_rule",
+   "say": "The simplest rule: send each job to a random server. No questions asked, nothing to keep track of.",
+   "chapter": "Why random piles up"
+  },
+  {
+   "id": "avg",
+   "say": "Send 10,000 jobs that way, and the average is exactly 100 jobs per server."
+  },
+  {
+   "id": "worst",
+   "say": "But the busiest server ends up with about 126, and the quietest with about 76. Same rule, same servers, a gap of 50 jobs."
+  },
+  {
+   "id": "wobble",
+   "say": "Why? Every job is a dice roll with a 1 in 100 chance of hitting your server. Roll it 10,000 times, and the count wobbles by about 10 either way."
+  },
+  {
+   "id": "worst_of",
+   "say": "One server landing 10 high is normal. But you have 100 servers, and the unluckiest of 100 lands about two and a half wobbles high. That's your 126."
+  },
+  {
+   "id": "share",
+   "say": "In fact, about 1 server in 7 sits 10 or more jobs over the average at any moment."
+  },
+  {
+   "id": "grows",
+   "say": "And it gets worse with time. Push a million jobs through the same 100 servers, and the busiest one is about 250 over."
+  },
+  {
+   "id": "sqrt",
+   "say": "The wobble grows with the square root of the traffic. A hundred times the jobs, ten times the pile-up. Random never settles down."
+  },
+  {
+   "id": "coins",
+   "say": "You've seen this with coins. Flip 100, and you get 50 heads, give or take 5. Flip 10,000, and it's 5,000, give or take 50."
+  },
+  {
+   "id": "coins2",
+   "say": "A hundred times the flips, but only ten times the wobble. As a share it shrinks, but in actual jobs it keeps growing, and your busiest server feels the actual jobs."
+  },
+  {
+   "id": "one_each",
+   "say": "Even with one job per server it's wasteful. Put 100 jobs on 100 servers, and about 37 servers get nothing, while the unluckiest gets 4."
+  },
+  {
+   "id": "turns",
+   "say": "So why not just take turns? Server 1, server 2, server 3, and around again.",
+   "chapter": "Taking turns, asking everyone"
+  },
+  {
+   "id": "turns_fail",
+   "say": "That's perfect if every job is the same size. They never are. A video upload can take far longer than a page view, and taking turns keeps feeding a server that's still stuck on three of them."
+  },
+  {
+   "id": "ask_all",
+   "say": "Then ask. Before each job, ask every server how busy it is, and pick the emptiest."
+  },
+  {
+   "id": "ask_all_works",
+   "say": "On paper, that's perfect. Every server ends at exactly 100."
+  },
+  {
+   "id": "cost",
+   "say": "But it's 100 questions for every job. For 10,000 jobs, a million questions, just to decide where things go."
+  },
+  {
+   "id": "cost_report",
+   "say": "And every server has to keep reporting its load to the balancer, all the time, just so the balancer can ask."
+  },
+  {
+   "id": "cost2",
+   "say": "A big site has thousands of servers and huge numbers of requests every second. Asking everyone, every time, is far too slow."
+  },
+  {
+   "id": "two_rule",
+   "say": "So here's the trick. Pick two servers at random. Ask just those two how busy they are. Send the job to the emptier one.",
+   "chapter": "The power of two choices"
+  },
+  {
+   "id": "two_cost",
+   "say": "Two questions per job, instead of 100."
+  },
+  {
+   "id": "example",
+   "say": "Watch it work on ten servers. A job comes in. The picks are server 3, with 4 jobs, and server 8, with 6. It goes to server 3."
+  },
+  {
+   "id": "example2",
+   "say": "Next job: server 8 again, and server 5, with 2. It goes to server 5. Server 8 keeps losing, because it's busy, and busy servers lose almost every comparison."
+  },
+  {
+   "id": "example3",
+   "say": "Notice what the balancer never needs: the full list of loads. Just two numbers, and which one is smaller."
+  },
+  {
+   "id": "two_result",
+   "say": "Run the same 10,000 jobs. The busiest server now gets about 102. From 26 extra jobs, down to 2."
+  },
+  {
+   "id": "subscribe",
+   "say": "If you like seeing the actual numbers behind the tech you use, subscribe. There's a new one every day."
+  },
+  {
+   "id": "why_intro",
+   "say": "So why does one extra look do so much? Think about what it takes to land on a busy server."
+  },
+  {
+   "id": "why_one",
+   "say": "With one random pick, if 10% of your servers are busy, a job lands on a busy one 10% of the time."
+  },
+  {
+   "id": "why_two",
+   "say": "With two picks, it only lands there if both picks are busy. That's 10% of 10%: one job in 100."
+  },
+  {
+   "id": "ladder_intro",
+   "say": "And that squaring snowballs. Roughly: say half the servers already have a job."
+  },
+  {
+   "id": "ladder",
+   "say": "To pile a second job onto one of them, both picks have to land in that half. 1 in 4."
+  },
+  {
+   "id": "ladder2",
+   "say": "To pile a third job on, both picks must hit the servers with two. 1 in 16. Then 1 in 256. Then 1 in 65,536."
+  },
+  {
+   "id": "ladder3",
+   "say": "Each step is the square of the one before. That's why the pile-up stops after just a few levels."
+  },
+  {
+   "id": "million",
+   "say": "Scale it up. A million jobs onto a million servers. Random puts 8 or 9 on the unluckiest one. Two choices: 4."
+  },
+  {
+   "id": "proof",
+   "say": "This was proven in the 1990s by four computer scientists: Azar, Broder, Karlin and Upfal. With random picks, the worst pile keeps growing as you add servers. With two picks, it grows so slowly that for any data center on Earth, it stays a handful."
+  },
+  {
+   "id": "heavy",
+   "say": "And the million-job test from before? Random was 250 over. Two choices: still about 2 over. It doesn't grow with the traffic at all."
+  },
+  {
+   "id": "three",
+   "say": "Myth one: more looks, more balance. So what about three picks? The busiest server gets 101. Barely better.",
+   "chapter": "Two myths"
+  },
+  {
+   "id": "three2",
+   "say": "Count the extra jobs. Random: 26. Two picks: 2. Three: 1. Asking all 100: zero. The first extra look removes 24 of the 26. Every look after that fights over the last two."
+  },
+  {
+   "id": "three3",
+   "say": "The giant leap is from one choice to two. After that, it's small change, and every look costs a question."
+  },
+  {
+   "id": "myth2",
+   "say": "Myth two: the more you know, the better you balance. That one's wrong too, and it's the most surprising part."
+  },
+  {
+   "id": "stale_intro",
+   "say": "Asking everyone looked like the gold standard. But in a real system, the load numbers are never live."
+  },
+  {
+   "id": "stale_why",
+   "say": "By the time a server reports how busy it is, and that report reaches the balancer, jobs have already come and gone."
+  },
+  {
+   "id": "herd",
+   "say": "So picture it. Every server looks busy except one. Every new job goes to that one, until the next report arrives. By then, it's swamped."
+  },
+  {
+   "id": "herd2",
+   "say": "This is called herding. The emptiest server becomes the fullest, then the next one does, and the next."
+  },
+  {
+   "id": "sim_setup",
+   "say": "I simulated it. 100 servers, running at 90% of their capacity, with jobs arriving and finishing all the time."
+  },
+  {
+   "id": "sim_fresh",
+   "say": "With fresh numbers, asking everyone wins: a new job finds less than one job ahead of it. Two choices: about 1. Random: 7."
+  },
+  {
+   "id": "sim_stale",
+   "say": "Now make the numbers a little old: as old as the time it takes to finish about 10 jobs."
+  },
+  {
+   "id": "sim_result",
+   "say": "Asking everyone collapses: 22 jobs ahead of you. That's three times worse than plain random. Two choices: about 3."
+  },
+  {
+   "id": "sim_worse",
+   "say": "Why worse than random? Random at least spreads its mistakes around. Old numbers make every job make the same mistake, at the same time, on the same server."
+  },
+  {
+   "id": "sim_why",
+   "say": "Two random picks don't all agree on the same server, so the herd never forms. A little randomness protects you from your own old information."
+  },
+  {
+   "id": "mitz",
+   "say": "Michael Mitzenmacher, who worked out much of this theory, showed the same thing in a paper with a perfect title: How useful is old information?"
+  },
+  {
+   "id": "nginx",
+   "say": "This isn't just theory. The web server Engine X has a setting for it called random two: pick two servers, send the request to the one with fewer connections.",
+   "chapter": "Where it runs"
+  },
+  {
+   "id": "envoy",
+   "say": "Envoy, a popular open-source load balancer, does it by default. Its least-request mode samples 2 servers and picks the less busy one. Its documentation gives the reason in two words: it resists herding."
+  },
+  {
+   "id": "envoy2",
+   "say": "Herding is exactly the failure from the last chapter. The people who build these tools picked two random choices on purpose."
+  },
+  {
+   "id": "hashing",
+   "say": "The same trick shrinks hash tables. Give every key two possible slots, put it in the emptier one, and the longest list stays tiny."
+  },
+  {
+   "id": "cuckoo",
+   "say": "Push it one step further, and you get cuckoo hashing, from Rasmus Pagh and Flemming Rodler in 2001. Every key gets two possible homes. If both are taken, the new key kicks the old one out, and the old one moves to its other home."
+  },
+  {
+   "id": "cuckoo2",
+   "say": "Like a cuckoo chick pushing eggs out of the nest. The payoff: to find any key, you only ever check two places. As long as the table stays under half full, inserting stays fast."
+  },
+  {
+   "id": "wrap1",
+   "say": "So here's the whole idea. Random is cheap, but it piles up, and the pile grows with traffic.",
+   "chapter": "The whole idea"
+  },
+  {
+   "id": "wrap2",
+   "say": "Asking everyone is perfect on paper, but slow, and it herds the moment the numbers are old."
+  },
+  {
+   "id": "wrap3",
+   "say": "Two random picks cost almost nothing, cut the pile-up from 26 extra jobs to 2, and shrug off old information."
+  },
+  {
+   "id": "wrap4",
+   "say": "One extra look. That's the whole trick."
+  },
+  {
+   "id": "cta",
+   "say": "Here's one for the comments. If a fifth of your servers are busy, how often does a two-choice job land on a busy one?"
+  }
+ ]
+}

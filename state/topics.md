@@ -50,3 +50,4 @@ through verify.py.
 - 2026-10-17  pin-guess (tech, how-to, hook claim; human-picked PINs, 1234 ~11%, dates 366/100)  cG7V4oZAT_w  12:00 Tallinn 17 Oct, LIVE scheduled
 - 2026-10-17  monty-hall (everyday, how-to, hook versus; switch wins 2 in 3, 100 doors)  bWxBLz3KmEY  20:00 Tallinn 17 Oct, LIVE scheduled
 - 2026-10-18  bus-bunching (everyday, how-to, hook claim; inspection paradox, bunched buses 5 -> 8.2 min, hold the early bus)  BmojS3ODdzA  12:00 Tallinn 18 Oct, LIVE scheduled
+- 2026-10-18  two-choices-long (tech, LONG-FORM 8:33, expands two-choices; balls into bins, herding with stale info, nginx/Envoy, cuckoo hashing)  18S_z368-_o  20:00 Tallinn 18 Oct, LIVE scheduled
