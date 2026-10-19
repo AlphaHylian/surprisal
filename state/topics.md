@@ -16,7 +16,6 @@ through verify.py.
   sides in exact proportions so the keeper gains nothing by guessing. Reveal: pro penalty data
   matches game theory (Palacios-Huerta). [check] (everyday/sport) (2026-10-15: the paper's cell-by-cell scoring table couldn't be fetched (PDF mirrors 403); find a readable source with the 2x2 numbers first)
 
-- Your download finished but is it broken? A checksum: one changed bit flips about half the hash, so a 1-in-a-billion-chance collision never fools you (SHA-256). [check] (tech)
 
 ## Used
 - 2026-09-30  birthday-paradox (sounds-fake)  eQS8gtimpvA  first public video, 9pm Tallinn
@@ -51,3 +50,4 @@ through verify.py.
 - 2026-10-18  bus-bunching (everyday, how-to, hook claim; inspection paradox, bunched buses 5 -> 8.2 min, hold the early bus)  BmojS3ODdzA  12:00 Tallinn 18 Oct, LIVE scheduled
 - 2026-10-18  two-choices-long (tech, LONG-FORM 8:33, expands two-choices; balls into bins, herding with stale info, nginx/Envoy, cuckoo hashing)  18S_z368-_o  20:00 Tallinn 18 Oct, LIVE scheduled
 - 2026-10-19  sock-drawer (everyday, how-to, hook versus; pigeonhole: 3 for any pair, 12 for a black pair, London hair counts)  2xKKSv5WUQc  12:00 Tallinn 19 Oct, LIVE scheduled
+- 2026-10-19  file-fingerprint (tech, how-to, hook claim; SHA-256 checksums, avalanche, byte-sum swap, pigeonhole twins, 2^128 / trillion years)  JjETWGaWEA0  20:00 Tallinn 19 Oct, LIVE scheduled

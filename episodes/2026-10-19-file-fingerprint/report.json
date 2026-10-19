@@ -3,8 +3,8 @@
  "problems": [],
  "warnings": [],
  "duration_s": 68.7,
- "size_mb": 4.3,
- "resolution": "540x960",
+ "size_mb": 12.5,
+ "resolution": "1080x1920",
  "caption_match_ratio": 0.995,
  "heard": "Your file has a twin nobody's ever found. Twins are guaranteed. Finding one isn't. Your four gigabyte download, broken, or swapped by someone. You can't compare four billion bytes. So compare fingerprints. The site lists one, 64 characters. Hash your copy. A match means the same file. Don't add up the bytes. Swap two and the sum stays. Alice 100, Bob 900 flips to Alice 900, Bob 100 passes. Use Shaw 256. It stirs your file through 64 rounds. Change one bit and about half of the 256 output bits flip. But 256 bits is a finite list, and files never run out. So twins must exist. Why can't an attacker make one? To find any matching pair, you'd hash about two to the 128 files. That's 340 trillion, trillion, trillion. Give all 8 billion people a computer doing a billion a second. Over a trillion years. The twin exists a trillion years away. So a match means you got the exact file the site published. Subscribe if you thought two files could never match.",
  "music": "Somewhere Sunny",
@@ -13,6 +13,6 @@
  "final_lufs": -15.0,
  "voice_engine": "omnivoice",
  "contact_sheet_every_s": 2.9,
- "build_seconds": 735,
- "draft": true
+ "build_seconds": 252,
+ "draft": false
 }
