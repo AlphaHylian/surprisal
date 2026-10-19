@@ -3,16 +3,16 @@
  "problems": [],
  "warnings": [],
  "duration_s": 49.7,
- "size_mb": 3.0,
- "resolution": "540x960",
+ "size_mb": 8.6,
+ "resolution": "1080x1920",
  "caption_match_ratio": 1.0,
  "heard": "Three socks for any pair, 12 for a black one. Not luck. Both numbers are guarantees, even on your worst morning. Your drawer, 10 black socks, 10 white, lights off. You can't see a thing. Grab two, worst case, one of each. No pair yet. Grab a third. It only has two colors to be, so it matches one. Pair, but today you need black. Now the drawer fights back. Worst case, all 10 white come out first. 10 grabs, zero black. The next two have to be black, 12. Any pair costs the colors plus one. A chosen color costs every other sock plus two. Same trick. Nobody has a million hairs, and London has over 9 million people. So at least 10 Londoners share an exact hair count. Now add 10 red socks. How many grabs for a black pair?",
  "music": "Digital Lemonade",
  "music_gap_db": 8.0,
  "speech_starts_at_s": 0.0,
- "final_lufs": -15.1,
+ "final_lufs": -15.2,
  "voice_engine": "omnivoice",
  "contact_sheet_every_s": 2.1,
- "build_seconds": 1176,
- "draft": true
+ "build_seconds": 295,
+ "draft": false
 }
