@@ -1,20 +1,18 @@
 {
- "ok": false,
- "problems": [
-  "speech starts at 0.25s; the first word must start at 0 (check the first beat is the first thing in construct() and nothing plays before it)"
- ],
+ "ok": true,
+ "problems": [],
  "warnings": [],
- "duration_s": 72.7,
- "size_mb": 4.6,
+ "duration_s": 68.7,
+ "size_mb": 4.3,
  "resolution": "540x960",
- "caption_match_ratio": 0.9953051643192489,
- "heard": "Every file has a twin nobody's ever found. The twins are guaranteed. Finding one is the part nobody can do. Your 4 GB download, broken, or swapped by someone. You can't compare 4 billion bytes. So compare fingerprints. The site lists one, 64 characters. Run the same recipe on your copy. Match means same file. Don't just add up the bytes. Swap two and the sum doesn't move. Alice 100, Bob 900 becomes Alice 900, Bob 100, and passes. Use SHA -256. It stirs your file through 64 rounds. Change one bit and about half of the 256 output bits flip. But 256 bits is a finite list, and files never run out. So twins must exist. Why can't an attacker make one? To find any matching pair, you'd hash about 2 to the 128 files. That's 340 trillion, trillion, trillion. Give all 8 billion people a computer, doing a billion a second. Over a trillion years, the twin exists. It's just a trillion years away. So a matching fingerprint means you got the exact file the site published. Subscribe if you thought two files could never match.",
+ "caption_match_ratio": 0.995,
+ "heard": "Your file has a twin nobody's ever found. Twins are guaranteed. Finding one isn't. Your four gigabyte download, broken, or swapped by someone. You can't compare four billion bytes. So compare fingerprints. The site lists one, 64 characters. Hash your copy. A match means the same file. Don't add up the bytes. Swap two and the sum stays. Alice 100, Bob 900 flips to Alice 900, Bob 100 passes. Use Shaw 256. It stirs your file through 64 rounds. Change one bit and about half of the 256 output bits flip. But 256 bits is a finite list, and files never run out. So twins must exist. Why can't an attacker make one? To find any matching pair, you'd hash about two to the 128 files. That's 340 trillion, trillion, trillion. Give all 8 billion people a computer doing a billion a second. Over a trillion years. The twin exists a trillion years away. So a match means you got the exact file the site published. Subscribe if you thought two files could never match.",
  "music": "Somewhere Sunny",
  "music_gap_db": 8.0,
- "speech_starts_at_s": 0.25,
+ "speech_starts_at_s": 0.01,
  "final_lufs": -15.0,
  "voice_engine": "omnivoice",
- "contact_sheet_every_s": 3.0,
- "build_seconds": 1745,
+ "contact_sheet_every_s": 2.9,
+ "build_seconds": 735,
  "draft": true
 }
