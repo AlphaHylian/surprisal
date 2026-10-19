@@ -85,8 +85,8 @@ const RuleOutBody: React.FC = () => {
           </div>
         </Appear>
       </At>
-      <At x={330} y={650}><Appear at={tGuar - 0.1} from="slam"><Chip size={80} color={C.mint}>3: always</Chip></Appear></At>
-      <At x={750} y={650}><Appear at={tGuar + 0.25} from="slam"><Chip size={80} color={C.amber}>12: always</Chip></Appear></At>
+      <At x={300} y={650}><Appear at={tGuar - 0.1} from="slam"><Chip size={68} color={C.mint}>3: always</Chip></Appear></At>
+      <At x={790} y={650}><Appear at={tGuar + 0.25} from="slam"><Chip size={68} color={C.amber}>12: always</Chip></Appear></At>
       <At x={540} y={900}><Appear at={tWorst - 0.1} from="up"><Icon name="AlarmClock" size={150} color={C.coral} /></Appear></At>
       <At x={540} y={1060}><Appear at={tWorst} from="up"><Text size={56} color={C.muted}>even on your worst morning</Text></Appear></At>
       <Sfx name="pack/wrong" at={tLuck} volume={0.25} />
@@ -138,7 +138,7 @@ const PairBody: React.FC = () => {
   const tThree = at.beat("three");
   const tThird = at.word("third.", 1, tThree + 0.6);
   const tTwo = at.word("two", 1, tThree + 1.6);
-  const tPair = at.word("Pair.", 1, tThree + 4.0);
+  const tPair = at.word("Pair.", 2, tThree + 4.0); // the 1st "pair" is "No pair yet"
   // the third sock flickers between the two colors it could be, then lands
   const flick = t >= tTwo && t < tPair ? (Math.floor((t - tTwo) / 0.35) % 2 === 0 ? "black" : "white") : t >= tPair ? "white" : "unknown";
   return (
@@ -236,8 +236,8 @@ const HairsBody: React.FC = () => {
   const LABELS = ["0", "1", "2", "…", "999,999"];
   return (
     <>
-      <Headline out={at.dur - 0.3}>Same trick</Headline>
-      <At x={540} y={400}><Appear at={tMillion - 0.2} from="up"><Text size={54} color={C.muted}>1 million hair counts = 1 million drawers</Text></Appear></At>
+      <Headline out={t10 - 0.4}>Same trick</Headline>
+      <At x={540} y={400}><Appear at={tMillion - 0.2} out={t10 - 0.4} from="up"><Text size={54} color={C.muted}>1 million hair counts = 1 million drawers</Text></Appear></At>
       <At x={540} y={740}>
         <div style={{ display: "flex", gap: 22, alignItems: "flex-end" }}>
           {LABELS.map((l, k) => (
