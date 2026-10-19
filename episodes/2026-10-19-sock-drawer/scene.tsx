@@ -38,8 +38,8 @@ const SockGrid: React.FC<{ colors: string[]; size?: number; perRow?: number; gap
 const HookBody: React.FC = () => {
   const at = useAt();
   const t = useT();
-  const t3 = at.word("3", 1, 1.0);
-  const t12 = at.word("12.", 1, 2.4);
+  const t3 = at.word("3", 1, 0.3);
+  const t12 = at.word("12", 1, 1.8);
   const whites = Math.round(tween(t, 0.2, t12, 4, 10));
   return (
     <>

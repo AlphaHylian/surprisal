@@ -31,7 +31,7 @@ const FileTag: React.FC<{ label: string; color?: string; size?: number }> = ({ l
 // ---------------------------------------------------------------- 1. hook
 const HookBody: React.FC = () => {
   const at = useAt();
-  const tFound = at.word("found", 1, 2.2);
+  const tFound = at.word("found.", 1, 2.2);
   return (
     <>
       <HookText>{"Every file has a **twin**.\nNobody's **found one**."}</HookText>

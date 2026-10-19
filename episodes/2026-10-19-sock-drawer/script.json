@@ -18,7 +18,9 @@
     "maths",
     "combinatorics"
   ],
-  "music_moods": ["upbeat"],
+  "music_moods": [
+    "upbeat"
+  ],
   "facts_checked": [
     "10 black + 10 white socks: 3 grabs guarantee a matching pair; 2 can fail (verify.py exhaustive worst case; 100,000 simulated shuffles never needed more than 3)",
     "A black pair needs 12 grabs in the worst case (all 10 white first) (verify.py exhaustive; simulated max 12)",
@@ -27,15 +29,45 @@
     "London population 9,122,909 (2025, infobox) -> at least 10 people share an exact hair count, ceil(9,122,909 / 1,000,001) = 10 (https://en.wikipedia.org/wiki/London; verify.py)"
   ],
   "beats": [
-    {"id": "hook", "say": "Dark room. Any pair takes 3 socks. A black pair takes 12."},
-    {"id": "ruleout", "say": "Not luck. Both numbers are guarantees, even on your worst morning."},
-    {"id": "drawer", "say": "Your drawer: 10 black socks, 10 white. Lights off. You can't see a thing."},
-    {"id": "two", "say": "Grab 2. Worst case: one of each. No pair yet."},
-    {"id": "three", "say": "Grab a third. It only has two colors to be, so it matches one. Pair."},
-    {"id": "rehook", "say": "But today you need black. Now the drawer fights back."},
-    {"id": "black", "say": "Worst case, all 10 white come out first. 10 grabs, zero black. The next 2 have to be black. 12."},
-    {"id": "payoff", "say": "Any pair costs the colors plus one. A chosen color costs every other sock, plus two."},
-    {"id": "hairs", "say": "Same trick: nobody has a million hairs, and London has over 9 million people. So at least 10 Londoners share an exact hair count."},
-    {"id": "cta", "say": "Now add 10 red socks. How many grabs for a black pair?"}
+    {
+      "id": "hook",
+      "say": "3 socks for any pair, 12 for a black one."
+    },
+    {
+      "id": "ruleout",
+      "say": "Not luck. Both numbers are guarantees, even on your worst morning."
+    },
+    {
+      "id": "drawer",
+      "say": "Your drawer: 10 black socks, 10 white. Lights off. You can't see a thing."
+    },
+    {
+      "id": "two",
+      "say": "Grab 2. Worst case: one of each. No pair yet."
+    },
+    {
+      "id": "three",
+      "say": "Grab a third. It only has two colors to be, so it matches one. Pair."
+    },
+    {
+      "id": "rehook",
+      "say": "But today you need black. Now the drawer fights back."
+    },
+    {
+      "id": "black",
+      "say": "Worst case, all 10 white come out first. 10 grabs, zero black. The next 2 have to be black. 12."
+    },
+    {
+      "id": "payoff",
+      "say": "Any pair costs the colors plus one. A chosen color costs every other sock, plus two."
+    },
+    {
+      "id": "hairs",
+      "say": "Same trick: nobody has a million hairs, and London has over 9 million people. So at least 10 Londoners share an exact hair count."
+    },
+    {
+      "id": "cta",
+      "say": "Now add 10 red socks. How many grabs for a black pair?"
+    }
   ]
 }

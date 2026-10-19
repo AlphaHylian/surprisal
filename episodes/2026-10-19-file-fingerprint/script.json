@@ -19,7 +19,9 @@
     "math",
     "maths"
   ],
-  "music_moods": ["upbeat"],
+  "music_moods": [
+    "upbeat"
+  ],
   "facts_checked": [
     "SHA-256 output: 256 bits = 64 hex characters (verify.py, hashlib)",
     "Byte sum is unchanged when two bytes swap: 'PAY ALICE 100 EUR, PAY BOB 900 EUR' -> 'PAY ALICE 900 ..., BOB 100 ...' same sum, different SHA-256 (verify.py)",
@@ -30,16 +32,49 @@
     "8 billion people x 1e9 tries/s: 2^128 tries -> 1.35e12 years, 50% -> 1.59e12 years: over a trillion years (verify.py)"
   ],
   "beats": [
-    {"id": "hook", "say": "Every file has a fingerprint twin. Nobody's ever found one."},
-    {"id": "ruleout", "say": "The twins are guaranteed. Finding one is the part nobody can do."},
-    {"id": "download", "say": "Your four-gigabyte download: broken, or swapped by someone? You can't compare 4 billion bytes."},
-    {"id": "compare", "say": "So compare fingerprints. The site lists one: 64 characters. Run the same recipe on your copy. Match means same file."},
-    {"id": "sum", "say": "Don't just add up the bytes. Swap two, and the sum doesn't move. Alice 100, Bob 900 becomes Alice 900, Bob 100, and passes."},
-    {"id": "sha", "say": "Use SHA-256. It stirs your file through 64 rounds. Change one bit, and about half of the 256 output bits flip."},
-    {"id": "rehook", "say": "But 256 bits is a finite list, and files never run out. So twins must exist. Why can't an attacker make one?"},
-    {"id": "tries", "say": "To find any matching pair, you'd hash about 2 to the 128 files. That's 340 trillion trillion trillion."},
-    {"id": "years", "say": "Give all 8 billion people a computer doing a billion a second. Over a trillion years."},
-    {"id": "payoff", "say": "The twin exists. It's just a trillion years away. So a matching fingerprint means you got the exact file the site published."},
-    {"id": "cta", "say": "Subscribe if you thought two files could never match."}
+    {
+      "id": "hook",
+      "say": "Every file has a twin nobody's ever found."
+    },
+    {
+      "id": "ruleout",
+      "say": "The twins are guaranteed. Finding one is the part nobody can do."
+    },
+    {
+      "id": "download",
+      "say": "Your four-gigabyte download: broken, or swapped by someone? You can't compare 4 billion bytes."
+    },
+    {
+      "id": "compare",
+      "say": "So compare fingerprints. The site lists one: 64 characters. Run the same recipe on your copy. Match means same file."
+    },
+    {
+      "id": "sum",
+      "say": "Don't just add up the bytes. Swap two, and the sum doesn't move. Alice 100, Bob 900 becomes Alice 900, Bob 100, and passes."
+    },
+    {
+      "id": "sha",
+      "say": "Use SHA-256. It stirs your file through 64 rounds. Change one bit, and about half of the 256 output bits flip."
+    },
+    {
+      "id": "rehook",
+      "say": "But 256 bits is a finite list, and files never run out. So twins must exist. Why can't an attacker make one?"
+    },
+    {
+      "id": "tries",
+      "say": "To find any matching pair, you'd hash about 2 to the 128 files. That's 340 trillion trillion trillion."
+    },
+    {
+      "id": "years",
+      "say": "Give all 8 billion people a computer doing a billion a second. Over a trillion years."
+    },
+    {
+      "id": "payoff",
+      "say": "The twin exists. It's just a trillion years away. So a matching fingerprint means you got the exact file the site published."
+    },
+    {
+      "id": "cta",
+      "say": "Subscribe if you thought two files could never match."
+    }
   ]
 }
