@@ -1,0 +1,41 @@
+{
+  "slug": "sock-drawer",
+  "format": "short",
+  "series": "everyday",
+  "hook_style": "how-to",
+  "hook_type": "versus",
+  "angle": "versus hook: in the dark, any pair takes 3 socks, a black pair takes 12; rule out luck: both are guarantees, even on your worst morning; drawer 10 black + 10 white, lights off; grab 2: worst case one of each; the third has only two colors to be, so it matches (pigeonhole); re-hook: today you need black, the drawer fights back; worst case all 10 white first, then 2 black = 12; payoff: any pair = colors plus one, a chosen color = every other sock plus two; reveal: same logic, a million possible hair counts and over 9 million Londoners -> at least 10 share an exact count; CTA comment: add 10 red, how many for a black pair (22). Length arm A.",
+  "title": "How many socks to grab in the dark for a pair",
+  "description": "In the dark, with 10 black and 10 white socks, 3 socks always give you a matching pair: 2 can be one of each, but the third has only two colors to be. A black pair is different: in the worst case all 10 white socks come out first, so you need 12. It's the pigeonhole principle, and the same argument proves at least 10 Londoners have exactly the same number of hairs (nobody has a million hairs, and London has over 9 million people).\n\nNumbers checked in code: exhaustive worst case over every possible handful, plus 100,000 simulated dark mornings. Sources: Wikipedia, Pigeonhole principle (sock and hair examples) and London (population 9,122,909, 2025).\n\nThe math behind real problems, twice a day. Subscribe and the next one finds you.\nFound an error? Comment and it gets pinned.\n#math #mathematics #shorts",
+  "social_caption": "Any pair of socks in the dark takes 3 grabs. A black pair takes 12. Here's why, and why 10 Londoners share a hair count.",
+  "tags": [
+    "sock drawer puzzle",
+    "pigeonhole principle",
+    "socks in the dark",
+    "math puzzle",
+    "logic puzzle",
+    "math",
+    "maths",
+    "combinatorics"
+  ],
+  "music_moods": ["upbeat"],
+  "facts_checked": [
+    "10 black + 10 white socks: 3 grabs guarantee a matching pair; 2 can fail (verify.py exhaustive worst case; 100,000 simulated shuffles never needed more than 3)",
+    "A black pair needs 12 grabs in the worst case (all 10 white first) (verify.py exhaustive; simulated max 12)",
+    "CTA answer: with 10 red added, a black pair needs 22; any pair needs 4 (verify.py)",
+    "Sock example and hair example, 'no one has more than 1,000,000 hairs' as an upper bound, ~150,000 typical (https://en.wikipedia.org/wiki/Pigeonhole_principle)",
+    "London population 9,122,909 (2025, infobox) -> at least 10 people share an exact hair count, ceil(9,122,909 / 1,000,001) = 10 (https://en.wikipedia.org/wiki/London; verify.py)"
+  ],
+  "beats": [
+    {"id": "hook", "say": "Dark room. Any pair takes 3 socks. A black pair takes 12."},
+    {"id": "ruleout", "say": "Not luck. Both numbers are guarantees, even on your worst morning."},
+    {"id": "drawer", "say": "Your drawer: 10 black socks, 10 white. Lights off. You can't see a thing."},
+    {"id": "two", "say": "Grab 2. Worst case: one of each. No pair yet."},
+    {"id": "three", "say": "Grab a third. It only has two colors to be, so it matches one. Pair."},
+    {"id": "rehook", "say": "But today you need black. Now the drawer fights back."},
+    {"id": "black", "say": "Worst case, all 10 white come out first. 10 grabs, zero black. The next 2 have to be black. 12."},
+    {"id": "payoff", "say": "Any pair costs the colors plus one. A chosen color costs every other sock, plus two."},
+    {"id": "hairs", "say": "Same trick: nobody has a million hairs, and London has over 9 million people. So at least 10 Londoners share an exact hair count."},
+    {"id": "cta", "say": "Now add 10 red socks. How many grabs for a black pair?"}
+  ]
+}
