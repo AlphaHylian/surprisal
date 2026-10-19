@@ -34,19 +34,19 @@ const HookBody: React.FC = () => {
   const tFound = at.word("found.", 1, 2.2);
   return (
     <>
-      <HookText>{"Every file has a **twin**.\nNobody's **found one**."}</HookText>
+      <HookText>{"Your file has a **twin**.\nNobody's **found it**."}</HookText>
       <Riser to={tFound} volume={0.5} />
       <Camera keys={[[0, { zoom: 1 }], [at.dur, { zoom: 1.05 }]]}>
-        <At x={290} y={640}><FileTag label="your file" /></At>
+        <At x={290} y={640}><FileTag label="your file" size={200} /></At>
         <At x={790} y={640}>
           <div style={{ position: "relative" }}>
-            <FileTag label="its twin" color={C.amber} />
-            <div style={{ position: "absolute", left: 0, right: 0, top: 30, textAlign: "center" }}><Text size={90} color={C.bg}>?</Text></div>
+            <FileTag label="its twin" color={C.amber} size={200} />
+            <div style={{ position: "absolute", left: 0, right: 0, top: 50, textAlign: "center" }}><Text size={110} color={C.bg}>?</Text></div>
           </div>
         </At>
-        <At x={290} y={900}><Hash hex={H1.slice(0, 16) + "…"} size={36} /></At>
-        <At x={790} y={900}><Hash hex={H1.slice(0, 16) + "…"} size={36} color={C.amber} lit={17} /></At>
-        <At x={540} y={1060}><Appear at={0} from="fade"><Text size={110} color={C.mint}>=</Text></Appear></At>
+        <At x={290} y={930}><Text size={44} font={F.mono}>{H1.slice(0, 12) + "…"}</Text></At>
+        <At x={790} y={930}><Text size={44} font={F.mono} color={C.amber}>{H1.slice(0, 12) + "…"}</Text></At>
+        <At x={540} y={930}><Text size={90} color={C.mint}>=</Text></At>
       </Camera>
       <Sfx name="pack/glitch" at={tFound} volume={0.25} />
     </>
@@ -57,11 +57,11 @@ const HookBody: React.FC = () => {
 const RuleOutBody: React.FC = () => {
   const at = useAt();
   const tGuar = at.word("guaranteed.", 1, 1.2);
-  const tNobody = at.word("nobody", 1, 3.0);
+  const tNobody = at.word("isn't.", 1, 2.2);
   return (
     <>
       <At x={540} y={480}><Appear at={tGuar - 0.2} from="slam"><Chip size={80} color={C.mint}>twins: guaranteed</Chip></Appear></At>
-      <At x={540} y={720}><Appear at={tNobody - 0.3} from="slam"><Chip size={80} color={C.coral}>finding one: nobody</Chip></Appear></At>
+      <At x={540} y={720}><Appear at={tNobody - 0.3} from="slam"><Chip size={80} color={C.coral}>finding one: never</Chip></Appear></At>
       <At x={540} y={950}><Appear at={tNobody} from="pop"><Icon name="SearchX" size={150} color={C.coral} /></Appear></At>
       <Sfx name="pack/wrong" at={tNobody} volume={0.25} />
     </>
@@ -106,15 +106,15 @@ const CompareBody: React.FC = () => {
   const at = useAt();
   const t = useT();
   const t64 = at.word("64", 1, 1.6);
-  const tRun = at.word("Run", 1, 2.8);
-  const tMatch = at.word("Match", 1, 4.6);
+  const tRun = at.word("Hash", 1, 2.8);
+  const tMatch = at.word("match", 1, 4.6);
   const lit = Math.floor(tween(t, tRun + 0.3, tMatch, 0, 64));
   return (
     <>
       <Headline out={at.dur - 0.3}>Compare fingerprints</Headline>
       <At x={540} y={400}><Appear at={0.1} from="left"><Text size={44} color={C.muted}>the site lists:</Text></Appear></At>
       <At x={540} y={500}><Appear at={0.3} from="left"><Hash size={40} /></Appear></At>
-      <At x={860} y={600}><Appear at={t64 - 0.1} from="pop"><Chip size={44} color={C.amber}>64 characters</Chip></Appear></At>
+      <At x={760} y={610}><Appear at={t64 - 0.1} from="pop"><Chip size={44} color={C.amber}>64 characters</Chip></Appear></At>
       <At x={540} y={720}><Appear at={tRun - 0.1} from="left"><Text size={44} color={C.muted}>your copy:</Text></Appear></At>
       <At x={540} y={820}><Appear at={tRun} from="left"><Hash size={40} lit={lit} /></Appear></At>
       <Punch at={tMatch}>
@@ -128,7 +128,7 @@ const CompareBody: React.FC = () => {
 
 // ---------------------------------------------------------------- 5. a byte sum misses a swap
 const Cheque: React.FC<{ a: string; b: string; hi?: boolean }> = ({ a, b, hi }) => (
-  <div style={{ fontFamily: F.mono, fontSize: 56, color: C.ink, background: C.panel, borderRadius: 18, padding: "18px 30px", border: `4px solid ${C.dim}` }}>
+  <div style={{ whiteSpace: "nowrap", fontFamily: F.mono, fontSize: 56, color: C.ink, background: C.panel, borderRadius: 18, padding: "18px 30px", border: `4px solid ${C.dim}` }}>
     ALICE <span style={{ color: hi ? C.coral : C.ink }}>{a}</span> BOB <span style={{ color: hi ? C.coral : C.ink }}>{b}</span>
   </div>
 );
@@ -136,8 +136,8 @@ const SumBody: React.FC = () => {
   const at = useAt();
   const t = useT();
   const tSwap = at.word("Swap", 1, 1.4);
-  const tBecomes = at.word("becomes", 1, 5.0);
-  const tPasses = at.word("passes.", 1, 7.4);
+  const tBecomes = at.word("flips", 1, 5.0);
+  const tPasses = at.word("Passes.", 1, 7.4);
   const swapped = t >= tBecomes;
   return (
     <>
@@ -158,12 +158,12 @@ const SumBody: React.FC = () => {
 
 // ---------------------------------------------------------------- 6. SHA-256: one bit flips half
 const BitGrid: React.FC<{ a: string; b: string; flipAt: number; t: number }> = ({ a, b, flipAt, t }) => (
-  <div style={{ display: "grid", gridTemplateColumns: "repeat(16, 44px)", gap: 6 }}>
+  <div style={{ display: "grid", gridTemplateColumns: "repeat(16, 34px)", gap: 6 }}>
     {a.split("").map((bit, i) => {
       const changed = a[i] !== b[i];
       const tf = flipAt + (i % 16) * 0.02 + Math.floor(i / 16) * 0.03;
       const now = t >= tf ? b[i] : bit;
-      return <div key={i} style={{ width: 44, height: 44, borderRadius: 8, background: now === "1" ? C.ink : C.dim,
+      return <div key={i} style={{ width: 34, height: 34, borderRadius: 6, background: now === "1" ? C.ink : C.dim,
         boxShadow: changed && t >= tf ? `0 0 0 4px ${C.amber}` : "none" }} />;
     })}
   </div>
@@ -178,7 +178,7 @@ const ShaBody: React.FC = () => {
   return (
     <>
       <Headline out={at.dur - 0.3} color={C.mint}>Use SHA-256</Headline>
-      <At x={540} y={390}>
+      <At x={540} y={380}>
         <Appear at={t64 - 0.2} from="up">
           <div style={{ display: "flex", gap: 14, alignItems: "baseline" }}>
             <Counter from={1} to={64} t0={t64 - 0.2} t1={t64 + 0.7} size={52} color={C.mint} />
@@ -186,12 +186,10 @@ const ShaBody: React.FC = () => {
           </div>
         </Appear>
       </At>
-      <Camera keys={[[0, { zoom: 1 }], [tOne, { zoom: 1 }], [tHalf, { zoom: 1.05, y: 720 }]]}>
-        <At x={540} y={720}><BitGrid a={B1} b={B2} flipAt={tOne + 0.3} t={t} /></At>
-      </Camera>
-      <At x={540} y={1090}><Appear at={tOne - 0.1} out={tHalf - 0.1} from="up"><Text size={56}>change <span style={{ color: C.amber }}>1 bit</span> of the file</Text></Appear></At>
+      <At x={540} y={760}><BitGrid a={B1} b={B2} flipAt={tOne + 0.3} t={t} /></At>
+      <At x={540} y={1130}><Appear at={tOne - 0.1} out={tHalf - 0.1} from="up"><Text size={56}>change <span style={{ color: C.amber }}>1 bit</span> of the file</Text></Appear></At>
       <Punch at={tFlip}>
-        <At x={540} y={1090}><Appear at={tHalf} from="slam"><Text size={70} color={C.amber} glow>138 of 256 bits flipped</Text></Appear></At>
+        <At x={540} y={1130}><Appear at={tHalf} from="slam"><Text size={64} color={C.amber} glow>138 of 256 bits flipped</Text></Appear></At>
       </Punch>
       <Sfx name="pack/gears" at={t64 - 0.2} volume={0.25} dur={1.0} />
       <Sfx name="pack/glitch-2" at={tOne + 0.3} volume={0.3} />
@@ -237,7 +235,7 @@ const TriesBody: React.FC = () => {
   const tY = at.beat("years");
   const t8 = at.word("8", 1, tY + 0.6);
   const tBil = at.word("billion", 2, tY + 2.4);
-  const tTril = at.word("trillion", 1, tY + 4.4);
+  const tTril = at.word("trillion", 4, tY + 4.4); // the first three are "340 trillion trillion trillion"
   return (
     <>
       <Headline out={tY - 0.3}>To find any twin</Headline>
@@ -247,8 +245,8 @@ const TriesBody: React.FC = () => {
           <At x={540} y={520}><Appear at={t128 - 0.2} from="slam"><Text size={150} color={C.amber} glow>2¹²⁸ tries</Text></Appear></At>
           <At x={540} y={790}>
             <Appear at={t340 - 0.1} from="up">
-              <div style={{ width: 900, textAlign: "center", fontFamily: F.mono, fontSize: 48, color: C.ink, wordBreak: "break-all", lineHeight: 1.2 }}>
-                340,000,000,000,000,000,000,000,000,000,000,000,000
+              <div style={{ textAlign: "center", fontFamily: F.mono, fontSize: 48, color: C.ink, lineHeight: 1.25, whiteSpace: "pre" }}>
+                {"340,000,000,000,000,000,\n000,000,000,000,000,000,000"}
               </div>
             </Appear>
           </At>
@@ -279,7 +277,7 @@ const TriesBody: React.FC = () => {
 // ---------------------------------------------------------------- 10-11. payoff + CTA
 const PayoffBody: React.FC = () => {
   const at = useAt();
-  const tMatching = at.word("matching", 1, 3.6);
+  const tMatching = at.word("match", 1, 3.6);
   const tExact = at.word("exact", 1, 5.4);
   const tCta = at.beat("cta");
   return (

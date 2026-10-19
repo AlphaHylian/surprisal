@@ -4,10 +4,10 @@
   "series": "tech",
   "hook_style": "how-to",
   "hook_type": "claim",
-  "angle": "claim hook: every file has a fingerprint twin, nobody's ever found one; rule out rarity: twins are guaranteed, finding one is the hard part; your 4 GB download: broken or swapped? can't compare 4 billion bytes; step 1 compare a 64-character fingerprint from the site; step 2 not a byte sum: swap two bytes ('Alice 100, Bob 900' -> 'Alice 900, Bob 100') and the sum passes; step 3 SHA-256: 64 rounds, flip one bit -> about half of 256 output bits flip (sim 128.0); re-hook: 256 bits is finite, files aren't (pigeonhole), so twins exist: why can't an attacker make one; step 4 ~2^128 tries = 340 trillion trillion trillion; 8 billion people x a billion a second = over a trillion years; payoff: the twin exists, a trillion years away, so a match means the exact file the site published; CTA subscribe if you thought two files could never match. Length arm B.",
+  "angle": "claim hook: your file has a twin nobody's ever found; rule out: twins are guaranteed, finding one isn't; your 4 GB download: broken or swapped? can't compare 4 billion bytes; step 1 compare a 64-character fingerprint from the site; step 2 not a byte sum: swap two bytes ('Alice 100, Bob 900' -> 'Alice 900, Bob 100') and the sum passes; step 3 SHA-256: 64 rounds, flip one bit -> about half of 256 output bits flip (sim 128.0); re-hook: 256 bits is finite, files aren't (pigeonhole), so twins exist: why can't an attacker make one; step 4 ~2^128 tries = 340 trillion trillion trillion; 8 billion people x a billion a second = over a trillion years; payoff: the twin exists, a trillion years away, so a match means the exact file the site published; CTA subscribe if you thought two files could never match. Length arm B.",
   "title": "How one 64-character code proves your download is real",
   "description": "A download page lists a SHA-256 fingerprint: 64 characters, 256 bits. Run the same function on your copy and compare. A simple sum of the bytes wouldn't do: swap two bytes and the sum stays the same. SHA-256 stirs the file through 64 rounds, so flipping a single bit changes about half of the 256 output bits. There are more possible files than fingerprints, so files with the same fingerprint must exist, but finding any matching pair takes about 2^128 tries: with 8 billion people each running a billion tries a second, over a trillion years. Nobody has ever published a collision for full SHA-256.\n\nNumbers checked in code: 100,000 one-bit flips (average 128.0 of 256 bits changed), the byte-swap example, and the 2^128 arithmetic. Sources: Wikipedia, SHA-2 (64 rounds; no attack on the full function) and Birthday attack (about 4.0×10^38 hashes for a 50% chance at 256 bits).\n\nThe math behind real problems, twice a day. Subscribe and the next one finds you.\nFound an error? Comment and it gets pinned.\n#math #mathematics #shorts",
-  "social_caption": "Every file has a twin with the same fingerprint, and nobody has ever found one. Here's how a 64-character code proves your download is real.",
+  "social_caption": "Your file has a twin with the same fingerprint, and nobody has ever found one. Here's how a 64-character code proves your download is real.",
   "tags": [
     "sha256",
     "checksum",
@@ -34,11 +34,11 @@
   "beats": [
     {
       "id": "hook",
-      "say": "Every file has a twin nobody's ever found."
+      "say": "Your file has a twin nobody's ever found."
     },
     {
       "id": "ruleout",
-      "say": "The twins are guaranteed. Finding one is the part nobody can do."
+      "say": "Twins are guaranteed. Finding one isn't."
     },
     {
       "id": "download",
@@ -46,11 +46,11 @@
     },
     {
       "id": "compare",
-      "say": "So compare fingerprints. The site lists one: 64 characters. Run the same recipe on your copy. Match means same file."
+      "say": "So compare fingerprints. The site lists one: 64 characters. Hash your copy. A match means the same file."
     },
     {
       "id": "sum",
-      "say": "Don't just add up the bytes. Swap two, and the sum doesn't move. Alice 100, Bob 900 becomes Alice 900, Bob 100, and passes."
+      "say": "Don't add up the bytes. Swap two, and the sum stays. Alice 100, Bob 900 flips to Alice 900, Bob 100. Passes."
     },
     {
       "id": "sha",
@@ -70,7 +70,7 @@
     },
     {
       "id": "payoff",
-      "say": "The twin exists. It's just a trillion years away. So a matching fingerprint means you got the exact file the site published."
+      "say": "The twin exists, a trillion years away. So a match means you got the exact file the site published."
     },
     {
       "id": "cta",
