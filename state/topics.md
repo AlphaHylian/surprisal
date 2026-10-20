@@ -51,3 +51,4 @@ through verify.py.
 - 2026-10-18  two-choices-long (tech, LONG-FORM 8:33, expands two-choices; balls into bins, herding with stale info, nginx/Envoy, cuckoo hashing)  18S_z368-_o  20:00 Tallinn 18 Oct, LIVE scheduled
 - 2026-10-19  sock-drawer (everyday, how-to, hook versus; pigeonhole: 3 for any pair, 12 for a black pair, London hair counts)  2xKKSv5WUQc  12:00 Tallinn 19 Oct, LIVE scheduled
 - 2026-10-19  file-fingerprint (tech, how-to, hook claim; SHA-256 checksums, avalanche, byte-sum swap, pigeonhole twins, 2^128 / trillion years)  JjETWGaWEA0  20:00 Tallinn 19 Oct, LIVE scheduled
+- 2026-10-20  escalator-stand (everyday, how-to, hook versus; TfL Holborn pilot: stand on both sides 12,745 -> 16,220 (+27%), 56 vs 62 a minute, 4 in 10 walk at 24 m, short escalators -10%)  e5N-MQARAD8  12:00 Tallinn 20 Oct, LIVE scheduled

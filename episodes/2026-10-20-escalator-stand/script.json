@@ -1,0 +1,81 @@
+{
+  "slug": "escalator-stand",
+  "format": "short",
+  "series": "everyday",
+  "hook_style": "how-to",
+  "hook_type": "versus",
+  "angle": "versus hook: walk on the left, or everyone stands: one moves 27% more people; rule out: walking is faster for you, not for the crowd; a 24-meter escalator, a step every half second, 112 a minute; standers leave one empty step: 56 a minute per side; walkers go faster but leave two: a full walking lane carries 62; re-hook: so walking wins? only if the lane is full; 24 m is about 8 floors, only 4 in 10 will climb it, so the walking lane runs half empty while the standing queue grows; fix: everyone stands, both sides: 112 a minute; proof: London tried it at Holborn, the same escalator carried 16,220 people in the test hour instead of 12,745 (+27%); twist: on a short escalator more people walk, and forcing them to stand cut the flow by 10% (Canary Wharf); CTA subscribe if you've glared at someone standing on the left. Length arm B.",
+  "title": "Why standing still gets more people up the escalator",
+  "description": "A step of a London Underground escalator passes every half second, 112 a minute. People standing leave one empty step in front, so a standing lane carries about 56 people a minute; walkers leave two, so even a full walking lane only carries about 62. On a tall escalator like Holborn's (24 m) only about 4 in 10 people will walk, so the walking lane runs half empty while the standing queue grows. When TfL made everyone stand on both sides, the same escalator carried 16,220 people in the test hour instead of 12,745: 27% more. On short escalators, where more people walk, it backfires: forcing everyone to stand cut the flow by about 10%.\n\nNumbers checked in code: TfL's capacity model, plus a simulated rush hour of 100,000 people. Source: TfL, Report on Holborn Station Pilot (FOI 2015-1920), sections 5.1 and 7.2.\n\nThe math behind real problems, twice a day. Subscribe and the next one finds you.\nFound an error? Comment and it gets pinned.\n#math #mathematics #shorts",
+  "social_caption": "Walk on the left, or everyone stands: one moves 27% more people up the escalator. London tested it.",
+  "tags": [
+    "escalator",
+    "stand on the right",
+    "london underground",
+    "holborn",
+    "tfl",
+    "queueing",
+    "math",
+    "maths",
+    "traffic flow"
+  ],
+  "music_moods": [
+    "upbeat"
+  ],
+  "facts_checked": [
+    "Escalator speed 0.75 m/s, step depth 0.4 m -> a step every 0.533 s, 112.5 steps a minute (TfL report section 5.1; verify.py)",
+    "Standing with one empty step: 56.25 people a minute per side; walking at 0.5 m/s on top with two empty steps: 62.5 a minute; both sides standing 112.5 (TfL report section 5.1; verify.py)",
+    "Holborn escalator rise 24 m -> an estimated 40% of customers willing to walk (TfL report section 5.1); 24 m ~ 8 floors at 3 m a floor (verify.py)",
+    "Walk-left with 40% walkers: 56.25 + 37.5 = 93.75 a minute vs 112.5 standing (+20% in theory); simulated rush hour of 100,000 people agrees (verify.py)",
+    "Measured: escalator 5 at Holborn, 1-hour peak test: about 12,745 customers with walking allowed (week 2) vs about 16,220 standing only (week 3), +27% ('around a 30% increase') (TfL report section 7.2)",
+    "Canary Wharf (10 m rise): making people stand would reduce throughput by approximately 10% during heavy usage (TfL report section 4, citing Harley 2015)",
+    "Source: https://foi.tfl.gov.uk/FOI-2015-1920/2015-1920-Report%20on%20Holborn%20Station%20Pilot_Redacted.pdf"
+  ],
+  "beats": [
+    {
+      "id": "hook",
+      "say": "Walk, or stand: one moves 27% more people.",
+      "speed": 1.12
+    },
+    {
+      "id": "ruleout",
+      "say": "Walking is faster for you. Not for the crowd."
+    },
+    {
+      "id": "context",
+      "say": "Your escalator: 24 meters tall. A step passes every half second. That's 112 a minute."
+    },
+    {
+      "id": "stand",
+      "say": "People standing leave one empty step in front. So each side carries 56 people a minute."
+    },
+    {
+      "id": "walk",
+      "say": "Walkers move faster, but leave two empty steps. A full walking lane carries 62."
+    },
+    {
+      "id": "rehook",
+      "say": "So walking wins? Only if the lane is full. It isn't."
+    },
+    {
+      "id": "climb",
+      "say": "24 meters is about 8 floors. Only 4 in 10 people will climb that. The walking lane runs half empty, while the standing queue grows."
+    },
+    {
+      "id": "fix",
+      "say": "So make everyone stand, on both sides. Two full lanes, 112 a minute."
+    },
+    {
+      "id": "proof",
+      "say": "London tried it at Holborn station. The same escalator carried 16,220 people in the test hour, instead of 12,745. 27% more."
+    },
+    {
+      "id": "twist",
+      "say": "But on a short escalator, more people walk, and making them stand cut the flow by 10%."
+    },
+    {
+      "id": "cta",
+      "say": "Subscribe if you've ever glared at someone standing on the left."
+    }
+  ]
+}

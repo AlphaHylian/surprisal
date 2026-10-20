@@ -1,0 +1,71 @@
+{
+  "slug": "longitude-clock",
+  "format": "short",
+  "series": "history",
+  "hook_style": "how-to",
+  "hook_type": "claim",
+  "angle": "claim hook: one minute wrong on your clock puts your ship 28 km off; rule out the compass (north, not how far east); step 1 wait for the sun to peak: local noon; step 2 check a clock still set to home: 3 pm; step 3 Earth turns 15 degrees an hour, 3 hours = 45 degrees west; re-hook: the clock has to ride a rolling ship for months; step 4 every minute of drift = a quarter degree = 28 km at the equator; Britain offered 20,000 pounds for half a degree = 2 minutes; payoff: Harrison's sea watch, 81 days to Jamaica, off by 5 seconds, 24 times better than the prize asked; CTA comment: at your noon home says 9 pm, how far west (135 degrees). Length arm A.",
+  "title": "How a clock tells your ship where it is",
+  "description": "At sea, a compass gives you north but not how far east or west you are. The fix is a clock: at local noon (the sun at its highest), read a clock still set to home time. Earth turns 15 degrees an hour, so 3 hours behind home means 45 degrees west, and every minute the clock drifts puts you a quarter of a degree, about 28 km at the equator, off. The 1714 Longitude Act offered £20,000 for half a degree, a 2-minute error; on its 1761-62 trial to Jamaica, 81 days at sea, John Harrison's H4 sea watch was 5 seconds off once its known daily rate was allowed for.\n\nNumbers checked in code (including 100,000 simulated ships). Sources: Wikipedia, John Harrison (H4 trial) and Longitude prize (the Act's thresholds).\n\nThe math behind real problems, twice a day. Subscribe and the next one finds you.\nFound an error? Comment and it gets pinned.\n#math #mathematics #shorts",
+  "social_caption": "One minute wrong on your clock puts your ship 28 km off. Here's how a clock finds longitude, and the watch that won.",
+  "tags": [
+    "longitude",
+    "john harrison",
+    "marine chronometer",
+    "navigation",
+    "longitude prize",
+    "history",
+    "math",
+    "maths",
+    "history of science"
+  ],
+  "music_moods": [
+    "curious"
+  ],
+  "facts_checked": [
+    "Earth turns 360 degrees in 24 hours = 15 degrees an hour; 3 hours = 45 degrees; 1 minute = 0.25 degrees (verify.py)",
+    "1 degree of longitude at the equator = 111.32 km (WGS84 radius 6,378.137 km), so 1 minute of clock error = 27.8 km, said 28 (verify.py; 100,000 simulated ships)",
+    "Longitude Act 1714: GBP 20,000 for a method accurate within 30 minutes of arc = half a degree = 2 minutes of time (https://en.wikipedia.org/wiki/Longitude_prize; verify.py)",
+    "H4 trial to Jamaica, 81 days and 5 hours; found 5 seconds slow against the known longitude of Kingston (after its daily rate), an error of 1.25 minutes of longitude (https://en.wikipedia.org/wiki/John_Harrison); 120 / 5 = 24 times inside the prize (verify.py)",
+    "CTA answer: home clock 9 pm at your noon = 9 hours = 135 degrees west (verify.py)"
+  ],
+  "beats": [
+    {
+      "id": "hook",
+      "say": "One minute wrong puts your ship 28 kilometers off.",
+      "speed": 1.12
+    },
+    {
+      "id": "ruleout",
+      "say": "Your compass shows north. It can't tell you how far east you are."
+    },
+    {
+      "id": "noon",
+      "say": "So wait for the sun to peak. That's noon, right where you are."
+    },
+    {
+      "id": "home",
+      "say": "Now check a clock still set to home time. Say it reads 3 pm."
+    },
+    {
+      "id": "turn",
+      "say": "Earth turns 15 degrees an hour. 3 hours behind home means 45 degrees west."
+    },
+    {
+      "id": "rehook",
+      "say": "But that clock has to ride a rolling ship for months."
+    },
+    {
+      "id": "drift",
+      "say": "Every minute it drifts is a quarter of a degree. 28 kilometers at the equator. Britain offered 20,000 pounds for half a degree: a 2 minute error."
+    },
+    {
+      "id": "payoff",
+      "say": "John Harrison's sea watch sailed to Jamaica, 81 days, and was off by 5 seconds. 24 times better than the prize asked."
+    },
+    {
+      "id": "cta",
+      "say": "So, at your noon, home says 9 pm. How far west are you?"
+    }
+  ]
+}

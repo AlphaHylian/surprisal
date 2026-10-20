@@ -1,0 +1,18 @@
+{
+ "ok": true,
+ "problems": [],
+ "warnings": [],
+ "duration_s": 64.2,
+ "size_mb": 12.3,
+ "resolution": "1080x1920",
+ "caption_match_ratio": 0.989247311827957,
+ "heard": "Walk or stand, one moves 27 % more people. Walking is faster for you. Not for the crowd. Your escalator, 24 meters tall. A step passes every half second. That's 112 a minute. People standing leave one empty step in front. So each side carries 56 people a minute. Walkers move faster, but leave two empty steps. A full walking lane carries 62. So walking wins, only if the lane is full. It isn't. 24 meters is about eight floors. Only four in 10 people will climb that. The walking lane runs half empty while the standing queue grows. So make everyone stand on both sides. Two full lanes, 112 a minute. London tried it at Holborn Station. The same escalator carried 16 ,220 people in the test hour instead of 12 ,745, 27 % more. But on a short escalator, more people walk and making them stand cut the flow by 10%. Subscribe if you've ever glared at someone standing on the left.",
+ "music": "Tech Talk",
+ "music_gap_db": 8.0,
+ "speech_starts_at_s": 0.01,
+ "final_lufs": -14.9,
+ "voice_engine": "omnivoice",
+ "contact_sheet_every_s": 2.7,
+ "build_seconds": 224,
+ "draft": false
+}
