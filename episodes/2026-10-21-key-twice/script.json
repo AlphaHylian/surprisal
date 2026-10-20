@@ -1,0 +1,69 @@
+{
+  "slug": "key-twice",
+  "format": "short",
+  "series": "history",
+  "hook_style": "how-to",
+  "hook_type": "versus",
+  "angle": "versus hook: a secret key used once is unbreakable, used twice it's broken; rule out a faster computer: the second message gives the key away; your message ATTACK, key 6 random letters, shift each letter by its key letter -> XFVKNA; the spy tries keys: one reads ATTACK, another DEFEND, every 6-letter message fits equally (perfect secrecy); re-hook: random keys are slow to make, so you reuse yours; the spy subtracts one sent message from the other and the key cancels; guess one word (ATTACK) and the other message falls out (RETIRE), and so does the key; reveal: in 1942 Soviet printers made duplicate key pages, US codebreakers read about 3,000 messages and caught atom bomb spies (Venona); CTA subscribe if you'd have reused the key. Length arm A.",
+  "title": "Why a secret key used twice is a key given away",
+  "description": "A one-time pad shifts each letter of your message by a random key letter. Used once, it can't be broken: the same ciphertext reads ATTACK with one key and DEFEND with another, and every 6-letter message is equally likely. Use the key twice and subtracting the two ciphertexts cancels it out, so guessing one word in one message reveals the other message and the key. That's how US codebreakers (the Venona project) read about 3,000 Soviet messages after Soviet printers duplicated key pages in 1942.\n\nNumbers checked in code: every letter on screen computed, 100,000 random keys per message to check the ciphertext is uniform, and 100,000 reused-key pairs to check the key always cancels. Sources: Wikipedia, One-time pad and Venona project.\n\nThe math behind real problems, twice a day. Subscribe and the next one finds you.\nFound an error? Comment and it gets pinned.\n#math #mathematics #shorts",
+  "social_caption": "A secret key used once can't be broken. Used twice, it falls apart with one subtraction. Here's how Soviet spies got caught.",
+  "tags": [
+    "one-time pad",
+    "venona project",
+    "cryptography",
+    "codebreaking",
+    "cold war spies",
+    "encryption",
+    "math",
+    "maths",
+    "history"
+  ],
+  "facts_checked": [
+    "ATTACK + key XMCKLQ (letters shifted mod 26) = XFVKNA; RETIRE + the same key = OQVSCU (verify.py)",
+    "Key UBQGAX makes XFVKNA read DEFEND: any 6-letter message is possible from the ciphertext (verify.py; 100,000 random keys each for ATTACK and DEFEND give uniform ciphertext letters)",
+    "Perfect secrecy: 'a ciphertext can be translated into any plaintext of the same length, and all are equally likely'; key must be random, as long as the message, never reused; Wikipedia's HELLO + XMCKL = EQNVZ example reproduced (https://en.wikipedia.org/wiki/One-time_pad)",
+    "Reuse: subtracting the ciphertexts gives message 1 minus message 2, key gone (verify.py, 100,000 random pairs); guessing ATTACK yields RETIRE and the key XMCKLQ (verify.py); 'The most famous exploit of this vulnerability occurred with the Venona project' (https://en.wikipedia.org/wiki/One-time_pad)",
+    "Venona: Soviet duplicate key pages produced in 1942 (~35,000 pages); US Army Signal Intelligence Service decrypted and translated approximately 3,000 messages; revealed Soviet espionage at Los Alamos, identified Klaus Fuchs and the Rosenbergs (https://en.wikipedia.org/wiki/Venona_project)"
+  ],
+  "beats": [
+    {
+      "id": "hook",
+      "say": "Use a key once: unbreakable. Twice: broken.",
+      "speed": 1.12
+    },
+    {
+      "id": "ruleout",
+      "say": "Not a faster computer. Message two gives the key away."
+    },
+    {
+      "id": "encrypt",
+      "say": "Your message: attack. Your key: 6 random letters. Shift each letter forward by its key letter."
+    },
+    {
+      "id": "spy",
+      "say": "A spy tries keys. One reads attack. Another reads defend. Every 6-letter message fits equally. Unbreakable."
+    },
+    {
+      "id": "rehook",
+      "say": "But random keys are slow to make. So you reuse yours once."
+    },
+    {
+      "id": "cancel",
+      "say": "The spy subtracts one message from the other. Your key cancels out."
+    },
+    {
+      "id": "guess",
+      "say": "Now the spy guesses one word, attack. Your other message drops out: retire. And so does your key."
+    },
+    {
+      "id": "venona",
+      "say": "In 1942, Soviet printers duplicated key pages. American codebreakers read about 3,000 messages and caught atom bomb spies."
+    },
+    {
+      "id": "cta",
+      "say": "Subscribe if you'd have reused the key."
+    }
+  ],
+  "music": "late-night-radio.mp3"
+}

@@ -1,0 +1,18 @@
+{
+ "ok": true,
+ "problems": [],
+ "warnings": [],
+ "duration_s": 48.2,
+ "size_mb": 10.4,
+ "resolution": "1080x1920",
+ "caption_match_ratio": 0.9838709677419355,
+ "heard": "Use a key once unbreakable, twice broken. Not a faster computer. Message two gives the key away. Your message, attack. Your key, six random letters. Shift each letter forward by its key letter. A spy tries keys. One reads attack. Another reads defend. Every six letter message fits equally. Unbreakable. But random keys are slow to make, so you reuse yours once. The spy subtracts one message from the other. Your key cancels out. Now the spy guesses one word, attack. Your other message drops out, retire. And so does your key. In 1942, Soviet printers duplicated key pages. American code breakers read about 3 ,000 messages and caught atom bomb spies. Subscribe if you'd have reused the key.",
+ "music": "Late Night Radio",
+ "music_gap_db": 8.0,
+ "speech_starts_at_s": 0.0,
+ "final_lufs": -15.1,
+ "voice_engine": "omnivoice",
+ "contact_sheet_every_s": 2.0,
+ "build_seconds": 1598,
+ "draft": false
+}
