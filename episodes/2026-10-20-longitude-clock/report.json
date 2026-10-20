@@ -3,8 +3,8 @@
  "problems": [],
  "warnings": [],
  "duration_s": 45.9,
- "size_mb": 3.0,
- "resolution": "540x960",
+ "size_mb": 8.7,
+ "resolution": "1080x1920",
  "caption_match_ratio": 0.9788732394366197,
  "heard": "One minute wrong puts your ship 28 kilometers off. Your compass shows north. It can't tell you how far east you are. So wait for the sun to peak. That's noon right where you are. Now check a clock still set to home time. Say it reads 3 p .m. Earth turns 15 degrees an hour. Three hours behind home means 45 degrees west. But that clock has to ride a rolling ship for months. Every minute it drifts is a quarter of a degree, 28 kilometers at the equator. Britain offered 20 ,000 pounds for half a degree. A two minute error. John Harrison's sea watch sailed to Jamaica 81 days and was off by five seconds. 24 times better than the prize asked. So at your noon home says 9 p .m. How far west are you?",
  "music": "Investigations",
@@ -14,5 +14,5 @@
  "voice_engine": "omnivoice",
  "contact_sheet_every_s": 2.0,
  "build_seconds": 170,
- "draft": true
+ "draft": false
 }

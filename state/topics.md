@@ -16,6 +16,8 @@ through verify.py.
   sides in exact proportions so the keeper gains nothing by guessing. Reveal: pro penalty data
   matches game theory (Palacios-Huerta). [check] (everyday/sport) (2026-10-15: the paper's cell-by-cell scoring table couldn't be fetched (PDF mirrors 403); find a readable source with the 2x2 numbers first)
 
+- You're queueing at a supermarket with 4 tills: one snake line vs 4 separate lines (same average, far less worst-case wait; the variance math). [check] (everyday)
+- You're a WWII codebreaker: why a one-time pad is unbreakable and reusing it once breaks it (Venona). [check] (history)
 
 ## Used
 - 2026-09-30  birthday-paradox (sounds-fake)  eQS8gtimpvA  first public video, 9pm Tallinn
@@ -52,3 +54,4 @@ through verify.py.
 - 2026-10-19  sock-drawer (everyday, how-to, hook versus; pigeonhole: 3 for any pair, 12 for a black pair, London hair counts)  2xKKSv5WUQc  12:00 Tallinn 19 Oct, LIVE scheduled
 - 2026-10-19  file-fingerprint (tech, how-to, hook claim; SHA-256 checksums, avalanche, byte-sum swap, pigeonhole twins, 2^128 / trillion years)  JjETWGaWEA0  20:00 Tallinn 19 Oct, LIVE scheduled
 - 2026-10-20  escalator-stand (everyday, how-to, hook versus; TfL Holborn pilot: stand on both sides 12,745 -> 16,220 (+27%), 56 vs 62 a minute, 4 in 10 walk at 24 m, short escalators -10%)  e5N-MQARAD8  12:00 Tallinn 20 Oct, LIVE scheduled
+- 2026-10-20  longitude-clock (history, how-to, hook claim; longitude by clock, 15 degrees an hour, 1 minute = 28 km, Longitude Act half a degree = 2 minutes, Harrison H4 5 s in 81 days)  oBozMJ4TtQU  20:00 Tallinn 20 Oct, LIVE scheduled
