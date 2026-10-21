@@ -1,0 +1,18 @@
+{
+ "ok": true,
+ "problems": [],
+ "warnings": [],
+ "duration_s": 60.3,
+ "size_mb": 11.6,
+ "resolution": "1080x1920",
+ "caption_match_ratio": 0.9832402234636871,
+ "heard": "You braked for the camera. You still got fined. It never clocked your speed. It clocked your time. Two cameras, five kilometers apart. The limit is 100. Camera one reads your plate. Camera two reads it 150 seconds later. Five kilometers in 150 seconds is 120 kilometers an hour over the limit, but you break to 95 at both cameras. So how can they find a speed nobody saw? Draw your speed 95 at the start, 95 at the end. To average 120, it has to climb above 120. Your speed can't jump, so on the way up it passes 120 exactly. At that moment you were doing 120. At 100, those five kilometers take three minutes. You saved 30 seconds. Your speedometer always hits your average at least once. That's the mean value theorem. The camera never needed to see you. Camera's 10 kilometers apart, five minutes between them. Are you fined?",
+ "music": "Airport Lounge",
+ "music_gap_db": 8.0,
+ "speech_starts_at_s": 0.01,
+ "final_lufs": -15.1,
+ "voice_engine": "omnivoice",
+ "contact_sheet_every_s": 2.5,
+ "build_seconds": 201,
+ "draft": false
+}

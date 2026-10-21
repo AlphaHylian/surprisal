@@ -16,6 +16,9 @@ through verify.py.
   sides in exact proportions so the keeper gains nothing by guessing. Reveal: pro penalty data
   matches game theory (Palacios-Huerta). [check] (everyday/sport) (2026-10-15: the paper's cell-by-cell scoring table couldn't be fetched (PDF mirrors 403); find a readable source with the 2x2 numbers first)
 
+- You flip a bent coin to decide something and it lands heads 70% of the time. Steps: flip twice, HT = heads, TH = tails, HH/TT flip again; both orders have the same chance p(1-p), so it's exactly 50/50; costs about 1/(p(1-p)) pairs. Reveal: von Neumann, 1951; hardware random number generators clean bias the same way. (tech/everyday) [check]
+- You're splitting a cake (or rent) between three people and someone always feels cheated. Steps: cut-and-choose for two, then the moving-knife / last-diminisher for three; envy-free vs proportional. Reveal: fair division (Steinhaus, 1940s). (everyday) [check]
+- Your elevator always seems to go the wrong way when you're waiting. Steps: on a low floor most of the shaft is above you, so the car is usually above and arrives going down. Reveal: Gamow and Stern's elevator paradox (1958). (everyday) [check]
 
 ## Used
 - 2026-09-30  birthday-paradox (sounds-fake)  eQS8gtimpvA  first public video, 9pm Tallinn
@@ -55,3 +58,4 @@ through verify.py.
 - 2026-10-20  longitude-clock (history, how-to, hook claim; longitude by clock, 15 degrees an hour, 1 minute = 28 km, Longitude Act half a degree = 2 minutes, Harrison H4 5 s in 81 days)  oBozMJ4TtQU  20:00 Tallinn 20 Oct, LIVE scheduled
 - 2026-10-21  key-twice (history, how-to, hook versus; one-time pad: ATTACK + XMCKLQ = XFVKNA, any 6-letter message fits, reuse cancels the key, guess ATTACK -> RETIRE; Venona: 1942 duplicate pages, ~3,000 messages)  kPA9NEn4qJ0  12:00 Tallinn 21 Oct, LIVE scheduled (made by the late 20 Oct run)
 - (dropped from Ready) snake line vs 4 tills: already made as one-line (8 Oct, -JjFieXeoUA)
+- 2026-10-21  average-speed (everyday, how-to, hook claim; average speed cameras: 5 km in 150 s = 120 km/h, braked to 95 at both, mean value theorem: passes 120 exactly; at 100 it takes 3 min, 30 s saved; SPECS since 1999)  sKsrfEgTi4Y  20:00 Tallinn 21 Oct, LIVE scheduled

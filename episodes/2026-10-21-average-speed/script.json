@@ -1,0 +1,76 @@
+{
+  "slug": "average-speed",
+  "format": "short",
+  "series": "everyday",
+  "hook_style": "how-to",
+  "hook_type": "claim",
+  "angle": "claim hook: you braked for the camera and still got fined; rule out a radar: it never clocked your speed, it clocked your time; two cameras 5 km apart, limit 100; camera one reads your plate, camera two 150 s later; 5 km in 150 s = 120 km/h; complication + re-hook: you braked to 95 at both cameras, so how can they fine a speed nobody saw; draw your speed: 95 at both ends, to average 120 the line must climb above 120; speed can't jump, so it passes 120 exactly (mean value theorem); at 100 the 5 km take 3 minutes, you saved 30 s; payoff: your speedometer hits your average at least once, cameras have done this since 1999 (SPECS); CTA checkable comment question: 10 km apart, 5 minutes, fined? (120, yes). Length arm B.",
+  "title": "Why braking at the speed camera doesn't save you",
+  "description": "Average speed cameras never measure your speed. They read your number plate at two points and divide: 5 km in 150 seconds is 120 km/h, however slowly you passed each camera. And if you passed both at 95, the mean value theorem says your speedometer still read exactly 120 at some moment in between, because a speed that averages 120 has to pass through 120. At 100 km/h the same 5 km take 3 minutes, so braking for the cameras bought you a fine to save 30 seconds. Average speed cameras (SPECS in the UK, section control in Austria, Tutor in Italy) have done this division since 1999.\n\nNumbers checked in code: every figure computed, plus 100,000 random speed profiles that read 95 at both cameras and average 120 (every one went above 120 and passed through exactly 120). Sources: Wikipedia, SPECS (speed camera), Traffic enforcement camera, Mean value theorem.\n\nThe math behind real problems, twice a day. Subscribe and the next one finds you.\nFound an error? Comment and it gets pinned.\n#math #mathematics #shorts",
+  "social_caption": "You braked for the speed camera and still got fined. Here's the one division, and the theorem, that catch you anyway.",
+  "tags": [
+    "average speed camera",
+    "speed camera",
+    "mean value theorem",
+    "SPECS camera",
+    "speeding fine",
+    "driving",
+    "calculus",
+    "math",
+    "maths"
+  ],
+  "facts_checked": [
+    "5 km in 150 s = 120 km/h; at 100 km/h 5 km take 180 s = 3 minutes, 30 s saved; CTA 10 km in 5 minutes = 120 km/h (verify.py)",
+    "Mean value theorem: a speed profile reading 95 at both ends and averaging 120 goes above 120 and passes through exactly 120 (100,000 random smooth profiles, all did; 100,000 random trips all hit their own average speed at some moment) (verify.py)",
+    "Mean value theorem driving example: at some moment during the trip 'its instantaneous speed equals its average speed for the whole trip' (https://en.wikipedia.org/wiki/Mean_value_theorem)",
+    "Average speed cameras time a vehicle between two sites a known distance apart and compute the average speed (https://en.wikipedia.org/wiki/Traffic_enforcement_camera)",
+    "SPECS reads the number plate at each site with ANPR and computes average speed from distance and time; UK Home Office type approved in 1999; similar systems: Netherlands trajectcontrole, Austria Section Control, Italy Tutor (https://en.wikipedia.org/wiki/SPECS_(speed_camera))"
+  ],
+  "beats": [
+    {
+      "id": "hook",
+      "say": "You braked for the camera. You still got fined.",
+      "speed": 1.12
+    },
+    {
+      "id": "ruleout",
+      "say": "It never clocked your speed. It clocked your time."
+    },
+    {
+      "id": "setup",
+      "say": "Two cameras, 5 kilometers apart. The limit is 100."
+    },
+    {
+      "id": "plates",
+      "say": "Camera one reads your plate. Camera two reads it 150 seconds later."
+    },
+    {
+      "id": "divide",
+      "say": "5 kilometers in 150 seconds is 120 kilometers an hour. Over the limit."
+    },
+    {
+      "id": "rehook",
+      "say": "But you braked to 95 at both cameras. So how can they fine a speed nobody saw?"
+    },
+    {
+      "id": "graph",
+      "say": "Draw your speed: 95 at the start, 95 at the end. To average 120, it has to climb above 120."
+    },
+    {
+      "id": "cross",
+      "say": "Your speed can't jump. So on the way up, it passes 120 exactly. At that moment, you were doing 120."
+    },
+    {
+      "id": "saved",
+      "say": "At 100, those 5 kilometers take 3 minutes. You saved 30 seconds."
+    },
+    {
+      "id": "payoff",
+      "say": "Your speedometer always hits your average at least once. That's the mean value theorem. The camera never needed to see you."
+    },
+    {
+      "id": "cta",
+      "say": "Cameras 10 kilometers apart, 5 minutes between them. Are you fined?"
+    }
+  ]
+}
