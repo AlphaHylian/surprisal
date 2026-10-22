@@ -1,0 +1,18 @@
+{
+ "ok": true,
+ "problems": [],
+ "warnings": [],
+ "duration_s": 53.0,
+ "size_mb": 10.9,
+ "resolution": "1080x1920",
+ "caption_match_ratio": 0.9819277108433735,
+ "heard": "Your bent coin or a fair one, both give 50 -50. You don't fix the coin. You don't even need to know how bent it is. Your coin lands heads 75 % of the time. Call tails, and you lose 7 times in 10. So flip it twice, not once. Two heads are two tails. Throw that pair away and flip again. Heads then tails counts as heads. Tails then heads counts as tails. But the coin still loves heads. So how is that fair? Heads then tails. 70 % times 30%, that's 21%. Tails then heads. 30 % times 70%. The same 21%. The price is time. Only 42 % of pairs count, so each answer takes about five flips. Any coin bent anyway becomes a perfect 50 -50. John von Neumann wrote this down in 1951. Your coin lands heads 90 % of the time. How many flips per answer?",
+ "music": "Somewhere Sunny",
+ "music_gap_db": 8.0,
+ "speech_starts_at_s": 0.0,
+ "final_lufs": -15.0,
+ "voice_engine": "omnivoice",
+ "contact_sheet_every_s": 2.2,
+ "build_seconds": 301,
+ "draft": false
+}

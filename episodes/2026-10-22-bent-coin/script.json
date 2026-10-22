@@ -1,0 +1,74 @@
+{
+  "slug": "bent-coin",
+  "format": "short",
+  "series": "tech",
+  "hook_style": "how-to",
+  "hook_type": "versus",
+  "angle": "versus hook: fair coin or bent coin, both give a perfect fifty-fifty; rule out fixing the coin or knowing the bias; your coin lands heads 70%, call tails and lose 7 in 10; flip twice; HH/TT throw away; HT = heads, TH = tails; re-hook: the coin still loves heads, so how is that fair; 70% x 30% = 21% both orders; cost: 42% of pairs count, about 5 flips per answer; payoff: any coin becomes fair, von Neumann 1951; CTA checkable comment question (90% heads: about 11 flips). Length arm B.",
+  "title": "How to get a perfect 50/50 from a bent coin",
+  "description": "A coin that lands heads 70% of the time can still settle a bet fairly. Flip it twice: two heads or two tails, throw the pair away; heads then tails means heads, tails then heads means tails. Both orders have the same chance, 70% x 30% = 21%, so the bias cancels exactly, even if you don't know how bent the coin is. The price is time: only 42% of pairs count, so each answer takes about 5 flips (1 / (p x (1 - p)) on average). John von Neumann described the trick in 1951.\n\nNumbers checked in code: every figure computed, plus 200,000 simulated answers each for a 70% coin, a 90% coin and coins of random unknown bias (all came out 50/50 within half a percent). Source: Wikipedia, Fair coin (von Neumann, 1951).\n\nThe math behind real problems, twice a day. Subscribe and the next one finds you.\nFound an error? Comment and it gets pinned.\n#math #mathematics #shorts",
+  "social_caption": "Your coin lands heads 70% of the time. Two flips and one rule turn it into a perfect fifty-fifty.",
+  "tags": [
+    "bent coin",
+    "biased coin",
+    "von neumann",
+    "fair coin",
+    "coin flip",
+    "probability",
+    "randomness",
+    "math",
+    "maths"
+  ],
+  "facts_checked": [
+    "70% heads: HT = TH = 0.7 x 0.3 = 21%, HH 49%, TT 9%; 42% of pairs count; 1 / (0.7 x 0.3) = 4.76 flips per answer (about 5); CTA 90% coin: 1 / 0.09 = 11.1 flips (verify.py)",
+    "Simulation: 200,000 answers each for a 70% coin (heads 0.501, 4.77 flips), a 90% coin (0.499, 11.09 flips) and random unknown bias (0.498): all fair (verify.py)",
+    "Von Neumann's procedure: toss twice, discard HH/TT, keep the first of HT/TH; fair because the two orders are equally likely; expected flips 1 / (p(1-p)); J. von Neumann, 'Various techniques used in connection with random digits', NBS Applied Math Series 12 (1951) (https://en.wikipedia.org/wiki/Fair_coin)"
+  ],
+  "beats": [
+    {
+      "id": "hook",
+      "say": "Your bent coin or a fair one: both give fifty-fifty.",
+      "speed": 1.12
+    },
+    {
+      "id": "ruleout",
+      "say": "You don't fix the coin. You don't even need to know how bent it is."
+    },
+    {
+      "id": "setup",
+      "say": "Your coin lands heads 70% of the time. Call tails, and you lose 7 times in 10."
+    },
+    {
+      "id": "twice",
+      "say": "So flip it twice, not once."
+    },
+    {
+      "id": "same",
+      "say": "Two heads or two tails? Throw that pair away and flip again."
+    },
+    {
+      "id": "differ",
+      "say": "Heads then tails counts as heads. Tails then heads counts as tails."
+    },
+    {
+      "id": "rehook",
+      "say": "But the coin still loves heads. So how is that fair?"
+    },
+    {
+      "id": "why",
+      "say": "Heads then tails: 70% times 30%, that's 21%. Tails then heads: 30% times 70%. The same 21%."
+    },
+    {
+      "id": "cost",
+      "say": "The price is time. Only 42% of pairs count, so each answer takes about 5 flips."
+    },
+    {
+      "id": "payoff",
+      "say": "Any coin, bent any way, becomes a perfect fifty-fifty. John von Neumann wrote this down in 1951."
+    },
+    {
+      "id": "cta",
+      "say": "Your coin lands heads 90% of the time. How many flips per answer?"
+    }
+  ]
+}

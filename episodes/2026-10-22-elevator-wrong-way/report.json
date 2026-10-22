@@ -1,0 +1,18 @@
+{
+ "ok": true,
+ "problems": [],
+ "warnings": [],
+ "duration_s": 41.9,
+ "size_mb": 7.9,
+ "resolution": "1080x1920",
+ "caption_match_ratio": 0.9928057553956835,
+ "heard": "your elevator comes the wrong way nine times in 10. It's not bad luck. As many cars pass you going up as down, you're one floor above the lobby, with nine floors above you. You want to go up. The car runs up and down all day. It spends the same time at every height. Press the button at a random moment. Nine times in 10, the car is above you. And a car above you can only arrive going down. Add a second elevator, still 82 % the wrong way. It takes a lot of cars to reach a coin flip. Both directions pass you equally often. You only meet the first one. George Gammo spotted this from his office near the bottom. Your friend works one floor below the top. Which way does their elevator come?",
+ "music": "Digital Lemonade",
+ "music_gap_db": 8.0,
+ "speech_starts_at_s": 0.01,
+ "final_lufs": -14.9,
+ "voice_engine": "omnivoice",
+ "contact_sheet_every_s": 2.0,
+ "build_seconds": 332,
+ "draft": false
+}
