@@ -27,7 +27,7 @@
     "One riffle leaves at most 2 rising runs, 3 riffles at most 8 (2^k); a random 52-card deck has 26.5 runs on average; 5 riffles is the first with room for 26 (verify.py, simulated 100,000 decks each)"
   ],
   "beats": [
-    {"id": "hook", "say": "Your deck isn't shuffled until you riffle it 7 times.", "speed": 1.1},
+    {"id": "hook", "say": "Your deck isn't shuffled until you riffle it 7 times.", "speed": 1.14},
     {"id": "ruleout", "say": "Three riffles look random. They're nowhere close."},
     {"id": "setup", "say": "Number your cards 1 to 52, in order. Cut the deck and riffle the halves together."},
     {"id": "runs", "say": "Each half keeps its order. So your deck is just two climbing runs. 1, 2, 3, woven into 27, 28, 29."},

@@ -103,11 +103,11 @@ const OneRiffleBody: React.FC = () => {
     <>
       <Headline out={tRuns - 0.3}>{riffled ? "One riffle" : "Number every card"}</Headline>
       <Headline at={tRuns} color={C.amber}>Two climbing runs</Headline>
-      <Camera keys={[[0, { zoom: 1 }], [tTwo, { zoom: 1 }], [t27 - 0.4, { zoom: 1.6, x: 380, y: 590 }]]}>
+      <Camera keys={[[0, { zoom: 1 }], [tTwo, { zoom: 1 }], [t27 - 0.4, { zoom: 1.12, x: 540, y: 700 }]]}>
         {riffled ? <Deck deck={D1} colored={t >= tTwo - 0.2} show={tRiffle - 0.1} y={700} /> : <Deck deck={D0} show={0.1} y={700} />}
       </Camera>
-      <At x={290} y={1060}><Appear at={tTwo - 0.1} from="left"><Chip size={50} color={C.mint}>1, 2, 3...</Chip></Appear></At>
-      <At x={790} y={1060}><Appear at={t27 - 0.2} from="right"><Chip size={50}>27, 28, 29...</Chip></Appear></At>
+      <At x={290} y={1040}><Appear at={tTwo - 0.1} from="left"><Chip size={50} color={C.mint}>1, 2, 3...</Chip></Appear></At>
+      <At x={790} y={1040}><Appear at={t27 - 0.2} from="right"><Chip size={50}>27, 28, 29...</Chip></Appear></At>
       <Sfx name="pack/counting-digital" at={t52 - 0.6} dur={0.8} volume={0.25} />
       <Sfx name="pack/paper-flip" at={tRiffle} volume={0.45} />
     </>
@@ -146,15 +146,15 @@ const RehookBody: React.FC = () => {
     <>
       <Headline>A truly random deck</Headline>
       <At x={540} y={620}>
-        <Appear at={t26 - 0.2} from="slam">
+        <Appear at={0.05} from="pop">
           <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-            <Counter from={0} to={26} t0={t26 - 0.2} t1={t26 + 0.4} size={220} color={C.amber} />
+            <Counter from={0} to={26} t0={0.1} t1={t26 + 0.1} size={220} color={C.amber} />
             <Text size={50} color={C.muted}>runs, on average</Text>
           </div>
         </Appear>
       </At>
       <Punch at={t5}>
-        <At x={540} y={980}><Appear at={t5 - 0.2} from="pop"><Text size={84} color={C.ink} glow>5 riffles = 32 runs. Enough?</Text></Appear></At>
+        <At x={540} y={980}><Appear at={t5 - 0.2} from="pop"><Text size={70} color={C.ink} glow>5 riffles = 32 runs. Enough?</Text></Appear></At>
       </Punch>
       <Sfx name="pack/hmm" at={t5 + 0.4} volume={0.3} />
     </>
@@ -197,9 +197,9 @@ const PayoffBody: React.FC = () => {
     <>
       <Camera keys={[[0, { zoom: 1.05 }], [at.dur, { zoom: 1 }]]}>
         <Punch at={tSeven}>
-          <At x={540} y={600}><Appear at={tSeven - 0.2} from="slam"><Text size={360} color={C.amber} glow>7</Text></Appear></At>
+          <At x={540} y={600}><Appear at={0.3} from="pop"><Text size={360} color={C.amber} glow>7</Text></Appear></At>
         </Punch>
-        <At x={540} y={830}><Appear at={tSeven} from="fade"><Text size={50} color={C.ink}>riffles</Text></Appear></At>
+        <At x={540} y={830}><Appear at={0.5} from="fade"><Text size={50} color={C.ink}>riffles</Text></Appear></At>
         <At x={540} y={1010}><Appear at={tBayer - 0.3} from="up"><Text size={48} color={C.muted}>Dave Bayer & Persi Diaconis, 1992</Text></Appear></At>
       </Camera>
       <At x={540} y={360}><Appear at={0.05} from="down"><Text size={54} color={C.ink}>the drop comes all at once</Text></Appear></At>
