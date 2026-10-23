@@ -1,0 +1,42 @@
+{
+  "slug": "ox-guess",
+  "format": "short",
+  "series": "history",
+  "hook_style": "how-to",
+  "hook_type": "versus",
+  "angle": "versus hook: you miss the ox by 37 lb, the crowd by 9; rule out experts (most are guessing); Plymouth 1906, 787 people pay sixpence to guess; sort every ticket; take the middle one, the wild guesses can't move it: 1,207 lb; the ox weighed 1,198, off by 9; re-hook: half the tickets missed by more than 37, why is the middle so close?; each guess = weight + a mistake, too high or too low about as often, in the middle they cancel; payoff: your mistake has nothing to cancel it, theirs do; Galton sorted every ticket (Nature, 1907); CTA checkable comment question (10, 12, 30, 14, 11 -> 12). Series experiment: history arm, ~45-50 s.",
+  "title": "How 787 strangers guessed an ox to within 9 pounds",
+  "description": "At a cattle show in Plymouth in 1906, 787 people paid sixpence each to guess an ox's weight. Sort the tickets and take the middle one: 1,207 pounds. The ox weighed 1,198, so the crowd was off by 9 pounds (0.8%), while half the individual tickets missed by more than about 37. Each guess is the weight plus a mistake, too high or too low about equally often, so in the middle the mistakes cancel, and the wild guesses at the ends can't drag the middle the way they drag an average. It only works if people guess on their own. Francis Galton sorted every ticket and published the result in Nature in 1907 (\"Vox Populi\").\n\nNumbers checked in code: Galton's own centile table (787 tickets, quartiles 1,162 and 1,236, probable error 37 lb), plus 1.5 million simulated guesses showing independent mistakes cancel and copied ones don't. Source: F. Galton, Vox Populi, Nature 75, 450 (1907).\n\nThe math behind real problems, twice a day. Subscribe and the next one finds you.\nFound an error? Comment and it gets pinned.\n#math #mathematics #shorts",
+  "social_caption": "You miss the ox's weight by 37 pounds; 787 strangers together miss by 9. Here's the one step that makes a crowd smarter than you.",
+  "tags": [
+    "wisdom of the crowd",
+    "francis galton",
+    "guess the weight",
+    "ox",
+    "median",
+    "statistics",
+    "history of math",
+    "math",
+    "maths"
+  ],
+  "music": "investigations.mp3",
+  "facts_checked": [
+    "Annual show of the West of England Fat Stock and Poultry Exhibition at Plymouth; tickets 6d each; about 800 issued, 13 defective or illegible, 787 used; middlemost estimate 1207 lb; dressed weight 1198 lb, 9 lb (0.8%) too high; quartiles 1162 and 1236; probable error 37 lb (F. Galton, 'Vox Populi', Nature 75, 450-451, 7 March 1907: https://pdf.galton.org/essays/1900-1911/galton-1907-vox-populi.pdf)",
+    "1906 country fair in Plymouth; median 1207 within 1% of 1198; averaging cancels independent errors, not shared ones; social influence makes crowds less accurate (https://en.wikipedia.org/wiki/Wisdom_of_the_crowd)",
+    "Half the tickets more than 37 lb from 1198: 50.5% by interpolating Galton's centile table; quartiles sit 36 and 38 lb from the true weight (verify.py)",
+    "Simulation, 1,574,000 guesses: typical single miss 39 lb, middle of 787 independent guesses 1.7 lb, middle of 787 who share a mistake 31 lb (verify.py)",
+    "CTA: 10, 12, 30, 14, 11 -> middle 12 (the average 15.4 is dragged by the 30) (verify.py)"
+  ],
+  "beats": [
+    {"id": "hook", "say": "You miss the ox by 37 pounds, the crowd by 9.", "speed": 1.1},
+    {"id": "ruleout", "say": "The crowd aren't experts. Most of them are guessing too."},
+    {"id": "setup", "say": "Plymouth, 1906. 787 people pay sixpence each to guess an ox's weight."},
+    {"id": "sort", "say": "Collect every ticket and sort them, lightest to heaviest."},
+    {"id": "middle", "say": "Take the one in the middle. The wild guesses at the ends can't move it. 1,207 pounds."},
+    {"id": "truth", "say": "The ox weighed 1,198. Off by 9."},
+    {"id": "rehook", "say": "But half the tickets missed by more than 37. So why is the middle so close?"},
+    {"id": "cancel", "say": "Each guess is the weight plus a mistake. Too high or too low, about as often. In the middle, they cancel."},
+    {"id": "payoff", "say": "Your mistake has nothing to cancel it. Theirs do. Francis Galton sorted every ticket to check."},
+    {"id": "cta", "say": "Five friends guess 10, 12, 30, 14 and 11 sweets. What's the crowd's guess?"}
+  ]
+}

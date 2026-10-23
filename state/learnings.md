@@ -17,12 +17,18 @@ dated log. Rewrite rules when the data changes; don't let this file grow forever
 
 ## Rules we trust (with evidence)
 - No "doubt" beat after the hook ("That sounds wrong..."): in all 5 old-format Shorts checked (birthday, quarters, Penney's, clock, rope) the steepest retention fall is that beat, about 5-13 s in. Go straight from the problem to the first step. (2026-10-06)
+- Shorter holds better: 40-50 s Shorts beat 60-70 s ones on average view % (57% vs 50%, 7 Shorts, length experiment 17-22 Oct). Default to 40-50 s. (2026-10-23)
 
 ## Current experiment
-- **Length: ~45 s vs ~60 s** (from 2026-10-17). Hook types are now limited to the two that held best
-  (versus and claim, see the verdict below), one of each per day, alternating which one gets the short
-  arm. Arm A: 40-48 s (4 steps), arm B: 55-65 s (5-6 steps). Judge at day 2+ on average view % first,
-  then hook_hold and engaged views. Record the arm in the learnings log line; videos.csv `experiment` = `length`.
+- **Series: history vs everyday** (from 2026-10-23). One history Short (real people, place and date, told as
+  a how-to for the viewer) and one everyday Short per day, alternating which slot gets history. Both ~45-50 s
+  (the length verdict below), hook types still versus/claim (one of each per day). Judge at day 2+ on average
+  view % and hook_hold, then engaged views and subs per 1,000 views. videos.csv `experiment` = `series`.
+- Previous experiment, **length (17-22 Oct), verdict 2026-10-23** (7 day-2+ Shorts): arm A (~45-52 s: pin-guess,
+  sock-drawer, longitude-clock) averaged 57.4% view / hook_hold 0.52 / 574 views; arm B (~60-69 s: monty-hall,
+  bus-bunching, file-fingerprint, escalator) 49.6% / 0.50 / 450. Shorter wins on the main metric by ~8 points,
+  hook_hold is a tie. Small samples, but it matches the older pattern (the 75-84 s how-tos sit at 39-60%). New
+  default: 40-50 s, 4-5 steps; go past 55 s only if a step can't be cut.
 - Previous experiment, **hook types (9-16 Oct), verdict 2026-10-17** (12 Shorts, 7 with day-2+ numbers):
   versus 0.54 (two-choices; Wordle no rows yet), claim 0.54 (QR) / 0.41 (roulette, 101 views), stakes 0.45
   (true hit), question 0.40-0.42 (view counter, GPS), mistake 0.32 (flat hunt, day 2, 62 views). Role-opener
@@ -32,7 +38,7 @@ dated log. Rewrite rules when the data changes; don't let this file grow forever
 - Before that, how-to format (4-8 Oct): role-first openings didn't fix hook_hold (zip 0.44, airline 0.33).
 
 ## Experiment ideas, in rough priority
-1. History stories (real names and dates) vs everyday situations.
+1. (running from 2026-10-23: history vs everyday)
 4. Ending: comment question that puts the viewer back in the role vs a one-line "what happened next".
 5. Voice speed 1.0 vs 1.1.
 

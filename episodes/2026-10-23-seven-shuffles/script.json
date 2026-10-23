@@ -1,0 +1,40 @@
+{
+  "slug": "seven-shuffles",
+  "format": "short",
+  "series": "everyday",
+  "hook_style": "how-to",
+  "hook_type": "claim",
+  "angle": "claim hook: your deck isn't shuffled until you riffle it 7 times; rule out: 3 riffles look random, nowhere close; number the cards 1-52, cut, riffle; each half keeps its order: 2 climbing runs (1, 2, 3 woven into 27, 28, 29); riffle again: at most 4 runs, then 8, 16, 32; re-hook: a random deck has about 26 runs, so is 5 enough?; measure distance from random: 5 riffles 92%, 6 61%, 7 33%, then each riffle halves it; payoff: the drop comes all at once and lands at 7, Bayer and Diaconis 1992; CTA subscribe if you riffle three times. Series experiment: everyday arm, ~45-50 s.",
+  "title": "Why you have to shuffle a deck 7 times",
+  "description": "Number a deck 1 to 52 and riffle it once: each half keeps its order, so the deck is just two climbing runs woven together (1, 2, 3... into 27, 28, 29...). Every riffle can at most double the runs: 2, 4, 8, 16, 32, while a random deck has about 26. Measured as distance from random (total variation), 4 riffles are still at 100%, 5 at 92%, 6 at 61%, 7 at 33%, and each riffle after that roughly halves it. Dave Bayer and Persi Diaconis proved this in 1992, which is why 7 riffles is the standard answer.\n\nNumbers checked in code: the exact Bayer-Diaconis formula for 52 cards (7 riffles: 0.334), plus 100,000 simulated riffles and 100,000 random decks for the run counts. Sources: Wikipedia, Shuffling and Gilbert-Shannon-Reeds model.\n\nThe math behind real problems, twice a day. Subscribe and the next one finds you.\nFound an error? Comment and it gets pinned.\n#math #mathematics #shorts",
+  "social_caption": "Your deck isn't shuffled until you riffle it 7 times. Here's how to see the order hiding in a 3-riffle deck.",
+  "tags": [
+    "shuffling",
+    "riffle shuffle",
+    "seven shuffles",
+    "persi diaconis",
+    "playing cards",
+    "probability",
+    "card games",
+    "math",
+    "maths"
+  ],
+  "music": "wallpaper.mp3",
+  "facts_checked": [
+    "Bayer and Diaconis (1992): the deck did not start to become random until five good riffle shuffles, and was truly random after seven; GSR model fits human riffles (https://en.wikipedia.org/wiki/Shuffling)",
+    "Seven riffles give total variation distance 0.334 for 52 cards; five leave it close to one (https://en.wikipedia.org/wiki/Gilbert%E2%80%93Shannon%E2%80%93Reeds_model)",
+    "Exact distance from random after k riffles, Bayer-Diaconis formula C(2^k + 52 - r, 52) / 2^(52k) over rising sequences r: 4 -> 1.000, 5 -> 0.924, 6 -> 0.614, 7 -> 0.334, 8 -> 0.167, 9 -> 0.085, 10 -> 0.043 (verify.py)",
+    "One riffle leaves at most 2 rising runs, 3 riffles at most 8 (2^k); a random 52-card deck has 26.5 runs on average; 5 riffles is the first with room for 26 (verify.py, simulated 100,000 decks each)"
+  ],
+  "beats": [
+    {"id": "hook", "say": "Your deck isn't shuffled until you riffle it 7 times.", "speed": 1.1},
+    {"id": "ruleout", "say": "Three riffles look random. They're nowhere close."},
+    {"id": "setup", "say": "Number your cards 1 to 52, in order. Cut the deck and riffle the halves together."},
+    {"id": "runs", "say": "Each half keeps its order. So your deck is just two climbing runs. 1, 2, 3, woven into 27, 28, 29."},
+    {"id": "double", "say": "Riffle again: at most 4 runs. Then 8, 16, 32."},
+    {"id": "rehook", "say": "A truly random deck has about 26 runs. So is 5 riffles enough?"},
+    {"id": "measure", "say": "Measure how far your deck is from random. Five riffles: 92%. Six: 61%. Seven: 33%. Then each riffle halves what's left."},
+    {"id": "payoff", "say": "The drop comes all at once, and it lands at seven. Dave Bayer and Persi Diaconis proved it in 1992."},
+    {"id": "cta", "say": "Subscribe if you've been riffling three times."}
+  ]
+}
