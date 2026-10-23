@@ -50,3 +50,6 @@ date,call,ok
 2026-10-22,upload elevator-wrong-way (8pdijeBZDjA),yes
 2026-10-23,analytics per-video totals,yes
 2026-10-23,upload ox-guess (KMzRmP5Lnoc),yes
+2026-10-23,upload seven-shuffles (PWJztpbkW_k; MCP timed out but upload went through),yes
+2026-10-23,search forMine (check timed-out upload for duplicates),yes
+2026-10-23,videos status PWJztpbkW_k (confirm publishAt after timeout),yes

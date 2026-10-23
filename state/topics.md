@@ -17,7 +17,6 @@ through verify.py.
   matches game theory (Palacios-Huerta). [check] (everyday/sport) (2026-10-15: the paper's cell-by-cell scoring table couldn't be fetched (PDF mirrors 403); find a readable source with the 2x2 numbers first)
 
 - You're splitting a cake (or rent) between three people and someone always feels cheated. Steps: cut-and-choose for two, then the moving-knife / last-diminisher for three; envy-free vs proportional. Reveal: fair division (Steinhaus, 1940s). (everyday) [check]
-- You shuffle a deck for a card game and someone keeps getting the same cards. Steps: one riffle barely mixes; count rising sequences; 7 riffles is where it suddenly becomes random. Reveal: Bayer and Diaconis (1992). (everyday) [check]
 - You share a taxi with two friends who get out at different stops; who pays what? Steps: cost of each person alone, average over every order of getting in (Shapley value). Reveal: the same rule splits airport runway costs. (everyday) [check]
 - You must pick one random winner from a stream of entries and you don't know how many will come. Steps: keep the first, replace it with the k-th entry with chance 1 in k; every entry ends up with the same chance. Reveal: reservoir sampling, how big systems sample logs. (tech) [check]
 
@@ -63,3 +62,4 @@ through verify.py.
 - 2026-10-22  bent-coin (tech, how-to, hook versus; von Neumann trick: 70% coin, HT/TH 21% each, 42% of pairs count, ~5 flips per answer)  aVdSbOfUA7E  12:00 Tallinn 22 Oct, LIVE scheduled
 - 2026-10-22  elevator-wrong-way (everyday, how-to, hook claim; Gamow-Stern elevator paradox: floor 1 of 10, 9 in 10 down, 2 cars 82%, 3 cars 76%, 10 cars 55%)  8pdijeBZDjA  20:00 Tallinn 22 Oct, LIVE scheduled
 - 2026-10-23  ox-guess (history, how-to, hook versus; Galton's Vox Populi: 787 tickets, middle 1,207 vs 1,198 lb, off by 9, half missed by 37+, mistakes cancel; CTA 10/12/30/14/11 -> 12)  KMzRmP5Lnoc  12:00 Tallinn 23 Oct, LIVE scheduled
+- 2026-10-23  seven-shuffles (everyday, how-to, hook claim; Bayer-Diaconis: one riffle = 2 rising runs, at most doubles, random deck ~26 runs, distance from random 4->100%, 5->92%, 6->61%, 7->33%, then halves)  PWJztpbkW_k  20:00 Tallinn 23 Oct, LIVE scheduled
