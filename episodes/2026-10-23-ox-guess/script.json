@@ -28,15 +28,46 @@
     "CTA: 10, 12, 30, 14, 11 -> middle 12 (the average 15.4 is dragged by the 30) (verify.py)"
   ],
   "beats": [
-    {"id": "hook", "say": "You miss the ox by 37 pounds, the crowd by 9.", "speed": 1.1},
-    {"id": "ruleout", "say": "The crowd aren't experts. Most of them are guessing too."},
-    {"id": "setup", "say": "Plymouth, 1906. 787 people pay sixpence each to guess an ox's weight."},
-    {"id": "sort", "say": "Collect every ticket and sort them, lightest to heaviest."},
-    {"id": "middle", "say": "Take the one in the middle. The wild guesses at the ends can't move it. 1,207 pounds."},
-    {"id": "truth", "say": "The ox weighed 1,198. Off by 9."},
-    {"id": "rehook", "say": "But half the tickets missed by more than 37. So why is the middle so close?"},
-    {"id": "cancel", "say": "Each guess is the weight plus a mistake. Too high or too low, about as often. In the middle, they cancel."},
-    {"id": "payoff", "say": "Your mistake has nothing to cancel it. Theirs do. Francis Galton sorted every ticket to check."},
-    {"id": "cta", "say": "Five friends guess 10, 12, 30, 14 and 11 sweets. What's the crowd's guess?"}
+    {
+      "id": "hook",
+      "say": "You miss the ox by 37 pounds, the crowd by 9.",
+      "speed": 1.1
+    },
+    {
+      "id": "ruleout",
+      "say": "The crowd aren't experts. Most of them are guessing too."
+    },
+    {
+      "id": "setup",
+      "say": "Plymouth, 1906. 787 people pay sixpence each to guess an ox's weight."
+    },
+    {
+      "id": "sort",
+      "say": "Collect every ticket and sort them, lightest to heaviest."
+    },
+    {
+      "id": "middle",
+      "say": "Take the one in the middle. The wild guesses at the ends can't move it. 1,207 pounds."
+    },
+    {
+      "id": "truth",
+      "say": "The ox weighed 1,198. Off by 9."
+    },
+    {
+      "id": "rehook",
+      "say": "But half the tickets missed by more than 37. So why is the middle so close?"
+    },
+    {
+      "id": "cancel",
+      "say": "Each guess is the weight plus a mistake. Too high or too low, about as often. In the middle, they cancel."
+    },
+    {
+      "id": "payoff",
+      "say": "Your mistake stands alone. The crowd's cancel out. Francis Galton sorted every ticket to check."
+    },
+    {
+      "id": "cta",
+      "say": "Five friends guess 10, 12, 30, 14 and 11 sweets. What's the crowd's guess?"
+    }
   ]
 }

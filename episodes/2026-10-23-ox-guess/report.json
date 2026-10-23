@@ -1,0 +1,20 @@
+{
+ "ok": false,
+ "problems": [
+  "speech starts at 0.08s; the first word must start at 0 (check the first beat is the first thing in construct() and nothing plays before it)"
+ ],
+ "warnings": [],
+ "duration_s": 50.8,
+ "size_mb": 3.2,
+ "resolution": "540x960",
+ "caption_match_ratio": 0.9612903225806452,
+ "heard": "You miss the ox by 37 pounds, the crowd by 9. The crowd aren't experts. Most of them are guessing, too. Plymouth, 1906. 787 people pay six pence each to guess an ox's weight. Collect every ticket and sort them. Lightest to heaviest. Take the one in the middle. The wild guesses at the ends can't move it. 1 ,207 pounds. The ox weighed 1 ,198, off by 9. But half the ticket's missed by more than 37. So why is the middle so close? Each guess is the weight plus a mistake. Too high or too low, about as often. In the middle, they cancel. Your mistake has nothing to cancel it. There's do. Francis Galton sorted every ticket to check. Five friends guessed 10, 12, 30, 14, and 11 sweets. What's the crowd's guess?",
+ "music": "Investigations",
+ "music_gap_db": 8.0,
+ "speech_starts_at_s": 0.08,
+ "final_lufs": -15.1,
+ "voice_engine": "omnivoice",
+ "contact_sheet_every_s": 2.1,
+ "build_seconds": 1268,
+ "draft": true
+}

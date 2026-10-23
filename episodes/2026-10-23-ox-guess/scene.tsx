@@ -113,8 +113,8 @@ const RuleOutBody: React.FC = () => {
           </div>
         </Appear>
       </At>
-      <At x={540} y={620}><Appear at={tExperts - 0.2} out={tGuess - 0.3} from="slam"><Stamp size={80} rotate={-6}>NOT EXPERTS</Stamp></Appear></At>
-      <At x={540} y={950}>
+      <At x={540} y={920}><Appear at={tExperts - 0.2} out={tGuess - 0.3} from="slam"><Stamp size={80} rotate={-6}>NOT EXPERTS</Stamp></Appear></At>
+      <At x={540} y={920}>
         <Appear at={tGuess - 0.2} from="pop">
           <div style={{ display: "flex", gap: 40 }}>
             {["?", "?", "?"].map((q, i) => <Text key={i} size={130} color={C.amber} glow>{q}</Text>)}
@@ -179,7 +179,7 @@ const SortBody: React.FC = () => {
       <Camera keys={[[0, { zoom: 1 }], [tMid, { zoom: 1 }], [tMid + 0.6, { zoom: 1.12, x: midX, y: 760 }], [tTruth + 0.2, { zoom: 1.12, x: midX, y: 760 }], [t9 + 0.4, { zoom: 1.3, x: (midX + trueX) / 2, y: 760 }]]}>
         <Axis show={tSort - 0.2} />
         <Dots showAt={0} sortAt={tSort - 0.1} midAt={tMid - 0.2} fadeEndsAt={tWild - 0.2} />
-        {t >= t1198 - 0.2 ? <div style={{ position: "absolute", left: trueX - 3, top: 420, width: 6, height: LINE_Y - 420, background: C.mint,
+        {t >= t1198 - 0.2 ? <div style={{ position: "absolute", left: trueX - 3, top: 560, width: 6, height: LINE_Y - 560, background: C.mint,
           opacity: tween(t, t1198 - 0.2, t1198 + 0.2, 0, 1), boxShadow: `0 0 18px ${C.mint}` }} /> : null}
       </Camera>
       <At x={540} y={1060}><Appear at={tWild - 0.2} out={t1207 - 0.3} from="fade"><Text size={46} color={C.coral}>wild guesses don't move it</Text></Appear></At>
@@ -243,7 +243,7 @@ const CancelBody: React.FC = () => {
 // ---------------------------------------------------------------- 9. payoff
 const PayoffBody: React.FC = () => {
   const at = useAt();
-  const tTheirs = at.word("Theirs", 1, 1.8);
+  const tTheirs = at.word("crowd's", 1, 1.8);
   const tGalton = at.word("Galton", 1, 3.0);
   return (
     <>
