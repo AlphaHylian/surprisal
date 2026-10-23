@@ -62,3 +62,4 @@ through verify.py.
 - 2026-10-21  average-speed (everyday, how-to, hook claim; average speed cameras: 5 km in 150 s = 120 km/h, braked to 95 at both, mean value theorem: passes 120 exactly; at 100 it takes 3 min, 30 s saved; SPECS since 1999)  sKsrfEgTi4Y  20:00 Tallinn 21 Oct, LIVE scheduled
 - 2026-10-22  bent-coin (tech, how-to, hook versus; von Neumann trick: 70% coin, HT/TH 21% each, 42% of pairs count, ~5 flips per answer)  aVdSbOfUA7E  12:00 Tallinn 22 Oct, LIVE scheduled
 - 2026-10-22  elevator-wrong-way (everyday, how-to, hook claim; Gamow-Stern elevator paradox: floor 1 of 10, 9 in 10 down, 2 cars 82%, 3 cars 76%, 10 cars 55%)  8pdijeBZDjA  20:00 Tallinn 22 Oct, LIVE scheduled
+- 2026-10-23  ox-guess (history, how-to, hook versus; Galton's Vox Populi: 787 tickets, middle 1,207 vs 1,198 lb, off by 9, half missed by 37+, mistakes cancel; CTA 10/12/30/14/11 -> 12)  KMzRmP5Lnoc  12:00 Tallinn 23 Oct, LIVE scheduled
