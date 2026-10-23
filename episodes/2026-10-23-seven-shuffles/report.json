@@ -1,20 +1,20 @@
 {
  "ok": false,
  "problems": [
-  "speech starts at 0.06s; the first word must start at 0 (check the first beat is the first thing in construct() and nothing plays before it)"
+  "speech starts at 0.19s; the first word must start at 0 (check the first beat is the first thing in construct() and nothing plays before it)"
  ],
  "warnings": [],
- "duration_s": 49.4,
+ "duration_s": 49.5,
  "size_mb": 10.3,
  "resolution": "1080x1920",
- "caption_match_ratio": 0.986013986013986,
- "heard": "Your deck isn't shuffled until you riffle it seven times. Three riffles look random. They're nowhere close. Number your cards one to 52 in order. Cut the deck and riffle the halves together. Each half keeps its order. So your deck is just two climbing runs. One, two, three woven into 27, 28, 29. Riffle again at most four runs, then eight, 16, 32. A truly random deck has about 26 runs. So is five riffles enough. Measure how far your deck is from random. Five riffles, 92%, 6, 61%, 7, 33%. Then each riffle halves what's left. The drop comes all at once and it lands at seven. Dave Bayer and Percy Deaconis proved it in 1992. Subscribe if you've been riffling three times.",
+ "caption_match_ratio": 0.965034965034965,
+ "heard": "your deck isn't shuffled until you riffle it seven times. Three riffles look random. They're nowhere close. Number your cards one to fifty two in order. Cut the deck and riffle the halves together. Each half keeps its order. So your deck is just two climbing runs. One, two, three woven into twenty seven, twenty eight, twenty nine. Riffle again at most four runs, then eight, sixteen, thirty two. A truly random deck has about twenty six runs, so is five riffles enough. Measure how far your deck is from random. Five riffles, ninety two percent, six, sixty one percent, seven, thirty three percent. Then each riffle halves what's left. The drop comes all at once, and it lands at seven. Dave Bayer and Percy Deaconis proved it in 1992. Subscribe if you've been",
  "music": "Wallpaper",
  "music_gap_db": 8.0,
- "speech_starts_at_s": 0.06,
- "final_lufs": -15.1,
+ "speech_starts_at_s": 0.19,
+ "final_lufs": -15.0,
  "voice_engine": "omnivoice",
  "contact_sheet_every_s": 2.1,
- "build_seconds": 222,
+ "build_seconds": 224,
  "draft": false
 }
