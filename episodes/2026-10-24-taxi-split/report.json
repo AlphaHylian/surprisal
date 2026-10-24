@@ -1,0 +1,18 @@
+{
+ "ok": true,
+ "problems": [],
+ "warnings": [],
+ "duration_s": 49.3,
+ "size_mb": 8.6,
+ "resolution": "1080x1920",
+ "caption_match_ratio": 0.9797297297297297,
+ "heard": "Your six Euro taxi ride costs 10 split evenly. Paying the meter at your stop isn't fair either. All three of you rode that stretch. The meter reads six at your stop, 18 at Ben's, 30 at Mia's. Cut the ride at every stop. Split each stretch only among who's still in the car. First six, three riders, two each. Next 12, two riders, six each. The last 12 is all Mia's. You pay two. Ben eight, Mia 20. Mia says it's rigged. So try all six orders you could have joined the ride. Each person pays the extra driving they add. Average at two, eight, 20. That's the shapley value. Runways can be priced the same way. Every plane shares the first stretch. Only jumbo's pay for the end. Four riders, the meter reads 12, 24, 36, 48. What is the last one pay?",
+ "music": "Tech Talk",
+ "music_gap_db": 8.0,
+ "speech_starts_at_s": 0.02,
+ "final_lufs": -14.9,
+ "voice_engine": "omnivoice",
+ "contact_sheet_every_s": 2.1,
+ "build_seconds": 167,
+ "draft": false
+}

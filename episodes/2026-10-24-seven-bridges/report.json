@@ -1,0 +1,18 @@
+{
+ "ok": true,
+ "problems": [],
+ "warnings": [],
+ "duration_s": 48.0,
+ "size_mb": 7.8,
+ "resolution": "1080x1920",
+ "caption_match_ratio": 0.9871794871794872,
+ "heard": "You can try 372 walks or count to four. Konigsberg 1736, cross every bridge exactly once. Trying walks gets you nowhere. 256 of them die one bridge short. So shrink each piece of land to a dot and each bridge to a line. Count the lines at each dot, 5333. Every time you walk through a dot, you use two lines. One in, one out. So a dot you pass through needs an even count. Only two dots are exempt, where you start and where you finish. So how many odd dots can a walk survive? Two, Konigsberg has four. No walk exists and Euler proved it without taking a step. Today it's Kalining Brad. The war took two bridges, just two odd dots are left, and the walk works island to island. Subscribe if you'd have kept on walking.",
+ "music": "Chill Wave",
+ "music_gap_db": 8.0,
+ "speech_starts_at_s": 0.02,
+ "final_lufs": -15.0,
+ "voice_engine": "omnivoice",
+ "contact_sheet_every_s": 2.0,
+ "build_seconds": 113,
+ "draft": false
+}

@@ -1,0 +1,29 @@
+{
+  "slug": "seven-bridges",
+  "format": "short",
+  "series": "history",
+  "hook_style": "how-to",
+  "hook_type": "versus",
+  "angle": "versus hook: try 372 walks over 7 bridges, or count to 4; Konigsberg 1736, cross every bridge exactly once; trying walks gets nowhere, 256 die one bridge short; shrink land to dots, bridges to lines; count lines per dot: 5, 3, 3, 3; walking through a dot uses one in + one out, so a pass-through dot needs an even count; re-hook: only start and finish are exempt, so how many odd dots can a walk survive?; payoff: two, Konigsberg has 4, no walk exists, Euler proved it without a step; twist: Kaliningrad today, the war took 2 bridges, 2 odd dots left, the walk works island to island; CTA subscribe if you'd have kept trying walks. Series experiment: history arm, ~45-50 s.",
+  "title": "How Euler proved a walk impossible without walking it",
+  "description": "Königsberg had 7 bridges joining 4 pieces of land, and the puzzle was to cross every bridge exactly once in one walk. Count the bridges at each piece of land: 5, 3, 3, 3. Every time a walk passes through a piece of land it uses two bridges, one in and one out, so only the start and the finish may have an odd count. Königsberg has four odd ones, so no such walk exists: Leonhard Euler proved it in 1736 and started graph theory. Today (Kaliningrad) two bridges are gone, only the two islands are odd, and the walk works from one island to the other.\n\nNumbers checked in code: brute force over every walk that never reuses a bridge (372 walks that go until stuck, 256 of them stuck at 6 of 7, none reaching 7), today's 5-bridge map, and Euler's rule against brute force on 2,000 random bridge maps. Source: Wikipedia, Seven Bridges of Königsberg.\n\nThe math behind real problems, twice a day. Subscribe and the next one finds you.\nFound an error? Comment and it gets pinned.\n#math #mathematics #shorts",
+  "social_caption": "You can try all 372 walks over Königsberg's 7 bridges, or count to 4 like Euler did. Here's the count.",
+  "tags": ["seven bridges of konigsberg", "euler", "leonhard euler", "graph theory", "eulerian path", "kaliningrad", "math history", "math", "maths"],
+  "music": "chill-wave.mp3",
+  "facts_checked": [
+    "Königsberg's 7 bridges joined 4 land masses (Kneiphof and Lomse islands, Altstadt and Vorstadt banks); Kneiphof touched by 5 bridges, each other by 3; Euler proved in 1736 that no walk crosses each bridge exactly once; a walk needs zero or two nodes of odd degree (https://en.wikipedia.org/wiki/Seven_Bridges_of_K%C3%B6nigsberg)",
+    "Present state: two bridges did not survive the WWII bombing, two were replaced by a highway; two nodes now have degree 2 and two degree 3, so an Eulerian path is now possible, beginning on one island and ending on the other; the city is now Kaliningrad (same page)",
+    "Brute force (verify.py): 372 walks that go until stuck (parallel bridges distinct, any start), lengths 3: 4, 4: 24, 5: 88, 6: 256, none of 7; degrees 5, 3, 3, 3 (4 odd); today 3, 3, 2, 2, full walks only island to island; Euler's rule agrees with brute force on 2,000 random multigraphs"
+  ],
+  "beats": [
+    {"id": "hook", "say": "You can try 372 walks, or count to 4.", "speed": 1.18},
+    {"id": "ruleout", "say": "Konigsberg, 1736. Cross every bridge exactly once. Trying walks gets you nowhere: 256 of them die one bridge short."},
+    {"id": "shrink", "say": "So shrink each piece of land to a dot, and each bridge to a line."},
+    {"id": "count", "say": "Count the lines at each dot: 5, 3, 3, 3."},
+    {"id": "rule", "say": "Every time you walk through a dot, you use two lines. One in, one out. So a dot you pass through needs an even count."},
+    {"id": "rehook", "say": "Only two dots are exempt: where you start, and where you finish. So how many odd dots can a walk survive?"},
+    {"id": "payoff", "say": "Two. Konigsberg has 4. No walk exists, and Euler proved it without taking a step."},
+    {"id": "today", "say": "Today it's Kaliningrad. The war took 2 bridges, just 2 odd dots are left, and the walk works, island to island."},
+    {"id": "cta", "say": "Subscribe if you'd have kept on walking."}
+  ]
+}

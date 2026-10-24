@@ -1,0 +1,29 @@
+{
+  "slug": "taxi-split",
+  "format": "short",
+  "series": "everyday",
+  "hook_style": "how-to",
+  "hook_type": "claim",
+  "angle": "claim hook: your 6 euro taxi ride costs 10 because you split it evenly; rule out paying the meter at your stop (three of you rode that stretch); meter 6 at your stop, 18 at Ben's, 30 at Mia's; cut the ride at every stop, split each stretch among who's in the car: 6 / 3 = 2 each, 12 / 2 = 6 each, last 12 Mia's; re-hook: you 2, Ben 8, Mia 20, Mia says it's rigged; proof: all 6 orders you could join the ride, each pays the extra driving they add, average = 2, 8, 20; payoff: the Shapley value, runways priced the same way (every plane shares the first stretch, only jumbos pay for the end; Littlechild & Owen 1973); CTA checkable comment question (meter 12, 24, 36, 48: last one pays 25). Series experiment: everyday arm, ~45-50 s.",
+  "title": "How to split a taxi fare fairly",
+  "description": "Three friends share a cab and the meter reads 6 euros at the first stop, 18 at the second, 30 at the last. Split evenly, the first one out pays 10 for a ride that costs 6 alone. The fair way: cut the ride at every stop and split each stretch only among the people still in the car: 6 / 3 = 2 each, then 12 / 2 = 6 each, then the last 12 for the last rider. That gives 2, 8 and 20, and it's exactly what you get by averaging, over all 6 orders the riders could join, the extra driving each one adds: the Shapley value. Littlechild and Owen showed in 1973 that the same rule, proposed for airport runway landing fees, is the Shapley value.\n\nNumbers checked in code: every share computed exactly, plus 200,000 simulated random join orders (2.00, 8.00, 20.00). Sources: Wikipedia, Airport problem and Shapley value; Littlechild & Owen, Management Science 20(3), 1973.\n\nThe math behind real problems, twice a day. Subscribe and the next one finds you.\nFound an error? Comment and it gets pinned.\n#math #mathematics #shorts",
+  "social_caption": "Split a taxi evenly and the first one out pays 10 euros for a 6 euro ride. Here's the one split that's provably fair.",
+  "tags": ["taxi fare", "splitting the bill", "shapley value", "fair division", "game theory", "airport problem", "math", "maths", "economics"],
+  "music": "tech-talk.mp3",
+  "facts_checked": [
+    "Meter 6 / 18 / 30: even split 10 each; stretch rule 6/3 = 2, 12/2 = 6, 12/1: you 2, Ben 8, Mia 20; equals the Shapley value averaged over all 6 join orders; 200,000 simulated random orders give 2.00 / 8.00 / 20.00; CTA meter 12, 24, 36, 48 -> 3, 7, 13, 25 (verify.py)",
+    "Airport problem: runway cost shared by aircraft needing different lengths; each increment of runway is split equally among the landings that need it, and the resulting charges are the Shapley value; introduced by S. C. Littlechild and G. Owen, 'A Simple Expression for the Shapley Value in a Special Case', Management Science 20(3), 1973 (https://en.wikipedia.org/wiki/Airport_problem)",
+    "Littlechild & Thompson (1977) applied the runway cost-sharing game to Birmingham Airport, 1968-69, with Shapley-value landing fees (https://ideas.repec.org/a/rje/bellje/v8y1977ispringp186-204.html)"
+  ],
+  "beats": [
+    {"id": "hook", "say": "Your 6 euro taxi ride costs 10, split evenly.", "speed": 1.12},
+    {"id": "ruleout", "say": "Paying the meter at your stop isn't fair either. All three of you rode that stretch."},
+    {"id": "setup", "say": "The meter reads 6 at your stop, 18 at Ben's, 30 at Mia's."},
+    {"id": "cut", "say": "Cut the ride at every stop. Split each stretch only among who's still in the car. First 6: three riders, 2 each."},
+    {"id": "rest", "say": "Next 12: two riders, 6 each. The last 12 is all Mia's."},
+    {"id": "rehook", "say": "You pay 2. Ben, 8. Mia, 20. Mia says it's rigged."},
+    {"id": "proof", "say": "So try all 6 orders you could have joined the ride. Each person pays the extra driving they add. Average it: 2, 8, 20."},
+    {"id": "payoff", "say": "That's the Shapley value. Runways can be priced the same way: every plane shares the first stretch, only jumbos pay for the end."},
+    {"id": "cta", "say": "Four riders, the meter reads 12, 24, 36, 48. What does the last one pay?"}
+  ]
+}
