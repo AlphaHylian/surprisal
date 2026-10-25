@@ -1,0 +1,71 @@
+{
+  "slug": "unfinished-game",
+  "format": "short",
+  "series": "history",
+  "hook_style": "how-to",
+  "hook_type": "versus",
+  "angle": "versus hook: you stop at 2 to 1, split 2 to 1 or 3 to 1?; rule out splitting by the score (the textbook answer for 160 years, Pacioli 1494); Paris 1654, a nobleman asks Pascal: first to 3 wins 64 coins, stopped at 2 to 1; don't count rounds won, count rounds still needed: you 1, them 2; play one more round in your head: win it, all 64; lose it, 2 to 2, a coin flip, 32 each; re-hook: you're sure of 32 either way, only the other 32 is in doubt; half of it is yours: 48 to 16, 3 to 1 not 2 to 1; payoff: Fermat played out every ending, 4, you win 3; those letters started probability; CTA checkable comment question (you lead 1 to 0: 44 of 64). Series experiment: history arm, ~45-50 s.",
+  "title": "How to split the pot when the game stops early",
+  "description": "First to 3 rounds wins 64 coins, and the game stops at 2 to 1. Splitting by the score (2 to 1, about 43 and 21) was the textbook answer from Pacioli in 1494. Pascal's answer, in his letter to Fermat of 29 July 1654: count the rounds each player still needs, and imagine one more round. Win it and you take all 64; lose it and it's 2 to 2, an even split of 32 each. So 32 is yours either way and half of the other 32: 48 to 16, 3 to 1. Fermat got the same by playing out all 4 possible endings: you win 3. Their letters on this problem are where probability theory starts.\n\nNumbers checked in code: exact fractions with Pascal's and Fermat's methods, plus 200,000 simulated finishes of the game (you win 75.05%). Sources: Wikipedia, Problem of points; Pascal's letter of 29 July 1654 (IREM Caen, 'Les partis chez Pascal et Fermat').\n\nThe math behind real problems, twice a day. Subscribe and the next one finds you.\nFound an error? Comment and it gets pinned.\n#math #mathematics #shorts",
+  "social_caption": "The game stops at 2 to 1. Splitting the pot by the score is wrong, and Pascal showed why in 1654.",
+  "tags": [
+    "problem of points",
+    "pascal",
+    "fermat",
+    "history of probability",
+    "probability",
+    "fair division",
+    "math",
+    "maths",
+    "history"
+  ],
+  "music": "deliberate-thought.mp3",
+  "facts_checked": [
+    "First to 3, 64 coins, stopped at 2-1: score split 42.67 / 21.33; you need 1, they need 2; win next: 64, lose: 2-2 -> 32 each; sure of 32, half the other 32 = 16; share 48 / 16 = 3 to 1; Fermat: 2 imagined rounds, 4 endings, you win 3; CTA 1-0 -> 44 (11/16); 200,000 simulated finishes 0.7505 and 0.6872 (verify.py)",
+    "Pacioli (Summa, 1494) split by rounds won; the Chevalier de Méré posed the problem to Pascal around 1654, solved in the Pascal-Fermat correspondence; Fermat's method plays out r+s-1 more rounds (https://en.wikipedia.org/wiki/Problem_of_points)",
+    "Pascal's letter of 29 July 1654: 32 pistoles each (64), first to 3; one player needs 1, the other 2: win -> 64, lose -> 2-2, 32 each; so 48 and 16 (https://irem-archive.unicaen.fr/IMG/pdf/les_partis_chez_pascal_et_fermat.pdf, https://gtfp.cs.rhul.ac.uk/pulskamp/Pascal/Sources/pasfer.pdf)"
+  ],
+  "beats": [
+    {
+      "id": "hook",
+      "say": "You stop at 2 to 1. Split 2 to 1, or 3 to 1?",
+      "speed": 1.22
+    },
+    {
+      "id": "ruleout",
+      "say": "Splitting by the score sounds fair. It was the textbook answer for 160 years. It's wrong."
+    },
+    {
+      "id": "setup",
+      "say": "Paris, 1654. A nobleman asks Blaise Pascal: first to 3 wins 64 coins, but the game stops at 2 to 1."
+    },
+    {
+      "id": "need",
+      "say": "Don't count the rounds you won. Count the rounds you still need. You need 1. They need 2."
+    },
+    {
+      "id": "win",
+      "say": "Play one more round in your head. Win it, and you take all 64."
+    },
+    {
+      "id": "lose",
+      "say": "Lose it: 2 to 2, a coin flip. 32 each."
+    },
+    {
+      "id": "rehook",
+      "say": "So 32 is yours either way. Only the other 32 is in doubt."
+    },
+    {
+      "id": "half",
+      "say": "Half of it is yours: 48 to 16. 3 to 1, not 2 to 1."
+    },
+    {
+      "id": "payoff",
+      "say": "Fermat checked it another way: 4 possible endings, you win 3. Those letters started probability."
+    },
+    {
+      "id": "cta",
+      "say": "Same game, but you lead 1 to 0. What's your share of the 64?"
+    }
+  ]
+}

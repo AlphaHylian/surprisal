@@ -1,0 +1,18 @@
+{
+ "ok": true,
+ "problems": [],
+ "warnings": [],
+ "duration_s": 52.0,
+ "size_mb": 8.8,
+ "resolution": "1080x1920",
+ "caption_match_ratio": 0.9879518072289156,
+ "heard": "You stop at 2 to 1. Split 2 to 1 or 3 to 1. Splitting by the score sounds fair. It was the textbook answer for 160 years. It's wrong. Paris 1654. A nobleman asks Blaze Pascal, first to three wins 64 coins, but the game stops at 2 to 1. Don't count the rounds you won. Count the rounds you still need. You need one. They need two. Play one more round in your head. Win it and you take all 64. Lose it. 2 to 2, a coin flip. 32 each. So 32 is yours either way. Only the other 32 is in doubt. Half of it is yours. 48 to 16. 3 to 1, not 2 to 1. Fermont checked it another way. Four possible endings. You win three. Those letters started probability. Same game, but you lead one to zero. What's your share of the 64?",
+ "music": "Deliberate Thought",
+ "music_gap_db": 8.0,
+ "speech_starts_at_s": 0.01,
+ "final_lufs": -15.0,
+ "voice_engine": "omnivoice",
+ "contact_sheet_every_s": 2.2,
+ "build_seconds": 123,
+ "draft": false
+}
