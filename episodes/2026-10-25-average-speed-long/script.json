@@ -1,0 +1,270 @@
+{
+ "slug": "average-speed-long",
+ "format": "long",
+ "series": "everyday",
+ "hook_style": "how-to",
+ "hook_type": "claim",
+ "angle": "long-form of the week's best Short (average-speed, 21 Oct; 548 engaged views x 60.1% at day 3, ahead of longitude-clock 493 x 62.9%): you braked to 95 at both cameras and got fined for 120; SPECS (1999): plates + times + distance, 5 km in 150 s = 120, 180 s legal, 30 s saved, 75 m to ~10 km pairs, motorbikes and rear plates; myth: braking at the end (4 km at 120 -> last km at 60); why you hit 120: area under the speed curve, below 120 means late, peak 134, speed can't jump -> exactly 120 at 33 s and 117 s, 84 s above 120; subscribe line; the ghost car at 120: 110 m ahead at 33 s, 110 m behind at 117 s, the gap's turning points are where speeds match (Rolle 1691, mean value theorem, Cauchy 1823), parallel tangent picture; twist: universal chord theorem (Levy 1934): 1 km, 2.5 km pieces at exactly 120 guaranteed, but a real drive (100-163 km/h waves) where every 2 km stretch averages 123.7 (58.2 s) and the whole 5 km 120; leftover km 33.6 s; 3 km fails too; runner 10 km in 50 min; wrap; CTA: cameras 6 km apart, 2 km (yes) and 4 km (not guaranteed).",
+ "title": "How a camera that never saw you speeding proves you did",
+ "description": "You braked to 95 at both average speed cameras, 5 km apart, and still got fined for 120. The cameras never measured your speed: SPECS-style systems read your number plate at each site and divide the distance by the time, and 5 km in 150 seconds is 120 km/h (at the limit of 100 it takes 180 seconds, so you saved 30). Then the mean value theorem says more: a smooth drive that averages 120 must read exactly 120 on the speedometer at some moment, and if you passed both cameras below 120, at least twice. The proof is a ghost car that drives exactly 120 and finishes with you: where the gap between you is biggest, your speeds match (Rolle, 1691; Cauchy's modern form, 1823). The twist is Paul Lévy's universal chord theorem (1934): some 1 km and some 2.5 km stretch were also driven at exactly 120, but not necessarily any 2 km stretch. We build a real drive where every 2 km stretch averages 123.7 km/h while the whole 5 km averages 120.\n\nEvery number checked in code, including 100,000 random trips and the counterexample drive. Sources: https://en.wikipedia.org/wiki/SPECS_(speed_camera) https://en.wikipedia.org/wiki/Mean_value_theorem https://en.wikipedia.org/wiki/Universal_chord_theorem\n\nThe math behind real problems, twice a day. Subscribe and the next one finds you.\nFound an error? Comment and it gets pinned.\n#math #mathematics",
+ "social_caption": "You braked to 95 at both speed cameras and still got fined for 120. Here's the theorem that proves the camera right, and a drive that's too fast on every 2 km stretch but legal over 5.",
+ "tags": [
+  "average speed camera",
+  "speed camera",
+  "mean value theorem",
+  "rolle's theorem",
+  "universal chord theorem",
+  "calculus",
+  "math",
+  "maths",
+  "physics",
+  "driving"
+ ],
+ "music_moods": [
+  "calm"
+ ],
+ "facts_checked": [
+  "5 km in 150 s = 120 km/h (33.3 m/s x 3.6); 180 s at 100, 30 s saved; 4 km at 120 = 120 s -> last km in 60 s = 60 km/h; 75 m at 120 km/h = 2.25 s; on-screen curve 95 + 25(pi/2) sin: peak 134, exactly 120 at 33 s and 117 s, 84 s above 120; ghost car 110 m ahead at 33 s, 110 m behind at 117 s, speed 120 at both; 100,000 random smooth trips all hit their own average speed; universal chord counterexample (Levy's function, period 2 km, a = 0.03): speeds 100-163 km/h, total 150 s, every 2 km stretch 58.2 s = 123.7 km/h, two stretches 116.4 s, leftover km 33.6 s (107 km/h), 1 km and 2.5 km stretches hit 120, every 3 km stretch over 120 (122.8); runner 10 km/50 min; CTA 6 km: 2 km yes, 4 km no guarantee (verify.py)",
+  "SPECS: ANPR reads the front plate at each site, average speed = distance / time; infrared works day and night; introduced / Home Office type approved 1999; sites from 75 m, max 10 km with SPECS1; motorcycles have no front plate, SPECS3 can face forward (rear plates); similar systems in the Netherlands, Poland, Austria, Italy (https://en.wikipedia.org/wiki/SPECS_(speed_camera))",
+  "Mean value theorem: driving example (instantaneous speed equals average speed at some moment); Rolle proved a restricted form in 1691; Cauchy stated and proved the modern form in 1823 (https://en.wikipedia.org/wiki/Mean_value_theorem)",
+  "Universal chord theorem: for continuous f with f(a) = f(b), a chord of length (b-a)/n exists for every natural n; counterexample f(x) = sin^2(pi x / r) - x sin^2(pi / r) for other r; Paul Levy, 1934 (https://en.wikipedia.org/wiki/Universal_chord_theorem)"
+ ],
+ "beats": [
+  {
+   "id": "hook",
+   "say": "You braked for the speed camera, and you still got fined for doing 120.",
+   "chapter": "The Fine",
+   "speed": 1.08
+  },
+  {
+   "id": "promise",
+   "say": "By the end of this, you'll know how a camera that never saw you speeding can prove that you did, the theorem from 1691 that makes the proof airtight, and a strange twist: a drive that's too fast on every short stretch, and legal on the whole road."
+  },
+  {
+   "id": "recap1",
+   "say": "Here's what happened. A stretch of motorway, limit 100. You see the camera, you brake to 95. You pass it. 5 kilometers later there's a second camera. You brake to 95 again."
+  },
+  {
+   "id": "recap2",
+   "say": "A week later, the letter arrives. Average speed, 120. But at both cameras you were doing 95. Nobody ever measured you at 120."
+  },
+  {
+   "id": "recap3",
+   "say": "So how can they fine a speed nobody saw? Two ideas answer it. One is a division. The other is one of the most useful theorems in calculus."
+  },
+  {
+   "id": "spec1",
+   "say": "First, the division. These are average speed cameras. In Britain, the best known system is called SPECS, approved in 1999.",
+   "chapter": "How the cameras time you"
+  },
+  {
+   "id": "spec2",
+   "say": "Each camera reads your number plate as you pass, with infrared, so it works at night. It writes down the plate and the exact time."
+  },
+  {
+   "id": "spec3",
+   "say": "A second camera, further down the road, does the same. Now the system has two times for the same plate, and it knows the distance between the cameras."
+  },
+  {
+   "id": "spec4",
+   "say": "Your times are 150 seconds apart. 5 kilometers in 150 seconds. That's 33 meters every second. Times 3.6, that's 120 kilometers an hour."
+  },
+  {
+   "id": "spec5",
+   "say": "Notice what the camera never needed: your speed at any moment. Just two clocks and a ruler. Braking at the camera changes your speed there. It doesn't change the time between the cameras."
+  },
+  {
+   "id": "spec6",
+   "say": "At the limit, 100, those 5 kilometers take 180 seconds. You got there in 150. You saved 30 seconds and bought a fine."
+  },
+  {
+   "id": "spec7",
+   "say": "A camera pair can be anything from 75 meters to about 10 kilometers apart. The Netherlands, Austria, Italy and Poland all run the same idea."
+  },
+  {
+   "id": "spec8",
+   "say": "There is one gap. Motorbikes have no number plate on the front. So some newer cameras face the other way, and read the plate on the back."
+  },
+  {
+   "id": "myth1",
+   "say": "So what if you see the second camera and slam on the brakes? Say you did 120 for the first 4 kilometers. That took 120 seconds."
+  },
+  {
+   "id": "myth2",
+   "say": "To get your average down to 100, the whole 5 kilometers must take 180 seconds. So the last kilometer has to take 60. That's 60 kilometers an hour, on a motorway, for a full kilometer."
+  },
+  {
+   "id": "myth3",
+   "say": "Braking at the end barely helps. The average remembers every second you were fast."
+  },
+  {
+   "id": "mvt1",
+   "say": "But the fine says more than a division. It says that at some moment you were doing exactly 120. Is that fair? Nobody saw it.",
+   "chapter": "Why you hit 120"
+  },
+  {
+   "id": "mvt2",
+   "say": "Draw your speed on a graph. Time across, speed up. You start at 95, at the first camera. You end at 95, at the second."
+  },
+  {
+   "id": "mvt3",
+   "say": "Your average is 120. That's the height of a flat line that has the same area under it as your curve. The area is the distance, 5 kilometers."
+  },
+  {
+   "id": "mvt4",
+   "say": "If your speed stayed below 120 the whole time, you'd cover less than 5 kilometers in 150 seconds. You'd arrive late. You didn't."
+  },
+  {
+   "id": "mvt5",
+   "say": "So somewhere, your speed went above 120. In this drive it peaked around 134."
+  },
+  {
+   "id": "mvt6",
+   "say": "Now the key step. Your speed can't jump. A car can't go from 110 to 130 in no time at all. To get from 95 up to 134, it has to pass through every speed in between."
+  },
+  {
+   "id": "mvt7",
+   "say": "Including 120. Exactly 120, at some moment. On this curve, it's 33 seconds after the first camera. And again at 117 seconds, on the way back down."
+  },
+  {
+   "id": "mvt7b",
+   "say": "In fact, in this drive you spent 84 of the 150 seconds above 120. The braking just hid it from the only two moments anyone could see."
+  },
+  {
+   "id": "mvt8",
+   "say": "That's why the letter is right. Your speedometer read exactly 120 at least once. It has to, for any drive that averages 120."
+  },
+  {
+   "id": "sub1",
+   "say": "If you like seeing the math inside everyday things, subscribe. There are two new ones every day."
+  },
+  {
+   "id": "ghost1",
+   "say": "There's a second way to see it, and it's the one mathematicians use. Imagine a ghost car.",
+   "chapter": "The ghost car"
+  },
+  {
+   "id": "ghost2",
+   "say": "It passes the first camera with you, and drives exactly 120 the whole way. Not a kilometer more or less. It reaches the second camera 150 seconds later."
+  },
+  {
+   "id": "ghost3",
+   "say": "So do you. You start together and you finish together."
+  },
+  {
+   "id": "ghost4",
+   "say": "At first you're doing 95, so the ghost pulls ahead. 33 seconds in, it's 110 meters in front of you. That's as far ahead as it gets."
+  },
+  {
+   "id": "ghost5",
+   "say": "Why there? Because at that moment, the gap stops growing. And the gap stops growing exactly when you're going as fast as the ghost. 120."
+  },
+  {
+   "id": "ghost6",
+   "say": "Then you're faster, and you reel it in. At 117 seconds you're 110 meters ahead. Again, at that turning point, you match the ghost exactly. 120."
+  },
+  {
+   "id": "ghost7",
+   "say": "This works for any drive. The gap starts at zero and ends at zero. So unless it's zero the whole time, it has a biggest moment or a smallest moment in between. And at that moment, you and the ghost are doing the same speed."
+  },
+  {
+   "id": "ghost8",
+   "say": "That's Rolle's theorem. Michel Rolle proved a version of it in 1691. Tilt it, and you get the mean value theorem: at some moment, your speed equals your average speed."
+  },
+  {
+   "id": "ghost9",
+   "say": "Augustin-Louis Cauchy gave it its modern form in 1823. It's one of the workhorses of calculus."
+  },
+  {
+   "id": "ghost10",
+   "say": "On a graph of distance against time, it has a nice picture. Draw a straight line from the start to the finish. Somewhere, your curve runs exactly parallel to that line."
+  },
+  {
+   "id": "ghost11",
+   "say": "There's one small print. The theorem needs a smooth trip, no teleporting. Real cars qualify. Your speed can change fast, but never instantly."
+  },
+  {
+   "id": "chord1",
+   "say": "Now the twist. You averaged 120 over 5 kilometers. Was there some 1 kilometer piece where you averaged exactly 120 too?",
+   "chapter": "Every stretch?"
+  },
+  {
+   "id": "chord2",
+   "say": "Yes, always. Cut the road into 5 pieces of 1 kilometer. Some piece took at most 30 seconds, and some piece took at least 30. They can't all be quicker than average, or all slower."
+  },
+  {
+   "id": "chord3",
+   "say": "Now slide a 1 kilometer window along the road. Its time changes smoothly as it slides. So somewhere it takes exactly 30 seconds. That's a kilometer at exactly 120."
+  },
+  {
+   "id": "chord4",
+   "say": "The same goes for half the road, 2 and a half kilometers, or a third, or a quarter. Any piece that fits a whole number of times into 5."
+  },
+  {
+   "id": "chord5",
+   "say": "So surely there's a 2 kilometer stretch at exactly 120 as well? Here's the twist. Not necessarily."
+  },
+  {
+   "id": "chord6",
+   "say": "Here's a real drive. It speeds up and slows down in waves, between 100 and 163 kilometers an hour. It covers 5 kilometers in exactly 150 seconds. Average, 120."
+  },
+  {
+   "id": "chord7",
+   "say": "Now pick any 2 kilometer stretch, anywhere on that road. It takes 58.2 seconds. Every single one. That's 123.7 kilometers an hour."
+  },
+  {
+   "id": "chord8",
+   "say": "Every 2 kilometer stretch is over 120. Yet the whole 5 kilometers is exactly 120. Put a camera pair 2 kilometers apart anywhere on that road, and it fines you. The 5 kilometer pair says 120."
+  },
+  {
+   "id": "chord9",
+   "say": "How can every piece be faster than the whole? Because 2 kilometer pieces don't tile 5 kilometers. Two of them cover 4 kilometers in 116.4 seconds. That leaves 33.6 seconds for the last kilometer, about 107. The slowness hides in the piece left over."
+  },
+  {
+   "id": "chord10",
+   "say": "In this drive, the waves repeat every 2 kilometers. Each wave is a little faster than 120 on average, and the leftover half wave drags the total back down."
+  },
+  {
+   "id": "chord11",
+   "say": "This is the universal chord theorem. Paul Lévy proved it in 1934. Pieces that fit a whole number of times are guaranteed. Every other length can fail. A 3 kilometer stretch can fail too."
+  },
+  {
+   "id": "chord11b",
+   "say": "It works for runners too. Run 10 kilometers in 50 minutes, and some 5 kilometers took exactly 25 minutes, and some 2 kilometers took exactly 10. But a 3 kilometer stretch in exactly 15? Not guaranteed. 3 doesn't fit into 10."
+  },
+  {
+   "id": "chord12",
+   "say": "It's the mean value theorem's strange cousin. The single moment at 120 is certain. A stretch of any length you like is not."
+  },
+  {
+   "id": "know1",
+   "say": "So here's what the camera knows from just two plates and two times.",
+   "chapter": "What the camera knows"
+  },
+  {
+   "id": "know2",
+   "say": "Your average was 120. Somewhere, your speedometer showed exactly 120. And since you passed both cameras below 120, it showed it at least twice, on the way up and on the way down."
+  },
+  {
+   "id": "know3",
+   "say": "And some 1 kilometer of that road, and some 2 and a half kilometers, you covered at exactly 120. But a 2 kilometer stretch, it can't promise."
+  },
+  {
+   "id": "know4",
+   "say": "Braking at the cameras changed the only two moments anyone could see. It didn't change the clock."
+  },
+  {
+   "id": "know4b",
+   "say": "And thanks to the ghost car, that 120 isn't an estimate or a guess. It's a theorem. Any smooth drive, any road, any driver."
+  },
+  {
+   "id": "know5",
+   "say": "That's how a camera that never saw you speeding can prove that you did. Two clocks, a ruler, and a theorem from 1691."
+  },
+  {
+   "id": "cta",
+   "say": "Here's one for the comments. Cameras 6 kilometers apart, average exactly 120. Is there a 2 kilometer stretch you drove at exactly 120? What about 4 kilometers?",
+   "chapter": "Your turn"
+  }
+ ]
+}
