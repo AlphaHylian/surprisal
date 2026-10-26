@@ -1,0 +1,67 @@
+{
+  "slug": "friends-friends",
+  "format": "short",
+  "series": "everyday",
+  "hook_style": "how-to",
+  "hook_type": "claim",
+  "angle": "claim hook: your friends have more friends than you do; on Facebook true for 93%, not because you're boring; a counting trick: take six people: Max knows everyone, Ana and Ben know each other, Cleo, Dev and Eli only know Max; count: 5, 2, 2, 1, 1, 1; compare like you do online: Cleo has 1, her friend has 5; Ana has 2, her friends average 3.5; re-hook: five of six lose, only Max wins, who's cheating?; Max is on five friend lists, Cleo on one, so Max gets counted five times: the average person has 2 friends, the average friend has 3; payoff: popular people are in everyone's list, so your friends are popular on average; Facebook 2011, 721 million users, 93%; CTA checkable comment question (three in a line: 2 of 3 lose). Series experiment: everyday arm, ~45-50 s.",
+  "title": "Why your friends have more friends than you",
+  "description": "In 2011 Facebook measured 721 million users: 92.7% had fewer friends than the average of their friends. Nobody is lying. Popular people sit on many friend lists, so when you average your friends' friend counts, the popular ones get counted again and again. In the six-person group in the video, the average person has 2 friends but the average friend has 3, and five of the six people lose the comparison. Sociologist Scott Feld named it in 1991: the friendship paradox.\n\nNumbers checked in code: the six-person group, plus 200,000 simulated picks of a random friendship (average friend 3.00) and 2,000 random networks (the average friend never had fewer friends than the average person). Sources: Ugander, Karrer, Backstrom, Marlow, 'The Anatomy of the Facebook Social Graph' (2011, arXiv 1111.4503); Feld, 'Why your friends have more friends than you do', American Journal of Sociology (1991).\n\nThe math behind real problems, twice a day. Subscribe and the next one finds you.\nFound an error? Comment and it gets pinned.\n#math #mathematics #shorts",
+  "social_caption": "93% of Facebook users have fewer friends than their friends. It's not you, it's how friends get counted.",
+  "tags": [
+    "friendship paradox",
+    "your friends have more friends than you",
+    "scott feld",
+    "facebook",
+    "social networks",
+    "network science",
+    "graph theory",
+    "math",
+    "maths",
+    "statistics"
+  ],
+  "facts_checked": [
+    "Six-person group (Max-everyone, Ana-Ben): degrees 5, 2, 2, 1, 1, 1; Cleo 1 vs friend 5; Ana 2 vs friends' average 3.5; Max 5 vs 1.4; 5 of 6 lose, only Max wins; Max on 5 lists, Cleo on 1; average person 2, average friend (sum d^2 / sum d = mu + var/mu) 3; 200,000 simulated friendship picks 2.998; 2,000 random networks: average friend never below average person; CTA line A-B-C: 2 of 3 lose (verify.py)",
+    "Facebook 2011: about 721 million active users, median friend count 99; 92.7% of users have fewer friends than the average friend count of their friends, 83.6% fewer than the median of their friends (https://arxiv.org/abs/1111.4503, Ugander, Karrer, Backstrom, Marlow, 'The Anatomy of the Facebook Social Graph')",
+    "First observed by sociologist Scott L. Feld, 'Why your friends have more friends than you do', American Journal of Sociology 96(6), 1991; average friend's degree = mu + sigma^2/mu (https://en.wikipedia.org/wiki/Friendship_paradox)"
+  ],
+  "beats": [
+    {
+      "id": "hook",
+      "say": "Your friends have more friends than you do.",
+      "speed": 1.1
+    },
+    {
+      "id": "ruleout",
+      "say": "On Facebook, that's true for 93% of people. And it's not because you're boring."
+    },
+    {
+      "id": "draw",
+      "say": "It's a counting trick. Take six people. Max knows everyone. Ana and Ben know each other. Cleo, Dev and Eli only know Max."
+    },
+    {
+      "id": "count",
+      "say": "Count friends. Max has 5. Ana and Ben, 2. The rest, 1."
+    },
+    {
+      "id": "compare",
+      "say": "Now compare, like you do online. Cleo has 1. Her friend has 5. Ana has 2. Her friends average 3.5."
+    },
+    {
+      "id": "rehook",
+      "say": "Five of six people lose. Only Max wins. So who's cheating?"
+    },
+    {
+      "id": "why",
+      "say": "Max is on five friend lists. Cleo is on one. So Max gets counted five times."
+    },
+    {
+      "id": "payoff",
+      "say": "The average person here has 2 friends. The average friend has 3. Popular people are in everyone's list."
+    },
+    {
+      "id": "cta",
+      "say": "Three people in a line: A knows B, B knows C. How many of them lose?"
+    }
+  ]
+}

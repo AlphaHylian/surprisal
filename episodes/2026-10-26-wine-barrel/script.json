@@ -1,0 +1,71 @@
+{
+  "slug": "wine-barrel",
+  "format": "short",
+  "series": "history",
+  "hook_style": "how-to",
+  "hook_type": "versus",
+  "angle": "versus hook: same stick, same price, 44% less wine (605 L vs 340 L on screen); rule out: a longer stick should mean more wine, not if the barrel is thin; Linz 1613, Kepler buys wine for his wedding, the seller dips one rod from the top hole to the far corner and prices by its length; a long thin barrel and a short fat one both read 1 metre; check it: the rod is a diagonal, the width across and half the length; sweep the width: 50 cm 340 L, climbs, peaks at 82 cm 605 L, falls (95 cm: 443); re-hook: one best barrel per rod, but is anyone's barrel built like that?; the best barrel is 1.4 times as long as wide, Austrian barrels were close; payoff: flat at the peak, 10% off the shape loses under 1%, the rod was fair; CTA subscribe if you'd have trusted the stick (loops to the hook). Series experiment: history arm, ~45-50 s.",
+  "title": "How Kepler caught a wine seller's one-stick trick",
+  "description": "Linz, 1613: Johannes Kepler buys wine for his wedding, and the seller prices every barrel by one rod pushed from the top hole to the far edge of the lid. With a 1 metre rod, a thin barrel 50 cm wide holds about 340 litres, while one 82 cm wide holds about 605: the same price for very different wine. Treat the barrel as a cylinder and the rod as a diagonal (rod² = width² + (half the length)²), and the volume peaks when the length is √2 times the width. Kepler found Austrian barrels were built close to that shape, and near a maximum the volume barely changes (10% off the shape loses under 1%), so the rod was fair for them. He published the method in Nova stereometria doliorum vinariorum (1615).\n\nNumbers checked in code: exact cylinder volumes for a 1 m rod, a brute-force search for the best width, and 100,000 random barrels within 10% of the ideal shape (worst loss 0.72%). Sources: Wikipedia, Johannes Kepler; matematicasvisuales.com, 'Kepler: The volume of a wine barrel'.\n\nThe math behind real problems, twice a day. Subscribe and the next one finds you.\nFound an error? Comment and it gets pinned.\n#math #mathematics #shorts",
+  "social_caption": "Same stick, same price, 44% less wine. In 1613 Kepler worked out when one measuring rod is fair.",
+  "tags": [
+    "kepler",
+    "wine barrel",
+    "nova stereometria",
+    "optimization",
+    "maximum volume",
+    "history of calculus",
+    "geometry",
+    "math",
+    "maths",
+    "history"
+  ],
+  "facts_checked": [
+    "1 m rod, rod^2 = width^2 + (length/2)^2, cylinder volume: 50 cm wide -> 173 cm long, 340 L; best width sqrt(2/3) m = 82 cm, length 115 cm, 605 L, length = width x sqrt 2 (1.41); 95 cm wide -> 443 L; brute-force best width 82 cm; shape 10% off sqrt 2 loses 0.62% / 0.72%; 100,000 random barrels within 10%: worst 0.72% (verify.py)",
+    "Kepler remarried on 30 October 1613 (Susanna Reuttinger) and lived in Linz; Nova stereometria doliorum vinariorum printed in Linz in 1615 (https://en.wikipedia.org/wiki/Johannes_Kepler)",
+    "In 1613 in Linz Kepler bought wine for his wedding; the merchant pushed a stick through the tap hole to the opposite edge of the lid and priced by that length; Kepler modelled the barrel as a cylinder with fixed diagonal and found Austrian barrels 'peculiarly close' to the maximum-volume shape, and that near a maximum the volume changes only slowly, so the method was legitimate for Austrian barrels (https://matematicasvisuales.com/loci/kepler/doliometry.html)"
+  ],
+  "beats": [
+    {
+      "id": "hook",
+      "say": "Same stick, same price, 44% less wine.",
+      "speed": 1.2
+    },
+    {
+      "id": "ruleout",
+      "say": "A longer stick should mean more wine. Not if the barrel is thin."
+    },
+    {
+      "id": "setup",
+      "say": "Linz, 1613. Kepler buys wine for his wedding. The seller prices each barrel by one rod, dipped to the far corner."
+    },
+    {
+      "id": "outrage",
+      "say": "Kepler is furious. A long thin barrel and a short fat one can both read 1 metre."
+    },
+    {
+      "id": "diagonal",
+      "say": "So check it yourself. The rod is a diagonal: the width, and half the length."
+    },
+    {
+      "id": "sweep",
+      "say": "50 centimetres wide: 340 litres. Go wider and the wine climbs. At 82, it peaks: 605. Wider still, it falls."
+    },
+    {
+      "id": "rehook",
+      "say": "So every rod has one best barrel. But was anyone's barrel built like that?"
+    },
+    {
+      "id": "best",
+      "say": "The best one is 1.4 times as long as it is wide. Kepler found Austrian barrels were close."
+    },
+    {
+      "id": "payoff",
+      "say": "And at the peak, the curve is flat. 10% off that shape loses under 1% of the wine. The rod was fair."
+    },
+    {
+      "id": "cta",
+      "say": "Subscribe if you'd have trusted the stick."
+    }
+  ]
+}

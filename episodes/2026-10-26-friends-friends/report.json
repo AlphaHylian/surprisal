@@ -1,0 +1,18 @@
+{
+ "ok": true,
+ "problems": [],
+ "warnings": [],
+ "duration_s": 50.1,
+ "size_mb": 8.8,
+ "resolution": "1080x1920",
+ "caption_match_ratio": 0.9366197183098591,
+ "heard": "Your friends have more friends than you do. On Facebook, that's true for 93 % of people, and it's not because you're boring. It's a counting trick. Take six people. Max knows everyone. Anna and Ben know each other. Clio, Devin, Eli, only know Max. Count friends. Max has five. Anna and Ben, two. The rest, one. Now compare like you do online. Clio has one. Her friend has five. Anna has two. Her friends average 3 .5. Five of six people lose. Only Max wins. So who's cheating? Max is on five friend lists. Clio is on one, so Max gets counted five times. The average person here has two friends. The average friend has three. Popular people are in everyone's list. Three people in a line, A knows B, B knows C. How many of them lose?",
+ "music": "Digital Lemonade",
+ "music_gap_db": 8.0,
+ "speech_starts_at_s": 0.02,
+ "final_lufs": -15.2,
+ "voice_engine": "omnivoice",
+ "contact_sheet_every_s": 2.1,
+ "build_seconds": 179,
+ "draft": false
+}

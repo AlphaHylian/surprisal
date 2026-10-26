@@ -1,0 +1,19 @@
+{
+ "thin barrel 50 cm wide: litres": "340",
+ "thin barrel height cm": "173",
+ "best width cm": "82",
+ "best height cm": "115",
+ "best litres": "605",
+ "best: height = width x root 2": "True",
+ "hook rounds 605 to 600": "600.0",
+ "wide barrel 95 cm: litres": "443",
+ "brute-force best width cm": "82",
+ "thin holds a bit over half": "56",
+ "ratio form agrees at the peak": "True",
+ "10% off the shape costs under 1%": "True",
+ "sim: worst loss within 10% under 1%": "True",
+ "thin barrel's ratio": "3.5",
+ "thin barrel loses vs best (%)": "44",
+ "years 1613 -> 1615": "2",
+ "best ratio said as 1.4": "1.4"
+}

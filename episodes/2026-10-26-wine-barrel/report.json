@@ -1,0 +1,18 @@
+{
+ "ok": true,
+ "problems": [],
+ "warnings": [],
+ "duration_s": 54.3,
+ "size_mb": 9.4,
+ "resolution": "1080x1920",
+ "caption_match_ratio": 0.9651162790697675,
+ "heard": "Same stick, same price, 44 % less wine. A longer stick should mean more wine, not if the barrel is thin. Lin's 1613, Kepler buys wine for his wedding. The seller prices each barrel by one rod dip to the far corner. Kepler is furious. A long thin barrel and a short fat one can both read one meter. So check it yourself. The rod is a diagonal, the width and half the length. 50 centimeters wide, 340 liters. Go wider and the wine climbs. At 82, it peaks 605. Wider still, it falls. So every rod has one best barrel. But was anyone's barrel built like that? The best one is 1 .4 times as long as it is wide. Kepler found Austrian barrels were close. And at the peak, the curve is flat. 10 % off that shape loses under 1 % of the wine. The rod was fair. Subscribe if you'd have trusted the stick.",
+ "music": "Tech Talk",
+ "music_gap_db": 8.0,
+ "speech_starts_at_s": 0.0,
+ "final_lufs": -14.9,
+ "voice_engine": "omnivoice",
+ "contact_sheet_every_s": 2.3,
+ "build_seconds": 130,
+ "draft": false
+}

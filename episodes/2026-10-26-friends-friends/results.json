@@ -1,0 +1,21 @@
+{
+ "Max has": "5",
+ "Ana has": "2",
+ "Ben has": "2",
+ "Cleo/Dev/Eli have": "(1, 1, 1)",
+ "Cleo's only friend has": "5",
+ "Ana's friends average": "7/2",
+ "Max's friends average": "7/5",
+ "people who lose the comparison": "5",
+ "only Max wins": "['Max']",
+ "Max is on friend lists": "5",
+ "Cleo is on friend lists": "1",
+ "average person has": "2",
+ "average friend has": "3",
+ "mu + var/mu": "3",
+ "92.7% said as 93%": "93",
+ "CTA line of 3: how many lose": "2",
+ "sim avg friend within 0.02 of 3": "True",
+ "sim_avg_friend": 2.99803,
+ "random networks where average friend < average person": "0"
+}
