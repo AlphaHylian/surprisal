@@ -1,0 +1,69 @@
+{
+  "slug": "letter-e",
+  "format": "short",
+  "series": "history",
+  "hook_style": "how-to",
+  "hook_type": "claim",
+  "angle": "claim hook: your code has septillions of keys, one letter cracks it (HookText 403 septillion); rule out trying keys (a billion a second = 13 billion years); 1586, Mary, Queen of Scots, locked up, writes to plotters in symbols smuggled in a beer barrel; her jailers' codebreaker counts symbols instead; one letter in 8 is an E, in a long letter the top symbol is E 9+ times in 10; re-hook: one down, 25 to go, and she added fake symbols that mean nothing; a three-symbol word ending in E is THE: T and H, letters give words, words give letters; payoff: a swap changes the symbols, never how often they show up, so the keys never mattered; beheaded 1587; CTA subscribe if you thought more keys meant safer. Series experiment: history arm, ~45-50 s.",
+  "title": "How one letter cracked a code with 400 septillion keys",
+  "description": "Swap every letter for its own symbol and there are 26! (about 403 septillion) possible keys: a billion guesses a second would take 13 billion years to try them all. But the swap never changes how often each letter appears. In English about one letter in eight is an E, so in a long message the most common symbol is E more than 9 times in 10; then a three-symbol word ending in E is almost surely THE, and each letter found exposes more words. In 1586 Mary, Queen of Scots, wrote to the Babington plotters in a symbol cipher smuggled in a beer barrel; Walsingham's decipherer Thomas Phelippes read the letters, and she was executed in February 1587.\n\nNumbers checked in code: 26! exactly, and 100,000 simulated 500-letter messages under random keys (top symbol = E in about 94%). Sources: Wikipedia, Substitution cipher, Letter frequency (Lewand), Frequency analysis, Babington Plot, Thomas Phelippes.\n\nThe math behind real problems, twice a day. Subscribe and the next one finds you.\nFound an error? Comment and it gets pinned.\n#math #mathematics #shorts",
+  "social_caption": "A code with 403 septillion keys, cracked by counting one letter. How frequency analysis read Mary, Queen of Scots' secret letters.",
+  "tags": [
+    "frequency analysis",
+    "mary queen of scots",
+    "babington plot",
+    "substitution cipher",
+    "cryptography",
+    "codebreaking",
+    "letter frequency",
+    "math",
+    "maths",
+    "history"
+  ],
+  "facts_checked": [
+    "26! = 403,291,461,126,605,635,584,000,000 keys (403 septillion, said as 400); at a billion keys a second, all of them take 12.8 billion years (said 13); E 12.7% = one letter in 8, E-T-A the top three; 100,000 random 500-letter messages under random keys: top symbol is E 94%, 50-letter messages only 39% (verify.py)",
+    "26! = about 2^88 keys, still easily broken by frequency analysis; Mary used homophonic ciphers and nomenclators (https://en.wikipedia.org/wiki/Substitution_cipher)",
+    "English letter frequencies, E 12.7%, T 9.1%, A 8.2% (Lewand 2000) (https://en.wikipedia.org/wiki/Letter_frequency); Al-Kindi, 9th century, first recorded frequency analysis (https://en.wikipedia.org/wiki/Frequency_analysis)",
+    "Messages smuggled in a watertight box inside a beer barrel; nomenclator cipher; Mary replied in code 17 July 1586; Phelippes decoded the letters; Mary executed 8 February 1587 (https://en.wikipedia.org/wiki/Babington_Plot, https://en.wikipedia.org/wiki/Thomas_Phelippes)",
+    "Mary's cipher used symbols, nulls ('these stand for nothing') and a symbol meaning 'double the next letter'; Phelippes deciphered the messages (https://userhome.brooklyn.cuny.edu/anthro/jbeatty/Scotia/issue90/issue90a.html)"
+  ],
+  "beats": [
+    {
+      "id": "hook",
+      "say": "Your code has septillions of keys. One letter cracks it.",
+      "speed": 1.25
+    },
+    {
+      "id": "ruleout",
+      "say": "Nobody tries the keys. At a billion a second, that's 13 billion years."
+    },
+    {
+      "id": "setup",
+      "say": "1586. Mary, Queen of Scots, is locked up. She writes to her plotters in symbols, smuggled out in a beer barrel."
+    },
+    {
+      "id": "count",
+      "say": "Her jailers' codebreaker skips the keys. He counts the symbols."
+    },
+    {
+      "id": "eee",
+      "say": "One letter in eight in English is an E. In a long letter, the top symbol is E more than nine times in ten."
+    },
+    {
+      "id": "rehook",
+      "say": "One down, 25 to go. And she even mixed in fake symbols that mean nothing."
+    },
+    {
+      "id": "the",
+      "say": "Find a three-symbol word that ends in E. That's THE. Now you have T and H. Letters give you words. Words give you letters."
+    },
+    {
+      "id": "payoff",
+      "say": "A swap changes the symbols, never how often they show up. The keys never mattered. Mary was beheaded in 1587."
+    },
+    {
+      "id": "cta",
+      "say": "Subscribe if you thought more keys meant safer."
+    }
+  ]
+}

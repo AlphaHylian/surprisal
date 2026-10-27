@@ -1,0 +1,14 @@
+{
+ "Mia's values add to the whole cake": "1",
+ "after Ben takes the frosted piece, Mia's best piece": "1/4",
+ "a quarter is less than her third": "True",
+ "you, the cutter, still get a third": "1/3",
+ "sim worst own share": "0.333333",
+ "sim envy share": "1.000",
+ "sim: everyone always gets at least a third (own measure)": "True",
+ "sim: envy can still happen (why Selfridge-Conway exists)": "True",
+ "rest is worth at least two thirds to the other two": "2/3",
+ "half of two thirds is a third": "1/3",
+ "four friends: yell at": "1/4",
+ "Dubins-Spanier 1961, Selfridge 1960, cuts": "(1961, 1960, 5)"
+}

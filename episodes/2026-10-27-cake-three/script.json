@@ -1,0 +1,70 @@
+{
+  "slug": "cake-three",
+  "format": "short",
+  "series": "everyday",
+  "hook_style": "how-to",
+  "hook_type": "versus",
+  "angle": "versus hook: cut and choose, fair for two, broken for three; rule out cheating (everyone honest, still breaks); two: you cut so either half is fine, friend picks; three: you cut three equal-to-you pieces, Ben grabs the frosted one, Mia wanted it too (half the cake to her), the two left are a quarter each; re-hook: how does nobody get less than a third by their own eyes?; moving knife: slide a knife, anyone who thinks the slice is worth a third yells stop and takes it; the quiet ones thought it was under a third, so the rest is over two thirds to them; last two cut and choose, half of that = a third; payoff: everyone gets a third or more by their own eyes, Dubins and Spanier 1961; CTA checkable comment question: four friends, when do you yell? (a quarter). Series experiment: everyday arm, ~45-50 s.",
+  "title": "How to cut a cake fairly for three people",
+  "description": "Cut and choose is fair for two: you cut so either half is fine for you, and your friend picks. For three it breaks: if you cut three pieces and Ben takes the frosted one Mia also wanted (half the cake to her), the two left are only a quarter each to her. The fix is a moving knife: slide it across the cake and the first person who thinks the slice is worth a third yells stop and takes it. Everyone else thought it was under a third, so the rest is worth over two thirds to them, and cut and choose between the last two gives each at least half of that. Everyone ends up with at least a third by their own measure (Dubins and Spanier, 1961).\n\nNumbers checked in code: the cut-and-choose counterexample, and 100,000 random cakes with three people valuing it differently (nobody ever below a third by their own measure). Sources: Wikipedia, Proportional cake-cutting, Dubins-Spanier theorems, Selfridge-Conway procedure.\n\nThe math behind real problems, twice a day. Subscribe and the next one finds you.\nFound an error? Comment and it gets pinned.\n#math #mathematics #shorts",
+  "social_caption": "Cut and choose is fair for two, but three people break it. Here's the moving-knife trick that guarantees everyone a third.",
+  "tags": [
+    "fair division",
+    "cake cutting",
+    "cut and choose",
+    "moving knife",
+    "game theory",
+    "dubins spanier",
+    "math",
+    "maths",
+    "everyday math"
+  ],
+  "facts_checked": [
+    "Mia values the frosted piece at 1/2 and the others at 1/4 each, so after Ben takes it her best is 1/4 < 1/3 while the cutter keeps 1/3; moving knife + cut and choose on 100,000 random cakes (three people, 12-slice random valuations): worst own share exactly 1/3, never below; the first to yell thinks someone else got at least as much (envy in nearly every trial); quiet people value the rest at 2/3 or more, half of 2/3 = 1/3; four friends yell at 1/4 (verify.py)",
+    "Moving-knife procedure: a knife moves from the left, any participant calls stop when 1/n of the cake lies to its left and takes that piece, repeat; Dubins and Spanier 1961, 'How to Cut a Cake Fairly' (https://en.wikipedia.org/wiki/Proportional_cake-cutting, https://en.wikipedia.org/wiki/Dubins%E2%80%93Spanier_theorems)",
+    "Envy-free division for three needs a cleverer procedure: Selfridge 1960 / Conway, at most 5 cuts (https://en.wikipedia.org/wiki/Selfridge%E2%80%93Conway_procedure)"
+  ],
+  "beats": [
+    {
+      "id": "hook",
+      "say": "Cut and choose: fair for two, broken for three.",
+      "speed": 1.15
+    },
+    {
+      "id": "ruleout",
+      "say": "Nobody cheats. Everyone plays honest, and it still breaks."
+    },
+    {
+      "id": "two",
+      "say": "With two, you cut so either half is fine for you. Your friend picks. Nobody can complain."
+    },
+    {
+      "id": "three",
+      "say": "Now three. You cut three pieces you think are equal. Ben grabs the frosted one. But Mia wanted that one too. To her, the two left are a quarter each."
+    },
+    {
+      "id": "rehook",
+      "say": "So how does nobody, by their own eyes, end up with less than a third?"
+    },
+    {
+      "id": "knife",
+      "say": "Slide a knife slowly across the cake. The moment anyone thinks the slice is worth a third, they yell stop and take it."
+    },
+    {
+      "id": "quiet",
+      "say": "Everyone who stayed quiet thought that slice was smaller. So to them, the rest is worth more than two thirds."
+    },
+    {
+      "id": "last",
+      "say": "The last two cut and choose. Half of two thirds is a third."
+    },
+    {
+      "id": "payoff",
+      "say": "Everyone gets a third or more, by their own eyes. Dubins and Spanier, 1961."
+    },
+    {
+      "id": "cta",
+      "say": "Four friends: when do you yell stop?"
+    }
+  ]
+}

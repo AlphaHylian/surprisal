@@ -1,0 +1,18 @@
+{
+ "ok": true,
+ "problems": [],
+ "warnings": [],
+ "duration_s": 51.1,
+ "size_mb": 8.1,
+ "resolution": "1080x1920",
+ "caption_match_ratio": 0.9877300613496932,
+ "heard": "Cut and choose, fair for two, broken for three. Nobody cheats. Everyone plays honest, and it still breaks. With two, you cut, so either half is fine for you. Your friend picks. Nobody can complain. Now three, you cut three pieces you think are equal. Ben grabs the frosted one, but Mia wanted that one too. To her, the two left are a quarter each. So how does nobody, by their own eyes, end up with less than a third? Slide a knife slowly across the cake. The moment anyone thinks the slice is worth a third, they yell stop and take it. Everyone who stayed quiet thought that slice was smaller. So to them, the rest is worth more than two thirds. The last two cut and choose. Half of two thirds is a third. Everyone gets a third or more, by their own eyes. Dubins in Spaniard, 1961. Four friends, when do you yell stop?",
+ "music": "Somewhere Sunny",
+ "music_gap_db": 8.0,
+ "speech_starts_at_s": 0.01,
+ "final_lufs": -14.9,
+ "voice_engine": "omnivoice",
+ "contact_sheet_every_s": 2.1,
+ "build_seconds": 164,
+ "draft": false
+}

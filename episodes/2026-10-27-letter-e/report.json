@@ -1,0 +1,18 @@
+{
+ "ok": true,
+ "problems": [],
+ "warnings": [],
+ "duration_s": 50.0,
+ "size_mb": 9.0,
+ "resolution": "1080x1920",
+ "caption_match_ratio": 0.9622641509433962,
+ "heard": "Your code has centilions of key, one letter cracks it. Nobody tries the keys. Add a billion a second, that's 13 billion years, 1586. Mary Queen of Scots is locked up. She writes to her plotters and symbols smuggled out in a beer barrel. Her jailer's code breaker skips the keys. He counts the symbols. One letter in eight in English is an E. In a long letter, the top symbol is E more than nine times in 10, one down 25 to go. And she even mixed in fake symbols that mean nothing. Find a three symbol word that ends in E. That's the. Now you have T and H. Letters give you words. Words give you letters. A swap changes the symbols never how often they show up. The keys never mattered. Mary was beheaded in 1587. Subscribe if you thought more keys meant safer.",
+ "music": "Chill Wave",
+ "music_gap_db": 8.0,
+ "speech_starts_at_s": 0.01,
+ "final_lufs": -14.9,
+ "voice_engine": "omnivoice",
+ "contact_sheet_every_s": 2.1,
+ "build_seconds": 167,
+ "draft": false
+}

@@ -16,7 +16,7 @@ through verify.py.
   sides in exact proportions so the keeper gains nothing by guessing. Reveal: pro penalty data
   matches game theory (Palacios-Huerta). [check] (everyday/sport) (2026-10-15: the paper's cell-by-cell scoring table couldn't be fetched (PDF mirrors 403); find a readable source with the 2x2 numbers first)
 
-- You're splitting a cake (or rent) between three people and someone always feels cheated. Steps: cut-and-choose for two, then the moving-knife / last-diminisher for three; envy-free vs proportional. Reveal: fair division (Steinhaus, 1940s). (everyday) [check]
+- (follow-up idea) Envy-free cake for three: Selfridge-Conway (1960), at most 5 cuts; the moving knife (27 Oct) is only proportional, and its first taker always thinks someone else got at least as much. (everyday) [check]
 - You must pick one random winner from a stream of entries and you don't know how many will come. Steps: keep the first, replace it with the k-th entry with chance 1 in k; every entry ends up with the same chance. Reveal: reservoir sampling, how big systems sample logs. (tech) [check]
 
 ## Used
@@ -68,3 +68,5 @@ through verify.py.
 - 2026-10-25  average-speed-long (long-form of average-speed; SPECS division, mean value theorem via the ghost car, Rolle 1691 / Cauchy 1823, Lévy's universal chord theorem: every 2 km at 123.7 while 5 km at 120)  6y7_jF92mn0  20:00 Tallinn 25 Oct, LIVE scheduled
 - 2026-10-26  friends-friends (everyday, how-to, hook claim; friendship paradox: Max/Ana/Ben/Cleo/Dev/Eli 5,2,2,1,1,1, Cleo 1 vs 5, Ana 2 vs 3.5, 5 of 6 lose, average person 2 vs average friend 3; Facebook 2011 92.7% of 721M; Feld 1991; CTA line A-B-C: 2 lose)  KQIN9dOPpRk  12:00 Tallinn 26 Oct, LIVE scheduled
 - 2026-10-26  wine-barrel (history, how-to, hook versus; Kepler Linz 1613: 1 m rod, 50 cm wide 340 L vs 82 cm 605 L (44% less), rod^2 = width^2 + (length/2)^2, best length = width x sqrt 2, Austrian barrels close, 10% off loses under 1%; Nova stereometria 1615)  4JiFd97cbUo  20:00 Tallinn 26 Oct, LIVE scheduled
+- 2026-10-27  letter-e (history, how-to, hook claim; frequency analysis: 26! = 403 septillion keys, a billion a second = 13 billion years, E = 1 letter in 8, top symbol = E 94% at 500 letters, THE gives T and H; Mary, Queen of Scots, beer barrel 1586, Phelippes, beheaded 1587)  ID pending: sent to the owner for 12:00 Tallinn 27 Oct (Zapier task limit)
+- 2026-10-27  cake-three (everyday, how-to, hook versus; fair division: cut and choose for 2, the naive 3-way cut leaves Mia 1/4, Dubins-Spanier moving knife 1961 + cut and choose guarantees 1/3 by your own measure; CTA 4 friends -> yell at 1/4)  ID pending: sent to the owner for 20:00 Tallinn 27 Oct (Zapier task limit)

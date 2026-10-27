@@ -1,0 +1,17 @@
+{
+ "keys, septillions (10^24), rounded down to the hundred": "400",
+ "keys, septillions shown on screen": "403",
+ "a billion keys a second, all keys: billions of years": "13",
+ "26 letters in the table": "26",
+ "top three letters": "ETA",
+ "E share, percent": "13",
+ "one letter in 8 is an E": "8",
+ "E vs Z, times more common": "172",
+ "sim top symbol is E, 50 letters": "0.388",
+ "sim top symbol is E, 500 letters": "0.939",
+ "500 letters: top symbol is E more than 9 times in 10": "True",
+ "THE gives two new letters (T, H) once E is known": "2",
+ "3 letters known after T, H, E, out of 26: left": "23",
+ "letters of code usually enough": "50",
+ "Mary's letter 1586 -> execution 1587": "1"
+}
