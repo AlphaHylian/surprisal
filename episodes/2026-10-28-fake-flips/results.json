@@ -1,0 +1,18 @@
+{
+ "real lists with a streak of 6+, percent": "97",
+ "streak of 7+, more often than not": "True",
+ "one start position, 5 matches in a row: one in": "32",
+ "places a streak of 6 can start in 200 flips": "195",
+ "sim streak 6+ in 200": "0.9657",
+ "sim mean longest streak": "7.98",
+ "simulation agrees with the exact value (within 0.5 points)": "True",
+ "heads count lands within 90-110 most of the time ('about 100')": "True",
+ "on-screen real sample length": "40",
+ "on-screen fake sample length": "40",
+ "on-screen real sample longest streak": "6",
+ "on-screen fake sample longest streak": "2",
+ "switches real/fake out of 39": "20/31",
+ "fake sample switches more than the real one": "True",
+ "20 flips most likely longest streak": "4",
+ "20 flips: most likely longest streak is 4": "4"
+}

@@ -1,0 +1,18 @@
+{
+ "ok": true,
+ "problems": [],
+ "warnings": [],
+ "duration_s": 46.3,
+ "size_mb": 8.6,
+ "resolution": "1080x1920",
+ "caption_match_ratio": 0.9932885906040269,
+ "heard": "two lists of coin flips. The more random one is fake. Don't count heads. Both have about 100. A math professor tells his class, flip a coin 200 times, or fake it. Next day, he spots nearly every faker. His trick, find the longest streak. The same side again and again in a row. Fakers switch sides too often. Six heads in a row feels rigged, so they leave it out. But a six in a row really that normal. Each flip matches the last one half the time. Five matches in a row is one in 32. And in 200 flips, a streak can start in 195 places. So a real list has six in a row, 97 times in 100. No streak of six. Somebody made it up. Flip a coin 20 times. What's your longest streak?",
+ "music": "Late Night Radio",
+ "music_gap_db": 8.0,
+ "speech_starts_at_s": 0.0,
+ "final_lufs": -14.9,
+ "voice_engine": "omnivoice",
+ "contact_sheet_every_s": 2.0,
+ "build_seconds": 1580,
+ "draft": false
+}

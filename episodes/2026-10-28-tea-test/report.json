@@ -1,0 +1,18 @@
+{
+ "ok": true,
+ "problems": [],
+ "warnings": [],
+ "duration_s": 47.6,
+ "size_mb": 8.7,
+ "resolution": "1080x1920",
+ "caption_match_ratio": 0.9802631578947368,
+ "heard": "Eight cups of tea can prove you're not just guessing. One cup proves nothing. A pure gesser gets it right half the time. England at a farm research lab. Muriel Bristol says she can taste whether the milk went in first. Ronald Fisher doesn't buy it. So poor eight cups. Four milk first, four tea first. Shuffle them and tell her it's four and four. She picks the four milk first cups. There are 70 ways to pick four of eight. Only one is all right. But what if she gets three out of four? Sounds convincing. A gesser does that one time in four. So set the rule before she tastes. All four or it proves nothing. She got all eight. By luck, that's one in 70. Fisher put the test in his 1935 book on experiments. Subscribe if you'd have believed her after three.",
+ "music": "Airport Lounge",
+ "music_gap_db": 8.0,
+ "speech_starts_at_s": 0.01,
+ "final_lufs": -15.0,
+ "voice_engine": "omnivoice",
+ "contact_sheet_every_s": 2.0,
+ "build_seconds": 1720,
+ "draft": false
+}

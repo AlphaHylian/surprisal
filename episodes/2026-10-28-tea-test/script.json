@@ -1,0 +1,28 @@
+{
+  "slug": "tea-test",
+  "format": "short",
+  "series": "history",
+  "hook_style": "how-to",
+  "hook_type": "claim",
+  "angle": "claim hook: eight cups of tea can prove you're not just guessing (HookText 8 cups, 1 in 70); rule out one cup (a guesser is right half the time); Rothamsted, England: Muriel Bristol says she can taste whether the milk went in first, Ronald Fisher doesn't buy it; pour eight cups, four milk first, four tea first, shuffle, tell her it's four and four; she picks the four milk-first cups: 70 ways, only one all right; re-hook: what if she gets three of four?; a guesser does that one time in four (17 of 70), so the rule is set before she tastes: all four or no proof; payoff: she got all eight, one in 70 by luck, Fisher's 1935 book; CTA subscribe if you'd have believed her after three. Series arm: history, ~45-50 s.",
+  "title": "How 8 cups of tea prove you're not guessing",
+  "description": "Muriel Bristol, a scientist at Rothamsted in England, said she could taste whether the milk or the tea went into the cup first. Ronald Fisher's test: eight cups, four of each, in random order, and she knows it's four and four. There are 70 ways to pick four cups out of eight, so a pure guesser picks the right four only 1 time in 70 (1.4%). Three out of four sounds convincing, but a guesser gets three or more one time in four (17 of 70), so only a perfect score counts. She reportedly got all eight right, and Fisher used the test in his 1935 book The Design of Experiments.\n\nNumbers checked in code: the counts exactly and 100,000 simulated guessers. Sources: Wikipedia, Lady tasting tea; Muriel Bristol.\n\nThe math behind real problems, twice a day. Subscribe and the next one finds you.\nFound an error? Comment and it gets pinned.\n#math #mathematics #shorts",
+  "social_caption": "Eight cups of tea, and a guesser has a 1 in 70 chance. How Ronald Fisher tested a claim that seemed impossible to test.",
+  "tags": ["lady tasting tea", "ronald fisher", "muriel bristol", "design of experiments", "statistics", "probability", "hypothesis testing", "math", "maths", "history"],
+  "facts_checked": [
+    "One cup: a guesser is right 1 in 2; C(8,4) = 70 ways to pick 4 of 8; exactly 3 of 4 right: 16 ways, 3 or more: 17 (24%, about one time in 4); all right: 1 in 70 = 1.4%, under Fisher's 5%; 100,000 simulated guessers: 1.36% all right, 24.1% three or more (verify.py)",
+    "Muriel Bristol claimed she could tell whether tea or milk was added first; eight cups, four of each, random order, method disclosed; 1 in 70; only all correct rejects at 5%; Fisher's The Design of Experiments (1935); per Salsburg (H. Fairfield Smith), she identified all eight (https://en.wikipedia.org/wiki/Lady_tasting_tea)",
+    "Bristol worked at Rothamsted Experimental Station from 1919; the test happened 'one day at Rothamsted'; Fisher doubted it; she correctly identified all eight cups (https://en.wikipedia.org/wiki/Muriel_Bristol)"
+  ],
+  "beats": [
+    {"id": "hook", "say": "Eight cups of tea can prove you're not just guessing.", "speed": 1.1},
+    {"id": "ruleout", "say": "One cup proves nothing. A pure guesser gets it right half the time."},
+    {"id": "setup", "say": "England, at a farm research lab. Muriel Bristol says she can taste whether the milk went in first. Ronald Fisher doesn't buy it."},
+    {"id": "pour", "say": "So pour eight cups. Four milk first, four tea first. Shuffle them, and tell her it's four and four."},
+    {"id": "pick", "say": "She picks the four milk-first cups. There are 70 ways to pick four of eight. Only one is all right."},
+    {"id": "rehook", "say": "But what if she gets three out of four? Sounds convincing."},
+    {"id": "three", "say": "A guesser does that one time in four. So set the rule before she tastes: all four, or it proves nothing."},
+    {"id": "payoff", "say": "She got all eight. By luck, that's one in 70. Fisher put the test in his 1935 book on experiments."},
+    {"id": "cta", "say": "Subscribe if you'd have believed her after three."}
+  ]
+}

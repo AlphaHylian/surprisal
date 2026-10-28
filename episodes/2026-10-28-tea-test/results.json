@@ -1,0 +1,18 @@
+{
+ "one cup, guesser right: one in": "2",
+ "ways to pick 4 cups of 8": "70",
+ "ways that are all right": "1",
+ "ways with exactly 3 of 4 right": "16",
+ "ways with 3 or more right": "17",
+ "3+ right by luck, about one time in 4": "4",
+ "all right by luck, percent (1 decimal)": "1.4",
+ "Fisher's 5% line: all 4 passes": "True",
+ "Fisher's 5% line: 3 of 4 fails": "False",
+ "3 of 4 picks right = cups sorted right of 8": "6",
+ "sim all 4 right": "0.0136",
+ "sim 3+ right": "0.2413",
+ "sim all right matches 1/70 within 0.002": "True",
+ "sim 3+ matches 17/70 within 0.005": "True",
+ "8 independent coin-flip guesses all right: one in": "256",
+ "book year": "1935"
+}

@@ -1,0 +1,67 @@
+{
+  "slug": "fake-flips",
+  "format": "short",
+  "series": "everyday",
+  "hook_style": "how-to",
+  "hook_type": "versus",
+  "angle": "versus hook: two lists of coin flips, the more random one is fake; rule out counting heads (both about 100); a professor tells his class to flip 200 times or fake it and spots nearly every faker; the trick: find the longest streak; fakers switch too often, six in a row feels rigged; re-hook: is six in a row really normal?; each flip matches the last half the time, five matches = one in 32, a streak can start in 195 places; payoff: a real list has a streak of six 97 times in 100, no six = faked; CTA comment question: flip 20 times, your longest streak (most likely 4). Series arm: everyday, ~45-50 s.",
+  "title": "How to spot fake coin flips in one look",
+  "description": "Ask people to fake 200 coin flips and they switch sides too often: six of the same in a row feels rigged, so they leave it out. But each real flip matches the one before half the time, five matches in a row is a one-in-32 event, and in 200 flips a streak has 195 places to start. So a real list of 200 flips has a streak of six or more about 97 times in 100 (the longest streak averages about 8). No streak of six? Somebody made it up. Mathematician Theodore Hill used this to spot students who faked their coin-flip homework.\n\nNumbers checked in code: the exact chance by dynamic programming and 100,000 simulated lists of 200 flips. Sources: DailyGood on Theodore Hill's coin-flip assignment; ICTCM 13 proceedings (math.odu.edu) on telling real from fake tosses by the longest run.\n\nThe math behind real problems, twice a day. Subscribe and the next one finds you.\nFound an error? Comment and it gets pinned.\n#math #mathematics #shorts",
+  "social_caption": "Two lists of 200 coin flips: the one that looks more random is the fake. Here's the one-look test for made-up randomness.",
+  "tags": [
+    "coin flip",
+    "randomness",
+    "streaks",
+    "fake data",
+    "theodore hill",
+    "probability",
+    "statistics",
+    "math",
+    "maths",
+    "everyday math"
+  ],
+  "facts_checked": [
+    "200 fair flips: chance of a streak (same side) of 6 or more = 96.5% exact (said 97 in 100), 7 or more = 79.9%; 100,000-list simulation 96.6%, mean longest streak 7.98; 2^5 = 32; 195 start positions; heads within 90-110 in 86% of lists; 20 flips: most likely longest streak 4 (31%) (verify.py)",
+    "Theodore Hill asks students to flip a coin 200 times or fake 200 results, and spots nearly all the fakers (https://www.dailygood.org/2006/04/09/unexpected-outcomes)",
+    "Real tosses can be told from fake ones by the length of the longest run; students underestimate how long it should be (https://www.math.odu.edu/~bogacki/epictcm/i/13/P002.html)"
+  ],
+  "beats": [
+    {
+      "id": "hook",
+      "say": "Two lists of coin flips. The more random one is fake.",
+      "speed": 1.2
+    },
+    {
+      "id": "ruleout",
+      "say": "Don't count heads. Both have about 100."
+    },
+    {
+      "id": "setup",
+      "say": "A math professor tells his class: flip a coin 200 times, or fake it. Next day, he spots nearly every faker."
+    },
+    {
+      "id": "streak",
+      "say": "His trick: find the longest streak. The same side, again and again, in a row."
+    },
+    {
+      "id": "fakers",
+      "say": "Fakers switch sides too often. Six heads in a row feels rigged, so they leave it out."
+    },
+    {
+      "id": "rehook",
+      "say": "But is six in a row really that normal?"
+    },
+    {
+      "id": "math",
+      "say": "Each flip matches the last one half the time. Five matches in a row is one in 32. And in 200 flips, a streak can start in 195 places."
+    },
+    {
+      "id": "payoff",
+      "say": "So a real list has six in a row 97 times in 100. No streak of six? Somebody made it up."
+    },
+    {
+      "id": "cta",
+      "say": "Flip a coin 20 times. What's your longest streak?"
+    }
+  ]
+}
