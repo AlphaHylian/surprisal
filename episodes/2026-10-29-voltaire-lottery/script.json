@@ -1,0 +1,72 @@
+{
+  "slug": "voltaire-lottery",
+  "format": "short",
+  "series": "history",
+  "hook_style": "how-to",
+  "hook_type": "claim",
+  "angle": "claim hook: Voltaire beat the French lottery with its cheapest tickets (HookText 1-livre ticket, 500,000 prize); rule out luck and cheating, he read the rules better than the government; Paris 1729, France runs a lottery to sell its bonds, only bondholders play; rule 1: a ticket costs a thousandth of your bond (100,000-livre bond: 100 livres; 1,000-livre bond: 1 livre); rule 2: every ticket the same chance at the 500,000-livre jackpot; re-hook: spot the flaw? price grows with the bond, the chance doesn't; hold small bonds: the rich player's 100 livres buys you 100 tickets, 100 times the chance; scale it: buy up the small bonds as a group, Voltaire, La Condamine and 11 others; payoff: won month after month, Voltaire about half a million livres, lottery shut down; CTA checkable comment question: 5,000-livre bonds, how many tickets for 100 livres (20). Series arm: history, ~45-50 s.",
+  "title": "How Voltaire beat the lottery with its cheapest tickets",
+  "description": "In 1729 France ran a lottery to sell its bonds: only bondholders could play, a ticket cost a thousandth of the bond's value, and every ticket had the same chance at a 500,000-livre jackpot. So a 100,000-livre bond paid 100 livres for one ticket, while 100 small 1,000-livre bonds got 100 tickets for the same 100 livres: 100 times the chance. Charles de La Condamine spotted it, Voltaire and 11 others pooled money to buy up small bonds, and the group won month after month until the lottery was shut down; Voltaire's share was about half a million livres.\n\nNumbers checked in code: the ticket prices exactly and 200,000 simulated draws. Sources: Smithsonian Magazine, Voltaire, Enlightenment Philosopher and Lottery Scammer; Damn Interesting, The Enlightenment Guide to Winning the Lottery; Wikipedia, Charles Marie de La Condamine.\n\nThe math behind real problems, twice a day. Subscribe and the next one finds you.\nFound an error? Comment and it gets pinned.\n#math #mathematics #shorts",
+  "social_caption": "A 1-livre ticket had the same chance as a 100-livre one. How Voltaire and La Condamine turned a badly priced lottery into a fortune.",
+  "tags": [
+    "voltaire",
+    "la condamine",
+    "lottery",
+    "1729",
+    "expected value",
+    "probability",
+    "history of math",
+    "math",
+    "maths",
+    "history"
+  ],
+  "facts_checked": [
+    "Ticket = 1/1000 of the bond: 100,000-livre bond -> 100 livres, 1,000-livre bond -> 1 livre; 100 livres buys 100 small tickets = 100x the chance; 13 in the group; CTA 5,000-livre bonds -> 5 livres a ticket -> 20 tickets; 200,000 simulated draws (verify.py)",
+    "1729 French government lottery tied to its bonds, only bondholders could buy tickets, ticket cost tied to bond value (as little as one-thousandth), winners got face value plus a 500,000-livre jackpot, equal odds for every bond size; Voltaire, de la Condamine and 11 others pooled resources; Voltaire's share about half a million livres (https://www.smithsonianmag.com/smart-news/voltaire-enlightenment-philosopher-and-lottery-scammer-180967265/)",
+    "Tickets at 1/1000th of the bond's value (1,000-livre bond: 1 livre, 10,000: 10), equal chances at the 500,000-livre jackpot; the royal council let them keep the winnings but the lottery was shut down (https://www.damninteresting.com/the-enlightenment-guide-to-winning-the-lottery/)",
+    "1729, La Condamine and Voltaire exploited a loophole in the French government's lottery (https://en.wikipedia.org/wiki/Charles_Marie_de_La_Condamine); group won seven months in a row (https://kucharski.substack.com/p/probability-and-persistence), said on screen only as 'month after month'"
+  ],
+  "beats": [
+    {
+      "id": "hook",
+      "say": "Voltaire beat the lottery with its cheapest tickets.",
+      "speed": 1.2
+    },
+    {
+      "id": "ruleout",
+      "say": "No luck, no cheating. He read the rules better than the government."
+    },
+    {
+      "id": "setup",
+      "say": "Paris, 1729. France runs a lottery to sell its bonds."
+    },
+    {
+      "id": "price",
+      "say": "Rule one: a ticket costs a thousandth of your bond. A 100,000 livre bond pays 100. A 1,000 livre bond pays one."
+    },
+    {
+      "id": "chance",
+      "say": "Rule two: every ticket has the same chance at the jackpot. 500,000 livres."
+    },
+    {
+      "id": "rehook",
+      "say": "Spot the flaw? The price grows with the bond. The chance doesn't."
+    },
+    {
+      "id": "small",
+      "say": "So buy small bonds. The 100 livres a rich player pays for one ticket buys you 100. 100 times the chance."
+    },
+    {
+      "id": "scale",
+      "say": "Now team up and buy the small bonds. La Condamine, Voltaire and 11 friends did."
+    },
+    {
+      "id": "payoff",
+      "say": "They won month after month. Voltaire made about half a million livres. Then the lottery was shut down."
+    },
+    {
+      "id": "cta",
+      "say": "Quick check: with 5,000 livre bonds, how many tickets does 100 livres buy?"
+    }
+  ]
+}

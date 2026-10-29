@@ -1,0 +1,29 @@
+{
+  "slug": "raffle-slip",
+  "format": "short",
+  "series": "everyday",
+  "hook_style": "how-to",
+  "hook_type": "versus",
+  "angle": "versus hook: keep every name or keep just one, both pick a fair winner (HookText every name vs 1 slip); problem: your party raffle, guests trickle in, you don't know how many, one slip of paper; rule out first guest / last guest; steps: guest 1 writes the slip; guest 2: coin, heads they take it; guest 3: die 1 or 2 = 1 in 3; guest 10: 1 in 10, guest 100: 1 in 100; re-hook: guest one had to survive every swap, doomed?; proof: survives 1/2, 2/3, 3/4, multiply, everything cancels; payoff: with 100 guests guest one has exactly 1 in 100, so does everyone, and you never needed the count; reveal: computers sample endless data streams this way, reservoir sampling; CTA subscribe if you'd have kept every name (loops to the hook). Series arm: everyday, ~45-50 s.",
+  "title": "How to run a fair raffle with one slip of paper",
+  "description": "You don't know how many guests are coming, and you only have one slip of paper. Write the first guest's name; when guest number k arrives, they take the slip with a 1 in k chance (a coin for guest 2, a die showing 1 or 2 for guest 3). Guest one survives each swap with chance 1/2, 2/3, 3/4, ... and the product cancels to exactly 1 in 100 after 100 guests, the same as every other guest. Computers use the same trick, reservoir sampling (Algorithm R, Waterman; published by Vitter in 1985), to pick fair samples from data streams of unknown length.\n\nNumbers checked in code: the exact fractions for all 100 guests and 200,000 simulated parties. Source: Wikipedia, Reservoir sampling.\n\nThe math behind real problems, twice a day. Subscribe and the next one finds you.\nFound an error? Comment and it gets pinned.\n#math #mathematics #shorts",
+  "social_caption": "Guests keep arriving and you don't know how many. One slip of paper and a die still give every guest the exact same chance.",
+  "tags": ["raffle", "reservoir sampling", "fair draw", "random sampling", "probability", "algorithms", "computer science", "math", "maths", "everyday math"],
+  "facts_checked": [
+    "Guest k takes the slip with chance 1/k: coin 1/2, die 1-2 = 1/3, guest 10 = 1/10; guest one survives 1/2 x 2/3 x 3/4 x ... x 99/100 = 1/100; exact chance for each of 100 guests = 1/100; 200,000 simulated parties: every guest 0.95%-1.06% (verify.py)",
+    "Algorithm R: item i replaces the stored item with probability given by a uniform index in 1..i; one pass over a population of unknown size; discovered by Alan G. Waterman, cited via Knuth and Vitter, 'Random sampling with a reservoir' (1985) (https://en.wikipedia.org/wiki/Reservoir_sampling)"
+  ],
+  "beats": [
+    {"id": "hook", "say": "Keep every name, or keep just one. Both pick a fair winner.", "speed": 1.1},
+    {"id": "problem", "say": "Your party raffle. Guests keep arriving, you don't know how many, and you have one slip of paper."},
+    {"id": "ruleout", "say": "Give it to the first guest? Unfair. The last? Also unfair."},
+    {"id": "first", "say": "Guest one arrives. Write their name on the slip."},
+    {"id": "coin", "say": "Guest two: flip a coin. Heads, they take the slip."},
+    {"id": "die", "say": "Guest three: roll a die. One or two, that's one in three, and it's theirs. Guest 10 gets one in 10."},
+    {"id": "rehook", "say": "But guest one has to survive every swap. Aren't they doomed?"},
+    {"id": "proof", "say": "They survive guest two half the time, then two in three, then three in four. Multiply, and everything cancels."},
+    {"id": "payoff", "say": "After 100 guests, guest one has exactly one in 100. So does everyone. And you never needed to know the count."},
+    {"id": "reveal", "say": "Computers pick samples from endless data the same way. It's called reservoir sampling."},
+    {"id": "cta", "say": "Subscribe if you'd have kept every name."}
+  ]
+}

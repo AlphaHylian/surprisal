@@ -1,0 +1,18 @@
+{
+ "ok": true,
+ "problems": [],
+ "warnings": [],
+ "duration_s": 53.3,
+ "size_mb": 9.6,
+ "resolution": "1080x1920",
+ "caption_match_ratio": 0.9675324675324676,
+ "heard": "Keep every name or keep just one. Both pick a fair winner. Your party raffle. Guests keep arriving, you don't know how many, and you have one slip of paper. Give it to the first guest, unfair. The last, also unfair. Guest one arrives. Write their name on the slip. Guest two, flip a coin. Heads, they take the slip. Guest three, roll a die. One or two, that's one and three, and it's theirs. Guest 10 gets one and 10. But guest one has to survive every swap. Aren't they doomed? They survive guests two half the time. Then two and three, then three and four. Multiply and everything cancels. After 100 guests, guest one has exactly one in 100. So does everyone. And you never needed to know the count. Computers pick samples from endless data the same way. It's called reservoir sampling. Subscribe if you'd have kept every name.",
+ "music": "Wallpaper",
+ "music_gap_db": 8.0,
+ "speech_starts_at_s": 0.01,
+ "final_lufs": -15.0,
+ "voice_engine": "omnivoice",
+ "contact_sheet_every_s": 2.2,
+ "build_seconds": 194,
+ "draft": false
+}

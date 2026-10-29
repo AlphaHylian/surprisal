@@ -17,7 +17,6 @@ through verify.py.
   matches game theory (Palacios-Huerta). [check] (everyday/sport) (2026-10-15: the paper's cell-by-cell scoring table couldn't be fetched (PDF mirrors 403); find a readable source with the 2x2 numbers first)
 
 - (follow-up idea) Envy-free cake for three: Selfridge-Conway (1960), at most 5 cuts; the moving knife (27 Oct) is only proportional, and its first taker always thinks someone else got at least as much. (everyday) [check]
-- You must pick one random winner from a stream of entries and you don't know how many will come. Steps: keep the first, replace it with the k-th entry with chance 1 in k; every entry ends up with the same chance. Reveal: reservoir sampling, how big systems sample logs. (tech) [check]
 
 ## Used
 - 2026-09-30  birthday-paradox (sounds-fake)  eQS8gtimpvA  first public video, 9pm Tallinn
@@ -72,3 +71,5 @@ through verify.py.
 - 2026-10-27  cake-three (everyday, how-to, hook versus; fair division: cut and choose for 2, the naive 3-way cut leaves Mia 1/4, Dubins-Spanier moving knife 1961 + cut and choose guarantees 1/3 by your own measure; CTA 4 friends -> yell at 1/4)  ID pending: sent to the owner for 20:00 Tallinn 27 Oct (Zapier task limit)
 - 2026-10-28  fake-flips (everyday, how-to, hook versus; longest streak in 200 flips: 6+ in 96.5%, 1 in 32, 195 start places, fakers switch too often (Theodore Hill's homework); CTA longest streak in 20 flips (most likely 4))  not uploaded by the bot (Zapier task limit): sent to the owner for 12:00 Tallinn 28 Oct
 - 2026-10-28  tea-test (history, how-to, hook claim; Fisher's lady tasting tea, Muriel Bristol at Rothamsted: C(8,4) = 70, 3+ right 17/70 about 1 in 4, all-or-nothing rule, The Design of Experiments 1935)  not uploaded by the bot (Zapier task limit): sent to the owner for 20:00 Tallinn 28 Oct
+- 2026-10-29  voltaire-lottery (history, how-to, hook claim; 1729 French bond lottery: ticket = 1/1000 of the bond (100,000 -> 100 livres, 1,000 -> 1), same chance at the 500,000-livre jackpot, 100 livres = 100 small tickets = 100x the chance; La Condamine, Voltaire + 11; Voltaire ~half a million; CTA 5,000-livre bonds -> 20 tickets)  not uploaded by the bot (Zapier task limit): sent to the owner for 12:00 Tallinn 29 Oct
+- 2026-10-29  raffle-slip (everyday, how-to, hook versus; one-slot reservoir sampling: guest k takes the slip with 1 in k (coin, die 1-2, 1 in 10), guest one survives 1/2 x 2/3 x ... = 1/100, everyone 1/100, count never needed; Algorithm R / Vitter 1985)  not uploaded by the bot (Zapier task limit): sent to the owner for 20:00 Tallinn 29 Oct

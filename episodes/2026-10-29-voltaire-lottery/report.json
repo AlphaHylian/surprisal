@@ -1,0 +1,18 @@
+{
+ "ok": true,
+ "problems": [],
+ "warnings": [],
+ "duration_s": 55.1,
+ "size_mb": 10.2,
+ "resolution": "1080x1920",
+ "caption_match_ratio": 0.9192546583850931,
+ "heard": "Voltaire beat the lottery with its cheapest tickets. No luck, no cheating. He read the rules better than the government. Paris 1729. France runs a lottery to sell its bonds. Rule one, a ticket costs 1 ,000th of your bond. A 100 ,000 lever bond pays 100. A 1 ,000 lever bond pays one. Rule two, every ticket has the same chance at the jackpot. 500 ,000 leverays. Spot the flaw. The price grows with the bond. The chance doesn't. So buy small bonds. The 100 levers a rich player pays for one ticket buys you 100. 100 times the chance. Now team up and buy the small bonds. La Condamine, Voltaire and 11 friends did. They won month after month. Voltaire made about half a million leverays. Then the lottery was shut down. Quick check. With 5 ,000 lever bonds, how many tickets does 100 levers buy?",
+ "music": "Chill Wave",
+ "music_gap_db": 8.0,
+ "speech_starts_at_s": 0.05,
+ "final_lufs": -14.8,
+ "voice_engine": "omnivoice",
+ "contact_sheet_every_s": 2.3,
+ "build_seconds": 199,
+ "draft": false
+}
