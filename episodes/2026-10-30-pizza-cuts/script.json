@@ -1,0 +1,66 @@
+{
+  "slug": "pizza-cuts",
+  "format": "short",
+  "series": "everyday",
+  "hook_style": "how-to",
+  "hook_type": "versus",
+  "angle": "versus hook: four cuts through the middle give 8 slices, four smarter cuts give 11 (HookText 4 cuts: 8 vs 11); problem: one pizza, 11 people, four straight cuts, no stacking or folding; cut 1: 2, cut 2 across it: 4; cut 3: through the middle 6, miss the middle and cross both cuts at different spots: 7; rule: a new cut adds one piece plus one for each cut it crosses; re-hook: cut four must cross all three, where's the room?; tilt it so it hits all three inside the crust: 4 parts, 4 new pieces, 11; payoff: cuts add 1, 2, 3, 4; 10 cuts = 56 vs 20 through the middle, nobody said equal; CTA checkable comment question: 5 cuts? (16). Series arm: everyday (noon; yesterday noon was history), 9 beats aiming for 45-50 s.",
+  "title": "How to cut a pizza into 11 slices with 4 cuts",
+  "description": "Four straight cuts through the middle give 8 slices; four cuts placed so that every new cut crosses all the earlier ones inside the crust, never at a shared point, give 11. A new cut adds one piece, plus one more for every cut it crosses, so n cuts give at most 1 + (1 + 2 + ... + n) pieces: 2, 4, 7, 11, 16, and 56 with 10 cuts (against 20 through the middle). This is the lazy caterer's sequence.\n\nNumbers checked in code: the formula for 1 to 10 cuts, and 100,000 random sets of cuts that never beat it. Source: Wikipedia, Lazy caterer's sequence.\n\nThe math behind real problems, twice a day. Subscribe and the next one finds you.\nFound an error? Comment and it gets pinned.\n#math #mathematics #shorts",
+  "social_caption": "Four straight cuts through the middle give 8 slices of pizza. Four smarter cuts give 11, and the rule behind it is one line.",
+  "tags": [
+    "pizza",
+    "pizza slices",
+    "lazy caterer",
+    "cutting pizza",
+    "geometry",
+    "counting",
+    "puzzle",
+    "math",
+    "maths",
+    "everyday math"
+  ],
+  "facts_checked": [
+    "Through the middle: n cuts = 2n slices (4 -> 8, 10 -> 20); best placement: (n^2 + n + 2)/2 = 2, 4, 7, 11, 16 for 1-5 cuts, 56 for 10; cut 3 through the middle gives 6, off-centre 7; cut 4 adds 4; 100,000 random sets of 5 chords never beat the formula and reach it (verify.py)",
+    "Lazy caterer's sequence: maximum pieces with n straight cuts = (n^2 + n + 2)/2; the nth cut crosses the n - 1 earlier cuts, is split into n segments, each splitting one piece in two, adding n pieces (https://en.wikipedia.org/wiki/Lazy_caterer%27s_sequence)"
+  ],
+  "beats": [
+    {
+      "id": "hook",
+      "say": "Four cuts, 8 slices. Done right: 11.",
+      "speed": 1.2
+    },
+    {
+      "id": "problem",
+      "say": "Your pizza has to feed 11 people. No stacking, no folding. Four straight cuts. Not one more."
+    },
+    {
+      "id": "two",
+      "say": "Cut one: two pieces. Cut two, straight across it: four."
+    },
+    {
+      "id": "three",
+      "say": "Cut three is where everyone goes wrong. Through the middle, you get six. Miss the middle, so it crosses both cuts in different spots: seven."
+    },
+    {
+      "id": "rule",
+      "say": "That's the rule. A new cut adds one piece, plus one for every cut it crosses."
+    },
+    {
+      "id": "rehook",
+      "say": "So cut four has to cross all three. Is there even room?"
+    },
+    {
+      "id": "four",
+      "say": "Tilt it, so it hits all three inside the crust. That's three crossings, four new pieces. 11."
+    },
+    {
+      "id": "payoff",
+      "say": "Each cut adds one more than the last. 10 cuts give 56 slices, not 20. Nobody said they'd be equal."
+    },
+    {
+      "id": "cta",
+      "say": "Five cuts. How many slices? Answer in the comments."
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+ "4 cuts through the middle": "8",
+ "4 smart cuts": "11",
+ "cut 1": "2",
+ "cut 2": "4",
+ "cut 3 through the middle": "6",
+ "cut 3 off-centre": "7",
+ "cut 4 adds": "4",
+ "1+1+2+3+4": "11",
+ "10 smart cuts": "56",
+ "10 cuts through the middle": "20",
+ "CTA: 5 cuts": "16",
+ "sim: random cuts never beat the formula and reach it": "{1: 2, 2: 4, 3: 7, 4: 11, 5: 16}"
+}

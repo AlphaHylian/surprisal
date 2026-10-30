@@ -1,0 +1,17 @@
+{
+ "needle/gap": "5/6",
+ "chance of a crossing, %": "53",
+ "100 needles: about this many cross": "53",
+ "Lazzarini: 3,408 throws, 1,808 crossings ->": "355/113",
+ "355/113 to 7 digits": "3.1415929",
+ "pi to 7 digits": "3.1415927",
+ "355/113 right to six decimals": "True",
+ "3,408 = 16 x 213": "3408",
+ "213 throws, 113 crossings ->": "355/113",
+ "expected crossings in 213 throws": "113",
+ "honest 3,408: typically off by about 0.05": "0.05",
+ "about 100 trillion throws (order)": "True",
+ "sim crossing rate ~53%": "0.53",
+ "sim: most honest runs only get 3.1 (2 sig. digits)": "True",
+ "sim: 6 digits right only when crossings = 1,808 exactly (~1 in 70)": "70"
+}

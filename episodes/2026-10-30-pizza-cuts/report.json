@@ -1,0 +1,18 @@
+{
+ "ok": true,
+ "problems": [],
+ "warnings": [],
+ "duration_s": 48.9,
+ "size_mb": 8.9,
+ "resolution": "1080x1920",
+ "caption_match_ratio": 0.9925373134328358,
+ "heard": "four cuts, eight slices. Done right, 11. Your pizza has to feed 11 people. No stacking, no folding. Four straight cuts. Not one more. Cut one, two pieces. Cut two straight across it, four. Cut three is where everyone goes wrong. Through the middle, you get six. Miss the middle, so it crosses both cuts in different spots. Seven. That's the rule. A new cut adds one piece plus one for every cut it so cut four has to cross all three. Is there even room? Tilt it so it hits all three inside the crust. That's three crossings, four new pieces. 11. Each cut adds one more than the last. Ten cuts give 56 slices, not 20. Nobody said they'd be equal. Five cuts. How many slices? Answer in the comments.",
+ "music": "Somewhere Sunny",
+ "music_gap_db": 8.0,
+ "speech_starts_at_s": 0.01,
+ "final_lufs": -15.0,
+ "voice_engine": "omnivoice",
+ "contact_sheet_every_s": 2.0,
+ "build_seconds": 327,
+ "draft": false
+}

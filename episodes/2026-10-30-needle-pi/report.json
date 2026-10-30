@@ -1,0 +1,18 @@
+{
+ "ok": true,
+ "problems": [],
+ "warnings": [],
+ "duration_s": 62.3,
+ "size_mb": 10.6,
+ "resolution": "1080x1920",
+ "caption_match_ratio": 0.917098445595855,
+ "heard": "Drop a needle on line paper and it tells you pie. No circle, no ruler, just a floor lines and a needle, and one man who got it far too right. Draw lines three centimeters apart. Drop a needle 2 .5 centimeters long, again and again, and count how often it lands across a line. Buffon proved the chances five over three pie, about 53 and 100. Turn that around and your count tells you pie. In 1901, Lazarini did it 3 ,408 times and got pie right to six decimals. Suspiciously right. An honest run that size is usually off by 0 .05. That's 3 .1. The giveaway 3 ,408 is 16 times 213. And 213 drops with 113 crossings, gives 355 over 113, a famous fraction for pie. Looks like he stopped when it fit. Six honest digits would take about 100 trillion drops. Drop 100 needles about how many cross a line.",
+ "music": "Tech Talk",
+ "music_gap_db": 8.0,
+ "speech_starts_at_s": 0.0,
+ "final_lufs": -14.9,
+ "voice_engine": "omnivoice",
+ "contact_sheet_every_s": 2.6,
+ "build_seconds": 276,
+ "draft": false
+}

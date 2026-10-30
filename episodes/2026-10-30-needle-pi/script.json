@@ -1,0 +1,66 @@
+{
+  "slug": "needle-pi",
+  "format": "short",
+  "series": "history",
+  "hook_style": "how-to",
+  "hook_type": "claim",
+  "angle": "claim hook: drop a needle 3,408 times and you get pi to six digits (HookText 3,408 needles = pi to 6 digits?); rule out circles and rulers, just a floor, lines and a needle, and one man who got it far too right; how-to: lines 3 cm apart, needle 2.5 cm, drop, count crossings; Buffon: the chance is 5 over 3 pi, about 53 in 100, flip it and the count gives pi; re-hook: Lazzarini 1901, 3,408 drops, 3.1415929, six digits right, too right; an honest run that size is off by about 0.05: 3.1; the giveaway: 3,408 = 16 x 213, and 213 drops with 113 crossings gives 355/113, a famous fraction for pi: looks like he stopped when it fit; payoff: six honest digits take about 100 trillion drops; CTA checkable comment question: drop 100 needles, about how many cross? (53). Series arm: history (20:00), 9 beats aiming for 45-50 s.",
+  "title": "How to find pi by dropping a needle (and how one man faked it)",
+  "description": "Draw lines 3 cm apart and drop a 2.5 cm needle: it lands across a line with chance 5/(3π), about 53 times in 100, so counting crossings gives you π (Buffon's needle). In 1901 Lazzarini reported 3,408 drops and π = 355/113 = 3.1415929, right to six decimals. An honest run of 3,408 drops is typically off by about 0.05; 3,408 = 16 × 213, and 213 drops with 113 crossings gives exactly 355/113, which suggests he stopped when the count fit. Six honest digits would take about 100 trillion drops.\n\nNumbers checked in code: the exact fractions, 1,000,000 simulated needle drops and 100,000 simulated 3,408-drop runs. Source: Wikipedia, Buffon's needle problem.\n\nThe math behind real problems, twice a day. Subscribe and the next one finds you.\nFound an error? Comment and it gets pinned.\n#math #mathematics #shorts",
+  "social_caption": "Drop a needle on lined paper enough times and it tells you pi. In 1901 a man claimed six digits from 3,408 drops. The numbers give him away.",
+  "tags": [
+    "buffon's needle",
+    "pi",
+    "lazzarini",
+    "estimating pi",
+    "monte carlo",
+    "probability",
+    "history of math",
+    "math",
+    "maths",
+    "statistics"
+  ],
+  "facts_checked": [
+    "Needle 2.5 cm, lines 3 cm: ratio 5/6, crossing chance 5/(3 pi) = 53.05%; 3,408 drops with 1,808 crossings -> 355/113 = 3.1415929 vs pi 3.1415927 (same to six decimals); 3,408 = 16 x 213; 213 drops with 113 crossings -> 355/113; honest 3,408-drop spread 0.0506; about 1.2e14 drops for 355/113's accuracy; 1,000,000 simulated drops: 53.1%; 100,000 simulated 3,408-drop runs: 6 digits right only when crossings are exactly 1,808 (verify.py)",
+    "Buffon's needle: P = 2l/(pi t) for l <= t; Lazzarini 1901: 3,408 tosses, needle 5/6 of the strip width, reported 355/113; 3,408 = 16 x 213 suggests he repeated batches of 213 until it fit; results statistically improbable (https://en.wikipedia.org/wiki/Buffon%27s_needle_problem)"
+  ],
+  "beats": [
+    {
+      "id": "hook",
+      "say": "Drop a needle on lined paper, and it tells you pi.",
+      "speed": 1.2
+    },
+    {
+      "id": "ruleout",
+      "say": "No circle, no ruler. Just a floor, lines and a needle. And one man who got it far too right."
+    },
+    {
+      "id": "drop",
+      "say": "Draw lines 3 centimeters apart. Drop a needle 2.5 centimeters long, again and again, and count how often it lands across a line."
+    },
+    {
+      "id": "formula",
+      "say": "Buffon proved the chance is five over three pi. About 53 in 100. Turn that around, and your count tells you pi."
+    },
+    {
+      "id": "rehook",
+      "say": "In 1901, Lazzarini did it 3,408 times and got pi right to six decimals. Suspiciously right."
+    },
+    {
+      "id": "honest",
+      "say": "An honest run that size is usually off by 0.05. That's 3.1."
+    },
+    {
+      "id": "tell",
+      "say": "The giveaway: 3,408 is 16 times 213. And 213 drops with 113 crossings gives 355 over 113, a famous fraction for pi. Looks like he stopped when it fit."
+    },
+    {
+      "id": "payoff",
+      "say": "Six honest digits would take about 100 trillion drops."
+    },
+    {
+      "id": "cta",
+      "say": "Drop 100 needles. About how many cross a line?"
+    }
+  ]
+}
