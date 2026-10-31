@@ -1,0 +1,74 @@
+{
+  "slug": "two-thirds",
+  "format": "short",
+  "series": "everyday",
+  "hook_style": "how-to",
+  "hook_type": "versus",
+  "angle": "versus hook: pick 33, you lose; pick 0, you lose too (HookText Pick 33: lose. Pick 0: lose too.); rules: everyone picks 0-100, closest to two thirds of the average wins; rule out 33: random picks average 50, 2/3 of 50 = 33, looks smart; but everyone has that idea: all 33 -> target 22; they see it coming: 15, then 10, slides to 0; re-hook: the perfect answer is 0, pick 0 and you lose too; real game: a Danish newspaper (Politiken 2005), 19,196 readers, winning number 21.6; payoff: most people think one or two steps ahead, so be exactly one step smarter than the crowd; CTA: your number in the comments, two thirds of the average wins (the comments become the game). Series arm: everyday (20:00), 9 beats aiming for 45-50 s.",
+  "title": "Why picking 33 loses this number game",
+  "description": "Everyone picks a number from 0 to 100, and the winner is closest to two thirds of the average. If picks were random the average would be 50, so 33 looks smart; but if everyone thinks that, the target is 22, then 15, then 10, all the way down to 0, the only answer that survives perfect logic. Real people stop after one or two steps: when the Danish newspaper Politiken ran the game in 2005 with 19,196 readers, the winning number was 21.6. The best pick is one step smarter than the crowd, not the smartest one.\n\nNumbers checked in code (the 2/3 chain 33, 22, 15, 10 and 100,000 simulated crowds of level-k players). Sources: Wikipedia, Guess 2/3 of the average (Politiken, Nagel 1995).\n\nThe math behind real problems, twice a day. Subscribe and the next one finds you.\nFound an error? Comment and it gets pinned.\n#math #mathematics #shorts",
+  "social_caption": "Pick a number from 0 to 100; closest to two thirds of the average wins. 33 looks smart and loses, 0 is perfectly logical and loses too.",
+  "tags": [
+    "guess 2/3 of the average",
+    "number game",
+    "game theory",
+    "keynesian beauty contest",
+    "nash equilibrium",
+    "level-k thinking",
+    "puzzle",
+    "math",
+    "maths",
+    "everyday math"
+  ],
+  "music_moods": [
+    "upbeat"
+  ],
+  "facts_checked": [
+    "Chain from random picks (average 50): 33.3, 22.2, 14.8, 9.9, 6.6 ... -> 0, the unique Nash equilibrium (verify.py; https://en.wikipedia.org/wiki/Guess_2/3_of_the_average)",
+    "Politiken (Denmark) 2005: 19,196 participants, winning number 21.6 (Wikipedia footnote citing Politiken 22 Sep 2005; https://en.wikipedia.org/wiki/Guess_2/3_of_the_average)",
+    "Real players reason about one or two levels (Nagel 1995, first-round average ~36) (https://en.wikipedia.org/wiki/Guess_2/3_of_the_average)",
+    "Simulation: 100,000 crowds of 1,000 level-k players; 33 and 0 never closest, mean winning number 20.8 (verify.py)"
+  ],
+  "beats": [
+    {
+      "id": "hook",
+      "say": "Pick 33, you lose. Pick 0, you lose too.",
+      "speed": 1.15
+    },
+    {
+      "id": "rules",
+      "say": "Everyone picks a number from 0 to 100. Closest to two thirds of the average wins.",
+      "caption": "Everyone picks a number from 0 to 100. Closest to 2/3 of the average wins."
+    },
+    {
+      "id": "ruleout",
+      "say": "33 looks smart. Random picks average 50, and two thirds of 50 is 33.",
+      "caption": "33 looks smart. Random picks average 50, and 2/3 of 50 is 33."
+    },
+    {
+      "id": "step",
+      "say": "But everyone has that idea. If they all pick 33, the target is 22."
+    },
+    {
+      "id": "chain",
+      "say": "They see that coming? 15. Then 10. Keep going, and it slides all the way to 0."
+    },
+    {
+      "id": "rehook",
+      "say": "So the perfect answer is 0. Pick 0, and you lose too."
+    },
+    {
+      "id": "real",
+      "say": "A Danish newspaper ran this game with 19,196 readers. The winning number was 21.6."
+    },
+    {
+      "id": "payoff",
+      "say": "Most people think one or two steps ahead. So don't be the smartest. Be exactly one step smarter than the crowd."
+    },
+    {
+      "id": "cta",
+      "say": "Your number? Put it in the comments. Two thirds of the average wins.",
+      "caption": "Your number? Put it in the comments. 2/3 of the average wins."
+    }
+  ]
+}

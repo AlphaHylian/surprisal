@@ -1,0 +1,73 @@
+{
+  "slug": "gold-crown",
+  "format": "short",
+  "series": "history",
+  "hook_style": "how-to",
+  "hook_type": "claim",
+  "angle": "claim hook: a fake gold crown gives itself away by 13 grams (HookText Fake gold? 13 g tells you); rule out weighing (same 1,000 g the king handed over); silver is lighter, same weight takes more room: 1,000 g gold = 52 cm3, swap 300 g for silver = 65; Archimedes' famous fix: sink it in a full bowl, measure the spill, Eureka; re-hook: in a 20 cm bowl the 13 extra cm3 raise the water less than half a millimetre, one drip hides it; balance: crown against 1,000 g pure gold, level in air; lower both into water: water pushes up by the weight it moves aside, 52 g vs 65 g; payoff: the crown side rises by 13 g, any scale sees it, Galileo (La Bilancetta 1586) bet this is what Archimedes really did; CTA checkable comment question: 100 g swapped, how far does it tip (about 4 g). Series arm: history (noon; yesterday noon was everyday), 9 beats aiming for 45-50 s.",
+  "title": "How to catch a fake gold crown without a scratch",
+  "description": "Silver is lighter than gold, so a crown with silver mixed in takes up more room at the same weight: 1,000 grams of gold fills 52 cubic centimetres, but 700 g of gold plus 300 g of silver fills 65. The famous overflow test (Vitruvius' story of Archimedes) would show that as a water level less than half a millimetre higher in a 20 cm bowl. Hang the crown on a balance against 1,000 g of pure gold and lower both into water instead: the water pushes up by the weight it moves aside, 52 g against 65 g, and the crown side rises by 13 grams. Galileo argued in La Bilancetta (1586) that this is what Archimedes really did.\n\nNumbers checked in code (densities 19.3 and 10.5 g/cm3, volumes, water rise, balance tip, and a 100,000-crown simulation). Sources: Chris Rorres' Archimedes pages (NYU), Wikipedia (Eureka).\n\nThe math behind real problems, twice a day. Subscribe and the next one finds you.\nFound an error? Comment and it gets pinned.\n#math #mathematics #shorts",
+  "social_caption": "How do you prove a gold crown is fake without scratching it? The famous bathtub trick barely works, but a balance and a bowl of water catch it by 13 grams.",
+  "tags": [
+    "archimedes",
+    "gold crown",
+    "eureka",
+    "buoyancy",
+    "archimedes principle",
+    "galileo",
+    "density",
+    "math",
+    "maths",
+    "history"
+  ],
+  "music_moods": [
+    "curious"
+  ],
+  "facts_checked": [
+    "Densities gold 19.3 g/cm3, silver 10.5: 1,000 g gold = 51.8 cm3, 700 g gold + 300 g silver = 64.8 cm3, extra 13 cm3; 20 cm bowl (314 cm2): levels 0.165 vs 0.206 cm, difference 0.41 mm; in water 948.2 g vs 935.2 g, 13.0 g imbalance (verify.py; matches https://www.math.nyu.edu/~crorres/Archimedes/Crown/CrownIntro.html)",
+    "The story: Hiero II of Syracuse suspected silver was substituted for gold in a votive crown; told by Vitruvius (Book IX) about two centuries later; the balance-and-submerge method (https://en.wikipedia.org/wiki/Eureka_(word))",
+    "Galileo, La Bilancetta (1586, age 22): called the overflow method crude and believed Archimedes used a hydrostatic balance (https://www.math.nyu.edu/~crorres/Archimedes/Crown/bilancetta.html)",
+    "CTA: 100 g silver swapped -> tip about 4.4 g (verify.py)"
+  ],
+  "beats": [
+    {
+      "id": "hook",
+      "say": "A fake gold crown gives itself away by 13 grams.",
+      "speed": 1.2
+    },
+    {
+      "id": "ruleout",
+      "say": "Weighing won't help. It weighs exactly the 1,000 grams of gold the king handed over. The question is how much is now silver."
+    },
+    {
+      "id": "volume",
+      "say": "Silver is lighter, so the same weight takes more room. 1,000 grams of gold fills 52 cubic centimetres. Swap 300 grams for silver: 65.",
+      "caption": "Silver is lighter, so the same weight takes more room. 1,000 g of gold fills 52 cm³. Swap 300 g for silver: 65."
+    },
+    {
+      "id": "overflow",
+      "say": "Archimedes' famous fix: sink it in a full bowl and measure what spills. Eureka."
+    },
+    {
+      "id": "rehook",
+      "say": "But in a 20 centimetre bowl, those 13 extra cubic centimetres lift the water less than half a millimetre. One drip hides it.",
+      "caption": "But in a 20 cm bowl, those 13 extra cm³ lift the water less than half a millimetre. One drip hides it."
+    },
+    {
+      "id": "balance",
+      "say": "So use a balance. Hang the crown against 1,000 grams of pure gold. In the air, they're level."
+    },
+    {
+      "id": "water",
+      "say": "Now lower both into water. Water pushes up on each by the weight it moves aside. 52 grams on the gold, 65 on the crown."
+    },
+    {
+      "id": "payoff",
+      "say": "The crown side rises by 13 grams. Any scale sees that. Galileo bet this is what Archimedes really did."
+    },
+    {
+      "id": "cta",
+      "say": "Now only 100 grams are swapped. How far does it tip? Tell me in the comments."
+    }
+  ]
+}

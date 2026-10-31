@@ -1,0 +1,18 @@
+{
+ "ok": true,
+ "problems": [],
+ "warnings": [],
+ "duration_s": 61.4,
+ "size_mb": 10.7,
+ "resolution": "1080x1920",
+ "caption_match_ratio": 0.9441340782122905,
+ "heard": "A fake gold crown gives itself away by 13 grams. Waying won't help. It weighs exactly the 1 ,000 grams of gold the king handed over. The question is how much is now silver? Silver is lighter, so the same weight takes more room. 1 ,000 grams of gold fills 52 cubic centimeters. Swap 300 grams for silver, 65. Archimedes famous fix. Sink it in a full bowl and measure what spills. Eureka. But in a 20 centimeter bowl, those 13 extra cubic centimeters lift the water less than half a millimeter. One drip hides it. So use a balance. Hang the crown against 1 ,000 grams of pure gold. In the air, they're level. Now lower both into water. Water pushes up on each by the weight it moves aside. 52 grams on the gold, 65 on the crown. The crown side rises by 13 grams. Any scale sees that. Galileo bet this is what Archimedes really did. Now only 100 grams are swapped. How far does it tip? Tell me in the comments.",
+ "music": "Investigations",
+ "music_gap_db": 8.0,
+ "speech_starts_at_s": 0.0,
+ "final_lufs": -14.8,
+ "voice_engine": "omnivoice",
+ "contact_sheet_every_s": 2.6,
+ "build_seconds": 220,
+ "draft": false
+}

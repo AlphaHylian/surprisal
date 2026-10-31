@@ -1,0 +1,18 @@
+{
+ "ok": true,
+ "problems": [],
+ "warnings": [],
+ "duration_s": 49.4,
+ "size_mb": 8.5,
+ "resolution": "1080x1920",
+ "caption_match_ratio": 0.9310344827586207,
+ "heard": "Pick 33, you lose. Pick 0, you lose 2. Everyone picks a number from 0 to 100. Closest to 2 thirds of the average wins. 33 looks smart. Random picks average 50 and 2 thirds of 50 is 33. But everyone has that idea. If they all pick 33, the target is 22. They see that coming? 15. Then 10. Keep going, and it slides all the way to 0. So the perfect answer is 0. Pick 0 and you lose 2. A Danish newspaper ran this game with 19 ,196 readers. The winning number was 21 .6. Most people think one or two steps ahead. So don't be the smartest. Be exactly one step smarter than the crowd. Your number? Put it in the comments. Two thirds of the average wins.",
+ "music": "Digital Lemonade",
+ "music_gap_db": 8.0,
+ "speech_starts_at_s": 0.01,
+ "final_lufs": -14.9,
+ "voice_engine": "omnivoice",
+ "contact_sheet_every_s": 2.1,
+ "build_seconds": 170,
+ "draft": false
+}

@@ -1,0 +1,16 @@
+{
+ "ok": true,
+ "1,000 g of gold, cm^3 (rounded)": "52",
+ "700 g gold + 300 g silver, cm^3 (rounded)": "65",
+ "extra volume, cm^3 (rounded)": "13",
+ "rise difference in a 20 cm bowl under half a millimetre": "True",
+ "rise difference, mm (2 dp)": "0.41",
+ "water pushes up on the gold, g": "52",
+ "water pushes up on the crown, g": "65",
+ "apparent masses in water": "(948.2, 935.2)",
+ "tip of the balance, g": "13",
+ "crown side rises (lighter in water)": "True",
+ "silver lighter than gold": "True",
+ "CTA: 100 g swapped, tip in g (rounded)": "4",
+ "balance catches more fakes than overflow (sim)": "True"
+}

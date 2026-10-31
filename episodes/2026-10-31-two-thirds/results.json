@@ -1,0 +1,14 @@
+{
+ "ok": true,
+ "level 1 (2/3 of 50)": "33",
+ "level 2": "22",
+ "level 3": "15",
+ "level 4": "10",
+ "the chain heads to 0 (fixed point of x = 2/3 x)": "True",
+ "Politiken implied average": "32.4",
+ "21.6 sits between level 2 (22.2) and level 3 (14.8)": "True",
+ "21.6 is about one step past 33 (33 x 2/3 = 22)": "22",
+ "sim: 33 never closest": "0",
+ "sim: 0 never closest": "0",
+ "sim: a 1-2 step crowd lands near Politiken's 21.6": "True"
+}
