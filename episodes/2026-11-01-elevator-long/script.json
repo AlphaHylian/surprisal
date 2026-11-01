@@ -1,0 +1,280 @@
+{
+  "slug": "elevator-long",
+  "format": "long",
+  "series": "everyday",
+  "hook_style": "how-to",
+  "hook_type": "claim",
+  "angle": "long-form of the elevator Short (elevator-wrong-way, 22 Oct; best day-2 engaged views x average view % among Shorts with numbers and no long-form yet, since the past 7 days have no stats: Zapier task limit since 27 Oct). Chapters: the wrong way (floor 1 of 10, 9 in 10, equal passes) / where the car spends its time (zigzag, 9 tenths above you, gaps 18 vs 2, any floor: share above you) / two physicists (Gamow floor 2, Stern floor 6 of seven storeys, 5 in 6, Puzzle Math 1958 'remain the same', Knuth 1969 13/18) / add more elevators (82, 76, 55; lean x0.8 per car; first instant 1 in 20 each way; six cars 63%) / the same trick elsewhere (bus 2/18 gaps: wait 8.2 not 5; trains near the end of a line; classes 10 and 50: 30 vs 43) / real buildings (lobby parking, rush hour, stairs, full cars; two wrong explanations) / your turn (floor 9, two cars: up 82%).",
+  "title": "Why your elevator comes the wrong way 9 times in 10",
+  "description": "On floor 1 of a 10-floor building, the first elevator to reach you is going down 9 times in 10, even though exactly as many cars pass you going up as going down. A car that never rests spends 9 tenths of its time above you, so the gap before a down car (18 floors of travel) is 9 times the gap before an up car (2 floors), and a random moment usually lands in the long one. George Gamow and Marvin Stern noticed it from the 2nd and 6th floors of a seven-storey building and put it in Puzzle Math (1958), adding that more elevators wouldn't change it; Donald Knuth showed in 1969 that they do (two cars: 13 in 18 instead of 15 in 18). The same trap makes a bus every 10 minutes cost you 8.2 minutes when the buses bunch, and makes the average student's class bigger than the average class.\n\nNumbers checked in code (exact fractions plus 200,000 simulated button presses for 1, 2, 3 and 10 cars, Gamow's building and the bus). Sources: Wikipedia, Elevator paradox; MathWorld, Elevator Paradox; Gamow and Stern's 'remain the same' line and Knuth's 13/18 as quoted at ben-vitalis-math-ed-videos.blogspot.com (2011).\n\nChapters:\n0:00 The wrong way\n0:42 Where the car spends its time\n2:45 Two physicists and a puzzle\n3:52 Add more elevators\n5:30 The same trick, elsewhere\n6:51 Real buildings\n8:07 Your turn\n\nThe math behind real problems, twice a day. Subscribe and the next one finds you.\nFound an error? Comment and it gets pinned.\n#math #mathematics",
+  "tags": [
+    "elevator paradox",
+    "gamow stern",
+    "donald knuth",
+    "inspection paradox",
+    "waiting time paradox",
+    "probability",
+    "bus bunching",
+    "math",
+    "maths",
+    "everyday math"
+  ],
+  "music": "lobby-time.mp3",
+  "facts_checked": [
+    "Floor 1 of lobby+10 floors: one car down first 9/10; gaps 18 and 2; equal up and down passes; any floor: share above you (verify.py; https://en.wikipedia.org/wiki/Elevator_paradox)",
+    "k independent cars: 1/2 + 1/2 x 0.8^k on floor 1: 82%, 76%, 55% (10 cars), 63% (6 cars); simulated with 200,000 presses each (verify.py)",
+    "Gamow (near the bottom) and Stern (near the top) noticed the first elevator usually went down / up; multiple elevators reduce the bias; real complications (idle cars return to the ground floor, lopsided demand, stairs, full cars) shift the numbers but don't remove it; near the top it's felt even more; railway stations near the end of a line (https://en.wikipedia.org/wiki/Elevator_paradox)",
+    "Gamow 2nd floor, Stern 6th floor, seven-storey building, 5/6; Puzzle Math (1958) says the 'situation will, of course, remain the same' with more elevators; Knuth: two elevators 13/18, not 15/18 (https://ben-vitalis-math-ed-videos.blogspot.com/2011/08/gamow-stern-elevator-puzzle.html; Gamow 2/6 floors also in search snippets)",
+    "The analysis by Gamow and Stern (1958) turns out to be incorrect (Knuth 1969); Knuth, 'The Gamow-Stern Elevator Problem', Journal of Recreational Mathematics 2, 1969 (https://mathworld.wolfram.com/ElevatorParadox.html; Wikipedia)",
+    "Bus with alternating 2 and 18 minute gaps: average gap 10, average wait 8.2 (simulated), even spacing: 5; classes of 10 and 50: average class 30, average student's class 43 (verify.py)"
+  ],
+  "beats": [
+    {
+      "id": "hook",
+      "say": "Your elevator comes the wrong way 9 times in 10.",
+      "chapter": "The wrong way"
+    },
+    {
+      "id": "promise",
+      "say": "By the end of this, you'll know exactly why, why a second elevator barely helps, and why the same trick makes your bus late."
+    },
+    {
+      "id": "recap1",
+      "say": "Here's the building. A lobby, and 10 floors above it. You work on floor 1, one floor up. You want to go up, so you press the button."
+    },
+    {
+      "id": "recap2",
+      "say": "The doors open, and the arrow points down. Again. Keep a tally for a month, and it's the wrong way 9 times out of 10."
+    },
+    {
+      "id": "recap3",
+      "say": "It feels like the building is against you. It isn't. Count every car that passes your floor all day, and exactly as many go up as go down."
+    },
+    {
+      "id": "recap4",
+      "say": "So both directions pass you equally often. And yet the first car you meet is almost always going down. Both are true at once."
+    },
+    {
+      "id": "time1",
+      "say": "Start with one elevator that never rests. It rides from the lobby to the top and back down, over and over, at a steady speed.",
+      "chapter": "Where the car spends its time"
+    },
+    {
+      "id": "time2",
+      "say": "Draw its height over time. Up to floor 10, down to the lobby, up again. A zigzag."
+    },
+    {
+      "id": "time3",
+      "say": "Now draw a line at your floor. Floor 1 sits right at the bottom of the zigzag."
+    },
+    {
+      "id": "time4",
+      "say": "Look at how much of the zigzag is above your line. Of every 10 floors the car covers, 9 are above you. So 9 tenths of the time, the car is above you."
+    },
+    {
+      "id": "time5",
+      "say": "You walk up and press the button at a random moment. The car doesn't know you're coming. So 9 times in 10, at that moment, it's somewhere above you."
+    },
+    {
+      "id": "time6",
+      "say": "And a car above you can only reach you on its way down. That's the whole trick. It's not about where the car goes. It's about where it is when you show up."
+    },
+    {
+      "id": "time6b",
+      "say": "Notice what we never needed: a program, a schedule, or any idea where the car is headed. Just a car that spends 9 tenths of its time above you."
+    },
+    {
+      "id": "time7",
+      "say": "Now look at the timing. The car passes you going up, climbs 9 floors, comes back down 9 floors, and passes you going down. That's a long gap: 18 floors of travel."
+    },
+    {
+      "id": "time8",
+      "say": "Then it drops 1 floor to the lobby and comes back 1 floor. It passes you going up again. That's a short gap: just 2 floors."
+    },
+    {
+      "id": "time9",
+      "say": "So the passes alternate. Up, down, up, down. Equal numbers. But every gap that ends with a down car is 9 times as long as a gap that ends with an up car."
+    },
+    {
+      "id": "time10",
+      "say": "Arrive at a random moment, and you're far more likely to land inside a long gap. 18 out of every 20 moments. 9 in 10. Wrong way."
+    },
+    {
+      "id": "time10b",
+      "say": "Here's a way to feel it. Stand on floor 1 with a stopwatch. After an up car passes, a down car takes 18 floors of travel to show up. After a down car, the next up car is back in just 2."
+    },
+    {
+      "id": "time11",
+      "say": "This works on any floor. Your chance of a down car is the share of the building above you. Floor 5 of 10: a fair coin. Floor 8: up, 8 times in 10."
+    },
+    {
+      "id": "time12",
+      "say": "The middle floor is the only one that feels fair. Every other floor gets a building that seems to lean."
+    },
+    {
+      "id": "sub",
+      "say": "That's the first answer. If you like seeing the gears behind everyday annoyances, subscribe. There's a new one twice a day."
+    },
+    {
+      "id": "hist1",
+      "say": "This was first noticed by two physicists, George Gamow and Marvin Stern, who had offices in the same seven-storey building.",
+      "chapter": "Two physicists and a puzzle"
+    },
+    {
+      "id": "hist2",
+      "say": "Gamow worked on the second floor. He noticed the first elevator to stop at his floor was usually going down. About 5 times in 6."
+    },
+    {
+      "id": "hist3",
+      "say": "Stern worked on the sixth floor, one below the top. For him, the first elevator was usually going up. Also about 5 times in 6."
+    },
+    {
+      "id": "hist4",
+      "say": "Put the two complaints side by side, and the answer is right there. Neither elevator was biased. Each man sat in a lopsided spot."
+    },
+    {
+      "id": "hist4b",
+      "say": "That's why it's a paradox and not a fault. Nothing in the machinery favors either direction. The whole bias lives in where you stand."
+    },
+    {
+      "id": "hist5",
+      "say": "Gamow's floor had 1 floor below it and 5 above. Stern's had the opposite. Same zigzag, flipped."
+    },
+    {
+      "id": "hist6",
+      "say": "In 1958 they put the puzzle in their book, Puzzle Math. And they added one more line: with more elevators, the situation will, of course, remain the same."
+    },
+    {
+      "id": "hist7",
+      "say": "It doesn't. In 1969, Donald Knuth wrote a paper on the problem. With two elevators, Gamow's chance of a down car drops from 15 in 18 to 13 in 18."
+    },
+    {
+      "id": "multi1",
+      "say": "So let's add elevators to your building. A second car, running on its own schedule. Now which one reaches you first?",
+      "chapter": "Add more elevators"
+    },
+    {
+      "id": "multi2",
+      "say": "With two cars, the wrong way drops from 90% to 82%. Three cars: 76%. Even with 10 cars, it's still 55%. It creeps toward a coin flip, but slowly."
+    },
+    {
+      "id": "multi2b",
+      "say": "There's a neat pattern hiding in those numbers. One car leans 40 points past a coin flip. Two cars: 32. Three: 25.6. Each new car keeps 8 tenths of the lean."
+    },
+    {
+      "id": "multi3",
+      "say": "Why does it shrink at all? Look at the very next moment after you press. Not the whole cycle, just the next second."
+    },
+    {
+      "id": "multi4",
+      "say": "A car above you is the most likely case, but it's usually far away. Its arrival is spread over 18 floors of travel."
+    },
+    {
+      "id": "multi5",
+      "say": "A car below you is rare, but it's always close. Its arrival is squeezed into just 2 floors of travel."
+    },
+    {
+      "id": "multi6",
+      "say": "Multiply it out. 9 tenths spread over 18 floors, or 1 tenth squeezed into 2 floors. Both give the same chance: one in 20, per floor of travel."
+    },
+    {
+      "id": "multi7",
+      "say": "So in the first instant after you press, up and down are exactly equal. With one car, you usually wait long enough for the far cars to win. With many cars, someone arrives almost at once, and that first instant is a fair coin."
+    },
+    {
+      "id": "multi8",
+      "say": "That's what Gamow and Stern missed. One car rewards the big side of the building. Many cars only care what happens right next to you."
+    },
+    {
+      "id": "multi9",
+      "say": "In practice, the lean fades slowly. With six cars in the bank, floor 1 still meets a down car 63% of the time."
+    },
+    {
+      "id": "multi9b",
+      "say": "Eight cars? Still 58%. So if your building has one old, slow elevator, you'll feel this every day. If it has a bank of eight, you'll still feel it, just less."
+    },
+    {
+      "id": "else1",
+      "say": "This isn't really about elevators. It happens any time you show up at a random moment and the gaps are uneven.",
+      "chapter": "The same trick, elsewhere"
+    },
+    {
+      "id": "else2",
+      "say": "Your bus. The timetable says one every 10 minutes. But the buses bunch up: a 2 minute gap, then an 18 minute gap, over and over."
+    },
+    {
+      "id": "else3",
+      "say": "The average gap is still 10. But 9 tenths of the time, you're standing inside an 18 minute gap. Your average wait isn't 5 minutes. It's 8.2."
+    },
+    {
+      "id": "else3b",
+      "say": "The fix is spacing, not more buses. Make the same buses come evenly, one every 10 minutes, and the average wait falls to 5."
+    },
+    {
+      "id": "else4",
+      "say": "And the elevator? From floor 1, with gaps of 18 and 2, your average wait is 8.2 floors of travel. The same numbers, the same trap."
+    },
+    {
+      "id": "else5",
+      "say": "Trains do it too. Near the end of a line, the next train is usually heading to the end, for exactly the reason your elevator is heading down."
+    },
+    {
+      "id": "else5b",
+      "say": "Trains, buses, elevators, anything that comes and goes. When the gaps are uneven, a random arrival mostly lands in the long ones."
+    },
+    {
+      "id": "else6",
+      "say": "It even fools schools. A school with two classes, one of 10 and one of 50. The school says the average class is 30."
+    },
+    {
+      "id": "else7",
+      "say": "Ask the students. 50 of the 60 sit in the big one. The average student is in a class of 43. Same trick: you sample the big things more often, because they're big."
+    },
+    {
+      "id": "else8",
+      "say": "So the students say classes are crowded, and the school says they aren't. Both are telling the truth."
+    },
+    {
+      "id": "real1",
+      "say": "Real elevators aren't this tidy. They stop, they wait, they get full. Does the paradox survive?",
+      "chapter": "Real buildings"
+    },
+    {
+      "id": "real2",
+      "say": "Idle cars often go back to the lobby. Rush hour sends everyone down at once. People on low floors take the stairs. Full cars skip your floor."
+    },
+    {
+      "id": "real3",
+      "say": "All of that shifts the numbers, but it doesn't remove the effect. And if you work near the top, you'll feel it even more. Cars are rarely above you."
+    },
+    {
+      "id": "real3b",
+      "say": "Run it for your own floor. On floor 3 of a 30-floor tower, 27 of the 30 floors are above you. One car comes down first 9 times in 10, same as our building."
+    },
+    {
+      "id": "myth1",
+      "say": "Two explanations you'll hear are wrong. One: the elevator is programmed to favor the lobby. Our zigzag car has no program at all, and it still does it."
+    },
+    {
+      "id": "myth2",
+      "say": "Two: you only remember the bad days. But the tally is real. Simulate 200,000 button presses on floor 1, and 90% of them meet a down car."
+    },
+    {
+      "id": "real4",
+      "say": "So when the arrow points the wrong way, nothing is rigged. You're just near the end of the line."
+    },
+    {
+      "id": "real5",
+      "say": "One car, a lopsided spot, and a random moment. That's all it takes for a fair machine to feel unfair."
+    },
+    {
+      "id": "real6",
+      "say": "So, to sum up. Up and down pass you equally often. A single car spends most of its time on the big side of the building. You arrive at a random moment, so you usually catch it there. More cars help, but slowly."
+    },
+    {
+      "id": "cta",
+      "say": "Your friend works on floor 9 of your building, one below the top. There are two elevators. Which way does the first car usually come, and how often? Answer in the comments.",
+      "chapter": "Your turn"
+    }
+  ]
+}

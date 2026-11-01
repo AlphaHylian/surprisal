@@ -1,0 +1,14 @@
+{
+ "ok": true,
+ "2,000 cars on a town road": "20.0",
+ "route time before (20 + 45)": "65.0",
+ "both routes equal at the split": "True",
+ "first shortcut driver (about 40)": "40",
+ "4,000 cars on a town road": "40.0",
+ "route time after (40 + 40)": "80.0",
+ "switching back alone (40 + 45)": "85",
+ "everyone loses (80 - 65)": "15",
+ "sim without shortcut: average ~65": "65",
+ "sim with shortcut: average ~80": "80",
+ "sim with shortcut: (almost) everyone takes it": "True"
+}

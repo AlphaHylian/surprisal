@@ -1,0 +1,72 @@
+{
+  "slug": "shortcut-traffic",
+  "format": "short",
+  "series": "everyday",
+  "hook_style": "how-to",
+  "hook_type": "versus",
+  "angle": "versus hook: your drive 65 min, add a shortcut: 80 (HookText 65 min vs 80 min over the road diamond); rule out crashes and slow shortcut: it takes zero minutes, every driver picks the fastest route; setup: 4,000 drivers, two routes, each a bridge (always 45) and a town road (1 min per 100 cars); split 2,000/2,000: 20 + 45 = 65; open a free shortcut: town road, shortcut, town road, skip both bridges, first driver home in 40; re-hook: so everyone copies them, that's the trap; 4,000 on each town road: 40 + 40 = 80, back to a bridge alone 40 + 45 = 85, nobody can switch back; payoff: everyone chose the fastest route and everyone lost 15 minutes, close the shortcut and they get them back, Stuttgart 1969 closed a new road and traffic got better; CTA subscribe if you'd have taken the shortcut. Series arm: everyday (noon; yesterday noon was history), 9 beats aiming for 45-50 s.",
+  "title": "How a new shortcut makes everyone's drive longer",
+  "description": "4,000 drivers, two routes, each with a bridge that always takes 45 minutes and a town road that takes one minute per 100 cars. Traffic splits in half and everyone gets home in 65 minutes. Add a free shortcut between the two town roads and every driver takes it, because it's always the fastest choice: now both town roads carry 4,000 cars, the trip takes 80 minutes, and going back to a bridge alone would take 85. Every driver chose well and everyone lost 15 minutes. This is Braess's paradox (Dietrich Braess, 1968); Stuttgart's traffic only improved in 1969 after a newly built road was closed again.\n\nNumbers checked in code (the equilibrium times and a 100,000-move simulation of drivers switching routes). Source: Wikipedia, Braess's paradox.\n\nThe math behind real problems, twice a day. Subscribe and the next one finds you.\nFound an error? Comment and it gets pinned.\n#math #mathematics #shorts",
+  "social_caption": "A free shortcut opens and everyone's drive goes from 65 to 80 minutes. Here's how every driver choosing the fastest route makes them all slower.",
+  "tags": [
+    "braess paradox",
+    "traffic",
+    "shortcut",
+    "game theory",
+    "nash equilibrium",
+    "traffic jams",
+    "math",
+    "maths",
+    "everyday math"
+  ],
+  "music_moods": [
+    "upbeat"
+  ],
+  "facts_checked": [
+    "Network and numbers: 4,000 drivers, T/100 and 45-minute roads, 65 minutes before, 80 after a zero-time link, 85 to switch back alone (verify.py; https://en.wikipedia.org/wiki/Braess%27s_paradox)",
+    "First driver on the new link takes about 40 minutes (40.01) (verify.py; Wikipedia)",
+    "Stuttgart 1969: the traffic situation did not improve until a section of newly built road was closed for traffic again (https://en.wikipedia.org/wiki/Braess%27s_paradox)",
+    "Dietrich Braess, 1968 paper 'Uber ein Paradoxon aus der Verkehrsplanung' (Wikipedia)",
+    "Simulation: random starts, 100,000 one-driver best-response moves: settles at 2,000/2,000 (65 min) without the link and all 4,000 on the link (80 min) with it (verify.py)"
+  ],
+  "beats": [
+    {
+      "id": "hook",
+      "say": "Your drive: 65 minutes. Add a shortcut: 80.",
+      "speed": 1.15
+    },
+    {
+      "id": "ruleout",
+      "say": "No crash, and the shortcut takes zero minutes. Every driver just picks the fastest route."
+    },
+    {
+      "id": "setup",
+      "say": "4,000 drivers, two routes. Each has a bridge that always takes 45 minutes, and a town road: one minute for every 100 cars on it."
+    },
+    {
+      "id": "split",
+      "say": "Traffic splits in half. 2,000 cars on each town road is 20 minutes, plus the bridge. 65."
+    },
+    {
+      "id": "shortcut",
+      "say": "Now open a free shortcut. Town road, shortcut, town road, and skip both bridges. The first driver gets home in 40."
+    },
+    {
+      "id": "rehook",
+      "say": "So everyone copies them. That's the trap."
+    },
+    {
+      "id": "jam",
+      "say": "Now each town road has 4,000 cars. 40 plus 40 is 80. Go back to a bridge alone? 85. Nobody can switch back."
+    },
+    {
+      "id": "payoff",
+      "say": "Every driver chose the fastest road, and everyone lost 15 minutes. In 1969, Stuttgart closed a brand new road, and its traffic got better."
+    },
+    {
+      "id": "cta",
+      "say": "Subscribe if you'd have taken the shortcut."
+    }
+  ],
+  "music": "late-night-radio.mp3"
+}

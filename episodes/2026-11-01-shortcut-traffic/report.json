@@ -1,0 +1,18 @@
+{
+ "ok": true,
+ "problems": [],
+ "warnings": [],
+ "duration_s": 56.9,
+ "size_mb": 11.4,
+ "resolution": "1080x1920",
+ "caption_match_ratio": 0.9813664596273292,
+ "heard": "Your drive, 65 minutes. Add a shortcut, 80. No crash, and the shortcut takes zero minutes. Every driver just picks the fastest route. 4 ,000 drivers, two routes. Each has a bridge that always takes 45 minutes, and a town road. One minute for every 100 cars on it. Traffic splits in half. 2 ,000 cars on each town road is 20 minutes, plus the bridge. 65. Now open a free shortcut. Town road, shortcut, town road, and skip both bridges. The first driver gets home in 40, so everyone copies them. That's the trap. Now each town road has 4 ,000 cars. 40 plus 40 is 80. Go back to a bridge alone. 85. Nobody can switch back. Every driver chose the fastest road, and everyone lost 15 minutes. In 1969, Stuttgart closed a brand new road, and its traffic got better. Subscribe if you'd have taken the shortcut.",
+ "music": "Late Night Radio",
+ "music_gap_db": 8.0,
+ "speech_starts_at_s": 0.0,
+ "final_lufs": -15.1,
+ "voice_engine": "omnivoice",
+ "contact_sheet_every_s": 2.4,
+ "build_seconds": 305,
+ "draft": false
+}
