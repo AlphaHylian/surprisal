@@ -1,0 +1,18 @@
+{
+ "ok": true,
+ "problems": [],
+ "warnings": [],
+ "duration_s": 57.0,
+ "size_mb": 10.7,
+ "resolution": "1080x1920",
+ "caption_match_ratio": 0.9941520467836257,
+ "heard": "Pedal at 20, all greens, pedal faster, nine reds. It's not bad luck, and you're not too slow. These lights are set for exactly one speed. Your road has 10 lights, 250 meters apart. Each turns green 45 seconds after the one before. That's how long 250 meters takes at 20. So pedal at 20. You meet every light at the same moment of its green. Zero stops all the way. Now pedal at 30. Each block takes 30 seconds, not 45. You gain 15 seconds every block, and soon the next light is still red. So you wait. You sprint, and you catch the next red. You're stuck at the front of the wave, waiting 15 seconds at every light. With no lights, 30 would save you 2 and a half minutes. Here it saves under 30 seconds. The lights decide when you get home. Copenhagen runs one for bikes at 20 for 2 .5 kilometers. Subscribe if you'd have sprinted.",
+ "music": "Wallpaper",
+ "music_gap_db": 8.0,
+ "speech_starts_at_s": 0.01,
+ "final_lufs": -15.0,
+ "voice_engine": "omnivoice",
+ "contact_sheet_every_s": 2.4,
+ "build_seconds": 267,
+ "draft": false
+}

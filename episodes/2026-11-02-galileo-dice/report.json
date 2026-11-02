@@ -1,0 +1,18 @@
+{
+ "ok": true,
+ "problems": [],
+ "warnings": [],
+ "duration_s": 58.6,
+ "size_mb": 10.7,
+ "resolution": "1080x1920",
+ "caption_match_ratio": 0.9942528735632183,
+ "heard": "Your dice make nine and ten six ways each, yet ten wins. The dice aren't loaded, and it isn't luck. Dice players in Galileo's Italy saw it over years of throws. He worked out why. List the ways to make nine. One, two, six. One, four, four. Three, three, three. And three more. Ten has six, two. Now paint your dice red, blue, and green. One, two, six can land six ways. Any die shows the one, either of the others the two. But one, four, four lands only three ways. The one picks a die, and that's it. Three threes land one way. So six ways was the wrong count. Count the landings. Nine, six, six, three, three, six, one. That's 25. Ten, six, six, three, six, three, three. That's 27. Out of 216 throws, 10 comes up 27 times, and nine only 25, eight percent more often. Galileo wrote it down about 400 years ago. So with three dice, which wins, 11 or 12.",
+ "music": "Investigations",
+ "music_gap_db": 8.0,
+ "speech_starts_at_s": 0.01,
+ "final_lufs": -14.9,
+ "voice_engine": "omnivoice",
+ "contact_sheet_every_s": 2.4,
+ "build_seconds": 421,
+ "draft": false
+}

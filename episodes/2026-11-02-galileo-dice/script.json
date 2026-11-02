@@ -1,0 +1,71 @@
+{
+  "slug": "galileo-dice",
+  "format": "short",
+  "series": "history",
+  "hook_style": "how-to",
+  "hook_type": "claim",
+  "angle": "claim hook: your three dice make 9 six ways and 10 six ways, yet 10 comes up more (HookText 9 and 10: 6 ways each. 10 wins.); rule out loaded dice and luck: dice players in Galileo's Italy saw it over years of throws, he worked out why; list them: 9 = 1-2-6, 1-4-4, 3-3-3 and three more, 10 has six too; paint the dice red, blue, green: 1-2-6 lands six ways; 1-4-4 only three, 3-3-3 just one; re-hook: 'six ways' counted the wrong thing, count landings; 9: 6+6+3+3+6+1 = 25, 10: 6+6+3+6+3+3 = 27; payoff: of 216 throws, 10 comes up 27 times, 9 only 25, 8% more often, Galileo wrote it down about 400 years ago; CTA checkable comment question: 11 or 12? (11: 27 vs 25). Series arm: history (noon; yesterday noon was everyday), 9 beats aiming for 45-50 s.",
+  "title": "Why 10 beats 9 with three dice (Galileo's answer)",
+  "description": "With three dice, 9 and 10 can each be made from six combinations, yet dice players noticed 10 comes up more. Galileo's fix: tell the dice apart. 1-2-6 can land 6 ways, a pair like 1-4-4 only 3, and 3-3-3 just 1, so 9 has 25 of the 216 possible throws and 10 has 27: about 8% more often. Galileo wrote this up in 'On the discoveries of dice', some 400 years ago.\n\nNumbers checked in code (all 216 throws counted, plus a million simulated throws). Source: Galileo, Sopra le scoperte dei dadi (transl. E. H. Thorne), york.ac.uk/depts/maths/histstat/galileo.htm\n\nThe math behind real problems, twice a day. Subscribe and the next one finds you.\nFound an error? Comment and it gets pinned.\n#math #mathematics #shorts",
+  "social_caption": "With three dice, 9 and 10 both have six combinations, but 10 comes up more often. Here's the counting trick Galileo used to explain it.",
+  "tags": [
+    "galileo",
+    "dice",
+    "three dice",
+    "probability",
+    "history of math",
+    "counting",
+    "math",
+    "maths",
+    "history"
+  ],
+  "music_moods": [
+    "curious"
+  ],
+  "facts_checked": [
+    "9 and 10 each have 6 unordered combinations; 9: 25 of 216 throws, 10: 27 of 216 (11.6% vs 12.5%, 8% more often); 1-2-6 lands 6 ways, 1-4-4 3 ways, 3-3-3 1 way (verify.py; 1,000,000 simulated throws: 0.1155 vs 0.1252)",
+    "Dice players had noticed it from long observation, and Galileo counted 27 vs 25 out of 216 (Galileo, Sopra le scoperte dei dadi, Opere vol. 8, transl. E. H. Thorne: https://york.ac.uk/depts/maths/histstat/galileo.htm)",
+    "Written about 400 years ago: dated between 1612 and 1623 / about 1620 by sources found today; the video says 'about 400 years ago' only",
+    "11 vs 12 (CTA answer): 27 vs 25 (verify.py; same Galileo text)"
+  ],
+  "beats": [
+    {
+      "id": "hook",
+      "say": "Your dice make 9 and 10 six ways each, yet 10 wins.",
+      "speed": 1.15
+    },
+    {
+      "id": "ruleout",
+      "say": "The dice aren't loaded, and it isn't luck. Dice players in Galileo's Italy saw it over years of throws. He worked out why."
+    },
+    {
+      "id": "list",
+      "say": "List the ways to make 9. One, two, six. One, four, four. Three, three, three. And three more. 10 has six too."
+    },
+    {
+      "id": "paint",
+      "say": "Now paint your dice red, blue and green. One, two, six can land six ways: any die shows the one, either of the others the two."
+    },
+    {
+      "id": "doubles",
+      "say": "But one, four, four lands only three ways. The one picks a die, and that's it. Three threes land one way."
+    },
+    {
+      "id": "rehook",
+      "say": "So six ways was the wrong count. Count the landings."
+    },
+    {
+      "id": "count",
+      "say": "9: 6, 6, 3, 3, 6, 1. That's 25. 10: 6, 6, 3, 6, 3, 3. That's 27."
+    },
+    {
+      "id": "payoff",
+      "say": "Out of 216 throws, 10 comes up 27 times, and 9 only 25. 8% more often. Galileo wrote it down about 400 years ago."
+    },
+    {
+      "id": "cta",
+      "say": "So with three dice, which wins: 11 or 12?"
+    }
+  ],
+  "music": "investigations.mp3"
+}
