@@ -1,0 +1,18 @@
+{
+ "ok": true,
+ "problems": [],
+ "warnings": [],
+ "duration_s": 52.8,
+ "size_mb": 9.9,
+ "resolution": "1080x1920",
+ "caption_match_ratio": 1.0,
+ "heard": "He won 54 % of points and 80 % of matches. Roger Federer didn't save it for the big points. Give every point the same 54 % chance, and the scoring does the rest. Step one points into games. You need four points and you have to win by two. Your 54 becomes 60%. Step two games into sets. First to six games win by two. Now you take 76 % of sets, but each step just counts wins of the one below. So where's the extra edge coming from? A lucky streak can steal a point, even a game. To steal a set it has to keep going and it rarely does. Step three best of three sets. 86 % of matches. 54 % of points, 86 % of matches. Real opponents vary so Federer's number was 80. Barely half the points was enough. So if you win 51 % of points, what share of matches is that?",
+ "music": "Tech Talk",
+ "music_gap_db": 8.0,
+ "speech_starts_at_s": 0.01,
+ "final_lufs": -15.0,
+ "voice_engine": "omnivoice",
+ "contact_sheet_every_s": 2.2,
+ "build_seconds": 165,
+ "draft": false
+}

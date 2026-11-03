@@ -1,0 +1,18 @@
+{
+ "ok": true,
+ "point 54%": "54",
+ "game 60%": "60",
+ "set 76%": "76",
+ "match (best of 3) 86%": "86",
+ "lose a point 46%": "46",
+ "lose a game 40%": "40",
+ "lose a set 24%": "24",
+ "lose a match 14%": "14",
+ "game: 4 points, win by 2 (min points)": "4",
+ "CTA: 51% of points -> 61% of matches": "61",
+ "Federer matches 1,526 (quoted)": "1526",
+ "simulated games agree (within 0.005)": "True",
+ "simulated matches agree (within 0.005)": "True",
+ "sim_game": "0.5996",
+ "sim_match": "0.8590"
+}

@@ -1,0 +1,70 @@
+{
+  "slug": "tennis-points",
+  "format": "short",
+  "series": "everyday",
+  "hook_style": "how-to",
+  "hook_type": "versus",
+  "angle": "versus hook: he won 54% of points, and 80% of matches (Federer named in line 2) (HookText 54% of points / 80% of matches); rule out clutch points: give every point the same 54% and the scoring does the rest; step 1 points into games (4 points, win by 2): 54 -> 60; step 2 games into sets (first to 6, win by 2): 76; re-hook: each step only counts the one below, where's the extra edge from?; a lucky streak steals a point or a game, rarely a whole set: the longer the race, the more a small edge shows; step 3 best of 3 sets: 86; payoff 54 -> 86, real opponents vary so Federer's was 80 (1,526 matches, Dartmouth 2024); CTA checkable comment question: 51% of points -> what share of matches? (61%). Series arm: everyday (noon; yesterday noon was history), 9 beats aiming for 45-50 s.",
+  "title": "How 54% of points wins 80% of tennis matches",
+  "description": "Roger Federer won almost 80% of his 1,526 singles matches but only 54% of the points. Tennis scoring stacks races: win 54% of points at random and you take 60% of games (first to 4, win by 2), 76% of sets (first to 6, win by 2) and 86% of best-of-three matches. A lucky streak can steal a point or a game, but rarely a whole set, so a small edge grows at every level.\n\nNumbers checked in code (exact game/set/match chances plus 100,000 simulated matches, every point 54% independent). Source: Federer's 2024 Dartmouth commencement address, home.dartmouth.edu/news/2024/06/2024-commencement-address-roger-federer\n\nThe math behind real problems, twice a day. Subscribe and the next one finds you.\nFound an error? Comment and it gets pinned.\n#math #mathematics #shorts",
+  "social_caption": "Federer won only 54% of his points but almost 80% of his matches. Here's how tennis scoring turns a tiny edge into a big one.",
+  "tags": [
+    "tennis",
+    "roger federer",
+    "tennis scoring",
+    "probability",
+    "sports math",
+    "math",
+    "maths",
+    "statistics"
+  ],
+  "music_moods": [
+    "upbeat"
+  ],
+  "facts_checked": [
+    "Federer: 1,526 singles matches, won almost 80%, only 54% of points (Dartmouth commencement 2024: https://home.dartmouth.edu/news/2024/06/2024-commencement-address-roger-federer)",
+    "Every point 54% independent: game 59.9% (60), set with 7-point tiebreak 76.3% (76), best-of-3 match 85.9% (86); losing 46/40/24/14 (verify.py exact recursion; 100,000 simulated games 0.5996 and matches 0.8590)",
+    "Standard scoring: game = first to 4 points, win by 2; set = first to 6 games, win by 2, tiebreak at 6-6 (verify.py model)",
+    "CTA: 51% of points -> 60.6% (61%) of best-of-3 matches (verify.py)",
+    "The model's 86 is above Federer's real 80 because his chance per point varied by opponent and serve; the video says real opponents vary"
+  ],
+  "beats": [
+    {
+      "id": "hook",
+      "say": "He won 54% of points, and 80% of matches.",
+      "speed": 1.3
+    },
+    {
+      "id": "ruleout",
+      "say": "Roger Federer didn't save it for the big points. Give every point the same 54% chance, and the scoring does the rest."
+    },
+    {
+      "id": "games",
+      "say": "Step one: points into games. You need 4 points, and you have to win by 2. Your 54 becomes 60%."
+    },
+    {
+      "id": "sets",
+      "say": "Step two: games into sets. First to 6 games, win by 2. Now you take 76% of sets."
+    },
+    {
+      "id": "rehook",
+      "say": "But each step just counts wins of the one below. So where's the extra edge coming from?"
+    },
+    {
+      "id": "why",
+      "say": "A lucky streak can steal a point, even a game. To steal a set, it has to keep going, and it rarely does."
+    },
+    {
+      "id": "match",
+      "say": "Step three: best of 3 sets. 86% of matches."
+    },
+    {
+      "id": "payoff",
+      "say": "54% of points, 86% of matches. Real opponents vary, so Federer's number was 80. Barely half the points was enough."
+    },
+    {
+      "id": "cta",
+      "say": "So if you win 51% of points, what share of matches is that?"
+    }
+  ]
+}

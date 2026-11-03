@@ -1,0 +1,69 @@
+{
+  "slug": "franklin-will",
+  "format": "short",
+  "series": "history",
+  "hook_style": "how-to",
+  "hook_type": "claim",
+  "angle": "claim hook: your 1,000 pounds becomes 4 million, after you're gone (HookText 1,000 -> 4,000,000); rule out stocks and luck: just 5% and a long wait, Franklin's will (codicil 1789); step 1 lend it to young tradesmen at 5%, they repay a tenth a year plus interest, lend it again; step 2 never spend the interest: year one 50, year two 52 and a half, 10 years 1,629; re-hook: doubles only every 14 years, can that reach millions?; step 3 wait: 100 years = 7 doublings, about 131 times: 131,000; step 4 spend 100,000 on the town, lend the last 31,000 another century: x131; payoff 31,000 x 131 = 4,061,000, Franklin's own number; the real funds fell short, Boston's still almost 5 million dollars by 1990; CTA checkable comment question: 1,000 at 5% for 300 years (about 2.3 billion). Series arm: history (20:00), 9 beats aiming for 45-50 s.",
+  "title": "How Ben Franklin planned to turn 1,000 pounds into 4 million",
+  "description": "In a 1789 codicil to his will, Benjamin Franklin left 1,000 pounds each to Boston and Philadelphia, to be lent to young tradesmen at 5% a year. At 5% money doubles about every 14 years, so after 100 years it is about 131 times bigger: 131,000 pounds. Franklin planned to spend 100,000 and lend the other 31,000 for another century: 31,000 x 131 = 4,061,000 pounds, his exact figure. The real funds fell short of the plan, but Boston's still reached almost $5 million by 1990.\n\nNumbers checked in code (5% compounding year by year). Sources: Franklin's codicil (cs.appstate.edu/sjg/class/1010/wc/finance/benfcodicil.html), Wikipedia: Benjamin Franklin, Bequest.\n\nThe math behind real problems, twice a day. Subscribe and the next one finds you.\nFound an error? Comment and it gets pinned.\n#math #mathematics #shorts",
+  "social_caption": "Ben Franklin left his city 1,000 pounds and a 200-year plan to turn it into 4 million. Here's the compound interest math he used.",
+  "tags": [
+    "benjamin franklin",
+    "franklin's will",
+    "compound interest",
+    "exponential growth",
+    "history of math",
+    "math",
+    "maths",
+    "history"
+  ],
+  "music_moods": [
+    "curious"
+  ],
+  "facts_checked": [
+    "Codicil (1789): 1,000 pounds each to Boston and Philadelphia, lent at five per cent to young married artificers, repaid one tenth of the principal a year with interest; 131,000 pounds after 100 years, lay out 100,000, let out the remaining 31,000; 4,061,000 pounds after 200 years (https://cs.appstate.edu/sjg/class/1010/wc/finance/benfcodicil.html, https://cs.appstate.edu/sjg/class/1010/wc/finance/benflab.html)",
+    "5%: year 1 = 50, year 2 = 52.50, 10 years = 1,629, doubling time 14.2 years, 100 years = 7.0 doublings, factor 131.5 (131,501), 31,000 x 131 = 4,061,000 (verify.py)",
+    "By 1990 Boston's trust had almost $5,000,000, Philadelphia's more than $2,000,000 (https://en.wikipedia.org/wiki/Benjamin_Franklin#Bequest)",
+    "CTA: 1,000 at 5% for 300 years = 2.27 billion (about 2.3 billion) (verify.py)"
+  ],
+  "beats": [
+    {
+      "id": "hook",
+      "say": "Your 1,000 pounds becomes 4 million, after you're gone.",
+      "speed": 1.3
+    },
+    {
+      "id": "ruleout",
+      "say": "No stocks, no luck. Just 5% and patience. Ben Franklin put it in his will in 1789."
+    },
+    {
+      "id": "lend",
+      "say": "Step one: lend it to young tradesmen at 5%. They repay a tenth a year, and you lend it again."
+    },
+    {
+      "id": "compound",
+      "say": "Step two: never spend the interest. Year one earns 50. The next year, 52 and a half. Interest on interest."
+    },
+    {
+      "id": "rehook",
+      "say": "But that only doubles every 14 years. Can it reach millions?"
+    },
+    {
+      "id": "century",
+      "say": "Step three: wait. 100 years is 7 doublings, about 131 times. 131,000 pounds."
+    },
+    {
+      "id": "second",
+      "say": "Step four: spend 100,000 on your town. Lend the last 31,000 for another century."
+    },
+    {
+      "id": "payoff",
+      "say": "131 times again: 4,061,000 pounds. Franklin's own number. The real funds fell short, but Boston's still reached almost 5 million dollars."
+    },
+    {
+      "id": "cta",
+      "say": "Your turn: 1,000 pounds at 5%, untouched for 300 years. How much?"
+    }
+  ]
+}

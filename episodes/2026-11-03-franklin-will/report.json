@@ -1,0 +1,18 @@
+{
+ "ok": true,
+ "problems": [],
+ "warnings": [],
+ "duration_s": 60.1,
+ "size_mb": 10.4,
+ "resolution": "1080x1920",
+ "caption_match_ratio": 0.9418604651162791,
+ "heard": "your 1 ,000 pounds becomes 4 million after you're gone. No stocks, no luck. Just 5 % in patience. Ben Franklin put it in his will in 1789. Step one, lend it to young tradesmen at 5%. They repay a tenth a year, and you lend it again. Step two, never spend the interest. Year one earns 50. The next year, 52 and a half. Interest on interest. But that only doubles every 14 years. Can it reach millions? Step three, wait. 100 years is seven doublings, about 131 times. 131 ,000 pounds. Step four, spend 100 ,000 on your town. Lend the last 31 ,000 for another century. 131 times again. 4 ,061 ,000 pounds. Franklin's own number. The real funds fell short, but Boston still reached almost $5 million. Your turn, 1 ,000 pounds at 5 % untouched for 300 years. How much?",
+ "music": "Investigations",
+ "music_gap_db": 8.0,
+ "speech_starts_at_s": 0.04,
+ "final_lufs": -14.9,
+ "voice_engine": "omnivoice",
+ "contact_sheet_every_s": 2.5,
+ "build_seconds": 181,
+ "draft": false
+}

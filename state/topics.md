@@ -17,6 +17,9 @@ through verify.py.
   matches game theory (Palacios-Huerta). [check] (everyday/sport) (2026-10-15: the paper's cell-by-cell scoring table couldn't be fetched (PDF mirrors 403); find a readable source with the 2x2 numbers first)
 
 - (follow-up idea) Envy-free cake for three: Selfridge-Conway (1960), at most 5 cuts; the moving knife (27 Oct) is only proportional, and its first taker always thinks someone else got at least as much. (everyday) [check]
+- You're a convoy commander: bigger convoys lose fewer ships (Blackett, WWII operational research; the escort perimeter grows like the square root of the area). (history) [check]
+- Lanchester's square law: two fleets of 10 beaten one at a time by 15 vs both at once. (history, Trafalgar as Lanchester analysed it, 1916) [check]
+- Pepys asks Newton (1693): one six in 6 dice, two in 12, or three in 18? 66.5 / 61.9 / 59.7%. (history; not right after a dice video)
 
 ## Used
 - 2026-09-30  birthday-paradox (sounds-fake)  eQS8gtimpvA  first public video, 9pm Tallinn
@@ -81,3 +84,5 @@ through verify.py.
 - 2026-11-01  elevator-long (long-form of elevator-wrong-way; Gamow-Stern elevator paradox: floor 1 of 10, 9 in 10, gaps 18 vs 2, any floor = share above; Gamow 2nd / Stern 6th of seven storeys, 5 in 6, Puzzle Math 1958 "remain the same", Knuth 1969 13/18; 2/3/10 cars 82/76/55%, lean x0.8 per car, 6 cars 63%, 8 cars 58%; bus gaps 2/18 -> wait 8.2 vs 5; classes 10 and 50 -> 30 vs 43; real-building complications; CTA floor 9 two cars -> up 82%)  not uploaded by the bot (Zapier task limit): sent to the owner for 20:00 Tallinn 1 Nov
 - 2026-11-02 12:00: Galileo's three dice, 9 vs 10 (25 vs 27 of 216) (galileo-dice; pending hand upload, Zapier task limit)
 - 2026-11-02 20:00: green wave, faster bike = more red lights (green-wave; pending hand upload, Zapier task limit)
+- 2026-11-03 12:00: tennis scoring, 54% of points -> 60% games, 76% sets, 86% best-of-3 matches; Federer 80% of 1,526 matches on 54% of points (Dartmouth 2024); CTA 51% -> 61% (tennis-points; pending hand upload, Zapier task limit)
+- 2026-11-03 20:00: Franklin's codicil (1789), 1,000 pounds at 5%: 50, 52.50, doubles every 14 years, x131.5 per century, 131,000, spend 100,000, 31,000 x 131 = 4,061,000; Boston almost $5M by 1990; CTA 300 years -> ~2.3 billion (franklin-will; pending hand upload, Zapier task limit)

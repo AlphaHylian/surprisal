@@ -1,0 +1,18 @@
+{
+ "ok": true,
+ "1,000 after 1 year = 1,050": "1050",
+ "year 2 earns 52.50 (interest on interest)": "52.5",
+ "1,000 after 10 years = 1,629": "1629",
+ "doubles about every 14 years": "14",
+ "100 years = about 7 doublings": "7",
+ "7 doublings = 128 times": "128",
+ "100 years multiplies by 131 and a half": "131.5",
+ "exact: 131,501": "131501",
+ "1,000 after 100 years = 131,000 (Franklin's figure, to the thousand)": "131000",
+ "spend 100,000, keep 31,000": "31000",
+ "31,000 x 131 = 4,061,000 (Franklin's exact number)": "4061000",
+ "31,000 x exact factor rounds to 4.1 million": "4.1",
+ "CTA: 1,000 for 300 years = about 2.3 billion": "2.3",
+ "simple interest for comparison: 100 years = 6,000": "6000.0",
+ "year-by-year bookkeeping matches 131,501": "131501"
+}
