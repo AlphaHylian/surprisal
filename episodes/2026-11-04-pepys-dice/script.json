@@ -1,0 +1,70 @@
+{
+  "slug": "pepys-dice",
+  "format": "short",
+  "series": "history",
+  "hook_style": "how-to",
+  "hook_type": "versus",
+  "angle": "versus hook: one six from 6 dice, or three from 18 (HookText 1 six from 6 dice vs 3 from 18); rule out 'same bet, one six per 6 dice': Pepys 1693 sure 18 is better, asks Newton; count misses: each die misses 5 in 6, all six miss a third of the time, win 67%; 18 dice: need 3, average exactly 3, why isn't it safer?; re-hook/fall short: 6 dice fail one way (zero), 18 fail on zero, one or two = 40%; 18 dice win 60%, 12 dice two sixes 62%; payoff 67 -> 62 -> 60, more dice make it worse, Pepys had it backwards; CTA subscribe if you'd have bet with Pepys (loops to the hook). Series arm: history (noon; yesterday noon was everyday), 8 beats aiming for 45-50 s.",
+  "title": "Newton's dice bet: one six from 6, or three from 18?",
+  "description": "In 1693 Samuel Pepys asked Isaac Newton which is likelier: at least one six from 6 dice, two from 12, or three from 18. Pepys thought 18 dice were best; Newton showed the opposite. With 6 dice you only lose if all six miss, (5/6)^6 = 33%, so you win 67%. With 18 dice you lose on zero, one or two sixes, 40% together, so you win only 60% (12 dice: 62%). Same one six per six dice, worse odds the more you roll.\n\nNumbers checked in code (exact binomial sums plus 200,000 simulated rolls of each bet). Source: en.wikipedia.org/wiki/Newton%E2%80%93Pepys_problem\n\nThe math behind real problems, twice a day. Subscribe and the next one finds you.\nFound an error? Comment and it gets pinned.\n#math #mathematics #shorts",
+  "social_caption": "One six from 6 dice, or three from 18? Samuel Pepys picked 18 and Isaac Newton showed him why that's the worse bet.",
+  "tags": [
+    "newton pepys problem",
+    "isaac newton",
+    "samuel pepys",
+    "dice probability",
+    "probability",
+    "history of math",
+    "math",
+    "maths",
+    "statistics"
+  ],
+  "music_moods": [
+    "curious"
+  ],
+  "facts_checked": [
+    "1693: Samuel Pepys and Isaac Newton corresponded about the problem; Pepys first thought C (three sixes from 18) most likely, Newton concluded A (one six from 6) (https://en.wikipedia.org/wiki/Newton%E2%80%93Pepys_problem)",
+    "A at least 1 six from 6: 0.6651 (67%); B 2 from 12: 0.6187 (62%); C 3 from 18: 0.5973 (60%) (verify.py exact, matches Wikipedia; 200,000 simulated rolls each agree within 0.005)",
+    "All 6 dice miss: (5/6)^6 = 33.5%, 'a third of the time' (verify.py)",
+    "18 dice: average number of sixes exactly 3; 0, 1 or 2 sixes = 40.3% (4% + 14% + 23%) (verify.py)",
+    "Order A > B > C; at least n sixes from 6n dice falls toward one half as n grows (Wikipedia; 10 from 60 = 55%, verify.py)"
+  ],
+  "beats": [
+    {
+      "id": "hook",
+      "say": "One six from 6 dice, or three from 18: one's the better bet.",
+      "speed": 1.3
+    },
+    {
+      "id": "ruleout",
+      "say": "It looks like the same bet, one six for every 6 dice. In 1693, Samuel Peeps was sure the 18 dice were better, so he asked Isaac Newton.",
+      "caption": "It looks like the same bet, one six for every 6 dice. In 1693, Samuel Pepys was sure the 18 dice were better, so he asked Isaac Newton."
+    },
+    {
+      "id": "six",
+      "say": "Newton said no. Check it like he did. With 6 dice, count the misses. Each die misses 5 times in 6, and all six miss a third of the time. So you win 67%."
+    },
+    {
+      "id": "eighteen",
+      "say": "Now 18 dice. You need three sixes, and on average you roll exactly 3. So why isn't that the safer bet?"
+    },
+    {
+      "id": "short",
+      "say": "Count the ways to fall short. With 6 dice there's only one: no sixes at all. With 18, you fail on zero, one or two. Together, that's 40% of your rolls."
+    },
+    {
+      "id": "twelve",
+      "say": "So the 18 dice win just 60%. Two sixes from 12 lands in between, at 62."
+    },
+    {
+      "id": "payoff",
+      "say": "67%, then 62, then 60. The same one six per 6 dice, and more dice only make it worse. Peeps had it backwards.",
+      "caption": "67%, then 62, then 60. The same one six per 6 dice, and more dice only make it worse. Pepys had it backwards."
+    },
+    {
+      "id": "cta",
+      "say": "Subscribe if you'd have bet with Peeps.",
+      "caption": "Subscribe if you'd have bet with Pepys."
+    }
+  ]
+}

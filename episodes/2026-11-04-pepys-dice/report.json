@@ -1,0 +1,18 @@
+{
+ "ok": true,
+ "problems": [],
+ "warnings": [],
+ "duration_s": 56.8,
+ "size_mb": 11.1,
+ "resolution": "1080x1920",
+ "caption_match_ratio": 0.9411764705882353,
+ "heard": "1 -6 from 6 dice or 3 from 18 ones the better bet. It looks like the same bet. 1 -6 for every 6 dice. In 1693 Samuel Peeps was sure the 18 dice were better, so he asked Isaac Newton. Newton said no. Check it like he did. With 6 dice count the misses. Each die misses 5 times in 6, and all 6 miss a third of the time. So you win 67%. Now 18 dice. You need 3 -6s and on average you roll exactly 3. So why isn't that the safer bet? Count the ways to fall short. With 6 dice there's only 1, no 6s at all. With 18 you fail on 0 -1 or 2. Together that's 40 % of your rolls. So the 18 dice win just 60%. 2 -6s from 12 lands in between at 62. 67 % then 62 then 60. The same one 6 % dice and more dice only make it worse. Peeps had it backwards. Subscribe if you'd have",
+ "music": "Investigations",
+ "music_gap_db": 8.0,
+ "speech_starts_at_s": 0.01,
+ "final_lufs": -14.9,
+ "voice_engine": "omnivoice",
+ "contact_sheet_every_s": 2.4,
+ "build_seconds": 192,
+ "draft": false
+}

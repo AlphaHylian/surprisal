@@ -1,0 +1,17 @@
+{
+ "ok": true,
+ "step overhangs for a 24 cm book: 12, 6, 4, 3 cm": "[12, 6, 4, 3]",
+ "4 books total 25 cm": "25",
+ "4 books: 25/24 of a length": "25/24",
+ "1 cm past the table edge (book fully off)": "1",
+ "3 books not enough: 22 cm": "22",
+ "centre of the top k books sits on the edge below, k = 1..4": "True",
+ "top book's right end = 25/24": "25/24",
+ "books to reach 1 length: 4": "4",
+ "books to reach 2 lengths: 31": "31",
+ "books to reach 3 lengths: 227": "227",
+ "10 books: about 1.46 lengths": "1.46",
+ "no random stable stack beats 25/24": "True",
+ "random search gets close (over 0.95)": "True",
+ "sim_best": "1.0198"
+}

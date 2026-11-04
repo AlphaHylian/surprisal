@@ -19,7 +19,6 @@ through verify.py.
 - (follow-up idea) Envy-free cake for three: Selfridge-Conway (1960), at most 5 cuts; the moving knife (27 Oct) is only proportional, and its first taker always thinks someone else got at least as much. (everyday) [check]
 - You're a convoy commander: bigger convoys lose fewer ships (Blackett, WWII operational research; the escort perimeter grows like the square root of the area). (history) [check]
 - Lanchester's square law: two fleets of 10 beaten one at a time by 15 vs both at once. (history, Trafalgar as Lanchester analysed it, 1916) [check]
-- Pepys asks Newton (1693): one six in 6 dice, two in 12, or three in 18? 66.5 / 61.9 / 59.7%. (history; not right after a dice video)
 
 ## Used
 - 2026-09-30  birthday-paradox (sounds-fake)  eQS8gtimpvA  first public video, 9pm Tallinn
@@ -86,3 +85,5 @@ through verify.py.
 - 2026-11-02 20:00: green wave, faster bike = more red lights (green-wave; pending hand upload, Zapier task limit)
 - 2026-11-03 12:00: tennis scoring, 54% of points -> 60% games, 76% sets, 86% best-of-3 matches; Federer 80% of 1,526 matches on 54% of points (Dartmouth 2024); CTA 51% -> 61% (tennis-points; pending hand upload, Zapier task limit)
 - 2026-11-03 20:00: Franklin's codicil (1789), 1,000 pounds at 5%: 50, 52.50, doubles every 14 years, x131.5 per century, 131,000, spend 100,000, 31,000 x 131 = 4,061,000; Boston almost $5M by 1990; CTA 300 years -> ~2.3 billion (franklin-will; pending hand upload, Zapier task limit)
+- 2026-11-04 12:00: Newton-Pepys problem (1693): one six from 6 dice 67%, two from 12 62%, three from 18 60%; misses (5/6)^6 = 33%; 18 dice fail on 0/1/2 = 40% (pepys-dice; pending hand upload, Zapier task limit)
+- 2026-11-04 20:00: book stacking / harmonic overhang: 24 cm books out 12, 6, 4, 3 = 25 cm, 1 cm past the table; 31 books for 2 lengths, 227 for 3 (book-stack; pending hand upload, Zapier task limit)

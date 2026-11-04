@@ -1,0 +1,18 @@
+{
+ "ok": true,
+ "problems": [],
+ "warnings": [],
+ "duration_s": 51.6,
+ "size_mb": 8.4,
+ "resolution": "1080x1920",
+ "caption_match_ratio": 0.9822485207100592,
+ "heard": "Stack four books so the top one is fully off the table. No glue, no tape, no weight on the back. It's all about where each book's middle sits. Here's the rule. A stack stays up as long as its middle is over whatever holds it. So build from the top down. Your books are 24 centimeters long. Slide the top one out 12, half its length. Its middle now sits right on the edge below. Now the top two move as one. Their shared middle is six in from the end, so they go out six more. Three books, four more, and all four. Three more, past the edge of the table. Twelve, then six, then four, then three. Is that enough to clear a whole book? Add it up, 25 centimeters. The top book hangs a full centimeter past the table. More books keep going forever, each step smaller than the last. So how many books do you need to stick out two whole lengths?",
+ "music": "Somewhere Sunny",
+ "music_gap_db": 8.0,
+ "speech_starts_at_s": 0.0,
+ "final_lufs": -14.9,
+ "voice_engine": "omnivoice",
+ "contact_sheet_every_s": 2.2,
+ "build_seconds": 178,
+ "draft": false
+}

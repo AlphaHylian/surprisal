@@ -1,0 +1,71 @@
+{
+  "slug": "book-stack",
+  "format": "short",
+  "series": "everyday",
+  "hook_style": "how-to",
+  "hook_type": "claim",
+  "angle": "claim hook: stack 4 books so the top one is fully off the table (HookText 4 books. Top one off the table.); rule out glue/tape/counterweight: only where each book's middle sits; rule: a stack stays up while its middle is over whatever holds it, so build from the top down; 24 cm books: top slides out 12 (half), top two act as one, middle 6 in, out 6 more; three: 4 more; fourth: 3 past the table; re-hook 12, 6, 4, 3: enough to clear 24?; payoff 25 cm, top book 1 cm past the table edge; more: a half, a quarter, a sixth, an eighth... never stops, just slows (20 books ~1.8 lengths); CTA checkable comment question: how many books for two whole lengths? (31). Series arm: everyday (20:00), 9 beats aiming for 45-50 s.",
+  "title": "How to stack 4 books so the top one is off the table",
+  "description": "Stack four books so the top one sits completely past the table's edge, no glue. A stack stays up while its middle is over whatever holds it, so build from the top down: with 24 cm books, the top one sticks out 12 cm (half), the top two together 6 more, three 4 more, and four 3 more past the table. 12 + 6 + 4 + 3 = 25 cm, a centimetre more than a whole book. The steps are halves of 1, 1/2, 1/3, 1/4..., the harmonic series, so the overhang never stops growing, just slows: 31 books reach two lengths, 227 reach three.\n\nNumbers checked in code (exact fractions, a balance check for every sub-stack, and 200,000 random 4-book stacks, none of which beat 25/24). Source: en.wikipedia.org/wiki/Block-stacking_problem\n\nThe math behind real problems, twice a day. Subscribe and the next one finds you.\nFound an error? Comment and it gets pinned.\n#math #mathematics #shorts",
+  "social_caption": "Four books, no glue, and the top one sits completely off the table. Here's exactly where each book goes and why it balances.",
+  "tags": [
+    "book stacking",
+    "block stacking problem",
+    "harmonic series",
+    "center of mass",
+    "physics",
+    "math trick",
+    "math",
+    "maths"
+  ],
+  "music_moods": [
+    "upbeat"
+  ],
+  "facts_checked": [
+    "Maximum overhang of n identical blocks = sum of 1/(2i), i = 1..n (block lengths); 4 blocks = 25/24, the first n past one length (https://en.wikipedia.org/wiki/Block-stacking_problem)",
+    "24 cm books: steps 12, 6, 4, 3 cm, total 25 cm, 1 cm past the edge; 3 books reach only 22 cm (verify.py)",
+    "Balance: the centre of the top k books sits exactly over the edge of the support below, k = 1..4 (verify.py)",
+    "Blocks needed for 1, 2, 3 lengths: 4, 31, 227 (Wikipedia, OEIS A014537; verify.py)",
+    "20 books: 1.80 lengths (Wikipedia table 1.79887; verify.py 10 books 1.46)",
+    "200,000 random stable 4-book stacks: best 1.02 lengths, none beats 25/24 (verify.py)"
+  ],
+  "beats": [
+    {
+      "id": "hook",
+      "say": "Stack 4 books so the top one is fully off the table.",
+      "speed": 1.3
+    },
+    {
+      "id": "ruleout",
+      "say": "No glue, no tape, no weight on the back. It's all about where each book's middle sits."
+    },
+    {
+      "id": "rule",
+      "say": "Here's the rule. A stack stays up as long as its middle is over whatever holds it. So build from the top down."
+    },
+    {
+      "id": "top",
+      "say": "Your books are 24 centimetres long. Slide the top one out 12, half its length. Its middle now sits right on the edge below."
+    },
+    {
+      "id": "two",
+      "say": "Now the top two move as one. Their shared middle is 6 in from the end, so they go out 6 more."
+    },
+    {
+      "id": "rest",
+      "say": "Three books: 4 more. And all four: 3 more, past the edge of the table."
+    },
+    {
+      "id": "rehook",
+      "say": "12, then 6, then 4, then 3. Is that enough to clear a whole book?"
+    },
+    {
+      "id": "payoff",
+      "say": "Add it up: 25 centimetres. The top book hangs a full centimetre past the table. More books keep going, forever, each step smaller than the last."
+    },
+    {
+      "id": "cta",
+      "say": "So how many books do you need to stick out two whole lengths?"
+    }
+  ]
+}
