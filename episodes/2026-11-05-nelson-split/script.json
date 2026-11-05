@@ -1,0 +1,33 @@
+{
+  "slug": "nelson-split",
+  "format": "short",
+  "series": "history",
+  "hook_style": "how-to",
+  "hook_type": "versus",
+  "angle": "versus hook: your 40 ships against 46, one plan loses, one wins (HookText 40 vs 46: line up = lose / split = win, over two fleets of dots); rule out better guns/sailors: only the arithmetic changes; context: Nelson's plan at Trafalgar 1805, Lanchester 1916 showed why; square law: every ship shoots and gets shot, double the ships = twice the fire on a foe whose fire is spread over twice the targets = 4x; line vs line 1,600 vs 2,116, you lose, about 23 of theirs sail home; re-hook: same 40, flip it?; cut the line: 32 on 23, 1,024 vs 529, nearly two to one, 22 left; add the 8: 30 vs 23, win again, about 20 afloat; payoff Trafalgar 27 broke 33, 18 taken or destroyed, Britain lost none; CTA subscribe if you'd have lined them up. Series arm: history (20:00), 10 beats aiming for ~50 s.",
+  "title": "How 40 ships beat 46: Nelson's square-law trick",
+  "description": "In a gunfight every ship shoots and every ship gets shot, so a fleet's strength goes with the square of its size (Lanchester's square law, 1916). Line 40 ships against 46 and it's 1,600 against 2,116: you lose and about 23 of theirs survive. Nelson's plan for Trafalgar cut the enemy line instead: 32 ships on 23 is 1,024 against 529, nearly two to one, and the survivors plus the other 8 then beat the remaining 23. At Trafalgar on 21 October 1805, 27 British ships of the line broke a line of 33; 18 French and Spanish ships were captured or destroyed and the British lost none.\n\nNumbers checked in code (the square-law arithmetic, plus 100,000 simulated battles each way). Sources: Lanchester, Aircraft in Warfare (1916), ch. 6, en.wikisource.org/wiki/Aircraft_in_Warfare_(1916)/Chapter_6 ; en.wikipedia.org/wiki/Battle_of_Trafalgar ; en.wikipedia.org/wiki/Lanchester%27s_laws\n\nThe math behind real problems, twice a day. Subscribe and the next one finds you.\nFound an error? Comment and it gets pinned.\n#math #mathematics #shorts",
+  "social_caption": "40 ships against 46: line them up and you lose, split the enemy and you win. Here's the square law that explains Nelson's plan at Trafalgar.",
+  "tags": ["trafalgar", "nelson", "lanchester square law", "naval history", "military history", "game theory", "math", "maths", "history"],
+  "music_moods": ["upbeat"],
+  "facts_checked": [
+    "Lanchester (1916), Aircraft in Warfare ch. 6: Nelson expected 40 sail of the line against 46; columns of 16, 16 and 8; 32 ships on half the enemy, almost exactly two to one; line against line the enemy keeps about 23 (https://en.wikisource.org/wiki/Aircraft_in_Warfare_(1916)/Chapter_6)",
+    "Square law: strength proportional to the square of the number of units (https://en.wikipedia.org/wiki/Lanchester%27s_laws)",
+    "40^2 = 1,600, 46^2 = 2,116, sqrt(516) = 22.7 ~ 23 (verify.py)",
+    "32^2 = 1,024 vs 23^2 = 529 (1.94 : 1); sqrt(495) = 22.2 ~ 22 left; 30 vs 23 -> 19.6 ~ 20 afloat (verify.py)",
+    "100,000 simulated square-law battles: line vs line you lose 87%; split you win 98% of the first fight and 84% overall (verify.py)",
+    "Trafalgar 21 Oct 1805: 27 British vs 33 Franco-Spanish ships of the line; 18 captured or destroyed; the British lost none (https://en.wikipedia.org/wiki/Battle_of_Trafalgar)"
+  ],
+  "beats": [
+    {"id": "hook", "say": "Your 40 ships against 46. One plan loses, one wins.", "speed": 1.2},
+    {"id": "ruleout", "say": "Same ships, same guns, same sailors. Only the arithmetic changes."},
+    {"id": "context", "say": "This was Nelson's plan at Trafalgar, in 1805. In 1916, Frederick Lanchester showed why it works."},
+    {"id": "square", "say": "Every ship shoots, and every ship gets shot. Double your fleet, and you fire twice as much, at an enemy whose shots are spread twice as thin. That's 4 times the strength."},
+    {"id": "line", "say": "So square it. 40 squared is 1,600. 46 squared is 2,116. Line against line, you lose, and about 23 of theirs sail home."},
+    {"id": "rehook", "say": "Same 40 ships. How do you flip that?"},
+    {"id": "split", "say": "Cut their line in half. Throw 32 ships at 23 of theirs. 1,024 against 529, nearly two to one. You win, with 22 left."},
+    {"id": "finish", "say": "Now bring in your other 8. 30 against 23, and you win again, with about 20 ships still afloat."},
+    {"id": "payoff", "say": "At Trafalgar, Nelson's 27 ships broke a line of 33. 18 of theirs were taken or destroyed. Britain lost none."},
+    {"id": "cta", "say": "Subscribe if you'd have lined them up."}
+  ]
+}

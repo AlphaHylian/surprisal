@@ -1,0 +1,33 @@
+{
+  "slug": "coin-18",
+  "format": "short",
+  "series": "everyday",
+  "hook_style": "how-to",
+  "hook_type": "claim",
+  "angle": "claim hook: swap the dime for an 18-cent coin and you carry less change (HookText 10c -> 18c, less change, over a dime turning into an amber 18 and 4.7 -> 3.89); rule out rounder/bigger: 18 fills the gaps; how to score a coin set: every amount 0-99, fewest coins each (100-cell grid); US: 99 cents = 9 coins, average 4.7; swap: 36 cents was 25+10+1, now 18+18; re-hook the catch: biggest-first gives 25+5+5+1; that habit fails on 37 of 100 amounts, count the smart way; payoff 3.89 average, 17% less change (Shallit 2003); CTA checkable: fewest coins for 72 cents (four 18s). Series arm: everyday (12:00), 9 beats aiming for 45-50 s.",
+  "title": "Why an 18-cent coin would beat the dime",
+  "description": "Score a set of coins by the fewest coins it takes to make every amount of change from 0 to 99 cents. Pennies, nickels, dimes and quarters average 4.7 coins (99 cents alone takes 9). Swap the dime for an 18-cent coin and the average drops to 3.89, about 17% less change: 36 cents becomes two 18s instead of a quarter, a dime and a penny. The catch: paying biggest coin first stops working on 37 of the 100 amounts, so you have to count properly. Jeffrey Shallit worked this out in 2003 (\"What This Country Needs Is an 18c Piece\").\n\nNumbers checked in code (fewest coins for every amount by dynamic programming, the greedy failures counted, and 200,000 random amounts simulated). Source: futilitycloset.com/2018/11/20/a-call-for-change/ (summarising Shallit, Mathematical Intelligencer 25(2), 2003)\n\nThe math behind real problems, twice a day. Subscribe and the next one finds you.\nFound an error? Comment and it gets pinned.\n#math #mathematics #shorts",
+  "social_caption": "Replace the dime with an 18-cent coin and the average handful of change shrinks from 4.7 coins to 3.89. Here's how you count it, and the catch.",
+  "tags": ["18 cent coin", "making change", "coin problem", "jeffrey shallit", "greedy algorithm", "dynamic programming", "math", "maths", "computer science"],
+  "music_moods": ["upbeat"],
+  "facts_checked": [
+    "Shallit (2003): 1-5-10-25 averages 4.7 coins over 0-99 cents; 1-5-18-25 and 1-5-18-29 average 3.89, ~17% better (https://www.futilitycloset.com/2018/11/20/a-call-for-change/; verify.py 4.70, 3.89, 3.89, 17%)",
+    "99 cents in US coins = 3 quarters, 2 dimes, 4 pennies = 9 coins (verify.py)",
+    "36 cents: US 25+10+1 (3 coins); with an 18: 18+18 (2); biggest-first gives 25+5+5+1 (4) (verify.py)",
+    "Biggest-first is optimal for every amount with US coins but fails on 37 of the 100 amounts with 1-5-18-25 (verify.py)",
+    "No 1-5-x-y system beats 389 coins per 100 amounts (verify.py search)",
+    "72 cents: four 18s = 4 coins (US: 6) (verify.py)",
+    "200,000 random amounts: US 4.70, 18-cent 3.89 (verify.py)"
+  ],
+  "beats": [
+    {"id": "hook", "say": "Swap the dime for an 18 cent coin, and you carry less change.", "speed": 1.2},
+    {"id": "ruleout", "say": "Not a rounder number. Not a bigger coin. 18 just fills the gaps."},
+    {"id": "count", "say": "Here's how you score coins. Take every amount from 0 to 99 cents, and find the fewest coins for each."},
+    {"id": "us", "say": "With pennies, nickels, dimes and quarters, 99 cents takes 9 coins. Across all 100 amounts, you average 4.7."},
+    {"id": "swap", "say": "Now swap the dime for an 18. 36 cents was a quarter, a dime and a penny. Now it's just two 18s."},
+    {"id": "rehook", "say": "But there's a catch. Pay the biggest coin first, and 36 turns into a quarter, two nickels and a penny."},
+    {"id": "fix", "say": "That habit fails on 37 amounts out of 100. So you count the smart way."},
+    {"id": "payoff", "say": "Do that, and you average 3.89 coins. 17% less change, from one odd coin."},
+    {"id": "cta", "say": "So what's the fewest coins for 72 cents?"}
+  ]
+}
