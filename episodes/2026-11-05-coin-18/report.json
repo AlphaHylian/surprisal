@@ -3,8 +3,8 @@
  "problems": [],
  "warnings": [],
  "duration_s": 51.0,
- "size_mb": 3.3,
- "resolution": "540x960",
+ "size_mb": 9.7,
+ "resolution": "1080x1920",
  "caption_match_ratio": 0.9807692307692307,
  "heard": "Swap the dime for an 18 cent coin and carry less change, not a rounder number. Not a bigger coin. 18 just fills the gaps. Here's how you score coins. Take every amount from 0 to 99 cents and find the fewest coins for each. With pennies, nickels, dimes, and quarters, 99 cents takes nine coins. Across all 100 amounts, you average 4 .7. Now swap the dime for an 18. 36 cents was a quarter, a dime, and a penny. Now it's just two 18s. But there's a catch. Pay the biggest coin first, and 36 turns into a quarter, two nickels, and a penny. That habit fails on 37 amounts out of 100. So you count the smart way. Do that and you average 3 .89 coins, 17 % less change from one odd coin. So what's the fewest coins for 72 cents?",
  "music": "Digital Lemonade",
@@ -13,6 +13,6 @@
  "final_lufs": -14.9,
  "voice_engine": "omnivoice",
  "contact_sheet_every_s": 2.1,
- "build_seconds": 163,
- "draft": true
+ "build_seconds": 219,
+ "draft": false
 }
