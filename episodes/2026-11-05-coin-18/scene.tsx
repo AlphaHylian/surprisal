@@ -145,7 +145,7 @@ const CountBody: React.FC = () => {
       <Headline at={tAll} color={C.amber}>Average: 4.7 coins</Headline>
       {!showRow && (
         <Camera keys={[[0, { zoom: 1 }], [tFewest, { zoom: 1 }], [tFewest + 0.8, { zoom: 1.05 }], [tUs, { zoom: 1 }]]}>
-          <At x={540} y={385}><Appear at={tEvery - 0.2} from="fade" sfx={null}><Text size={44} color={C.muted}>0¢ to 99¢: fewest coins for each</Text></Appear></At>
+          <At x={540} y={385}><Appear at={tEvery - 0.2} out={t47 - 0.25} from="fade" sfx={null}><Text size={44} color={C.muted}>0¢ to 99¢: fewest coins for each</Text></Appear></At>
           <Grid counts={US} reveal={tFewest - 0.3} revealDur={2.2} hi={t >= tAll ? 99 : -1} />
         </Camera>
       )}
