@@ -114,7 +114,7 @@ const SquareBody: React.FC = () => {
           <Fleet n={1} x={810} y={600} cols={1} size={110} color={C.coral} />
           <At x={540} y={880}><Appear at={tTwice - 0.2} from="up"><Text size={58}><span style={{ color: C.mint }}>×2</span> the fire</Text></Appear></At>
           <At x={540} y={980}><Appear at={tThin - 0.5} from="up"><Text size={58}><span style={{ color: C.mint }}>×2</span> their fire spread thin</Text></Appear></At>
-          <At x={540} y={1110}><Appear at={t4 - 0.2} from="slam"><Punch at={t4}><Chip color={C.amber} size={66}>×4 the strength</Chip></Punch></Appear></At>
+          <At x={540} y={1080}><Appear at={t4 - 0.2} from="pop"><Punch at={t4}><Chip color={C.amber} size={60}>×4 the strength</Chip></Punch></Appear></At>
         </>
       )}
     </>
@@ -139,11 +139,11 @@ const LineBody: React.FC = () => {
       <SBar v={1600} t0={t1600 - 0.3} color={C.mint} label="40² = 1,600" y={480} />
       <SBar v={2116} t0={t2116 - 0.3} color={C.coral} label="46² = 2,116" y={650} />
       <Camera keys={[[0, { zoom: 1 }], [tRe, { zoom: 1 }], [tRe + 0.6, { zoom: 1.04 }]]}>
-        <Fleet n={40} alive={40 * sink} x={290} y={950} cols={8} size={40} gap={8} color={C.mint} />
-        <Fleet n={46} alive={sinkThem} x={790} y={950} cols={8} size={40} gap={8} color={C.coral} />
+        <Fleet n={40} alive={40 * sink} x={290} y={890} cols={8} size={40} gap={8} color={C.mint} />
+        <Fleet n={46} alive={sinkThem} x={790} y={890} cols={8} size={40} gap={8} color={C.coral} />
       </Camera>
-      <At x={790} y={1140}><Appear at={t23 - 0.2} from="pop"><Text size={48} color={C.coral}>23 left</Text></Appear></At>
-      <At x={290} y={1140}><Appear at={tLose} from="pop"><Text size={48} color={C.muted}>0 left</Text></Appear></At>
+      <At x={790} y={1060}><Appear at={t23 - 0.2} from="pop"><Text size={48} color={C.coral}>23 left</Text></Appear></At>
+      <At x={290} y={1060}><Appear at={tLose} from="pop"><Text size={48} color={C.muted}>0 left</Text></Appear></At>
       <Sfx name="pack/drop-sub" at={tLose} volume={0.3} />
     </>
   );
@@ -180,9 +180,9 @@ const SplitBody: React.FC = () => {
           {/* enemy halves, right; the near half is attacked */}
           <Fleet n={23} alive={them1} x={800} y={500 - gapY / 2} cols={5} size={44} gap={8} color={C.coral} />
           <Fleet n={23} x={800} y={820 + gapY / 2} cols={5} size={44} gap={8} color={C.coral} />
-          <Fleet n={32} alive={main} x={300} y={500} cols={6} size={44} gap={8} color={C.mint} />
+          <Fleet n={32} alive={main} x={300} y={520} cols={8} size={44} gap={8} color={C.mint} />
           <Fleet n={reserve} x={300} y={860} cols={4} size={44} gap={8} color={C.mint} />
-          <At x={300} y={330}><Appear at={t32 - 0.2} from="fade" sfx={null}><Text size={44} color={C.mint}>32</Text></Appear></At>
+          <At x={300} y={370}><Appear at={t32 - 0.2} from="fade" sfx={null}><Text size={44} color={C.mint}>32</Text></Appear></At>
           <At x={300} y={970}><Appear at={t32 - 0.2} from="fade" sfx={null}><Text size={40} color={C.muted}>8 wait</Text></Appear></At>
           <At x={540} y={1080}><Appear at={t1024 - 0.3} from="up"><Text size={66}><span style={{ color: C.mint }}>1,024</span> vs <span style={{ color: C.coral }}>529</span></Text></Appear></At>
           <At x={540} y={1160}><Appear at={t22 - 0.2} from="slam"><Chip color={C.amber} size={46}>you win, 22 left</Chip></Appear></At>

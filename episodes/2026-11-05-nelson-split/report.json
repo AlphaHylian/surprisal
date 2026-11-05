@@ -1,0 +1,20 @@
+{
+ "ok": false,
+ "problems": [
+  "speech starts at 0.1s; the first word must start at 0 (check the first beat is the first thing in construct() and nothing plays before it)"
+ ],
+ "warnings": [],
+ "duration_s": 63.6,
+ "size_mb": 4.1,
+ "resolution": "540x960",
+ "caption_match_ratio": 0.9576719576719577,
+ "heard": "40 ships against 46. One plan loses one win. Same ships, same guns, same sailors. Only the arithmetic changes. This was Nelson's plan at Trafalgar in 1805. Lancaster worked out why in 1916. Every ship shoots and gets shot. Double your fleet. Twice the fire and their fires spread twice as thin. That's four times the strength. 40 squared is 1 ,600. 46 squared is 2 ,116. Line against line, you lose and about 23 of their sail home. Same 40 ships. How do you flip that? Cut their line in half. Throw 32 ships at 23 of theirs. 1 ,024 against 529. Nearly 2 to 1. You win with 22 left. Now bring in your other eight. 30 against 23 and you win again with about 20 ships still afloat. At Trafalgar, Nelson's 27 broke a line of 33. 18 of theirs were taken or destroyed. Britain lost none. Subscribe if you'd have lined them up.",
+ "music": "Tech Talk",
+ "music_gap_db": 8.0,
+ "speech_starts_at_s": 0.1,
+ "final_lufs": -14.8,
+ "voice_engine": "omnivoice",
+ "contact_sheet_every_s": 2.7,
+ "build_seconds": 915,
+ "draft": true
+}
