@@ -1,0 +1,20 @@
+{
+ "ok": false,
+ "problems": [
+  "the hook beat 'hook' is 3.4s of voice; it must be under 3.2 s (one sentence, 8-14 words: the stakes, not the job title)"
+ ],
+ "warnings": [],
+ "duration_s": 51.4,
+ "size_mb": 3.4,
+ "resolution": "540x960",
+ "caption_match_ratio": 0.9808917197452229,
+ "heard": "Swap the dime for an 18 cent coin and you carry less change. Not a rounder number. Not a bigger coin. 18 just fills the gaps. Here's how you score coins. Take every amount from 0 to 99 cents and find the fewest coins for each. With pennies, nickels, dimes, and quarters, 99 cents takes nine coins. Across all 100 amounts, you average 4 .7. Now swap the dime for an 18. 36 cents was a quarter, a dime, and a penny. Now it's just two 18s. But there's a catch. Pay the biggest coin first and 36 turns into a quarter, two nickels and a penny. That habit fails on 37 amounts out of 100. So you count the smart way. Do that and you average 3 .89 coins, 17 % less change from one odd coin. So what's the fewest coins for 72 cents?",
+ "music": "Digital Lemonade",
+ "music_gap_db": 8.0,
+ "speech_starts_at_s": 0.01,
+ "final_lufs": -14.9,
+ "voice_engine": "omnivoice",
+ "contact_sheet_every_s": 2.1,
+ "build_seconds": 1146,
+ "draft": true
+}

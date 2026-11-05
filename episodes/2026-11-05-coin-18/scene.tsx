@@ -160,7 +160,7 @@ const CountBody: React.FC = () => {
         </>
       )}
       {t >= tAll - 0.2 && (
-        <At x={540} y={1150}><Appear at={t47 - 0.2} from="pop"><Text size={48} color={C.amber}>470 coins ÷ 100 amounts</Text></Appear></At>
+        <At x={540} y={385}><Appear at={t47 - 0.2} from="pop"><div style={{ background: C.bg, padding: "4px 20px", borderRadius: 12 }}><Text size={48} color={C.amber}>470 coins ÷ 100 amounts</Text></div></Appear></At>
       )}
     </>
   );
@@ -220,7 +220,9 @@ const PayoffBody: React.FC = () => {
       <Headline out={tPay - 0.3} color={C.coral}>Fails on 37 of 100</Headline>
       <Headline at={tPay} color={C.amber}>Count it properly</Headline>
       <Camera keys={[[0, { zoom: 1 }], [t17 - 0.3, { zoom: 1 }], [t17 + 0.5, { zoom: 0.92 }]]}>
+        <div style={{ position: "absolute", inset: 0, opacity: tween(t, t389 - 0.4, t389, 1, 0.3) }}>
         <Grid counts={counts} reveal={t < tSmart ? -1 : tSmart} revealDur={1.4} mark={t < tSmart ? FAILS : undefined} markAt={t37 - 0.4} />
+        </div>
         <At x={540} y={385}><Appear at={tSmart} from="fade" sfx={null}><Text size={44} color={C.muted}>1¢ · 5¢ · 18¢ · 25¢</Text></Appear></At>
       </Camera>
       {t >= t389 - 0.4 && (
