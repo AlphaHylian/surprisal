@@ -17,8 +17,6 @@ through verify.py.
   matches game theory (Palacios-Huerta). [check] (everyday/sport) (2026-10-15: the paper's cell-by-cell scoring table couldn't be fetched (PDF mirrors 403); find a readable source with the 2x2 numbers first)
 
 - (follow-up idea) Envy-free cake for three: Selfridge-Conway (1960), at most 5 cuts; the moving knife (27 Oct) is only proportional, and its first taker always thinks someone else got at least as much. (everyday) [check]
-- You're a convoy commander: bigger convoys lose fewer ships (Blackett, WWII operational research; the escort perimeter grows like the square root of the area). (history) [check]
-- (follow-up) Two eggs, 100 floors: find the breaking floor in at most 14 drops (drop from 14, 27, 39...; 14+13+...+1 = 105 >= 100). (everyday) [check]
 
 ## Used
 - 2026-09-30  birthday-paradox (sounds-fake)  eQS8gtimpvA  first public video, 9pm Tallinn
@@ -89,3 +87,5 @@ through verify.py.
 - 2026-11-04 20:00: book stacking / harmonic overhang: 24 cm books out 12, 6, 4, 3 = 25 cm, 1 cm past the table; 31 books for 2 lengths, 227 for 3 (book-stack; pending hand upload, Zapier task limit)
 - 2026-11-05 12:00: Shallit's 18-cent coin: 1-5-10-25 averages 4.7 coins over 0-99, 1-5-18-25 3.89 (-17%); 36 = two 18s, biggest-first gives 25+5+5+1 and fails on 37 of 100 amounts; CTA 72 cents -> four 18s (coin-18; pending hand upload, Zapier task limit)
 - 2026-11-05 20:00: Lanchester's square law and Nelson's Trafalgar plan (Lanchester 1916 ch. 6): 40 vs 46 line up 1,600 vs 2,116 lose, 23 left; 32 on 23 1,024 vs 529, 22 left, +8 = 30 vs 23, ~20 afloat; Trafalgar 27 vs 33, 18 taken, none lost (nelson-split; pending hand upload, Zapier task limit)
+- 2026-11-06 12:00: Blackett's convoy size: four 5x5 convoys edge 80 vs one 10x10 edge 40, same escorts twice as close; once inside a U-boat sinks a few either way; records: ~32 ships 2.5% lost, ~54 ships 1.1%; spring 1943 convoys of 100; CTA 400 ships -> twice the edge (convoy-size; pending hand upload, Zapier task limit)
+- 2026-11-06 20:00: two eggs, 100 floors: halving 50, steps of 10 worst 19, shrinking jumps 14/27/39/50... worst 14, 14+...+1 = 105, 13 -> 91; CTA 200 floors -> 20 (two-eggs; pending hand upload, Zapier task limit)

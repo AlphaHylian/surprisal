@@ -1,0 +1,75 @@
+{
+  "slug": "convoy-size",
+  "format": "short",
+  "series": "history",
+  "hook_style": "how-to",
+  "hook_type": "claim",
+  "angle": "claim hook: your ships are safer in one big convoy than in four small ones (HookText 4 small convoys vs 1 big: safer, over four 5x5 blocks of ships vs one 10x10); rule out hiding: a U-boat finds a big convoy about as easily as a small one, so four convoys are four targets; context: the Atlantic, 1942, the Admiralty's rule 40 ships best, 60 the limit; step 1: pack 100 ships into squares: four 5x5 have 80 ship-widths of edge, one 10x10 has 40; step 2: put the same escorts on the edge: twice as close, U-boats get through where the line is thin; re-hook: but the one that gets in?; it sinks a few ships either way, a handful out of 100 instead of out of 25; payoff: Blackett's records, 32-ship convoys lost 2.5%, 54-ship 1.1%, spring 1943 the limit went, convoys of 100 crossed; CTA checkable: 400 ships, how much more edge than 100? (twice). Series arm: history (12:00; yesterday noon was everyday), 9 beats aiming for 45-50 s.",
+  "title": "Why one big convoy beat four small ones",
+  "description": "Put 100 ships in four square convoys of 25 and the escorts have 80 ship-widths of edge to guard; one square of 100 has only 40, so the same escorts stand twice as close. A U-boat finds a big convoy about as easily as a small one, and once inside it sinks a few ships either way, so the share you lose falls as the convoy grows. Patrick Blackett's operational research team showed it from two years of records: convoys averaging 32 ships lost 2.5%, convoys averaging 54 lost 1.1%. In spring 1943 the Admiralty dropped its 60-ship limit and convoys of up to 100 ships crossed the Atlantic.\n\nNumbers checked in code (edge lengths of square convoys, and 100,000 simulated U-boat attacks on an evenly spaced escort line). Sources: warhistory.org/2020/09/06/may-1943-climax-in-the-atlantic-i/ and en.wikipedia.org/wiki/Operations_research\n\nThe math behind real problems, twice a day. Subscribe and the next one finds you.\nFound an error? Comment and it gets pinned.\n#math #mathematics #shorts",
+  "social_caption": "Four small convoys or one big one: the big one loses a smaller share of its ships. Here's the geometry Blackett's team used in 1943.",
+  "tags": [
+    "convoy",
+    "battle of the atlantic",
+    "patrick blackett",
+    "operational research",
+    "u-boat",
+    "ww2",
+    "square root",
+    "math",
+    "maths",
+    "history"
+  ],
+  "music_moods": [
+    "curious"
+  ],
+  "facts_checked": [
+    "Admiralty belief: large convoys more dangerous, optimum about 40 ships, 60 the maximum (https://warhistory.org/2020/09/06/may-1943-climax-in-the-atlantic-i/)",
+    "Blackett's records: convoys under 40 ships, average 32, lost 2.5%; larger, average 54, lost 1.1% (same source; verify.py: 0.80 vs 0.59 ships lost per convoy)",
+    "Sighting chance about the same for large and small; penetration depends on escorts per mile of perimeter; once inside, sinkings about the same (same source)",
+    "Losses depended on the number of escorts, not convoy size; a few large convoys more defensible than many small (https://en.wikipedia.org/wiki/Operations_research)",
+    "Spring 1943 new orders; convoys of up to 100 ships crossed the Atlantic (warhistory.org source)",
+    "Four 5x5 squares: edge 80; one 10x10: edge 40; same escorts twice as close (verify.py)",
+    "400 ships = 20x20, edge 80 = twice the edge of 100 (verify.py)",
+    "100,000 simulated attacks on an evenly spaced escort line: one big convoy loses a smaller share than four small (verify.py)"
+  ],
+  "beats": [
+    {
+      "id": "hook",
+      "say": "Your ships are safer in one big convoy than in four small ones.",
+      "speed": 1.25
+    },
+    {
+      "id": "ruleout",
+      "say": "Not because it hides better. A U-boat finds a big convoy about as easily as a small one. So four convoys are four targets."
+    },
+    {
+      "id": "context",
+      "say": "The Atlantic, 1942. The navy's rule: 40 ships is best, 60 is the limit."
+    },
+    {
+      "id": "square",
+      "say": "Pack your 100 ships into squares. Four squares of 25 have an edge 80 ships long. One square of 100: just 40."
+    },
+    {
+      "id": "escorts",
+      "say": "Your escorts guard the edge. Same escorts, half the edge: they stand twice as close, and U-boats get in where the line is thin."
+    },
+    {
+      "id": "rehook",
+      "say": "But what about the U-boat that does get in?"
+    },
+    {
+      "id": "inside",
+      "say": "It sinks a few ships either way. In a big convoy, that's a few out of 100, not out of 25."
+    },
+    {
+      "id": "payoff",
+      "say": "Patrick Blackett checked the records. Convoys of about 32 ships lost 2.5%. Convoys of 54 lost just 1.1%. By 1943, convoys of 100 were crossing."
+    },
+    {
+      "id": "cta",
+      "say": "So with 400 ships in one square, how much more edge than 100?"
+    }
+  ]
+}

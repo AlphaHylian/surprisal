@@ -1,0 +1,16 @@
+{
+ "ok": true,
+ "25 ships = 5 by 5, edge 20": "20",
+ "four convoys of 25: edge 80": "80",
+ "one convoy of 100 = 10 by 10, edge 40": "40",
+ "same 100 ships: half the edge": "0.5",
+ "so the same escorts stand twice as close": "2",
+ "CTA: 400 ships = 20 by 20, edge 80, twice the edge of 100": "(80, 2)",
+ "4x the ships, 2x the edge (edge grows like the square root)": "True",
+ "illustration: 3 ships lost of 100 = 3%, of 25 = 12%": "(3, 12)",
+ "a big convoy lost fewer ships per convoy, not just a smaller share": "True",
+ "2.5% vs 1.1%: big convoys lost less than half the share": "True",
+ "sim_four_small": "0.0480",
+ "sim_one_big": "0.0039",
+ "simulated: one big convoy loses a smaller share than four small": "True"
+}

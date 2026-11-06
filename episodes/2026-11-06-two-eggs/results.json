@@ -1,0 +1,18 @@
+{
+ "ok": true,
+ "every 10 floors: worst case 19 drops": "19",
+ "worst case: breaks at 100 -> 10 drops + floors 91..99 = 19": "19",
+ "halving: drop from 50 first, breaks -> climb 1..49: 50 drops": "50",
+ "smart plan floors": "[14, 27, 39, 50, 60]",
+ "smart plan: worst case 14 drops": "14",
+ "breaks at 14: 1 + floors 1..13 = 14": "14",
+ "breaks at 27: 2 + floors 15..26 = 14": "14",
+ "14+13+...+1 = 105": "105",
+ "13 drops reach only 91": "91",
+ "no plan beats 14 (dynamic programming, 100 floors, 2 eggs)": "14",
+ "CTA: 200 floors needs 20": "20",
+ "CTA: 20+...+1 = 210, 19 reaches only 190": "(210, 190)",
+ "sim_avg_tens": "10.90",
+ "sim_avg_smart": "10.38",
+ "simulated worst cases 19 vs 14": "(19, 14)"
+}

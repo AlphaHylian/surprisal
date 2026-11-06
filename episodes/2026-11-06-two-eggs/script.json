@@ -1,0 +1,73 @@
+{
+  "slug": "two-eggs",
+  "format": "short",
+  "series": "everyday",
+  "hook_style": "how-to",
+  "hook_type": "versus",
+  "angle": "versus hook: two eggs, 100 floors: jump by 10 = 19 drops, jump smart = 14 (HookText Jump by 10: 19 drops / Jump smart: 14, over a tower with two eggs); rule out halving: floor 50 breaks and the last egg climbs from floor 1, 50 drops; rules: find the highest floor an egg survives, a broken egg is gone, the last egg must go one floor at a time; step 1 jump by 10: worst case breaks at 100, 10 drops plus 91-99 = 19; re-hook: every jump costs a drop but the climb never gets shorter; step 2 shrink the jumps: 14, then 13 more to 27, 39, 50...; any break: 14 total (14: 1+13, 27: 2+12); payoff why 14: 14+13+...+1 = 105 covers 100, 13 reaches only 91; CTA checkable: 200 floors? (20). Series arm: everyday (20:00), 9 beats aiming for 45-50 s.",
+  "title": "Two eggs, 100 floors: find the breaking floor in 14 drops",
+  "description": "You have two eggs and a 100-floor building, and you need the highest floor an egg survives. Dropping every 10 floors can take 19 drops (floor 100, then 91 to 99 one by one). Shrink the jumps instead: drop from 14, then 27, 39, 50, 60, 69, 77, 84, 90, 95, 99, 100, so every extra drop of the first egg leaves one floor less for the second to climb. Whatever floor it breaks on, you're done in 14 drops, because 14 + 13 + ... + 1 = 105 covers 100 floors and 13 drops only reach 91.\n\nNumbers checked in code (every breaking floor tried for both plans, dynamic programming to prove 14 is the minimum, and 100,000 random breaking floors simulated). Source: en.wikipedia.org/wiki/Dynamic_programming#Egg_dropping_puzzle\n\nThe math behind real problems, twice a day. Subscribe and the next one finds you.\nFound an error? Comment and it gets pinned.\n#math #mathematics #shorts",
+  "social_caption": "Two eggs, 100 floors: dropping every 10 floors can take 19 tries, shrinking the jumps takes 14 at most. Here's the trick.",
+  "tags": [
+    "egg drop puzzle",
+    "two eggs 100 floors",
+    "interview puzzle",
+    "dynamic programming",
+    "triangular numbers",
+    "puzzle",
+    "math",
+    "maths",
+    "computer science"
+  ],
+  "music_moods": [
+    "upbeat"
+  ],
+  "facts_checked": [
+    "Rules of the puzzle: a broken egg is discarded, a survivor can be reused, an egg that breaks from a floor breaks from any higher one (https://en.wikipedia.org/wiki/Dynamic_programming#Egg_dropping_puzzle)",
+    "Halving: break at 50, climb 1-49: 50 drops (verify.py)",
+    "Every 10 floors: worst case 19 drops (10 + floors 91-99) (verify.py, all 101 outcomes)",
+    "Smart plan 14, 27, 39, 50, 60, 69, 77, 84, 90, 95, 99, 100: worst case 14 (verify.py, all 101 outcomes)",
+    "14+13+...+1 = 105 >= 100, 13+...+1 = 91 (verify.py)",
+    "14 is the minimum for 2 eggs and 100 floors; 200 floors needs 20 (dynamic programming in verify.py)",
+    "100,000 random breaking floors: worst cases 19 vs 14 (verify.py)"
+  ],
+  "beats": [
+    {
+      "id": "hook",
+      "say": "Jump by 10, 19 drops. Jump smart, 14.",
+      "speed": 1.25
+    },
+    {
+      "id": "ruleout",
+      "say": "Not by halving. Drop from floor 50, it breaks, and your last egg climbs from floor 1. That's 50 drops."
+    },
+    {
+      "id": "rules",
+      "say": "Two eggs, 100 floors. Find the highest floor an egg survives. A broken egg is gone, so your last egg goes one floor at a time."
+    },
+    {
+      "id": "tens",
+      "say": "Jump by 10 floors. Worst case, it breaks at 100. That's 10 drops, plus floors 91 to 99. 19."
+    },
+    {
+      "id": "rehook",
+      "say": "The flaw: every jump costs a drop, but the climb after never gets shorter."
+    },
+    {
+      "id": "shrink",
+      "say": "So shrink the jumps. Start at 14. Then 13 more, to 27. Then 39, then 50."
+    },
+    {
+      "id": "any",
+      "say": "Breaks at 14? Climb 13 floors. 14 drops. Breaks at 27? 2 drops, plus 12. Still 14."
+    },
+    {
+      "id": "payoff",
+      "say": "Why 14? 14 plus 13, all the way down to 1, is 105. Enough for 100 floors. 13 only reaches 91."
+    },
+    {
+      "id": "cta",
+      "say": "So how many drops for 200 floors?"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+ "ok": true,
+ "problems": [],
+ "warnings": [],
+ "duration_s": 58.5,
+ "size_mb": 10.3,
+ "resolution": "1080x1920",
+ "caption_match_ratio": 0.9897959183673469,
+ "heard": "Your ships are safer in one big convoy than in four small ones, not because it hides better. A U -boat finds a big convoy about as easily as a small one, so four convoys are four targets. The Atlantic 1942. The Navy's rule, 40 ships is best, 60 is the limit. Pack your 100 ships into squares. Four squares of 25 have an edge, 80 ships long, one square of 100, just 40. Your escorts guard the edge. Same escorts, half the edge. They stand twice as close, and U -boats get in where the line is thin. But what about the U -boat that does get in? It sinks a few ships either way. In a big convoy that's a few out of 100, not out of 25. Patrick Blackett checked the records. Convoys of about 32 ships lost 2 .5%. Convoys of 54 lost just 1 .1%. By 1943, convoys of 100 were crossing. So with 400 ships in one square, how much more edge than 100?",
+ "music": "Investigations",
+ "music_gap_db": 8.0,
+ "speech_starts_at_s": 0.0,
+ "final_lufs": -14.8,
+ "voice_engine": "omnivoice",
+ "contact_sheet_every_s": 2.4,
+ "build_seconds": 307,
+ "draft": false
+}

@@ -1,0 +1,18 @@
+{
+ "ok": true,
+ "problems": [],
+ "warnings": [],
+ "duration_s": 59.7,
+ "size_mb": 9.1,
+ "resolution": "1080x1920",
+ "caption_match_ratio": 0.9751552795031055,
+ "heard": "Jump by 10 -19 drops. Jump smart 14. Not by halving. Drop from floor 50, it breaks, and your last egg climbs from floor 1. That's 50 drops. Two eggs, 100 floors. Find the highest floor and egg survives. A broken egg is gone, so your last egg goes one floor at a time. Jump by 10 floors. Worst case, it breaks at 100. That's 10 drops, plus floors 91 to 99. 19. The flaw. Every jump costs a drop, but the climb after never gets shorter, so shrink the jumps. Start at 14, then 13 more to 27. Then 39, then 50. Breaks at 14? Climb 13 floors. 14 drops. Breaks at 27? Two drops plus 12. Still 14. Y14. 14 plus 13 all the way down to 1 is 105. Enough for 100 floors. 13 only reaches 91. So how many for our 200 floors?",
+ "music": "Tech Talk",
+ "music_gap_db": 8.0,
+ "speech_starts_at_s": 0.01,
+ "final_lufs": -15.0,
+ "voice_engine": "omnivoice",
+ "contact_sheet_every_s": 2.5,
+ "build_seconds": 196,
+ "draft": false
+}
