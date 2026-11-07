@@ -19,25 +19,62 @@
     "maths",
     "probability"
   ],
-  "music_moods": ["upbeat"],
+  "music_moods": [
+    "upbeat"
+  ],
   "facts_checked": [
     "Jeter 1995 12/48 (.250), 1996 183/582 (.314), total 195/630 (.310); Justice 1995 104/411 (.253), 1996 45/140 (.321), total 149/551 (.270) (https://en.wikipedia.org/wiki/Simpson%27s_paradox, citing Ken Ross, A Mathematician at the Ballpark, 2004, and Baseball-Reference.com)",
     "Justice higher both years, Jeter higher combined (verify.py)",
     "Jeter 582 of 630 at-bats in 1996; Justice 411 of 551 in 1995 (verify.py)",
     "Equal at-bats each season: Justice .287, Jeter .282 (verify.py)",
     "100,000 simulated replays of both seasons at those rates: Jeter wins the total in nearly all (verify.py)",
-    "CTA example: home 9/10 and away 30/90 beat home 80/90 and away 3/10 on both, but lose 39% vs 83% overall (verify.py)"
+    "CTA example: home 9/10 and away 30/90 beat home 80/90 and away 3/10 on both, but finish 39% vs 83% overall (verify.py)"
   ],
   "beats": [
-    {"id": "hook", "say": "Justice beat Jeter both years. Jeter beat Justice overall.", "speed": 1.2},
-    {"id": "ruleout", "say": "Batting average, 1995 and 1996. No typo. Same hits, same at-bats."},
-    {"id": "y95", "say": "You check 1995. Jeter two fifty. Justice two fifty-three. Justice wins.", "caption": "You check 1995. Jeter .250. Justice .253. Justice wins."},
-    {"id": "y96", "say": "1996. Jeter three fourteen. Justice three twenty-one. Justice again.", "caption": "1996. Jeter .314. Justice .321. Justice again."},
-    {"id": "total", "say": "Now add up all the hits. Jeter three ten. Justice two seventy. Jeter, by a mile.", "caption": "Now add up all the hits. Jeter .310. Justice .270. Jeter, by a mile."},
-    {"id": "rehook", "say": "Same hits, flipped winner. So check when they batted."},
-    {"id": "atbats", "say": "Jeter had 48 at-bats in the bad year, and 582 in the good one. Justice, 411 in the bad year, and only 140 in the good."},
-    {"id": "fix", "say": "So give them the same at-bats each year. Justice two eighty-seven, Jeter two eighty-two.", "caption": "So give them the same at-bats each year. Justice .287, Jeter .282."},
-    {"id": "payoff", "say": "The total never measured the hitter. It measured which year he played the most."},
-    {"id": "cta", "say": "So can your team win more home games, and more away games, and still have the worse record?"}
+    {
+      "id": "hook",
+      "say": "Justice won both years. Jeter won overall.",
+      "speed": 1.25
+    },
+    {
+      "id": "ruleout",
+      "say": "Batting average, 1995 and 1996. No typo. Same hits."
+    },
+    {
+      "id": "y95",
+      "say": "You check 1995. Jeter two fifty. Justice two fifty-three. Justice wins.",
+      "caption": "You check 1995. Jeter .250. Justice .253. Justice wins."
+    },
+    {
+      "id": "y96",
+      "say": "1996. Jeter three fourteen. Justice three twenty-one. Justice again.",
+      "caption": "1996. Jeter .314. Justice .321. Justice again."
+    },
+    {
+      "id": "total",
+      "say": "Now add up all the hits. Jeter three ten. Justice two seventy. Jeter, by a mile.",
+      "caption": "Now add up all the hits. Jeter .310. Justice .270. Jeter, by a mile."
+    },
+    {
+      "id": "rehook",
+      "say": "Same hits, flipped winner. So check when they batted."
+    },
+    {
+      "id": "atbats",
+      "say": "Jeter: 48 at-bats in the bad year, 582 in the good. Justice: 411 in the bad year, only 140 in the good."
+    },
+    {
+      "id": "fix",
+      "say": "So give them the same at-bats each year. Justice two eighty-seven, Jeter two eighty-two.",
+      "caption": "So give them the same at-bats each year. Justice .287, Jeter .282."
+    },
+    {
+      "id": "payoff",
+      "say": "The total never measured the hitter. It measured which year he played the most."
+    },
+    {
+      "id": "cta",
+      "say": "So can your team win more home games and more away games, and still finish worse?"
+    }
   ]
 }

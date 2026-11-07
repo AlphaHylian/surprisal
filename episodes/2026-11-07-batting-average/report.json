@@ -1,0 +1,18 @@
+{
+ "ok": true,
+ "problems": [],
+ "warnings": [],
+ "duration_s": 57.0,
+ "size_mb": 9.1,
+ "resolution": "1080x1920",
+ "caption_match_ratio": 0.9782608695652174,
+ "heard": "Justice won both years. Jetter won overall. Batting average 1995 and 1996. No typo. Same hits. You check 1995. Jetter 250. Justice 253. Justice wins. 1996. Jader 314. Justice 321. Justice again. Now add up all the hits. Jader 310. Justice 270. Jeter by a mile. Same hits. Flipped winner. So check when they batted. Jeter, 48 at bats in the bad year, 582 in the good. Justice 411 in the bad year, only 140 in the good. So give them the same at bats each year. Justice 287. Jeter 282. The total never measured the hitter. It measured which year he played the most. So can your team win more home games and more away games and still finish worse?",
+ "music": "Somewhere Sunny",
+ "music_gap_db": 8.0,
+ "speech_starts_at_s": 0.01,
+ "final_lufs": -14.8,
+ "voice_engine": "omnivoice",
+ "contact_sheet_every_s": 2.4,
+ "build_seconds": 176,
+ "draft": false
+}

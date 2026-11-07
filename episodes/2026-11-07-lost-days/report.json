@@ -1,0 +1,21 @@
+{
+ "ok": false,
+ "problems": [
+  "the hook beat 'hook' is 4.2s of voice; it must be under 3.2 s (one sentence, 8-14 words: the stakes, not the job title)",
+  "speech starts at 0.12s; the first word must start at 0 (check the first beat is the first thing in construct() and nothing plays before it)"
+ ],
+ "warnings": [],
+ "duration_s": 61.0,
+ "size_mb": 3.6,
+ "resolution": "540x960",
+ "caption_match_ratio": 0.9949494949494949,
+ "heard": "Your calendar runs 11 minutes long, in 1582 that cost 10 days. Not a war and not a plague, just one leap day, too many. The year is 365 days and almost six hours. Skip the six hours and you're a day off every four years. So add a leap day every four years. That's 365 and a quarter, the old Julian calendar. But a quarter day is too much. The real year is 11 minutes shorter. 11 minutes a year is a day every 128 years. By 1582, spring arrived on 11 March, not 21 March. So Pope Gregory deleted 10 days. Thursday the 4th of October was followed by Friday the 15th. Then he stopped the drift. Drop three leap days every 400 years. 1700, 1800, and 1900 are skipped. 2000 stays. Now your calendar runs long by 27 seconds a year. One day every 3 ,200 years. So is 2100 a leap year.",
+ "music": "Investigations",
+ "music_gap_db": 8.0,
+ "speech_starts_at_s": 0.12,
+ "final_lufs": -14.7,
+ "voice_engine": "omnivoice",
+ "contact_sheet_every_s": 2.5,
+ "build_seconds": 1139,
+ "draft": true
+}

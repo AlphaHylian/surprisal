@@ -45,7 +45,7 @@ const HookBody: React.FC = () => {
     <>
       <HookText>{"11 minutes a year.\n**10 days gone.**"}</HookText>
       <Riser to={t10} volume={0.45} />
-      <Punch at={t10}><October y={880} cut={0} scale={0.92} /></Punch>
+      <Punch at={t10}><October y={790} cut={0} scale={0.88} /></Punch>
       <Sfx name="pack/paper-flip" at={t10 - 0.1} volume={0.4} />
     </>
   );
@@ -57,10 +57,10 @@ const RuleBody: React.FC = () => {
   return (
     <>
       <Headline>What took 10 days?</Headline>
-      <At x={330} y={560}><Appear at={tWar - 0.2} from="pop"><Icon name="Swords" size={150} color={C.muted} /></Appear></At>
-      <At x={750} y={560}><Appear at={tPl - 0.2} from="pop"><Icon name="Biohazard" size={150} color={C.muted} /></Appear></At>
-      <At x={330} y={560}><Appear at={tWar + 0.3} from="slam" sfx="pack/wrong"><Icon name="X" size={190} color={C.coral} stroke={3} /></Appear></At>
-      <At x={750} y={560}><Appear at={tPl + 0.3} from="slam" sfx="pack/wrong"><Icon name="X" size={190} color={C.coral} stroke={3} /></Appear></At>
+      <At x={330} y={560}><Appear at={tWar - 0.2} from="pop"><Icon name="Swords" size={170} color={C.muted} /></Appear></At>
+      <At x={750} y={560}><Appear at={tPl - 0.2} from="pop"><Icon name="Biohazard" size={170} color={C.muted} /></Appear></At>
+      <At x={330} y={560}><Appear at={tWar + 0.3} from="slam" sfx="pack/wrong"><div style={{ transform: "translate(70px, 70px)" }}><Icon name="X" size={110} color={C.coral} stroke={4} /></div></Appear></At>
+      <At x={750} y={560}><Appear at={tPl + 0.3} from="slam" sfx="pack/wrong"><div style={{ transform: "translate(70px, 70px)" }}><Icon name="X" size={110} color={C.coral} stroke={4} /></div></Appear></At>
       <At x={540} y={880}><Appear at={tLeap - 0.3} from="up"><Chip color={C.amber} size={64}>one leap day too many</Chip></Appear></At>
     </>
   );
@@ -137,7 +137,7 @@ const CutBody: React.FC = () => {
   return (
     <>
       <Headline color={C.amber}>Pope Gregory XIII</Headline>
-      <October y={780} cut={tDel} collapse={tFri - 0.3} />
+      <October y={730} cut={tDel} collapse={tFri - 0.3} />
       <Sfx name="pack/paper-flip" at={tDel} volume={0.45} />
       <At x={540} y={1150}><Appear at={tThu - 0.2} from="up"><Text size={48} color={C.muted}>Thu 4 → Fri 15</Text></Appear></At>
     </>
@@ -186,8 +186,8 @@ const PayoffBody: React.FC = () => {
       <Headline color={C.amber}>365.2425</Headline>
       <At x={540} y={540}><Text size={48} color={C.muted}>too long by</Text></At>
       <At x={540} y={680}><Punch at={t27}><Counter from={660} to={27} t0={0.2} t1={t27} size={150} color={C.amber} suffix=" s" /></Punch></At>
-      <At x={540} y={830}><Text size={44} color={C.muted}>a year (was 11 min)</Text></At>
-      <At x={540} y={1000}><Appear at={t3200 - 0.3} from="slam"><Chip color={C.mint} size={60}>1 day / 3,200 years</Chip></Appear></At>
+      <At x={540} y={900}><Text size={44} color={C.muted}>a year (was 11 min)</Text></At>
+      <At x={540} y={1050}><Appear at={t3200 - 0.3} from="slam"><Chip color={C.mint} size={60}>1 day / 3,200 years</Chip></Appear></At>
       <Sfx name="pack/kaching" at={t3200} volume={0.3} />
     </>
   );

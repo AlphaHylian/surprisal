@@ -2,10 +2,10 @@
 // versus hook -> rule out typos -> 1995 Justice -> 1996 Justice -> total Jeter -> re-hook: when did they bat?
 // -> at-bats split -> same at-bats: Justice .287 vs .282 -> payoff: the total measured the year -> CTA home/away
 import React from "react";
-import { Appear, At, C, Camera, Chip, F, Headline, HookText, Icon, Punch, Riser, Sfx, Span, Text, tween, useAt, useT } from "../kit";
+import { Appear, At, C, Camera, Card, Chip, F, Headline, HookText, Icon, Punch, Riser, Sfx, Span, Text, tween, useAt, useT } from "../kit";
 
 const XJ = 330, XD = 750;          // Jeter column, Justice column
-const ROWS = { y95: 560, y96: 720, tot: 900 };
+const ROWS = { y95: 610, y96: 800, tot: 1000 };
 type Win = "J" | "D" | null;
 
 // one row of the scoreboard: label, two averages, winner in amber
@@ -28,10 +28,10 @@ const Row: React.FC<{ y: number; label: string; j: string; d: string; win: Win; 
       </Appear>
     );
   };
-const Names: React.FC<{ at?: number }> = ({ at = 0 }) => (
+const Names: React.FC<{ at?: number; y?: number }> = ({ at = 0, y = 450 }) => (
   <>
-    <At x={XJ} y={430}><Appear at={at} from="fade" sfx={null}><Text size={58} color={C.mint}>JETER</Text></Appear></At>
-    <At x={XD} y={430}><Appear at={at} from="fade" sfx={null}><Text size={58} color={C.mint}>JUSTICE</Text></Appear></At>
+    <At x={XJ} y={y}><Appear at={at} from="fade" sfx={null}><Text size={58} color={C.mint}>JETER</Text></Appear></At>
+    <At x={XD} y={y}><Appear at={at} from="fade" sfx={null}><Text size={58} color={C.mint}>JUSTICE</Text></Appear></At>
   </>
 );
 
@@ -43,10 +43,10 @@ const HookBody: React.FC = () => {
     <>
       <HookText>{"Wins both years.\n**Loses overall.**"}</HookText>
       <Riser to={tOver} volume={0.45} />
-      <Names />
-      <Row y={ROWS.y95 + 40} label="1995" j=".250" d=".253" win="D" />
-      <Row y={ROWS.y96 + 50} label="1996" j=".314" d=".321" win="D" />
-      <Punch at={tOver}><Row y={ROWS.tot + 80} label="BOTH YEARS" j=".310" d=".270" win="J" winAt={tOver - 0.1} big /></Punch>
+      <Names y={520} />
+      <Row y={660} label="1995" j=".250" d=".253" win="D" />
+      <Row y={840} label="1996" j=".314" d=".321" win="D" />
+      <Punch at={tOver}><Row y={1030} label="BOTH YEARS" j=".310" d=".270" win="J" winAt={tOver - 0.1} big /></Punch>
       <Sfx name="pack/crowd-gasp" at={tOver} volume={0.35} />
     </>
   );
@@ -93,7 +93,7 @@ const BoardBody: React.FC = () => {
           </Punch>
         )}
         {t >= tRe && (
-          <At x={540} y={1080}><Appear at={tWhen - 0.2} from="up"><Text size={56} color={C.amber}>when did they bat?</Text></Appear></At>
+          <At x={540} y={1135}><Appear at={tWhen - 0.2} from="up"><Text size={52} color={C.amber}>when did they bat?</Text></Appear></At>
         )}
       </Camera>
       <Sfx name="pack/correct" at={tW95} volume={0.25} />
@@ -157,11 +157,12 @@ const FixBody: React.FC = () => {
 const PayoffBody: React.FC = () => {
   const at = useAt();
   const tYear = at.word("year", 1, 2.6);
+  const tMeas = at.word("measured", 2, 1.8);
   return (
     <>
       <Headline color={C.amber}>The total measured the year</Headline>
       <At x={540} y={560}><Appear at={0.2} from="left"><Card w={880}><Text size={56}>Jeter: <span style={{ color: C.mint }}>92%</span> in 1996</Text></Card></Appear></At>
-      <At x={540} y={800}><Appear at={tYear - 0.6} from="right"><Card w={880}><Text size={56}>Justice: <span style={{ color: C.coral }}>75%</span> in 1995</Text></Card></Appear></At>
+      <At x={540} y={800}><Appear at={tMeas} from="right"><Card w={880}><Text size={56}>Justice: <span style={{ color: C.coral }}>75%</span> in 1995</Text></Card></Appear></At>
       <Sfx name="pack/kaching" at={tYear} volume={0.3} />
     </>
   );

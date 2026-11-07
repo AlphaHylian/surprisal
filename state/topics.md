@@ -18,6 +18,12 @@ through verify.py.
 
 - (follow-up idea) Envy-free cake for three: Selfridge-Conway (1960), at most 5 cuts; the moving knife (27 Oct) is only proportional, and its first taker always thinks someone else got at least as much. (everyday) [check]
 
+- You're bidding in a sealed auction and don't know whether to bid your true value. Steps: second-price rule (Vickrey 1961), why shading your bid can only lose, eBay proxy bidding. (everyday) [check]
+- You're playing Battleship and wasting shots. Steps: count every way each ship fits, shoot the square with the most, hunt mode after a hit. (everyday; verify by simulation)
+- You're running the medical-residency / school match and people keep breaking deals. Steps: deferred acceptance (Gale-Shapley 1962), no pair wants to swap, proposers get their best stable match; Roth/Shapley Nobel 2012. (everyday) [check]
+- You're a WWII codebreaker: Enigma never encrypts a letter as itself. Steps: slide a guessed word (crib) along the message, every position with a same-letter clash is ruled out. (history) [check]
+- You run the St. Petersburg coin game (Nicolaus Bernoulli 1713, Daniel Bernoulli 1738): its average payout is infinite, yet nobody would pay $25 to play. Steps: doubling payouts, each round adds $1, real banks are finite (cap at a billion = ~$30). (history, as math; never encourage gambling) [check]
+
 ## Used
 - 2026-09-30  birthday-paradox (sounds-fake)  eQS8gtimpvA  first public video, 9pm Tallinn
 - 2026-10-01  quarters-make-a-third (visual-proof)  YrD3-RjdX58  9pm Tallinn 1 Oct (scheduled after test upload; subscribers not notified)
@@ -89,3 +95,4 @@ through verify.py.
 - 2026-11-05 20:00: Lanchester's square law and Nelson's Trafalgar plan (Lanchester 1916 ch. 6): 40 vs 46 line up 1,600 vs 2,116 lose, 23 left; 32 on 23 1,024 vs 529, 22 left, +8 = 30 vs 23, ~20 afloat; Trafalgar 27 vs 33, 18 taken, none lost (nelson-split; pending hand upload, Zapier task limit)
 - 2026-11-06 12:00: Blackett's convoy size: four 5x5 convoys edge 80 vs one 10x10 edge 40, same escorts twice as close; once inside a U-boat sinks a few either way; records: ~32 ships 2.5% lost, ~54 ships 1.1%; spring 1943 convoys of 100; CTA 400 ships -> twice the edge (convoy-size; pending hand upload, Zapier task limit)
 - 2026-11-06 20:00: two eggs, 100 floors: halving 50, steps of 10 worst 19, shrinking jumps 14/27/39/50... worst 14, 14+...+1 = 105, 13 -> 91; CTA 200 floors -> 20 (two-eggs; pending hand upload, Zapier task limit)
+- 2026-11-07 12:00: Simpson's paradox, Jeter vs Justice 1995-96: .250/.253, .314/.321, total .310/.270; at-bats 48/582 vs 411/140; equal weights .282 vs .287; CTA better home and away, worse overall? (yes) (batting-average; pending hand upload, Zapier task limit)
