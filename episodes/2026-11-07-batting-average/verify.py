@@ -8,7 +8,7 @@ ok = True
 results = {}
 def check(name, got, want):
     global ok
-    good = got == want
+    good = bool(got == want)
     ok &= good
     results[name] = str(got)
     print(f"{'OK ' if good else 'BAD'} {name}: {got} (script: {want})")

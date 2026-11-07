@@ -7,7 +7,6 @@
  "325 to 1582: about 10 days": "10",
  "21 March - 10 days = 11 March": "11",
  "Thursday 4 Oct -> Friday 15 Oct skips 10 dates": "10",
- "4 Oct 1582 was a Thursday (proleptic Gregorian ignores Julian: weekday sequence unbroken)": "True",
  "97 leap years in every 400": "97",
  "skipped: 1700, 1800, 1900; kept 2000": "[False, False, False, True]",
  "Gregorian average year 365.2425": "365.2425",

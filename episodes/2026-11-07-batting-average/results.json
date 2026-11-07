@@ -1,0 +1,20 @@
+{
+ "ok": true,
+ "Jeter 1995 .250": ".250",
+ "Justice 1995 .253": ".253",
+ "Jeter 1996 .314": ".314",
+ "Justice 1996 .321": ".321",
+ "Jeter combined 195/630 = .310": "(195, 630, '.310')",
+ "Justice combined 149/551 = .270": "(149, 551, '.270')",
+ "Justice wins both years": "True",
+ "Jeter wins combined": "True",
+ "Jeter: 582 of 630 at-bats in 1996 (92%)": "92%",
+ "Justice: 411 of 551 at-bats in 1995 (75%)": "75%",
+ "same at-bats each year: Jeter .282": ".282",
+ "same at-bats each year: Justice .287": ".287",
+ "Justice given Jeter's 1996-heavy at-bats: .316": ".316",
+ "sim_jeter_total": "0.932",
+ "simulation: same at-bat mix gives Jeter the total almost always": "True",
+ "CTA example: A better home and away": "True",
+ "CTA example: B better overall (83% vs 39%)": "('83%', '39%')"
+}
