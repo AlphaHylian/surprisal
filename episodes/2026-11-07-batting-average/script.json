@@ -1,0 +1,43 @@
+{
+  "slug": "batting-average",
+  "format": "short",
+  "series": "everyday",
+  "hook_style": "how-to",
+  "hook_type": "versus",
+  "angle": "versus hook: Justice beat Jeter both years, Jeter beat Justice overall (HookText Wins both years. Loses overall., over two scoreboards); rule out typos: same hits, same at-bats; 1995 .250 vs .253 Justice; 1996 .314 vs .321 Justice; add them up .310 vs .270 Jeter; re-hook: same hits, flipped winner, look at when they batted; at-bats: Jeter 48 in the bad year, 582 in the good; Justice 411 bad, 140 good; fix: same at-bats each season, Justice .287 vs Jeter .282; payoff: the total measured which year he played most, not the hitter (Simpson's paradox, Ken Ross 2004); CTA checkable: can your team win more home and away games and still have the worse record? (yes). Series arm: everyday (12:00; yesterday noon was history), 9 beats aiming for 45-50 s.",
+  "title": "He hit better both years and still lost",
+  "description": "David Justice had a higher batting average than Derek Jeter in 1995 (.253 vs .250) and in 1996 (.321 vs .314), yet over both years Jeter wins easily, .310 to .270. The trick is where the at-bats fell: Jeter had 582 of his 630 at-bats in 1996, the year both hit well, while Justice had 411 of his 551 in 1995, the year both hit worse. Give them the same at-bats each season and Justice leads, .287 to .282. This is Simpson's paradox: a total can flip the winner of every part.\n\nNumbers checked in code (every average, the equal-weight comparison, and 100,000 simulated replays of both seasons). Source: en.wikipedia.org/wiki/Simpson%27s_paradox (Ken Ross, A Mathematician at the Ballpark, 2004; Baseball-Reference.com).\n\nThe math behind real problems, twice a day. Subscribe and the next one finds you.\nFound an error? Comment and it gets pinned.\n#math #mathematics #shorts",
+  "social_caption": "Justice out-hit Jeter in 1995 and in 1996, but Jeter's two-year average is far higher. Here's how a total can flip the winner.",
+  "tags": [
+    "simpsons paradox",
+    "derek jeter",
+    "david justice",
+    "batting average",
+    "baseball stats",
+    "statistics",
+    "math",
+    "maths",
+    "probability"
+  ],
+  "music_moods": ["upbeat"],
+  "facts_checked": [
+    "Jeter 1995 12/48 (.250), 1996 183/582 (.314), total 195/630 (.310); Justice 1995 104/411 (.253), 1996 45/140 (.321), total 149/551 (.270) (https://en.wikipedia.org/wiki/Simpson%27s_paradox, citing Ken Ross, A Mathematician at the Ballpark, 2004, and Baseball-Reference.com)",
+    "Justice higher both years, Jeter higher combined (verify.py)",
+    "Jeter 582 of 630 at-bats in 1996; Justice 411 of 551 in 1995 (verify.py)",
+    "Equal at-bats each season: Justice .287, Jeter .282 (verify.py)",
+    "100,000 simulated replays of both seasons at those rates: Jeter wins the total in nearly all (verify.py)",
+    "CTA example: home 9/10 and away 30/90 beat home 80/90 and away 3/10 on both, but lose 39% vs 83% overall (verify.py)"
+  ],
+  "beats": [
+    {"id": "hook", "say": "Justice beat Jeter both years. Jeter beat Justice overall.", "speed": 1.2},
+    {"id": "ruleout", "say": "Batting average, 1995 and 1996. No typo. Same hits, same at-bats."},
+    {"id": "y95", "say": "You check 1995. Jeter two fifty. Justice two fifty-three. Justice wins.", "caption": "You check 1995. Jeter .250. Justice .253. Justice wins."},
+    {"id": "y96", "say": "1996. Jeter three fourteen. Justice three twenty-one. Justice again.", "caption": "1996. Jeter .314. Justice .321. Justice again."},
+    {"id": "total", "say": "Now add up all the hits. Jeter three ten. Justice two seventy. Jeter, by a mile.", "caption": "Now add up all the hits. Jeter .310. Justice .270. Jeter, by a mile."},
+    {"id": "rehook", "say": "Same hits, flipped winner. So check when they batted."},
+    {"id": "atbats", "say": "Jeter had 48 at-bats in the bad year, and 582 in the good one. Justice, 411 in the bad year, and only 140 in the good."},
+    {"id": "fix", "say": "So give them the same at-bats each year. Justice two eighty-seven, Jeter two eighty-two.", "caption": "So give them the same at-bats each year. Justice .287, Jeter .282."},
+    {"id": "payoff", "say": "The total never measured the hitter. It measured which year he played the most."},
+    {"id": "cta", "say": "So can your team win more home games, and more away games, and still have the worse record?"}
+  ]
+}

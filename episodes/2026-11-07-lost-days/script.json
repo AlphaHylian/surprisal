@@ -1,0 +1,45 @@
+{
+  "slug": "lost-days",
+  "format": "short",
+  "series": "history",
+  "hook_style": "how-to",
+  "hook_type": "claim",
+  "angle": "claim hook: your calendar runs 11 minutes long, and in 1582 that cost 10 days (HookText 11 minutes a year. 10 days gone., over a 1582 October page with 5-14 struck out); rule out war/plague: a leap day too many; context: a year is 365 days and almost 6 hours, skip them and you're a day off every 4 years; step 1: a leap day every 4 years = 365 and a quarter (Julian); re-hook: a quarter is 11 minutes too much; drift: a day every 128 years, by 1582 spring on 11 March not 21; fix 1: Pope Gregory deletes 10 days, Thursday 4 Oct then Friday 15 Oct; fix 2: drop 3 leap days per 400 years, 1700/1800/1900 skipped, 2000 kept; payoff: 27 seconds a year, a day every 3,200 years; CTA checkable: is 2100 a leap year? (no). Series arm: history (20:00), 10 beats aiming for ~50 s.",
+  "title": "How 11 minutes a year deleted 10 days in 1582",
+  "description": "A year is about 365.2422 days. The old calendar added a leap day every 4 years, 365.25 days, which is 11 minutes too long, so it slid a full day every 128 years. By 1582 the spring equinox fell on 10 or 11 March instead of 21 March, so Pope Gregory XIII deleted 10 days: Thursday 4 October 1582 was followed by Friday 15 October. To stop the drift, century years are leap years only if they divide by 400 (1700, 1800, 1900 skipped; 2000 kept): 97 leap days every 400 years, 365.2425 days, about 27 seconds too long.\n\nNumbers checked in code (drift rates, the 10 days, the leap rule over 100,000 random 400-year windows). Source: en.wikipedia.org/wiki/Gregorian_calendar\n\nThe math behind real problems, twice a day. Subscribe and the next one finds you.\nFound an error? Comment and it gets pinned.\n#math #mathematics #shorts",
+  "social_caption": "An 11-minute error a year made Europe skip 10 days in October 1582. Here's the leap-year rule that fixed it.",
+  "tags": [
+    "gregorian calendar",
+    "leap year",
+    "1582",
+    "julian calendar",
+    "pope gregory xiii",
+    "calendar history",
+    "math",
+    "maths",
+    "history",
+    "astronomy"
+  ],
+  "music_moods": ["curious"],
+  "facts_checked": [
+    "Mean tropical year 365.24219 days; Julian year 365.25 is almost 11 minutes longer (https://en.wikipedia.org/wiki/Gregorian_calendar)",
+    "By 1582 a drift of 10 days since the Council of Nicaea: equinox on 10 or 11 March instead of 21 March (https://en.wikipedia.org/wiki/Gregorian_calendar)",
+    "Thursday 4 October 1582 was followed by Friday 15 October 1582; bull Inter gravissimas, Pope Gregory XIII (https://en.wikipedia.org/wiki/Gregorian_calendar)",
+    "Century years leap only if divisible by 400; 97 leap years per 400; 1700, 1800, 1900 not leap, 2000 leap, 2100 not (https://en.wikipedia.org/wiki/Gregorian_calendar)",
+    "365 days short by ~5.8 h; Julian error 11 min; one day per 128 years; 325-1582 drift ~10 days (verify.py)",
+    "Gregorian 365.2425 - 365.24219 = ~27 s a year, a day every ~3,200 years (verify.py)",
+    "100,000 random 400-year windows: always exactly 3 leap days fewer than the old rule (verify.py)"
+  ],
+  "beats": [
+    {"id": "hook", "say": "Your calendar runs 11 minutes long. In 1582, that cost 10 days.", "speed": 1.2},
+    {"id": "ruleout", "say": "Not a war, and not a plague. Just one leap day too many."},
+    {"id": "year", "say": "The year is 365 days and almost 6 hours. Skip the 6 hours, and you're a day off every 4 years."},
+    {"id": "leap", "say": "So add a leap day every 4 years. That's 365 and a quarter, the old Julian calendar."},
+    {"id": "rehook", "say": "But a quarter day is too much. The real year is 11 minutes shorter."},
+    {"id": "drift", "say": "11 minutes a year is a day every 128 years. By 1582, spring arrived on 11 March, not 21 March."},
+    {"id": "cut", "say": "So Pope Gregory deleted 10 days. Thursday the 4th of October was followed by Friday the 15th."},
+    {"id": "rule", "say": "Then he stopped the drift. Drop 3 leap days every 400 years. 1700, 1800 and 1900 are skipped. 2000 stays."},
+    {"id": "payoff", "say": "Now your calendar runs long by 27 seconds a year. One day every 3,200 years."},
+    {"id": "cta", "say": "So is 2100 a leap year?"}
+  ]
+}
