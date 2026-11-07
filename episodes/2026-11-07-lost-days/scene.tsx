@@ -9,7 +9,7 @@ const DAYS = Array.from({ length: 31 }, (_, i) => i + 1);
 const October: React.FC<{ y?: number; cut?: number; collapse?: number; scale?: number }> = ({ y = 760, cut = 0, collapse = 1e9, scale = 1 }) => {
   const t = useT();
   const cell = 118, gx = 540 - 3 * cell;
-  const k = tween(t, collapse, collapse + 0.8, 0, 1);
+  const k = tween(t, collapse, collapse + 0.5, 0, 1);
   return (
     <div style={{ position: "absolute", left: 0, top: 0, width: 1080, height: 1920, transform: `scale(${scale})`, transformOrigin: `540px ${y}px` }}>
       <div style={{ position: "absolute", left: 540 - 4 * cell + 20, top: y - 330, width: 8 * cell - 40, height: 700, borderRadius: 30, background: `${C.panel}ee`, border: `3px solid ${C.dim}` }} />
@@ -133,13 +133,12 @@ const DriftBody: React.FC = () => {
 // ---------------------------------------------------------------- the cut
 const CutBody: React.FC = () => {
   const at = useAt();
-  const tDel = at.word("deleted", 1, 1.4), tThu = at.word("Thursday", 1, 2.6), tFri = at.word("Friday", 1, 4.6);
+  const tDel = at.word("deleted", 1, 1.4), tFri = at.word("Friday", 1, 4.6);
   return (
     <>
       <Headline color={C.amber}>Pope Gregory XIII</Headline>
       <October y={730} cut={tDel} collapse={tFri - 0.3} />
       <Sfx name="pack/paper-flip" at={tDel} volume={0.45} />
-      <At x={540} y={1150}><Appear at={tThu - 0.2} from="up"><Text size={48} color={C.muted}>Thu 4 → Fri 15</Text></Appear></At>
     </>
   );
 };
