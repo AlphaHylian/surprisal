@@ -41,7 +41,7 @@ def col(*mobs, buff=0.35):
 class EarthCut:
     """The Earth cut through both cities: centre c, radius r. Syene at the top, Alexandria `ang` to the left."""
 
-    def __init__(self, c=DOWN * 1.6, r=2.6, ang=SHOW_ANG):
+    def __init__(self, c=LEFT * 2.2 + DOWN * 0.55, r=2.0, ang=SHOW_ANG):
         self.c, self.r, self.ang = np.array(c, dtype=float), r, ang
         self.disk = Circle(radius=r, stroke_color=MINT, stroke_width=4, fill_color=PANEL, fill_opacity=0.9).move_to(self.c)
         self.cen = Dot(self.c, radius=0.06, color=MUTED)
@@ -128,8 +128,8 @@ class Episode(SurprisalScene):
     def construct(self):
         # ======================= 1. the stick
         with self.beat("hook"):
-            e = EarthCut(c=RIGHT * 3.6 + DOWN * 1.4, r=2.4)
-            pic = self.earth_scene(e)
+            e = EarthCut(c=RIGHT * 3.6 + DOWN * 0.7, r=1.8)
+            pic = VGroup(e.disk, e.cen, e.city(0, "Syene"), e.city(e.ang, "Alexandria", LEFT), e.stick(e.ang, 0.6), e.ray(0, 1.4), e.ray(e.ang, 1.4))
             card = VGroup(T("measure the", 54, INK), big("whole Earth", AMBER, 110), T("with a stick?", 54, INK)).arrange(DOWN, buff=0.25).move_to(LEFT * 3.0 + UP * 0.3)
             grp = VGroup(card, pic)
             self.open_with(grp)
@@ -248,51 +248,50 @@ class Episode(SurprisalScene):
             self.e = e
             self.show(e.disk, e.cen, e.city(0, "Syene"), e.city(e.ang, "Alexandria", LEFT))
             self.to_word("straight down")
-            r0 = e.ray(0, 2.0)
+            r0 = e.ray(0, 1.2)
             self.play(GrowArrow(r0), run_time=self.rt(0.5))
             self.to_word("Extend")
             l0 = DashedLine(e.pt(0), e.c, color=AMBER, stroke_width=4)
             self.play(Create(l0), run_time=self.rt(0.6))
-            self.show(T("(angles drawn bigger)", 26, MUTED, False).to_corner(DR, buff=0.4).shift(UP * 1.4))
+            self.show(T("(angles drawn bigger)", 26, MUTED, False).move_to(LEFT * 4.4 + DOWN * 2.3))
             self.why = VGroup(r0, l0)
 
         with self.beat("why3"):
             e = self.e
-            st = e.stick(e.ang, 0.9)
+            st = e.stick(e.ang, 0.7)
             self.play(Create(st), run_time=self.rt(0.5))
             self.to_word("centre")
             l1 = DashedLine(e.pt(e.ang), e.c, color=INK, stroke_width=4)
             self.play(Create(l1), run_time=self.rt(0.6))
-            self.show(T("straight up = away from the centre", 34, MINT).move_to(RIGHT * 4.0 + UP * 1.2))
+            self.show(T("straight up =\naway from the centre", 32, MINT).move_to(RIGHT * 3.6 + UP * 1.0))
             self.why.add(st, l1)
 
         with self.beat("why4"):
             e = self.e
             self.to_word("parallel")
-            r1 = e.ray(e.ang, 2.0)
+            r1 = e.ray(e.ang, 1.2)
             self.play(GrowArrow(r1), run_time=self.rt(0.5))
-            self.show(chip("parallel", AMBER).move_to(LEFT * 4.6 + UP * 1.6))
+            self.show(chip("parallel", AMBER).move_to(RIGHT * 3.6 + UP * 2.2))
             self.why.add(r1)
 
         with self.beat("why5"):
             e = self.e
-            top = e.pt(e.ang, 1 + 0.9 / e.r)
             a_top = Arc(radius=0.55, start_angle=PI / 2 + e.ang, angle=-e.ang, arc_center=e.pt(e.ang), color=AMBER, stroke_width=6)
             a_cen = Arc(radius=0.7, start_angle=PI / 2, angle=e.ang, arc_center=e.c, color=AMBER, stroke_width=6)
             self.to_word("angle at the top")
             self.play(Create(a_top), run_time=self.rt(0.5))
             self.to_word("equals")
             self.play(Create(a_cen), run_time=self.rt(0.5))
-            self.show(T("same angle", 40, AMBER).move_to(RIGHT * 4.0 + DOWN * 0.2))
+            self.show(T("same angle", 40, AMBER).move_to(RIGHT * 3.6 + DOWN * 0.1))
             self.to_word("school")
-            self.show(T("a line crossing two parallels", 30, MUTED, False).move_to(RIGHT * 4.0 + DOWN * 0.8))
+            self.show(T("a line crossing two parallels", 30, MUTED, False).move_to(RIGHT * 3.6 + DOWN * 0.7))
 
         with self.beat("why6"):
             e = self.e
             sl = Sector(radius=e.r, start_angle=PI / 2, angle=e.ang, arc_center=e.c, fill_color=AMBER, fill_opacity=0.45, stroke_width=0)
             self.play(FadeIn(sl), run_time=self.rt(0.5))
             self.to_word("50")
-            self.show(big("× 50", AMBER, 100).move_to(LEFT * 4.6 + DOWN * 0.6))
+            self.show(big("× 50", AMBER, 100).move_to(RIGHT * 3.6 + DOWN * 1.7))
 
         with self.beat("why7"):
             self.clear()
@@ -574,7 +573,7 @@ class Episode(SurprisalScene):
 
         with self.beat("metre3"):
             self.clear()
-            e = EarthCut(c=DOWN * 1.4 + LEFT * 2.5, r=2.4)
+            e = EarthCut(c=DOWN * 0.4 + LEFT * 3.0, r=2.0)
             q = Arc(radius=e.r, start_angle=0, angle=PI / 2, arc_center=e.c, color=AMBER, stroke_width=8)
             self.show(e.disk)
             self.to_word("Dunkirk")
@@ -691,7 +690,7 @@ class Episode(SurprisalScene):
 
         with self.beat("end2"):
             self.clear()
-            v = row(labelled_icon("circle-dot", "a well", MINT), labelled_icon("minus", "a stick", MINT), labelled_icon("footprints", "a walker", MINT), buff=1.3).move_to(UP * 0.6)
+            v = row(labelled_icon("circle-dot", "a well", MINT), VGroup(Line(DOWN * 0.65, UP * 0.65, color=MINT, stroke_width=8), T("a stick", 34, INK, False)).arrange(DOWN, buff=0.25), labelled_icon("footprints", "a walker", MINT), buff=1.3).move_to(UP * 0.6)
             self.show(v)
             self.to_word("Columbus")
             self.show(T("…and a worse copy sent Columbus the wrong way", 36, CORAL).move_to(DOWN * 1.5))
@@ -709,9 +708,9 @@ class Episode(SurprisalScene):
 
 class Thumbnail(Scene):
     def construct(self):
-        e = EarthCut(c=RIGHT * 3.9 + DOWN * 1.2, r=2.9, ang=18 * DEGREES)
-        pic = VGroup(e.disk, e.stick(e.ang, 1.0, INK), e.ray(0, 2.5), e.ray(e.ang, 2.5),
+        e = EarthCut(c=RIGHT * 3.9 + DOWN * 1.0, r=2.6, ang=18 * DEGREES)
+        pic = VGroup(e.disk, e.stick(e.ang, 1.0, INK), e.ray(0, 1.6), e.ray(e.ang, 1.6),
                      Sector(radius=e.r, start_angle=PI / 2, angle=e.ang, arc_center=e.c, fill_color=AMBER, fill_opacity=0.5, stroke_width=0))
-        top = Text("40,000 km", font=FONT_BOLD, color=AMBER, font_size=150).move_to(LEFT * 2.6 + UP * 1.0)
-        sub = Text("with a stick", font=FONT_BOLD, color=INK, font_size=84).move_to(LEFT * 2.6 + DOWN * 0.9)
+        top = fit(Text("40,000 km", font=FONT_BOLD, color=AMBER, font_size=150), 6.6, 3).move_to(LEFT * 3.4 + UP * 0.9)
+        sub = Text("with a stick", font=FONT_BOLD, color=INK, font_size=84).move_to(LEFT * 3.4 + DOWN * 0.9)
         self.add(pic, top, sub)
