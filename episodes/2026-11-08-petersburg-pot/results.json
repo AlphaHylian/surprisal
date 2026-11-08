@@ -1,0 +1,21 @@
+{
+ "ok": true,
+ "half the time you win $2": "(Fraction(1, 2), 2)",
+ "a quarter of the time $4": "(Fraction(1, 4), 4)",
+ "every round adds $1 to the average": "True",
+ "first N rounds give $N (N=100)": "100",
+ "1 game in 32 pays more than $32": "True",
+ "round 30 pot passes a billion": "(True, '1,073,741,824')",
+ "billionaire bank ($1,075,000,000, Wikipedia's row): $30": "30",
+ "bank of exactly $1 billion: about $30 (30.86)": "30.86",
+ "world economy 2020 ($83.8 trillion): under $50 (47.19 with the capped tail)": "('47.19', True)",
+ "world economy: 46 full rounds": "46",
+ "CTA millionaire ($1,050,000, Wikipedia's row): 20 full rounds = $20": "20",
+ "CTA bank of exactly $1 million: about $21 (20.91 with the capped tail)": "20.91",
+ "sim_pays2": "0.4996",
+ "sim_over32": "0.0314",
+ "sim_capped_mean": "17.92",
+ "simulation: half the games pay $2": "True",
+ "simulation: 1 in 32 pays more than $32": "True",
+ "exact sum, bank $1 billion: rounds 1-29 pay in full, the rest pays the bank": "30.86"
+}

@@ -1,0 +1,78 @@
+{
+ "slug": "petersburg-pot",
+ "format": "short",
+ "series": "history",
+ "hook_style": "how-to",
+ "hook_type": "versus",
+ "angle": "versus hook: average payout infinite vs worth about $30 (HookText Average: ∞ / Worth: $30, over a doubling pot of chips); rule out a trick: fair coin, Nicolaus Bernoulli 1713; rules: pot $2, doubles on tails, first heads pays the pot; average: 1/2 x 2 = $1, 1/4 x 4 = $1, every round adds $1 forever = infinite; re-hook: so pay anything? nobody pays even $25, and they're right; a million simulated games: half pay $2, 1 in 32 pays more than $32; the infinity sits in giant pots, round 30 pot passes a billion; a billionaire can cover only 30 rounds: about $30; payoff: even the world economy (~$84 trillion) makes it under $50; CTA checkable: millionaire's game? (about $20). Series arm: history (12:00; yesterday noon was everyday), 10 beats aiming for ~50 s.",
+ "title": "An infinite payout that's worth about $30",
+ "description": "Flip a fair coin: the pot starts at $2 and doubles on every tails, and the first heads pays you the pot. Half the time you win $2, a quarter of the time $4, and so on, so every round adds $1 to the average payout and the average is infinite. But the infinity lives in pots nobody can pay: a bank of about a billion dollars can only cover the first 30 rounds, so against a billionaire the game is worth about $30, and against a bank as big as the world economy (about $84 trillion) still under $50. Nicolaus Bernoulli posed it in 1713; Daniel Bernoulli's 1738 paper in St. Petersburg gave it its name.\n\nNumbers checked in code (every average, the capped banks, and a million simulated games). Source: en.wikipedia.org/wiki/St._Petersburg_paradox\n\nThe math behind real problems, twice a day. Subscribe and the next one finds you.\nFound an error? Comment and it gets pinned.\n#math #mathematics #shorts",
+ "social_caption": "A coin game with an infinite average payout is worth about $30. Here's where the infinity goes.",
+ "tags": [
+  "st petersburg paradox",
+  "bernoulli",
+  "expected value",
+  "coin flip",
+  "probability",
+  "infinity",
+  "history",
+  "math",
+  "maths"
+ ],
+ "music_moods": [
+  "curious"
+ ],
+ "facts_checked": [
+  "Rules: pot starts at $2, doubles each tails, first heads ends the game and pays the pot; expected value 1 + 1 + 1 + ... = infinite (https://en.wikipedia.org/wiki/St._Petersburg_paradox)",
+  "Nicolas Bernoulli posed it in a letter to Montmort, 9 September 1713; Daniel Bernoulli's 1738 paper in the Commentaries of the Imperial Academy of Science of Saint Petersburg (Wikipedia)",
+  "\"Few of us would pay even $25 to enter such a game\" (Ian Hacking, quoted by Robert Martin; Wikipedia)",
+  "Every round adds $1: (1/2^k) x 2^k = 1 for all k (verify.py)",
+  "1 game in 32 pays more than $32; round 30 pays 2^30 = $1,073,741,824 (verify.py)",
+  "Finite banks (Wikipedia's table): billionaire $1,075,000,000 -> $30; millionaire $1,050,000 -> $20; world GDP 2020 $83.8 trillion -> $46. With a bank of exactly $1 billion and the capped tail included: $30.86; world GDP with the tail $47.19, under $50 (verify.py)",
+  "1,000,000 simulated games: about 50% pay $2, about 3.1% pay more than $32 (verify.py)",
+  "CTA: millionaire's game is worth about $20 (20 full rounds; $20.91 with the capped tail, verify.py)"
+ ],
+ "beats": [
+  {
+   "id": "hook",
+   "say": "Its average payout is infinite. It's worth about 30 dollars.",
+   "speed": 1.25
+  },
+  {
+   "id": "ruleout",
+   "say": "No trick coin. Nicolaus Bernoulli wrote this game down in 1713."
+  },
+  {
+   "id": "rules",
+   "say": "The pot starts at 2 dollars. Every tails doubles it. The first heads ends the game, and you take the pot."
+  },
+  {
+   "id": "average",
+   "say": "Half the time you win 2: a dollar on average. A quarter of the time, 4: another dollar. Every round adds a dollar, forever."
+  },
+  {
+   "id": "rehook",
+   "say": "So pay any price? Almost nobody would pay even 25 dollars. They're right."
+  },
+  {
+   "id": "sim",
+   "say": "Play it a million times. Half your games pay 2 dollars. Only 1 game in 32 pays more than 32."
+  },
+  {
+   "id": "bank",
+   "say": "The infinity hides in giant pots. By round 30, the pot passes a billion dollars."
+  },
+  {
+   "id": "cap",
+   "say": "And who pays you? A billionaire covers only those first 30 rounds. A dollar each: about 30 dollars."
+  },
+  {
+   "id": "payoff",
+   "say": "Even the whole world's economy makes it worth under 50. The infinity was never on the table."
+  },
+  {
+   "id": "cta",
+   "say": "So if a millionaire runs the game, what's your fair price?"
+  }
+ ]
+}

@@ -22,7 +22,9 @@ through verify.py.
 - You're playing Battleship and wasting shots. Steps: count every way each ship fits, shoot the square with the most, hunt mode after a hit. (everyday; verify by simulation)
 - You're running the medical-residency / school match and people keep breaking deals. Steps: deferred acceptance (Gale-Shapley 1962), no pair wants to swap, proposers get their best stable match; Roth/Shapley Nobel 2012. (everyday) [check]
 - You're a WWII codebreaker: Enigma never encrypts a letter as itself. Steps: slide a guessed word (crib) along the message, every position with a same-letter clash is ruled out. (history) [check]
-- You run the St. Petersburg coin game (Nicolaus Bernoulli 1713, Daniel Bernoulli 1738): its average payout is infinite, yet nobody would pay $25 to play. Steps: doubling payouts, each round adds $1, real banks are finite (cap at a billion = ~$30). (history, as math; never encourage gambling) [check]
+
+- You want the weekday of any date in your head. Steps: Conway's Doomsday rule: 4/4, 6/6, 8/8, 10/10, 12/12 all share a weekday, plus the year's anchor. (everyday) [check]
+- You need a letter to reach a stranger in Boston through friends only. Steps: Milgram 1967 small-world letters, how many hops the arriving ones took, why it works (friends of friends grow fast). (history) [check]
 
 ## Used
 - 2026-09-30  birthday-paradox (sounds-fake)  eQS8gtimpvA  first public video, 9pm Tallinn
@@ -97,3 +99,5 @@ through verify.py.
 - 2026-11-06 20:00: two eggs, 100 floors: halving 50, steps of 10 worst 19, shrinking jumps 14/27/39/50... worst 14, 14+...+1 = 105, 13 -> 91; CTA 200 floors -> 20 (two-eggs; pending hand upload, Zapier task limit)
 - 2026-11-07 12:00: Simpson's paradox, Jeter vs Justice 1995-96: .250/.253, .314/.321, total .310/.270; at-bats 48/582 vs 411/140; equal weights .282 vs .287; CTA better home and away, worse overall? (yes) (batting-average; pending hand upload, Zapier task limit)
 - 2026-11-07 20:00: Julian drift and the Gregorian fix: 365 d + 5 h 49 m, 365.25 is 11 min long, a day per 128 years, spring on 11 March by 1582, Thu 4 Oct -> Fri 15 Oct, drop 3 leap days per 400 (1700/1800/1900 skipped, 2000 kept), 27 s a year, a day per ~3,200 years; CTA 2100 leap? (no) (lost-days; pending hand upload, Zapier task limit)
+
+- 2026-11-08 12:00: St. Petersburg paradox: pot $2 doubling on tails, every round adds $1, average infinite; a million games: half pay $2, 1 in 32 pays more than $32; round 30 pot $1,073,741,824; billionaire bank covers 30 rounds = about $30, world economy under $50; CTA millionaire -> about $20 (petersburg-pot; pending hand upload, Zapier task limit)

@@ -1,0 +1,18 @@
+{
+ "ok": true,
+ "problems": [],
+ "warnings": [],
+ "duration_s": 57.3,
+ "size_mb": 10.2,
+ "resolution": "1080x1920",
+ "caption_match_ratio": 0.9523809523809523,
+ "heard": "Its average payout is infinite. It's worth about $30. No trick coin. Nick allows Bernoulli wrote this game down in 1713. The pot starts at $2. Every tail doubles it. The first heads ends the game and you take the pot. Half the time you win two. A dollar on average. A quarter of the time, four, another dollar. Every round adds a dollar forever. So pay any price? Almost nobody would pay even $25. They're right. Play it a million times. Half your games pay $2. Only one game and 32 pays more than 32. The infinity hides in giant pots. By round 30, the pot passes a billion dollars. And who pays you? A billionaire covers only those first 30 rounds. A dollar each. About $30. Even the whole world's economy makes it worth under 50. The infinity was never on the table. So if a millionaire runs the game, what's your fair price?",
+ "music": "Investigations",
+ "music_gap_db": 8.0,
+ "speech_starts_at_s": 0.02,
+ "final_lufs": -14.8,
+ "voice_engine": "omnivoice",
+ "contact_sheet_every_s": 2.4,
+ "build_seconds": 283,
+ "draft": false
+}

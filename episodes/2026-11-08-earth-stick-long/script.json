@@ -1,0 +1,277 @@
+{
+ "slug": "earth-stick-long",
+ "format": "long",
+ "series": "history",
+ "hook_style": "how-to",
+ "hook_type": "question",
+ "angle": "long-form of the earth-stick Short (16 Oct; best day-2 engaged views x average view % among Shorts with numbers and no long-form yet: 426 x 83.9% = 35,750, ahead of pin-guess 34,940; the past 7 days have no stats: Zapier task limit since 27 Oct). Chapters: the stick (Syene well, Alexandria 7.2, 1/50, 5,000 stadia, 250,000, Beta) / why the angle works (rays to centre, parallel rays, alternate angles, 0.0003 degrees) + subscribe / flat-Earth catch (close sun 6,300 km gives the same two shadows, Greeks already knew the ball, third stick 45 vs 38) / the weak spots (bematists, Syene north of the tropic and 3 east, real 7.1 / 790 km, stadion 160-210 m: 40,000 / 46,250 / 52,500, 2012 repeat 40,074) / a wrong number that changed history (Posidonius Canopus 1/48 240,000, 3,750 -> 180,000, Ptolemy a third too small, Columbus) / Beta's other numbers (map grid 400 cities, geography, 365 + leap day every fourth year, sieve to 30: 10 primes) / the Earth defines the metre (Delambre and Méchain, 1/10,000,000 of the quadrant, 40,000 by definition, bar 0.2 mm short, 40,008) / do it yourself (noon shadows, 0.5 m -> 26.6, equinox 45 N 1 m, 1,000 km -> 9) / your turn (3.6 degrees -> 400 km).",
+ "title": "How one man measured the whole Earth with a stick",
+ "description": "",
+ "tags": [
+  "eratosthenes",
+  "earth circumference",
+  "measure the earth",
+  "ancient greece",
+  "posidonius",
+  "columbus",
+  "history of science",
+  "geometry",
+  "math",
+  "maths"
+ ],
+ "music_moods": [
+  "calm"
+ ],
+ "facts_checked": [
+  "Eratosthenes (276-c.195 BC, Cyrene), chief librarian at Alexandria; nicknames Beta and Pentathlos (https://en.wikipedia.org/wiki/Eratosthenes)",
+  "Cleomedes' account: noon on the summer solstice, sun straight down a well in Syene (Aswan); Alexandria shadow about 7.2 degrees = 1/50 circle; 5,000 stadia measured by bematists; 250,000 stadia (Wikipedia, Eratosthenes)",
+  "Simplifications: Syene a little north of the Tropic and about 3 degrees east of Alexandria; errors roughly cancel (Wikipedia, Eratosthenes); modern coordinates give 7.1 degrees and ~790 km north-south (verify.py)",
+  "Stadion lengths 160 to 210 m (Wikipedia, Eratosthenes): 40,000 / 46,250 / 52,500 km (verify.py); polar circumference 40,007.863 km (https://en.wikipedia.org/wiki/Earth%27s_circumference)",
+  "2012 repetition (Anthony Abreu Mora): 40,074 km, 66 km from the polar value (Wikipedia, Earth's circumference)",
+  "Posidonius: Canopus grazes the horizon at Rhodes, 7.5 degrees at Alexandria, 1/48 circle, 5,000 stadia -> 240,000; with 3,750 stadia -> 180,000; Ptolemy used 180,000, about 33% too low; Columbus used this value to underestimate the distance to Asia (Wikipedia, Earth's circumference)",
+  "Metre: one ten-millionth of the pole-to-equator quarter meridian, Delambre and Méchain, Dunkirk to Barcelona; 40,000 km by definition; first prototype bar 0.2 mm short, hence 40,008 (Wikipedia, Earth's circumference)",
+  "Geography: grid of parallels and meridians, over 400 cities, coined 'geography'; calendar of 365 days with a 366-day year every fourth year (Wikipedia, Eratosthenes)",
+  "Sieve of Eratosthenes: crossing multiples of 2, 3, 5 up to 30 leaves the 10 primes below 30 (verify.py; https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes)",
+  "Parallel rays: 800 km at 149.6 million km differ by 0.0003 degrees; flat Earth with a sun 6,300 km above Syene gives the same 7.2; a stick 5,000 km away: 45 (ball) vs 38 (flat) (verify.py)",
+  "DIY: 0.5 m shadow on 1 m stick = 26.6 degrees; equinox at 45 N 1 m shadow; 1,000 km -> 9 degrees; CTA 3.6 degrees -> 400 km (verify.py)",
+  "Greek writers described a spherical Earth from about the 5th century BC; lunar eclipses are listed as evidence of sphericity (https://en.wikipedia.org/wiki/Spherical_Earth)"
+ ],
+ "beats": [
+  {
+   "id": "hook",
+   "say": "Can you measure the whole Earth with a stick?",
+   "chapter": "The stick"
+  },
+  {
+   "id": "promise",
+   "say": "By the end of this, you'll know exactly how one man did it 2,200 years ago, where his number went wrong, and how you can do it yourself with a friend and a ruler."
+  },
+  {
+   "id": "recap1",
+   "say": "Here's the problem. You live in Alexandria, in Egypt, around 240 BC. You want to know how big the Earth is. You can't walk around it, and you can't fly above it."
+  },
+  {
+   "id": "recap2",
+   "say": "What you can do is watch the sun. Far to the south is a town called Syene, today's Aswan. On the longest day of the year, at noon, the sun shines straight down a well there. No shadow at all."
+  },
+  {
+   "id": "recap3",
+   "say": "On the same day, at the same noon, stand a stick up in Alexandria. It does cast a shadow. Measure the angle between the stick and the sun's ray: about 7.2 degrees."
+  },
+  {
+   "id": "recap4",
+   "say": "Now the key step. 7.2 degrees is one fiftieth of a full circle. So the distance from Syene to Alexandria is one fiftieth of the way around the Earth."
+  },
+  {
+   "id": "recap5",
+   "say": "Pay someone to pace the distance. The number that comes back is 5,000 stadia. Multiply by 50: the Earth is 250,000 stadia around."
+  },
+  {
+   "id": "recap6",
+   "say": "The man who did this was Eratosthenes, the head of the great Library of Alexandria. His rivals nicknamed him Beta, number two, because he was never the best at any one thing. He measured the planet anyway."
+  },
+  {
+   "id": "why1",
+   "say": "So why should a shadow in one city tell you the size of the whole Earth? Draw it.",
+   "chapter": "Why the angle works"
+  },
+  {
+   "id": "why2",
+   "say": "Here's the Earth, cut in half through both cities. At Syene, the sun's ray goes straight down the well. Extend that line, and it passes through the centre of the Earth."
+  },
+  {
+   "id": "why3",
+   "say": "At Alexandria, the stick also points to the centre of the Earth. That's what standing straight up means on a ball."
+  },
+  {
+   "id": "why4",
+   "say": "Now the sun's rays. The sun is so far away that the ray hitting Syene and the ray hitting Alexandria are parallel."
+  },
+  {
+   "id": "why5",
+   "say": "Two parallel lines, crossed by the stick's line. The angle at the top, between the stick and the ray, equals the angle at the centre, between the two cities. It's the same angle you learned about in school, where a line crosses two parallel lines."
+  },
+  {
+   "id": "why6",
+   "say": "So the shadow angle is the slice of the Earth between the cities. A 7.2 degree slice, 50 of them to go around."
+  },
+  {
+   "id": "why7",
+   "say": "How parallel is parallel? The sun is about 150 million kilometers away. The two cities are about 800 kilometers apart. The two rays differ by about three ten-thousandths of a degree. Nothing a stick could ever see."
+  },
+  {
+   "id": "why8",
+   "say": "That's the first answer. If you like seeing the math hiding behind everyday things, subscribe. There's a new one twice a day."
+  },
+  {
+   "id": "flat1",
+   "say": "But here's a catch most retellings skip. Two sticks can't prove the Earth is round."
+  },
+  {
+   "id": "flat2",
+   "say": "Imagine the Earth is flat, and the sun is close, hanging about 6,300 kilometers above Syene. Then the stick in Syene casts no shadow, and the stick in Alexandria, 800 kilometers away, leans away from the sun by 7.2 degrees. Exactly the same shadows."
+  },
+  {
+   "id": "flat3",
+   "say": "Eratosthenes didn't need to prove the Earth was round. Greek thinkers had said so since the fifth century BC, and the Earth's round shadow on the moon in an eclipse backs them up. He took the ball as given, and measured it."
+  },
+  {
+   "id": "flat4",
+   "say": "If you did want to tell the two apart, you'd need a third stick, far away. On a ball, a stick 5,000 kilometers north of the well leans 45 degrees. Under a close sun over a flat Earth, it leans only 38. The farther you go, the wider the gap."
+  },
+  {
+   "id": "weak1",
+   "say": "So how good was his number? It depends on three things, and all three are shaky.",
+   "chapter": "The weak spots"
+  },
+  {
+   "id": "weak2",
+   "say": "First, the distance. 5,000 is suspiciously round. Pacers, called bematists, walked routes and counted steps. Their number was probably rounded, maybe even to fit the one fiftieth."
+  },
+  {
+   "id": "weak3",
+   "say": "Second, the geometry. Syene isn't exactly where the sun is straight overhead on the longest day. It's a little north of that line. And it isn't due south of Alexandria. It's about 3 degrees east."
+  },
+  {
+   "id": "weak4",
+   "say": "Here's the lucky part. Using modern maps, the two cities are 7.1 degrees of latitude apart, not 7.2, and about 790 kilometers apart from north to south. The errors pull in opposite directions and mostly cancel."
+  },
+  {
+   "id": "weak5",
+   "say": "Third, and worst: nobody is sure how long a stadion was. Greek cities used different ones, from about 160 meters to 210."
+  },
+  {
+   "id": "weak6",
+   "say": "Take the short one, 160 meters, and 250,000 stadia is 40,000 kilometers. The real distance around the poles: 40,008. Take 185 meters and you get 46,250, 16% too big. Take 210 and you get 52,500."
+  },
+  {
+   "id": "weak7",
+   "say": "So the method was perfect, and the number is somewhere between nearly exact and almost a third too large. Historians still argue which."
+  },
+  {
+   "id": "weak8",
+   "say": "In 2012, someone repeated the experiment with modern tools and got 40,074 kilometers. Within 66 kilometers of the real thing. The method works."
+  },
+  {
+   "id": "col1",
+   "say": "The next person to try did worse, and it mattered.",
+   "chapter": "A wrong number that changed history"
+  },
+  {
+   "id": "col2",
+   "say": "Around 100 years later, Posidonius used a star instead of the sun. A bright star called Canopus just grazes the horizon at Rhodes, but rises 7 and a half degrees high in Alexandria."
+  },
+  {
+   "id": "col3",
+   "say": "7 and a half degrees is one forty-eighth of a circle. He took Rhodes to be 5,000 stadia from Alexandria, and got 240,000 stadia. Close to Eratosthenes."
+  },
+  {
+   "id": "col4",
+   "say": "But the distance across the sea was hard to know. Another version used 3,750 stadia instead. Times 48, that's only 180,000."
+  },
+  {
+   "id": "col5",
+   "say": "That small Earth stuck. The astronomer Ptolemy used 180,000, and his maps were copied for over a thousand years. His Earth was about a third too small."
+  },
+  {
+   "id": "col6",
+   "say": "Columbus used a small Earth like that to argue Asia was a short sail west. It wasn't. He was saved only by a continent nobody in Europe knew was there."
+  },
+  {
+   "id": "col7",
+   "say": "Same method, same kind of angle. One bad distance, and the planet shrank by a third."
+  },
+  {
+   "id": "beta1",
+   "say": "Measuring the Earth wasn't even his day job. Remember the nickname, Beta, number two. Here's what number two also did.",
+   "chapter": "Beta's other numbers"
+  },
+  {
+   "id": "beta2",
+   "say": "He drew a map of the known world on a grid of lines running east to west and north to south, and placed over 400 cities on it. He coined the word geography."
+  },
+  {
+   "id": "beta3",
+   "say": "He worked out a calendar of 365 days, with an extra day every fourth year. The same rule Julius Caesar's calendar used two centuries later."
+  },
+  {
+   "id": "beta4",
+   "say": "And his name is still on a way to list prime numbers: the sieve of Eratosthenes. Write the numbers up to 30. Cross out every multiple of 2 after 2, then of 3, then of 5. What's left are the 10 primes below 30."
+  },
+  {
+   "id": "beta5",
+   "say": "Not bad for number two."
+  },
+  {
+   "id": "metre1",
+   "say": "Here's where the story loops back on itself.",
+   "chapter": "The Earth defines the metre"
+  },
+  {
+   "id": "metre2",
+   "say": "In the 1790s, France wanted a unit of length that belonged to nobody. So they took it from the Earth itself."
+  },
+  {
+   "id": "metre3",
+   "say": "Two astronomers, Delambre and Méchain, surveyed the line from Dunkirk to Barcelona. The metre would be one ten-millionth of the distance from the North Pole to the equator."
+  },
+  {
+   "id": "metre4",
+   "say": "A quarter of the way around is 10 million meters. So the whole way around is 40 million meters: 40,000 kilometers, by definition."
+  },
+  {
+   "id": "metre5",
+   "say": "Their first metre bar came out a fifth of a millimeter short. That's why the real number today is 40,008, not exactly 40,000."
+  },
+  {
+   "id": "metre6",
+   "say": "So when Eratosthenes' short stadion gives 40,000 kilometers, it's lining up with a unit that was built from the same planet he measured."
+  },
+  {
+   "id": "diy1",
+   "say": "Now your turn. You don't need a well, and you don't need the longest day.",
+   "chapter": "Do it yourself"
+  },
+  {
+   "id": "diy2",
+   "say": "You need two places, one roughly north of the other, and two people who measure a noon shadow on the same day."
+  },
+  {
+   "id": "diy3",
+   "say": "Stand a 1 meter stick up straight. At noon, when the shadow is shortest, measure the shadow. The angle comes from the ratio of shadow to stick."
+  },
+  {
+   "id": "diy3b",
+   "say": "Say the stick is 1 meter and the shadow is half a meter. Then the sun is about 26.6 degrees away from straight up."
+  },
+  {
+   "id": "diy4",
+   "say": "A handy check: on the spring or autumn equinox, at 45 degrees north, a 1 meter stick casts a shadow almost exactly 1 meter long."
+  },
+  {
+   "id": "diy5",
+   "say": "Your friend measures too. Subtract the two angles. That difference is your slice of the Earth."
+  },
+  {
+   "id": "diy6",
+   "say": "With a friend 1,000 kilometers south, your shadows differ by about 9 degrees. 9 degrees is one fortieth of a circle. 1,000 times 40: 40,000 kilometers."
+  },
+  {
+   "id": "diy7",
+   "say": "Schools around the world do exactly this every equinox, comparing shadows by email. A ruler, a stick and a friend are enough."
+  },
+  {
+   "id": "end1",
+   "say": "So, to sum up. The sun's rays arrive parallel. A stick points to the centre of the Earth. So a shadow angle is a slice of the planet. Measure the slice, measure the distance, multiply.",
+   "chapter": "Your turn"
+  },
+  {
+   "id": "end2",
+   "say": "Eratosthenes did it with a well, a stick and a hired walker. His method was perfect, his units are still argued over, and a worse copy of his idea sent Columbus the wrong way."
+  },
+  {
+   "id": "end3",
+   "say": "Here's one to check. You and a friend measure noon shadows on the same day, and your angles differ by 3.6 degrees. How far apart are you? Answer in the comments."
+  }
+ ]
+}
