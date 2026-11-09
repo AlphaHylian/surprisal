@@ -1,0 +1,19 @@
+{
+ "ok": true,
+ "17 squares of ship": "17",
+ "random shots: half the games need 97 (exact; DataGenetics rounds to ~96)": "97",
+ "random_P_done_by_95": "0.386",
+ "checkerboard: 50 dark squares": "50",
+ "every 2-long ship covers a dark square": "True",
+ "CTA: smallest left 3 long -> every third diagonal, 34 squares": "34",
+ "CTA: every 3-long ship covers one of them": "True",
+ "CTA: with every third diagonal, a 2-long ship can slip through": "False",
+ "sim_parity_median": 62,
+ "sim_parity_mean": "61.2",
+ "sim_plain_median": 66,
+ "sim_random_median": 97,
+ "sim_parity_done_by_62": "0.508",
+ "simulation: random median 97": "97",
+ "simulation: checkerboard + follow-up, half the games done by 62 (DataGenetics: 64)": "62",
+ "simulation: plain hunt/target is worse than with the checkerboard": "True"
+}

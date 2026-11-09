@@ -1,0 +1,33 @@
+{
+  "slug": "enigma-crib",
+  "format": "short",
+  "series": "history",
+  "hook_style": "how-to",
+  "hook_type": "claim",
+  "angle": "claim hook: Enigma had one flaw, a letter never came out as itself (HookText Enigma's flaw: A never becomes A); rule out brute force: 159 billion billion settings, 5 million years at a million a second; context: your job at Bletchley Park, 1940, find today's settings; step 1 guess a phrase: KEINEBESONDERENEREIGNISSE, nothing to report, 25 letters; step 2 slide it under a real Enigma ciphertext (made by verify.py), any letter on itself rules the spot out; demo: two of six spots crash, four left; re-hook: a spot isn't the key, each letter pair is a clue; step 3 the bombe tries all 17,576 rotor positions per wheel order, stops where every clue fits, ~20 minutes; payoff: 5 million years became a day's work (60 orders x 20 min = 20 h on one bombe); CTA subscribe if you'd have tried every setting. Series arm: history (20:00), 10 beats aiming for ~50 s.",
+  "title": "Enigma's one flaw: a letter never became itself",
+  "description": "Enigma's reflector meant a letter could never be enciphered as itself. Codebreakers slid a guessed phrase (a crib, like 'keine besonderen Ereignisse', nothing to report) along the ciphertext and ruled out every position where a letter landed on itself. The letter pairs at the remaining positions became a 'menu' for Turing's bombe, which ran through all 17,576 rotor positions of one wheel order in about 20 minutes, instead of trying all 158,962,555,217,826,360,000 settings (5 million years at a million a second).\n\nNumbers checked in code, including a working Enigma I simulation that made the ciphertext shown and 100,000 random settings where no letter ever came out as itself. Sources: en.wikipedia.org/wiki/Cryptanalysis_of_the_Enigma and en.wikipedia.org/wiki/Bombe\n\nThe math behind real problems, twice a day. Subscribe and the next one finds you.\nFound an error? Comment and it gets pinned.\n#math #mathematics #shorts",
+  "social_caption": "Enigma never turned a letter into itself. That one rule let Bletchley Park rule out guesses and find the day's settings.",
+  "tags": ["enigma", "enigma machine", "alan turing", "bletchley park", "bombe", "codebreaking", "cryptography", "ww2", "math", "history"],
+  "music_moods": ["curious"],
+  "facts_checked": [
+    "A letter could never be encrypted to itself (reflector); used to eliminate a crib in a position; 'keine besonderen Ereignisse' (nothing to report) a stereotyped message; 17,576 scrambler positions; 60 wheel orders (3 of 5 rotors); ten plugboard leads 150,738,274,937,250 (https://en.wikipedia.org/wiki/Cryptanalysis_of_the_Enigma)",
+    "Turing's bombe design 1939, first bombe March 1940; ~20 minutes to run all 17,576 positions of one rotor order; a self-match is a 'crash'; the menu of letter pairings (https://en.wikipedia.org/wiki/Bombe)",
+    "Total settings 60 x 17,576 x 150,738,274,937,250 = 158,962,555,217,826,360,000; at a million a second about 5 million years (verify.py)",
+    "Enigma I simulation (passes the AAAAA -> BDZGO test vector); 100,000 random settings, no letter enciphered as itself (verify.py)",
+    "Demo: crib KEINEBESONDERENEREIGNISSE under the 30-letter ciphertext OBISBRPGFQARBSDXIUSVJZQDOHRDRH (seed 0, not cherry-picked): positions 1 and 5 crash, 4 left, the true one is position 4 (verify.py)",
+    "One bombe, 60 wheel orders x 20 min = 20 hours (verify.py)"
+  ],
+  "beats": [
+    {"id": "hook", "say": "Enigma had one flaw. A letter never came out as itself.", "speed": 1.2},
+    {"id": "ruleout", "say": "Not brute force. 159 billion billion settings. At a million a second, that's 5 million years."},
+    {"id": "context", "say": "Your job at Bletchley Park, 1940: find today's settings."},
+    {"id": "crib", "say": "First, guess a phrase. Units kept sending nothing to report. In German, that's 25 letters."},
+    {"id": "slide", "say": "Slide it under the message. Wherever a letter lands on itself, that spot is impossible."},
+    {"id": "demo", "say": "Here, two spots crash. Four are left."},
+    {"id": "rehook", "say": "But a spot isn't the key. Each letter pair under it is a clue."},
+    {"id": "bombe", "say": "Turing's bombe spun through all 17,576 rotor positions, and stopped only where every clue fit. About 20 minutes per rotor order."},
+    {"id": "payoff", "say": "5 million years became a day's work. All because a letter could never be itself."},
+    {"id": "cta", "say": "Subscribe if you'd have tried every setting."}
+  ]
+}

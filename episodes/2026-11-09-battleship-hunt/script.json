@@ -1,0 +1,31 @@
+{
+  "slug": "battleship-hunt",
+  "format": "short",
+  "series": "everyday",
+  "hook_style": "how-to",
+  "hook_type": "versus",
+  "angle": "versus hook: random shots need 97 to sink the fleet, you need 62 (HookText Random: 97 shots / Smart: 62, over a grid peppered with misses); rule out luck/peeking: you stop wasting shots; context: 10x10, five ships, 17 squares, random finds the last ship around shot 97; step 1 checkerboard: every ship is at least 2 long so each covers a dark square, half the board; re-hook: the real waste is what random players do after a hit; step 2 target: after a hit fire at the 4 neighbours; step 3 follow the line until it sinks, then back to the checkerboard; payoff half your games end by shot 62 (100,000 simulated games), random needs 97; CTA checkable: smallest ship left is 3 long, which squares do you still need? (every third diagonal, 34). Series arm: everyday (12:00; yesterday noon was history), 10 beats aiming for ~50 s.",
+  "title": "How to sink a Battleship fleet in 62 shots, not 97",
+  "description": "Five ships fill 17 of the 100 squares, so shooting at random finds the last one late: half of random games need 97 shots. Shoot only one colour of a checkerboard (every ship is at least 2 long, so each covers one), and after a hit fire at the 4 neighbours and follow the line until the ship sinks. In 100,000 simulated games that finishes half of them by shot 62.\n\nNumbers checked in code (exact odds for random shooting, 100,000 simulated games per strategy). Idea and comparison: datagenetics.com/blog/december32011\n\nThe math behind real problems, twice a day. Subscribe and the next one finds you.\nFound an error? Comment and it gets pinned.\n#math #mathematics #shorts",
+  "social_caption": "Random Battleship shots need 97 to sink the fleet. A checkerboard and one follow-up rule get it done in 62.",
+  "tags": ["battleship", "battleship strategy", "board games", "probability", "checkerboard", "game strategy", "math", "maths", "games"],
+  "music_moods": ["upbeat"],
+  "facts_checked": [
+    "Fleet 5, 4, 3, 3, 2 = 17 squares on a 10x10 grid; random play ~96 shots for half the games; parity hunt/target median 64; every ship covers a square of each colour since the smallest is 2 long (https://www.datagenetics.com/blog/december32011/index.html)",
+    "Random shooting: exact median 97 shots (the last of 17 ship squares in a random order of 100) (verify.py)",
+    "Checkerboard: 50 dark squares, every 2-long placement covers one (verify.py)",
+    "100,000 simulated games: checkerboard hunt + neighbour targeting median 62 shots; random median 97 (verify.py)",
+    "CTA: smallest ship 3 long -> squares with (row + col) divisible by 3, 34 squares, every 3-long placement covers one (verify.py)"
+  ],
+  "beats": [
+    {"id": "hook", "say": "Random shots need 97. You need 62.", "speed": 1.25},
+    {"id": "ruleout", "say": "No luck, and no peeking. You just stop wasting shots."},
+    {"id": "context", "say": "Ten by ten, five ships, 17 squares. Fire at random, and the last ship hides until the very end."},
+    {"id": "parity", "say": "First, shoot only the dark squares of a checkerboard. Every ship is at least 2 long, so each one covers a dark square. Half the board."},
+    {"id": "rehook", "say": "But the real waste is what random players do after a hit."},
+    {"id": "target", "say": "After a hit, stop hunting. Fire at the 4 squares around it."},
+    {"id": "line", "say": "A second hit shows the direction. Follow the line until it sinks, then go back to the checkerboard."},
+    {"id": "payoff", "say": "In 100,000 games, half are over by shot 62. Random needs 97."},
+    {"id": "cta", "say": "So if the smallest ship left is 3 long, which squares do you still shoot?"}
+  ]
+}

@@ -1,0 +1,18 @@
+{
+ "ok": true,
+ "problems": [],
+ "warnings": [],
+ "duration_s": 45.0,
+ "size_mb": 7.4,
+ "resolution": "1080x1920",
+ "caption_match_ratio": 0.9781021897810219,
+ "heard": "Random shots need 97, you need 62. No luck and no peaking. You just stop wasting shots. 10 by 10, five ships, 17 squares. Fire at random and the last ship hides until the very end. First, shoot only the dark squares of a checkerboard. Every ship is at least too long, so each one covers a dark square. Half the board. But the real waste is what random players do after a hit. After a hit, stop hunting. Fire at the four squares around it. A second hit shows the direction. Follow the line until it sinks, then go back to the checkerboard. In 100 ,000 games, half are over by shot 62. Random needs 97. So if the smallest ship left is three long, which squares do you still shoot?",
+ "music": "Digital Lemonade",
+ "music_gap_db": 8.0,
+ "speech_starts_at_s": 0.0,
+ "final_lufs": -15.0,
+ "voice_engine": "omnivoice",
+ "contact_sheet_every_s": 2.0,
+ "build_seconds": 145,
+ "draft": false
+}

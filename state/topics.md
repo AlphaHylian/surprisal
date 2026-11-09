@@ -19,9 +19,7 @@ through verify.py.
 - (follow-up idea) Envy-free cake for three: Selfridge-Conway (1960), at most 5 cuts; the moving knife (27 Oct) is only proportional, and its first taker always thinks someone else got at least as much. (everyday) [check]
 
 - You're bidding in a sealed auction and don't know whether to bid your true value. Steps: second-price rule (Vickrey 1961), why shading your bid can only lose, eBay proxy bidding. (everyday) [check]
-- You're playing Battleship and wasting shots. Steps: count every way each ship fits, shoot the square with the most, hunt mode after a hit. (everyday; verify by simulation)
 - You're running the medical-residency / school match and people keep breaking deals. Steps: deferred acceptance (Gale-Shapley 1962), no pair wants to swap, proposers get their best stable match; Roth/Shapley Nobel 2012. (everyday) [check]
-- You're a WWII codebreaker: Enigma never encrypts a letter as itself. Steps: slide a guessed word (crib) along the message, every position with a same-letter clash is ruled out. (history) [check]
 
 - You want the weekday of any date in your head. Steps: Conway's Doomsday rule: 4/4, 6/6, 8/8, 10/10, 12/12 all share a weekday, plus the year's anchor. (everyday) [check]
 - You need a letter to reach a stranger in Boston through friends only. Steps: Milgram 1967 small-world letters, how many hops the arriving ones took, why it works (friends of friends grow fast). (history) [check]
@@ -102,3 +100,5 @@ through verify.py.
 
 - 2026-11-08 12:00: St. Petersburg paradox: pot $2 doubling on tails, every round adds $1, average infinite; a million games: half pay $2, 1 in 32 pays more than $32; round 30 pot $1,073,741,824; billionaire bank covers 30 rounds = about $30, world economy under $50; CTA millionaire -> about $20 (petersburg-pot; pending hand upload, Zapier task limit)
 - 2026-11-08 20:00: earth-stick-long (LONG-FORM 8:50, expands earth-stick; parallel rays 0.0003 deg, flat-Earth close sun 6,300 km gives the same two shadows, third stick 45 vs 38, Syene 7.1 deg / 790 km, stadion 160-210 m: 40,000-52,500 km, 2012 repeat 40,074, Posidonius 240,000 / 180,000, Ptolemy and Columbus, leap day and sieve, the metre 40,000 by definition and 40,008, DIY 1,000 km -> 9 deg; CTA 3.6 deg -> 400 km) (pending hand upload, Zapier task limit)
+- 2026-11-09  battleship-hunt (everyday, how-to, hook versus; checkerboard hunt + neighbour targeting, 97 -> 62 shots)  not uploaded by the bot (Zapier task limit): sent to the owner for 12:00 Tallinn 9 Nov
+- 2026-11-09  enigma-crib (history, how-to, hook claim; no letter to itself, crib dragging, bombe 17,576 / 20 min)  not uploaded by the bot (Zapier task limit): sent to the owner for 20:00 Tallinn 9 Nov

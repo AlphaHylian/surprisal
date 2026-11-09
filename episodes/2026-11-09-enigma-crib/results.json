@@ -1,0 +1,31 @@
+{
+ "ok": true,
+ "Enigma model matches the standard test vector (AAAAA -> BDZGO)": "BDZGO",
+ "decrypting with the same settings gives the message back": "WETTERVORHERSAGEBISKAYA",
+ "100,000 random settings: a letter never came out as itself": "0",
+ "plugboard with 10 cables: 150,738,274,937,250": "150,738,274,937,250",
+ "rotor positions: 26 x 26 x 26 = 17,576": "17576",
+ "wheel orders: 3 of 5 rotors = 60": "60",
+ "all settings: 158,962,555,217,826,360,000 (about 159 billion billion)": "158,962,555,217,826,360,000",
+ "a million settings a second: about 5 million years": "5",
+ "brute_force_years_at_1e6_per_s": "5,037,219",
+ "crib is 25 letters": "25",
+ "demo: the true position never crashes": "[]",
+ "demo_seed": 0,
+ "demo_ciphertext": "OBISBRPGFQARBSDXIUSVJZQDOHRDRH",
+ "demo_true_position": 3,
+ "demo_crashes": [
+  [
+   2
+  ],
+  [],
+  [],
+  [],
+  [
+   10
+  ],
+  []
+ ],
+ "p_wrong_survives_6": "0.790",
+ "one bombe, all 60 wheel orders at 20 minutes each: 20 hours": "20.0"
+}

@@ -1,0 +1,18 @@
+{
+ "ok": true,
+ "problems": [],
+ "warnings": [],
+ "duration_s": 51.5,
+ "size_mb": 9.6,
+ "resolution": "1080x1920",
+ "caption_match_ratio": 0.9863013698630136,
+ "heard": "Enigma had one flaw, a letter never came out as itself. Not brute force. 159 billion billion settings. At a million a second, that's 5 million years. Your job at Bletchley Park, 1940, find today's settings. First, guess a phrase. Units kept sending nothing to report. In German, that's 25 letters. Slide it under the message. Wherever a letter lands on itself, that spot is impossible. Here, two spots crash. Four are left. But a spot isn't the key. Each letter pair under it is a clue. Turing's bones spun through all 17 ,576 rotor positions and stopped only where every clue fit. About 20 minutes per rotor order. Five million years became a day's work. All because a letter could never be itself. Subscribe if you'd have tried every setting.",
+ "music": "Investigations",
+ "music_gap_db": 8.0,
+ "speech_starts_at_s": 0.01,
+ "final_lufs": -14.9,
+ "voice_engine": "omnivoice",
+ "contact_sheet_every_s": 2.1,
+ "build_seconds": 186,
+ "draft": false
+}
