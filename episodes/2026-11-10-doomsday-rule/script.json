@@ -1,0 +1,77 @@
+{
+  "slug": "doomsday-rule",
+  "format": "short",
+  "series": "everyday",
+  "hook_style": "how-to",
+  "hook_type": "claim",
+  "angle": "claim hook: these five dates (4/4, 6/6, 8/8, 10/10, 12/12) always fall on the same weekday (HookText These 5 dates: same weekday. Always., over five calendar pages 4/4 to 12/12, all SAT); rule out coincidence: each one is exactly 9 weeks after the last; context: this year they're all Saturdays, the doomsday; odd months: 9 to 5 at the 7-Eleven (5/9, 9/5, 7/11, 11/7); this year's Christmas: 12/12 Sat, 19, 26, so the 25th is a Friday; re-hook: the real trick is any year; year: last two digits 69 + 17 = 86, throw away sevens, 2 left; 1900s start on Wednesday (2000s Tuesday), two on: Friday; payoff: 7/11 Friday, 18th, 20th Sunday: Apollo 11 landed on a Sunday; CTA comment: what weekday were you born on? Series arm: everyday (20:00; noon today is history), 10 beats aiming for ~48 s.",
+  "title": "Find the weekday of any date in your head",
+  "description": "4/4, 6/6, 8/8, 10/10 and 12/12 always share a weekday (each is exactly 9 weeks after the last), and so do 5/9, 9/5, 7/11 and 11/7. In 2026 they're all Saturdays, so Christmas is a Friday. For any other year, take the last two digits, add a quarter of them rounded down, drop the sevens and count on from the century's day (1900s Wednesday, 2000s Tuesday): 69 + 17 = 86, 2 left, so 1969's day is Friday and 20 July 1969, the Moon landing, was a Sunday. January's day is the 3rd (the 4th in leap years), February's the last day, March's the 14th. This is John Conway's Doomsday rule (1973).\n\nNumbers checked in code: the method gives the right weekday for all 146,097 dates from 1800 to 2199. Source: en.wikipedia.org/wiki/Doomsday_rule\n\nThe math behind real problems, twice a day. Subscribe and the next one finds you.\nFound an error? Comment and it gets pinned.\n#math #mathematics #shorts",
+  "social_caption": "4/4, 6/6, 8/8, 10/10 and 12/12 always fall on the same weekday. That one fact lets you find the weekday of any date in your head.",
+  "tags": [
+    "doomsday rule",
+    "day of the week",
+    "mental math",
+    "calendar trick",
+    "john conway",
+    "math trick",
+    "math",
+    "maths",
+    "calendar"
+  ],
+  "music_moods": [
+    "upbeat"
+  ],
+  "facts_checked": [
+    "Doomsday dates 4/4, 6/6, 8/8, 10/10, 12/12, 5/9, 9/5, 7/11, 11/7, 3/14, last day of Feb, Jan 3 (4 in leap years); anchors 1900s Wednesday, 2000s Tuesday; 2026 doomsday Saturday; Conway 1973 (https://en.wikipedia.org/wiki/Doomsday_rule)",
+    "All anchor dates share one weekday in every year 1800-2199; y + floor(y/4) plus the century anchor gives it (verify.py)",
+    "Full method correct on all 146,097 dates 1800-2199 (verify.py)",
+    "Each even-month anchor is 63 days (9 weeks) after the previous (verify.py)",
+    "2026: 12/12 Saturday, 26 Dec Saturday, 25 Dec Friday (verify.py)",
+    "1969: 69 + 17 = 86, 86 mod 7 = 2, Wednesday + 2 = Friday; 11 and 18 July Friday, 20 July Sunday (verify.py)",
+    "Apollo 11's Eagle landed at 20:17:40 UTC on Sunday 20 July 1969 (https://en.wikipedia.org/wiki/Apollo_11)"
+  ],
+  "beats": [
+    {
+      "id": "hook",
+      "say": "These five dates always fall on the same weekday.",
+      "speed": 1.15
+    },
+    {
+      "id": "ruleout",
+      "say": "April 4th, June 6th, August 8th, October 10th, December 12th. Every year. Each is exactly 9 weeks after the last."
+    },
+    {
+      "id": "context",
+      "say": "This year, they're all Saturdays. That's your anchor day."
+    },
+    {
+      "id": "odd",
+      "say": "Odd months? I work 9 to 5 at the 7-Eleven. May 9th, September 5th, July 11th, November 7th. Saturdays too."
+    },
+    {
+      "id": "xmas",
+      "say": "So, Christmas. December 12th is a Saturday. Add a week: the 19th, the 26th. The 25th is a Friday."
+    },
+    {
+      "id": "rehook",
+      "say": "That's this year. The real trick works for any year."
+    },
+    {
+      "id": "year",
+      "say": "Take the last two digits. For 1969, that's 69. Add a quarter, rounded down: 17. That's 86. Throw away sevens: 2 left."
+    },
+    {
+      "id": "century",
+      "say": "The 1900s start on Wednesday. Two days on: Friday."
+    },
+    {
+      "id": "payoff",
+      "say": "July 11th is a Friday, so the 18th is, and the 20th is a Sunday. Apollo 11 landed on the Moon on a Sunday."
+    },
+    {
+      "id": "cta",
+      "say": "The 2000s start on Tuesday. So what weekday were you born on?"
+    }
+  ]
+}

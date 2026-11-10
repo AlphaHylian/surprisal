@@ -1,0 +1,18 @@
+{
+ "ok": true,
+ "problems": [],
+ "warnings": [],
+ "duration_s": 60.5,
+ "size_mb": 11.3,
+ "resolution": "1080x1920",
+ "caption_match_ratio": 0.9631901840490797,
+ "heard": "These five dates always fall on the same weekday. April 4th, June 6th, August 8th, October 10th, December 12th. Every year. Each is exactly nine weeks after the last. This year, they're all Saturdays. That's your anchor day. Odd months? I work nine to five at the 7 -Eleven. May 9th, September 5th, July 11th, November 7th. Saturdays, two. So, Christmas. December 12th is a Saturday. At a week, the 19th, the 26th. The 25th is a Friday. That's this year. The real trick works for any year. Take the last two digits. For 1969, that's 69. At a quarter, rounded down 17. That's 86. Throwaway 7s. Two left. The 1900s start on Wednesday. Two days on, Friday. July 11th is a Friday, so the 18th is, and the 20th is a Sunday. Apollo 11 landed on the moon on a Sunday. The 2000s start on Tuesday. So, what weekday were you born on?",
+ "music": "Somewhere Sunny",
+ "music_gap_db": 8.0,
+ "speech_starts_at_s": 0.03,
+ "final_lufs": -15.0,
+ "voice_engine": "omnivoice",
+ "contact_sheet_every_s": 2.5,
+ "build_seconds": 190,
+ "draft": false
+}

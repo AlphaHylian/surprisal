@@ -1,0 +1,22 @@
+{
+ "doomsday_2026": "Saturday",
+ "christmas_2026": "Friday",
+ "dec12_2026": "Saturday",
+ "dec26_2026": "Saturday",
+ "today": "Tuesday",
+ "nov7_2026": "Saturday",
+ "1969": {
+  "yy": 69,
+  "yy//4": 17,
+  "sum": 86,
+  "mod7": 2,
+  "doomsday": "Friday",
+  "jul11": "Friday",
+  "jul18": "Friday",
+  "jul20": "Sunday"
+ },
+ "jan1_2000": "Saturday",
+ "jan4_2000": "Tuesday",
+ "doomsday_2000": "Tuesday",
+ "dates_checked": 146097
+}

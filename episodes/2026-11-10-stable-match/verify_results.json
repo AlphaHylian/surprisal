@@ -1,0 +1,28 @@
+{
+ "demo_match": {
+  "Ben": "Oak",
+  "Ana": "Elm",
+  "Dee": "Ash",
+  "Cy": "Fir"
+ },
+ "demo_blocking_random": [
+  [
+   "Ben",
+   "Oak"
+  ],
+  [
+   "Cy",
+   "Elm"
+  ],
+  [
+   "Dee",
+   "Ash"
+  ]
+ ],
+ "rand_mean": 3.00391,
+ "rand_any": 0.93812,
+ "gs_blocking": 0,
+ "maxprops4": 13,
+ "big_props": 7194,
+ "big_block": 0
+}

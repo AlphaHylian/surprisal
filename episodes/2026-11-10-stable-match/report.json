@@ -1,0 +1,18 @@
+{
+ "ok": true,
+ "problems": [],
+ "warnings": [],
+ "duration_s": 58.7,
+ "size_mb": 10.2,
+ "resolution": "1080x1920",
+ "caption_match_ratio": 0.9261363636363636,
+ "heard": "Random matching three breakaways, one ruled zero. Not a smarter computer. Just a rule two mathematicians found in 1962. You're matching students to schools. A breakaway is a student and a school who would both rather have each other. Step one, every student applies to their top school. Anna and Ben both pick Oak. Each school keeps its favorite on hold. A maybe, not a yes. Oak holds Ben and turns Anna down. Turn down, try your next choice. Anna tries Elm and Elm likes her more than Si. Si is bumped, tries Oak, no then fur. Done. Bumping people sounds like trouble. It's the reason nobody breaks away. Si would rather have Elm or Oak. But Si asked them first and both said no for someone they liked more. Schools only ever trade up. 100 ,000 random setups, zero breakaways. Hospitals had been matching doctors this way since 1952. So who comes out ahead? The side that asks or the side that answers?",
+ "music": "Investigations",
+ "music_gap_db": 8.0,
+ "speech_starts_at_s": 0.01,
+ "final_lufs": -15.0,
+ "voice_engine": "omnivoice",
+ "contact_sheet_every_s": 2.4,
+ "build_seconds": 212,
+ "draft": false
+}

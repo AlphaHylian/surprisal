@@ -1,0 +1,76 @@
+{
+  "slug": "stable-match",
+  "format": "short",
+  "series": "history",
+  "hook_style": "how-to",
+  "hook_type": "versus",
+  "angle": "versus hook: match students to schools at random and 3 pairs break away, one rule makes it zero (HookText Random: 3 breakaways / One rule: 0, over 4 students wired to 4 schools with 3 coral breakaway links); rule out a smarter computer: a rule from 1962; context: a breakaway is a student and a school who'd both rather have each other; step 1 everyone applies to their top school (Ana and Ben pick Oak); step 2 each school keeps its favourite on hold, a maybe not a yes (Oak holds Ben, turns Ana down); step 3 rejected students try their next choice (Ana tries Elm, Elm bumps Cy; Cy: Oak no, Fir yes); re-hook: bumping sounds like trouble, it's why nobody breaks away; proof: Cy asked Elm and Oak first and both said no for someone they liked more, schools only trade up; payoff 100,000 random setups, zero breakaways; Gale and Shapley 1962, American hospitals had matched doctors this way since 1952; CTA comment: who comes out ahead, the side that asks or the side that answers? Series arm: history (12:00; yesterday noon was everyday), 10 beats aiming for ~52 s.",
+  "title": "The 1962 rule that stops matches falling apart",
+  "description": "Pair 4 students with 4 schools at random and on average 3 student-school pairs would both rather have each other than what they got. David Gale and Lloyd Shapley's 1962 fix: every student applies to their top school, each school keeps its favourite on hold (a maybe, not a yes) and turns the rest down, and rejected students apply to their next choice until everyone has a place. Schools only ever trade up, so any school a student prefers has already turned them down for someone it liked more: no pair can break away. American hospitals had been matching doctors essentially this way since 1952, and Shapley shared the 2012 economics Nobel with Alvin Roth for this line of work.\n\nNumbers checked in code: 100,000 random 4x4 setups (random pairing: 3.0 breakaway pairs on average; this rule: zero, every time). Source: en.wikipedia.org/wiki/Gale%E2%80%93Shapley_algorithm\n\nThe math behind real problems, twice a day. Subscribe and the next one finds you.\nFound an error? Comment and it gets pinned.\n#math #mathematics #shorts",
+  "social_caption": "Match students to schools at random and 3 pairs want to run off together. One rule from 1962 makes it zero, every time.",
+  "tags": [
+    "stable marriage problem",
+    "gale shapley",
+    "matching",
+    "deferred acceptance",
+    "lloyd shapley",
+    "game theory",
+    "math",
+    "maths",
+    "history",
+    "economics"
+  ],
+  "music_moods": [
+    "curious"
+  ],
+  "facts_checked": [
+    "David Gale and Lloyd Shapley, 'College admissions and the stability of marriage', American Mathematical Monthly, 1962; deferred acceptance always gives a stable matching, best for the proposing side; the National Resident Matching Program used essentially the same algorithm since 1952 (Roth noticed in 1984); Shapley and Roth, Nobel economics 2012 (https://en.wikipedia.org/wiki/Gale%E2%80%93Shapley_algorithm)",
+    "4x4 random pairing: expected breakaway (blocking) pairs 12 x 1/4 = 3; simulated 3.004 over 100,000 random setups; at least one in 93.8% (verify.py)",
+    "Deferred acceptance: 0 breakaway pairs in all 100,000 setups; at most 13 applications for 4x4; 1000x1000 run 0 breakaways (verify.py)",
+    "Demo preferences: round 1 Ana and Ben apply to Oak, Oak holds Ben; Ana applies to Elm, Elm drops Cy for Ana; Cy: Oak no, Fir yes; final Ben-Oak, Ana-Elm, Dee-Ash, Cy-Fir, stable (verify.py)",
+    "Demo random pairing Ana-Oak, Ben-Ash, Cy-Fir, Dee-Elm has exactly 3 breakaway pairs: Ben+Oak, Cy+Elm, Dee+Ash (verify.py)"
+  ],
+  "beats": [
+    {
+      "id": "hook",
+      "say": "Random matching: 3 breakaways. One rule: zero.",
+      "speed": 1.2
+    },
+    {
+      "id": "ruleout",
+      "say": "Not a smarter computer. Just a rule two mathematicians found in 1962."
+    },
+    {
+      "id": "context",
+      "say": "You're matching students to schools. A breakaway is a student and a school who'd both rather have each other."
+    },
+    {
+      "id": "apply",
+      "say": "Step one: every student applies to their top school. Ana and Ben both pick Oak."
+    },
+    {
+      "id": "hold",
+      "say": "Each school keeps its favourite on hold. A maybe, not a yes. Oak holds Ben and turns Ana down."
+    },
+    {
+      "id": "next",
+      "say": "Turned down? Try your next choice. Ana tries Elm, and Elm likes her more than Cy. Cy is bumped, tries Oak, no, then Fir. Done."
+    },
+    {
+      "id": "rehook",
+      "say": "Bumping people sounds like trouble. It's the reason nobody breaks away."
+    },
+    {
+      "id": "proof",
+      "say": "Cy would rather have Elm or Oak. But Cy asked them first, and both said no for someone they liked more. Schools only ever trade up."
+    },
+    {
+      "id": "payoff",
+      "say": "100,000 random setups: zero breakaways. Hospitals had been matching doctors this way since 1952."
+    },
+    {
+      "id": "cta",
+      "say": "So who comes out ahead: the side that asks, or the side that answers?"
+    }
+  ]
+}
