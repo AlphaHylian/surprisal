@@ -1,0 +1,18 @@
+{
+ "ok": true,
+ "problems": [],
+ "warnings": [],
+ "duration_s": 58.8,
+ "size_mb": 10.2,
+ "resolution": "1080x1920",
+ "caption_match_ratio": 0.9625668449197861,
+ "heard": "On eBay, the smartest bid is the most you'd really pay. Bidding low feels clever. Here, it backfires. eBay's rule, the highest max wins, but pays one step above the runner -up. The camera's worth $200 to you. Your rival's max is 150. Bid 200, and you pay $152 .50. Shade it to 140, and your rival gets it for $142 .50. Your camera gone. So bid way over to be safe. That's the other trap. Bid 300, and your rival goes to 250. You pay 255 for a $200 camera. Your bid never sets the price. Your rival's does. Yours just pick switch prices you'll accept, so make it the true one. In 100 ,000 simulated auctions, no bid beat the honest one by even one step. William Vickrey worked out why in 1961. Your max is 200. Your rival's is 180. What do you pay?",
+ "music": "Tech Talk",
+ "music_gap_db": 8.0,
+ "speech_starts_at_s": 0.0,
+ "final_lufs": -14.9,
+ "voice_engine": "omnivoice",
+ "contact_sheet_every_s": 2.4,
+ "build_seconds": 210,
+ "draft": false
+}

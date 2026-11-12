@@ -1,0 +1,30 @@
+{
+ "message": [
+  1,
+  0,
+  1,
+  1
+ ],
+ "codeword": {
+  "AB": 1,
+  "AC": 0,
+  "BC": 1,
+  "ABC": 1,
+  "A": 0,
+  "B": 1,
+  "C": 0
+ },
+ "parity_A_B_C": [
+  0,
+  1,
+  0
+ ],
+ "flip_BC_odd_circles": "BC",
+ "distinct_signatures": 8,
+ "answers_from_3_checks": 8,
+ "bits_hamming": 7,
+ "bits_three_copies": 12,
+ "two_checks_too_few": true,
+ "sim_single_flip_fixed": "100000/100000",
+ "repetition_fixes_single_flip": true
+}

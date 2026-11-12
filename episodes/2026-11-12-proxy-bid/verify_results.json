@@ -1,0 +1,30 @@
+{
+ "truthful_vs_150": [
+  47.5,
+  152.5
+ ],
+ "shade_140_vs_150": [
+  0.0,
+  null
+ ],
+ "rival_price_if_you_shade": 142.5,
+ "over_300_vs_250": [
+  -55.0,
+  255.0
+ ],
+ "truthful_vs_250": [
+  0.0,
+  null
+ ],
+ "cta_200_vs_180": [
+  17.5,
+  182.5
+ ],
+ "sim": {
+  "auctions": 100000,
+  "pure_truth_worse": 0,
+  "ebay_truth_worse": 294,
+  "ebay_truth_better": 33328,
+  "ebay_max_loss_in_steps": 0.9899999999999999
+ }
+}

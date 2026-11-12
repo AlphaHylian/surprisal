@@ -1,0 +1,74 @@
+{
+  "slug": "proxy-bid",
+  "format": "short",
+  "series": "everyday",
+  "hook_style": "how-to",
+  "hook_type": "claim",
+  "angle": "claim hook: on eBay the smartest bid is the most you'd really pay (HookText Bid $200. Pay $152.50., over a camera listing with YOUR MAX $200 / YOU PAY $152.50); rule out bidding low; context: eBay's rule, highest max wins but pays one step above the runner-up (a second-price auction); step 1 worth $200, rival max $150, bid 200 pay 152.50; step 2 shade to 140: rival gets it for 142.50, your camera gone; re-hook: so overbid to be safe? other trap; step 3 bid 300, rival 250, pay 255 for a $200 camera; payoff: your bid never sets the price, it only picks which prices you accept, so make it the true one; proof 100,000 simulated auctions, no bid beat the honest one by even one step; Vickrey 1961; CTA comment checkable: max 200, rival 180, what do you pay? (182.50). Series arm: everyday (12:00; the last noon slot, 10 Nov, was history), ~142 words aiming for ~50 s.",
+  "title": "The smartest eBay bid is the most you'd pay",
+  "description": "eBay's automatic bidding is a second-price auction: the highest maximum wins, but pays only one bid step above the runner-up's maximum. So if a camera is worth $200 to you and your rival's max is $150, bidding $200 wins it for $152.50. Shade to $140 and the rival gets it for $142.50; overbid $300 against a $250 rival and you pay $255 for a $200 camera. Your bid never sets your price, only which prices you accept, so the best bid is your true value. William Vickrey analysed this kind of auction in 1961.\n\nNumbers checked in code: eBay's bid increment table ($2.50 steps from $100 to $249.99, $5 from $250) and 100,000 simulated auctions, where no other bid beat the honest one by even one step. Sources: ebay.com/help/buying/bidding/automatic-bidding?id=4014 and en.wikipedia.org/wiki/Vickrey_auction\n\nThe math behind real problems, twice a day. Subscribe and the next one finds you.\nFound an error? Comment and it gets pinned.\n#math #mathematics #shorts",
+  "social_caption": "On eBay, the smartest bid is the most you'd really pay. Here's the auction math that makes bidding low or bidding high both backfire.",
+  "tags": [
+    "ebay bidding",
+    "proxy bidding",
+    "vickrey auction",
+    "second price auction",
+    "game theory",
+    "auction strategy",
+    "math",
+    "maths",
+    "economics"
+  ],
+  "music_moods": [
+    "upbeat"
+  ],
+  "facts_checked": [
+    "eBay automatic bidding: enter the most you'd pay, eBay bids in increments to keep you in the lead, up to your limit; increments $2.50 for $100-$249.99, $5 for $250-$499.99 (https://www.ebay.com/help/buying/bidding/automatic-bidding?id=4014)",
+    "Worth $200, rival max $150: win, pay $152.50; shade to $140: rival wins at $142.50; bid $300 vs rival $250: pay $255; max $200 vs $180: pay $182.50 (verify.py)",
+    "100,000 simulated auctions: pure second-price rule, the honest bid is never worse; eBay's step rule, another bid beat the honest one in 294 cases, always by less than one step (max 0.99 step), and the honest bid did better in 33,328 (verify.py)",
+    "Vickrey auction first described academically by William Vickrey in 1961; bidding your true value is the dominant strategy (https://en.wikipedia.org/wiki/Vickrey_auction)"
+  ],
+  "beats": [
+    {
+      "id": "hook",
+      "say": "On eBay, the smartest bid is the most you'd really pay.",
+      "speed": 1.1
+    },
+    {
+      "id": "ruleout",
+      "say": "Bidding low feels clever. Here, it backfires."
+    },
+    {
+      "id": "context",
+      "say": "eBay's rule: the highest max wins, but pays one step above the runner-up."
+    },
+    {
+      "id": "win",
+      "say": "The camera's worth 200 dollars to you. Your rival's max is 150. Bid 200, and you pay 152 dollars 50."
+    },
+    {
+      "id": "shade",
+      "say": "Shade it to 140, and your rival gets it for 142 dollars 50. Your camera, gone."
+    },
+    {
+      "id": "rehook",
+      "say": "So bid way over, to be safe? That's the other trap."
+    },
+    {
+      "id": "over",
+      "say": "Bid 300, and your rival goes to 250. You pay 255 for a 200 dollar camera."
+    },
+    {
+      "id": "payoff",
+      "say": "Your bid never sets the price. Your rival's does. Yours just picks which prices you'll accept, so make it the true one."
+    },
+    {
+      "id": "proof",
+      "say": "In 100,000 simulated auctions, no bid beat the honest one by even one step. William Vickrey worked out why in 1961."
+    },
+    {
+      "id": "cta",
+      "say": "Your max is 200, your rival's is 180. What do you pay?"
+    }
+  ]
+}

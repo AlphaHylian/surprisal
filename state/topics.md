@@ -18,11 +18,12 @@ through verify.py.
 
 - (follow-up idea) Envy-free cake for three: Selfridge-Conway (1960), at most 5 cuts; the moving knife (27 Oct) is only proportional, and its first taker always thinks someone else got at least as much. (everyday) [check]
 
-- You're bidding in a sealed auction and don't know whether to bid your true value. Steps: second-price rule (Vickrey 1961), why shading your bid can only lose, eBay proxy bidding. (everyday) [check]
 
 - You need a letter to reach a stranger in Boston through friends only. Steps: Milgram 1967 small-world letters, how many hops the arriving ones took, why it works (friends of friends grow fast). (history) [check]
 
 ## Used
+- You're bidding in a sealed auction and don't know whether to bid your true value. Steps: second-price rule (Vickrey 1961), why shading your bid can only lose, eBay proxy bidding. (everyday) [check] -> used 2026-11-12 12:00 (proxy-bid, J8smfHtRiyM)
+- (not in Ready) Hamming (7,4) code, three circles, 3 extra bits fix any single flip; Bell Labs Model V, 1950. (history) -> used 2026-11-12 20:00 (hamming-code, CrjDwSi85bs)
 - You're running the medical-residency / school match and people keep breaking deals. Steps: deferred acceptance (Gale-Shapley 1962), no pair wants to swap, proposers get their best stable match; Roth/Shapley Nobel 2012. (everyday) [check] -> used 2026-11-10 12:00 (stable-match, w2J2Njoulyg)
 - You want the weekday of any date in your head. Steps: Conway's Doomsday rule: 4/4, 6/6, 8/8, 10/10, 12/12 all share a weekday, plus the year's anchor. (everyday) [check] -> used 2026-11-10 20:00 (doomsday-rule, Vc4UioAfA7g)
 - 2026-09-30  birthday-paradox (sounds-fake)  eQS8gtimpvA  first public video, 9pm Tallinn

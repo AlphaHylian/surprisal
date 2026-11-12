@@ -1,0 +1,18 @@
+{
+ "ok": true,
+ "problems": [],
+ "warnings": [],
+ "duration_s": 47.2,
+ "size_mb": 8.8,
+ "resolution": "1080x1920",
+ "caption_match_ratio": 0.9929078014184397,
+ "heard": "Copy it three times, 12 bits. Hamming needed seven. Same job, one bit flips on the way, and you still get your message back. Bell Labs the late 1940s. Richard Hamming's machine could spot errors, but not fix them, so his weekend jobs kept dying. Take your four bits, one zero, one one, and drop them into the overlaps of three circles. Fill each circle's empty spot, so it holds an even number of ones. That's three extra bits, seven and all. Now one bit flips, you don't know which. The circles do. Two circles come out odd. Only one spot sits inside exactly those two. Flip it back. Three yes or no checks give eight answers. No error or one of seven spots. That's why three extra bits cover all seven. Subscribe if you'd have just sent it three times.",
+ "music": "Airport Lounge",
+ "music_gap_db": 8.0,
+ "speech_starts_at_s": 0.0,
+ "final_lufs": -14.9,
+ "voice_engine": "omnivoice",
+ "contact_sheet_every_s": 2.0,
+ "build_seconds": 164,
+ "draft": false
+}
