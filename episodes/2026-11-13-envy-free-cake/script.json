@@ -1,0 +1,30 @@
+{
+  "slug": "envy-free-cake",
+  "format": "short",
+  "series": "everyday",
+  "hook_style": "how-to",
+  "hook_type": "versus",
+  "angle": "versus hook: fair shares for three take 2 cuts, no jealousy takes 5 (HookText Fair: 2 cuts / No jealousy: 5 cuts, over two cake bars cut 2 and 5 times); rule out: fair only means everyone gets a third, the sliding knife left someone jealous in all 100,000 simulated cakes; step 1 you cut three pieces you think are equal; step 2 Ben trims his favourite until it ties his second, trimmings aside; step 3 Mia picks, Ben (must take the trimmed piece if it's there), you last; re-hook: nobody envies a plate, but the trimmings are left; step 4 whoever didn't get the trimmed piece cuts them in three, owner of the trimmed piece picks, then you, then the cutter; payoff: to you, the trimmed piece plus every crumb is still one of your thirds; five cuts, zero jealousy (Selfridge 1960, Conway); CTA subscribe if you'd have just cut three slices. Series arm: everyday (20:00; noon is history). Hook type versus for everyday (everyday Shorts were all claim) to break the series/hook confound. Follow-up to the 27 Oct moving-knife Short.",
+  "title": "How to cut a cake so nobody's jealous (5 cuts)",
+  "description": "Fair for three people only means everyone gets at least a third by their own judgement, and the sliding-knife method still leaves someone thinking another plate is bigger. The Selfridge-Conway method fixes that with at most 5 cuts: you cut three pieces you think are equal, Ben trims his favourite until it ties his second favourite, then Mia picks, Ben picks (taking the trimmed piece if it's left) and you take the last. Whoever didn't get the trimmed piece cuts the trimmings in three, the trimmed piece's owner picks first, then you, then the cutter. You never envy the trimmed piece's owner, because in your eyes the trimmed piece plus all the trimmings is just one of your thirds. John Selfridge found it around 1960 and John Conway found it again independently.\n\nNumbers checked in code: 100,000 random three-person cakes, Selfridge-Conway left nobody envious in any of them and never needed more than 5 cuts; the moving knife left someone envious in all 100,000. Source: en.wikipedia.org/wiki/Selfridge%E2%80%93Conway_procedure\n\nThe math behind real problems, twice a day. Subscribe and the next one finds you.\nFound an error? Comment and it gets pinned.\n#math #mathematics #shorts",
+  "social_caption": "Splitting a cake fairly between three people takes 2 cuts. Making sure nobody is jealous takes 5. Here's how.",
+  "tags": ["envy-free cake cutting", "selfridge conway", "fair division", "cake cutting", "john conway", "game theory", "math", "maths", "puzzle"],
+  "music_moods": ["upbeat"],
+  "facts_checked": [
+    "Selfridge-Conway procedure: P1 cuts three equal pieces (by P1); P2 trims the largest to tie the second largest; P3 picks, then P2 (must take the trimmed piece if P3 didn't), then P1; the player who didn't take the trimmed piece cuts the trimmings into three; the trimmed piece's owner picks first, then P1, then the cutter; at most five cuts; Selfridge discovered it in 1960, Conway independently (https://en.wikipedia.org/wiki/Selfridge%E2%80%93Conway_procedure)",
+    "P1 never envies the trimmed piece's owner: the trimmed piece plus all trimmings is one of P1's equal thirds (same source; verify.py)",
+    "100,000 random cakes (3 players, random piecewise-constant values): 0 envy after the first stage, 0 envy at the end, max 5 cuts, the trimmed piece never goes to P1 (verify.py)",
+    "Dubins-Spanier moving knife: everyone gets at least a third (0 failures) but someone is envious in 100,000 of 100,000 random cakes (verify.py; https://en.wikipedia.org/wiki/Dubins%E2%80%93Spanier_moving-knife_procedure)"
+  ],
+  "beats": [
+    {"id": "hook", "say": "Fair shares for three take 2 cuts. No jealousy takes 5.", "speed": 1.1},
+    {"id": "ruleout", "say": "Fair just means everyone gets a third. The sliding-knife way still left someone jealous in all 100,000 cakes we tried."},
+    {"id": "cut", "say": "So: you, Ben and Mia. You cut three pieces you think are equal."},
+    {"id": "trim", "say": "Ben trims his favourite until it ties his second favourite. The trimmings go aside."},
+    {"id": "pick", "say": "Mia picks first. Then Ben, who must take the trimmed piece if it's there. You take the last."},
+    {"id": "rehook", "say": "Nobody envies a single plate. But the trimmings are still sitting there."},
+    {"id": "crumbs", "say": "Whoever didn't get the trimmed piece cuts them in three. The trimmed piece's owner picks, then you, then the cutter."},
+    {"id": "payoff", "say": "And you never mind who got the trimmed piece. To you, it plus every crumb is still just one of your thirds. Five cuts, zero jealousy."},
+    {"id": "cta", "say": "Subscribe if you'd have just cut three slices."}
+  ]
+}
