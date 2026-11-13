@@ -1,20 +1,18 @@
 {
- "ok": false,
- "problems": [
-  "the hook beat 'hook' is 3.4s of voice; it must be under 3.2 s (one sentence, 8-14 words: the stakes, not the job title)"
- ],
+ "ok": true,
+ "problems": [],
  "warnings": [],
- "duration_s": 48.6,
- "size_mb": 2.9,
- "resolution": "540x960",
- "caption_match_ratio": 0.9793103448275862,
- "heard": "Fair shares for three take two cuts. No jealousy takes five. Fair just means everyone gets a third. The sliding knife way still left someone jealous in all 100 ,000 cakes we tried. So you, Ben and Mia. You cut three pieces you think are equal. Ben trims his favorite until it ties his second favorite. The trimmings go aside. Mia picks first. Then Ben, who must take the trimmed piece if it's there? You take the last. Nobody envies a single plate. But the trimmings are still sitting there. Whoever didn't get the trimmed piece cuts them in three. The trimmed piece's owner picks. Then you, then the cutter. And you never mind who got the trimmed piece. To you, it plus every crumb is still just one of your thirds. Five cuts, zero jealousy. Subscribe if you'd have just cut three slices.",
+ "duration_s": 48.0,
+ "size_mb": 7.9,
+ "resolution": "1080x1920",
+ "caption_match_ratio": 0.9724137931034482,
+ "heard": "Fair shares for three take two cut, no jealousy takes five. Fair just means everyone gets a third. The sliding knife way still left someone jealous in all 100 ,000 cakes we tried. So you, Ben and Mia. You cut three pieces you think are equal. Ben trims his favorite until it ties his second favorite. The trimmings go aside. Mia picks first. Then Ben, who must take the trimmed piece if it's there? You take the last. Nobody envies a single plate. But the trimmings are still sitting there. Whoever didn't get the trimmed piece cuts them in three. The trimmed piece's owner picks. Then you, then the cutter. And you never mind who got the trimmed piece. To you, it plus every crumb is still just one of your thirds. Five cuts, zero jealousy. Subscribe if you'd have just cut three slices.",
  "music": "Somewhere Sunny",
  "music_gap_db": 8.0,
- "speech_starts_at_s": 0.03,
+ "speech_starts_at_s": 0.04,
  "final_lufs": -14.8,
  "voice_engine": "omnivoice",
  "contact_sheet_every_s": 2.0,
- "build_seconds": 1038,
- "draft": true
+ "build_seconds": 137,
+ "draft": false
 }
