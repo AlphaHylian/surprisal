@@ -48,14 +48,14 @@ const HookBody: React.FC = () => {
     <>
       <HookText y={300} size={96}>{"Fair: **2 cuts**\nNo jealousy: **5 cuts**"}</HookText>
       <Riser to={t5} volume={0.45} />
-      <At x={540} y={490}><Text size={44} color={C.muted}>fair</Text></At>
+      <At x={540} y={470}><Text size={44} color={C.muted}>fair</Text></At>
       <Seg u0={0} u1={1} y={590} h={140} />
       <Cut u={1 / 3} y={590} h={190} color={C.mint} />
       <Cut u={2 / 3} y={590} h={190} color={C.mint} />
-      <At x={540} y={720}><Text size={44} color={C.amber}>no jealousy</Text></At>
+      <At x={540} y={715}><Text size={44} color={C.amber}>no jealousy</Text></At>
       <Punch at={t5}><div style={{ position: "absolute", left: 0, top: 0, width: 1080, height: 1920 }}>
-        <Seg u0={0} u1={1} y={820} h={140} />
-        {cuts5.map((u, i) => <Cut key={i} u={u} y={820} h={190} at={i === 0 ? 0 : 0.12 * i} />)}
+        <Seg u0={0} u1={1} y={850} h={140} />
+        {cuts5.map((u, i) => <Cut key={i} u={u} y={850} h={190} at={i === 0 ? 0 : 0.12 * i} />)}
       </div></Punch>
       <At x={540 + Math.sin(t * 3) * 300} y={1000}><Icon name="Slice" size={90} color={C.ink} /></At>
       <Sfx name="pack/whoosh-swing" at={0.1} volume={0.3} />
@@ -129,9 +129,9 @@ const TrimBody: React.FC = () => {
         {t >= tTies ? <Seg u0={Cc[0]} u1={TRIM} y={720} dy={k * 330} dx={-k * 200} /> : null}
         <Cut u={TRIM} y={720} at={tTies - 0.1} color={C.ink} />
         <At x={X(0.81)} y={540}><Appear at={tFav - 0.1} from="down"><Chip color={C.amber} size={44}>Ben's favourite</Chip></Appear></At>
-        <At x={X(0.46)} y={540}><Appear at={tTies} from="down"><Chip color={C.mint} size={44}>2nd favourite</Chip></Appear></At>
-        <At x={X(0.81)} y={890}><Appear at={tTies + 0.2} from="up" sfx={null}><Text size={44} color={C.amber}>now a tie</Text></Appear></At>
-      </Camera>
+        <At x={X(0.46)} y={900}><Appear at={tTies} from="up"><Chip color={C.mint} size={44}>2nd favourite</Chip></Appear></At>
+              </Camera>
+      <At x={540} y={380}><Appear at={tTies + 0.2} out={tAside - 0.4} from="fade" sfx={null}><Text size={48} color={C.amber}>now a tie</Text></Appear></At>
       <At x={720} y={1050}><Appear at={tAside} from="fade" sfx={null}><Text size={44} color={C.muted}>trimmings</Text></Appear></At>
       <Sfx name="pack/whoosh-swing" at={tTies - 0.1} volume={0.4} />
       <Sfx name="pack/whoosh-soft" at={tAside - 0.3} volume={0.3} />
@@ -177,7 +177,7 @@ const PickBody: React.FC = () => {
       <Appear at={tMia} from="fade" sfx={null}><Plate who="Mia" /></Appear>
       <Appear at={tBen} from="fade" sfx={null}><Plate who="Ben" /></Appear>
       <Appear at={tYou - 0.3} from="fade" sfx={null}><Plate who="You" color={C.mint} /></Appear>
-      <At x={540} y={360}><Appear at={tMust - 0.2} out={tYou - 0.4} from="fade" sfx={null}><Text size={44} color={C.amber}>Ben must take the trimmed one</Text></Appear></At>
+      <At x={540} y={330}><Appear at={tMust - 0.2} out={tYou - 0.4} from="fade" sfx={null}><Text size={44} color={C.amber}>Ben must take the trimmed one</Text></Appear></At>
       <Seg u0={Cc[0]} u1={TRIM} y={1050} dx={-200} />
       <Sfx name="pack/pop-2" at={tMia + 0.5} volume={0.35} />
       <Sfx name="pack/pop-2" at={tMust + 0.4} volume={0.35} />
