@@ -152,7 +152,7 @@ const GuessBody: React.FC = () => {
 // ---------------------------------------------------------------- 100, 10,000, ten billion
 const MathBody: React.FC = () => {
   const w = useW();
-  const t100 = w(["100"], 1, 1.6), tTwo = w(["10,000"], 1, 4.6), tFive = w(["billion"], 1, 6.6);
+  const t100 = Math.min(0.8, w(["100"], 1, 1.6)), tTwo = w(["10,000"], 1, 4.6), tFive = w(["billion"], 1, 6.6);
   const rows: [string, string, number, string][] = [["1 hop", "100", t100, C.ink], ["2 hops", "10,000", tTwo, C.ink], ["5 hops", "10,000,000,000", tFive, C.amber]];
   return (
     <>
