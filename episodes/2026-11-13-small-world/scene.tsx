@@ -86,8 +86,8 @@ const RuleoutBody: React.FC = () => {
           </div>
         </Appear>
       </At>
-      <At x={560} y={660}><Appear at={tNo} from="slam"><Stamp size={80} rotate={-8}>NO ADDRESS</Stamp></Appear></At>
-      <At x={540} y={1000}><Appear at={tFirst - 0.2} from="up"><Chip color={C.mint} size={54}>first-name friends only</Chip></Appear></At>
+      <At x={540} y={890}><Appear at={tNo} from="slam"><Stamp size={80} rotate={-6}>NO ADDRESS</Stamp></Appear></At>
+      <At x={540} y={1060}><Appear at={tFirst - 0.2} from="up"><Chip color={C.mint} size={54}>first-name friends only</Chip></Appear></At>
       <Sfx name="pack/paper-crumple" at={0.1} volume={0.25} dur={0.6} />
     </>
   );
@@ -157,11 +157,11 @@ const MathBody: React.FC = () => {
   return (
     <>
       <Headline>Friends of friends</Headline>
-      <Camera keys={[[0, { zoom: 1 }], [tFive - 0.2, { zoom: 1 }], [tFive + 0.6, { zoom: 1.12, x: 540, y: 860 }]]}>
+      <Camera keys={[[0, { zoom: 1 }], [tFive - 0.2, { zoom: 1 }], [tFive + 0.6, { zoom: 1.06, x: 540, y: 700 }]]}>
         {rows.map(([h, n, at, col], k) => (
-          <At key={k} x={540} y={480 + k * 190} style={{ width: 960 }}>
+          <At key={k} x={540} y={480 + k * 190} style={{ width: 860 }}>
             <Appear at={at - 0.15} from="up">
-              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", width: 960 }}>
+              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", width: 860 }}>
                 <span style={{ fontFamily: F.med, fontSize: 52, color: C.muted }}>{h}</span>
                 <span style={{ fontFamily: F.mono, fontSize: k === 2 ? 74 : 80, fontWeight: 700, color: col }}>{n}</span>
               </div>
@@ -219,7 +219,7 @@ const FarBody: React.FC = () => {
         <At x={800} y={980}><Text size={42} color={C.mint}>Boston</Text></At>
         <Arrow x1={330} y1={520} x2={760} y2={640} t0={tJumps - 0.2} t1={tJumps + 0.5} bend={-200} />
       </Camera>
-      <At x={540} y={1100}><Appear at={tMiles - 0.2} from="slam"><Chip color={C.amber} size={54}>1,300 miles, 1 hop</Chip></Appear></At>
+      <At x={540} y={1070}><Appear at={tMiles - 0.2} from="slam"><Chip color={C.amber} size={54}>1,300 miles, 1 hop</Chip></Appear></At>
       <At x={540} y={380}><Appear at={tAway - 0.2} out={tJumps - 0.3} from="fade" sfx={null}><Text size={44} color={C.muted}>one cousin, far away</Text></Appear></At>
       <Sfx name="pack/whoosh-swing" at={tJumps} volume={0.4} />
     </>
@@ -255,7 +255,7 @@ const CtaBody: React.FC = () => {
   return (
     <>
       <Chain t0={99} speed={0.4} />
-      <At x={110} y={650}><Appear at={0} from="pop"><Text size={44} color={C.mint}>you</Text></Appear></At>
+      <At x={120} y={870}><Appear at={0} from="pop"><Text size={44} color={C.mint}>you</Text></Appear></At>
       <At x={250} y={480}><Appear at={tFirst - 0.2} from="pop"><Text size={110} color={C.amber} glow>?</Text></Appear></At>
       <At x={540} y={300}><Appear at={0} from="down"><Text size={66} font={F.display} color={C.ink}>Your first hop?</Text></Appear></At>
     </>
