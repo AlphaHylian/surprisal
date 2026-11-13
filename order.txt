@@ -1,0 +1,6 @@
+2026-11-10-stable-match
+2026-11-10-doomsday-rule
+2026-11-12-proxy-bid
+2026-11-12-hamming-code
+2026-11-13-small-world
+2026-11-13-envy-free-cake
