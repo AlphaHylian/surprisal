@@ -1,0 +1,20 @@
+{
+ "ok": false,
+ "problems": [
+  "the hook beat 'hook' is 4.2s of voice; it must be under 3.2 s (one sentence, 8-14 words: the stakes, not the job title)"
+ ],
+ "warnings": [],
+ "duration_s": 55.4,
+ "size_mb": 3.2,
+ "resolution": "540x960",
+ "caption_match_ratio": 0.9333333333333333,
+ "heard": "Beat an equal player plus 16. Beat 1 400 points better plus 29. That's not a bonus for being brave. It's the size of the surprise. This is ELO's system chess rating since 1960. You're 1500. They're 1900. First, predict. Every 400 points of gap makes the stronger player 10 times the favorite. So you're expected to score one game in 11. You win. Take what happened, one minus what was predicted, 0 .09. That's 0 .91 of surprise times 32 plus 29 for you, and they lose exactly 29. But what if you beat someone you were supposed to beat? Against an 1100, a win gets you three points. A loss costs you 29. Your rating isn't a score. It's a prediction and it only moves when it's wrong. So you're 1700 and you beat a 1500. How many points do you get?",
+ "music": "Digital Lemonade",
+ "music_gap_db": 8.0,
+ "speech_starts_at_s": 0.01,
+ "final_lufs": -14.9,
+ "voice_engine": "omnivoice",
+ "contact_sheet_every_s": 2.3,
+ "build_seconds": 3787,
+ "draft": true
+}

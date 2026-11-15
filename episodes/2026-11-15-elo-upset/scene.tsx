@@ -31,7 +31,7 @@ const Big: React.FC<{ children: React.ReactNode; color?: string; size?: number }
 // ---------------------------------------------------------------- hook
 const HookBody: React.FC = () => {
   const w = useW();
-  const t29 = w(["29"], 1, 2.6);
+  const t29 = w(["29"], 1, 1.9);
   return (
     <>
       <HookText y={290} size={92}>{"Beat an equal: **+16**\nBeat a giant: **+29**"}</HookText>
@@ -43,15 +43,15 @@ const HookBody: React.FC = () => {
           <Player name="Equal" rating="1500" w={300} />
         </div>
       </At>
-      <At x={540} y={930} style={{ width: "max-content" }}>
-        <Punch at={t29}>
+      <Punch at={t29}>
+        <At x={540} y={930} style={{ width: "max-content" }}>
           <div style={{ display: "flex", alignItems: "center", gap: 40 }}>
             <Player name="You" rating="1500" color={C.mint} w={300} />
             <Big color={C.muted} size={60}>vs</Big>
             <Player name="Giant" rating="1900" color={C.amber} icon="Crown" w={300} />
           </div>
-        </Punch>
-      </At>
+        </At>
+      </Punch>
       <Sfx name="pack/ding" at={t29} volume={0.4} />
     </>
   );
@@ -81,7 +81,7 @@ const RuleoutBody: React.FC = () => {
 // ---------------------------------------------------------------- context: you 1500 vs 1900
 const ContextBody: React.FC = () => {
   const w = useW();
-  const tYou = w(["You're"], 1, 2.4), tThey = w(["They're"], 1, 3.6);
+  const tYou = w(["fifteen", "You're"], 1, 2.6), tThey = w(["nineteen", "They're"], 1, 4.2);
   return (
     <>
       <Headline>Elo, since 1960</Headline>
@@ -140,7 +140,7 @@ const SurpriseBody: React.FC = () => {
             <Big size={120}>0.09</Big><Text size={40} color={C.muted}>predicted</Text></div></Appear>
         </div>
       </At>
-      <At x={540} y={980}><Punch at={tSurp}><Appear at={tSurp - 0.3} from="slam"><Big size={110} color={C.amber}>= 0.91</Big></Appear></Punch></At>
+      <Punch at={tSurp}><At x={540} y={980}><Appear at={tSurp - 0.3} from="slam"><Big size={110} color={C.amber}>= 0.91</Big></Appear></At></Punch>
       <Sfx name="pack/correct" at={tWin} volume={0.3} />
     </>
   );
@@ -202,7 +202,7 @@ const PayoffBody: React.FC = () => {
   return (
     <>
       <At x={540} y={420}><Appear at={0.05} from="fade" sfx={null}><Text size={64} color={C.muted}>your rating isn't a score</Text></Appear></At>
-      <At x={540} y={640}><Punch at={tPred}><Appear at={tPred - 0.3} from="slam"><Big size={130} color={C.amber}>it's a prediction</Big></Appear></Punch></At>
+      <Punch at={tPred}><At x={540} y={640}><Appear at={tPred - 0.3} from="slam"><Big size={100} color={C.amber}>it's a prediction</Big></Appear></At></Punch>
       <At x={540} y={880}><Appear at={tWrong - 0.3} from="up"><Chip color={C.mint} size={54}>points move = it was wrong</Chip></Appear></At>
       <Sfx name="pack/hit-grand" at={tPred} volume={0.35} />
     </>

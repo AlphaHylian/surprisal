@@ -19,7 +19,7 @@
     "200,000 simulated games with P(win) = E: upset rate 0.0900 vs 1/11 = 0.0909 (verify.py)"
   ],
   "beats": [
-    {"id": "hook", "say": "Beat an equal player: plus 16. Beat one 400 points better: plus 29.", "speed": 1.3},
+    {"id": "hook", "say": "Beat an equal: plus 16. Beat a giant: plus 29.", "speed": 1.3},
     {"id": "ruleout", "say": "That's not a bonus for being brave. It's the size of the surprise."},
     {"id": "context", "say": "This is Elo's system, chess ratings since 1960. You're fifteen hundred. They're nineteen hundred."},
     {"id": "predict", "say": "First, predict. Every 400 points of gap makes the stronger player 10 times the favourite. So you're expected to score 1 game in 11."},
