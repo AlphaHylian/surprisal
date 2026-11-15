@@ -44,7 +44,9 @@ def page(month, day, wday=None, color=MINT, w=1.7, h=2.0):
     strip = RoundedRectangle(corner_radius=0.16, width=w, height=h * 0.26, fill_color=color, fill_opacity=1, stroke_width=0)
     strip.move_to(box.get_top() + DOWN * h * 0.13)
     m = T(MON[month] if isinstance(month, int) else month, int(30 * w / 1.7), BG).move_to(strip)
-    d = T(str(day), int(76 * w / 1.7), INK).move_to(box.get_center() + DOWN * h * 0.08)
+    ds = str(day)
+    d = T(ds, int((76 if len(ds) <= 2 else 46) * w / 1.7), INK).move_to(box.get_center() + DOWN * h * 0.08)
+    fit(d, w * 0.86, h * 0.6)
     g = VGroup(box, strip, m, d)
     if wday:
         g.add(T(wday, int(30 * w / 1.7), AMBER).next_to(box, DOWN, buff=0.15))
@@ -567,7 +569,7 @@ class Episode(SurprisalScene):
             self.play(Indicate(bars[4], color=AMBER, scale_factor=1.15), run_time=self.rt(0.6))
             self.to_word("684")
             self.play(Indicate(VGroup(bars[3], bars[5]), color=CORAL), run_time=self.rt(0.6))
-            self.show(T("(bars start at 680)", 30, MUTED, False).move_to(RIGHT * 5.2 + DOWN * 2.6))
+            self.show(T("(bars start at 680)", 30, MUTED, False).move_to(UP * 2.5))
 
         with self.beat("fri4"):
             self.clear()
