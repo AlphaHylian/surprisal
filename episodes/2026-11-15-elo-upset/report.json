@@ -3,8 +3,8 @@
  "problems": [],
  "warnings": [],
  "duration_s": 54.1,
- "size_mb": 3.2,
- "resolution": "540x960",
+ "size_mb": 8.8,
+ "resolution": "1080x1920",
  "caption_match_ratio": 0.9316770186335404,
  "heard": "Beat an equal plus 16. Beat a giant plus 29. That's not a bonus for being brave. It's the size of the surprise. This is ELO's system, chess rating since 1960. You're 1 ,500. They're 1 ,900. First, predict. Every 400 points of gap makes the stronger player 10 times the favorite. So you're expected to score one game in 11. You win. Take what happened, one minus what was predicted, 0 .09. That's 0 .91 of surprise times 32 plus 29 for you and they lose exactly 29. But what if you beat someone you were supposed to beat? Against an 1 ,100, a win gets you three points. A loss costs you 29. Your rating isn't a score. It's a prediction and it only moves when it's wrong. So you're 1 ,700 and you beat a 1 ,500. How many points do you get?",
  "music": "Digital Lemonade",
@@ -13,6 +13,6 @@
  "final_lufs": -14.9,
  "voice_engine": "omnivoice",
  "contact_sheet_every_s": 2.3,
- "build_seconds": 1449,
- "draft": true
+ "build_seconds": 272,
+ "draft": false
 }

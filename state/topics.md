@@ -21,10 +21,10 @@ through verify.py.
 
 - You hear thunder after a lightning flash. Steps: light arrives instantly, sound takes about 3 seconds per kilometre (5 per mile); count the gap, divide. Why it works: speed of sound ~343 m/s. (everyday) [check] (added 2026-11-13)
 - Your library has a million books and you need to check if one is missing, fast. Steps: a Bloom filter, k hash functions into a bit array, false positives but never false negatives; exact rate formula. (tech) [check] (added 2026-11-13)
-- You're ranking chess players who never played each other. Steps: Elo, expected score from the rating gap (400 points = 10:1), update by K times the surprise. Arpad Elo, adopted by FIDE 1970. (history) [check] (added 2026-11-13)
 - Eratosthenes measured the Earth with a stick and a shadow: done (earth-stick). Instead: how Snell / triangulation surveyed a country from one measured baseline (Snellius 1615). (history) [check] (added 2026-11-13)
 
 ## Used
+- You're ranking chess players who never played each other. Steps: Elo, expected score from the rating gap (400 points = 10:1), update by K times the surprise. Arpad Elo, adopted by FIDE 1970. (history) [check] (added 2026-11-13) — used 2026-11-15 12:00 (as everyday), elo-upset, EPvta1rA0_U
 - (follow-up idea) Envy-free cake for three: Selfridge-Conway (1960), at most 5 cuts; the moving knife (27 Oct) is only proportional, and its first taker always thinks someone else got at least as much. (everyday) [check] — used 2026-11-13 20:00, envy-free-cake, GrE00f8SBrQ
 - You need a letter to reach a stranger in Boston through friends only. Steps: Milgram 1967 small-world letters, how many hops the arriving ones took, why it works (friends of friends grow fast). (history) [check] — used 2026-11-13 12:00, small-world, 76CPM7qLyZo
 - You're bidding in a sealed auction and don't know whether to bid your true value. Steps: second-price rule (Vickrey 1961), why shading your bid can only lose, eBay proxy bidding. (everyday) [check] -> used 2026-11-12 12:00 (proxy-bid, J8smfHtRiyM)
