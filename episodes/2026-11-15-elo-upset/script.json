@@ -1,0 +1,33 @@
+{
+  "slug": "elo-upset",
+  "format": "short",
+  "series": "everyday",
+  "hook_style": "how-to",
+  "hook_type": "versus",
+  "angle": "versus hook: beat an equal player +16, beat one 400 points better +29 (HookText Beat an equal: +16 / Beat a giant: +29, over two rating cards 1,500 vs 1,900); rule out a bravery bonus: the points measure how wrong the prediction was; context: Elo's system, chess since 1960 (USCF) / 1970 (FIDE), K = 32; step 1 predict: every 400 points of gap = 10 times the favourite, so you (1,500) vs 1,900 expect 1 in 11, 0.09; step 2 surprise: result minus prediction, 1 - 0.09 = 0.91; step 3 times 32 = 29, and they lose exactly 29; re-hook: what if you beat someone you were supposed to beat?; step 4 vs 1,100: win = 3 points, lose = minus 29; payoff: your rating is a prediction and only moves when it's wrong; CTA comment checkable: you're 1,700 and beat a 1,500, how many points? (8). Series arm: everyday (12:00; last noon slot, 13 Nov, was history). Hook type versus for everyday (second everyday+versus after envy-free-cake) for the swapped series/hook pairing.",
+  "title": "Why beating a stronger player earns you 29 points, not 16",
+  "description": "Elo ratings first predict the game: every 400 points of gap makes the stronger player 10 times the favourite, so a 1,500 player facing a 1,900 is expected to score 1 game in 11 (0.09). After the game, the rating moves by K times (result minus prediction): with K = 32, a win is 32 x 0.91 = 29 points, and the opponent loses exactly 29. Beating an equal is 32 x 0.5 = 16; beating a 1,100 is only 3, and losing to them costs 29. The US Chess Federation adopted Arpad Elo's system in 1960 and FIDE in 1970.\n\nNumbers checked in code: the Elo formulas with K = 32 (the classic setting for players under 2100), plus 200,000 simulated games confirming the 1-in-11 upset rate. Source: en.wikipedia.org/wiki/Elo_rating_system\n\nThe math behind real problems, twice a day. Subscribe and the next one finds you.\nFound an error? Comment and it gets pinned.\n#math #mathematics #shorts",
+  "social_caption": "Beat an equal chess player and you gain 16 points. Beat one 400 points stronger and you gain 29. Here's the formula behind it.",
+  "tags": ["elo rating", "chess rating", "arpad elo", "how elo works", "chess", "probability", "math", "maths", "statistics"],
+  "music_moods": ["upbeat"],
+  "facts_checked": [
+    "Expected score E_A = 1/(1+10^((R_B-R_A)/400)); each 400 points of advantage makes the expected score ten times as large (https://en.wikipedia.org/wiki/Elo_rating_system)",
+    "Update R' = R + K(S - E); Elo's original K = 32 for weaker players, 16 for masters; old USCF K = 32 below 2100 (same source)",
+    "In a pure Elo system each game is an equal transaction of points (same source); verify.py: sum conserved over 100,000 simulated games",
+    "USCF adopted Elo's system in 1960, FIDE in 1970 (same source)",
+    "1,500 vs 1,900: E = 1/11 = 0.091, win = +29.09; equal: +16; 1,500 vs 1,100: win +2.9, loss -29.1; 1,700 beats 1,500: E 0.76, +7.7 -> 8 (verify.py)",
+    "200,000 simulated games with P(win) = E: upset rate 0.0900 vs 1/11 = 0.0909 (verify.py)"
+  ],
+  "beats": [
+    {"id": "hook", "say": "Beat an equal player: plus 16. Beat one 400 points better: plus 29.", "speed": 1.3},
+    {"id": "ruleout", "say": "That's not a bonus for being brave. It's the size of the surprise."},
+    {"id": "context", "say": "This is Elo's system, chess ratings since 1960. You're fifteen hundred. They're nineteen hundred."},
+    {"id": "predict", "say": "First, predict. Every 400 points of gap makes the stronger player 10 times the favourite. So you're expected to score 1 game in 11."},
+    {"id": "surprise", "say": "You win. Take what happened, 1, minus what was predicted, 0.09. That's 0.91 of surprise."},
+    {"id": "times", "say": "Times 32. Plus 29 for you, and they lose exactly 29."},
+    {"id": "rehook", "say": "But what if you beat someone you were supposed to beat?"},
+    {"id": "down", "say": "Against an eleven hundred, a win gets you 3 points. A loss costs you 29."},
+    {"id": "payoff", "say": "Your rating isn't a score. It's a prediction, and it only moves when it's wrong."},
+    {"id": "cta", "say": "So you're seventeen hundred and you beat a fifteen hundred. How many points do you get?"}
+  ]
+}

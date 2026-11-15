@@ -1,0 +1,52 @@
+hook|The five dates|These five dates always fall on the same weekday. Every year.
+promise||By the end of this, you'll be able to name the weekday of any date in the last 400 years in your head, in a few seconds. And you'll know why it works, which is the better part.
+recap1||Start with the dates. April 4th, June 6th, August 8th, October 10th, December 12th. Four four, six six, eight eight, ten ten, twelve twelve.
+recap2||This year, 2026, every one of them is a Saturday. Next year they'll all be Sundays. Whatever weekday they land on, they land on it together.
+recap3||The mathematician John Conway called that shared weekday the year's doomsday. Once you know it, every month has a landmark you can count from.
+recap4||Say you want Christmas. December 12th is a Saturday, so the 19th is, and the 26th. Christmas, the 25th, is one day before: a Friday.
+recap5||That's the whole trick for this year. Two more steps, and it works for any year. But first, why should five random dates agree at all?
+why1|Why the dates line up|They aren't random. Count the days from April 4th to June 6th. 26 days left in April, 31 in May, and 6 in June. That's 63.
+why2||63 days is exactly 9 weeks. And the same thing happens from June 6th to August 8th, from August to October, and October to December. Every gap is 63 days. Nine weeks, on the nose.
+why3||So the even months are easy. The odd months need a phrase: I work 9 to 5 at the 7-Eleven.
+why4||That gives you May 9th and September 5th, and July 11th and November 7th. Nine five, five nine, seven eleven, eleven seven. All doomsdays.
+why5||March has one too. Pi Day, March 14th. It's three weeks before April 4th.
+why6||And January and February? February's last day is always a doomsday. In a normal year that's the 28th. In a leap year it's the 29th. And January has the 3rd in a normal year, the 4th in a leap year.
+why7||That's every month covered with a date you can remember. From now on, any date this year is just counting a few days from the nearest landmark.
+sub||If you like seeing the math inside everyday things, subscribe. There's a new one twice a day.
+year1|Any year in your head|Now the real trick. Different years have different doomsdays. How do you find one without a calendar?
+year2||Watch what happens from one year to the next. A normal year is 365 days. That's 52 weeks and 1 day. So doomsday moves forward one weekday a year.
+year3||But if the new year has a February 29th, the extra day comes before its doomsday, so it jumps two. 2026 is Saturday, 2027 is Sunday, and 2028, a leap year, skips to Tuesday.
+year4||So for a year inside a century, count one step per year, plus one extra for every leap year. That's the last two digits, plus a quarter of them, rounded down.
+year5||Take 1969. The last two digits are 69. A quarter of 69, rounded down, is 17. 69 plus 17 is 86.
+year6||Now throw away whole weeks. 86 is 12 sevens, which is 84, with 2 left over. So 1969's doomsday is two days after the start of the century's doomsday.
+year7||The 1900s start on a Wednesday. Two days on: Friday. Doomsday in 1969 was a Friday.
+year8||Test it on something famous. Apollo 11 landed on the Moon on July 20th, 1969. July's landmark is the 11th, a Friday. The 18th is a Friday too, so the 20th is a Sunday. It was.
+year9||If 69 plus 17 is too much arithmetic, Conway had a lazier version. He said a dozen years is but a day.
+year10||Twelve years is 4,383 days. That's 626 weeks and exactly 1 day. So every dozen years moves doomsday by one.
+year11||For 69: that's 5 dozens, with 9 left over. A quarter of 9 is 2. Add 5, 9 and 2: 16. Throw away two weeks: 2 again. Same answer, smaller numbers.
+year12||There's a third way, found in 2010, called odd plus 11. If the year is odd, add 11: 69 becomes 80. Halve it: 40. Count up to the next multiple of 7, which is 42: that's 2. No division by 4 at all.
+year13||Pick whichever sticks. They always agree. One more check: November 9th, 1989, the night the Berlin Wall opened. 89 plus 22 is 111, which leaves 6. Wednesday plus 6 is Tuesday. November 7th is a Tuesday, so the 9th was a Thursday. It was.
+cent1|Why centuries jump|You've seen the 1900s start on a Wednesday. The 2000s start on a Tuesday. The 1800s, a Friday. The 2100s will start on a Sunday. Why those days?
+cent2||Do the same counting across a whole century. Each of the 100 years moves doomsday one day, and each leap year moves it one more.
+cent3||From 1900 to 2000 there are 25 leap years, because 2000 is one. 100 plus 25 is 125, which is 17 weeks and 6 days. Six days forward is one day back. Wednesday becomes Tuesday.
+cent4||From 2000 to 2100 there are only 24, because 2100 won't be a leap year. 124 leaves 5. Five forward is two back. Tuesday becomes Sunday.
+cent5||Keep going and the pattern is Tuesday, Sunday, Friday, Wednesday, and then Tuesday again in 2400. It repeats every 400 years.
+cent6||That's not luck. 400 years of our calendar has 97 leap days, and 146,097 days in total. Divide by 7 and you get exactly 20,871 weeks. Not a single day left over. So the calendar of 2426 is the calendar of 2026, weekday for weekday.
+cent7||So the four anchors are all you need. Tuesday for the 2000s, Wednesday for the 1900s, Friday for the 1800s, Sunday for the 2100s.
+fri1|Friday the 13th|That 400-year cycle hides a strange fact. Two days ago was Friday the 13th. It's the third this year, after February and March.
+fri2||Over one full 400-year cycle there are 4,800 thirteenths. If weekdays were shared out evenly, each would get about 686.
+fri3||They aren't. Friday gets 688. Thursday and Saturday get only 684. The 13th lands on a Friday more often than on any other day of the week.
+fri4||The cycle has a whole number of weeks, so the count never evens out. It's the same 688 every 400 years, forever. A small, fixed, slightly unlucky tilt.
+fri5||You can check one more thing with doomsday. Every single year has at least one Friday the 13th, and never more than three.
+hist1|When the calendar broke|There's one place the method needs care: old dates. Britain and its colonies used a different calendar until 1752.
+hist2||The old one, the Julian calendar, had a leap day every four years with no exceptions. It drifted, and by 1752 it was 11 days behind.
+hist3||So Parliament deleted them. In Britain, Wednesday, September 2nd, 1752 was followed by Thursday, September 14th.
+hist4||The dates jumped 11, but the weekdays didn't skip. Wednesday was still followed by Thursday. Check it: in 1752, doomsday says September 14th was a Thursday.
+hist5||So for any modern date, the method just works. For a date in Britain before 1752, or in much of Europe before 1582, you're on the old calendar, and you'd need its own anchors.
+hist6||Conway worked this out in 1973, building on a method Lewis Carroll, the author of Alice in Wonderland, had published. He could do it in under two seconds.
+hist7||And he kept in practice. His computer was set up to quiz him on a random date every time he logged in.
+your1|Your turn|Here's the full method once more. Find the century's anchor. Add the last two digits and a quarter of them. Throw away sevens. That's the year's doomsday.
+your2||Then jump to the month's landmark: four four, six six, eight eight, ten ten, twelve twelve, nine to five at the 7-Eleven, Pi Day, and the last day of February. Count to your date.
+your3||One more test. New Year's Day, 2000. The 2000s start on a Tuesday, and the last two digits are zero, so doomsday is Tuesday. 2000 is a leap year, so January's landmark is the 4th. Back three days: Saturday. It was.
+your4||We checked the whole method against a hundred thousand random dates between 1800 and 2199. It got every one right.
+your5||So here's yours. 2100 is not a leap year. What weekday will New Year's Day 2100 be? Put your answer in the comments, and the date you were born on, if you worked that out too.

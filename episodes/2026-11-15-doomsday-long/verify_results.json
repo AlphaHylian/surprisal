@@ -1,0 +1,79 @@
+{
+ "doomsday_2026": "Saturday",
+ "even_gaps_days": [
+  63,
+  63,
+  63,
+  63
+ ],
+ "may9_to_sep5": 119,
+ "jul11_to_nov7": 119,
+ "pi_to_apr4": 21,
+ "mar0_to_mar14": 14,
+ "xmas_2026": "Friday",
+ "2027": "Sunday",
+ "2028": "Tuesday",
+ "anchors": {
+  "1800": "Friday",
+  "1900": "Wednesday",
+  "2000": "Tuesday",
+  "2100": "Sunday",
+  "2200": "Friday",
+  "2300": "Wednesday"
+ },
+ "1969_quarter": [
+  69,
+  17,
+  86,
+  2
+ ],
+ "1969_dozen": [
+  5,
+  9,
+  2,
+  16
+ ],
+ "1969_odd11": [
+  80,
+  40,
+  5,
+  2
+ ],
+ "dozen_days": 4383,
+ "moon_landing": "Sunday",
+ "y2k": "Saturday",
+ "wall": [
+  "Tuesday",
+  6,
+  "Thursday"
+ ],
+ "2001_doomsday": "Wednesday",
+ "jan1_2100": "Friday",
+ "days_1900_2000": 36524,
+ "shift_1900_2000": 6,
+ "shift_2000_2100": 5,
+ "days_400": 146097,
+ "weeks_400": 20871,
+ "leaps_400": 97,
+ "thirteenths": {
+  "Thursday": 684,
+  "Sunday": 687,
+  "Monday": 685,
+  "Saturday": 684,
+  "Tuesday": 685,
+  "Wednesday": 687,
+  "Friday": 688
+ },
+ "total_13ths": 4800,
+ "13th_min": 684,
+ "fri13_2026": [
+  2,
+  3,
+  11
+ ],
+ "fri13_every_year": true,
+ "fri13_max_per_year": 3,
+ "sep14_1752": "Thursday",
+ "sep2_1752_julian_as_greg13": "Wednesday",
+ "mental_method_correct": 100000
+}
