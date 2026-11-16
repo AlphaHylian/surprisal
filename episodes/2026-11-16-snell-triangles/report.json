@@ -1,22 +1,18 @@
 {
- "ok": false,
- "problems": [
-  "the hook beat 'hook' is 3.9s of voice; it must be under 3.2 s (one sentence, 8-14 words: the stakes, not the job title)"
- ],
- "warnings": [
-  "short is 80s; the target is 40-60 s (75 at most). Cut a step if any beat isn't earning its place."
- ],
- "duration_s": 80.5,
- "size_mb": 4.7,
+ "ok": true,
+ "problems": [],
+ "warnings": [],
+ "duration_s": 63.4,
+ "size_mb": 3.7,
  "resolution": "540x960",
- "caption_match_ratio": 0.899581589958159,
- "heard": "Measure 5 km on the ground and you get 130 for free. No chains across rivers. No ropes through towns. Only angles. Light in 1615. Willabord Snellius wants the size of the earth. Step 1. Measure one straight line very carefully. Lighten to Zoederwood, about 5 km. Step 2. Pick a church buyer you can see from both ends. Measure the angle to it from each end, say 60 and 70 degrees. One side and two angles fix the whole triangle. The other sides come out at 5 .7 and 6 .1 km and you never walked them. Step 3. Each new side is your next baseline. Spire to spire across 14 towns from Alkmar to Bergenopsoom. But his quadrant only read tenths of a degree. Over 130 km shouldn't the errors pile up. A tenth of a degree over 5 km moves the far corner 9 meters. And every triangle must add up to 180. So a bad reading gives itself away. One degree of the earth came out at 28 ,500 rods. That's 107 km, so 38 ,653 all the way around. The real answer is 40 ,075. He was 3 .5 % off from one five kilometer line. Subscribe if you'd have brought a very long tape.",
+ "caption_match_ratio": 0.9052631578947369,
+ "heard": "Measure five kilometers and get 130 for free. No chains across rivers, no ropes through towns. Only angles. Step one, light in 1615. Snelliest measures one straight line very carefully. About five kilometers. Step two, sight a church tower from both ends of it. Say 60 and 70 degrees. Two angles and a side fix the triangle. The other sides, 5 .7 and 6 .1 kilometers, never walked. Step three, each new side is your next baseline. Tower to Tower, 14 towns, Alkmar to Bergen Opzoom. But his quadrant read only tenths of a degree. Won't the errors pile up? A tenth of a degree over five kilometers is nine meters. And every triangle must add to 180. So a bad reading shows. His chain gave 107 kilometers per degree. Times 360, 38 ,653 around. The real answer is 40 ,075. He was 3 .5 % off from one five kilometer line. Subscribe if you'd have brought a very long tape.",
  "music": "Investigations",
  "music_gap_db": 8.0,
  "speech_starts_at_s": 0.0,
  "final_lufs": -14.9,
  "voice_engine": "omnivoice",
- "contact_sheet_every_s": 3.4,
- "build_seconds": 1282,
+ "contact_sheet_every_s": 2.6,
+ "build_seconds": 1162,
  "draft": true
 }

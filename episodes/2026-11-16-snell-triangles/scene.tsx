@@ -191,9 +191,9 @@ const ChainBody: React.FC = () => {
         {pts.slice(0, -2).map((p, i) => <Seg key={"b" + i} a={p} b={pts[i + 2]} t0={step(i) + 0.15} t1={step(i) + 0.55} color={C.amber} width={6} />)}
         {TOWNS.map(([p, n], i) => <Spire key={i} p={p} at={i === 2 || i === 3 ? 0.05 : step(Math.max(0, i - 1))} size={52} label={n} ly={n === "Alkmaar" ? -60 : 55} />)}
       </Camera>
-      <At x={830} y={560}><Appear at={tNext - 0.2} from="right"><Chip color={C.mint} size={44}>new side = new base</Chip></Appear></At>
-      <At x={830} y={760}><Appear at={t14 - 0.2} from="pop"><Big size={90} color={C.amber}>14 towns</Big></Appear></At>
-      <At x={830} y={900}><Appear at={tAlk} from="fade" sfx={null}><Text size={48} color={C.muted}>≈ 130 km</Text></Appear></At>
+      <At x={800} y={560}><Appear at={tNext - 0.2} from="right"><Chip color={C.mint} size={40}>new side = new base</Chip></Appear></At>
+      <At x={810} y={760}><Appear at={t14 - 0.2} from="pop"><Big size={76} color={C.amber}>14 towns</Big></Appear></At>
+      <At x={810} y={880}><Appear at={tAlk} from="fade" sfx={null}><Text size={48} color={C.muted}>≈ 130 km</Text></Appear></At>
     </>
   );
 };
