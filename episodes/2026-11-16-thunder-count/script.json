@@ -1,0 +1,79 @@
+{
+  "slug": "thunder-count",
+  "format": "short",
+  "series": "everyday",
+  "hook_style": "how-to",
+  "hook_type": "versus",
+  "angle": "versus hook: the flash crosses a kilometre in 3 millionths of a second, the thunder in 3 seconds (HookText Flash: 0.000003 s / Thunder: 3 s, over a bolt with a light ray and a slow sound wave racing to you); rule out: no radar, the gap is a ruler; context: light 300,000 km/s, sound 343 m/s; step 1 count from flash to bang, 15; step 2 divide by 3 = 5 km (by 5 = 3 miles); step 3 the rumble: a bolt is kilometres long, near end 2 km heard at 6 s, far end 5 km at 15 s, so it rolls for 9 seconds; re-hook: that's where, now when; step 4 count again 2 minutes later: 12 = 4 km, 1 km per 2 minutes, overhead in about 8 minutes; payoff: two counts and a division tell you where it is and when it gets here; CTA comment checkable: you count 21, how far? (7 km). Series arm: everyday (20:00; noon is history). Hook type versus (everyday + versus, third of the swapped pairing).",
+  "title": "How to tell how far away lightning is (count, then divide)",
+  "description": "Light crosses a kilometre in about 3 millionths of a second; sound, at 343 metres a second, needs about 3 seconds (5 seconds per mile). So count the seconds from flash to thunder and divide by 3 for kilometres: 15 seconds is 5 km. The rumble is the whole bolt arriving piece by piece: if its near end is 2 km away and its far end 5 km, you hear it from 6 to 15 seconds. Count again two minutes later: 12 seconds means 4 km, so the storm closes 1 km every 2 minutes and reaches you in about 8.\n\nNumbers checked in code: light and sound travel times, the example counts, and 200,000 simulated strikes 1 to 15 km away at 0 to 30 C with counts rounded to the second (the divide-by-3 rule lands within about half a kilometre 95% of the time). Sources: en.wikipedia.org/wiki/Thunder, Environment and Climate Change Canada \"How thunder sounds\".\n\nThe math behind real problems, twice a day. Subscribe and the next one finds you.\nFound an error? Comment and it gets pinned.\n#math #mathematics #shorts",
+  "social_caption": "The flash reaches you almost instantly, the thunder takes 3 seconds per kilometre. That gap tells you where the storm is and when it arrives.",
+  "tags": [
+    "thunder",
+    "lightning distance",
+    "flash to bang",
+    "speed of sound",
+    "thunderstorm",
+    "physics",
+    "math",
+    "maths",
+    "science"
+  ],
+  "music_moods": [
+    "chill"
+  ],
+  "facts_checked": [
+    "Speed of sound in dry air at 20 C about 343 m/s; count seconds from flash to thunder, divide by three for kilometres or five for miles; rumbles can last more than 30 seconds (https://en.wikipedia.org/wiki/Thunder)",
+    "Light 300,000 km/s vs sound 0.3 km/s; 15 seconds / 3 = 5 km; a rumble is thunder from a channel roughly parallel to your line of sight (https://www.canada.ca/en/environment-climate-change/services/lightning/science/how-thunder-sounds.html)",
+    "Light: 3.3 microseconds per km; sound: 2.92 s per km, 4.69 s per mile (verify.py)",
+    "15 s -> 5 km / 3 miles; near end 2 km and far end 5 km -> 6 s to 15 s, 9 s of rumble; 12 s two minutes later -> 4 km, 0.5 km/min (30 km/h), 8 minutes; CTA 21 s -> 7 km (verify.py)",
+    "200,000 simulated strikes (1-15 km, 0-30 C, count rounded to the second): divide-by-3 error median 0.15 km, 95th percentile 0.51 km (verify.py)"
+  ],
+  "beats": [
+    {
+      "id": "hook",
+      "say": "Flash: 3 millionths of a second. Thunder: 3 seconds.",
+      "speed": 1.3
+    },
+    {
+      "id": "ruleout",
+      "say": "Same kilometre. You don't need a weather radar. That gap is a ruler."
+    },
+    {
+      "id": "context",
+      "say": "Light covers 300,000 kilometres a second. Sound only does 343 metres."
+    },
+    {
+      "id": "count",
+      "say": "Step 1: lightning flashes. Count the seconds until the thunder. Say you get to 15."
+    },
+    {
+      "id": "divide",
+      "say": "Step 2: divide by 3. The strike was 5 kilometres away. For miles, divide by 5."
+    },
+    {
+      "id": "rumble",
+      "say": "Why does it rumble? The bolt is kilometres long. Its near end is 2 away, its far end 5. You hear the near end at 6 seconds and the far end at 15."
+    },
+    {
+      "id": "rehook",
+      "say": "That tells you where it is. Now find out when it gets here."
+    },
+    {
+      "id": "again",
+      "say": "Step 3: count again two minutes later. 12 seconds. That's 4 kilometres, so it moved 1 kilometre in 2 minutes."
+    },
+    {
+      "id": "eta",
+      "say": "4 kilometres left, at 1 every 2 minutes: it's overhead in about 8."
+    },
+    {
+      "id": "payoff",
+      "say": "Two counts and one division, and you know where the storm is and when it arrives."
+    },
+    {
+      "id": "cta",
+      "say": "So the next flash, you count to 21. How far away was it?"
+    }
+  ]
+}

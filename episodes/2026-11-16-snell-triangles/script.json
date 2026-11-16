@@ -1,0 +1,83 @@
+{
+  "slug": "snell-triangles",
+  "format": "short",
+  "series": "history",
+  "hook_style": "how-to",
+  "hook_type": "claim",
+  "angle": "claim hook: measure 5 km on the ground and get 130 km free (HookText Measure 5 km / Get 130 km free, over a short mint baseline and a long amber chain of triangles); rule out: no chains across rivers, only angles; context: Leiden 1615, Snellius wants the size of the Earth; step 1 baseline Leiden-Zoeterwoude ~5 km; step 2 sight a church spire from both ends, 60 and 70 degrees; step 3 one side + two angles fix the triangle: 5.7 and 6.1 km you never walked; step 4 each new side is the next baseline, spire to spire across 14 towns, Alkmaar to Bergen op Zoom; re-hook: quadrant read tenths of a degree, shouldn't errors pile up?; answer: 0.1 deg over 5 km = 9 m, and angles must add to 180 so bad readings show; result 28,500 rods = 107 km per degree, x360 = 38,653 km; payoff: real 40,075, 3.5% off from one 5 km line; CTA subscribe. Series arm: history (12:00; the last noon Short, 15 Nov, was everyday). Hook type claim (history + claim, second of the swapped pairing after small-world).",
+  "title": "How to measure a country by walking 5 km (Snellius, 1615)",
+  "description": "Measure one line carefully (Snellius used Leiden to Zoeterwoude, about 5 km), then only angles: sight a church spire from both ends, and one side plus two angles fix the whole triangle, so its other sides (5.7 and 6.1 km for angles of 60 and 70 degrees) come for free. Each new side is the base of the next triangle, spire to spire across 14 towns, from Alkmaar to Bergen op Zoom, about 130 km. In 1615 Snellius got 28,500 Rhineland rods (107.4 km) per degree of latitude, so 38,653 km around the Earth: 3.5% short of 40,075.\n\nNumbers checked in code: the law of sines for the example triangle, the 9 m shift from a 0.1 degree error over 5 km, the rod conversion (1 rod = 3.767 m), and 100,000 simulated triangle chains with tenth-of-a-degree reading errors. Sources: en.wikipedia.org/wiki/Willebrord_Snellius and the Dictionary of Scientific Biography (mathshistory.st-andrews.ac.uk/DSB/Snell.pdf).\n\nThe math behind real problems, twice a day. Subscribe and the next one finds you.\nFound an error? Comment and it gets pinned.\n#math #mathematics #shorts",
+  "social_caption": "In 1615 Snellius measured 130 km of Holland while measuring only 5 km on the ground. The rest was angles from church towers.",
+  "tags": [
+    "snellius",
+    "triangulation",
+    "willebrord snell",
+    "size of the earth",
+    "surveying",
+    "trigonometry",
+    "history of science",
+    "math",
+    "maths"
+  ],
+  "music_moods": [
+    "curious"
+  ],
+  "facts_checked": [
+    "1615: Snellius used triangulation, church spires as reference points, computed the distance Alkmaar to Bergen-op-Zoom (around 130 km), baseline Leiden to Zoeterwoude (about 5 km), 210 cm quadrant by Blaeu, Rhineland rod = 3.767 m, results in Eratosthenes Batavus 1617 (https://mathshistory.st-andrews.ac.uk/DSB/Snell.pdf)",
+    "Network of fourteen measure points (town churches from Alkmaar to Bergen-op-Zoom); quadrant measured angles in tenths of a degree; 28,500 Rhineland rods per degree = 107.37 km; x360 = 38,653 km; actual 40,075 km, 3.5% low (https://en.wikipedia.org/wiki/Willebrord_Snellius)",
+    "Example triangle: base 5 km, angles 60 and 70 -> sides 5.65 and 6.13 km by the law of sines (verify.py)",
+    "0.1 degree over 5 km shifts the far end by 8.7 m (verify.py)",
+    "100,000 simulated 12-triangle chains with +-0.05 degree reading errors and 180-degree closure: median error 0.08%, 95th percentile 0.24% (verify.py)"
+  ],
+  "beats": [
+    {
+      "id": "hook",
+      "say": "Measure 5 kilometres, and get 130 for free.",
+      "speed": 1.3
+    },
+    {
+      "id": "ruleout",
+      "say": "No chains across rivers. No ropes through towns. Only angles."
+    },
+    {
+      "id": "context",
+      "say": "Leiden, 1615. Willebrord Snellius wants the size of the Earth."
+    },
+    {
+      "id": "base",
+      "say": "Step 1: measure one straight line, very carefully. Leiden to Zoeterwoude, about 5 kilometres."
+    },
+    {
+      "id": "angles",
+      "say": "Step 2: pick a church spire you can see from both ends. Measure the angle to it from each end. Say 60 and 70 degrees."
+    },
+    {
+      "id": "sides",
+      "say": "One side and two angles fix the whole triangle. The other sides come out at 5.7 and 6.1 kilometres, and you never walked them."
+    },
+    {
+      "id": "chain",
+      "say": "Step 3: each new side is your next baseline. Spire to spire, across 14 towns, from Alkmaar to Bergen op Zoom."
+    },
+    {
+      "id": "rehook",
+      "say": "But his quadrant only read tenths of a degree. Over 130 kilometres, shouldn't the errors pile up?"
+    },
+    {
+      "id": "error",
+      "say": "A tenth of a degree over 5 kilometres moves the far corner 9 metres. And every triangle must add up to 180, so a bad reading gives itself away."
+    },
+    {
+      "id": "result",
+      "say": "One degree of the Earth came out at 28,500 rods. That's 107 kilometres, so 38,653 all the way around."
+    },
+    {
+      "id": "payoff",
+      "say": "The real answer is 40,075. He was 3.5% off, from one 5 kilometre line."
+    },
+    {
+      "id": "cta",
+      "say": "Subscribe if you'd have brought a very long tape."
+    }
+  ]
+}
