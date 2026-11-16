@@ -20,6 +20,9 @@ through verify.py.
 
 
 - Your library has a million books and you need to check if one is missing, fast. Steps: a Bloom filter, k hash functions into a bit array, false positives but never false negatives; exact rate formula. (tech) [check] (added 2026-11-13)
+- Your group of friends needs to know who owes whom after a trip: minimise the number of payments (net balances, at most n-1 transfers; greedy settle-up as Splitwise does). (everyday) [check] (added 2026-11-16)
+- Ships at sea before GPS: dead reckoning with speed, heading and time, and how the error grows each hour (log line knots: 47 ft 3 in per 28 s). (history) [check] (added 2026-11-16)
+- Your phone guesses the next word: a bigram table from counts, why 'the' is followed by a noun, how much a typed letter narrows it (bits per letter). (tech) [check] (added 2026-11-16)
 
 ## Used
 - (long-form) doomsday-long: long-form of doomsday-rule (10 Nov) — used 2026-11-15 20:00, 1CMjJkdDRfA
