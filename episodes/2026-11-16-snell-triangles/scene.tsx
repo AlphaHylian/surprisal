@@ -109,22 +109,23 @@ const ContextBody: React.FC = () => {
 // ---------------------------------------------------------------- step 1: baseline
 const BaseBody: React.FC = () => {
   const w = useW();
-  const tLine = w(["line"], 1, 1.6), tLei = w(["Leiden"], 1, 3.0), t5 = w(["5"], 1, 4.6);
+  const tSnel = w(["Snellius"], 1, 1.8), tLine = w(["line"], 1, 3.2), tLei = 0.1, t5 = w(["5"], 1, 5.6);
   return (
     <>
       <Headline>Step 1: one careful line</Headline>
+      <At x={540} y={480}><Appear at={tSnel - 0.3} from="up"><div style={{ display: "flex", alignItems: "center", gap: 18 }}><Icon name="UserRound" size={90} color={C.ink} /><Text size={52} color={C.ink}>Snellius, 1615</Text></div></Appear></At>
       <Seg a={[200, 800]} b={[880, 800]} t0={tLine - 0.2} t1={tLine + 1.2} color={C.mint} width={14} />
       <Spire p={[200, 720]} at={tLei - 0.2} label="Leiden" ly={-80} />
       <Spire p={[880, 720]} at={tLei + 0.3} label="Zoeterwoude" ly={-80} />
       <At x={540} y={900}><Appear at={t5 - 0.3} from="slam"><Big size={110} color={C.mint}>≈ 5 km</Big></Appear></At>
-      <At x={540} y={1050}><Appear at={t5 + 0.4} from="fade" sfx={null}><Text size={44} color={C.muted}>the only distance you measure</Text></Appear></At>
+      <At x={540} y={1050}><Appear at={t5 + 0.4} from="fade" sfx={null}><Text size={46} color={C.ink}>the only distance you measure</Text></Appear></At>
       <Sfx name="pack/pencil" at={tLine} volume={0.3} dur={1.2} />
     </>
   );
 };
 
 // triangle geometry for steps 2-3: base 5 km drawn 600 px, angles 60 at A, 70 at B
-const A: P = [290, 1000], B: P = [790, 1000];
+const A: P = [290, 1060], B: P = [790, 1060];
 const pxPerKm = 100;
 const apex: P = (() => {
   const ac = 6.1334 * pxPerKm; // side from A (opposite B = 70 deg)
@@ -135,10 +136,10 @@ const apex: P = (() => {
 // ---------------------------------------------------------------- step 2: angles
 const AnglesBody: React.FC = () => {
   const w = useW();
-  const tSpire = w(["spire"], 1, 1.4), tEach = w(["each"], 1, 4.0), t60 = w(["60"], 1, 5.4), t70 = w(["70"], 1, 6.2);
+  const tSpire = w(["tower"], 1, 1.4), tEach = w(["ends"], 1, 2.4), t60 = w(["60"], 1, 3.6), t70 = w(["70"], 1, 4.4);
   return (
     <>
-      <Headline>Step 2: sight a spire</Headline>
+      <Headline>Step 2: sight a tower</Headline>
       <Seg a={A} b={B} color={C.mint} width={14} />
       <Spire p={[apex[0], apex[1] - 40]} at={tSpire - 0.2} color={C.amber} size={80} />
       <Seg a={A} b={apex} t0={tEach - 0.3} t1={tEach + 0.4} color={C.ink} width={5} dash />
@@ -147,7 +148,7 @@ const AnglesBody: React.FC = () => {
       <Arc v={B} a={A} b={apex} at={t70 - 0.2} r={90} />
       <At x={A[0] + 150} y={A[1] - 50}><Appear at={t60 - 0.1} from="pop"><Text size={54} color={C.amber}>60°</Text></Appear></At>
       <At x={B[0] - 150} y={B[1] - 50}><Appear at={t70 - 0.1} from="pop"><Text size={54} color={C.amber}>70°</Text></Appear></At>
-      <At x={540} y={1080}><Text size={44} color={C.mint}>5 km</Text></At>
+      <At x={540} y={1120}><Text size={44} color={C.mint}>5 km</Text></At>
     </>
   );
 };
@@ -155,20 +156,20 @@ const AnglesBody: React.FC = () => {
 // ---------------------------------------------------------------- step 2b: sides for free
 const SidesBody: React.FC = () => {
   const w = useW();
-  const tFix = w(["fix"], 1, 1.6), t57 = w(["5.7"], 1, 4.0), t61 = w(["6.1"], 1, 5.0), tNever = w(["never"], 1, 6.4);
+  const tFix = w(["fix"], 1, 1.4), t57 = w(["5.7"], 1, 3.2), t61 = w(["6.1"], 1, 4.0), tNever = w(["never"], 1, 5.4);
   return (
     <>
       <Headline>Two angles + one side</Headline>
-      <Camera keys={[[0, { zoom: 1 }], [tFix, { zoom: 1 }], [tFix + 0.6, { zoom: 1.06, x: 540, y: 800 }]]}>
+      <>
         <Seg a={A} b={B} color={C.mint} width={14} />
         <Seg a={A} b={apex} t0={tFix - 0.2} t1={tFix + 0.3} color={C.amber} width={10} />
         <Seg a={B} b={apex} t0={tFix} t1={tFix + 0.5} color={C.amber} width={10} />
         <Spire p={[apex[0], apex[1] - 40]} color={C.amber} size={80} />
         <At x={A[0] + 80} y={(A[1] + apex[1]) / 2}><Appear at={t61 - 0.2} from="pop"><Chip size={50}>6.1 km</Chip></Appear></At>
         <At x={B[0] - 20} y={(B[1] + apex[1]) / 2}><Appear at={t57 - 0.2} from="pop"><Chip size={50}>5.7 km</Chip></Appear></At>
-        <At x={540} y={1080}><Text size={44} color={C.mint}>5 km</Text></At>
-      </Camera>
-      <At x={540} y={440}><Appear at={tNever - 0.2} from="slam"><Text size={70} color={C.amber} glow>never walked</Text></Appear></At>
+        <At x={540} y={1120}><Text size={44} color={C.mint}>5 km</Text></At>
+      </>
+      <At x={540} y={380}><Appear at={tNever - 0.2} from="slam"><Text size={70} color={C.amber} glow>never walked</Text></Appear></At>
       <Sfx name="pack/correct" at={t61} volume={0.3} />
     </>
   );
@@ -178,13 +179,13 @@ const SidesBody: React.FC = () => {
 const TOWNS: [P, string][] = [[[180, 420], "Alkmaar"], [[420, 520], ""], [[250, 640], "Leiden"], [[520, 700], ""], [[330, 850], ""], [[620, 900], ""], [[420, 1060], "Bergen op Zoom"]];
 const ChainBody: React.FC = () => {
   const w = useW();
-  const tNext = w(["next"], 1, 1.4), tSpire = w(["Spire"], 1, 2.8), t14 = w(["14"], 1, 4.2), tAlk = w(["Alkmaar"], 1, 5.4);
+  const tNext = w(["next"], 1, 1.4), tSpire = w(["Tower"], 1, 2.6), t14 = w(["14"], 1, 3.8), tAlk = w(["Alkmaar"], 1, 4.6);
   const pts = TOWNS.map((x) => x[0]);
   const step = (i: number) => tSpire - 0.2 + i * 0.35;
   return (
     <>
       <Headline>Step 3: repeat</Headline>
-      <Camera keys={[[0, { zoom: 1.25, x: 300, y: 660 }], [tSpire, { zoom: 1.25, x: 300, y: 660 }], [tAlk, { zoom: 1 }]]}>
+      <Camera keys={[[0, { zoom: 1 }], [tAlk, { zoom: 1 }], [tAlk + 1.2, { zoom: 1.05 }]]}>
         <Seg a={pts[2]} b={pts[3]} color={C.mint} width={12} />
         {pts.slice(0, -1).map((p, i) => <Seg key={"a" + i} a={p} b={pts[i + 1]} t0={step(i)} t1={step(i) + 0.4} color={C.amber} width={6} />)}
         {pts.slice(0, -2).map((p, i) => <Seg key={"b" + i} a={p} b={pts[i + 2]} t0={step(i) + 0.15} t1={step(i) + 0.55} color={C.amber} width={6} />)}
@@ -200,7 +201,7 @@ const ChainBody: React.FC = () => {
 // ---------------------------------------------------------------- re-hook
 const RehookBody: React.FC = () => {
   const w = useW();
-  const tTenths = w(["tenths"], 1, 1.6), tPile = w(["pile"], 1, 4.8);
+  const tTenths = w(["tenths"], 1, 1.6), tPile = w(["pile"], 1, 3.8);
   return (
     <>
       <Headline color={C.amber}>But the errors?</Headline>
@@ -215,7 +216,7 @@ const RehookBody: React.FC = () => {
 // ---------------------------------------------------------------- error answer
 const ErrorBody: React.FC = () => {
   const w = useW();
-  const t9 = w(["9"], 1, 3.0), t180 = w(["180"], 1, 6.4), tBad = w(["bad"], 1, 7.6);
+  const t9 = w(["9"], 1, 2.6), t180 = w(["180"], 1, 5.4), tBad = w(["bad"], 1, 6.4);
   return (
     <>
       <Headline>Small, and caught</Headline>
@@ -234,16 +235,16 @@ const ErrorBody: React.FC = () => {
 // ---------------------------------------------------------------- result
 const ResultBody: React.FC = () => {
   const w = useW();
-  const tRods = w(["rods"], 1, 2.6), t107 = w(["107"], 1, 4.0), tAround = w(["38,653"], 1, 5.6);
+  const tRods = 0.3, t107 = w(["107"], 1, 1.2), tAround = w(["38,653"], 1, 4.0);
   return (
     <>
       <Headline>One degree of Earth</Headline>
-      <At x={540} y={480}><Appear at={tRods - 0.6} from="up"><Big size={96}>28,500 rods</Big></Appear></At>
+      <At x={540} y={480}><Appear at={tRods} from="up"><Big size={96}>28,500 rods</Big></Appear></At>
       <At x={540} y={640}><Appear at={t107 - 0.3} from="pop"><Big size={96} color={C.mint}>= 107 km</Big></Appear></At>
       <At x={540} y={800}><Appear at={tAround - 0.6} from="fade" sfx={null}><Text size={48} color={C.muted}>× 360°</Text></Appear></At>
       <Punch at={tAround + 0.6}><At x={540} y={960}>
         {/* the counter starts at tAround - 0.4 */}
-        <Counter from={0} to={38653} t0={tAround - 0.4} t1={tAround + 0.6} size={120} color={C.amber} suffix=" km" />
+        <Appear at={tAround - 0.5} from="fade" sfx={null}><Counter from={0} to={38653} t0={tAround - 0.4} t1={tAround + 0.6} size={120} color={C.amber} suffix=" km" /></Appear>
       </At></Punch>
     </>
   );
@@ -281,7 +282,6 @@ const Scene: React.FC = () => (
   <>
     <Span from="hook"><HookBody /></Span>
     <Span from="ruleout"><RuleoutBody /></Span>
-    <Span from="context"><ContextBody /></Span>
     <Span from="base"><BaseBody /></Span>
     <Span from="angles"><AnglesBody /></Span>
     <Span from="sides"><SidesBody /></Span>
