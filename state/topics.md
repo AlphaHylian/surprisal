@@ -19,9 +19,7 @@ through verify.py.
 
 
 
-- You hear thunder after a lightning flash. Steps: light arrives instantly, sound takes about 3 seconds per kilometre (5 per mile); count the gap, divide. Why it works: speed of sound ~343 m/s. (everyday) [check] (added 2026-11-13)
 - Your library has a million books and you need to check if one is missing, fast. Steps: a Bloom filter, k hash functions into a bit array, false positives but never false negatives; exact rate formula. (tech) [check] (added 2026-11-13)
-- Eratosthenes measured the Earth with a stick and a shadow: done (earth-stick). Instead: how Snell / triangulation surveyed a country from one measured baseline (Snellius 1615). (history) [check] (added 2026-11-13)
 
 ## Used
 - (long-form) doomsday-long: long-form of doomsday-rule (10 Nov) — used 2026-11-15 20:00, 1CMjJkdDRfA
@@ -109,3 +107,5 @@ through verify.py.
 - 2026-11-08 20:00: earth-stick-long (LONG-FORM 8:50, expands earth-stick; parallel rays 0.0003 deg, flat-Earth close sun 6,300 km gives the same two shadows, third stick 45 vs 38, Syene 7.1 deg / 790 km, stadion 160-210 m: 40,000-52,500 km, 2012 repeat 40,074, Posidonius 240,000 / 180,000, Ptolemy and Columbus, leap day and sieve, the metre 40,000 by definition and 40,008, DIY 1,000 km -> 9 deg; CTA 3.6 deg -> 400 km) (pending hand upload, Zapier task limit)
 - 2026-11-09  battleship-hunt (everyday, how-to, hook versus; checkerboard hunt + neighbour targeting, 97 -> 62 shots)  not uploaded by the bot (Zapier task limit): sent to the owner for 12:00 Tallinn 9 Nov
 - 2026-11-09  enigma-crib (history, how-to, hook claim; no letter to itself, crib dragging, bombe 17,576 / 20 min)  not uploaded by the bot (Zapier task limit): sent to the owner for 20:00 Tallinn 9 Nov
+- 2026-11-16 12:00: snell-triangles (history, how-to, hook claim; Snellius 1615 triangulation, 5 km baseline -> 130 km, 107 km per degree, 38,653 km, 3.5% low)  uYMaq2BKPgs
+- 2026-11-16 20:00: thunder-count (everyday, how-to, hook versus; flash-to-bang, divide by 3, rumble = bolt length, second count gives arrival time)  TmpGGYSNJck

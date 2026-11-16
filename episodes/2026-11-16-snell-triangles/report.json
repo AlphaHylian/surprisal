@@ -3,8 +3,8 @@
  "problems": [],
  "warnings": [],
  "duration_s": 63.4,
- "size_mb": 3.7,
- "resolution": "540x960",
+ "size_mb": 10.7,
+ "resolution": "1080x1920",
  "caption_match_ratio": 0.9052631578947369,
  "heard": "Measure five kilometers and get 130 for free. No chains across rivers, no ropes through towns. Only angles. Step one, light in 1615. Snelliest measures one straight line very carefully. About five kilometers. Step two, sight a church tower from both ends of it. Say 60 and 70 degrees. Two angles and a side fix the triangle. The other sides, 5 .7 and 6 .1 kilometers, never walked. Step three, each new side is your next baseline. Tower to Tower, 14 towns, Alkmar to Bergen Opzoom. But his quadrant read only tenths of a degree. Won't the errors pile up? A tenth of a degree over five kilometers is nine meters. And every triangle must add to 180. So a bad reading shows. His chain gave 107 kilometers per degree. Times 360, 38 ,653 around. The real answer is 40 ,075. He was 3 .5 % off from one five kilometer line. Subscribe if you'd have brought a very long tape.",
  "music": "Investigations",
@@ -13,6 +13,6 @@
  "final_lufs": -14.9,
  "voice_engine": "omnivoice",
  "contact_sheet_every_s": 2.6,
- "build_seconds": 1162,
- "draft": true
+ "build_seconds": 207,
+ "draft": false
 }
