@@ -1,0 +1,18 @@
+{
+ "ok": true,
+ "problems": [],
+ "warnings": [],
+ "duration_s": 61.7,
+ "size_mb": 10.1,
+ "resolution": "1080x1920",
+ "caption_match_ratio": 0.9441340782122905,
+ "heard": "Flash three millionths of a second, thunder three seconds, same kilometer, you don't need a weather radar. That gap is a ruler. Light covers 300 ,000 kilometers a second. Sound only does 343 meters. Step one, lightning flashes. Count the seconds until the thunder. Say you get to 15. Step two, divide by three. The strike was five kilometers away. For miles, divide by five. Why does it rumble? The bolt is kilometers long. Its near end is two away, it's far end five. You hear the near end at six seconds and the far end at 15. That tells you where it is. Now find out when it gets here. Step three, count again two minutes later, 12 seconds. That's four kilometers, so it moved one kilometer in two minutes. Four kilometers left, at one every two minutes. It's overhead in about eight. Two counts and one division, and you know where the storm is and when it arrives. So the next flash, you count to 21. How far away was it?",
+ "music": "Late Night Radio",
+ "music_gap_db": 8.0,
+ "speech_starts_at_s": 0.0,
+ "final_lufs": -15.1,
+ "voice_engine": "omnivoice",
+ "contact_sheet_every_s": 2.6,
+ "build_seconds": 294,
+ "draft": false
+}
