@@ -1,0 +1,79 @@
+{
+  "slug": "chip-log",
+  "format": "short",
+  "series": "history",
+  "hook_style": "how-to",
+  "hook_type": "claim",
+  "angle": "claim hook: count the knots on a rope for 28 seconds and that's your ship's speed (HookText Knots in 28 s = your speed, over a ship trailing a knotted line with 7 knots counted); rule out: no engine, no GPS, no land, the rope does the math; context: mid-Atlantic 400 years ago, you need to know where you are; step 1 throw the wooden log board off the stern, it grips the water and pulls line off a reel; step 2 turn a 28-second sandglass, count the knots through your hand: 7; why: knots 47 ft 3 in apart = how far 1 nautical mile an hour goes in 28 s, so 7 knots = 7 nautical miles an hour; re-hook: speed isn't position; step 3 every hour log speed and heading: 7 knots west for 4 hours = 28 miles west of your last fix (dead reckoning); complication: a 1-knot current you can't see puts you 24 miles off in a day, and it keeps growing until the next fix; payoff: that rope is why ships and planes still measure speed in knots; CTA subscribe (loops to the hook). Series arm: history (20:00; noon is everyday). Hook type claim (history + claim, the swapped pairing).",
+  "title": "How sailors measured speed with a knotted rope",
+  "description": "Throw a wooden board off the stern: it grips the water while the ship sails on, pulling line off a reel. Turn a 28-second sandglass and count the knots that run out. The knots are 47 feet 3 inches apart, which is how far a ship doing one nautical mile an hour (6,080 feet) moves in 28 seconds, so the count is the speed: 7 knots is 7 nautical miles an hour. Log speed and heading every hour and you can plot where you are (dead reckoning), until a current you can't see drags you off: 1 knot of current is 24 miles in a day. That's why speed at sea and in the air is still measured in knots.\n\nNumbers checked in code: knot spacing from the 6,080-foot Admiralty mile and a 28-second glass (47.29 ft), 100,000 simulated casts, and the examples. Sources: en.wikipedia.org/wiki/Knot_(unit), en.wikipedia.org/wiki/Chip_log, en.wikipedia.org/wiki/Dead_reckoning.\n\nThe math behind real problems, twice a day. Subscribe and the next one finds you.\nFound an error? Comment and it gets pinned.\n#math #mathematics #shorts",
+  "social_caption": "Sailors counted knots on a rope for 28 seconds and got their speed. Here's why the spacing makes the count come out exactly right.",
+  "tags": [
+    "chip log",
+    "knots",
+    "nautical mile",
+    "dead reckoning",
+    "navigation",
+    "sailing history",
+    "history",
+    "math",
+    "maths"
+  ],
+  "music_moods": [
+    "curious"
+  ],
+  "facts_checked": [
+    "Before the mid-19th century, speed was measured with a chip log: knots 47 ft 3 in (14.4018 m) apart, timed with a 28-second sand-glass (30 s earlier), giving 1.85166 km/h per knot, within 0.02% of today's 1.852 (https://en.wikipedia.org/wiki/Knot_(unit))",
+    "Admiralty nautical mile 6,080 ft; knot = one nautical mile per hour, used at sea and in aviation (https://en.wikipedia.org/wiki/Knot_(unit))",
+    "The log is dropped off the stern, acts as a drogue, and the sailor counts the knots passing through his hands in a fixed time; first printed description William Bourne 1574 (https://en.wikipedia.org/wiki/Chip_log)",
+    "Dead reckoning: position from a previous fix plus speed, heading and elapsed time; errors compound over distance; currents are not accounted for (https://en.wikipedia.org/wiki/Dead_reckoning)",
+    "6,080 ft x 28/3600 = 47.29 ft = 47 ft 3 in to the inch; 100,000 simulated casts: knots counted = speed in knots; 7 x 4 = 28 miles; 1 knot x 24 h = 24 miles (verify.py)"
+  ],
+  "beats": [
+    {
+      "id": "hook",
+      "say": "Count knots on a rope for 28 seconds: that's your speed.",
+      "speed": 1.3
+    },
+    {
+      "id": "ruleout",
+      "say": "No GPS, no land in sight. The rope does the math."
+    },
+    {
+      "id": "context",
+      "say": "Mid-Atlantic, 400 years ago. Where are you?"
+    },
+    {
+      "id": "throw",
+      "say": "Step 1: throw a wooden board off the back. It grips the water and pulls rope off a reel."
+    },
+    {
+      "id": "count",
+      "say": "Step 2: turn a 28 second sandglass and count the knots that slip out. 7."
+    },
+    {
+      "id": "why",
+      "say": "The knots sit 47 feet 3 inches apart: how far one nautical mile an hour goes in 28 seconds. So 7 knots means 7 nautical miles an hour."
+    },
+    {
+      "id": "rehook",
+      "say": "But speed isn't position."
+    },
+    {
+      "id": "reckon",
+      "say": "Step 3: log it every hour. 7 knots, west, for 4 hours: 28 miles west of your last fix."
+    },
+    {
+      "id": "drift",
+      "say": "Uh-oh: a current you can't see. Just 1 knot puts you 24 miles off in a day."
+    },
+    {
+      "id": "payoff",
+      "say": "That rope is why ships and planes still measure speed in knots."
+    },
+    {
+      "id": "cta",
+      "say": "Subscribe if you thought knots were just sailor slang."
+    }
+  ]
+}

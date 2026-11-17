@@ -1,0 +1,75 @@
+{
+  "slug": "settle-up",
+  "format": "short",
+  "series": "everyday",
+  "hook_style": "how-to",
+  "hook_type": "versus",
+  "angle": "versus hook: paying back every IOU after a trip takes 16 transfers, settling the totals takes 4 (HookText 16 IOUs / 4 payments, over five friends tangled in 16 coral IOU arrows); rule out: nobody pays a cent more or less, you stop paying back receipts; context: five friends, you paid the 400 hotel, Ana the 150 car, Tom 200 of dinners, Max 50 of fuel, Zoe nothing; step 1 forget the receipts: 800 / 5 = 160 each; step 2 paid minus share: you +240, Tom +40, Ana -10, Max -110, Zoe -160 (bars); re-hook: who pays whom doesn't matter, only that every balance hits zero; step 3 biggest debt pays biggest credit: Zoe sends you 160, done; step 4 repeat: Max sends you 80 and Tom 30, Ana sends Tom 10, all zero; payoff: every payment clears at least one person, so five friends never need more than 4 (Splitwise's simplify debts); CTA comment checkable: +50, -20, -30, how many payments? (2). Series arm: everyday (12:00; the last noon Short, 16 Nov, was history). Hook type versus (everyday + versus, the swapped pairing).",
+  "title": "How to settle a group trip in 4 payments, not 16",
+  "description": "Five friends, four people paid for something: that's 16 IOUs if everyone pays back every receipt. Instead, add it all up (800 dollars, 160 each) and work out each person's balance: paid minus share. Then the biggest debt pays the biggest credit, again and again. Every payment brings at least one person to zero, so five people never need more than 4 payments, and here 4 is the minimum because no smaller group balances on its own. Splitwise's \"simplify debts\" setting does the same kind of restructuring.\n\nNumbers checked in code: the balances, the four payments, that no subgroup sums to zero, and 100,000 random groups of 2 to 10 people (the greedy settle-up never needed more than n-1 payments). Source: Splitwise help, kb.splitwise.com/balances-and-expenses/what-is-simplify-debts.\n\nThe math behind real problems, twice a day. Subscribe and the next one finds you.\nFound an error? Comment and it gets pinned.\n#math #mathematics #shorts",
+  "social_caption": "Paying back every receipt after a trip takes 16 transfers. Settling the balances takes 4, and here's the rule that does it.",
+  "tags": [
+    "splitting bills",
+    "group trip",
+    "splitwise",
+    "settle up",
+    "who owes whom",
+    "debt simplification",
+    "math",
+    "maths",
+    "everyday math"
+  ],
+  "music_moods": [
+    "upbeat"
+  ],
+  "facts_checked": [
+    "Splitwise 'Simplify debts' restructures who owes whom within a group to reduce the number of payments without changing anyone's total balance (https://kb.splitwise.com/balances-and-expenses/what-is-simplify-debts)",
+    "Trip: 400 + 150 + 200 + 50 = 800, 160 each; 16 IOUs (4 expenses x 4 non-payers); balances +240, -10, +40, -110, -160 sum to 0 (verify.py)",
+    "Greedy settle-up: Zoe->You 160, Max->You 80, Max->Tom 30, Ana->Tom 10 = 4 payments; no proper subgroup sums to zero, so 4 is the minimum (verify.py)",
+    "100,000 random groups of 2-10 people: greedy never needed more than n-1 payments (verify.py)",
+    "CTA: +50, -20, -30 -> 2 payments (verify.py)"
+  ],
+  "beats": [
+    {
+      "id": "hook",
+      "say": "Pay every debt: 16 transfers. Settle the totals: 4.",
+      "speed": 1.35
+    },
+    {
+      "id": "ruleout",
+      "say": "Nobody pays a cent more or less. You just stop paying back receipts."
+    },
+    {
+      "id": "context",
+      "say": "Five friends. You paid the 400 dollar hotel, Ana the car, Tom the dinners, Max the fuel."
+    },
+    {
+      "id": "share",
+      "say": "Step 1: forget the receipts. 800 dollars total, so 160 each."
+    },
+    {
+      "id": "balance",
+      "say": "Step 2: paid minus share. You're up 240, Tom's up 40. Ana's down 10, Max 110, Zoe 160."
+    },
+    {
+      "id": "rehook",
+      "say": "Now the trick: who pays whom doesn't matter. Every balance just has to hit zero."
+    },
+    {
+      "id": "biggest",
+      "say": "Step 3: the biggest debt pays the biggest credit. Zoe sends you 160. Done."
+    },
+    {
+      "id": "repeat",
+      "say": "Repeat. Max sends you 80, and Tom 30. Ana sends Tom 10. Everyone's at zero."
+    },
+    {
+      "id": "payoff",
+      "say": "Each payment clears at least one person, so five friends never need more than 4."
+    },
+    {
+      "id": "cta",
+      "say": "Three friends: you're up 50, Ana's down 20, Tom's down 30. How many payments?"
+    }
+  ]
+}

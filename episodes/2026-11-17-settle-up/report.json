@@ -1,0 +1,18 @@
+{
+ "ok": true,
+ "problems": [],
+ "warnings": [],
+ "duration_s": 54.3,
+ "size_mb": 9.5,
+ "resolution": "1080x1920",
+ "caption_match_ratio": 0.9620253164556962,
+ "heard": "Pay every debt, 16 transfers, settle the totals, 4. Nobody pays a cent more or less. You just stop paying back receipts. Five friends. You paid the $400 hotel, Anna the car, Tom the dinners, Max the fuel. Step one, forget the receipts. $800 total, so $160 each. Step two, paid minus share. You're up 240, Tom's up 40. Anna's down 10, Max 110, Zoe 160. Now the trick, who pays whom doesn't matter? Every balance just has to hit zero. Step three, the biggest debt pays the biggest credit. Zoe sends you 160, done. Repeat, Max sends you 80 and Tom 30. Anna sends Tom 10, everyone's at zero. Each payment clears at least one person, so five friends never need more than four. Three friends, you're up 50, Anna's down 20, Tom's down 30. How many payments?",
+ "music": "Tech Talk",
+ "music_gap_db": 8.0,
+ "speech_starts_at_s": 0.01,
+ "final_lufs": -14.9,
+ "voice_engine": "omnivoice",
+ "contact_sheet_every_s": 2.3,
+ "build_seconds": 264,
+ "draft": false
+}

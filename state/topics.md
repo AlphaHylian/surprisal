@@ -20,11 +20,14 @@ through verify.py.
 
 
 - Your library has a million books and you need to check if one is missing, fast. Steps: a Bloom filter, k hash functions into a bit array, false positives but never false negatives; exact rate formula. (tech) [check] (added 2026-11-13)
-- Your group of friends needs to know who owes whom after a trip: minimise the number of payments (net balances, at most n-1 transfers; greedy settle-up as Splitwise does). (everyday) [check] (added 2026-11-16)
-- Ships at sea before GPS: dead reckoning with speed, heading and time, and how the error grows each hour (log line knots: 47 ft 3 in per 28 s). (history) [check] (added 2026-11-16)
 - Your phone guesses the next word: a bigram table from counts, why 'the' is followed by a noun, how much a typed letter narrows it (bits per letter). (tech) [check] (added 2026-11-16)
+- Your parking meter / bus ticket: why a 'pay for 2 hours, average stay 40 min' price beats per-minute pricing; expected revenue with a stay distribution. (everyday) [check] (added 2026-11-17)
+- Eratosthenes measured Earth with a shadow and a camel route: 7.2 degrees at Alexandria, 5,000 stadia to Syene, so 250,000 stadia around (history) [check: compare with 2026-10-16 earth-stick to avoid a repeat; pick a different angle, e.g. how big the stadion uncertainty is] (added 2026-11-17)
+- Your phone's battery percentage: why it jumps from 20% to 5%, coulomb counting vs voltage curves. (tech) [check] (added 2026-11-17)
 
 ## Used
+- Your group of friends needs to know who owes whom after a trip: minimise the number of payments (net balances, at most n-1 transfers; greedy settle-up as Splitwise does). (everyday) [check] (added 2026-11-16) — used 2026-11-17 12:00, settle-up, Fk2O3iS4MN0
+- Ships at sea before GPS: dead reckoning with speed, heading and time, and how the error grows each hour (log line knots: 47 ft 3 in per 28 s). (history) [check] (added 2026-11-16) — used 2026-11-17 20:00 (as chip-log: the knotted log line + dead reckoning), RwuL1iVRgn4
 - (long-form) doomsday-long: long-form of doomsday-rule (10 Nov) — used 2026-11-15 20:00, 1CMjJkdDRfA
 - You're ranking chess players who never played each other. Steps: Elo, expected score from the rating gap (400 points = 10:1), update by K times the surprise. Arpad Elo, adopted by FIDE 1970. (history) [check] (added 2026-11-13) — used 2026-11-15 12:00 (as everyday), elo-upset, EPvta1rA0_U
 - (follow-up idea) Envy-free cake for three: Selfridge-Conway (1960), at most 5 cuts; the moving knife (27 Oct) is only proportional, and its first taker always thinks someone else got at least as much. (everyday) [check] — used 2026-11-13 20:00, envy-free-cake, GrE00f8SBrQ

@@ -1,0 +1,18 @@
+{
+ "ok": true,
+ "problems": [],
+ "warnings": [],
+ "duration_s": 52.4,
+ "size_mb": 8.9,
+ "resolution": "1080x1920",
+ "caption_match_ratio": 0.9813664596273292,
+ "heard": "Count knots on a rope for 28 seconds, that's your speed. No GPS, no land in sight. The rope does the math. Mid -Atlantic 400 years ago. Where are you? Step 1. Throw a wooden board off the back. It grips the water and pulls rope off a reel. Step 2. Turn a 28 second sand glass and count the knots that slip out. The knots sit 47 feet 3 inches apart. How far 1 nautical mile an hour goes in 28 seconds. So 7 knots means 7 nautical miles an hour. But speed isn't position. Step 3. Log at every hour. 7 knots west for 4 hours, 28 miles west of your last fix. Uh -oh, a current you can't see. Just one knot puts you 24 miles off in a day. That rope is why ships and planes still measure speed in knots. Subscribe if you thought knots were just sailor slang.",
+ "music": "Investigations",
+ "music_gap_db": 8.0,
+ "speech_starts_at_s": 0.01,
+ "final_lufs": -14.9,
+ "voice_engine": "omnivoice",
+ "contact_sheet_every_s": 2.2,
+ "build_seconds": 167,
+ "draft": false
+}
