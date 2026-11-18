@@ -1,0 +1,18 @@
+{
+ "ok": true,
+ "problems": [],
+ "warnings": [],
+ "duration_s": 58.1,
+ "size_mb": 9.0,
+ "resolution": "1080x1920",
+ "caption_match_ratio": 0.975609756097561,
+ "heard": "Multiply any two numbers without a single times table. No calculator, nothing to memorize. Just doubling and adding. Egypt, over 3 ,500 years ago. Your job, 13 times 24. Step one, right one next to 24. Double both sides. Two and 48. Four and 96. Eight and 192. Step two, stop before the left side passes 13. The next one, 16 is too big. Now the clever part, which rows on the left add up to 13? Step three, eight plus four plus one. Tick those rows. Skip the two. Step four, add the right side. 192 plus 96 plus 24. That's 312 and 13 times 24 is 312. It never fails because every number splits into doubles exactly one way. That's binary and your computer's chip still multiplies like this. Your turn, 11 times 15. Which rows do you tick?",
+ "music": "Wallpaper",
+ "music_gap_db": 8.0,
+ "speech_starts_at_s": 0.01,
+ "final_lufs": -15.1,
+ "voice_engine": "omnivoice",
+ "contact_sheet_every_s": 2.4,
+ "build_seconds": 194,
+ "draft": false
+}

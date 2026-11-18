@@ -115,3 +115,5 @@ through verify.py.
 - 2026-11-09  enigma-crib (history, how-to, hook claim; no letter to itself, crib dragging, bombe 17,576 / 20 min)  not uploaded by the bot (Zapier task limit): sent to the owner for 20:00 Tallinn 9 Nov
 - 2026-11-16 12:00: snell-triangles (history, how-to, hook claim; Snellius 1615 triangulation, 5 km baseline -> 130 km, 107 km per degree, 38,653 km, 3.5% low)  uYMaq2BKPgs
 - 2026-11-16 20:00: thunder-count (everyday, how-to, hook versus; flash-to-bang, divide by 3, rumble = bolt length, second count gives arrival time)  TmpGGYSNJck
+- 2026-11-18 12:00: egypt-doubling (history, how-to, hook claim; Egyptian doubling multiplication 13 x 24 = 192 + 96 + 24, unique split into doubles = binary, shift-and-add)  bgMJmPeWIOQ
+- 2026-11-18 20:00: mpg-flip (everyday, how-to, hook versus; MPG illusion, 10->20 saves 500 gal vs 25->50 saves 200 per 10,000 miles, flip to gallons, Europe L/100 km)  7VEsgv1zrEM

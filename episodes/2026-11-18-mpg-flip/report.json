@@ -1,0 +1,18 @@
+{
+ "ok": true,
+ "problems": [],
+ "warnings": [],
+ "duration_s": 52.0,
+ "size_mb": 8.4,
+ "resolution": "1080x1920",
+ "caption_match_ratio": 0.9746835443037974,
+ "heard": "10 to 20 MPG saves more fuel than 25 to 50. Sounds backwards. The car gains 25, the truck only 10, and both double. Your family has a truck and a car, and you can replace one. Each drives 10 ,000 miles a year. Step one, flip the number. Don't ask miles per gallon. Ask gallons for the year. Step two, the truck. At 10, it burns 1 ,000 gallons. At 20, just 500. You save 500. Now the car, the one that gained 25. Step three, at 25, it burns 400 gallons. At 50, 200. You save only 200. Step four, push it to 100, and you'd save just 100 more. Every step up saves less than the last, so fix the thirstiest one first. That's why Europe counts liters per 100 kilometers. Two of these a day. Subscribe if you'd have picked the car.",
+ "music": "Somewhere Sunny",
+ "music_gap_db": 8.0,
+ "speech_starts_at_s": 0.01,
+ "final_lufs": -15.0,
+ "voice_engine": "omnivoice",
+ "contact_sheet_every_s": 2.2,
+ "build_seconds": 180,
+ "draft": false
+}

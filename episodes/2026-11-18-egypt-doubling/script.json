@@ -1,0 +1,76 @@
+{
+  "slug": "egypt-doubling",
+  "format": "short",
+  "series": "history",
+  "hook_style": "how-to",
+  "hook_type": "claim",
+  "angle": "claim hook: you can multiply any two numbers without a single times table (HookText 13 × 24 with no times table, over a blank papyrus with 13 × 24 = ?); rule out calculators and memorising: only doubling and adding; context: Egypt, over 3,500 years ago, your job is 13 x 24; step 1 write 1 next to 24 and double both: 2/48, 4/96, 8/192; step 2 stop before the left passes 13 (next is 16); re-hook: which rows add up to 13?; step 3 8 + 4 + 1, tick those, skip the 2; step 4 add the right side 192 + 96 + 24 = 312 = 13 x 24; payoff: every number splits into doubles exactly one way (binary), and your computer's chip still multiplies by shifting and adding; CTA comment checkable: 11 x 15, which rows? (8, 2, 1 -> 165). Series arm: history (12:00; yesterday's noon was everyday). Hook type claim (history + claim, the swapped pairing).",
+  "title": "How to multiply anything with no times table",
+  "description": "Egyptian scribes multiplied by doubling. For 13 x 24: write 1 next to 24 and keep doubling both sides (2 and 48, 4 and 96, 8 and 192), then tick the rows whose left side adds up to 13 (8 + 4 + 1) and add their right side: 192 + 96 + 24 = 312. It always works because every whole number splits into distinct powers of two in exactly one way, which is binary, and it is the same shift-and-add idea a computer's multiplier circuit uses. The method is in the Rhind and Moscow mathematical papyri (the Rhind papyrus dates to around 1550 BC, copied by the scribe Ahmes).\n\nNumbers checked in code: the table, the sum, the comment puzzle, that every number up to 10,000 splits into doubles one way only, and 200,000 random products. Sources: en.wikipedia.org/wiki/Ancient_Egyptian_multiplication, en.wikipedia.org/wiki/Rhind_Mathematical_Papyrus.\n\nThe math behind real problems, twice a day. Subscribe and the next one finds you.\nFound an error? Comment and it gets pinned.\n#math #mathematics #shorts",
+  "social_caption": "You can multiply any two numbers without a times table. Egyptian scribes did it 3,500 years ago with nothing but doubling.",
+  "tags": [
+    "egyptian multiplication",
+    "rhind papyrus",
+    "ancient egypt",
+    "mental math",
+    "binary",
+    "multiplication trick",
+    "math",
+    "maths",
+    "history"
+  ],
+  "music_moods": [
+    "curious"
+  ],
+  "facts_checked": [
+    "Ancient Egyptian multiplication: decompose one factor into powers of two, build a doubling table of the other, add the matching rows; needs only doubling, halving and addition; worked example 25 x 7 = 112 + 56 + 7; same idea as binary multiplier circuits (https://en.wikipedia.org/wiki/Ancient_Egyptian_multiplication)",
+    "The method appears in the Moscow and Rhind Mathematical Papyri; the Rhind papyrus dates to around 1550 BC, copied by the scribe Ahmes (Ahmose) (https://en.wikipedia.org/wiki/Rhind_Mathematical_Papyrus)",
+    "13 x 24: rows 1/24, 2/48, 4/96, 8/192, next 16 passes 13; 13 = 8 + 4 + 1; 192 + 96 + 24 = 312 = 13 x 24 (verify.py)",
+    "Every n up to 10,000 splits into distinct powers of two in exactly one way; 200,000 random products all correct (verify.py)",
+    "CTA: 11 x 15 -> rows 8, 2, 1 -> 120 + 30 + 15 = 165 (verify.py)"
+  ],
+  "beats": [
+    {
+      "id": "hook",
+      "say": "Multiply any two numbers without a single times table.",
+      "speed": 1.3
+    },
+    {
+      "id": "ruleout",
+      "say": "No calculator, nothing to memorise. Just doubling and adding."
+    },
+    {
+      "id": "context",
+      "say": "Egypt, over 3,500 years ago. Your job: 13 times 24."
+    },
+    {
+      "id": "double",
+      "say": "Step 1: write 1 next to 24. Double both sides. 2 and 48. 4 and 96. 8 and 192."
+    },
+    {
+      "id": "stop",
+      "say": "Step 2: stop before the left side passes 13. The next one, 16, is too big."
+    },
+    {
+      "id": "rehook",
+      "say": "Now the clever part. Which rows on the left add up to 13?"
+    },
+    {
+      "id": "tick",
+      "say": "Step 3: 8, plus 4, plus 1. Tick those rows. Skip the 2."
+    },
+    {
+      "id": "add",
+      "say": "Step 4: add their right side. 192, plus 96, plus 24. That's 312, and 13 times 24 is 312."
+    },
+    {
+      "id": "payoff",
+      "say": "It never fails, because every number splits into doubles exactly one way. That's binary, and your computer's chip still multiplies like this."
+    },
+    {
+      "id": "cta",
+      "say": "Your turn: 11 times 15. Which rows do you tick?"
+    }
+  ],
+  "music": "wallpaper.mp3"
+}

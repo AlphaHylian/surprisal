@@ -97,3 +97,8 @@ date,call,ok
 2026-11-17,analytics per-video totals,yes
 2026-11-17,upload settle-up (Fk2O3iS4MN0),yes
 2026-11-17,upload chip-log (RwuL1iVRgn4),yes
+2026-11-18,comments,yes
+2026-11-18,upload egypt-doubling (bgMJmPeWIOQ),yes
+2026-11-18,upload mpg-flip (timed out after 60s; never reached YouTube),no
+2026-11-18,check uploads playlist after timeout,yes
+2026-11-18,upload mpg-flip (7VEsgv1zrEM),yes
