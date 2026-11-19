@@ -1,0 +1,18 @@
+{
+ "ok": true,
+ "problems": [],
+ "warnings": [],
+ "duration_s": 48.4,
+ "size_mb": 10.1,
+ "resolution": "1080x1920",
+ "caption_match_ratio": 1.0,
+ "heard": "20 stops. More routes than seconds since the Big Bang. No computer tries them all. At a billion a second, that's 38 years. You drive the van. Today, nine stops. You want the shortest loop back home. Step one, always drive to the nearest stop you haven't done yet. It's fast. But look, the route crosses itself. It's 24 % longer than the best one. And that X is the clue. A shortest loop never crosses itself. Step two, find two roads that cross and flip the stretch between them. The loop always gets shorter. Step three, repeat until there's no X left. Now you're within 3 % of the best. UPS does this for 100 stops a day and says it cuts 100 million miles a year. So, five stops. How many different loops can you drive?",
+ "music": "Digital Lemonade",
+ "music_gap_db": 8.0,
+ "speech_starts_at_s": 0.01,
+ "final_lufs": -15.2,
+ "voice_engine": "omnivoice",
+ "contact_sheet_every_s": 2.0,
+ "build_seconds": 170,
+ "draft": false
+}

@@ -121,7 +121,7 @@ const ContextBody: React.FC = () => {
       <Headline>Today: 9 stops</Headline>
       <Camera keys={[[0, { zoom: 0.94 }], [tHome, { zoom: 1 }]]}>
         {P.map(([x, y], i) => i === 0 ? null : (
-          <At key={i} x={x} y={y}><Appear at={Math.max(0.05, t9 - 0.4 + i * 0.08)} from="pop" sfx={i % 3 === 1 ? undefined : null}>
+          <At key={i} x={x} y={y}><Appear at={0.05 + i * 0.08} from="pop" sfx={i % 3 === 1 ? undefined : null}>
             <div style={{ width: 54, height: 54, borderRadius: 27, background: C.ink, border: `6px solid ${C.bg}` }} /></Appear></At>
         ))}
         <At x={P[0][0]} y={P[0][1]}><Appear at={0.05} from="drop"><div style={{ width: 120, height: 120, borderRadius: 30, background: C.panel, border: `5px solid ${C.mint}`, display: "flex", alignItems: "center", justifyContent: "center" }}>
