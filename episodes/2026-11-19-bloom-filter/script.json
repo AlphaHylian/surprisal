@@ -1,0 +1,41 @@
+{
+  "slug": "bloom-filter",
+  "format": "short",
+  "series": "tech",
+  "hook_style": "how-to",
+  "hook_type": "versus",
+  "angle": "versus hook: checking a billion usernames takes 16 GB as a list, 1.2 GB as switches (HookText 1 billion names: 16 GB vs 1.2 GB, over a tall list of names next to a short row of switches); rule out: not compression, you never store a name, you keep a row of switches; context: someone signs up, is the name free, instantly; step 1 line up 9.6 billion switches, all off (1.2 GB); step 2 scramble each name with 7 hashes, each a switch number, flip those on (alex, mia, noah light 17 of 40 in the demo); step 3 a new name: hash it the same way, check its 7 (kai: one switch off) -> free, guaranteed; re-hook: all 7 on doesn't prove taken (sam197 was never added, all 7 on); 9.6 per name + 7 hashes = 1 false alarm in 100, only those check the real list; payoff: 99 in 100 free names never touch the big list, Chrome once checked links this way (Bloom, 1970); CTA subscribe (if you thought it kept the list). Experiment: claim vs versus (tech + versus at 20:00).",
+  "title": "How to check a billion usernames in 1.2 GB",
+  "description": "Storing a billion usernames at 16 characters each takes 16 GB. A Bloom filter answers \"is this name taken?\" with 1.2 GB instead: a row of 9.6 billion switches. Each name is scrambled by 7 hash functions into 7 switch numbers, and those switches are turned on. To test a new name, hash it the same way: if any of its 7 switches is off, the name was never added, guaranteed. If all 7 are on it's probably taken, but other names may have flipped them; with 9.6 switches per name and 7 hashes that false alarm happens about 1 time in 100, and only those names get checked against the real list. Burton Bloom described it in 1970; Chrome once used one to check links against its list of malicious sites, and databases like Cassandra and Bigtable still use them.\n\nNumbers checked in code: the sizing formulas (9.585 bits per name, 7 hashes, 1.0% false alarms) and a simulation with 100,000 names and 200,000 never-added test names (1.01% false alarms, no false 'free'). Source: Wikipedia, Bloom filter.\n\nThe math behind real problems, twice a day. Subscribe and the next one finds you.\nFound an error? Comment and it gets pinned.\n#math #mathematics #shorts",
+  "social_caption": "A billion usernames take 16 GB to store, but 1.2 GB is enough to tell you a name is free. Here's the row-of-switches trick behind it.",
+  "tags": [
+    "bloom filter",
+    "username taken",
+    "hash function",
+    "burton bloom",
+    "data structures",
+    "computer science",
+    "math",
+    "maths",
+    "programming"
+  ],
+  "music_moods": ["chill"],
+  "facts_checked": [
+    "Bloom filter: k hash functions set k bits; a test with any bit off means definitely not in the set; false positives possible, no false negatives; optimal k = (m/n) ln 2; fewer than 10 bits per element for 1% false positives; conceived by Burton Howard Bloom in 1970; Google Chrome previously used a Bloom filter to identify malicious URLs; Bigtable, Cassandra use them to skip disk lookups (https://en.wikipedia.org/wiki/Bloom_filter)",
+    "1 billion names x 16 bytes = 16 GB; 1% sizing: 9.585 bits per name = 1.198 GB; k = 6.64 -> 7; (1 - e^(-7/9.585))^7 = 1.004% (verify.py)",
+    "Simulation: 100,000 names in 958,506 bits, 7 hashes: every added name tests positive; 200,000 never-added names: 1.01% false alarms (verify.py)",
+    "Demo (40 switches): alex, mia, noah light 17; kai has one switch off (14) -> free; sam197 never added, all 7 on (verify.py)"
+  ],
+  "beats": [
+    { "id": "hook", "say": "A billion usernames: 16 gigabytes. Or just 1.2.", "speed": 1.3 },
+    { "id": "ruleout", "say": "It's not compression. You don't keep a single name. You keep a row of switches." },
+    { "id": "context", "say": "Someone signs up. You need to know, instantly: is that name free?" },
+    { "id": "row", "say": "Step 1: line up 9.6 billion switches, all off. That's 1.2 gigabytes." },
+    { "id": "add", "say": "Step 2: scramble each name with 7 different hashes. Each one gives a switch number. Flip those 7 on." },
+    { "id": "test", "say": "Step 3: a new name comes in. Scramble it the same way. If even one of its switches is off, nobody has it. Free, guaranteed." },
+    { "id": "rehook", "say": "But all 7 on doesn't prove it's taken. Other names may have flipped them." },
+    { "id": "rate", "say": "With 7 hashes and 9.6 switches per name, that false alarm hits 1 name in 100. Only those get checked against the real list." },
+    { "id": "payoff", "say": "So 99 in 100 free names never touch the big list. Chrome once checked links for malware this way." },
+    { "id": "cta", "say": "Subscribe if you thought it kept the list." }
+  ]
+}

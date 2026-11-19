@@ -1,0 +1,43 @@
+{
+  "slug": "delivery-route",
+  "format": "short",
+  "series": "everyday",
+  "hook_style": "how-to",
+  "hook_type": "claim",
+  "angle": "claim hook: 20 delivery stops have more possible loops than seconds since the Big Bang (HookText 20 stops: 1.2 quintillion routes, over a van and a tangle of route lines); rule out: no computer tries them all, a billion a second still takes 38 years; context: you drive a van, a smaller day, 9 stops, shortest loop home; step 1 always drive to the nearest stop you haven't done: fast, but it crosses itself and runs 24% longer than the best; re-hook: the fix is visible, look for an X; step 2 find two roads that cross and flip the bit between them: always shorter, two sides of a triangle beat the third; step 3 repeat until no X is left: within 3% of the best; payoff: UPS does this for ~100 stops a day per driver and says it cuts 100 million miles a year; CTA checkable comment question: 5 stops, how many loops? (12). Experiment: claim vs versus (everyday + claim at 12:00).",
+  "title": "How to plan 20 delivery stops when no computer can",
+  "description": "A van with 20 stops has 20!/2, about 1.2 quintillion, possible round trips: more than the seconds since the Big Bang, and 38 years of work at a billion routes a second. So drivers' software doesn't try them all. Start with the greedy route (always go to the nearest stop left), which is fast but crosses itself; on the 9-stop map in this video it's 24% longer than the best loop. Then find two roads that cross and reverse the stretch between them: by the triangle inequality the uncrossed loop is always shorter. Repeat until no crossing is left (the 2-opt method): here that lands within 3% of the best. UPS's ORION system plans routes of about 100 stops a day per driver and UPS credits it with cutting about 100 million miles a year.\n\nNumbers checked in code: 20!/2, the 38 years, 100,000 random crossings (uncrossing was always shorter), and the demo map solved exactly (Held-Karp). Sources: Wikipedia, Travelling salesman problem; FreightWaves on UPS ORION.\n\nThe math behind real problems, twice a day. Subscribe and the next one finds you.\nFound an error? Comment and it gets pinned.\n#math #mathematics #shorts",
+  "social_caption": "20 delivery stops have more possible routes than seconds since the Big Bang. Here's the trick delivery software uses to find a short one anyway.",
+  "tags": [
+    "travelling salesman problem",
+    "delivery route",
+    "route planning",
+    "ups orion",
+    "2-opt",
+    "nearest neighbour",
+    "math",
+    "maths",
+    "everyday math"
+  ],
+  "music_moods": ["upbeat"],
+  "facts_checked": [
+    "Depot + 20 stops: 20!/2 = 1,216,451,004,088,320,000 round trips (1.2 quintillion), 2.8x the 4.35e17 seconds since the Big Bang (13.787 billion years); at a billion a second, 38.5 years (verify.py)",
+    "Nearest neighbour heuristic: always go to the nearest unvisited city; on random maps it averages about 25% longer than the best (https://en.wikipedia.org/wiki/Travelling_salesman_problem)",
+    "2-opt: remove two edges and reconnect the other way; any tour with crossings can be made shorter without them (https://en.wikipedia.org/wiki/Travelling_salesman_problem); 100,000 random crossings, uncrossing always shorter (verify.py)",
+    "Demo map (depot + 9 stops): nearest neighbour 2,833 vs best 2,283 (Held-Karp) = 24% longer, 2 crossings; two flips: 2,646 then 2,357, no crossings, 3.2% over the best (verify.py)",
+    "UPS ORION: a typical driver day is about 100 stops; the software cuts about 100 million miles a year (https://www.freightwaves.com/?p=83401, quoting UPS)",
+    "CTA: 5 stops in a loop: 4!/2 = 12 (verify.py, brute force)"
+  ],
+  "beats": [
+    { "id": "hook", "say": "20 stops. More routes than seconds since the Big Bang.", "caption": "20 stops. More routes than seconds since the Big Bang.", "speed": 1.35 },
+    { "id": "ruleout", "say": "No computer tries them all. At a billion a second, that's 38 years." },
+    { "id": "context", "say": "You drive the van. Today, 9 stops. You want the shortest loop back home." },
+    { "id": "nearest", "say": "Step 1: always drive to the nearest stop you haven't done yet." },
+    { "id": "cost", "say": "It's fast. But look, the route crosses itself. It's 24% longer than the best one." },
+    { "id": "rehook", "say": "And that X is the clue. A shortest loop never crosses itself." },
+    { "id": "flip", "say": "Step 2: find two roads that cross, and flip the stretch between them. The loop always gets shorter." },
+    { "id": "repeat", "say": "Step 3: repeat until there's no X left. Now you're within 3% of the best." },
+    { "id": "payoff", "say": "UPS does this for 100 stops a day, and says it cuts 100 million miles a year." },
+    { "id": "cta", "say": "So, 5 stops. How many different loops can you drive?" }
+  ]
+}
