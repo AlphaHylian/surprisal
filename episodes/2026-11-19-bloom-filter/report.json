@@ -1,0 +1,20 @@
+{
+ "ok": false,
+ "problems": [
+  "speech starts at 0.17s; the first word must start at 0 (check the first beat is the first thing in construct() and nothing plays before it)"
+ ],
+ "warnings": [],
+ "duration_s": 56.7,
+ "size_mb": 3.4,
+ "resolution": "540x960",
+ "caption_match_ratio": 0.9580838323353293,
+ "heard": "A billion usernames, or just 1 .2, it's not compression. You don't keep a single name. You keep a row of switches. Someone signs up. You need to know instantly. Is that name free? Step one, line up 9 .6 billion switches all off. That's 1 .2 gigabytes. Step two, scramble each name with seven different hashes. Each one gives a switch number. Flip those seven on. Step three, a new name comes in. Scramble it the same way. If even one of its switches is off, nobody has it. Free, guaranteed. But all seven on doesn't prove it's taken. Other names may have flipped them. With seven hashes and 9 .6 switches per name, that false alarm hits one name in 100. Only those get checked against the real list. So 99 and 100 free names never touch the big list. Chrome once checked links for malware this way. Subscribe if you thought it kept the list.",
+ "music": "Airport Lounge",
+ "music_gap_db": 8.0,
+ "speech_starts_at_s": 0.17,
+ "final_lufs": -15.0,
+ "voice_engine": "omnivoice",
+ "contact_sheet_every_s": 2.4,
+ "build_seconds": 3010,
+ "draft": true
+}
