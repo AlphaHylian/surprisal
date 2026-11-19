@@ -19,11 +19,14 @@ through verify.py.
 
 
 
-- Your library has a million books and you need to check if one is missing, fast. Steps: a Bloom filter, k hash functions into a bit array, false positives but never false negatives; exact rate formula. (tech) [check] (added 2026-11-13)
 - Your phone guesses the next word: a bigram table from counts, why 'the' is followed by a noun, how much a typed letter narrows it (bits per letter). (tech) [check] (added 2026-11-16)
 - Your parking meter / bus ticket: why a 'pay for 2 hours, average stay 40 min' price beats per-minute pricing; expected revenue with a stay distribution. (everyday) [check] (added 2026-11-17)
 - Eratosthenes measured Earth with a shadow and a camel route: 7.2 degrees at Alexandria, 5,000 stadia to Syene, so 250,000 stadia around (history) [check: compare with 2026-10-16 earth-stick to avoid a repeat; pick a different angle, e.g. how big the stadion uncertainty is] (added 2026-11-17)
 - Your phone's battery percentage: why it jumps from 20% to 5%, coulomb counting vs voltage curves. (tech) [check] (added 2026-11-17)
+- Your Wi-Fi password QR / phone hotspot: why a 4-word passphrase beats 'P@ssw0rd1' (entropy in bits, 7,776-word list: 51.7 bits vs a guessable pattern). (tech) [check: compare with 2026-10-08 password-length and 2026-10-11 password-long; needs a clearly new angle] (added 2026-11-19)
+- Your two-player game night: why rock-paper-scissors bots beat people (humans repeat after a win, switch after a loss; a frequency table predicts the next throw). (everyday) [check: a published study with the win-stay/lose-shift numbers] (added 2026-11-19)
+- Your recipe for 4 needs to feed 10: why you can't just multiply cooking time (volume grows with the cube, surface with the square; a turkey's time grows ~ weight^(2/3)). (everyday) [check] (added 2026-11-19)
+- Your phone's face unlock says 1 in 1,000,000 false match vs 1 in 50,000 for a fingerprint: what those rates mean across 1 billion unlock attempts. (tech) [check: Apple's published Face ID / Touch ID numbers] (added 2026-11-19)
 
 ## Used
 - Your group of friends needs to know who owes whom after a trip: minimise the number of payments (net balances, at most n-1 transfers; greedy settle-up as Splitwise does). (everyday) [check] (added 2026-11-16) — used 2026-11-17 12:00, settle-up, Fk2O3iS4MN0
@@ -117,3 +120,5 @@ through verify.py.
 - 2026-11-16 20:00: thunder-count (everyday, how-to, hook versus; flash-to-bang, divide by 3, rumble = bolt length, second count gives arrival time)  TmpGGYSNJck
 - 2026-11-18 12:00: egypt-doubling (history, how-to, hook claim; Egyptian doubling multiplication 13 x 24 = 192 + 96 + 24, unique split into doubles = binary, shift-and-add)  bgMJmPeWIOQ
 - 2026-11-18 20:00: mpg-flip (everyday, how-to, hook versus; MPG illusion, 10->20 saves 500 gal vs 25->50 saves 200 per 10,000 miles, flip to gallons, Europe L/100 km)  7VEsgv1zrEM
+- 2026-11-19 12:00 (Gs3sWT06SKo): Your delivery van has 20 stops: more routes than seconds since the Big Bang. Nearest stop first (24% too long on the demo), then uncross crossings (2-opt), within 3%; UPS ORION. (everyday, claim)
+- 2026-11-19 20:00 (-Wg9h33pYeA): Check a billion usernames in 1.2 GB instead of 16: Bloom filter, 7 hashes, 9.6 bits per name, 1% false alarms; Chrome once used one. (tech, versus) [was: library / million books Bloom filter idea]

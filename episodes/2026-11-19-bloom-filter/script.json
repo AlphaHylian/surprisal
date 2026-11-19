@@ -27,7 +27,7 @@
     "Demo (40 switches): alex, mia, noah light 17; kai has one switch off (14) -> free; sam197 never added, all 7 on (verify.py)"
   ],
   "beats": [
-    { "id": "hook", "say": "A billion usernames: 16 gigabytes. Or just 1.2.", "speed": 1.3 },
+    { "id": "hook", "say": "Store a billion names: 16 gigabytes, or 1.2.", "speed": 1.2 },
     { "id": "ruleout", "say": "It's not compression. You don't keep a single name. You keep a row of switches." },
     { "id": "context", "say": "Someone signs up. You need to know, instantly: is that name free?" },
     { "id": "row", "say": "Step 1: line up 9.6 billion switches, all off. That's 1.2 gigabytes." },
