@@ -1,0 +1,80 @@
+{
+  "slug": "dice-corners",
+  "format": "short",
+  "series": "everyday",
+  "hook_style": "how-to",
+  "hook_type": "versus",
+  "angle": "versus hook: a corner on 6 and 8 vs a corner on 2 and 12, one pays 5 times as often (HookText 6 + 8 vs 2 + 12: 5x the cards, over two number tokens each side); rule out: every number gets one roll, so it feels even, it isn't; context: two dice make 36 combinations, count each total; step 1 12 needs 6-6, 2 needs 1-1, one way each; step 2 8 has five ways 2-6 3-5 4-4 5-3 6-2, same for 6; result 10 vs 2 per 36 rolls = 5x; re-hook: the most common roll isn't on the board; step 3 7 has six ways, 1 roll in 6, and pays nobody (the robber); step 4 the dots under each number are its ways, add the dots; payoff: corner 6-8-5 = 14 cards every 36 rolls, 2-12-3 = 4; CTA checkable comment: corner 4-9-10, how many dots? (10). Experiment: claim vs versus (everyday + versus at 12:00).",
+  "title": "Why 6 and 8 pay 5 times more than 2 and 12",
+  "description": "Two dice make 36 combinations, and they don't share them evenly. A 2 or a 12 needs one exact pair (1-1 or 6-6), but a 6 or an 8 can be made 5 ways each (2-6, 3-5, 4-4, 5-3, 6-2), so over 36 rolls a spot on 6 and 8 pays about 10 times while a spot on 2 and 12 pays twice. The 7 is the most common roll of all (6 ways, 1 in 6), which is why board games like Catan give it no tile. The dots under each number token are exactly its ways out of 36: add them up, and a 6-8-5 corner expects 14 cards every 36 rolls against 4 for a 2-12-3 corner.\n\nNumbers checked in code: all 36 combinations counted, plus 1,000,000 simulated rolls (6 and 8 came up 4.99 times as often as 2 and 12). Sources: Wikipedia, Catan; Stanford CS, Dice Odds for Settlers of Catan.\n\nThe math behind real problems, twice a day. Subscribe and the next one finds you.\nFound an error? Comment and it gets pinned.\n#math #mathematics #shorts",
+  "social_caption": "A board-game corner on 6 and 8 pays five times as often as one on 2 and 12. Here's how to count it from two dice.",
+  "tags": [
+    "catan strategy",
+    "dice probability",
+    "two dice",
+    "board games",
+    "settlers of catan",
+    "probability",
+    "math",
+    "maths",
+    "everyday math"
+  ],
+  "music_moods": [
+    "upbeat"
+  ],
+  "facts_checked": [
+    "Two dice: 36 ordered combinations; 2 and 12 one way each; 6 and 8 five ways each (2-6, 3-5, 4-4, 5-3, 6-2); 7 six ways = 1 in 6 (verify.py, full enumeration)",
+    "6+8 = 10 per 36 rolls vs 2+12 = 2: 5x; simulated 1,000,000 rolls: 4.99x (verify.py)",
+    "Catan: two six-sided dice decide which hexes produce; a settlement next to the rolled number gets one card; a 7 moves the robber (https://en.wikipedia.org/wiki/Catan)",
+    "Number tokens carry dots equal to the ways out of 36 (one dot on 2/12 up to five on 6/8), and there is no 7 token (https://cs.stanford.edu/people/nick/settlers/DiceOddsSettlers.html)",
+    "Corner 6-8-5 = 5+5+4 = 14 per 36 rolls; corner 2-12-3 = 1+1+2 = 4 (verify.py)",
+    "CTA: corner 4-9-10 = 3+4+3 = 10 dots (verify.py)"
+  ],
+  "beats": [
+    {
+      "id": "hook",
+      "say": "6 and 8, or 2 and 12? One pays five times more.",
+      "speed": 1.3
+    },
+    {
+      "id": "ruleout",
+      "say": "Each number gets one roll at a time, so it feels even. It isn't."
+    },
+    {
+      "id": "context",
+      "say": "Two dice make 36 combinations. Count how many land on each total."
+    },
+    {
+      "id": "rare",
+      "say": "A 12 needs six and six. One way. A 2 needs one and one. One way."
+    },
+    {
+      "id": "common",
+      "say": "An 8 has five ways. Two and six, three and five, four and four, five and three, six and two. Same for 6."
+    },
+    {
+      "id": "result",
+      "say": "So every 36 rolls, your 6 and 8 pay 10 times. Your 2 and 12 pay twice."
+    },
+    {
+      "id": "rehook",
+      "say": "But the most common roll isn't on the board at all."
+    },
+    {
+      "id": "seven",
+      "say": "7 has six ways. One roll in six. And it pays nobody. That's the robber."
+    },
+    {
+      "id": "dots",
+      "say": "Those dots under each number? They're its ways. So just add the dots."
+    },
+    {
+      "id": "payoff",
+      "say": "A corner on 6, 8 and 5 gets 14 cards every 36 rolls. 2, 12 and 3 gets 4."
+    },
+    {
+      "id": "cta",
+      "say": "So your corner touches 4, 9 and 10. How many dots is that?"
+    }
+  ]
+}

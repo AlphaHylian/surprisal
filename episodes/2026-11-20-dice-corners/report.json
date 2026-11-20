@@ -1,0 +1,18 @@
+{
+ "ok": true,
+ "problems": [],
+ "warnings": [],
+ "duration_s": 55.3,
+ "size_mb": 10.6,
+ "resolution": "1080x1920",
+ "caption_match_ratio": 0.9761904761904762,
+ "heard": "six and eight are two and twelve. One pays five times more. Each number gets one roll at a time, so it feels even. It isn't. Two dice make 36 combinations. Count how many land on each total. A twelve needs six and six. One way, a two needs one and one. One way, an eight has five ways. Two and six, three and five, four and four, five and three, six and two. Same for six. So every 36 rolls, you're six and eight, pay ten times. You're two and twelve, pay twice. But the most common roll isn't on the board at all. Seven has six ways. One roll and six. And it pays nobody. That's the robber. Those dots under each number, they're its ways. So just add the dots. A corner on six, eight and five gets fourteen cards every 36 rolls. Two, twelve and three gets four. So your corner touches four, nine and ten. How many dots is that?",
+ "music": "Tech Talk",
+ "music_gap_db": 8.0,
+ "speech_starts_at_s": 0.0,
+ "final_lufs": -14.9,
+ "voice_engine": "omnivoice",
+ "contact_sheet_every_s": 2.3,
+ "build_seconds": 277,
+ "draft": false
+}
