@@ -1,0 +1,18 @@
+{
+ "ok": true,
+ "problems": [],
+ "warnings": [],
+ "duration_s": 59.1,
+ "size_mb": 10.5,
+ "resolution": "1080x1920",
+ "caption_match_ratio": 0.9337016574585635,
+ "heard": "Your phone opens for 166 ,000 strangers, not hackers, not copies. Just strangers whose finger happens to pass. Your phone's maker says a random finger gets in one time in 50 ,000. Your phone never keeps a picture of your print. It keeps a map of your ridges and scores every touch against it. No touch is perfect, so it can't demand a perfect score. It sets a bar and one stranger and 50 ,000 clears it. Now take 8 .3 billion people, divide by 50 ,000. That's 166 ,000. So why is your phone safe? One more number, five. After five misses it wants your passcode. So a thief gets one chance in 10 ,000, like guessing a four -digit pin once. Face unlocks that's the bar 20 times higher, one in a million. About 8 ,300 faces. 166 ,000 people could open your phone. A thief just gets five tries to find one. Subscribe if you thought your fingerprint was one of a kind.",
+ "music": "Somewhere Sunny",
+ "music_gap_db": 8.0,
+ "speech_starts_at_s": 0.01,
+ "final_lufs": -15.1,
+ "voice_engine": "omnivoice",
+ "contact_sheet_every_s": 2.5,
+ "build_seconds": 188,
+ "draft": false
+}

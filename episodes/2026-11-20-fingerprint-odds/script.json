@@ -1,0 +1,78 @@
+{
+  "slug": "fingerprint-odds",
+  "format": "short",
+  "series": "tech",
+  "hook_style": "how-to",
+  "hook_type": "claim",
+  "angle": "claim hook: about 166,000 people on Earth could unlock your phone with their finger (HookText 166,000 fingers open your phone, over a phone with a fingerprint and a crowd of tiny people); rule out: not hackers, not copies, just strangers whose finger passes; context: Apple says a random finger gets in 1 in 50,000 times; step 1 the phone stores no picture, only a map of your ridges, and scores every touch; step 2 no touch is perfect, so it sets a bar, passed by 1 stranger in 50,000; step 3 8.3 billion / 50,000 = 166,000; re-hook: why isn't your phone in danger? one more number: 5; step 4 after 5 misses it wants the passcode: 5 tries = 1 in 10,000, a 4-digit PIN guessed once; step 5 face unlock sets the bar 20x higher, 1 in a million: ~8,300 faces, 5 tries 1 in 200,000; payoff: 166,000 people could open it, a thief gets 5 tries to find one; CTA subscribe (if you thought your fingerprint was one of a kind; loops to the hook). Experiment: claim vs versus (tech + claim at 20:00).",
+  "title": "166,000 people could unlock your phone",
+  "description": "Apple says the chance a random person's finger unlocks Touch ID is 1 in 50,000 (one enrolled finger), so across 8.3 billion people about 166,000 fingers would pass. The phone stores no image, only a mathematical map of your ridges, and every touch is scored against it; because no touch is perfect, the bar is set so about 1 stranger in 50,000 clears it. What keeps you safe is the limit: after 5 failed tries it asks for the passcode, so a thief with random fingers has about a 1 in 10,000 chance, the same as guessing a 4-digit PIN once. Face ID sets the bar at less than 1 in 1,000,000: about 8,300 people, 1 in 200,000 over 5 tries (higher odds for twins, look-alike siblings and children under 13).\n\nNumbers checked in code, with 2,000,000 simulated thieves. Sources: Apple Support, About Touch ID advanced security technology; Apple Support, About Face ID advanced technology; UN World Population Prospects 2024 (8.3 billion in 2026).\n\nThe math behind real problems, twice a day. Subscribe and the next one finds you.\nFound an error? Comment and it gets pinned.\n#math #mathematics #shorts",
+  "social_caption": "About 166,000 people on Earth have a finger that would unlock your phone. Here's the math, and the one number that keeps you safe anyway.",
+  "tags": [
+    "touch id",
+    "fingerprint unlock",
+    "face id",
+    "phone security",
+    "biometrics",
+    "false match rate",
+    "probability",
+    "math",
+    "maths"
+  ],
+  "music_moods": [
+    "upbeat"
+  ],
+  "facts_checked": [
+    "Touch ID: the probability a random person could unlock with their fingerprint is 1 in 50,000 with a single enrolled finger; 5 unsuccessful attempts before the password is required; no fingerprint images stored, only a mathematical representation (https://support.apple.com/en-us/105095)",
+    "Face ID: less than 1 in 1,000,000 with a single enrolled appearance; 5 unsuccessful attempts before a passcode is required; higher for twins, look-alike siblings and children under 13 (https://support.apple.com/en-us/102381)",
+    "World population mid-2026 about 8.3 billion (UN World Population Prospects 2024, via https://statisticstimes.com/demographics/world-population.php)",
+    "8.3 billion / 50,000 = 166,000; / 1,000,000 = 8,300; 5 tries: 1 in 10,000 (finger), 1 in 200,000 (face); 2,000,000 simulated thieves: 1 in ~9,300 (verify.py)"
+  ],
+  "beats": [
+    {
+      "id": "hook",
+      "say": "Your phone opens for 166,000 strangers.",
+      "speed": 1.35
+    },
+    {
+      "id": "ruleout",
+      "say": "Not hackers. Not copies. Just strangers whose finger happens to pass."
+    },
+    {
+      "id": "context",
+      "say": "Your phone's maker says a random finger gets in one time in 50,000."
+    },
+    {
+      "id": "map",
+      "say": "Your phone never keeps a picture of your print. It keeps a map of your ridges, and scores every touch against it."
+    },
+    {
+      "id": "bar",
+      "say": "No touch is perfect, so it can't demand a perfect score. It sets a bar, and one stranger in 50,000 clears it."
+    },
+    {
+      "id": "world",
+      "say": "Now take 8.3 billion people, divide by 50,000. That's 166,000."
+    },
+    {
+      "id": "rehook",
+      "say": "So why is your phone safe? One more number. 5."
+    },
+    {
+      "id": "tries",
+      "say": "After 5 misses, it wants your passcode. So a thief gets one chance in 10,000, like guessing a 4-digit PIN once."
+    },
+    {
+      "id": "face",
+      "say": "Face unlock sets the bar 20 times higher. One in a million. About 8,300 faces."
+    },
+    {
+      "id": "payoff",
+      "say": "166,000 people could open your phone. A thief just gets 5 tries to find one."
+    },
+    {
+      "id": "cta",
+      "say": "Subscribe if you thought your fingerprint was one of a kind."
+    }
+  ]
+}
