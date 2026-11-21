@@ -3,8 +3,8 @@
  "problems": [],
  "warnings": [],
  "duration_s": 55.8,
- "size_mb": 3.3,
- "resolution": "540x960",
+ "size_mb": 9.4,
+ "resolution": "1080x1920",
  "caption_match_ratio": 0.9647058823529412,
  "heard": "Double your turkey and it needs only 60 % more time. Minutes per pound says double it. That's six hours and a dry bird. Your 12 pound turkey takes three hours at 325. This year, it's 24 pounds. Forget the weight. Heat only cares how far it has to go to reach the middle. Double the weight and every side grows by the cube root of two. Just 26 % thicker. So 26 % more time, no. Heat doesn't walk in at a steady speed. It spreads and spreading slows down. Twice as deep takes four times as long. So multiply 1 .26 by 1 .26. That's 1 .59, about 60 % more. Three hours becomes four and three quarters. The USDA chart says four and a half to five. Still, trust the thermometer. 165 in the thickest part. So your turkey is eight times as heavy. How much longer does it cook?",
  "music": "Digital Lemonade",
@@ -13,6 +13,6 @@
  "final_lufs": -15.1,
  "voice_engine": "omnivoice",
  "contact_sheet_every_s": 2.3,
- "build_seconds": 115,
- "draft": true
+ "build_seconds": 279,
+ "draft": false
 }
