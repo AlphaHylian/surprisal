@@ -1,0 +1,32 @@
+{
+  "slug": "bad-commit",
+  "format": "short",
+  "series": "tech",
+  "hook_style": "how-to",
+  "hook_type": "versus",
+  "angle": "versus hook: your app broke, check 1,000 changes or just 10 (HookText 1,000 changes vs 10 tests, over a grid of 1,000 cells with one hidden red one); rule out: not a smarter debugger, not luck, you stop checking in order; context: it worked last week, 1,000 changes since, one broke the login; step 1 jump to 500 and test: works, so the bug came later, 500 suspects gone in one test; step 2 jump to 750: broken, now between 500 and 750; re-hook: every test cuts the pile in half whatever the answer, how many cuts from 1,000 to 1?; step 3 500 250 125 63 32 16 8 4 2 1: ten tests; step 4 it barely grows: a million 20, a billion 30; payoff git bisect picks the middle each time, Linux kernel developers use it to find the change that broke a release; CTA subscribe (if you'd have started at change one). Experiment: claim vs versus (tech + versus at 20:00).",
+  "title": "How to find the 1 bad change in 1,000 with 10 tests",
+  "description": "When one of 1,000 changes broke your app, don't test them in order. Test the middle one: if it works, the bug came later; if it's broken, it came earlier. Either way half the suspects are gone, so 1,000 becomes 500, 250, 125, 63, 32, 16, 8, 4, 2, 1: ten tests. A million changes takes 20 and a billion 30. Git does this for you with git bisect, which the Linux kernel docs use to find the change that broke a release.\n\nNumbers checked in code: every possible bad change among 1,000 tested (worst case 10 tests), plus 100,000 random ones (average 9.98). Sources: git-scm.com, git-bisect documentation; docs.kernel.org, Bisecting a bug.\n\nThe math behind real problems, twice a day. Subscribe and the next one finds you.\nFound an error? Comment and it gets pinned.\n#math #mathematics #shorts",
+  "social_caption": "One of 1,000 changes broke your app, and you can find it in 10 tests. Here's the halving trick behind git bisect.",
+  "tags": ["git bisect", "binary search", "debugging", "programming", "software engineering", "computer science", "algorithms", "math", "maths", "coding"],
+  "music_moods": ["upbeat"],
+  "facts_checked": [
+    "git bisect 'uses a binary search algorithm to find which commit in your project's history introduced a bug': mark a bad and a good commit, it picks one between, you say good or bad, until it finds the exact commit; its own example prints '675 revisions left to test after this (roughly 10 steps)' (https://git-scm.com/docs/git-bisect)",
+    "Linux kernel docs: how to use git bisect 'to find the source code change that broke something', e.g. after upgrading from Linux 6.0 to 6.1 (https://docs.kernel.org/admin-guide/bug-bisect.html)",
+    "1,000 changes: worst case 10 tests over all 1,000 possible bad changes; 100,000 random ones: 9 to 10 tests, mean 9.98 (verify.py)",
+    "Halving chain rounding up: 500, 250, 125, 63, 32, 16, 8, 4, 2, 1 = 10 tests (verify.py)",
+    "A million changes: 20 tests; a billion: 30 (ceil log2; verify.py)"
+  ],
+  "beats": [
+    {"id": "hook", "say": "Your app broke. Check 1,000 changes, or just 10?", "speed": 1.25},
+    {"id": "ruleout", "say": "Not a smarter debugger, and not luck. You just stop checking in order."},
+    {"id": "context", "say": "Last week it worked. Since then, your team made 1,000 changes, and one of them broke the login."},
+    {"id": "half", "say": "Jump to change 500 and test it. It works? Then the bug came later. 500 suspects gone in one test."},
+    {"id": "again", "say": "Jump to 750. Broken? Now it's between 500 and 750."},
+    {"id": "rehook", "say": "Every test cuts the pile in half, whatever the answer. So how many cuts from 1,000 down to 1?"},
+    {"id": "count", "say": "500, 250, 125, 63, 32, 16, 8, 4, 2, 1. Ten tests."},
+    {"id": "grow", "say": "And it barely grows. A million changes? 20 tests. A billion? 30."},
+    {"id": "payoff", "say": "Git does it for you. Git bisect picks the middle every time, and Linux developers use it to find the change that broke a release."},
+    {"id": "cta", "say": "Subscribe if you'd have started at change one."}
+  ]
+}

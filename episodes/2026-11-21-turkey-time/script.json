@@ -1,0 +1,34 @@
+{
+  "slug": "turkey-time",
+  "format": "short",
+  "series": "everyday",
+  "hook_style": "how-to",
+  "hook_type": "claim",
+  "angle": "claim hook: double your turkey and it needs only 60% more time (HookText 2x the turkey, only +60% time, over a small and a big roast with clocks 3 h and 4 h 45); rule out: minutes per pound says double it, 6 hours, a dry bird; context: your 12 lb turkey takes 3 h at 325, this year it's 24 lb; step 1 forget the weight, heat cares about the distance to the middle; step 2 double the weight, every side grows by the cube root of 2: 26% thicker; re-hook: so 26% more time? no, heat doesn't walk in at a steady speed; step 3 it spreads, twice as deep takes 4x as long; step 4 1.26 x 1.26 = 1.59, about 60%; payoff 3 h -> 4 h 45, USDA chart says 4.5 to 5; trust the thermometer, 165 F; CTA checkable comment: 8x as heavy, how much longer? (4x). Experiment: claim vs versus (everyday + claim at 12:00).",
+  "title": "Why a turkey twice as big doesn't take twice as long",
+  "description": "Heat doesn't care how much your turkey weighs, only how far it has to travel to reach the middle. Double the weight and every side grows by the cube root of 2, just 26%, but heat spreads by diffusion, so the time grows with the square of that distance: 1.26 x 1.26 = 1.59, about 60% more. A 12 lb bird at 3 hours becomes about 4 h 45 min at 24 lb, right inside the USDA's 4.5 to 5 hours, while doubling the minutes per pound would give 6. The chart is only a guide: the bird is done when the thickest part reads 165 F.\n\nNumbers checked in code: a simulated sphere heated from its surface (2x the mass took 1.587x as long) and 100,000-trial random walks (twice as deep took 4x the steps); the USDA chart's own times grow like weight to the power 0.65. Sources: USDA roasting timetable (via University of Illinois Extension); Wikipedia, Fourier number.\n\nThe math behind real problems, twice a day. Subscribe and the next one finds you.\nFound an error? Comment and it gets pinned.\n#math #mathematics #shorts",
+  "social_caption": "A turkey twice as heavy needs only about 60% more time in the oven. Here's the square-cube math that says why.",
+  "tags": ["turkey cooking time", "thanksgiving turkey", "roasting time", "heat diffusion", "square cube law", "cooking math", "math", "maths", "physics", "everyday math"],
+  "music_moods": ["upbeat"],
+  "facts_checked": [
+    "USDA roasting timetable for fresh or thawed turkey at 325 F, unstuffed: 8 to 12 lb 2 3/4 to 3 hours; 12 to 14 lb 3 to 3 3/4; 20 to 24 lb 4 1/2 to 5 hours; safe at 165 F, checked in the innermost thigh and wing and thickest part of the breast (https://extension.illinois.edu/turkey/traditional-roast-turkey-unstuffed)",
+    "Heat diffusion time scale t_d = L^2 / alpha: time grows with the square of the distance (https://en.wikipedia.org/wiki/Fourier_number)",
+    "Double the mass, same shape: every length x 2^(1/3) = 1.26; time x 1.26^2 = 1.59 (verify.py); simulated sphere: 1.587x; 100,000-trial random walks: twice as deep = ~4x the steps (verify.py)",
+    "3 h x 1.587 = 4.76 h = 4 h 46 min, inside the USDA 4.5 to 5 h; doubling gives 6 h (verify.py)",
+    "USDA chart midpoints grow like weight^0.65, close to the predicted 2/3 (verify.py)",
+    "CTA: 8x the mass = 2x every length = 4x the time (verify.py, simulated 4.00x)"
+  ],
+  "beats": [
+    {"id": "hook", "say": "Double your turkey, and it needs only 60% more time.", "speed": 1.25},
+    {"id": "ruleout", "say": "Minutes per pound says double it. That's 6 hours, and a dry bird."},
+    {"id": "context", "say": "Your 12 pound turkey takes 3 hours at 325. This year, it's 24 pounds."},
+    {"id": "middle", "say": "Forget the weight. Heat only cares how far it has to go to reach the middle."},
+    {"id": "thick", "say": "Double the weight, and every side grows by the cube root of 2. Just 26% thicker."},
+    {"id": "rehook", "say": "So 26% more time? No. Heat doesn't walk in at a steady speed."},
+    {"id": "square", "say": "It spreads, and spreading slows down. Twice as deep takes four times as long."},
+    {"id": "math", "say": "So multiply 1.26 by 1.26. That's 1.59. About 60% more."},
+    {"id": "payoff", "say": "3 hours becomes 4 and three quarters. The USDA chart says 4 and a half to 5."},
+    {"id": "check", "say": "Still, trust the thermometer: 165 in the thickest part."},
+    {"id": "cta", "say": "So your turkey is 8 times as heavy. How much longer does it cook?"}
+  ]
+}
