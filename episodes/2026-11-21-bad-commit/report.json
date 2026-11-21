@@ -1,0 +1,18 @@
+{
+ "ok": true,
+ "problems": [],
+ "warnings": [],
+ "duration_s": 58.4,
+ "size_mb": 11.9,
+ "resolution": "1080x1920",
+ "caption_match_ratio": 0.9702380952380952,
+ "heard": "Your app broke. Check 1 ,000 changes or just 10. Not a smarter debugger and not luck. You just stop checking in order. Last week it worked. Since then, your team made 1 ,000 changes and one of them broke the login. Jump to change 500 and test it. It works. Then the bug came later. 500 suspects gone in one test. Jump to 750. Broken. Now it's between 500 and 750. Every test cuts the pile in half, whatever the answer. So how many cuts from 1 ,000 down to 1? 500, 250, 125, 63, 32, 16, 8, 4, 2, 1. 10 tests and it barely grows. A million changes, 20 tests, a billion, 30. Get does it for you. Get bisect, picks the middle every time. And Linux developers use it to find the change that broke a release. Subscribe if you'd have started at Change 1.",
+ "music": "Somewhere Sunny",
+ "music_gap_db": 8.0,
+ "speech_starts_at_s": 0.0,
+ "final_lufs": -15.0,
+ "voice_engine": "omnivoice",
+ "contact_sheet_every_s": 2.4,
+ "build_seconds": 192,
+ "draft": false
+}

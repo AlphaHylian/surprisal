@@ -25,10 +25,11 @@ through verify.py.
 - Your phone's battery percentage: why it jumps from 20% to 5%, coulomb counting vs voltage curves. (tech) [check] (added 2026-11-17)
 - Your Wi-Fi password QR / phone hotspot: why a 4-word passphrase beats 'P@ssw0rd1' (entropy in bits, 7,776-word list: 51.7 bits vs a guessable pattern). (tech) [check: compare with 2026-10-08 password-length and 2026-10-11 password-long; needs a clearly new angle] (added 2026-11-19)
 - Your two-player game night: why rock-paper-scissors bots beat people (humans repeat after a win, switch after a loss; a frequency table predicts the next throw). (everyday) [check: a published study with the win-stay/lose-shift numbers] (added 2026-11-19) (2026-11-20: Wang, Xu & Zhou, Sci. Rep. 2014, arXiv 1404.5199: 360 Zhejiang students, 300 rounds; winners repeat more, losers shift 'clockwise' R->S; exact rates only in figures, no table found)
-- Your recipe for 4 needs to feed 10: why you can't just multiply cooking time (volume grows with the cube, surface with the square; a turkey's time grows ~ weight^(2/3)). (everyday) [check] (added 2026-11-19)
 
 
 ## Used
+- Your recipe for 4 needs to feed 10: why you can't just multiply cooking time (volume grows with the cube, surface with the square; a turkey's time grows ~ weight^(2/3)). (everyday) [check] (added 2026-11-19) — used 2026-11-21 12:00 (as turkey-time: 2x the weight = 26% thicker, diffusion time ~ distance^2, +59%; 12 lb 3 h -> 24 lb 4 h 45, USDA 4.5-5 h), 7BIKpNqHhqs
+- (new, not in Ready) Find the 1 bad change in 1,000 with 10 tests: binary search / git bisect, 500 250 ... 1, a million 20, a billion 30. (tech, versus) — used 2026-11-21 20:00, bad-commit, NsmVJmrIdHU
 - Your phone's face unlock says 1 in 1,000,000 false match vs 1 in 50,000 for a fingerprint: what those rates mean across 1 billion unlock attempts. (tech) [check: Apple's published Face ID / Touch ID numbers] (added 2026-11-19) — used 2026-11-20 20:00 (as fingerprint-odds: 1 in 50,000 x 8.3 billion = 166,000, 5 tries = 1 in 10,000), ASpG0e59fFY
 - (new, not in Ready) Two-dice board-game corners: 6 and 8 five ways each vs 2 and 12 one way, 10 vs 2 per 36 rolls, 7 = 1 in 6 pays nobody, token dots = ways, corner 6-8-5 14 vs 2-12-3 4; CTA 4-9-10 (10). (everyday) — used 2026-11-20 12:00, dice-corners, MHLj33EiKn4
 - Your group of friends needs to know who owes whom after a trip: minimise the number of payments (net balances, at most n-1 transfers; greedy settle-up as Splitwise does). (everyday) [check] (added 2026-11-16) — used 2026-11-17 12:00, settle-up, Fk2O3iS4MN0

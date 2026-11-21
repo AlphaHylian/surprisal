@@ -67,9 +67,9 @@ const RuleoutBody: React.FC = () => {
       <Headline>Stop checking in order</Headline>
       <At x={300} y={600}><Appear at={0.05} from="pop"><div style={{ display: "flex", alignItems: "center", gap: 14 }}><Icon name="Bug" size={80} color={C.muted} /><Text size={48} color={C.muted}>debugger</Text></div></Appear></At>
       <At x={780} y={600}><Appear at={tLuck - 0.3} from="pop"><div style={{ display: "flex", alignItems: "center", gap: 14 }}><Icon name="Clover" size={80} color={C.muted} /><Text size={48} color={C.muted}>luck</Text></div></Appear></At>
-      <At x={300} y={600}><Appear at={tLuck - 0.1} from="slam"><Text size={120} color={C.coral}>✗</Text></Appear></At>
-      <At x={780} y={600}><Appear at={tLuck + 0.3} from="slam"><Text size={120} color={C.coral}>✗</Text></Appear></At>
-      <At x={540} y={880}><Appear at={tOrder - 1.2} from="up"><div style={{ fontFamily: F.mono, fontSize: 64, color: C.ink }}>test #{scan} of 1,000…</div></Appear></At>
+      <At x={300} y={720}><Appear at={tLuck - 0.1} from="slam"><Text size={110} color={C.coral}>✗</Text></Appear></At>
+      <At x={780} y={720}><Appear at={tLuck + 0.3} from="slam"><Text size={110} color={C.coral}>✗</Text></Appear></At>
+      <At x={540} y={940}><Appear at={tOrder - 1.2} from="up"><div style={{ fontFamily: F.mono, fontSize: 60, color: C.ink, whiteSpace: "nowrap" }}>test #{scan} of 1,000…</div></Appear></At>
       <Sfx name="tick" at={tOrder - 1.0} volume={0.2} />
     </>
   );
@@ -82,10 +82,10 @@ const ContextBody: React.FC = () => {
   return (
     <>
       <Headline>1,000 changes since</Headline>
-      <At x={170} y={360}><Appear at={tWorked - 0.2} from="left"><Chip color={C.mint} size={44}>last week: works</Chip></Appear></At>
-      <Changes lo={1} hi={1000} show={Math.max(0.05, t1000 - 0.6)} />
+      <At x={540} y={370}><Appear at={tWorked - 0.2} from="up"><Chip color={C.mint} size={44}>last week: works</Chip></Appear></At>
+      <Changes lo={1} hi={1000} show={0.05} />
       <At x={540} y={1080}><Appear at={tLogin - 0.3} from="slam"><div style={{ display: "flex", alignItems: "center", gap: 14 }}><Icon name="LockKeyhole" size={70} color={C.coral} /><Text size={56} color={C.coral} font={F.bold}>login broken</Text></div></Appear></At>
-      <Sfx name="pack/counting-digital" at={Math.max(0.05, t1000 - 0.6)} volume={0.2} dur={0.9} />
+      <Sfx name="pack/counting-digital" at={0.05} volume={0.2} dur={0.9} />
       <Sfx name="pack/reboot-fail" at={tLogin} volume={0.25} dur={0.8} />
     </>
   );
@@ -138,8 +138,8 @@ const RehookBody: React.FC = () => {
       <Headline color={C.amber}>Half, every time</Headline>
       <div style={{ position: "absolute", left: 540 - 400, top: 560, width: 800, height: 120, borderRadius: 16, background: C.dim, opacity: 0.4 }} />
       <div style={{ position: "absolute", left: 540 - 400, top: 560, width: wide, height: 120, borderRadius: 16, background: C.ink, opacity: 0.85 }} />
-      <At x={330} y={780}><Appear at={tAnswer - 0.4} from="up"><Chip color={C.mint} size={50}>works → right half</Chip></Appear></At>
-      <At x={750} y={880}><Appear at={tAnswer - 0.1} from="up"><Chip color={C.coral} size={50}>broken → left half</Chip></Appear></At>
+      <At x={540} y={780}><Appear at={tAnswer - 0.4} from="up"><Chip color={C.mint} size={50}>works → right half</Chip></Appear></At>
+      <At x={540} y={880}><Appear at={tAnswer - 0.1} from="up"><Chip color={C.coral} size={50}>broken → left half</Chip></Appear></At>
       <At x={540} y={1060}><Appear at={tCuts - 0.2} from="slam"><div style={{ fontFamily: F.bold, fontSize: 100, color: C.amber }}>1,000 → 1 ?</div></Appear></At>
       <Sfx name="pack/suspense-sting" at={tCuts} volume={0.3} />
     </>
@@ -177,9 +177,9 @@ const GrowBody: React.FC = () => {
   const tMillion = w(["million"], 1, 1.4), t20 = w(["20"], 1, 2.4), tBillion = w(["billion"], 1, 3.4), t30 = w(["30"], 1, 4.0);
   const row = (y: number, a: string, b: number, ta: number, tb: number) => (
     <>
-      <At x={330} y={y}><Appear at={ta - 0.2} from="left"><Text size={66} font={F.bold}>{a}</Text></Appear></At>
-      <At x={620} y={y}><Appear at={ta} from="fade" sfx={null}><Text size={60} color={C.muted}>→</Text></Appear></At>
-      <At x={820} y={y}><Appear at={tb - 0.3} from="slam"><Counter from={0} to={b} t0={tb - 0.3} t1={tb} size={90} color={C.amber} suffix=" tests" /></Appear></At>
+      <At x={300} y={y}><Appear at={ta - 0.2} from="left"><Text size={56} font={F.bold} style={{ whiteSpace: "nowrap" }}>{a}</Text></Appear></At>
+      <At x={590} y={y}><Appear at={ta} from="fade" sfx={null}><Text size={60} color={C.muted}>→</Text></Appear></At>
+      <At x={810} y={y}><Appear at={tb - 0.3} from="slam"><Counter from={0} to={b} t0={tb - 0.3} t1={tb} size={80} color={C.amber} suffix=" tests" /></Appear></At>
     </>
   );
   return (
@@ -199,7 +199,7 @@ const PayoffBody: React.FC = () => {
   return (
     <>
       <Headline>git bisect</Headline>
-      <At x={540} y={640}><Terminal w={900} title="terminal" typeAt={Math.max(0.1, tBisect - 0.6)} cps={40} size={36}
+      <At x={540} y={640}><Terminal w={980} title="terminal" typeAt={Math.max(0.1, tBisect - 0.8)} cps={55} size={42}
         lines={["$ git bisect start", "$ git bisect bad", "$ git bisect good v1.4", "Bisecting: 499 revisions left", "(roughly 9 steps)"]} /></At>
       <At x={540} y={1060}><Appear at={tLinux - 0.2} from="up"><div style={{ display: "flex", alignItems: "center", gap: 14 }}><Icon name="Terminal" size={64} color={C.mint} /><Text size={52} color={C.mint} font={F.bold}>how Linux finds bad changes</Text></div></Appear></At>
     </>
