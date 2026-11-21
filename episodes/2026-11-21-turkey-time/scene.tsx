@@ -43,8 +43,8 @@ const HookBody: React.FC = () => {
       <HookText y={260} size={92}>{"**2×** the turkey,\nonly **+60%** time"}</HookText>
       <Riser to={t60} volume={0.45} />
       <Camera keys={[[0, { zoom: 1 }], [t60 + 0.8, { zoom: 1.05, y: 720 }]]}>
-        <At x={270} y={700}><Appear at={0} from="pop"><Roast s={0.62} /></Appear></At>
-        <At x={760} y={680} scale={1 + 0.02 * Math.sin(t * 6)}><Appear at={0} from="pop" sfx={null}><Roast s={0.86} /></Appear></At>
+        <At x={270} y={700}><Appear at={0} from="pop"><Roast s={0.75} /></Appear></At>
+        <At x={760} y={680} scale={1 + 0.02 * Math.sin(t * 6)}><Appear at={0} from="pop" sfx={null}><Roast s={1.05} /></Appear></At>
         <At x={270} y={940}><Appear at={0} from="up" sfx={null}><Clock label="3 h" /></Appear></At>
         <At x={760} y={940}><Appear at={t60 - 0.3} from="slam"><Clock label="4 h 45" color={C.amber} size={70} /></Appear></At>
         <At x={270} y={1060}><Text size={44} color={C.muted}>12 lb</Text></At>
@@ -167,7 +167,7 @@ const SquareBody: React.FC = () => {
   const w = useW();
   const tSlows = w(["slows"], 1, 1.6), tTwice = w(["Twice"], 1, 2.6), tFour = w(["four"], 1, 3.8);
   // graph: depth vs time, depth = sqrt(time)
-  const X0 = 170, Y0 = 1040, GW = 760, GH = 640;
+  const X0 = 170, Y0 = 1040, GW = 760, GH = 560;
   const prog = tween(t, 0.1, tSlows + 0.8, 0, 1);
   const pts = Array.from({ length: 60 }, (_, i) => i / 59).filter((u) => u <= prog).map((u) => `${X0 + u * GW},${Y0 - Math.sqrt(u) * GH}`).join(" ");
   const yA = Y0 - 0.5 * GH, yB = Y0 - GH, xA = X0 + 0.25 * GW, xB = X0 + GW;
@@ -184,12 +184,12 @@ const SquareBody: React.FC = () => {
         {t > tFour - 0.2 && <line x1={xB} y1={yB} x2={xB} y2={Y0} stroke={C.amber} strokeWidth={4} strokeDasharray="12 10" />}
       </svg>
       <At x={X0 + 40} y={Y0 - GH - 60}><Text size={42} color={C.muted}>depth</Text></At>
-      <At x={X0 + GW - 40} y={Y0 + 50}><Text size={42} color={C.muted}>time</Text></At>
+      <At x={X0 + GW - 200} y={Y0 + 50}><Text size={42} color={C.muted}>time →</Text></At>
       <At x={X0 - 55} y={yA}><Appear at={tTwice} from="pop"><Text size={50} color={C.mint} font={F.bold}>1</Text></Appear></At>
       <At x={X0 - 55} y={yB}><Appear at={tTwice + 0.5} from="pop"><Text size={50} color={C.amber} font={F.bold}>2</Text></Appear></At>
       <At x={xA} y={Y0 + 50}><Appear at={tTwice} from="pop" sfx={null}><Text size={50} color={C.mint} font={F.bold}>1</Text></Appear></At>
-      <Punch at={tFour}><At x={xB - 60} y={Y0 + 50}><Appear at={tFour - 0.2} from="slam"><Text size={56} color={C.amber} font={F.bold}>4</Text></Appear></At></Punch>
-      <At x={560} y={620}><Appear at={tFour + 0.1} from="pop"><Chip color={C.amber} size={60}>2× deep = 4× time</Chip></Appear></At>
+      <Punch at={tFour}><At x={xB} y={Y0 + 50}><Appear at={tFour - 0.2} from="slam"><Text size={56} color={C.amber} font={F.bold}>4</Text></Appear></At></Punch>
+      <At x={400} y={560}><Appear at={tFour + 0.1} from="pop"><Chip color={C.amber} size={52}>2× deep = 4× time</Chip></Appear></At>
     </>
   );
 };
@@ -230,7 +230,7 @@ const PayoffBody: React.FC = () => {
       <Appear at={tUSDA - 0.1} from="fade">
         <div style={{ position: "absolute", left: X0 + 4.5 * PX, top: 760, width: 0.5 * PX, height: 180, background: C.ink + "30", border: `4px dashed ${C.ink}`, borderRadius: 8 }} />
       </Appear>
-      <At x={540} y={1050}><Appear at={tFive - 0.3} from="up"><Chip color={C.mint} size={56}>USDA: 4½ to 5 h</Chip></Appear></At>
+      <At x={540} y={1050}><Appear at={tUSDA} from="up"><Chip color={C.mint} size={56}>USDA: 4½ to 5 h</Chip></Appear></At>
       <Sfx name="pack/kaching" at={tFive} volume={0.25} />
     </>
   );
@@ -258,8 +258,8 @@ const CtaBody: React.FC = () => {
   return (
     <>
       <Headline>Your turn</Headline>
-      <At x={540} y={640}><Appear at={t8 - 0.2} from="pop"><div style={{ fontFamily: F.bold, fontSize: 130, color: C.ink }}>8× the turkey</div></Appear></At>
-      <At x={540} y={880}><Appear at={tHow - 0.2} from="slam"><div style={{ fontFamily: F.bold, fontSize: 120, color: C.amber }}>? × the time</div></Appear></At>
+      <At x={540} y={640}><Appear at={t8 - 0.2} from="pop"><div style={{ fontFamily: F.bold, fontSize: 100, color: C.ink, whiteSpace: "nowrap" }}>8× the turkey</div></Appear></At>
+      <At x={540} y={900}><Appear at={tHow - 0.2} from="slam"><div style={{ fontFamily: F.bold, fontSize: 100, color: C.amber, whiteSpace: "nowrap" }}>? × the time</div></Appear></At>
     </>
   );
 };
