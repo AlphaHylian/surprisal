@@ -1,0 +1,217 @@
+{
+ "slug": "chip-log-long",
+ "format": "long",
+ "series": "history",
+ "hook_style": "how-to",
+ "hook_type": "claim",
+ "angle": "long-form of the chip-log Short (17 Nov; best engaged views x average view % among the past 7 days' Shorts with numbers: 322 x 52.5% = 16,900 at day 3, next elo-upset 105 x 64.3% = 6,750). Chapters: the rope (log board, 28 s glass, count = speed) / why 47 feet 3 inches (6,080 ft x 28/3600 = 47.3 ft, 1.85166 vs 1.852 km/h, Bourne 1574 42 ft, 8 fathoms + 28 s, 30 s needs 50 ft 8 in) + subscribe / from speed to position (fix, traverse board 32 points 8 rings, 7 kn x 4 h = 28 nm, 18 N + 16 E = 24 nm) / the current you can't see (log measures speed through water, 1 kn = 24 nm a day, simulated 10-day crossing: random errors ~5 nm, a 0.5 kn current ~120 nm, a fix resets) / when the guess ran out (Scilly 1707, 21 ships, 4 lost, 1,400-2,000 dead, charts 15 mi off, 4 of 112 compasses, northward current, captain's quote, Longitude Act 1714 £20,000 for half a degree) / knots today (1,852 m since 1929, a minute of latitude, 60 kn = 1 degree an hour, 250 kn x 2 h = 500 nm, 'knots per hour' is acceleration) / your turn (CTA: a 30 s glass and 7 knots counted -> 6.5).",
+ "title": "How a knotted rope told sailors their speed (and where they were)",
+ "description": "Sailors measured speed by throwing a weighted wooden board off the stern and counting the knots on its line during one turn of a 28-second sandglass. The knots were 47 feet 3 inches apart, which is how far a ship at one nautical mile an hour (6,080 feet) moves in 28 seconds, so the count is the speed: that knot works out to 1.85166 km/h, within 0.02% of today's 1.852. Speed times time, along the compass heading, gave a position by dead reckoning, logged on a traverse board, until a current the rope couldn't feel pushed the guess off: a steady half knot adds up to 120 miles in 10 days. That kind of error helped wreck Admiral Shovell's fleet on the Scilly Isles in 1707, and the knot is still the unit of speed at sea and in the air.\n\nNumbers checked in code (verify.py): the knot spacing and glass times, 100,000 simulated casts, the dead-reckoning examples, a 20,000-run simulation of a 10-day crossing with and without a current, and the closing question. Sources: en.wikipedia.org/wiki/Chip_log, en.wikipedia.org/wiki/Knot_(unit), en.wikipedia.org/wiki/Nautical_mile, en.wikipedia.org/wiki/Traverse_board, en.wikipedia.org/wiki/Dead_reckoning, en.wikipedia.org/wiki/Scilly_naval_disaster_of_1707, en.wikipedia.org/wiki/Longitude_Act.",
+ "tags": [
+  "chip log",
+  "knots",
+  "nautical mile",
+  "dead reckoning",
+  "traverse board",
+  "scilly naval disaster",
+  "navigation history",
+  "history",
+  "math",
+  "maths"
+ ],
+ "music_moods": [
+  "calm"
+ ],
+ "facts_checked": [
+  "Chip log: quadrant board, radius 5 or 6 in, weighted with lead, three-line bridle, line on a reel, acts as a drogue; knots counted over a fixed time; first print description William Bourne, A Regiment for the Sea, 1574, with a half-minute glass, when a mile was 5,000 ft (about 42 ft); many ships used 8 fathoms (48 ft); 28 s and 14 s glasses common; currents can't be corrected by the log, fixes are needed (https://en.wikipedia.org/wiki/Chip_log)",
+  "Knots 47 ft 3 in (14.4018 m) apart, 28-second glass accepted, giving 1.85166 km/h, under 0.02% from 1.852; knot = one nautical mile per hour, exactly 1.852 km/h; 'knots per hour' would be an acceleration (https://en.wikipedia.org/wiki/Knot_(unit))",
+  "Nautical mile exactly 1,852 m since the 1929 Monaco conference; Admiralty mile 6,080 ft; originally a minute of latitude (1,843-1,862 m) (https://en.wikipedia.org/wiki/Nautical_mile)",
+  "Traverse board: 32-point compass rose, eight rings of holes, a peg each half hour for the heading; rows of holes below for speed, a peg each hour (https://en.wikipedia.org/wiki/Traverse_board)",
+  "Dead reckoning: position from a fix plus speed, heading and time; errors cumulative; doesn't account for current without set and drift; aircraft at 250 knots for two hours covers 500 nm (https://en.wikipedia.org/wiki/Dead_reckoning)",
+  "Alcock and Brown navigated across the Atlantic by dead reckoning, leaving St. John's, Newfoundland on 14 June 1919 and landing in County Galway at 8:40 a.m. on 15 June; Lindbergh flew from the United States to Paris in 1927 using dead reckoning (https://en.wikipedia.org/wiki/Dead_reckoning)",
+  "Scilly 1707: Shovell's 21 ships left Gibraltar 29 Sep; 22 Oct (Julian) four ships lost (Association, Eagle, Romney, Firebrand), between 1,400 and 2,000 dead; last latitude observation 21 Oct; ordered east-by-north at about 6 pm presumably believing he was south of the Scillies; causes: charts up to 15 mi off (Halley), only 4 of 112 compasses serviceable, a north-setting current documented about 100 years later; Torbay's captain: 'much to ye Northward of what was expected, and likewise more to the Eastward' (https://en.wikipedia.org/wiki/Scilly_naval_disaster_of_1707)",
+  "Longitude Act 1714: £20,000 for an error not greater than half a degree (https://en.wikipedia.org/wiki/Longitude_Act)",
+  "6,080 x 28 / 3,600 = 47.29 ft; 100,000 simulated casts: count = speed; 7 x 4 = 28; 18 N + 16 E = 24 nm; 1 kn x 24 h = 24 nm; 20,000 simulated 10-day crossings at 6 kn with ~4% speed and ~3 deg heading noise: median error 5 nm, with a 0.5 kn current 120 nm; 30 s glass needs 50 ft 8 in; CTA 7 x 28/30 = 6.5 knots (verify.py); 14 s glass: each knot = 2 knots of speed; 40-day crossing median error ~13 nm, not 4 x 5 = 20"
+ ],
+ "beats": [
+  {
+   "id": "hook",
+   "say": "Count the knots on a rope for 28 seconds, and that number is your ship's speed.",
+   "chapter": "The rope"
+  },
+  {
+   "id": "promise",
+   "say": "By the end of this, you'll know why that works to within a fraction of a percent, how sailors turned it into a position on a map, and how a current nobody could see wrecked a fleet."
+  },
+  {
+   "id": "r1",
+   "say": "Picture it. You're in the middle of the Atlantic, 400 years ago. No GPS, no radio, no land in sight. The only way to know where you are is to know how fast you've been going, and for how long."
+  },
+  {
+   "id": "r2",
+   "say": "So you take a flat wooden board, a quarter of a circle with a radius of about 6 inches, weighted with lead along its curved edge. Tie it to a long line wound on a reel, and throw it off the back of the ship."
+  },
+  {
+   "id": "r3",
+   "say": "The lead makes the board stand upright in the water, and it grips. It stays almost still while the ship sails away from it, so the ship pulls line off the reel."
+  },
+  {
+   "id": "r4",
+   "say": "Now a sailor turns a small sandglass that runs for 28 seconds, and lets the line slip through his hand. There are knots tied along it. He counts them. 7 knots go by before the sand runs out."
+  },
+  {
+   "id": "r5",
+   "say": "Your ship is doing 7 knots. That's the whole measurement. The count is the speed, with no arithmetic at all. The arithmetic was done once, by whoever tied the knots."
+  },
+  {
+   "id": "w1",
+   "say": "Here's that arithmetic. The knots on the line are 47 feet 3 inches apart. That number isn't random.",
+   "chapter": "Why 47 feet 3 inches"
+  },
+  {
+   "id": "w2",
+   "say": "A knot, the unit, means one nautical mile an hour. The old British nautical mile was 6,080 feet. So a ship doing one knot moves 6,080 feet in 3,600 seconds."
+  },
+  {
+   "id": "w3",
+   "say": "In 28 seconds, it moves 28 out of 3,600 of that. 6,080 times 28, divided by 3,600, is 47.3 feet. 47 feet 3 inches, to within half an inch."
+  },
+  {
+   "id": "w4",
+   "say": "So in one turn of the glass, a ship at one knot pulls out exactly one knot of line. At 2 knots, two knots of line. At 7, seven. The spacing and the glass are matched so the count comes out in the unit you want."
+  },
+  {
+   "id": "w5",
+   "say": "And it's close. That spacing and that glass give a knot of 1.85166 kilometres an hour. The modern knot is 1.852. The rope is off by less than 2 parts in 10,000."
+  },
+  {
+   "id": "w6",
+   "say": "It took a while to get there. The first printed description, by William Bourne in 1574, used a half-minute glass and a mile of 5,000 feet, which put the marks about 42 feet apart. Many later ships tied knots every 8 fathoms, 48 feet, and timed them with a 28 second glass."
+  },
+  {
+   "id": "w7",
+   "say": "Why not a round 30 seconds? You could. A 30 second glass needs knots 50 feet 8 inches apart. Any pair works, as long as the spacing, divided by the time, is one knot."
+  },
+  {
+   "id": "w8",
+   "say": "Ships also carried a 14 second glass. Half the time means half the line, so every knot that runs out counts for two."
+  },
+  {
+   "id": "sub",
+   "say": "If you like finding the math hidden inside old tools, subscribe. There's a new one twice a day."
+  },
+  {
+   "id": "d1",
+   "say": "But speed isn't position. To turn one into the other, you need the oldest trick in navigation: dead reckoning.",
+   "chapter": "From speed to position"
+  },
+  {
+   "id": "d2",
+   "say": "Start from a known point, a fix. Say a headland you sailed past at noon. From then on, every half hour, you note which way the ship is heading, and every hour, how fast."
+  },
+  {
+   "id": "d3",
+   "say": "Ships kept this on a traverse board. A compass rose with 32 points and 8 rings of holes. Each half hour, a peg goes into the hole for your heading. Underneath, rows of holes for the speed, one peg per hour."
+  },
+  {
+   "id": "d4",
+   "say": "After a four hour watch, the board holds the whole story. 7 knots, west, for 4 hours. 7 times 4 is 28. You're 28 nautical miles west of your noon fix."
+  },
+  {
+   "id": "d5",
+   "say": "Turns are just more pieces. 3 hours north at 6 knots is 18 miles north. Then 2 hours east at 8 knots is 16 miles east. Draw both on the chart, and you're about 24 miles from where you started, somewhere between north and north-east."
+  },
+  {
+   "id": "d6",
+   "say": "That's it. Every leg is speed times time, in the direction you were heading. Add the legs, and you have your position. No stars, no clock you can trust to the minute, just the rope, the glass and the compass."
+  },
+  {
+   "id": "d7",
+   "say": "It worked in the air too. In 1919, Alcock and Brown flew across the Atlantic from Newfoundland to Ireland by dead reckoning, and landed in County Galway the next morning. In 1927, Lindbergh flew to Paris the same way."
+  },
+  {
+   "id": "c1",
+   "say": "And here's the catch. The board on the rope doesn't measure your speed over the seabed. It measures your speed through the water.",
+   "chapter": "The current you can't see"
+  },
+  {
+   "id": "c2",
+   "say": "If the whole ocean around you is moving, the board moves with it. The rope can't tell. A current of just 1 knot carries you 24 miles a day that appear on no peg of the traverse board."
+  },
+  {
+   "id": "c3",
+   "say": "Other errors are kinder. A misread count, a gust that swings the heading for a while: some push you one way, some the other, and over many hours they partly cancel."
+  },
+  {
+   "id": "c4",
+   "say": "We simulated a 10 day crossing at 6 knots, with every hourly reading off by a few percent and a few degrees at random. The typical error after 10 days was about 5 miles. Annoying, but survivable."
+  },
+  {
+   "id": "c4b",
+   "say": "Random errors grow slowly. Stay at sea four times as long, and the typical error grows from about 5 miles to about 13, not to 20."
+  },
+  {
+   "id": "c5",
+   "say": "Then we added a steady half knot current. Same readings, same care. Now the error after 10 days is about 120 miles, and it only ever grows. Random errors wander. A current marches."
+  },
+  {
+   "id": "c6",
+   "say": "The only cure is a new fix. A landmark, a depth sounding, or the height of the sun at noon, which gives your latitude. Every fix wipes the error back to zero, and the reckoning starts again."
+  },
+  {
+   "id": "s1",
+   "say": "In October 1707, a British fleet of 21 ships under Admiral Cloudesley Shovell was sailing home from Gibraltar.",
+   "chapter": "When the guess ran out"
+  },
+  {
+   "id": "s2",
+   "say": "Their last sighting of the sun for latitude was on the 21st. After that, it was dead reckoning. On the evening of the 22nd, the admiral turned the fleet east for the Channel, most likely believing it was safely south of the Scilly Isles."
+  },
+  {
+   "id": "s3",
+   "say": "It wasn't. Four ships, including the flagship, ran onto the rocks. Between 1,400 and 2,000 sailors died."
+  },
+  {
+   "id": "s4",
+   "say": "The reasons are still argued over. Charts that put the islands up to 15 miles from where they really are. Compasses: one survey found only 4 of 112 fit for use. And a current running north across the approaches, which wasn't described until about 100 years later."
+  },
+  {
+   "id": "s5",
+   "say": "One surviving captain wrote that they were much to the northward of what was expected, and more to the eastward. That's exactly what an unseen current does to a reckoning."
+  },
+  {
+   "id": "s6",
+   "say": "Seven years later, Parliament passed the Longitude Act, with a prize of 20,000 pounds for a way to find your position at sea to within half a degree. At the equator, that's 30 nautical miles. The rope and the glass couldn't promise that."
+  },
+  {
+   "id": "k1",
+   "say": "Marine clocks and satellites did eventually solve the problem. But the rope left something behind: the unit.",
+   "chapter": "Knots today"
+  },
+  {
+   "id": "k2",
+   "say": "In 1929, the nautical mile was fixed at exactly 1,852 metres. That's because it's about one minute of latitude: 60 of them make a degree. So a ship at 60 knots, sailing due north, would cross one degree of latitude every hour."
+  },
+  {
+   "id": "k3",
+   "say": "That's why ships and planes kept it. Charts are drawn in degrees and minutes, so distance in nautical miles reads straight off the side of the chart. A plane at 250 knots for 2 hours has flown 500 nautical miles, and you can measure that straight off the latitude scale on the edge of the chart."
+  },
+  {
+   "id": "k4",
+   "say": "And it's why knots per hour is wrong. A knot is already a speed. Knots per hour would be an acceleration."
+  },
+  {
+   "id": "y1",
+   "say": "So here's the full trick once more. Throw the board, turn a 28 second glass, count the knots: that's your speed. Speed times time, in the direction of your heading, is your position. And a fix wipes out the error a current builds up.",
+   "chapter": "Your turn"
+  },
+  {
+   "id": "y2",
+   "say": "Now your turn. Your sandglass is old, and it actually runs for 30 seconds, not 28. You count 7 knots. Are you really doing more than 7 knots, or less, and by how much?"
+  },
+  {
+   "id": "y3",
+   "say": "Put your answer in the comments. And if your glass ran short instead of long, what would happen?"
+  }
+ ]
+}
