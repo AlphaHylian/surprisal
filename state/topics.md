@@ -125,3 +125,4 @@ through verify.py.
 - 2026-11-18 20:00: mpg-flip (everyday, how-to, hook versus; MPG illusion, 10->20 saves 500 gal vs 25->50 saves 200 per 10,000 miles, flip to gallons, Europe L/100 km)  7VEsgv1zrEM
 - 2026-11-19 12:00 (Gs3sWT06SKo): Your delivery van has 20 stops: more routes than seconds since the Big Bang. Nearest stop first (24% too long on the demo), then uncross crossings (2-opt), within 3%; UPS ORION. (everyday, claim)
 - 2026-11-19 20:00 (-Wg9h33pYeA): Check a billion usernames in 1.2 GB instead of 16: Bloom filter, 7 hashes, 9.6 bits per name, 1% false alarms; Chrome once used one. (tech, versus) [was: library / million books Bloom filter idea]
+- 2026-11-22 12:00 (75h_8MAvL2s): plane-boarding (everyday, versus): back to front 6:11 vs random 4:44 vs Steffen two-rows-apart 3:36 (Steffen & Hotchkiss 2011, 72 passengers, 12 rows); CTA 30 rows, who boards after 30F? (28F)

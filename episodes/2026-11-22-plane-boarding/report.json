@@ -1,0 +1,18 @@
+{
+ "ok": true,
+ "problems": [],
+ "warnings": [],
+ "duration_s": 52.1,
+ "size_mb": 9.0,
+ "resolution": "1080x1920",
+ "caption_match_ratio": 0.9932885906040269,
+ "heard": "Board your plane back to front or at random. Random wins. Back to front sounds smart. Nobody walks past anyone. It's slower than chaos. Your plane, 72 people, 12 rows, one aisle. A physicist timed each order on a cabin set. Back to front, row 12 stops to lift a bag. Everyone behind them waits. 71 waits in one line. 6 minutes 11. Board at random and rows 12, 3, and 8 lift their bags at the same time. 4 minutes 44. But random is luck. Do it on purpose. Line people up two rows apart. 12 window, 10 window, 8 window. Six bags go up at once, and nobody is in anyone's way. Then the other windows, then middles, then aisles. 3 minutes 36. The order was never the problem. It's how many bags go up at once. Your plane has 30 rows. Who boards right after 30 F?",
+ "music": "Tech Talk",
+ "music_gap_db": 8.0,
+ "speech_starts_at_s": 0.01,
+ "final_lufs": -14.9,
+ "voice_engine": "omnivoice",
+ "contact_sheet_every_s": 2.2,
+ "build_seconds": 200,
+ "draft": false
+}

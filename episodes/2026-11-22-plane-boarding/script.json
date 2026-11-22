@@ -1,0 +1,31 @@
+{
+  "slug": "plane-boarding",
+  "format": "short",
+  "series": "everyday",
+  "hook_style": "how-to",
+  "hook_type": "versus",
+  "angle": "versus hook: board your plane back to front or at random? random wins (HookText Back to front 6:11 vs Random 4:44, over a top-down cabin with a coral queue jammed in the aisle); rule out: back to front sounds smart, nobody walks past anyone, but it's slower than chaos; context: 72 passengers, 12 rows, one aisle, a physicist timed each method on a cabin film set (Steffen & Hotchkiss 2011); step 1 back to front: row 12 stops to lift a bag, everyone behind waits, 71 waits in one line, 6:11; step 2 random: rows 12, 3 and 8 stow at the same time, 4:44; re-hook: random is luck, do it on purpose; step 3 line people up two rows apart, 12 window, 10, 8..., six bags go up at once, nobody in the way; step 4 then the other windows, middles, aisles; payoff 3:36, 42% faster than back to front, the trick is how many people stow at once; CTA checkable comment: 30 rows, who boards after 30F? (28F). Experiment: claim vs versus (everyday + versus at 12:00).",
+  "title": "Why boarding back to front is the slow way",
+  "description": "Back-to-front boarding puts everyone in one line behind whoever is lifting a bag: 72 passengers, 71 waits. In a 2011 test on a 12-row cabin set, strict back to front took 6:11, letting people on at random 4:44, and the Steffen method (window seats two rows apart, 12F, 10F, 8F..., then the other rows, then middles and aisles) 3:36, because six people stow bags at the same time without blocking each other.\n\nNumbers checked in code: the measured times from the paper and a simple aisle simulation (104,000 simulated boardings) that gives the same ranking. Source: Steffen & Hotchkiss, Experimental test of airplane boarding methods, arxiv.org/abs/1108.5211.\n\nThe math behind real problems, twice a day. Subscribe and the next one finds you.\nFound an error? Comment and it gets pinned.\n#math #mathematics #shorts",
+  "social_caption": "Back-to-front boarding is slower than letting everyone on at random. Here's the order that's almost twice as fast.",
+  "tags": ["airplane boarding", "steffen method", "boarding methods", "air travel", "queueing", "optimization", "math", "maths", "physics"],
+  "music_moods": ["upbeat"],
+  "facts_checked": [
+    "Steffen & Hotchkiss tested boarding with 72 passengers on a mock 12-row cabin with six seats per row and one central aisle; Table 1 official times: back-front 6:11, blocks 6:54, Wilma 4:13, Steffen 3:36, random 4:44 (https://arxiv.org/abs/1108.5211, read via ar5iv.arxiv.org/html/1108.5211)",
+    "Their back-to-front order went back row window, middle, aisle, then the next row forward; 'back-to-front boarding has no seat interferences, but it does have 71 aisle interferences' (https://ar5iv.arxiv.org/html/1108.5211)",
+    "Steffen method: each passenger in line sits two rows from the one before, e.g. 12F, 10F, 8F, 6F, 4F, 2F, so neighbours can stow luggage at the same time (https://ar5iv.arxiv.org/html/1108.5211)",
+    "6:11 - 4:44 = 87 s; 3:36 is 42% faster than 6:11; aisle simulation over 104,000 boardings: back-front 1.00, random 0.77 (measured 0.77), Wilma 0.61, Steffen 0.50; CTA 30F -> 28F (verify.py)"
+  ],
+  "beats": [
+    {"id": "hook", "say": "Board your plane back to front, or at random? Random wins.", "speed": 1.25},
+    {"id": "ruleout", "say": "Back to front sounds smart: nobody walks past anyone. It's slower than chaos."},
+    {"id": "context", "say": "Your plane: 72 people, 12 rows, one aisle. A physicist timed each order on a cabin set."},
+    {"id": "backfront", "say": "Back to front: row 12 stops to lift a bag. Everyone behind them waits. 71 waits, in one line. 6 minutes 11."},
+    {"id": "random", "say": "Board at random, and rows 12, 3 and 8 lift their bags at the same time. 4 minutes 44."},
+    {"id": "rehook", "say": "But random is luck. Do it on purpose."},
+    {"id": "steffen", "say": "Line people up two rows apart: 12 window, 10 window, 8 window. Six bags go up at once, and nobody is in anyone's way."},
+    {"id": "fill", "say": "Then the other windows, then middles, then aisles."},
+    {"id": "payoff", "say": "3 minutes 36. The order was never the problem. It's how many bags go up at once."},
+    {"id": "cta", "say": "Your plane has 30 rows. Who boards right after 30F?", "caption": "30 rows: who boards after 30F?"}
+  ]
+}
