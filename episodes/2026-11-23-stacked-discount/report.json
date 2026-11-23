@@ -1,0 +1,18 @@
+{
+ "ok": true,
+ "problems": [],
+ "warnings": [],
+ "duration_s": 55.6,
+ "size_mb": 9.5,
+ "resolution": "1080x1920",
+ "caption_match_ratio": 0.98,
+ "heard": "Half off plus 20 % or 70 % off, pick one. 50 plus 20 is 70, so it feels like a tie. It isn't. One of them is only 60 % off. Your coat is 200 this Black Friday. Take half off first, 200 becomes 100. Now, the extra 20 % comes off the new price, not the old one, that's 20. You pay 80, 70 % off the full price. You pay 60, 20 less. So does the order save you? Swap them. 20 % off first, 160, then half 80. Exactly the same. Each discount takes a cut of what's left. Half times 0 .8 is 0 .4. You pay 40%, that's 60 % off. Stack discounts always land short of the sum. Here, by 10 points. So, 30 % off, then another 30%. What's the real discount?",
+ "music": "Somewhere Sunny",
+ "music_gap_db": 8.0,
+ "speech_starts_at_s": 0.0,
+ "final_lufs": -15.2,
+ "voice_engine": "omnivoice",
+ "contact_sheet_every_s": 2.3,
+ "build_seconds": 143,
+ "draft": false
+}

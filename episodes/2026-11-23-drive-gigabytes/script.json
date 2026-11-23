@@ -1,0 +1,32 @@
+{
+  "slug": "drive-gigabytes",
+  "format": "short",
+  "series": "tech",
+  "hook_style": "how-to",
+  "hook_type": "claim",
+  "angle": "claim hook: your new 1 terabyte drive shows only 931 gigabytes (HookText 1 TB → 931 GB, nothing missing, over a drive box labelled 1 TB and a Windows-style bar reading 931 GB); rule out: not broken, not hidden system files, every byte is there; context: the box and your computer both count bytes, they disagree on what giga means; step 1 the maker counts in thousands: a terabyte is a trillion bytes; step 2 Windows counts in 1,024s: its kilobyte is 2.4% bigger; re-hook: 2.4% is nothing, but it compounds at every prefix; step 3 mega 4.9%, giga 7.4%, tera almost 10%; step 4 a trillion divided by 1,024 three times = 931; payoff: same trillion bytes, bigger buckets; a Mac counts by 1,000 and shows 1 TB; proof: Western Digital settled a lawsuit over it in 2006 and added the fine print; CTA checkable comment: a 500 GB drive, what does Windows show? (465). Experiment: claim vs versus (tech + claim at 12:00).",
+  "title": "Why your 1 TB drive only shows 931 GB",
+  "description": "Drive makers count like the metric system: a terabyte is a trillion bytes. Windows counts in powers of 2, so its 'kilobyte' is 1,024 bytes, 2.4% bigger, and the gap compounds at every prefix: 4.9% at mega, 7.4% at giga, almost 10% at tera. Divide a trillion bytes by 1,024 three times and you get 931, which Windows labels GB. Nothing is missing; macOS counts by 1,000 and shows the same drive as 1 TB. Western Digital settled a class action over exactly this in 2006 and added a disclaimer to its packaging.\n\nNumbers checked in code (verify.py). Sources: Wikipedia, Binary prefix; Apple Support, How iOS and macOS report storage capacity.\n\nThe math behind real problems, twice a day. Subscribe and the next one finds you.\nFound an error? Comment and it gets pinned.\n#math #mathematics #shorts",
+  "social_caption": "Your 1 TB drive shows 931 GB, and not one byte is missing. Here's the counting mix-up behind it.",
+  "tags": ["hard drive capacity", "1tb shows 931gb", "terabyte", "gigabyte vs gibibyte", "binary prefix", "computer science", "math", "maths", "tech explained"],
+  "music_moods": ["upbeat"],
+  "facts_checked": [
+    "Drive makers use decimal SI prefixes (1 TB = 10^12 bytes); Windows uses MB/GB for binary sizes, so a '300 GB' drive appears as 279.4 GB; Western Digital (Safier v. Western Digital) settled in March 2006 and agreed to add a disclaimer to packaging and advertising; IEC binary prefixes (kibi, gibi) published 1999; binary units 2.4% / 4.9% / 7.4% / 10.0% bigger (https://en.wikipedia.org/wiki/Binary_prefix)",
+    "Apple: iOS 10 and earlier and OS X Leopard and earlier report storage in binary; later versions in decimal, 1 TB = 1 trillion bytes (https://support.apple.com/en-us/102119)",
+    "10^12 / 1,024^3 = 931.32; 1,000 - 931 = 69 'missing'; 1,024 = 1,000 + 2.4%; mega 4.86%, giga 7.37%, tera 9.95% (verify.py)",
+    "CTA: 500 x 10^9 / 1,024^3 = 465.66 -> Windows shows 465 GB (verify.py)"
+  ],
+  "beats": [
+    {"id": "hook", "say": "Your 1 terabyte drive shows just 931 gigabytes.", "speed": 1.4},
+    {"id": "ruleout", "say": "It's not broken, and it's not hidden system files. Every single byte is there."},
+    {"id": "context", "say": "The box and your computer both count bytes. They just disagree on what giga means."},
+    {"id": "maker", "say": "The maker counts in thousands. A kilobyte is 1,000 bytes, so a terabyte is a trillion bytes."},
+    {"id": "windows", "say": "Windows counts in twos. Its kilobyte is 1,024 bytes. That's 2.4% bigger."},
+    {"id": "rehook", "say": "2.4% is nothing. But it stacks up at every step."},
+    {"id": "stack", "say": "A megabyte is 4.9% bigger. A gigabyte, 7.4%. A terabyte, almost 10."},
+    {"id": "divide", "say": "So take your trillion bytes and divide by 1,024 three times. 931."},
+    {"id": "payoff", "say": "Same trillion bytes, just counted in bigger buckets. A Mac counts by thousands, and shows 1 terabyte."},
+    {"id": "lawsuit", "say": "Western Digital got sued over this, and settled in 2006 by adding the fine print to the box."},
+    {"id": "cta", "say": "So your 500 gigabyte drive. How many does Windows show?"}
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "slug": "stacked-discount",
+  "format": "short",
+  "series": "everyday",
+  "hook_style": "how-to",
+  "hook_type": "versus",
+  "angle": "versus hook: half off plus 20%, or 70% off? pick one (HookText 50% + 20% vs 70% off, over two price tags on a $200 coat); rule out: 50 plus 20 is 70, feels like a tie, but one is only 60% off; context: your $200 coat on Black Friday; step 1 half off first: $200 -> $100; step 2 the extra 20% comes off the new price: 20, you pay $80; step 3 70% off the full price: $60, $20 less; re-hook: does the order help? swap them; step 4 20% first: 160, then half: 80, same; step 5 each discount multiplies what's left, 0.5 x 0.8 = 0.4, you pay 40%: 60% off; payoff: stacking always lands short of the sum, by the two discounts multiplied (10 points); CTA checkable comment: 30% off then 30% more, real discount? (51%). Experiment: claim vs versus (everyday + versus at 20:00).",
+  "title": "Why 50% off plus 20% more isn't 70% off",
+  "description": "Stacked discounts don't add, they multiply. Take 50% off a $200 coat and you're at $100; the extra 20% comes off that new price, so you pay $80, not the $60 that 70% off would give. Each discount leaves a fraction of the price, 0.5 x 0.8 = 0.4, so you pay 40%: 60% off. The order never matters, and the stack always falls short of the sum by the two discounts multiplied (here 10 points).\n\nNumbers checked in code (verify.py), including 100,000 random discount pairs. Black Friday 2026 is 27 November, the Friday after US Thanksgiving (Wikipedia, Black Friday).\n\nThe math behind real problems, twice a day. Subscribe and the next one finds you.\nFound an error? Comment and it gets pinned.\n#math #mathematics #shorts",
+  "social_caption": "Half off plus another 20% sounds like 70% off. It's 60%. Here's the one-line math stores count on.",
+  "tags": ["black friday", "stacked discounts", "percent off", "percentages", "shopping math", "everyday math", "math", "maths", "percent"],
+  "music_moods": ["upbeat"],
+  "facts_checked": [
+    "Black Friday is the Friday after US Thanksgiving, the fourth Thursday in November; 2026: 27 Nov (https://en.wikipedia.org/wiki/Black_Friday_(shopping); date computed in verify.py)",
+    "$200 half off = $100; 20% of $100 = $20 -> $80; 70% off = $60, $20 less; swapped: $160 then $80; 0.5 x 0.8 = 0.4 -> 60% off; shortfall 0.5 x 0.2 = 10 points (verify.py)",
+    "100,000 random discount pairs: stacked always below the sum, order never matters (verify.py)",
+    "CTA: 30% then 30% = 1 - 0.7 x 0.7 = 51% off (verify.py)"
+  ],
+  "beats": [
+    {"id": "hook", "say": "Half off plus 20%, or 70% off? Pick one.", "speed": 1.5},
+    {"id": "ruleout", "say": "50 plus 20 is 70, so it feels like a tie. It isn't. One of them is only 60% off."},
+    {"id": "context", "say": "Your coat is $200 this Black Friday."},
+    {"id": "half", "say": "Take half off first. $200 becomes $100."},
+    {"id": "extra", "say": "Now the extra 20% comes off the new price, not the old one. That's $20. You pay $80."},
+    {"id": "seventy", "say": "70% off the full price? You pay $60. $20 less."},
+    {"id": "rehook", "say": "So does the order save you? Swap them."},
+    {"id": "swap", "say": "20% off first: $160. Then half: $80. Exactly the same."},
+    {"id": "why", "say": "Each discount takes a cut of what's left. Half times 0.8 is 0.4. You pay 40%. That's 60% off."},
+    {"id": "payoff", "say": "Stacked discounts always land short of the sum. Here, by 10 points."},
+    {"id": "cta", "say": "So, 30% off, then another 30%. What's the real discount?"}
+  ]
+}

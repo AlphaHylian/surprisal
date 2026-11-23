@@ -1,0 +1,18 @@
+{
+ "ok": true,
+ "problems": [],
+ "warnings": [],
+ "duration_s": 60.1,
+ "size_mb": 10.9,
+ "resolution": "1080x1920",
+ "caption_match_ratio": 0.949438202247191,
+ "heard": "Your one terabyte drive shows just 931 gigabytes. It's not broken, and it's not hidden system files. Every single byte is there. The box and your computer both count bytes. They just disagree on what giga means. The maker counts in thousands. A kilobyte is 1 ,000 bytes, so a terabyte is a trillion bytes. Windows counts in twos. Its kilobyte is 1 ,024 bytes. That's 2 .4 % bigger. 2 .4 % is nothing. But it stacks up at every step. A megabyte is 4 .9 % bigger. A gigabyte 7 .4%, a terabyte, almost 10. So take your trillion bytes and divide by 1 ,024 three times. 931, same trillion bytes, just counted in bigger buckets. A Mac counts by thousands and shows one terabyte. Western Digital got sued over this and settled in 2006 by adding the fine print to the box. So your 500 gigabyte drive, how many does Windows show?",
+ "music": "Digital Lemonade",
+ "music_gap_db": 8.0,
+ "speech_starts_at_s": 0.01,
+ "final_lufs": -15.0,
+ "voice_engine": "omnivoice",
+ "contact_sheet_every_s": 2.5,
+ "build_seconds": 238,
+ "draft": false
+}

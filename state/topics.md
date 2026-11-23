@@ -27,6 +27,8 @@ through verify.py.
 - Your two-player game night: why rock-paper-scissors bots beat people (humans repeat after a win, switch after a loss; a frequency table predicts the next throw). (everyday) [check: a published study with the win-stay/lose-shift numbers] (added 2026-11-19) (2026-11-20: Wang, Xu & Zhou, Sci. Rep. 2014, arXiv 1404.5199: 360 Zhejiang students, 300 rounds; winners repeat more, losers shift 'clockwise' R->S; exact rates only in figures, no table found)
 
 
+- Ideas added 2026-11-23: your phone's 'storage full' with 128 GB (system share + binary units, follow-up to drive-gigabytes) (tech) [check]; Black Friday 'was $X' anchor prices and how a % off hides the base (everyday) [check]; why 10% tip then 10% tax isn't the same as 20% (everyday).
+
 ## Used
 - Your recipe for 4 needs to feed 10: why you can't just multiply cooking time (volume grows with the cube, surface with the square; a turkey's time grows ~ weight^(2/3)). (everyday) [check] (added 2026-11-19) — used 2026-11-21 12:00 (as turkey-time: 2x the weight = 26% thicker, diffusion time ~ distance^2, +59%; 12 lb 3 h -> 24 lb 4 h 45, USDA 4.5-5 h), 7BIKpNqHhqs
 - (new, not in Ready) Find the 1 bad change in 1,000 with 10 tests: binary search / git bisect, 500 250 ... 1, a million 20, a billion 30. (tech, versus) — used 2026-11-21 20:00, bad-commit, NsmVJmrIdHU
@@ -127,3 +129,5 @@ through verify.py.
 - 2026-11-19 20:00 (-Wg9h33pYeA): Check a billion usernames in 1.2 GB instead of 16: Bloom filter, 7 hashes, 9.6 bits per name, 1% false alarms; Chrome once used one. (tech, versus) [was: library / million books Bloom filter idea]
 - 2026-11-22 12:00 (75h_8MAvL2s): plane-boarding (everyday, versus): back to front 6:11 vs random 4:44 vs Steffen two-rows-apart 3:36 (Steffen & Hotchkiss 2011, 72 passengers, 12 rows); CTA 30 rows, who boards after 30F? (28F)
 - 2026-11-22 20:00 (_lCoJruFhYQ): chip-log-long (LONG-FORM 8:05, expands chip-log; 47 ft 3 in = 6,080 x 28/3,600, 1.85166 vs 1.852 km/h, Bourne 1574, traverse board, dead reckoning 7 kn x 4 h, 18 N + 16 E = 24 nm, Alcock & Brown 1919, current 1 kn = 24 nm/day, simulated 10-day crossing 5 nm vs 120 nm with a half-knot current, Scilly 1707, Longitude Act 1714, 1,852 m since 1929; CTA 30 s glass + 7 knots -> 6.5)
+- 2026-11-23 12:00 (5YfqqaebBs0): drive-gigabytes (tech, claim): 1 TB shows 931 GB; makers count in 1,000s, Windows in 1,024s; 2.4/4.9/7.4/~10% per prefix; 10^12 / 1,024^3 = 931; Mac shows 1 TB; Western Digital settled 2006; CTA 500 GB -> 465.
+- 2026-11-23 20:00 (SB_GeUgKnYc): stacked-discount (everyday, versus): half off + 20% more vs 70% off on a $200 coat: $80 vs $60; order doesn't matter (160 -> 80); 0.5 x 0.8 = 0.4 = 60% off; short by 50% x 20% = 10 points; CTA 30% + 30% = 51%. Timed for Black Friday (27 Nov).
