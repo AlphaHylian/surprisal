@@ -1,0 +1,18 @@
+{
+ "ok": true,
+ "problems": [],
+ "warnings": [],
+ "duration_s": 59.6,
+ "size_mb": 11.2,
+ "resolution": "1080x1920",
+ "caption_match_ratio": 0.9941860465116279,
+ "heard": "Walk or run in the rain, running saves just 29%. You'd think running keeps you way dryer. It can't. Some of the rain you can't outrun. You're 100 meters from your door, and it's pouring. Split yourself in two. Your head and shoulders catch rain for every second you're out. Walking that's 67 seconds. Run three times as fast, 22 seconds. A third of the rain on top. So running wins by a mile. Look at your front. Every drop hanging in the air between you and your door ends up on your chest. Walk or run, it's the same drops. In heavy rain, that's 24 milliliters on your front, either way. And your front is seven times bigger than your top. Walking, 43 milliliters. Running, 30, 29 % drier. Even at infinite speed, you'd still catch those 24. Running helps. It can't keep you dry. So if your door were twice as far, would running save you more than 29%.",
+ "music": "Tech Talk",
+ "music_gap_db": 8.0,
+ "speech_starts_at_s": 0.01,
+ "final_lufs": -14.8,
+ "voice_engine": "omnivoice",
+ "contact_sheet_every_s": 2.5,
+ "build_seconds": 273,
+ "draft": false
+}

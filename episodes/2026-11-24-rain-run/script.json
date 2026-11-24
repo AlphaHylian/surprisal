@@ -1,0 +1,80 @@
+{
+  "slug": "rain-run",
+  "format": "short",
+  "series": "everyday",
+  "hook_style": "how-to",
+  "hook_type": "versus",
+  "angle": "versus hook: walk or run home in the rain? running saves you just 29% (HookText Walk vs Run: only 29% drier, over a walker and a runner in falling rain with their water totals 43 mL vs 30 mL); rule out: you'd think running keeps you way drier, it can't, there's rain you can't outrun; context: 100 m from home, heavy rain; step 1 split yourself in two: your top catches rain every second you're out; step 2 walk 67 s, run 3x as fast 22 s, a third of the rain on top; re-hook: so running wins by a mile? look at your front; step 3 every drop hanging in the air between you and your door hits your front, walk or run, same drops; step 4 heavy rain: 24 mL on your front either way, and your front is 7x your top; step 5 totals: walk 43, run 30, 29% drier; payoff: even at infinite speed the 24 stays, running helps but can't keep you dry; CTA checkable comment: home twice as far, does running save more than 29%? (no, same 29%). Experiment: claim vs versus (everyday + versus at 12:00).",
+  "title": "Should you run in the rain? The math says: barely",
+  "description": "Split yourself into two targets. Your head and shoulders catch rain for every second you're out, so running 3 times as fast cuts that to a third. But your front sweeps up every drop hanging in the air between you and your door, and that's the same amount whether you walk or run. For 100 m in heavy rain (10 mm an hour, drops falling at 8 m/s, a body 1.75 m by 40 cm): walking 43 mL, running 30 mL, 29% drier. Even infinitely fast, you'd still catch the 24 mL on your front. Physicist Franco Bocci's 2012 study reached the same verdict: in most cases, run as fast as you can.\n\nNumbers checked in code (verify.py), including a simulation of 800,000 raindrops. Sources: Bocci, European Journal of Physics 33, 1321 (2012), as reported by NBC News; drop speed from Wikipedia, Raindrop.\n\nThe math behind real problems, twice a day. Subscribe and the next one finds you.\nFound an error? Comment and it gets pinned.\n#math #mathematics #shorts",
+  "social_caption": "Running through the rain keeps you only about 29% drier. The rain in front of you is waiting either way.",
+  "tags": [
+    "walk or run in the rain",
+    "rain",
+    "physics",
+    "everyday math",
+    "running in the rain",
+    "math",
+    "maths",
+    "science"
+  ],
+  "music_moods": [
+    "upbeat"
+  ],
+  "facts_checked": [
+    "Model: top catches rain rate x top area x time; front catches (rain rate / drop speed) x front area x distance, independent of speed (the standard model, verified by simulation in verify.py). Bocci 2012, 'Whether or not to run in the rain', Eur. J. Phys. 33, 1321: 'in most cases, run', 'running as fast as you can is usually the best way to minimize wetness' (https://www.nbcnews.com/id/wbna48289836)",
+    "Drop fall speed ~8 m/s for 3 mm drops (https://en.wikipedia.org/wiki/Raindrop)",
+    "100 m at 1.5 m/s = 67 s; at 4.5 m/s (3x) = 22 s; top 18.5 -> 6.2 mL, a third (verify.py)",
+    "Front 24.3 mL either way at 10 mm/h; front area 0.70 m2 = 7x top 0.10 m2 (verify.py)",
+    "Totals: walk 42.8 -> 43 mL, run 30.5 -> 30 mL, 28.8% -> 29% drier; infinite speed 57% as wet (verify.py)",
+    "Simulation of 800,000 drops (400,000 per speed): front the same within 5%, totals ~29% drier (verify.py)",
+    "CTA: twice as far, both terms double, still 29% (verify.py)"
+  ],
+  "beats": [
+    {
+      "id": "hook",
+      "say": "Walk or run in the rain? Running saves just 29%.",
+      "speed": 1.45
+    },
+    {
+      "id": "ruleout",
+      "say": "You'd think running keeps you way drier. It can't. Some of the rain, you can't outrun."
+    },
+    {
+      "id": "context",
+      "say": "You're 100 meters from your door, and it's pouring."
+    },
+    {
+      "id": "split",
+      "say": "Split yourself in two. Your head and shoulders catch rain for every second you're out."
+    },
+    {
+      "id": "top",
+      "say": "Walking, that's 67 seconds. Run 3 times as fast: 22 seconds. A third of the rain on top."
+    },
+    {
+      "id": "rehook",
+      "say": "So running wins by a mile? Look at your front."
+    },
+    {
+      "id": "front",
+      "say": "Every drop hanging in the air between you and your door ends up on your chest. Walk or run, it's the same drops."
+    },
+    {
+      "id": "numbers",
+      "say": "In heavy rain, that's 24 milliliters on your front, either way. And your front is 7 times bigger than your top."
+    },
+    {
+      "id": "total",
+      "say": "Walking: 43 milliliters. Running: 30. 29% drier."
+    },
+    {
+      "id": "payoff",
+      "say": "Even at infinite speed, you'd still catch those 24. Running helps. It can't keep you dry."
+    },
+    {
+      "id": "cta",
+      "say": "So if your door were twice as far, would running save you more than 29%?"
+    }
+  ]
+}
