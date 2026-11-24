@@ -30,6 +30,7 @@ through verify.py.
 - Ideas added 2026-11-23: your phone's 'storage full' with 128 GB (system share + binary units, follow-up to drive-gigabytes) (tech) [check]; Black Friday 'was $X' anchor prices and how a % off hides the base (everyday) [check]; why 10% tip then 10% tax isn't the same as 20% (everyday).
 
 ## Used
+- (new, not in Ready) How JPEG deletes ~90% of a photo: 4:2:0 color (half the data), 8x8 blocks as 64 DCT patterns, rounding zeroes 40+ of 64, end-of-block code; 36 MB -> 3.6 MB (10:1, Wikipedia); measured 7-26x on 4 photos. (tech, claim) — used 2026-11-24 20:00, jpeg-tenth, 71frkpkuoK0
 - (new, not in Ready) Walk or run in the rain: top catches rain per second, front sweeps the same drops either way; 100 m heavy rain walk 43 mL vs run 30 mL, 29% drier, infinite speed still 24 mL (Bocci 2012). (everyday, versus) — used 2026-11-24 12:00, rain-run, lBDQbYcFjWk
 - Your recipe for 4 needs to feed 10: why you can't just multiply cooking time (volume grows with the cube, surface with the square; a turkey's time grows ~ weight^(2/3)). (everyday) [check] (added 2026-11-19) — used 2026-11-21 12:00 (as turkey-time: 2x the weight = 26% thicker, diffusion time ~ distance^2, +59%; 12 lb 3 h -> 24 lb 4 h 45, USDA 4.5-5 h), 7BIKpNqHhqs
 - (new, not in Ready) Find the 1 bad change in 1,000 with 10 tests: binary search / git bisect, 500 250 ... 1, a million 20, a billion 30. (tech, versus) — used 2026-11-21 20:00, bad-commit, NsmVJmrIdHU

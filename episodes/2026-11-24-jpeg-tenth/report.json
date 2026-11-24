@@ -1,0 +1,18 @@
+{
+ "ok": true,
+ "problems": [],
+ "warnings": [],
+ "duration_s": 59.2,
+ "size_mb": 10.9,
+ "resolution": "1080x1920",
+ "caption_match_ratio": 0.9887640449438202,
+ "heard": "JPEG deletes about 90 % of your photo. You can't tell. It doesn't shrink the picture, and it doesn't drop pixels. It deletes exactly what your eyes are bad at. Your 12 megapixel photo is 36 million bytes, red, green, and blue for every pixel. So first, split brightness from color. Your eyes see sharp detail and brightness, but barely in color. Keep the color at half width and half height. One color sample for every four pixels, half your file gone. Next, cut the picture into eight by eight blocks and rewrite each one as a mix of 64 patterns from flat to fine stripes. Nothing's lost yet. The next step is the ruthless one. Round off the fine stripes hard. Your eyes barely see them. In a typical block, over 40 of the 64 become zero. Then one short code says the rest of this block is zero. 36 megabytes becomes about 3 .6, a tenth, and it looks the same. Subscribe if you thought it just made the picture smaller.",
+ "music": "Chill Wave",
+ "music_gap_db": 8.0,
+ "speech_starts_at_s": 0.05,
+ "final_lufs": -15.1,
+ "voice_engine": "omnivoice",
+ "contact_sheet_every_s": 2.5,
+ "build_seconds": 183,
+ "draft": false
+}
