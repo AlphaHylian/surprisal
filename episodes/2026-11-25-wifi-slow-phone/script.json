@@ -1,0 +1,74 @@
+{
+  "slug": "wifi-slow-phone",
+  "format": "short",
+  "series": "tech",
+  "hook_style": "how-to",
+  "hook_type": "claim",
+  "angle": "claim hook: one slow phone on your Wi-Fi drags every device down to its speed (HookText 1 slow phone, EVERYONE slow, over a router with 3 laptops and a far phone); rule out: it isn't hogging your data, it's just far from the router; context: far away its signal drops from 11 megabits to 1, your 3 laptops stay at 11 (802.11b rates, Heusse 2003); step 1 Wi-Fi shares the air by turns, equal shot at the next packet; step 2 a packet at 11 is on the air ~1 ms, at 1 it's 12; re-hook: equal turns sound fair, watch your laptop; step 3 each round laptops 1 ms each, then 12 for the phone, three quarters of the air to one phone; step 4 phone close: 1.9 Mb/s each; phone far: everyone 0.6, slower than the phone's own 1; payoff: equal turns, unequal time, slowest device sets everyone's speed; some routers now share by time (airtime fairness, Linux 2017); CTA subscribe (if you thought it was hogging your data). Experiment: claim vs versus (tech + claim at 12:00).",
+  "title": "One slow phone can slow down your whole Wi-Fi",
+  "description": "Wi-Fi gives every device an equal turn to send its next packet, not equal time. A phone far from the router drops to a slow rate (in the classic 802.11b case, from 11 to 1 megabit a second), so each of its packets holds the air about 12 milliseconds instead of 1. With 3 fast laptops and that one slow phone, the phone takes three quarters of the air and every device ends up at about 0.6 megabits a second, slower than the phone's own rate. With the phone close by, each would get about 1.9. This is the 802.11 \"performance anomaly\" (Heusse et al., INFOCOM 2003); routers with airtime fairness fix it by sharing time instead of turns (Høiland-Jørgensen et al., USENIX ATC 2017).\n\nNumbers checked in code (verify.py): the paper's throughput model plus a 200,000-packet simulation of Wi-Fi's random backoff.\n\nThe math behind real problems, twice a day. Subscribe and the next one finds you.\nFound an error? Comment and it gets pinned.\n#math #mathematics #shorts",
+  "social_caption": "One phone far from your router can slow every device on your Wi-Fi to below its own speed. Here's the turn-taking math behind it.",
+  "tags": [
+    "wifi",
+    "slow wifi",
+    "wi-fi speed",
+    "router",
+    "performance anomaly",
+    "networking",
+    "computer science",
+    "math",
+    "maths"
+  ],
+  "music_moods": [
+    "upbeat"
+  ],
+  "facts_checked": [
+    "802.11b hosts drop from 11 to 5.5, 2 or 1 Mb/s when far/faded; a 1 Mb/s host cuts all 11 Mb/s hosts below 1 Mb/s; CSMA/CA gives equal long-term channel access; a 1 Mb/s host holds the channel 11x longer (Heusse, Rousseau, Berger-Sabbatel, Duda, 'Performance anomaly of 802.11b', INFOCOM 2003, https://www.csd.uoc.gr/~hy439/reading/list_2011/10.1.1.12.3822.pdf)",
+    "1534-byte frame: 1.12 ms at 11 Mb/s, 12.27 ms at 1 Mb/s (12.9 ms with overhead); one round of 3 fast + 1 slow = 17 ms; slow share 75% (verify.py)",
+    "Eq. 7, N = 4: all fast 1.93 Mb/s each; 3 fast + 1 slow 0.61 Mb/s each, a 69% drop; simulation of 200,000 backoff contests: 0.602-0.608 Mb/s for every device (verify.py)",
+    "The performance anomaly still limits modern WiFi; an airtime-fairness scheduler at the access point fixes it, accepted into the mainline Linux kernel (Høiland-Jørgensen et al., 'Ending the Anomaly', USENIX ATC 2017, https://arxiv.org/abs/1703.00064)"
+  ],
+  "beats": [
+    {
+      "id": "hook",
+      "say": "One slow phone on your Wi-Fi drags every device down to its speed.",
+      "speed": 1.4
+    },
+    {
+      "id": "ruleout",
+      "say": "It's not hogging your data. It's just far from the router."
+    },
+    {
+      "id": "context",
+      "say": "Out there, it drops from 11 megabits a second to 1. Your 3 laptops stay at 11."
+    },
+    {
+      "id": "turns",
+      "say": "Wi-Fi shares the air by turns. Every device gets an equal shot at sending its next packet."
+    },
+    {
+      "id": "airtime",
+      "say": "At 11 megabits, a packet is on the air for about a millisecond. At 1 megabit, 12."
+    },
+    {
+      "id": "rehook",
+      "say": "Equal turns sound fair. Now watch your laptop."
+    },
+    {
+      "id": "round",
+      "say": "Each round, your laptops take a millisecond each. Then everyone waits 12 for the phone. Three quarters of the air, one phone."
+    },
+    {
+      "id": "result",
+      "say": "With the phone close, each device got 1.9 megabits. Now every device gets 0.6. Slower than the phone's own 1."
+    },
+    {
+      "id": "payoff",
+      "say": "Equal turns, unequal time. Your slowest device sets everyone's speed. That's why some routers now share by time, not turns."
+    },
+    {
+      "id": "cta",
+      "say": "Subscribe if you thought it was hogging your data."
+    }
+  ]
+}

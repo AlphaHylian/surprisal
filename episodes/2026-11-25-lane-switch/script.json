@@ -1,0 +1,32 @@
+{
+  "slug": "lane-switch",
+  "format": "short",
+  "series": "everyday",
+  "hook_style": "how-to",
+  "hook_type": "versus",
+  "angle": "versus hook: stuck in traffic, switch lanes or stay put? (HookText Switch lanes vs stay put, over two lanes of cars, the next lane sliding past); rule out: the other lane always seems faster, mostly it isn't, it only looks that way; context: your jam moves in waves, a mile at 20 mph then a mile at 40, the next lane too, out of step; step 1 your slow mile takes 3 minutes, the whole time the next lane slides past; step 2 your fast mile takes 90 seconds, now you pass them; re-hook: so who's winning? count the cars; step 3 slow cars bunch up 60 a mile, fast ones spread out 30; step 4 in your 3 slow minutes 30 cars pass you, in 90 fast seconds you pass 30 back, a dead tie; payoff: same average speed, but two thirds of the drive you watch the other lane win; proof: Toronto study (Redelmeier & Tibshirani, Nature 1999), 70% of driving students picked the next lane as faster when it was slightly slower; CTA checkable comment: slow part at 10 mph, how much of the time does the next lane look faster? (80%). Timed for the US Thanksgiving travel day. Experiment: claim vs versus (everyday + versus at 20:00).",
+  "title": "Should you switch lanes in traffic? The math says stay",
+  "description": "In stop-and-go traffic the next lane looks faster most of the time, even when it isn't. Say both lanes move in waves, a mile at 20 mph and a mile at 40, out of step with each other. Your slow mile takes 3 minutes and your fast mile only 90 seconds, so two thirds of the time you're the slower lane. But slow cars bunch up (60 a mile) and fast ones spread out (30 a mile): 30 cars pass you while you crawl, and you pass 30 back while you're moving. Same average speed, same arrival. Redelmeier and Tibshirani showed the illusion in Nature (1999): in their simulation the next lane looked faster even with equal average speeds, and 70% of driving students shown a video thought the next lane was faster when it was slightly slower.\n\nNumbers checked in code (verify.py), including a 5,000-driver simulation and 100,000 random glances. Sources: ScienceDaily (30 Aug 1999) and University of Toronto Magazine on the Nature study.\n\nThe math behind real problems, twice a day. Subscribe and the next one finds you.\nFound an error? Comment and it gets pinned.\n#math #mathematics #shorts",
+  "social_caption": "The other lane always looks faster. In stop-and-go traffic it usually isn't: here's the counting that shows you get there at the same time.",
+  "tags": ["traffic", "changing lanes", "next lane faster", "thanksgiving traffic", "driving", "traffic jam", "everyday math", "math", "maths"],
+  "music_moods": ["upbeat"],
+  "facts_checked": [
+    "Model: alternating 1-mile stretches at 20 and 40 mph, lanes out of step, same flow (1,200 cars/h): slow mile 3 min, fast mile 90 s, next lane faster 2/3 of the time; density 60 vs 30 cars a mile; 30 cars pass you, you pass 30; average 26.7 mph both lanes; CTA at 10 mph: 80% (verify.py, with a 5,000-driver simulation and 100,000 random glances)",
+    "Redelmeier & Tibshirani, Nature 401, 35 (2 Sept 1999): in computer models of congested roads the next lane appeared faster even if all lanes had the same average speed; 'Vehicles spread out when going fast and pack together when moving slowly'; a driver can pass many vehicles in a brief time but takes much longer to be overtaken by the same number (https://sciencedaily.com/releases/1999/08/990830184718.htm)",
+    "70 per cent of driving students shown a videotape from a moving vehicle believed the next lane was moving faster when it was actually slightly slower; Redelmeier, University of Toronto / Sunnybrook (https://magazine.utoronto.ca/leading-edge/perceptions-of-speed-study/)",
+    "US Thanksgiving 2026 is Thursday 26 Nov (fourth Thursday of November; computed)"
+  ],
+  "beats": [
+    {"id": "hook", "say": "Stuck in traffic: switch lanes, or stay put?", "speed": 1.35},
+    {"id": "ruleout", "say": "The other lane always seems faster. Mostly, it isn't. It just looks that way."},
+    {"id": "context", "say": "Your jam moves in waves: a mile at 20 miles an hour, then a mile at 40. The next lane too, out of step."},
+    {"id": "slow", "say": "Your slow mile takes 3 minutes. The whole time, the next lane slides past you."},
+    {"id": "fast", "say": "Your fast mile takes just 90 seconds. Now you pass them."},
+    {"id": "rehook", "say": "So who's winning? Count the cars."},
+    {"id": "density", "say": "Slow cars bunch up: 60 to a mile. Fast cars spread out: 30."},
+    {"id": "tie", "say": "In your 3 slow minutes, 30 cars pass you. In your 90 fast seconds, you pass 30 back. A dead tie."},
+    {"id": "payoff", "say": "Same speed, same arrival. But for two thirds of your drive, you watch the other lane win."},
+    {"id": "proof", "say": "In a Toronto study, 70% of driving students picked the next lane as faster. It was slightly slower."},
+    {"id": "cta", "say": "So if your slow part were 10 miles an hour, how often would the other lane look faster?"}
+  ]
+}
