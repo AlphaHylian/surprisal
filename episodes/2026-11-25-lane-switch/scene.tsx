@@ -16,7 +16,7 @@ const useW = () => {
 // ---------------------------------------------------------------- the road, seen from above, driving up
 // the camera rides with your car (amber). `rel` = how fast the next lane's cars move past you, in px/s
 // (positive: they move up, i.e. overtake you). `myGap` / `nextGap`: spacing of cars in each lane.
-const ROAD_TOP = 380, ROAD_BOT = 1160;
+const ROAD_TOP = 380, ROAD_BOT = 1100;
 const LANE_ME = 420, LANE_NEXT = 660;
 const Car: React.FC<{ x: number; y: number; color: string; glow?: boolean }> = ({ x, y, color, glow }) => (
   <div style={{ position: "absolute", left: x - 48, top: y - 78, width: 96, height: 156, borderRadius: 26, background: color,
@@ -101,7 +101,7 @@ const RuleoutBody: React.FC = () => {
     <>
       <Headline>Always faster?</Headline>
       <Road rel={260} nextGap={300} myGap={190} />
-      <At x={540} y={1100}><Appear at={tSeems} from="pop"><Chip color={C.mint} size={50}>next lane: "faster"</Chip></Appear></At>
+      <At x={850} y={860}><Appear at={tSeems} from="pop"><Chip color={C.mint} size={44}>"faster"</Chip></Appear></At>
       <At x={850} y={700}><Appear at={tIsnt - 0.1} from="slam"><Text size={120} color={C.coral}>?</Text></Appear></At>
       <Sfx name="pack/hmm" at={tLooks} volume={0.25} />
     </>
