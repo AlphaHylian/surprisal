@@ -3,16 +3,16 @@
  "problems": [],
  "warnings": [],
  "duration_s": 51.8,
- "size_mb": 3.4,
- "resolution": "540x960",
+ "size_mb": 9.7,
+ "resolution": "1080x1920",
  "caption_match_ratio": 0.98125,
- "heard": "One slow phone on your Wi -Fi drags every device down to its speed. It's not hogging your data. It's just far from the router. Out there, it drops from 11 megabits a second to one. Your three laptops stay at 11. Wi -Fi shares the air by turns. Every device gets an equal shot at sending its next packet. At 11 megabits, a packet is on the air for about a millisecond. At 1 megabit 12, equal turn sound fair. Now watch your laptop. Each round, your laptops take a millisecond each. Then everyone waits 12 for the phone. Three quarters of the air, one phone. With the phone nearby, each device got 1 .9 megabits. Now every device gets 0 .6, slower than the phone's own one. Equal turns, unequal time. Your slowest device sets everyone's speed. That's why some routers now share by time not turns. Subscribe if you thought it was hogging your data. If you thought it was hogging your data,",
+ "heard": "One slow phone on your Wi -Fi drags every device down to its speed. It's not hogging your data. It's just far from the router. Out there, it drops from 11 megabits a second to one. Your three laptops stay at 11. Wi -Fi shares the air by turns. Every device gets an equal shot at sending its next packet. At 11 megabits, a packet is on the air for about a millisecond. At 1 megabit 12, equal turn sound fair. Now watch your laptop. Each round, your laptops take a millisecond each. Then everyone waits 12 for the phone. Three quarters of the air, one phone. With the phone nearby, each device got 1 .9 megabits. Now every device gets 0 .6, slower than the phone's own one. Equal turns, unequal time. Your slowest device sets everyone's speed. That's why some routers now share by time not turns. Subscribe if you thought it was hogging your data.",
  "music": "Digital Lemonade",
  "music_gap_db": 8.0,
  "speech_starts_at_s": 0.0,
  "final_lufs": -15.0,
  "voice_engine": "omnivoice",
  "contact_sheet_every_s": 2.2,
- "build_seconds": 287,
- "draft": true
+ "build_seconds": 310,
+ "draft": false
 }
