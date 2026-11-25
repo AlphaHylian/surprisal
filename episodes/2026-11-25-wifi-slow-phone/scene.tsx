@@ -100,7 +100,7 @@ const RuleoutBody: React.FC = () => {
     <>
       <Headline>Not hogging. Just far.</Headline>
       <At x={540} y={700}><Icon name="Router" size={150} /></At>
-      <At x={540 + 300 * k} y={700 - 120 * k}><Icon name="Smartphone" size={120} color={k > 0.5 ? C.coral : C.ink} /></At>
+      <At x={700 + 160 * k} y={660 - 80 * k}><Icon name="Smartphone" size={120} color={k > 0.5 ? C.coral : C.ink} /></At>
       <At x={540} y={950}><Appear at={tHog - 0.2} from="pop"><Chip color={C.muted} size={48}>✗ using all the data</Chip></Appear></At>
       <At x={540} y={1080}><Appear at={tFar} from="slam"><Chip color={C.amber} size={52}>far from the router</Chip></Appear></At>
       <Sfx name="pack/wrong" at={tHog} volume={0.22} />
@@ -189,21 +189,21 @@ const RoundBody: React.FC = () => {
       <Headline>One round of turns</Headline>
       <At x={200} y={660}><div style={{ display: "flex", gap: 10 }}>{[0, 1, 2].map((i) => <Icon key={i} name="Laptop" size={100} color={C.mint} />)}</div></At>
       <At x={850} y={660}><Icon name="Smartphone" size={110} color={C.coral} /></At>
-      <At x={540} y={820}><Appear at={tWaits - 0.2} from="up"><Text size={50} color={C.muted}>everyone else waits…</Text></Appear></At>
+      <At x={540} y={800}><Appear at={tWaits - 0.2} from="up"><Text size={50} color={C.muted}>everyone else waits…</Text></Appear></At>
       {/* 3 fast blocks while "millisecond each", then the long one from "waits" */}
-      <AirBar t0={t0} speed={FAST * 3 / 1.6} showSlow={false} />
-      <AirBarSlow t0={tWaits - 0.2} />
-      <At x={540} y={1150}><Appear at={tQ - 0.3} from="slam"><Chip color={C.amber} size={56}>¾ of the air: 1 phone</Chip></Appear></At>
+      <AirBar t0={t0} speed={FAST * 3 / 1.6} showSlow={false} y={930} />
+      <AirBarSlow t0={tWaits - 0.2} y={930} />
+      <At x={540} y={1080}><Appear at={tQ - 0.3} from="slam"><Chip color={C.amber} size={56}>¾ of the air: 1 phone</Chip></Appear></At>
       <Sfx name="pack/clock-fast" at={tWaits} volume={0.2} dur={1.6} />
     </>
   );
 };
-const AirBarSlow: React.FC<{ t0: number }> = ({ t0 }) => {
+const AirBarSlow: React.FC<{ t0: number; y?: number }> = ({ t0, y = 1040 }) => {
   const t = useT();
   const w = tween(t, t0, t0 + 1.8, 0, SLOW * MS);
   if (w <= 0) return null;
   return (
-    <div style={{ position: "absolute", left: 70 + 3 * FAST * MS + 3, top: 996, width: w - 6, height: 88, borderRadius: 12, background: C.coral,
+    <div style={{ position: "absolute", left: 70 + 3 * FAST * MS + 3, top: y - 44, width: w - 6, height: 88, borderRadius: 12, background: C.coral,
       display: "flex", alignItems: "center", justifyContent: "center", fontFamily: F.bold, fontSize: 48, color: C.bg }}>{w > 200 ? "12 ms" : ""}</div>
   );
 };
