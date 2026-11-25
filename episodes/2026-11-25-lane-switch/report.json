@@ -1,0 +1,18 @@
+{
+ "ok": true,
+ "problems": [],
+ "warnings": [],
+ "duration_s": 55.6,
+ "size_mb": 3.4,
+ "resolution": "540x960",
+ "caption_match_ratio": 0.9759036144578314,
+ "heard": "Stuck in traffic, switch lanes are stapled. The other lane always seems faster. Mostly it isn't. It just looks that way. Your jam moves in waves a mile at 20 miles an hour than a mile at 40. The next lane, too, out of step. Your slow mile takes three minutes. The whole time, the next lane slides past you. Your fast mile takes just 90 seconds. Now you pass them. So who's winning? Count the cars. Slow cars bunch up, 60 to a mile. Fast cars spread out, 30. In your three slow minutes, 30 cars pass you. In your 90 fast seconds, you pass 30 back. A dead tie. Same speed, same arrival. But for two -thirds of your drive, you watch the other lane win. In a Toronto study, 70 % of driving students picked the next lane as faster. It was slightly slower. So if your slow part were 10 miles an hour, how often would the other lane look faster?",
+ "music": "Digital Lemonade",
+ "music_gap_db": 8.0,
+ "speech_starts_at_s": 0.0,
+ "final_lufs": -15.0,
+ "voice_engine": "omnivoice",
+ "contact_sheet_every_s": 2.3,
+ "build_seconds": 1351,
+ "draft": true
+}

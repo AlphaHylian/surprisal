@@ -167,7 +167,7 @@ const RehookBody: React.FC = () => {
     <>
       <Headline color={C.amber}>Who's winning?</Headline>
       <At x={540} y={720}><Icon name="Car" size={300} color={C.amber} /></At>
-      <At x={540} y={1020}><Appear at={tCount - 0.2} from="slam"><Text size={84}>Count the cars</Text></Appear></At>
+      <At x={540} y={1020}><Appear at={tCount - 0.2} from="slam"><Text size={72}>Count the cars</Text></Appear></At>
       <Sfx name="pack/suspense-sting" at={0.2} volume={0.25} />
     </>
   );
