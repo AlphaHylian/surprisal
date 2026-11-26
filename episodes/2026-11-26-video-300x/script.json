@@ -1,0 +1,79 @@
+{
+  "slug": "video-300x",
+  "format": "short",
+  "series": "tech",
+  "hook_style": "how-to",
+  "hook_type": "claim",
+  "angle": "claim hook: a 4K movie is 4 terabytes, Netflix sends you 14 gigabytes (HookText 4 TB movie, 14 GB sent, over a film strip of frames and a 4 TB -> 14 GB label); rule out: not a blurrier copy, it never sends the same thing twice; context: 8 million pixels x 3 bytes x 24 frames a second x 2 hours = 4 TB; step 1 squeeze each frame like a JPEG, ~10x, ~400 GB; re-hook: still 30x too big, the real trick is between the frames; step 2 two frames in a row are almost identical: don't send frame 2, send what changed; step 3 cut it into blocks (16x16), one instruction per block: copy this block from the last frame, 3 pixels left, plus the small leftover difference; step 4 a full picture every 2 seconds so you can skip: measured on a minute of Big Buck Bunny, a full picture 130 KB, a predicted one 8 KB, 16x less; payoff: 4 TB -> 14 GB, 300x smaller, you never notice; CTA subscribe (if you thought it just sent a blurrier movie; ties to the rule-out). Follow-up to jpeg-tenth. Experiment: claim vs versus (tech + claim at 20:00).",
+  "title": "How Netflix fits a 4 TB movie into 14 GB",
+  "description": "A 2-hour 4K movie, stored pixel by pixel (8.3 million pixels, 3 bytes each, 24 frames a second), is about 4.3 terabytes. Netflix streams 4K at up to 7 GB an hour, so about 14 GB: some 300 times smaller. Squeezing each frame like a JPEG gets you roughly 10x. The rest comes from between the frames: the picture is cut into blocks, and for most blocks the stream only says 'copy this block from the last frame, shifted a few pixels', plus the small leftover difference. A full picture is sent every couple of seconds so you can skip ahead. In one minute of Big Buck Bunny re-encoded with x264, a full picture took 130 KB and a predicted one about 8 KB: 16 times less.\n\nNumbers checked in code (verify.py), including the x264 measurement on Big Buck Bunny (Blender Foundation, CC BY 3.0, via Wikimedia Commons). Sources: Netflix Help Center (data usage), Wikipedia (Inter frame).\n\nThe math behind real problems, twice a day. Subscribe and the next one finds you.\nFound an error? Comment and it gets pinned.\n#math #mathematics #shorts",
+  "social_caption": "A 4K movie is about 4 terabytes of pixels, and Netflix sends you 14 gigabytes. Here's the trick between the frames that makes up most of that.",
+  "tags": [
+    "video compression",
+    "netflix",
+    "4k",
+    "streaming",
+    "h264",
+    "how video works",
+    "computer science",
+    "math",
+    "maths"
+  ],
+  "music_moods": [
+    "upbeat"
+  ],
+  "facts_checked": [
+    "Raw 4K: 3840 x 2160 = 8.29 million pixels x 3 bytes = 24.9 MB a frame; x 24 fps x 7,200 s = 4.3 TB; Netflix 2 h at 7 GB/h = 14 GB; ratio 307x; ~10x per-frame (JPEG, as measured in jpeg-tenth: 7-26x) -> ~430 GB, still ~31x too big (verify.py)",
+    "Netflix Ultra HD (4K): up to 7 GB per hour (https://help.netflix.com/en/node/87, fetched 2026-11-26)",
+    "Inter-frame coding: frame divided into macroblocks (16x16 in MPEG-2), motion vector points to the matching block in the reference frame, the prediction error is transformed and sent; I-frames decode on their own (https://en.wikipedia.org/wiki/Inter_frame)",
+    "Measured: Big Buck Bunny 720p (Wikimedia Commons transcode), 1:00-2:00, x264 CRF 20, keyframe every 48 frames (2 s), no B-frames: keyframes average 130 KB, predicted frames 8.0 KB (16.3x less); 31 keyframes, 1,442 frames (verify.py)"
+  ],
+  "beats": [
+    {
+      "id": "hook",
+      "say": "Your 4K movie is 4 terabytes. Netflix sends 14 gigabytes.",
+      "caption": "Your 4K movie is 4 TB. Netflix sends 14 GB.",
+      "speed": 1.4
+    },
+    {
+      "id": "ruleout",
+      "say": "It's not a blurrier copy. It just never sends you the same thing twice."
+    },
+    {
+      "id": "context",
+      "say": "Every frame is 8 million pixels, 3 bytes each, 24 frames a second. For 2 hours, that's your 4 terabytes.",
+      "caption": "Every frame is 8 million pixels, 3 bytes each, 24 frames a second. For 2 hours, that's your 4 TB."
+    },
+    {
+      "id": "jpeg",
+      "say": "First, squeeze each frame like a JPEG. About 10 times smaller: 400 gigabytes.",
+      "caption": "First, squeeze each frame like a JPEG. About 10 times smaller: 400 GB."
+    },
+    {
+      "id": "rehook",
+      "say": "Still 30 times too big. The real trick is between the frames."
+    },
+    {
+      "id": "same",
+      "say": "Two frames in a row are almost identical. So don't send frame 2. Send what changed."
+    },
+    {
+      "id": "blocks",
+      "say": "Cut it into small blocks. For each one, send a single instruction: copy this block from the last frame, 3 pixels to the left. Plus the tiny difference left over."
+    },
+    {
+      "id": "measure",
+      "say": "Every 2 seconds, you still get one full picture: 130 kilobytes. The ones in between? About 8. Sixteen times less.",
+      "caption": "Every 2 seconds, you still get one full picture: 130 KB. The ones in between? About 8. 16 times less."
+    },
+    {
+      "id": "payoff",
+      "say": "That's how 4 terabytes become 14 gigabytes. 300 times smaller, and you never notice.",
+      "caption": "That's how 4 TB become 14 GB. 300 times smaller, and you never notice."
+    },
+    {
+      "id": "cta",
+      "say": "Subscribe if you thought Netflix just sent a blurrier movie."
+    }
+  ]
+}

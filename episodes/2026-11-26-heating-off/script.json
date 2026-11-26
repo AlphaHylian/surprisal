@@ -1,0 +1,31 @@
+{
+  "slug": "heating-off",
+  "format": "short",
+  "series": "everyday",
+  "hook_style": "how-to",
+  "hook_type": "versus",
+  "angle": "versus hook: heating on all day, or off while you're out? (HookText Heating on all day vs off while out, over two houses, one ON 20 C with a flame, one OFF with a snowflake); rule out: you've heard warming a cold house back up burns more than you saved, it can't; context: 0 C outside, house at 20, out for 9 hours; step 1 your house leaks heat through every wall, the bigger the inside-outside gap the faster; step 2 heating on: gap 20, leaks 4 kW, 9 hours = 36 kWh burned refilling the leak; step 3 heating off: drifts to 15, gap shrinks, leak slows to 3 kW; re-hook: tonight the boiler warms the whole house back up, that's the catch?; step 4 warming up only puts back what leaked, and less leaked: 31 not 36; payoff: a cold house leaks slower, off always wins, 5 kWh saved, 13% of those 9 hours; US DOE: up to 10% a year doing it daily; CTA checkable comment: out twice as long, twice the saving? (no, more: 3.7x). Experiment: claim vs versus (everyday + versus at 12:00).",
+  "title": "Heating on all day, or off while you're out? The math",
+  "description": "Your house loses heat in proportion to how much warmer it is inside than outside. With the heating on, a 20 degree gap leaks about 4 kW the whole time you're out: 36 kWh over 9 hours. Switched off, the house drifts down to 15 C, the gap shrinks, and the leak slows to 3 kW. Warming it back up only replaces what leaked out while you were gone: about 31 kWh, so you save about 5 kWh (13% of those 9 hours). The US Department of Energy calls 'reheating costs more' a common misconception, and puts the saving from a daily 8-hour setback at up to 10% a year. (Heat pumps with electric backup heat are the one case to watch: a big jump in the setpoint can switch on the backup heaters, so let them warm up slowly.)\n\nNumbers checked in code (verify.py): Newton's law of cooling for a house with a 0.2 kW per degree heat loss, plus a minute-by-minute thermostat simulation of 100,000 random houses (switching off never used more). Sources: US DOE Energy Saver (thermostats), Energy Vanguard.\n\nThe math behind real problems, twice a day. Subscribe and the next one finds you.\nFound an error? Comment and it gets pinned.\n#math #mathematics #shorts",
+  "social_caption": "Is it cheaper to leave the heating on all day or switch it off when you go out? Here's the one fact about heat loss that settles it.",
+  "tags": ["heating", "thermostat", "save energy", "heating bill", "leave heating on", "winter", "everyday math", "math", "maths", "physics"],
+  "music_moods": ["chill"],
+  "facts_checked": [
+    "Model: heat loss k(T_in - T_out), k = 0.2 kW/C, 0 C outside, 20 C inside, 9 hours out; leak 4 kW, 36 kWh with the heating on; off: cools to 15 C (tau 31.3 h), leak 3 kW; warm-up energy = heat leaked while out = 31.3 kWh; saved 4.7 kWh = 13.1%; CTA: 18 h out saves 3.7x as much (verify.py, plus a 100,000-house thermostat simulation: off never uses more)",
+    "Heat loss rate depends on the temperature difference between inside and outside (https://www.energyvanguard.com/blog/do-programmable-thermostats-save-energy/)",
+    "US DOE Energy Saver: 'A common misconception associated with thermostats is that a furnace works harder than normal to warm the space back to a comfortable temperature after the thermostat has been set back, resulting in little or no savings'; 'save as much as 10% a year on heating and cooling by simply turning your thermostat back 7-10 F for 8 hours a day' (https://www.energy.gov/energysaver/thermostats, via search excerpt 2026-11-26)",
+    "Heat pump caveat: a setback can trigger auxiliary resistance heat (Energy Vanguard comment; ASHRAE TC 7.6 FAQ 91 advises heat pump owners to check the warm-up cycle)"
+  ],
+  "beats": [
+    {"id": "hook", "say": "Heating on all day, or off while you're out?", "speed": 1.2},
+    {"id": "ruleout", "say": "You've heard that warming a cold house back up burns more than you saved. It can't."},
+    {"id": "context", "say": "Say it's 0 degrees outside, your house is at 20, and you're out for 9 hours."},
+    {"id": "leak", "say": "Your house leaks heat through every wall. The bigger the gap between inside and out, the faster it leaks."},
+    {"id": "on", "say": "Heating on: the gap stays at 20, so it leaks 4 kilowatts. Over 9 hours, that's 36 kilowatt hours, all burned to refill the leak.", "caption": "Heating on: the gap stays at 20, so it leaks 4 kW. Over 9 hours, that's 36 kWh, all burned to refill the leak."},
+    {"id": "off", "say": "Heating off: your house drifts down to 15. The gap shrinks, so the leak slows to 3."},
+    {"id": "rehook", "say": "But tonight, your boiler has to warm the whole house back up. That's the catch, right?"},
+    {"id": "refill", "say": "Warming it up only puts back what leaked out. And less leaked: 31, not 36."},
+    {"id": "payoff", "say": "A cold house leaks slower, so off always wins. The US Energy Department puts it at up to 10% a year."},
+    {"id": "cta", "say": "So if you're out twice as long, do you save twice as much?"}
+  ]
+}

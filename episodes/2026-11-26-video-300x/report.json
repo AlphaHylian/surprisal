@@ -1,0 +1,18 @@
+{
+ "ok": true,
+ "problems": [],
+ "warnings": [],
+ "duration_s": 60.1,
+ "size_mb": 10.0,
+ "resolution": "1080x1920",
+ "caption_match_ratio": 0.8909090909090909,
+ "heard": "Your 4K movie is 4TB. Netflix sends 14GB. It's not a blurrier copy. It just never sends you the same thing twice. Every frame is 8 million pixels, 3 bytes each, 24 frames a second. For 2 hours, that's your 4TB. First, squeeze each frame like a JPEG. About 10 times smaller, 400GB. Still 30 times too big. The real trick is between the frames. 2 frames in a row are almost identical. So don't send frame 2. Send what changed. Cut it into small blocks. For each one, send a single instruction. Copy this block from the last frame, 3 pixels to the left, plus the tiny difference left over. Every 2 seconds, you still get one full picture. 130KB. The ones in between? About 8. 16 times less. That's how 4TB become 14GB. 300 times smaller, and you never notice. Subscribe if you thought Netflix just sent a blurrier movie.",
+ "music": "Tech Talk",
+ "music_gap_db": 8.0,
+ "speech_starts_at_s": 0.01,
+ "final_lufs": -14.8,
+ "voice_engine": "omnivoice",
+ "contact_sheet_every_s": 2.5,
+ "build_seconds": 201,
+ "draft": false
+}

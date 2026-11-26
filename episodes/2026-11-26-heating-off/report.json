@@ -1,0 +1,18 @@
+{
+ "ok": true,
+ "problems": [],
+ "warnings": [],
+ "duration_s": 53.0,
+ "size_mb": 9.1,
+ "resolution": "1080x1920",
+ "caption_match_ratio": 0.9823529411764705,
+ "heard": "heating on all day or off while you're out. You've heard that warming a cold house back up burns more than you saved. It can't. Say it's zero degrees outside, your house is at 20 and you're out for nine hours. Your house leaks heat through every wall. The bigger the gap between inside and out, the faster it leaks. Heating on, the gap stays at 20, so it leaks four kilowatts. Over nine hours, that's 36 kilowatt hours all burned to refill the leak. Heating off, your house drifts down to 15. The gap shrinks, so the leak slows to three. But tonight, your boiler has to warm the whole house back up. That's the catch, right? Warming it up only puts back what leaked out, and less leaked, 31, not 36. A cold house leaks slower, so off always wins. The U .S. Energy Department puts it at up to 10 % a year. So if you're out twice as long, do you save twice as much?",
+ "music": "Airport Lounge",
+ "music_gap_db": 8.0,
+ "speech_starts_at_s": 0.01,
+ "final_lufs": -15.0,
+ "voice_engine": "omnivoice",
+ "contact_sheet_every_s": 2.2,
+ "build_seconds": 268,
+ "draft": false
+}

@@ -124,3 +124,8 @@ date,call,ok
 2026-11-25,upload wifi-slow-phone (429 Too Many Requests),no
 2026-11-25,upload wifi-slow-phone retry (429 Too Many Requests),no
 2026-11-25,upload lane-switch (429 Too Many Requests),no
+2026-11-26,commentThreads,yes
+2026-11-26,upload heating-off (429 Too Many Requests),no
+2026-11-26,upload heating-off retry (429 Too Many Requests),no
+2026-11-26,upload video-300x (429 Too Many Requests),no
+2026-11-26,upload video-300x retry (429 Too Many Requests),no
