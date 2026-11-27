@@ -1,0 +1,18 @@
+{
+ "ok": true,
+ "problems": [],
+ "warnings": [],
+ "duration_s": 57.2,
+ "size_mb": 9.7,
+ "resolution": "1080x1920",
+ "caption_match_ratio": 0.9890710382513661,
+ "heard": "Shazam finds your song even when the noise is louder than the music. It doesn't listen to the tune. It throws away almost all the sound. It gets a few noisy seconds from your phone and millions of songs to check. First, turn the sound into a picture. Time across, pitch up the side. Now keep only the loudest points. Your song becomes a map of stars. The noise adds stars, but the song's loudest ones mostly survive. But one star means almost nothing. It's just a pitch, one of 1024. So pair each star with the 10 stars right after it. Two pitches plus the gap between them, one pattern and a billion. Look up every pair. Each hit says this song this second. Wrong songs get random hits. The right songs hits all point to the same moment. So only one or two pairs in 100 have to survive the noise. That's how your phone names a song in a loud bar. If half the stars survive, how many pairs survive? Tell me in the comments.",
+ "music": "Somewhere Sunny",
+ "music_gap_db": 8.0,
+ "speech_starts_at_s": 0.0,
+ "final_lufs": -14.8,
+ "voice_engine": "omnivoice",
+ "contact_sheet_every_s": 2.4,
+ "build_seconds": 300,
+ "draft": false
+}

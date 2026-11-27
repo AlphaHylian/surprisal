@@ -1,0 +1,18 @@
+{
+ "ok": true,
+ "problems": [],
+ "warnings": [],
+ "duration_s": 57.4,
+ "size_mb": 9.9,
+ "resolution": "1080x1920",
+ "caption_match_ratio": 1.0,
+ "heard": "Split the bill or pay your own. One costs everyone a third more. Same menu, same prices, same people. The only thing that changes is what you order. Six of you at dinner. You want the $12 dessert. Paying your own, it costs you 12. Skip it. Splitting six ways, it costs you two. Your friends cover the other 10. Order it. Great deal. Except all six of you just did the same math. Six desserts, $72, your share, 12. Full price for a dessert worth $2 to you. Economists tested this in a restaurant in Israel with tables of six strangers. Paying their own, they spent 37 shekels each. Splitting 51, free 82. And before ordering, four out of five said they'd rather pay their own. Splitting doesn't share the cost. It shares the temptation. Pay your own and the table spends a quarter less. Subscribe if you'd have ordered the dessert.",
+ "music": "Wallpaper",
+ "music_gap_db": 8.0,
+ "speech_starts_at_s": 0.0,
+ "final_lufs": -15.1,
+ "voice_engine": "omnivoice",
+ "contact_sheet_every_s": 2.4,
+ "build_seconds": 208,
+ "draft": false
+}

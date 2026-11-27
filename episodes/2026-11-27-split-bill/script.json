@@ -1,0 +1,79 @@
+{
+  "slug": "split-bill",
+  "format": "short",
+  "series": "everyday",
+  "hook_style": "how-to",
+  "hook_type": "versus",
+  "angle": "versus hook: split the bill, or each pay your own? one makes everyone pay a third more (HookText Split it vs pay your own, over a round table of six with a receipt); rule out: same menu, same prices, same people, the rule changes what you order; context: six of you, a $12 dessert; own: costs you 12, skip it; split: costs you 2, friends pay 10, order it; re-hook: all six did the same math; six desserts $72, your share 12, full price for a dessert you wanted at 2; study: Haifa restaurant, tables of six strangers (Gneezy, Haruvy & Yafe 2004): own 37 shekels, split 51, free 82; before ordering 4 in 5 preferred paying their own; payoff: splitting shares the temptation, pay your own and the table spends a quarter less; CTA subscribe (if you'd have ordered the dessert). Experiment: CTA comment vs subscribe (subscribe at 20:00); hook versus at 20:00.",
+  "title": "Why splitting the bill makes everyone pay more",
+  "description": "When six people split the bill evenly, a $12 dessert costs you only $2: your friends pay the other $10. But everyone does the same math, so six desserts arrive and your share is $12 anyway. In a 2004 restaurant experiment in Haifa with tables of six strangers, diners paying their own spent 37 shekels on average, diners splitting evenly 51 (over a third more), and diners eating for free 82. Asked beforehand, 4 in 5 said they would rather pay their own.\n\nNumbers checked in code (verify.py) from the paper's table of every diner's bill. Source: Gneezy, Haruvy & Yafe, The Inefficiency of Splitting the Bill, The Economic Journal (2004).\n\nThe math behind real problems, twice a day. Subscribe and the next one finds you.\nFound an error? Comment and it gets pinned.\n#math #mathematics #shorts",
+  "social_caption": "Splitting the bill evenly makes everyone order more. In a real restaurant experiment, tables that split spent over a third more.",
+  "tags": [
+    "splitting the bill",
+    "game theory",
+    "restaurant",
+    "tragedy of the commons",
+    "behavioral economics",
+    "unscrupulous diners dilemma",
+    "economics",
+    "math",
+    "maths"
+  ],
+  "music_moods": [
+    "chill"
+  ],
+  "facts_checked": [
+    "Restaurant near the Technion, Haifa; groups of six strangers; Table 1: individual pay avg 37.3 NIS (24 diners), even split 50.9 (24), free meal 82.3 (12); recomputed from the table: 37.29 / 50.92 / 82.33, split +36.5% vs own, own 26.8% less than split (https://rady.ucsd.edu/_files/faculty-research/uri-gneezy/splitting-bill.pdf, fetched 2026-11-27; verify.py)",
+    "19 of 24 (80%) asked before ordering preferred paying individually (same paper, conclusion)",
+    "Dessert example: 6 diners, $12: own 12, split 2 (friends 10), 6 desserts 72, share 12 (verify.py; illustrative)"
+  ],
+  "beats": [
+    {
+      "id": "hook",
+      "say": "Split the bill, or pay your own? One costs everyone a third more.",
+      "speed": 1.4
+    },
+    {
+      "id": "ruleout",
+      "say": "Same menu, same prices, same people. The only thing that changes is what you order."
+    },
+    {
+      "id": "context",
+      "say": "Six of you at dinner. You want the 12 dollar dessert.",
+      "caption": "Six of you at dinner. You want the $12 dessert."
+    },
+    {
+      "id": "own",
+      "say": "Paying your own, it costs you 12. Skip it."
+    },
+    {
+      "id": "split",
+      "say": "Splitting six ways, it costs you 2. Your friends cover the other 10. Order it."
+    },
+    {
+      "id": "rehook",
+      "say": "Great deal. Except all six of you just did the same math."
+    },
+    {
+      "id": "six",
+      "say": "Six desserts. 72 dollars. Your share: 12. Full price, for a dessert worth 2 dollars to you.",
+      "caption": "Six desserts. $72. Your share: 12. Full price, for a dessert worth $2 to you."
+    },
+    {
+      "id": "study",
+      "say": "Economists tested this in a restaurant in Israel, with tables of six strangers. Paying their own, they spent 37 shekels each. Splitting, 51. Free, 82."
+    },
+    {
+      "id": "pref",
+      "say": "And before ordering, 4 out of 5 said they'd rather pay their own."
+    },
+    {
+      "id": "payoff",
+      "say": "Splitting doesn't share the cost. It shares the temptation. Pay your own, and the table spends a quarter less."
+    },
+    {
+      "id": "cta",
+      "say": "Subscribe if you'd have ordered the dessert."
+    }
+  ]
+}
