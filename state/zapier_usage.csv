@@ -133,3 +133,6 @@ date,call,ok
 2026-11-27,upload song-stars (iDTWwYFmhCA),yes
 2026-11-27,upload split-bill (27-4z5LCmvw),yes
 2026-11-28,commentThreads,yes
+2026-11-28,upload checkout-cart (wj8wKROkhlI; MCP timed out but upload succeeded),yes
+2026-11-28,search forMine (check upload after timeout),yes
+2026-11-28,videos status wj8wKROkhlI (publishAt 10:00Z ok),yes
