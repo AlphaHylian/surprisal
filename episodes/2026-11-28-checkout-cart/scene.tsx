@@ -242,7 +242,7 @@ const CtaBody: React.FC = () => {
   return (
     <>
       <Lanes y={660} scale={1.15} />
-      <At x={540} y={1080}><Appear at={tB - 0.6} from="up"><Text size={60}>would you have picked <span style={{ color: C.mint }}>the baskets?</span></Text></Appear></At>
+      <At x={540} y={1060}><Appear at={tB - 0.6} from="up"><div style={{ textAlign: "center" }}><Text size={60}>would you have picked</Text><Text size={60} color={C.mint}>the baskets?</Text></div></Appear></At>
     </>
   );
 };

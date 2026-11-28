@@ -3,8 +3,8 @@
  "problems": [],
  "warnings": [],
  "duration_s": 64.1,
- "size_mb": 3.8,
- "resolution": "540x960",
+ "size_mb": 10.8,
+ "resolution": "1080x1920",
  "caption_match_ratio": 0.9720670391061452,
  "heard": "Four small baskets are one full cart. One line is two minutes faster. You'd count the items. 40 beats 50, but that's the wrong thing to count. A math teacher timed real checkouts with a stopwatch. Every shopper runs two clocks. Clock one, each item takes about three seconds to scan. Clock two, every person takes 48 seconds. Hello, pay bag receipt, goodbye. Even with one item. So time the cart. 50 items is 150 seconds plus one person, 48. That's three minutes, 18. Now the baskets. 40 items, 120 seconds. But four people, 192 more. Five minutes, 12. Fewer items and two minutes slower. So what should you count instead? 48 divided by three is 16. Every person ahead of you is worth 16 items. The cart line is 66 items of waiting. The basket line is 104. The cart keeps winning until it holds 88 items. Don't count the items. Count the people. Subscribe if you'd have picked the baskets.",
  "music": "Digital Lemonade",
@@ -13,6 +13,6 @@
  "final_lufs": -15.2,
  "voice_engine": "omnivoice",
  "contact_sheet_every_s": 2.7,
- "build_seconds": 1210,
- "draft": true
+ "build_seconds": 264,
+ "draft": false
 }
