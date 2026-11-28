@@ -2,7 +2,7 @@
 // claim hook -> no list of typos, it makes every mistake on purpose -> 80% are one slip (Damerau) -> teh -> undo every slip
 // -> 187 guesses -> 8 real words -> re-hook: ten, tea? -> the 79,809 vs ten 219 -> bet on the common one -> recap, 7 in 10 -> CTA acress?
 import React from "react";
-import { Appear, At, C, Chip, Counter, F, Headline, HookText, Icon, Punch, Riser, Sfx, Span, Text, Tiles, tween, useAt, useT } from "../kit";
+import { Appear, At, C, Chip, Counter, F, Headline, HookText, Icon, Riser, Sfx, Span, Text, Tiles, tween, useAt, useT } from "../kit";
 
 // ---------------------------------------------------------------- hook
 const HookBody: React.FC = () => {
@@ -61,7 +61,7 @@ const ContextBody: React.FC = () => {
 const ExampleBody: React.FC = () => (
   <>
     <Headline>You typed</Headline>
-    <At x={540} y={660}><Punch at={0.2}><Tiles text="teh" size={220} hi={{ 0: C.coral, 1: C.coral, 2: C.coral }} show={0.05} stagger={0.15} /></Punch></At>
+    <At x={540} y={660}><Tiles text="teh" size={220} hi={{ 0: C.coral, 1: C.coral, 2: C.coral }} show={0.05} stagger={0.15} /></At>
   </>
 );
 
@@ -72,7 +72,7 @@ const UndoBody: React.FC = () => {
   const t = useT();
   const at = useAt();
   const tDrop = at.word("drop", 1, 1.6), tSwap = at.word("swap", 1, 2.8), tTry = at.word("try", 1, 4.0);
-  const shown = (i: number) => (i < 3 ? tDrop : i < 5 ? tSwap : tTry + (i - 5) * 0.08);
+  const shown = (i: number) => (i < 3 ? tDrop + i * 0.15 : i < 5 ? tSwap + (i - 3) * 0.15 : Math.min(tSwap + 0.7, tTry - 0.3) + (i - 5) * 0.09);
   return (
     <>
       <Headline>Undo every slip</Headline>
@@ -82,7 +82,7 @@ const UndoBody: React.FC = () => {
           <div key={i} style={{ height: 62, borderRadius: 12, background: C.panel, border: `3px solid ${g === "the" ? C.mint : C.dim}`, display: "flex", alignItems: "center", justifyContent: "center",
             fontFamily: F.mono, fontSize: 44, color: g === "the" ? C.mint : C.ink, opacity: tween(t, shown(i) - 0.1, shown(i) + 0.1, 0, 1) }}>{g}</div>))}
       </div></At>
-      <Sfx name="pack/typing" at={tTry - 0.1} dur={2.2} volume={0.25} />
+      <Sfx name="pack/typing" at={Math.min(tSwap + 0.7, tTry - 0.3)} dur={2.6} volume={0.25} />
     </>
   );
 };

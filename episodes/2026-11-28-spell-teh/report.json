@@ -1,0 +1,20 @@
+{
+ "ok": false,
+ "problems": [
+  "the hook beat 'hook' is 3.3s of voice; it must be under 3.2 s (one sentence, 8-14 words: the stakes, not the job title)"
+ ],
+ "warnings": [],
+ "duration_s": 62.1,
+ "size_mb": 3.8,
+ "resolution": "540x960",
+ "caption_match_ratio": 0.956989247311828,
+ "heard": "Your spell checker has never seen your typo. It fixes it anyway. There's no list of every mistake. Instead, it makes every mistake you could have made. On purpose, more than 80 % of typos are one slip. A letter missing, an extra one, a wrong one, or two swapped. Say you type TEH. Undo every possible slip. Drop each letter. Swap each pair. Try all 26 letters in every spot. That's 187 guesses. Almost all of them junk. Throw out everything that isn't in its word list. Only eight are left. But 10 and T are one slip away, too. So which did you mean? Count them in a million words of books. The show's up 79 ,809 times, 10 just 219. So bet on the common one, the. Undo every slip. Keep the real words. Pick the most common. Peter Norvig wrote it in half a page of code, and it fixes about seven out of 10 real typos. Your turn. ACR ESS. Actress across accessor acres. Which one does it pick?",
+ "music": "Tech Talk",
+ "music_gap_db": 8.0,
+ "speech_starts_at_s": 0.01,
+ "final_lufs": -14.9,
+ "voice_engine": "omnivoice",
+ "contact_sheet_every_s": 2.6,
+ "build_seconds": 1719,
+ "draft": true
+}
