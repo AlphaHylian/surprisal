@@ -16,7 +16,7 @@ const Shopper: React.FC<{ kind: "cart" | "basket"; items: number; size?: number;
 );
 
 // two lanes side by side: left = four baskets, right = one cart
-const Lanes: React.FC<{ y?: number; scale?: number; t0?: number }> = ({ y = 760, scale = 1, t0 = -1 }) => (
+const Lanes: React.FC<{ y?: number; scale?: number; t0?: number }> = ({ y = 760, scale = 1.35, t0 = -1 }) => (
   <>
     <At x={290} y={y} scale={scale}>
       <div style={{ display: "flex", flexDirection: "column", gap: 22, alignItems: "flex-start", padding: "24px 30px", borderLeft: `6px solid ${C.dim}`, borderRight: `6px solid ${C.dim}` }}>
@@ -40,8 +40,8 @@ const HookBody: React.FC = () => {
     <>
       <Riser to={tFast} volume={0.45} />
       <HookText y={280} size={96}>{"4 baskets vs\n**1 full cart**"}</HookText>
-      <Lanes y={740} />
-      <At x={540} y={1110}><Appear at={tFast - 0.5} from="slam"><Chip color={C.amber} size={60}>one is 2 minutes faster</Chip></Appear></At>
+      <Lanes y={750} scale={1.25} />
+      <At x={540} y={1125}><Appear at={tFast - 0.5} from="slam"><Chip color={C.amber} size={60}>one is 2 minutes faster</Chip></Appear></At>
     </>
   );
 };
@@ -53,10 +53,10 @@ const RuleoutBody: React.FC = () => {
   return (
     <>
       <Headline>Count the items?</Headline>
-      <Lanes y={680} scale={0.85} />
-      <At x={290} y={1020}><Appear at={t40 - 0.3} from="pop"><Text size={64} color={C.mint}>40 items</Text></Appear></At>
-      <At x={760} y={1020}><Appear at={t50 - 0.3} from="pop"><Text size={64} color={C.muted}>50 items</Text></Appear></At>
-      <At x={540} y={1120}><Appear at={tWrong - 0.3} from="slam"><Chip color={C.coral} size={54}>wrong thing to count</Chip></Appear></At>
+      <Lanes y={610} scale={1.1} />
+      <At x={290} y={960}><Appear at={t40 - 0.3} from="pop"><Text size={64} color={C.mint}>40 items</Text></Appear></At>
+      <At x={760} y={960}><Appear at={t50 - 0.3} from="pop"><Text size={64} color={C.muted}>50 items</Text></Appear></At>
+      <At x={540} y={1080}><Appear at={tWrong - 0.3} from="slam"><Chip color={C.coral} size={54}>wrong thing to count</Chip></Appear></At>
       <Sfx name="pack/wrong" at={tWrong - 0.1} volume={0.3} />
     </>
   );
@@ -129,10 +129,10 @@ const CartBody: React.FC = () => {
   return (
     <>
       <Headline>Time the cart</Headline>
-      <At x={540} y={450}><Shopper kind="cart" items={50} hi /></At>
+      <At x={540} y={460}><Shopper kind="cart" items={50} hi size={1.6} /></At>
       <At x={540} y={660}><Appear at={t150 - 0.6} from="left"><Row>50 × 3 s = <span style={{ color: C.mint }}>150 s</span></Row></Appear></At>
       <At x={540} y={780}><Appear at={t48 - 0.5} from="left"><Row>1 person = <span style={{ color: C.amber }}>48 s</span></Row></Appear></At>
-      <At x={540} y={1000}><Appear at={tTot - 0.3} from="slam"><Punch at={tTot}><Text size={150} color={C.mint}>3:18</Text></Punch></Appear></At>
+      <At x={540} y={1000}><Appear at={tTot - 0.3} from="slam"><Text size={150} color={C.mint}>3:18</Text></Appear></At>
       <Sfx name="pack/ding" at={tTot} volume={0.35} />
     </>
   );
@@ -145,13 +145,13 @@ const BasketsBody: React.FC = () => {
   return (
     <>
       <Headline>Now the baskets</Headline>
-      <At x={540} y={440}><div style={{ display: "flex", gap: 22 }}>
+      <At x={540} y={460} scale={1.5}><div style={{ display: "flex", gap: 22 }}>
         {[0, 1, 2, 3].map((i) => <div key={i} style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
           <div style={{ width: 90, height: 90, borderRadius: "50%", background: "#3d5266", display: "flex", alignItems: "center", justifyContent: "center" }}><Icon name="User" size={56} /></div>
           <Icon name="ShoppingBasket" size={70} color={C.mint} /></div>)}</div></At>
       <At x={540} y={660}><Appear at={t120 - 0.6} from="left"><Row>40 × 3 s = <span style={{ color: C.mint }}>120 s</span></Row></Appear></At>
       <At x={540} y={780}><Appear at={t192 - 0.6} from="left"><Row>4 people = <span style={{ color: C.coral }}>192 s</span></Row></Appear></At>
-      <At x={540} y={1000}><Appear at={tTot - 0.3} from="slam"><Punch at={tTot}><Text size={150} color={C.coral}>5:12</Text></Punch></Appear></At>
+      <At x={540} y={1000}><Appear at={tTot - 0.3} from="slam"><Text size={150} color={C.coral}>5:12</Text></Appear></At>
       <Sfx name="pack/wrong" at={tTot} volume={0.25} />
     </>
   );
@@ -241,7 +241,7 @@ const CtaBody: React.FC = () => {
   const tB = at.word("baskets", 1, 1.6);
   return (
     <>
-      <Lanes y={680} scale={0.85} />
+      <Lanes y={660} scale={1.15} />
       <At x={540} y={1080}><Appear at={tB - 0.6} from="up"><Text size={60}>would you have picked <span style={{ color: C.mint }}>the baskets?</span></Text></Appear></At>
     </>
   );
