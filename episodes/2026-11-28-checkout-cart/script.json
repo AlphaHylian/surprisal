@@ -1,0 +1,32 @@
+{
+  "slug": "checkout-cart",
+  "format": "short",
+  "series": "everyday",
+  "hook_style": "how-to",
+  "hook_type": "versus",
+  "angle": "versus hook: four small baskets or one full cart, one line is 2 minutes faster (HookText 4 baskets vs 1 full cart, over two checkout lanes); rule out: you'd count the items, 40 < 50, wrong thing; context: a math teacher timed checkouts (Dan Meyer 2009), two clocks; step 1 each item ~3 s; step 2 every person 48 s (hello, pay, bag, receipt, goodbye), even with one item; step 3 cart: 150 + 48 = 3:18; step 4 baskets: 120 + 4 x 48 = 5:12; re-hook: fewer items, two minutes slower, what to count instead?; step 5 48 / 3 = 16: every person is worth 16 items; cart line 66 items of waiting, baskets 104; the cart wins until 88 items; payoff: count people, not items; CTA subscribe (if you'd have picked the baskets; loops to the hook). Experiment: CTA comment vs subscribe (subscribe at 12:00); hook versus at 12:00.",
+  "title": "Why the line with one full cart is faster",
+  "description": "Every shopper at a checkout costs two kinds of time: about 3 seconds per item scanned, and about 48 seconds per person for the hello, paying, bagging and receipt. So one shopper with 50 items takes about 3 min 18 s, while four shoppers with 10 items each take about 5 min 12 s. Each person ahead of you is worth about 16 items, and a single cart beats four 10-item baskets until it holds 88 items.\n\nNumbers checked in code (verify.py), including a 100,000-trial simulation with random shoppers (the cart finished first 99.5% of the time). Timings: Dan Meyer's 2009 checkout measurements (48 s per person, 2.8-2.9 s per item), rounded to 3 s.\n\nThe math behind real problems, twice a day. Subscribe and the next one finds you.\nFound an error? Comment and it gets pinned.\n#math #mathematics #shorts",
+  "social_caption": "Four baskets or one full cart? The cart line is two minutes faster, because every person costs 48 seconds before a single item is scanned.",
+  "tags": ["checkout line", "express lane", "grocery store", "queueing", "dan meyer", "shopping hacks", "math", "maths", "everyday math"],
+  "music_moods": ["upbeat"],
+  "facts_checked": [
+    "Dan Meyer's 2009 checkout timing: 'Each item adds 2.9 seconds on average, but each person adds 48 seconds on average' (https://scienceblogs.com/principles/2009/09/13/grocery-store-science, fetched 2026-11-28); 2.8 s per item in other reports (https://chowhound.com/1579313/mistake-grocery-shopping-express-checkout-lane); later figures 41 s and ~3 s (https://ca.finance.yahoo.com/news/how-to-spend-less-time-in-grocery-store-lines-163041654.html). The video rounds to 48 s and 3 s.",
+    "Cart 48 + 50 x 3 = 198 s (3:18); baskets 4 x 48 + 40 x 3 = 312 s (5:12); difference 114 s; 48 / 3 = 16; 16 + 50 = 66, 4 x 16 + 40 = 104; cart faster up to 87 items, tie at 88 (verify.py). With 48/2.9, 48/2.8 and 41/3 the cart still wins (193 vs 308, 188 vs 304, 191 vs 284).",
+    "Simulation, 100,000 trials with random per-person (sd 20 s) and per-item (sd 1.5 s) times: cart first 99.5%, means 198 s and 312 s (verify.py)"
+  ],
+  "beats": [
+    {"id": "hook", "say": "Four small baskets, or one full cart? One line is 2 minutes faster.", "speed": 1.35},
+    {"id": "ruleout", "say": "You'd count the items. 40 beats 50. But that's the wrong thing to count."},
+    {"id": "context", "say": "A math teacher timed real checkouts with a stopwatch. Every shopper runs two clocks."},
+    {"id": "scan", "say": "Clock one: each item takes about 3 seconds to scan."},
+    {"id": "person", "say": "Clock two: every person takes 48 seconds. Hello, pay, bag, receipt, goodbye. Even with one item."},
+    {"id": "cart", "say": "So time the cart. 50 items is 150 seconds, plus one person, 48. That's 3 minutes 18.", "caption": "So time the cart. 50 items is 150 seconds, plus one person, 48. That's 3:18."},
+    {"id": "baskets", "say": "Now the baskets. 40 items, 120 seconds. But four people: 192 more. 5 minutes 12.", "caption": "Now the baskets. 40 items, 120 seconds. But four people: 192 more. 5:12."},
+    {"id": "rehook", "say": "Fewer items, and 2 minutes slower. So what should you count instead?"},
+    {"id": "rule", "say": "48 divided by 3 is 16. Every person ahead of you is worth 16 items.", "caption": "48 ÷ 3 = 16. Every person ahead of you is worth 16 items."},
+    {"id": "convert", "say": "The cart line is 66 items of waiting. The basket line is 104. The cart keeps winning until it holds 88 items."},
+    {"id": "payoff", "say": "Don't count the items. Count the people."},
+    {"id": "cta", "say": "Subscribe if you'd have picked the baskets."}
+  ]
+}
